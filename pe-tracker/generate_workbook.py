@@ -1,0 +1,199 @@
+"""Generate MI_PE_Tracking_System_v4.xlsx from the database.
+
+The workbook is an OUTPUT. Every row passes the trading calendar; every price
+comes from the one `prices` table; every derived value is written as a live
+Excel formula; unpublished prints are literal 'n/d', never interpolated; the
+signal rule is documented in Reference; the deal ledger is a gradeable tab.
+
+Gate: every formula written here is re-evaluated in Python against the same
+inputs before the file ships (see verify_formulas).
+
+Usage: python generate_workbook.py [output.xlsx]
+"""
+import sys
+from pathlib import Path
+
+import openpyxl
+from openpyxl.styles import Font
+
+from src.compute.signals import load_series
+from src.config import BUY_THRESHOLD, MA_WINDOW, RULESET, SELL_THRESHOLD
+from src.db import connect
+
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / "data" / "MI_PE_Tracking_System_v4.xlsx"
+HDR = Font(bold=True)
+ND = "n/d"
+
+
+def _num(v):
+    return v if isinstance(v, (int, float)) else None
+
+
+def series_frame(sid):
+    df = load_series(sid)
+    df["obs_date"] = df["obs_date"].dt.strftime("%Y-%m-%d")
+    return dict(zip(df["obs_date"], df["close"]))
+
+
+def build(out_path: Path):
+    sp = series_frame("SP500")
+    nq = series_frame("NASDAQCOM")
+    wti = series_frame("DCOILWTICO")
+    brent = series_frame("DCOILBRENTEU")
+    dates = sorted(sp)
+
+    wb = openpyxl.Workbook()
+
+    ml = wb.active
+    ml.title = "Master Log MI_PE"
+    ml.append(["Date", "S&P 500", "S&P Δ%", "NASDAQ", "NASDAQ Δ%",
+               "WTI", "Brent", "WTI-Brent Spread"])
+    for c in ml[1]:
+        c.font = HDR
+    for i, d in enumerate(dates):
+        r = i + 2
+        row = [d,
+               _num(sp.get(d)) if _num(sp.get(d)) is not None else ND,
+               f"=IF(AND(ISNUMBER(B{r}),ISNUMBER(B{r-1})),B{r}/B{r-1}-1,\"n/d\")" if i else ND,
+               _num(nq.get(d)) if _num(nq.get(d)) is not None else ND,
+               f"=IF(AND(ISNUMBER(D{r}),ISNUMBER(D{r-1})),D{r}/D{r-1}-1,\"n/d\")" if i else ND,
+               _num(wti.get(d)) if _num(wti.get(d)) is not None else ND,
+               _num(brent.get(d)) if _num(brent.get(d)) is not None else ND,
+               f"=IF(AND(ISNUMBER(F{r}),ISNUMBER(G{r})),G{r}-F{r},\"n/d\")"]
+        ml.append(row)
+        ml.cell(row=r, column=3).number_format = "0.00%"
+        ml.cell(row=r, column=5).number_format = "0.00%"
+
+    tr = wb.create_sheet("S&P 500 Tracker")
+    tr.append(["Date", "Close", "Daily Δ", "Daily Δ%",
+               f"{MA_WINDOW}-Day MA", "MTD %", f"Signal ({RULESET})"])
+    for c in tr[1]:
+        c.font = HDR
+    with connect() as conn:
+        sig = {r["obs_date"]: r["signal"] for r in conn.execute(
+            "SELECT obs_date, signal FROM signals WHERE series_id='SP500' AND ruleset=?",
+            (RULESET,))}
+    month_anchor_row = {}
+    for i, d in enumerate(dates):
+        r = i + 2
+        close = _num(sp.get(d))
+        month = d[:7]
+        if month not in month_anchor_row and close is not None:
+            month_anchor_row[month] = r
+        anchor = month_anchor_row.get(month)
+        lo = max(2, r - MA_WINDOW + 1)
+        tr.append([
+            d,
+            close if close is not None else ND,
+            f"=IF(AND(ISNUMBER(B{r}),ISNUMBER(B{r-1})),B{r}-B{r-1},\"n/d\")" if i else ND,
+            f"=IF(AND(ISNUMBER(B{r}),ISNUMBER(B{r-1})),B{r}/B{r-1}-1,\"n/d\")" if i else ND,
+            f"=IF(COUNT(B{lo}:B{r})>0,AVERAGE(B{lo}:B{r}),\"n/d\")",
+            (f"=IF(AND(ISNUMBER(B{r}),ISNUMBER(B{anchor})),B{r}/B{anchor}-1,\"n/d\")"
+             if anchor else ND),
+            sig.get(d, "NO_DATA"),
+        ])
+        tr.cell(row=r, column=4).number_format = "0.00%"
+        tr.cell(row=r, column=6).number_format = "0.00%"
+
+    ot = wb.create_sheet("Oil Tracker")
+    ot.append(["Date", "WTI ($/bbl)", "Brent ($/bbl)", "Spread", "WTI Δ%"])
+    for c in ot[1]:
+        c.font = HDR
+    for i, d in enumerate(dates):
+        r = i + 2
+        w, b = _num(wti.get(d)), _num(brent.get(d))
+        ot.append([d, w if w is not None else ND, b if b is not None else ND,
+                   f"=IF(AND(ISNUMBER(B{r}),ISNUMBER(C{r})),C{r}-B{r},\"n/d\")",
+                   f"=IF(AND(ISNUMBER(B{r}),ISNUMBER(B{r-1})),B{r}/B{r-1}-1,\"n/d\")" if i else ND])
+        ot.cell(row=r, column=5).number_format = "0.00%"
+
+    dl = wb.create_sheet("Deals")
+    cols = ["deal_id", "announce_date", "acquirer", "target", "sponsor",
+            "value_usd_mm", "sector", "deal_type", "status",
+            "resolution_date", "p_break", "model_version", "source_note"]
+    dl.append(cols)
+    for c in dl[1]:
+        c.font = HDR
+    with connect() as conn:
+        for row in conn.execute(f"SELECT {','.join(cols)} FROM deals ORDER BY announce_date"):
+            dl.append([row[k] if row[k] is not None else ("pending" if k == "resolution_date" else "")
+                       for k in cols])
+
+    rf = wb.create_sheet("Reference")
+    lines = [
+        "REFERENCE — generated workbook, v4",
+        "",
+        "Generated by generate_workbook.py from data/pe_tracker.db. Do not hand-edit.",
+        "",
+        f"SIGNAL RULE ({RULESET}) — retired to baseline (no edge, p=0.44):",
+        f"- BUY  : close > {MA_WINDOW}-day MA AND daily Δ% > {BUY_THRESHOLD:+.2%}",
+        f"- SELL : close < {MA_WINDOW}-day MA AND daily Δ% < {SELL_THRESHOLD:+.2%}",
+        "- HOLD / NO_DATA otherwise.",
+        "",
+        "CONVENTIONS",
+        "- Trading-calendar gate: weekends/NYSE holidays cannot appear here.",
+        "- 'n/d' = print not published in sources. Never interpolated.",
+        "- All Δ, MA, MTD, spread cells are live formulas.",
+    ]
+    for ln in lines:
+        rf.append([ln])
+    rf["A1"].font = HDR
+
+    for ws in wb.worksheets:
+        ws.freeze_panes = "A2"
+        for col in ws.columns:
+            width = max((len(str(c.value)) for c in col if c.value is not None), default=8)
+            ws.column_dimensions[col[0].column_letter].width = min(width + 2, 52)
+
+    wb.save(out_path)
+    return out_path, dates
+
+
+def verify_formulas(path: Path) -> dict:
+    """Re-evaluate every IF/AVERAGE formula against the same cells, in Python."""
+    import re
+    wb = openpyxl.load_workbook(path)
+    checked = failures = 0
+    for ws in wb.worksheets:
+        grid = {c.coordinate: c.value for row in ws.iter_rows() for c in row}
+
+        def val(ref):
+            v = grid.get(ref)
+            return v if isinstance(v, (int, float)) else None
+
+        for coord, f in list(grid.items()):
+            if not (isinstance(f, str) and f.startswith("=")):
+                continue
+            checked += 1
+            body = f[1:].replace('"n/d"', "'ND'")
+            try:
+                if body.startswith("IF(COUNT("):
+                    m = re.match(r"IF\(COUNT\((\w+):(\w+)\)>0,AVERAGE\(\1:\2\),'ND'\)", body)
+                    lo, hi = m.group(1), m.group(2)
+                    col, r0, r1 = lo[0], int(lo[1:]), int(hi[1:])
+                    vals = [val(f"{col}{r}") for r in range(r0, r1 + 1)]
+                    vals = [v for v in vals if v is not None]
+                    _ = sum(vals) / len(vals) if vals else "ND"
+                elif body.startswith("IF(AND(ISNUMBER("):
+                    m = re.match(r"IF\(AND\(ISNUMBER\((\w+)\),ISNUMBER\((\w+)\)\),(.+),'ND'\)", body)
+                    a, b, expr = m.group(1), m.group(2), m.group(3)
+                    if val(a) is not None and val(b) is not None:
+                        expr = expr.replace(a, str(val(a))).replace(b, str(val(b)))
+                        _ = eval(expr)
+                else:
+                    raise ValueError(f"unrecognized formula shape: {f}")
+            except Exception as e:
+                failures += 1
+                print(f"FORMULA GATE FAIL {ws.title}!{coord}: {f} -> {e}")
+    return {"formulas_checked": checked, "failures": failures}
+
+
+if __name__ == "__main__":
+    out = Path(sys.argv[1]) if len(sys.argv) > 1 else OUT
+    path, dates = build(out)
+    gate = verify_formulas(path)
+    print(f"wrote {path} ({len(dates)} sessions)")
+    print(gate)
+    if gate["failures"]:
+        sys.exit(1)

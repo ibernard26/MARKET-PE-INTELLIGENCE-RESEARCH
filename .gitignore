@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.log
+.claude/settings.local.json
+tmp/
+.mcp.json
+
+# pe-tracker is an independent nested git repo (user's separate portfolio project)
+pe-tracker/
+
+# delivered artifact, not source (sent to user via chat)
+pe-tracker-portfolio.zip

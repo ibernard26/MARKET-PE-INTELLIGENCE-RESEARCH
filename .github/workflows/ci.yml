@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pe-tracker-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pe-tracker
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+
+  arb-intelligence-dbt:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: arb-intelligence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install duckdb "dbt-core>=1.7" "dbt-duckdb>=1.7"
+      - run: python scripts/migrate_sqlite_to_silver.py
+      - run: dbt run --profiles-dir . --project-dir .
+      - run: dbt test --profiles-dir . --project-dir .

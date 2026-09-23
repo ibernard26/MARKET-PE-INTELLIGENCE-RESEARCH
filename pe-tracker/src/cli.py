@@ -13,7 +13,8 @@ import argparse
 import json
 from datetime import date
 
-from .config import SERIES, START_DATE
+from .config import START_DATE
+from .ingest.market_series import ALL_SERIES as SERIES
 from .db import coverage_report, init_db, migrate_schema, missing_dates
 from .ingest.market_calendar import build_calendar
 
@@ -32,8 +33,15 @@ def cmd_migrate(args):
 
 
 def cmd_pull(args):
-    from .ingest.fred import ingest_all
-    print(json.dumps(ingest_all(start=args.start, end=args.end), indent=2))
+    from .ingest.fred import FredError, ingest_all
+    init_db()          # seeds the series registry (incl. DGS10); idempotent
+    migrate_schema()
+    try:
+        out = ingest_all(start=args.start, end=args.end,
+                         vintage=getattr(args, "vintage", "current"))
+    except FredError as exc:      # message is already key-redacted
+        raise SystemExit(f"FRED pull failed: {exc}")
+    print(json.dumps(out, indent=2))
 
 
 def cmd_gaps(args):
@@ -98,6 +106,7 @@ def main():
     a = sub.add_parser("migrate");  a.add_argument("xlsx");  a.set_defaults(fn=cmd_migrate)
     a = sub.add_parser("pull")
     a.add_argument("--start", default=START_DATE); a.add_argument("--end")
+    a.add_argument("--vintage", choices=["current", "first_release"], default="current")
     a.set_defaults(fn=cmd_pull)
     a = sub.add_parser("gaps");     a.add_argument("--series", choices=list(SERIES))
     a.set_defaults(fn=cmd_gaps)

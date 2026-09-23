@@ -20,6 +20,37 @@ CREATE TABLE IF NOT EXISTS prices (
 );
 CREATE INDEX IF NOT EXISTS ix_prices_date ON prices(obs_date);
 
+-- Append-only, bitemporal market observations (FRED). The legacy `prices` table
+-- keeps the current value per (series, date) for the existing signal code; this
+-- table keeps EVERY distinct value we ever saw, with when it was knowable.
+--   obs_date       valid time (the session / observation date)
+--   value          NULL = FRED reported "." (missing) — never filled
+--   realtime_start FRED/ALFRED vintage start date, when requested
+--   known_at       when the value was knowable:
+--                    'fred_first_release' -> ALFRED initial-release vintage date,
+--                                            stored as END of that day (time of day
+--                                            is not published, so we are conservative)
+--                    'ingestion'           -> the moment we fetched it (live capture)
+--   A historical publication time is never inferred beyond these two rules.
+CREATE TABLE IF NOT EXISTS market_observations (
+    series_id           TEXT NOT NULL,
+    obs_date            TEXT NOT NULL,
+    value               REAL,
+    source              TEXT NOT NULL,          -- 'FRED'
+    source_identifier   TEXT NOT NULL,          -- e.g. 'FRED:SP500'
+    realtime_start      TEXT,
+    realtime_end        TEXT,
+    known_at            TEXT NOT NULL,
+    known_at_basis      TEXT NOT NULL CHECK (known_at_basis IN ('fred_first_release','ingestion')),
+    ingestion_timestamp TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%f','now')),
+    PRIMARY KEY (series_id, obs_date, known_at)
+);
+CREATE INDEX IF NOT EXISTS ix_mobs_series_date ON market_observations(series_id, obs_date);
+CREATE TRIGGER IF NOT EXISTS trg_mobs_no_update BEFORE UPDATE ON market_observations
+BEGIN SELECT RAISE(ABORT, 'market_observations is append-only'); END;
+CREATE TRIGGER IF NOT EXISTS trg_mobs_no_delete BEFORE DELETE ON market_observations
+BEGIN SELECT RAISE(ABORT, 'market_observations is append-only'); END;
+
 CREATE TABLE IF NOT EXISTS market_calendar (
     obs_date    TEXT PRIMARY KEY,
     is_trading  INTEGER NOT NULL,          -- 1 = NYSE session
@@ -190,6 +221,31 @@ CREATE TRIGGER IF NOT EXISTS trg_mpred_no_update BEFORE UPDATE ON model_predicti
 BEGIN SELECT RAISE(ABORT, 'model_predictions is immutable'); END;
 CREATE TRIGGER IF NOT EXISTS trg_mpred_no_delete BEFORE DELETE ON model_predictions
 BEGIN SELECT RAISE(ABORT, 'model_predictions is immutable'); END;
+
+-- ---------------------------------------------------------------------------
+-- Record-level provenance for historical ingestion. Answers "where did this exact
+-- label or feature value come from?" One row per written fact (append-only).
+-- ---------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS record_provenance (
+    provenance_id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    record_type         TEXT NOT NULL CHECK (record_type IN ('deal','observation','event')),
+    deal_id             TEXT NOT NULL REFERENCES deals(deal_id),
+    record_key          TEXT NOT NULL,     -- e.g. 'event:closing:2025-05-01T16:02:11'
+    field               TEXT,              -- optional: the specific field sourced
+    source_name         TEXT NOT NULL,     -- e.g. 'SEC EDGAR'
+    source_identifier   TEXT NOT NULL,     -- URL or URI of the exact document
+    accession_number    TEXT,              -- SEC accession, when applicable
+    docket_reference    TEXT,              -- regulator docket / case number
+    company_identifier  TEXT,              -- e.g. CIK
+    source_timestamp    TEXT,
+    known_at            TEXT NOT NULL,
+    ingestion_timestamp TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%f','now'))
+);
+CREATE INDEX IF NOT EXISTS ix_prov_deal ON record_provenance(deal_id);
+CREATE TRIGGER IF NOT EXISTS trg_prov_no_update BEFORE UPDATE ON record_provenance
+BEGIN SELECT RAISE(ABORT, 'record_provenance is append-only'); END;
+CREATE TRIGGER IF NOT EXISTS trg_prov_no_delete BEFORE DELETE ON record_provenance
+BEGIN SELECT RAISE(ABORT, 'record_provenance is append-only'); END;
 
 -- Signals are recomputed, never hand-entered. Versioned by ruleset.
 CREATE TABLE IF NOT EXISTS signals (

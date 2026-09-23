@@ -35,6 +35,16 @@ class ObservationOverwriteError(RuntimeError):
     """Raised when an insert would overwrite an existing observation key."""
 
 
+def normalize_as_of(as_of: str) -> str:
+    """A bare date `as_of` means "anything knowable through the end of that day".
+
+    Without this, string comparison would exclude an intraday observation stamped
+    `2026-02-01T09:30:00` from an `as_of` of `2026-02-01`. Full timestamps pass
+    through unchanged.
+    """
+    return as_of + "T23:59:59.999999" if len(as_of) == 10 else as_of
+
+
 @dataclass
 class Observation:
     deal_id: str
@@ -133,8 +143,10 @@ def latest_as_of(deal_id: str, as_of: str, conn: sqlite3.Connection = None) -> O
         LIMIT 1
     """
 
+    cutoff = normalize_as_of(as_of)
+
     def _q(c):
-        r = c.execute(sql, (deal_id, as_of)).fetchone()
+        r = c.execute(sql, (deal_id, cutoff)).fetchone()
         return _decode(r) if r else None
 
     if conn is not None:

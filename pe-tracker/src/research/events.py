@@ -13,6 +13,7 @@ import sqlite3
 from typing import Optional
 
 from ..db import connect
+from .observations import normalize_as_of
 
 # Canonical event vocabulary. Extend deliberately; unknown types are rejected so
 # the lifecycle stays analyzable.
@@ -105,9 +106,11 @@ def events_as_of(deal_id: str, as_of: str, conn: sqlite3.Connection = None) -> l
     sql = ("SELECT * FROM deal_events WHERE deal_id = ? AND event_timestamp <= ? "
            "ORDER BY event_timestamp, event_id")
 
+    cutoff = normalize_as_of(as_of)
+
     def _q(c):
         out = []
-        for r in c.execute(sql, (deal_id, as_of)):
+        for r in c.execute(sql, (deal_id, cutoff)):
             d = dict(r)
             if d.get("attributes"):
                 d["attributes"] = json.loads(d["attributes"])

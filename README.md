@@ -40,7 +40,7 @@ near a 10% base rate): **ROC AUC** (rank statistic, cross-checked against `sklea
 reported *beside* **PR AUC** and its baseline π, with a **cost-based operating point**
 (a missed break costs ~15× a needless hedge, so the threshold sits far below 0.5).
 The strategy is a **locked, versioned contract** (`STRATEGY.md`) that a test fails the
-build on if any constant drifts. `27 tests pass`.
+build on if any constant drifts. `36 tests pass` (1 skipped).
 
 ### 2 · `arb-intelligence/` — the production data architecture
 The same estate rebuilt as a modern stack: **DuckDB + dbt + Dagster**. Raw → Silver →

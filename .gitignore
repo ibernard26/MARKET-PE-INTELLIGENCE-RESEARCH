@@ -7,3 +7,11 @@ tmp/
 
 
 # delivered artifact, not source (sent to user via chat)
+
+# secrets — never commit (FRED_API_KEY, SEC_USER_AGENT contact, etc.)
+*.env
+.env.*
+!.env.example
+!**/.env.example
+secrets.*
+*.secret

@@ -12,6 +12,10 @@ Rules:
   vintage="first_release", ALFRED's initial-release vintage date is used
   (end of that day — FRED does not publish the time of day). Nothing else is
   inferred.
+* Coverage window: every pull is floored at config.START_DATE (2026-04-20).
+  This is a PROJECT data-coverage policy (the tracker's first logged session),
+  not a FRED limitation — FRED history for these series goes back years or
+  decades (SP500 ~10y rolling, DFF to 1954). See docs/MARKET_DATA.md.
 """
 from __future__ import annotations
 
@@ -71,7 +75,14 @@ def fetch_series(series_id: str, start: str = START_DATE, end: str = None,
                  vintage: str = "current", timeout: int = 30,
                  session: Optional[requests.Session] = None) -> list[dict]:
     """Fetch one series. vintage='current' (latest values) or 'first_release'
-    (ALFRED initial-release values with their release dates)."""
+    (ALFRED initial-release values with their release dates).
+
+    `start` is floored at START_DATE (project coverage policy: April 20, 2026 ->
+    present). An earlier start is clamped, never an error, so a manual
+    `pull --start <older>` cannot widen the tracked window. This is a project
+    choice, not a FRED limit. A later start is kept as given.
+    """
+    start = max(start or START_DATE, START_DATE)
     params = {"series_id": series_id, "api_key": _api_key(), "file_type": "json",
               "observation_start": start}
     if end:

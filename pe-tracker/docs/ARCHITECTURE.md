@@ -37,6 +37,9 @@ one above it.
 | Training data | `src/model/dataset.py` | One row per deal, taken at the exact moment its announcement became public. Label: break = 1, close = 0, pending = censored (never treated as a negative). |
 | Model | `src/model/logistic.py` | L2 logistic regression with fixed C. Imputation uses training-set medians plus missingness indicators. Outputs are raw (uncalibrated) probabilities in v1. |
 | Validation | `src/model/validation.py`, `evaluate.py` | Splits are chronological only. The threshold t* is chosen on training data and **frozen** before the test period. Results are compared against constant and spread-only baselines. |
+| FRED store | `src/ingest/fred.py`, `src/research/market_data.py` | FRED data flows into the append-only `market_observations` table with known_at and provenance, then into point-in-time returns, levels and spreads, then into `PointInTimeMarketContext`. None of these are active model features. See `MARKET_DATA.md`. |
+| Historical deals | `src/ingest/historical.py`, `providers/sec_edgar.py` | Strict record contract. Incomplete records are quarantined. Every fact gets a `record_provenance` row. Ingestion never fits the model. See `HISTORICAL_DEAL_DATA_SOURCES.md`. |
+| Data readiness | `src/model/data_quality.py` | Dataset-quality report and `MODEL_DATA_STATUS` gate. |
 | Registry | `src/model/registry.py` | Each fitted model is stored with its metadata. Predictions are immutable, and the database rejects any prediction made by a model trained after the prediction time. |
 | Use | `decision.py`, `backtest.py`, `bridge.py` | Trade decisions are kept separate from the probability model. The backtester only uses a p_break that was available at entry. Break losses without a sourced exit price are labelled *modeled*, never *realized*. |
 

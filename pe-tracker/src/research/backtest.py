@@ -62,6 +62,10 @@ class Trade:
     break_exit_price: Optional[float] = None      # actual sourced post-break print
     break_exit_source: Optional[str] = None
     break_exit_timestamp: Optional[str] = None
+    # contemporaneous model score (see src/model/bridge.py); never later than entry
+    p_break: Optional[float] = None
+    p_break_as_of: Optional[str] = None
+    p_break_model_version: Optional[str] = None
 
 
 def _days(a: str, b: str) -> int:
@@ -76,6 +80,10 @@ def evaluate_trade(t: Trade, cfg: BacktestConfig = BacktestConfig()) -> dict:
         raise UnsupportedConsiderationError(
             f"{t.deal_id}: consideration {t.consideration_type!r} not supported — "
             "backtester is scoped to cash deals")
+    if t.p_break is not None and (t.p_break_as_of is None
+                                  or t.p_break_as_of[:10] > t.entry_date[:10]):
+        raise ValueError(f"{t.deal_id}: p_break as_of {t.p_break_as_of} is not on/before "
+                         f"entry {t.entry_date} — lookahead")
     capital = t.capital if t.capital is not None else cfg.capital_per_deal
     shares = capital / t.entry_price
     bps = cfg.tx_cost_bps / 1e4
@@ -84,6 +92,8 @@ def evaluate_trade(t: Trade, cfg: BacktestConfig = BacktestConfig()) -> dict:
         "deal_id": t.deal_id, "entry_date": t.entry_date,
         "entry_price": t.entry_price, "shares": shares, "capital": capital,
         "expected_close_date": t.expected_close_date,
+        "p_break": t.p_break, "p_break_as_of": t.p_break_as_of,
+        "p_break_model_version": t.p_break_model_version,
     }
 
     if t.status == "pending" or t.resolution_date is None:

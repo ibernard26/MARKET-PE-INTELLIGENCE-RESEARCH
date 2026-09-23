@@ -140,6 +140,54 @@ BEGIN SELECT RAISE(ABORT, 'deal_events is append-only'); END;
 CREATE TRIGGER IF NOT EXISTS trg_dev_no_delete BEFORE DELETE ON deal_events
 BEGIN SELECT RAISE(ABORT, 'deal_events is append-only'); END;
 
+-- ---------------------------------------------------------------------------
+-- Break-probability model registry + immutable predictions (break_logit_v1)
+-- ---------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS model_registry (
+    model_id               TEXT NOT NULL,
+    model_version          TEXT NOT NULL,
+    feature_schema_version TEXT NOT NULL,
+    training_cutoff        TEXT NOT NULL,
+    n_train                INTEGER NOT NULL,
+    n_pos                  INTEGER NOT NULL,
+    n_neg                  INTEGER NOT NULL,
+    prevalence             REAL NOT NULL,
+    hyperparameters        TEXT NOT NULL,   -- JSON
+    calibration            TEXT NOT NULL,   -- JSON
+    artifact               TEXT NOT NULL,   -- JSON (serialized model)
+    fit_timestamp          TEXT NOT NULL,
+    code_commit            TEXT NOT NULL,
+    PRIMARY KEY (model_version, training_cutoff)
+);
+CREATE TRIGGER IF NOT EXISTS trg_mreg_no_update BEFORE UPDATE ON model_registry
+BEGIN SELECT RAISE(ABORT, 'model_registry is append-only'); END;
+CREATE TRIGGER IF NOT EXISTS trg_mreg_no_delete BEFORE DELETE ON model_registry
+BEGIN SELECT RAISE(ABORT, 'model_registry is append-only'); END;
+
+CREATE TABLE IF NOT EXISTS model_predictions (
+    deal_id                TEXT NOT NULL REFERENCES deals(deal_id),
+    as_of                  TEXT NOT NULL,   -- information date of the features
+    p_break                REAL NOT NULL CHECK (p_break >= 0 AND p_break <= 1),
+    model_version          TEXT NOT NULL,
+    training_cutoff        TEXT NOT NULL,
+    feature_schema_version TEXT NOT NULL,
+    prediction_timestamp   TEXT NOT NULL,
+    PRIMARY KEY (deal_id, as_of, model_version, training_cutoff),
+    FOREIGN KEY (model_version, training_cutoff)
+        REFERENCES model_registry(model_version, training_cutoff)
+);
+CREATE TRIGGER IF NOT EXISTS trg_mpred_model BEFORE INSERT ON model_predictions
+WHEN NOT EXISTS (SELECT 1 FROM model_registry WHERE model_version = NEW.model_version
+                 AND training_cutoff = NEW.training_cutoff)
+BEGIN SELECT RAISE(ABORT, 'prediction references unregistered model'); END;
+CREATE TRIGGER IF NOT EXISTS trg_mpred_lookahead BEFORE INSERT ON model_predictions
+WHEN NEW.training_cutoff > NEW.as_of || 'T23:59:59.999999'
+BEGIN SELECT RAISE(ABORT, 'model trained after prediction as_of (lookahead)'); END;
+CREATE TRIGGER IF NOT EXISTS trg_mpred_no_update BEFORE UPDATE ON model_predictions
+BEGIN SELECT RAISE(ABORT, 'model_predictions is immutable'); END;
+CREATE TRIGGER IF NOT EXISTS trg_mpred_no_delete BEFORE DELETE ON model_predictions
+BEGIN SELECT RAISE(ABORT, 'model_predictions is immutable'); END;
+
 -- Signals are recomputed, never hand-entered. Versioned by ruleset.
 CREATE TABLE IF NOT EXISTS signals (
     series_id   TEXT NOT NULL REFERENCES series(series_id),

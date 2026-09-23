@@ -1,0 +1,76 @@
+"""Model registry and immutable predictions (append-only, DB-enforced)."""
+from __future__ import annotations
+
+import json
+import sqlite3
+import subprocess
+from typing import Optional
+
+from ..config import ROOT
+from ..research.bitemporal import now_iso
+from .dataset import FEATURE_SCHEMA_VERSION
+from .logistic import MODEL_ID, MODEL_VERSION, BreakModel
+
+
+def code_commit() -> str:
+    try:
+        return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT,
+                                       stderr=subprocess.DEVNULL, text=True).strip()
+    except Exception:
+        return "unknown"
+
+
+def register_model(model: BreakModel, training_set: dict,
+                   conn: sqlite3.Connection) -> dict:
+    n, n_pos = training_set["n"], training_set["n_pos"]
+    meta = {"model_id": MODEL_ID, "model_version": MODEL_VERSION,
+            "feature_schema_version": FEATURE_SCHEMA_VERSION,
+            "training_cutoff": training_set["cutoff"], "n_train": n,
+            "n_pos": n_pos, "n_neg": n - n_pos, "prevalence": n_pos / n,
+            "hyperparameters": model.hp, "calibration": model.calibration,
+            "fit_timestamp": now_iso(), "code_commit": code_commit()}
+    conn.execute(
+        """INSERT INTO model_registry (model_id, model_version, feature_schema_version,
+           training_cutoff, n_train, n_pos, n_neg, prevalence, hyperparameters,
+           calibration, artifact, fit_timestamp, code_commit)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+        (meta["model_id"], meta["model_version"], meta["feature_schema_version"],
+         meta["training_cutoff"], n, n_pos, n - n_pos, meta["prevalence"],
+         json.dumps(model.hp, sort_keys=True), json.dumps(model.calibration, sort_keys=True),
+         json.dumps(model.to_dict(), sort_keys=True), meta["fit_timestamp"],
+         meta["code_commit"]))
+    return meta
+
+
+def load_model(model_version: str, training_cutoff: str,
+               conn: sqlite3.Connection) -> BreakModel:
+    r = conn.execute("SELECT artifact FROM model_registry WHERE model_version = ? "
+                     "AND training_cutoff = ?", (model_version, training_cutoff)).fetchone()
+    if r is None:
+        raise KeyError((model_version, training_cutoff))
+    return BreakModel.from_dict(json.loads(r[0]))
+
+
+def record_prediction(deal_id: str, as_of: str, p_break: float, training_cutoff: str,
+                      conn: sqlite3.Connection, model_version: str = MODEL_VERSION) -> dict:
+    row = {"deal_id": deal_id, "as_of": as_of, "p_break": float(p_break),
+           "model_version": model_version, "training_cutoff": training_cutoff,
+           "feature_schema_version": FEATURE_SCHEMA_VERSION,
+           "prediction_timestamp": now_iso()}
+    conn.execute(
+        "INSERT INTO model_predictions (deal_id, as_of, p_break, model_version, "
+        "training_cutoff, feature_schema_version, prediction_timestamp) "
+        "VALUES (:deal_id, :as_of, :p_break, :model_version, :training_cutoff, "
+        ":feature_schema_version, :prediction_timestamp)", row)
+    return row
+
+
+def prediction_as_of(deal_id: str, as_of: str, conn: sqlite3.Connection,
+                     model_version: str = MODEL_VERSION) -> Optional[dict]:
+    """Latest stored prediction whose information date is on/before `as_of`
+    (contemporaneous p_break for the backtester)."""
+    r = conn.execute(
+        "SELECT * FROM model_predictions WHERE deal_id = ? AND model_version = ? "
+        "AND as_of <= ? ORDER BY as_of DESC, training_cutoff DESC LIMIT 1",
+        (deal_id, model_version, as_of)).fetchone()
+    return dict(r) if r else None

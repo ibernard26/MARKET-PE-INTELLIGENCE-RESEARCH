@@ -80,12 +80,19 @@ def label_as_of(deal_id: str, cutoff: str, conn: sqlite3.Connection) -> dict:
 
 def default_feature_date(deal_id: str, cutoff: str, conn: sqlite3.Connection
                          ) -> Optional[str]:
-    """The day the announcement became knowable (as known by `cutoff`)."""
+    """EXACT instant the announcement became knowable (as known by `cutoff`):
+    the later of its valid timestamp and its known_at. Never truncated to a
+    calendar date — a bare date would mean end-of-day and admit later same-day
+    information into the announcement-time feature vector."""
     anns = [e for e in ev.events_as_of(deal_id, cutoff, conn=conn)
             if e["event_type"] == "announcement"]
     if not anns:
         return None
-    return max(anns[0]["event_timestamp"], anns[0]["known_at"])[:10]
+    return max(anns[0]["event_timestamp"], anns[0]["known_at"])
+
+
+class FeatureDateError(ValueError):
+    """Raised when an explicit feature time predates the knowable announcement."""
 
 
 def build_row(deal_id: str, feature_as_of: str, cutoff: str,
@@ -106,8 +113,15 @@ def build_training_set(cutoff: str, conn: sqlite3.Connection,
     ids = [r[0] for r in conn.execute("SELECT deal_id FROM deals ORDER BY deal_id")]
     rows, censored, excluded = [], [], []
     for d in ids:
-        fdate = (feature_dates or {}).get(d) or default_feature_date(d, cutoff, conn)
-        if fdate is None:
+        ann_known = default_feature_date(d, cutoff, conn)
+        explicit = (feature_dates or {}).get(d)
+        if explicit is not None and ann_known is not None and \
+                normalize_as_of(explicit) < ann_known:
+            raise FeatureDateError(
+                f"{d}: feature time {explicit} predates the knowable announcement "
+                f"{ann_known} — would create a pre-announcement row")
+        fdate = explicit or ann_known
+        if ann_known is None:   # explicit time or not: no row before an announcement
             excluded.append({"deal_id": d, "reason": "no_known_announcement"})
             continue
         if normalize_as_of(fdate) > c_norm:

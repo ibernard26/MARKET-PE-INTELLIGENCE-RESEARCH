@@ -21,10 +21,36 @@ FRED API ──► parse ("." → NULL) ──► prices              (current v
 | DCOILWTICO | WTI crude, Cushing spot | `config.SERIES` |
 | DCOILBRENTEU | Brent crude, Europe spot | `config.SERIES` |
 | **DGS10** | 10-Year Treasury constant maturity (%) | `ingest/market_series.RATE_SERIES` |
+| **DFF** | Effective Federal Funds Rate (%) | `ingest/market_series.RATE_SERIES` |
 
 DGS10 lives outside `config.py` because that file holds the locked strategy contract. It
 follows the bond-market (SIFMA) calendar, so on days when NYSE is open but the bond market
 is closed it stays **NULL**.
+
+DFF sits in the same registry. FRED publishes it for every calendar day, weekends included.
+It is **research context only**: you can query it point-in-time through `series_as_of`,
+`level` and `change`, but it is not in `RESEARCH_FEATURES`, `PointInTimeMarketContext` or
+`fs_v1`.
+
+## Coverage window (project policy)
+Every FRED pull is **floored at `config.START_DATE` = 2026-04-20**, the tracker's first logged
+session, so the project covers April 20, 2026 to the present. `fetch_series` raises an
+earlier `start` to that date instead of returning an error. A later `start` is kept.
+
+This is a **project data-coverage policy, not a FRED limitation.** FRED's own history goes
+much further back:
+
+| Series | FRED history begins |
+|---|---|
+| DFF | 1954-07-01 |
+| DGS10 | 1962-01-02 |
+| NASDAQCOM | 1971-02-05 |
+| DCOILWTICO | 1986-01-02 |
+| DCOILBRENTEU | 1987-05-20 |
+| SP500 | rolling 10 years (licensing) |
+
+Widening the window means changing `START_DATE` on purpose and rebuilding the trading
+calendar (`python -m src.cli init`).
 
 ## Rules
 * **Key:** read only from the `FRED_API_KEY` environment variable. Error messages are
@@ -66,8 +92,9 @@ data and asserts that the past signal does not change.
 ## Running
 ```
 export FRED_API_KEY=…          # never commit it
-python -m src.cli pull --start 2026-01-01            # current values
-python -m src.cli pull --start 2026-01-01 --vintage first_release
+python -m src.cli pull                               # current values, 2026-04-20 → today
+python -m src.cli pull --vintage first_release
+python -m src.cli pull --start 2026-09-01            # later starts are kept; earlier ones are floored
 FRED_LIVE=1 python -m pytest tests/test_fred_live.py # optional live check
 ```
 Requires network access to `https://api.stlouisfed.org`.

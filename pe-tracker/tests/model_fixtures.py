@@ -35,7 +35,8 @@ def add_deal(c, deal_id, ann: str, pct_spread: float, outcome, resolve_days=120,
     kw.update(obs_kw)
     record_observation(Observation(deal_id, ann + "T16:00:00", "synthetic",
                                    known_at=ann + "T16:05:00", **kw), conn=c)
-    ev.record_event(deal_id, ann, "announcement", "synthetic", conn=c, known_at=ann)
+    ev.record_event(deal_id, ann + "T16:00:00", "announcement", "synthetic", conn=c,
+                    known_at=ann + "T16:05:00")
     if outcome is not None:
         rd = (date.fromisoformat(ann) + timedelta(days=resolve_days)).isoformat()
         kd = (date.fromisoformat(rd) + timedelta(days=known_lag_days)).isoformat()

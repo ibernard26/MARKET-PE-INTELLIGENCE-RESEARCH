@@ -13,6 +13,7 @@ from .logistic import MODEL_ID, MODEL_VERSION, BreakModel
 
 
 def code_commit() -> str:
+    """Git commit of the code that fit the model ('unknown' outside a repo)."""
     try:
         return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT,
                                        stderr=subprocess.DEVNULL, text=True).strip()
@@ -22,6 +23,7 @@ def code_commit() -> str:
 
 def register_model(model: BreakModel, training_set: dict,
                    conn: sqlite3.Connection) -> dict:
+    """Append a fitted model plus its training metadata to model_registry; returns the metadata."""
     n, n_pos = training_set["n"], training_set["n_pos"]
     meta = {"model_id": MODEL_ID, "model_version": MODEL_VERSION,
             "feature_schema_version": FEATURE_SCHEMA_VERSION,
@@ -44,6 +46,7 @@ def register_model(model: BreakModel, training_set: dict,
 
 def load_model(model_version: str, training_cutoff: str,
                conn: sqlite3.Connection) -> BreakModel:
+    """Reload a registered model by (version, training cutoff)."""
     r = conn.execute("SELECT artifact FROM model_registry WHERE model_version = ? "
                      "AND training_cutoff = ?",
                      (model_version, normalize_as_of(training_cutoff))).fetchone()

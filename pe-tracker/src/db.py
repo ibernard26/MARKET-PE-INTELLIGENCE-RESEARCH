@@ -7,6 +7,7 @@ from .config import DB_PATH, ROOT, SERIES
 
 @contextmanager
 def connect():
+    """Open the project SQLite DB with foreign keys ON; commits on success, always closes."""
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -130,6 +131,7 @@ def coverage_report():
 
 
 def missing_dates(series_id):
+    """Trading days on which `series_id` has no stored close (the gap list for one series)."""
     sql = """
         SELECT c.obs_date
         FROM market_calendar c

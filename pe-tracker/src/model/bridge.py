@@ -17,6 +17,7 @@ from .registry import prediction_as_of
 
 def attach_predictions(trades: list[Trade], conn: sqlite3.Connection,
                        model_version: str = MODEL_VERSION) -> list[Trade]:
+    """Return copies of `trades` carrying the latest prediction knowable at each entry."""
     out = []
     for t in trades:
         pr = prediction_as_of(t.deal_id, t.entry_date, conn, model_version)

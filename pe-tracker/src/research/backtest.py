@@ -71,6 +71,7 @@ class Trade:
 
 
 def _days(a: str, b: str) -> int:
+    """Whole calendar days from date `b` to date `a`."""
     return (date.fromisoformat(a[:10]) - date.fromisoformat(b[:10])).days
 
 

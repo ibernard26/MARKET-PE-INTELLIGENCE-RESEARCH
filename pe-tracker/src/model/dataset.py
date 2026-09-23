@@ -50,6 +50,7 @@ CLOSE_EVENTS = {"closing"}
 
 
 def _num(v) -> Optional[float]:
+    """Coerce a feature value to float, keeping None as None (never 0)."""
     if v is None or isinstance(v, str):
         return None
     return float(v)
@@ -97,6 +98,9 @@ class FeatureDateError(ValueError):
 
 def build_row(deal_id: str, feature_as_of: str, cutoff: str,
               conn: sqlite3.Connection, market_ctx=None) -> dict:
+    """Build one candidate training row: point-in-time features at `feature_as_of`
+    plus the label knowable at `cutoff` (label may be None = censored).
+    """
     feats = ft.build_features_for_deal(deal_id, feature_as_of,
                                        market_ctx=market_ctx, conn=conn)
     lab = label_as_of(deal_id, cutoff, conn)

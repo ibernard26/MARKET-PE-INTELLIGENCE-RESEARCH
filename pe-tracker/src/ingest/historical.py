@@ -17,12 +17,14 @@ from ..research.observations import Observation, record_observation
 
 
 class HistoricalDealProvider(Protocol):
+    """Contract a real, sourced historical-deal feed must satisfy."""
     name: str
 
     def deals(self) -> Iterable[dict]:
         """dicts with deal_id, announce_date (+ optional ledger fields), source."""
 
     def observations(self) -> Iterable[Observation]:
+        """Yield sourced Observation objects."""
         ...
 
     def events(self) -> Iterable[dict]:
@@ -34,14 +36,17 @@ class UnconfiguredProvider:
     name = "unconfigured"
 
     def _fail(self):
+        """Raise: an unconfigured provider must never return invented data."""
         raise NotImplementedError(
             "no historical deal provider configured — supply a sourced provider; "
             "data is never fabricated")
 
     def deals(self):
+        """Yield deal ledger entries."""
         self._fail()
 
     def observations(self):
+        """Yield sourced Observation objects."""
         self._fail()
 
     def events(self):
@@ -49,6 +54,7 @@ class UnconfiguredProvider:
 
 
 def ingest(provider: HistoricalDealProvider, conn: sqlite3.Connection) -> dict:
+    """Load a provider's records through the append-only, bitemporal writers; returns counts."""
     n_d = n_o = n_e = 0
     for d in provider.deals():
         if not d.get("source"):

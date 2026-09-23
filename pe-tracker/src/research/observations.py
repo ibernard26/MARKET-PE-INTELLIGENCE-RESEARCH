@@ -56,6 +56,12 @@ class ObservationOverwriteError(RuntimeError):
 
 @dataclass
 class Observation:
+    """One sourced, timestamped snapshot of a deal's terms and/or market prints.
+
+    Only deal_id, observation_timestamp (valid time) and source are required;
+    every other field is optional and stays None when not reported. Pass
+    `known_at` when the source's publication time is reliably known.
+    """
     deal_id: str
     observation_timestamp: str
     source: str
@@ -89,6 +95,7 @@ class Observation:
             raise ValueError(f"invalid status {self.status!r}; allowed: {sorted(VALID_STATUS)}")
 
     def _row(self):
+        """Serialize to the column order of OBS_FIELDS, resolving known_at and its basis."""
         d = asdict(self)
         d["known_at"], d["known_at_basis"] = resolve_known_at(self.known_at,
                                                               self.source_timestamp)
@@ -123,6 +130,7 @@ def record_observation(obs: Observation, conn: sqlite3.Connection = None) -> Non
 
 
 def record_many(observations, conn: sqlite3.Connection = None) -> int:
+    """Append several observations in one transaction; any key clash aborts (append-only)."""
     n = 0
     if conn is not None:
         for o in observations:
@@ -137,6 +145,7 @@ def record_many(observations, conn: sqlite3.Connection = None) -> int:
 
 
 def _decode(row: sqlite3.Row) -> dict:
+    """sqlite Row -> dict, decoding the JSON attribute columns."""
     d = dict(row)
     for k in _JSON_FIELDS:
         if d.get(k):
@@ -174,6 +183,7 @@ def latest_as_of(deal_id: str, as_of: str, conn: sqlite3.Connection = None) -> O
 
 
 def _age_days(ts: str, as_of: str) -> float:
+    """Age of a print at `as_of`, in fractional days (drives the no-forward-fill window)."""
     return (datetime.fromisoformat(normalize_as_of(as_of)[:19])
             - datetime.fromisoformat(ts[:19])).total_seconds() / 86400.0
 

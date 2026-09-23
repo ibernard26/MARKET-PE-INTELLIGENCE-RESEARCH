@@ -42,6 +42,12 @@ class InsufficientDataError(ValueError):
 
 
 class BreakModel:
+    """L2-regularized logistic model for P(deal breaks).
+
+    Lifecycle: fit() on training rows -> predict_proba() on new rows ->
+    to_dict()/from_dict() for the registry. All preprocessing state
+    (medians, indicators, means, stds) is learned in fit() and frozen.
+    """
     def __init__(self, features=FEATURES, hyperparameters=None):
         self.features = list(features)
         self.hp = dict(hyperparameters or HYPERPARAMETERS)
@@ -55,6 +61,7 @@ class BreakModel:
 
     # ------------------------------------------------------------ design
     def _design(self, xs: list[dict]) -> np.ndarray:
+        """Raw design matrix: imputed feature columns, then 0/1 missingness indicators."""
         cols = []
         for f in self.features:
             cols.append([self.medians[f] if x.get(f) is None else x[f] for x in xs])
@@ -63,6 +70,7 @@ class BreakModel:
         return np.array(cols, dtype=float).T if cols else np.zeros((len(xs), 0))
 
     def _fit_preprocessing(self, xs):
+        """Learn medians, indicators and standardization from TRAINING rows only; return standardized X."""
         for f in self.features:
             vals = [x[f] for x in xs if x.get(f) is not None]
             # all-missing in training: median undefined -> 0 AFTER standardization
@@ -78,6 +86,7 @@ class BreakModel:
 
     # --------------------------------------------------------------- fit
     def fit(self, xs: list[dict], ys: list[int], min_n: int = MIN_SAMPLE_N):
+        """Fit on training rows; raises InsufficientDataError below MIN_SAMPLE_N or with < 2 of either class."""
         n, n_pos = len(ys), int(sum(ys))
         if n < min_n or n_pos < MIN_CLASS_N or (n - n_pos) < MIN_CLASS_N:
             raise InsufficientDataError(
@@ -94,15 +103,18 @@ class BreakModel:
         return self
 
     def decision_function(self, xs: list[dict]) -> np.ndarray:
+        """Log-odds of breaking for each row, using the frozen preprocessing."""
         if self.coef is None:
             raise RuntimeError("model is not fitted")
         Z = (self._design(xs) - self.means) / self.stds
         return Z @ self.coef + self.intercept
 
     def predict_raw(self, xs) -> np.ndarray:
+        """Uncalibrated logistic probabilities (what v1 validates and stores)."""
         return 1.0 / (1.0 + np.exp(-self.decision_function(xs)))
 
     def predict_proba(self, xs) -> np.ndarray:
+        """Probabilities after any calibration mapping (v1: none, so equal to predict_raw)."""
         raw = self.predict_raw(xs)
         cal = self.calibration
         if cal["method"] == "platt":
@@ -147,6 +159,7 @@ class BreakModel:
 
     # ------------------------------------------------------ serialization
     def to_dict(self) -> dict:
+        """JSON-serializable snapshot of everything needed to reproduce predictions exactly."""
         return {"model_id": MODEL_ID, "model_version": MODEL_VERSION,
                 "feature_schema_version": FEATURE_SCHEMA_VERSION,
                 "features": self.features, "hyperparameters": self.hp,
@@ -159,6 +172,7 @@ class BreakModel:
 
     @classmethod
     def from_dict(cls, d: dict) -> "BreakModel":
+        """Rebuild a fitted model from to_dict(); refuses a mismatched feature schema."""
         if d["feature_schema_version"] != FEATURE_SCHEMA_VERSION:
             raise ValueError(f"feature schema {d['feature_schema_version']} != "
                              f"{FEATURE_SCHEMA_VERSION}")
@@ -171,5 +185,6 @@ class BreakModel:
 
 
 def _logit(p):
+    """Numerically safe log(p / (1 - p))."""
     p = np.clip(np.asarray(p, dtype=float), 1e-9, 1 - 1e-9)
     return np.log(p / (1 - p))

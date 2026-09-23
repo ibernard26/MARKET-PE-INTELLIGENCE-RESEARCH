@@ -11,6 +11,7 @@ from typing import Optional
 
 
 def expected_value(p_break: float, upside: float, downside: float) -> float:
+    """Per-share EV of holding the arb: (1 - p)·upside − p·downside."""
     if not 0.0 <= p_break <= 1.0:
         raise ValueError("p_break must be in [0, 1]")
     if upside is None or downside is None:
@@ -25,6 +26,7 @@ def breakeven_p(upside: float, downside: float) -> Optional[float]:
 
 def decide(p_break: float, upside: float, downside: float,
            t_star: Optional[float]) -> dict:
+    """Enter only if EV > 0 and p is below the frozen, pre-test threshold t*."""
     ev = expected_value(p_break, upside, downside)
     if t_star is None:
         return {"action": "no_trade", "ev": ev,

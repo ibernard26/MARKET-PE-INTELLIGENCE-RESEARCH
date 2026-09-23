@@ -44,6 +44,7 @@ def offer_value(o: dict) -> tuple[Optional[float], str]:
 
 
 def _days(a: str, b: str) -> Optional[int]:
+    """Whole calendar days from date `b` to date `a`; None if either is unparseable."""
     try:
         return (date.fromisoformat(a[:10]) - date.fromisoformat(b[:10])).days
     except Exception:
@@ -51,6 +52,7 @@ def _days(a: str, b: str) -> Optional[int]:
 
 
 def _annualize(period_ret: Optional[float], days: Optional[int]) -> Optional[float]:
+    """Simple (non-compounded) annualization of a period return; None if undefined."""
     if period_ret is None or not days or days <= 0:
         return None
     return period_ret * (365.0 / days)

@@ -17,6 +17,7 @@ from .validation import walk_forward
 
 
 def run(cutoff: str) -> dict:
+    """Build the dataset and walk-forward on the real store as of `cutoff`; returns plain counts and results."""
     migrate_schema()
     with connect() as c:
         ts = build_training_set(cutoff, c)

@@ -47,6 +47,9 @@ def _policy(train_p, train_y, test_p, test_y, ids, min_n) -> dict:
 
 
 def fit_and_score(train_rows, test_rows, min_n: int = MIN_SAMPLE_N) -> dict:
+    """Fit on `train_rows`, freeze t* from training predictions, then grade the
+    untouched `test_rows`: model plus constant and spread baselines.
+    """
     ys = [r["label"] for r in train_rows]
     ty = [r["label"] for r in test_rows]
     out = {"n_train": len(ys), "train_pos": sum(ys), "train_neg": len(ys) - sum(ys),
@@ -81,6 +84,7 @@ def fit_and_score(train_rows, test_rows, min_n: int = MIN_SAMPLE_N) -> dict:
 
 
 def _window(train, test, cutoff, end, min_n) -> dict:
+    """Assemble one validation window's full metadata and results."""
     rows = train["rows"]
     train_start = min((r["feature_as_of"] for r in rows), default=None)
     return {"train_start": train_start, "train_end": cutoff, "train_cutoff": cutoff,
@@ -95,6 +99,7 @@ def _window(train, test, cutoff, end, min_n) -> dict:
 
 def chronological_split(conn: sqlite3.Connection, cutoff: str, horizon: str,
                         min_n: int = MIN_SAMPLE_N) -> dict:
+    """Single out-of-time split: train at `cutoff`, test feature times in (cutoff, horizon]."""
     train = build_training_set(cutoff, conn)
     evalset = build_training_set(horizon, conn)
     test = [r for r in evalset["rows"] if _in_window(r, cutoff, horizon)]

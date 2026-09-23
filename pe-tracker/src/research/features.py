@@ -16,6 +16,31 @@ from typing import Optional
 
 from . import events as ev
 from . import observations as obs
+from .market_context import MARKET_FIELDS, PointInTimeMarketContext
+
+SUPPORTED_CONSIDERATION = ("cash", "stock", "mixed")
+
+
+def offer_value(o: dict) -> tuple[Optional[float], str]:
+    """Per-share value of the consideration knowable in state `o`.
+
+    cash  : offer_price
+    stock : exchange_ratio * acquirer_price (needs a fresh acquirer print)
+    mixed : offer_price (cash component) + exchange_ratio * acquirer_price
+    unknown consideration -> None (a cash formula is never applied silently).
+    Returns (value, basis).
+    """
+    ct = o.get("consideration_type")
+    cash, ratio, acq = o.get("offer_price"), o.get("exchange_ratio"), o.get("acquirer_price")
+    if ct == "cash":
+        return cash, "cash"
+    if ct == "stock":
+        return ((ratio * acq), "stock") if (ratio is not None and acq is not None) else (None, "stock")
+    if ct == "mixed":
+        if cash is not None and ratio is not None and acq is not None:
+            return cash + ratio * acq, "mixed"
+        return None, "mixed"
+    return None, "unknown_consideration"
 
 
 def _days(a: str, b: str) -> Optional[int]:
@@ -32,15 +57,21 @@ def _annualize(period_ret: Optional[float], days: Optional[int]) -> Optional[flo
 
 
 def build_features(as_of: str, observation: Optional[dict],
-                   events: list[dict], market_ctx: dict = None) -> dict:
-    """Pure feature builder: given the latest observation knowable at `as_of`,
-    the events knowable at `as_of`, and an optional market context, return the
-    feature dict. No I/O — trivially testable for no-lookahead."""
-    market_ctx = market_ctx or {}
+                   events: list[dict],
+                   market_ctx: Optional[PointInTimeMarketContext] = None) -> dict:
+    """Pure feature builder: given the reconstructed deal state knowable at
+    `as_of` (see observations.state_as_of), the events knowable at `as_of`, and
+    an optional point-in-time market provider, return the feature dict.
+
+    `market_ctx` must be a PointInTimeMarketContext — a raw dict carries no
+    timestamps or known-at times and is rejected."""
+    if market_ctx is not None and not isinstance(market_ctx, PointInTimeMarketContext):
+        raise TypeError("market_ctx must be a PointInTimeMarketContext "
+                        "(timestamped, sourced, known-at); raw dicts are rejected")
     f: dict = {"as_of": as_of}
     o = observation or {}
 
-    offer = o.get("offer_price")
+    offer, f["offer_value_basis"] = offer_value(o)
     current = o.get("target_price")
     unaffected = o.get("unaffected_price")
     exp_close = o.get("expected_close_date")
@@ -81,22 +112,19 @@ def build_features(as_of: str, observation: Optional[dict],
     f["under_regulatory_challenge"] = bool(
         {"doj_challenge", "ftc_challenge"} & etypes) and "termination" not in etypes
 
-    # --- market environment (only if validly supplied) ---
-    f["sp_return"] = market_ctx.get("sp_return")
-    f["nasdaq_return"] = market_ctx.get("nasdaq_return")
-    f["ust10y"] = market_ctx.get("ust10y")
+    # --- market environment (point-in-time; None when not knowable) ---
+    snap = market_ctx.snapshot(as_of) if market_ctx is not None else {}
+    for k in MARKET_FIELDS:
+        f[k] = snap.get(k)
     return f
 
 
-def build_features_for_deal(deal_id: str, as_of: str, market_ctx: dict = None,
+def build_features_for_deal(deal_id: str, as_of: str,
+                            market_ctx: Optional[PointInTimeMarketContext] = None,
                             conn: sqlite3.Connection = None) -> dict:
-    """DB-backed convenience wrapper around build_features (point-in-time)."""
-    if conn is not None:
-        o = obs.latest_as_of(deal_id, as_of, conn=conn)
-        es = ev.events_as_of(deal_id, as_of, conn=conn)
-    else:
-        o = obs.latest_as_of(deal_id, as_of)
-        es = ev.events_as_of(deal_id, as_of)
+    """DB-backed wrapper: bitemporal state reconstruction + events + market."""
+    o = obs.state_as_of(deal_id, as_of, conn=conn)
+    es = ev.events_as_of(deal_id, as_of, conn=conn)
     feats = build_features(as_of, o, es, market_ctx=market_ctx)
     feats["deal_id"] = deal_id
     return feats

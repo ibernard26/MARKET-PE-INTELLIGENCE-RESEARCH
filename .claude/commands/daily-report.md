@@ -33,7 +33,7 @@ Execute the full MI PE Tracker daily cycle. Run this every weekday morning (or o
    ```
    git add tracker/MI_PE_Tracker.md outputs/daily-brief-YYYY-MM-DD.md
    git commit -m "tracker: Cycle #N update (YYYY-MM-DD)"
-   git push -u origin claude/eloquent-pasteur-id8nr1
+   git push -u origin <your-feature-branch>   # then open a PR into main
    ```
 
 ## Canonical source
@@ -53,7 +53,7 @@ Last canonical entry: June 5, 2026
 - Verifiable data only
 
 ## pe-tracker integration (event-driven layer)
-After the tracker update, if `pe-tracker/pe-tracker/` exists:
+After the tracker update, if `pe-tracker/` exists:
 1. Update deal statuses in the `deals` table from the day's verified news
    (status transitions only with a sourced resolution; pending stays pending).
 2. Run `python -m src.cli scorecard --group-by all` and append the JSON to the

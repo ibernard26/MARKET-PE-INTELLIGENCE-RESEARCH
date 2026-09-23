@@ -19,7 +19,7 @@ summer/EDT use the UTC column.)
 
 ## TRIGGER 1 — Daily Tracker Update (the loop action)
 
-**Branch:** `claude/eloquent-pasteur-id8nr1`
+**Branch:** a feature branch off the current `main` (open a PR)
 
 ```
 You are continuing the MI PE Tracker daily update cadence (next cycle in the sequence).
@@ -67,8 +67,8 @@ Tasks (≤15 research loops):
    Update "Master Log MI_PE"!A2 timestamp each touch. Never delete rows; flag any gap, never fabricate.
    Continuous coverage is Apr 20 2026 → today (May 6–Jun 4 backfilled with verified milestones).
 6. EVENT-DRIVEN STRATEGY LAYER (locked — never re-tune ad hoc). If
-   `pe-tracker/pe-tracker/` exists, run the FIXED procedure from
-   `pe-tracker/pe-tracker/STRATEGY.md` (contract version `event_driven_v1`):
+   `pe-tracker/` exists, run the FIXED procedure from
+   `pe-tracker/STRATEGY.md` (contract version `event_driven_v1`):
    a. Update the `deals` ledger ONLY from sourced, verified resolutions
       (pending → closed/broken with a resolution_date; otherwise it stays
       pending — pending deals are censored, never negatives). Never revise a
@@ -83,7 +83,7 @@ Tasks (≤15 research loops):
       drifted — fix the drift, do not weaken the test.
 7. Commit tracker/MI_PE_Tracker.md AND MI_PE_Tracking_System.xlsx (and any
    pe-tracker changes) with message "tracker: Cycle #N update (YYYY-MM-DD)"
-   and push to branch claude/eloquent-pasteur-id8nr1.
+   and push to the working feature branch (open a PR into main).
 
 Stop after 15 research-update loops.
 ```
@@ -92,7 +92,7 @@ Stop after 15 research-update loops.
 
 ## TRIGGER 2 — Weekly Memo
 
-**Branch:** `claude/eloquent-pasteur-id8nr1`
+**Branch:** a feature branch off the current `main` (open a PR)
 
 ```
 Produce the weekly PE/M&A memo for the week just ended.
@@ -124,7 +124,7 @@ Tasks:
    (through Cycle N)" and "MI PE Tracker — Deal Register & Signals (through Cycle N)".
    NO Google Docs — all Drive output is spreadsheets.
 5. EVENT-DRIVEN STRATEGY LAYER (locked). Run the same fixed procedure from
-   `pe-tracker/pe-tracker/STRATEGY.md` as the daily trigger: update `deals`
+   `pe-tracker/STRATEGY.md` as the daily trigger: update `deals`
    from sourced resolutions only, run `python -m src.cli scorecard
    --group-by quarter` and fold the deal-break read into memo section 3
    (PE & M&A Activity), regenerate the workbook (0 formula-gate failures),
@@ -134,7 +134,7 @@ Tasks:
 6. Create a Gmail draft to ibernard1116@gmail.com, subject
    "Weekly PE/M&A Memo — Week ending [Friday date]", body = the memo.
 7. Commit memos/Weekly_Memo_YYYY-MM-DD.md (and any pe-tracker changes) and
-   push to claude/eloquent-pasteur-id8nr1.
+   push to the working feature branch (open a PR into main).
 ```
 
 ---
@@ -147,8 +147,8 @@ Tasks:
 
 ## Strategy is LOCKED — it must not differentiate between cycles
 Both triggers run the one canonical strategy defined in
-`pe-tracker/pe-tracker/STRATEGY.md` (`event_driven_v1`) and pinned in
-`pe-tracker/pe-tracker/src/config.py`. The rules — event-driven deal-break
+`pe-tracker/STRATEGY.md` (`event_driven_v1`) and pinned in
+`pe-tracker/src/config.py`. The rules — event-driven deal-break
 scoring, positive class = broken, pending = censored, point-in-time (no
 lookahead), 15:1 FN:FP cost, ma5_v1 retired to baseline — are read from the
 contract, never re-tuned in a cycle. `tests/test_strategy_contract.py` fails

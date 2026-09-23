@@ -56,7 +56,8 @@ Full prompts in `automation/daily_tracker_loop.md`. Cron job IDs this session: `
 NC = Non-Consensus score 1–10 · AS = Asymmetry score 1–10
 
 ## Branch
-All work: `claude/eloquent-pasteur-id8nr1` (PR #1 open)
+Create work from the current `main` branch and use a feature branch + pull request
+for changes unless explicitly instructed otherwise.
 
 ## Key tracked themes (current conviction)
 1. AI physical picks-and-shovels: HV/grid electrical services, data-center thermal, nuclear supply chain (NC:6–8 / AS:7–9)
@@ -67,8 +68,8 @@ All work: `claude/eloquent-pasteur-id8nr1` (PR #1 open)
 
 ## Canonical strategy — LOCKED (`event_driven_v1`)
 The live research strategy is **event-driven / merger-arb deal-break scoring**,
-defined once in `pe-tracker/pe-tracker/STRATEGY.md` and pinned in
-`pe-tracker/pe-tracker/src/config.py`. Every loop cycle and every session runs
+defined once in `pe-tracker/STRATEGY.md` and pinned in
+`pe-tracker/src/config.py`. Every loop cycle and every session runs
 this same contract — it must never differentiate run to run:
 - Positive class = the deal **breaks** (`y=1 ⇔ status='broken'`); pending deals
   are **censored**, never negatives.

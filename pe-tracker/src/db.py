@@ -18,10 +18,30 @@ def connect():
         conn.close()
 
 
+_BITEMPORAL_TABLES = ("deal_market_observations", "deal_events")
+
+
+def _upgrade_bitemporal_tables(conn):
+    """Pre-bitemporal research tables (no known_at) are dropped IF EMPTY so the
+    schema script can recreate them with known_at, FK and append-only triggers.
+    A non-empty legacy table is never dropped or back-filled: its rows have no
+    supported known time, so we refuse and require an explicit migration."""
+    for t in _BITEMPORAL_TABLES:
+        cols = [r[1] for r in conn.execute(f"PRAGMA table_info({t})")]
+        if cols and "known_at" not in cols:
+            n = conn.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
+            if n:
+                raise RuntimeError(
+                    f"{t} has {n} pre-bitemporal rows without known_at; refusing to "
+                    "drop or infer known times — migrate explicitly")
+            conn.execute(f"DROP TABLE {t}")
+
+
 def init_db():
     """Create tables and seed the series registry. Safe to run repeatedly."""
     sql = (ROOT / "schema.sql").read_text()
     with connect() as conn:
+        _upgrade_bitemporal_tables(conn)
         conn.executescript(sql)
         conn.executemany(
             "INSERT OR IGNORE INTO series (series_id, label, unit, source) "
@@ -55,6 +75,7 @@ def migrate_schema():
                 raise RuntimeError(f"deals has {n} rows in the old shape; refusing to drop")
             conn.execute("DROP TABLE deals")
     with connect() as conn:
+        _upgrade_bitemporal_tables(conn)
         conn.executescript((ROOT / "schema.sql").read_text())
 
 

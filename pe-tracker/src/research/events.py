@@ -13,7 +13,7 @@ import sqlite3
 from typing import Optional
 
 from ..db import connect
-from .observations import normalize_as_of
+from .bitemporal import normalize_as_of, normalize_ts, resolve_known_at
 
 # Canonical event vocabulary. Extend deliberately; unknown types are rejected so
 # the lifecycle stays analyzable.
@@ -62,10 +62,16 @@ def _announcement_ts(deal_id: str, c: sqlite3.Connection) -> Optional[str]:
 
 def record_event(deal_id: str, event_timestamp: str, event_type: str, source: str,
                  source_timestamp: str = None, attributes: dict = None,
-                 conn: sqlite3.Connection = None) -> int:
-    """Append one lifecycle event. Validates type and ordering; returns event_id."""
+                 conn: sqlite3.Connection = None, known_at: str = None) -> int:
+    """Append one lifecycle event. Validates type and ordering; returns event_id.
+
+    `known_at` = when the event became publicly knowable (explicit, reliable
+    publication time). Falls back to source_timestamp, then ingestion time —
+    an unsupported historical known time is never inferred."""
     if not deal_id or not event_timestamp or not source:
         raise ValueError("deal_id, event_timestamp and source are required")
+    event_timestamp = normalize_ts(event_timestamp)
+    k_at, k_basis = resolve_known_at(known_at, source_timestamp)
     if event_type not in EVENT_TYPES:
         raise ValueError(f"unknown event_type {event_type!r}; allowed: {sorted(EVENT_TYPES)}")
 
@@ -85,12 +91,16 @@ def record_event(deal_id: str, event_timestamp: str, event_type: str, source: st
         try:
             cur = c.execute(
                 """INSERT INTO deal_events
-                   (deal_id, event_timestamp, event_type, source, source_timestamp, attributes)
-                   VALUES (?,?,?,?,?,?)""",
-                (deal_id, event_timestamp, event_type, source, source_timestamp, attr_json),
+                   (deal_id, event_timestamp, event_type, source, source_timestamp,
+                    known_at, known_at_basis, attributes)
+                   VALUES (?,?,?,?,?,?,?,?)""",
+                (deal_id, event_timestamp, event_type, source, source_timestamp,
+                 k_at, k_basis, attr_json),
             )
             return cur.lastrowid
         except sqlite3.IntegrityError as exc:
+            if "orphan" in str(exc) or "FOREIGN KEY" in str(exc):
+                raise
             raise EventOverwriteError(
                 f"event already exists: ({deal_id}, {event_timestamp}, {event_type}, "
                 f"{source}) — history is append-only") from exc
@@ -102,15 +112,16 @@ def record_event(deal_id: str, event_timestamp: str, event_type: str, source: st
 
 
 def events_as_of(deal_id: str, as_of: str, conn: sqlite3.Connection = None) -> list[dict]:
-    """Chronological events for a deal knowable on/before `as_of` (no lookahead)."""
+    """Chronological events knowable at `as_of`: event_timestamp <= T AND
+    known_at <= T (bitemporal; no lookahead)."""
     sql = ("SELECT * FROM deal_events WHERE deal_id = ? AND event_timestamp <= ? "
-           "ORDER BY event_timestamp, event_id")
+           "AND known_at <= ? ORDER BY event_timestamp, event_id")
 
     cutoff = normalize_as_of(as_of)
 
     def _q(c):
         out = []
-        for r in c.execute(sql, (deal_id, cutoff)):
+        for r in c.execute(sql, (deal_id, cutoff, cutoff)):
             d = dict(r)
             if d.get("attributes"):
                 d["attributes"] = json.loads(d["attributes"])

@@ -45,10 +45,10 @@ build on if any constant drifts. `36 tests pass` (1 skipped).
 ### 2 · `arb-intelligence/` — the production data architecture
 The same estate rebuilt as a modern stack: **DuckDB + dbt + Dagster**. Raw → Silver →
 Gold tiers, a dimensional model (`fact_price`, bitemporal `fact_deal_state`, conformed
-dims) plus a Data-Vault-style deal satellite, and the five invariants encoded as
-**dbt tests** (calendar gate, no-lookahead, censoring, no-fabrication). Verified
-end-to-end: **8 models build, 4 invariant tests pass, the Dagster job returns
-`RUN_SUCCESS`** and exports the deal scorecard.
+dims) plus a Data-Vault-style deal satellite, and the invariants encoded as
+**dbt tests** (calendar gate, no-lookahead, censoring, no-fabrication, resolution ≥
+announce, pending-has-no-label). Verified end-to-end: **8 models build, 6 invariant
+tests pass, the Dagster job returns `RUN_SUCCESS`** and exports the deal scorecard.
 
 ### 3 · `outputs/` — extension prompts
 Ready-to-use handoff prompts that carry this project's real data and rules into other
@@ -58,6 +58,30 @@ tools: one for **ChatGPT** (build the `market-arb` quant engine) and one for **G
 Plus the source intelligence layer: `MI_PE_Tracking_System.xlsx` (the canonical 5-tab
 workbook), the daily `tracker/`, weekly `memos/`, the `automation/` loop, a
 contrarian opportunities brief, and the full market-intelligence report.
+
+---
+
+## Architecture layers
+
+The platform is organized as layers, each with a single job and the same invariants:
+
+| Layer | Where | What it does |
+|---|---|---|
+| **Research** | `pe-tracker/` (Python / SQLite) | ingestion, deal-break scoring, arbitrage engines, evaluation |
+| **Production data** | `arb-intelligence/` (DuckDB / dbt / Dagster) | Raw→Silver→Gold estate with invariants as dbt tests |
+| **Historical research** | `pe-tracker/src/research/` | point-in-time observations & events, feature layer, event-driven backtester |
+| **Portfolio / risk** | `pe-tracker/src/research/portfolio.py` | exposure, concentration, expected loss, event-driven stress scenarios |
+| **Simulation** | `pe-tracker/src/research/simulation.py` | Python-first NumPy Monte Carlo (correlated breaks, VaR/ES), seeded |
+| **Future native** | *(none yet)* | C++ quant-core — **only** after benchmark justification (`docs/CPP_QUANT_CORE_CRITERIA.md`) |
+
+The historical research layer is append-only and strictly point-in-time: a feature
+vector or backtest decision at date *t* uses only what was knowable at *t*, pending
+deals are censored, and missing observations stay missing. See
+`pe-tracker/src/research/` and `pe-tracker/benchmarks/` (synthetic, performance-only).
+
+**C++ status: NOT JUSTIFIED YET** — Monte Carlo is the identified hotspot but runs
+sub-second at real book size; criteria and measured benchmarks are in
+`docs/CPP_QUANT_CORE_CRITERIA.md`.
 
 ---
 

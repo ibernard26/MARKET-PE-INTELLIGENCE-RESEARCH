@@ -19,7 +19,7 @@ def attach_predictions(trades: list[Trade], conn: sqlite3.Connection,
                        model_version: str = MODEL_VERSION) -> list[Trade]:
     out = []
     for t in trades:
-        pr = prediction_as_of(t.deal_id, t.entry_date[:10], conn, model_version)
+        pr = prediction_as_of(t.deal_id, t.entry_date, conn, model_version)
         out.append(replace(t, p_break=pr["p_break"], p_break_as_of=pr["as_of"],
                            p_break_model_version=pr["model_version"]) if pr else t)
     return out

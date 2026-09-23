@@ -7,6 +7,13 @@ across them rather than arbitrarily selecting one (as L1 would), and (iii) C is
 FIXED, not tuned — with tens of resolved deals, cross-validating C would itself
 overfit. Changing C is a versioned change (MODEL_VERSION).
 
+Calibration decision (v1 = option A): break_logit_v1 is an UNCALIBRATED
+logistic model. Validation, the registry and stored predictions use raw logistic
+probabilities; calibration bins are reported only as a diagnostic. `calibrate()`
+exists for a future version and, if used, must be fit on a chronologically
+earlier calibration slice — never on the out-of-time test set. At current sample
+sizes it is deliberately not applied.
+
 Missing data: never zero-filled. Each feature is imputed with its TRAINING-fold
 median and, when any training value was missing, a 0/1 missingness indicator is
 added so the model can learn "not reported" separately. Imputation parameters
@@ -43,7 +50,7 @@ class BreakModel:
         self.means = self.stds = None
         self.coef = None
         self.intercept: Optional[float] = None
-        self.calibration = {"method": "none"}
+        self.calibration = {"method": "none", "note": "raw logistic probabilities (v1)"}
         self.columns: list = []
 
     # ------------------------------------------------------------ design
@@ -107,7 +114,9 @@ class BreakModel:
 
     # ------------------------------------------------------- calibration
     def calibrate(self, xs, ys) -> dict:
-        """Platt when the held-out set permits (n >= MIN_SAMPLE_N and >= 5 per
+        """NOT used in v1 validation. Caller must pass a chronologically earlier
+        calibration slice (never test data).
+        Platt when the held-out set permits (n >= MIN_SAMPLE_N and >= 5 per
         class); isotonic only with >= 200 rows and >= 20 per class; else none."""
         ys = np.asarray(ys, dtype=int)
         n, n_pos = len(ys), int(ys.sum())

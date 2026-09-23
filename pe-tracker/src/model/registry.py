@@ -7,7 +7,7 @@ import subprocess
 from typing import Optional
 
 from ..config import ROOT
-from ..research.bitemporal import now_iso
+from ..research.bitemporal import normalize_as_of, now_iso
 from .dataset import FEATURE_SCHEMA_VERSION
 from .logistic import MODEL_ID, MODEL_VERSION, BreakModel
 
@@ -25,7 +25,7 @@ def register_model(model: BreakModel, training_set: dict,
     n, n_pos = training_set["n"], training_set["n_pos"]
     meta = {"model_id": MODEL_ID, "model_version": MODEL_VERSION,
             "feature_schema_version": FEATURE_SCHEMA_VERSION,
-            "training_cutoff": training_set["cutoff"], "n_train": n,
+            "training_cutoff": normalize_as_of(training_set["cutoff"]), "n_train": n,
             "n_pos": n_pos, "n_neg": n - n_pos, "prevalence": n_pos / n,
             "hyperparameters": model.hp, "calibration": model.calibration,
             "fit_timestamp": now_iso(), "code_commit": code_commit()}
@@ -45,7 +45,8 @@ def register_model(model: BreakModel, training_set: dict,
 def load_model(model_version: str, training_cutoff: str,
                conn: sqlite3.Connection) -> BreakModel:
     r = conn.execute("SELECT artifact FROM model_registry WHERE model_version = ? "
-                     "AND training_cutoff = ?", (model_version, training_cutoff)).fetchone()
+                     "AND training_cutoff = ?",
+                     (model_version, normalize_as_of(training_cutoff))).fetchone()
     if r is None:
         raise KeyError((model_version, training_cutoff))
     return BreakModel.from_dict(json.loads(r[0]))
@@ -53,8 +54,12 @@ def load_model(model_version: str, training_cutoff: str,
 
 def record_prediction(deal_id: str, as_of: str, p_break: float, training_cutoff: str,
                       conn: sqlite3.Connection, model_version: str = MODEL_VERSION) -> dict:
-    row = {"deal_id": deal_id, "as_of": as_of, "p_break": float(p_break),
-           "model_version": model_version, "training_cutoff": training_cutoff,
+    """Immutable prediction. `as_of` (information time) and `training_cutoff` are
+    normalized to ISO timestamps; a bare date means end of that day. The DB
+    rejects training_cutoff > as_of (lookahead) for either input form."""
+    row = {"deal_id": deal_id, "as_of": normalize_as_of(as_of), "p_break": float(p_break),
+           "model_version": model_version,
+           "training_cutoff": normalize_as_of(training_cutoff),
            "feature_schema_version": FEATURE_SCHEMA_VERSION,
            "prediction_timestamp": now_iso()}
     conn.execute(
@@ -72,5 +77,5 @@ def prediction_as_of(deal_id: str, as_of: str, conn: sqlite3.Connection,
     r = conn.execute(
         "SELECT * FROM model_predictions WHERE deal_id = ? AND model_version = ? "
         "AND as_of <= ? ORDER BY as_of DESC, training_cutoff DESC LIMIT 1",
-        (deal_id, model_version, as_of)).fetchone()
+        (deal_id, model_version, normalize_as_of(as_of))).fetchone()
     return dict(r) if r else None

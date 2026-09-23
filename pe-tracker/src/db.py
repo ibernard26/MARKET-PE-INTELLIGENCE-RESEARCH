@@ -35,6 +35,16 @@ def _upgrade_bitemporal_tables(conn):
                     f"{t} has {n} pre-bitemporal rows without known_at; refusing to "
                     "drop or infer known times — migrate explicitly")
             conn.execute(f"DROP TABLE {t}")
+    # model tables from before the normalized-timestamp contract: recreate if empty
+    for t in ("model_predictions", "model_registry"):
+        r = conn.execute("SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+                         (t,)).fetchone()
+        if r and "GLOB" not in r[0]:
+            n = conn.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
+            if n:
+                raise RuntimeError(f"{t} has {n} rows under the old temporal contract; "
+                                   "refusing to drop — migrate explicitly")
+            conn.execute(f"DROP TABLE {t}")
 
 
 def init_db():

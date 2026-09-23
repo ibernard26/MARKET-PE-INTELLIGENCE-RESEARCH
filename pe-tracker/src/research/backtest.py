@@ -27,6 +27,8 @@ from dataclasses import dataclass, field
 from datetime import date
 from typing import Optional
 
+from .bitemporal import normalize_as_of
+
 
 @dataclass(frozen=True)
 class BacktestConfig:
@@ -81,7 +83,8 @@ def evaluate_trade(t: Trade, cfg: BacktestConfig = BacktestConfig()) -> dict:
             f"{t.deal_id}: consideration {t.consideration_type!r} not supported — "
             "backtester is scoped to cash deals")
     if t.p_break is not None and (t.p_break_as_of is None
-                                  or t.p_break_as_of[:10] > t.entry_date[:10]):
+                                  or normalize_as_of(t.p_break_as_of)
+                                  > normalize_as_of(t.entry_date)):
         raise ValueError(f"{t.deal_id}: p_break as_of {t.p_break_as_of} is not on/before "
                          f"entry {t.entry_date} — lookahead")
     capital = t.capital if t.capital is not None else cfg.capital_per_deal

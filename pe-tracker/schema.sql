@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS model_registry (
     model_id               TEXT NOT NULL,
     model_version          TEXT NOT NULL,
     feature_schema_version TEXT NOT NULL,
-    training_cutoff        TEXT NOT NULL,
+    training_cutoff        TEXT NOT NULL CHECK (training_cutoff GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]*'),
     n_train                INTEGER NOT NULL,
     n_pos                  INTEGER NOT NULL,
     n_neg                  INTEGER NOT NULL,
@@ -166,10 +166,13 @@ BEGIN SELECT RAISE(ABORT, 'model_registry is append-only'); END;
 
 CREATE TABLE IF NOT EXISTS model_predictions (
     deal_id                TEXT NOT NULL REFERENCES deals(deal_id),
-    as_of                  TEXT NOT NULL,   -- information date of the features
+    -- Temporal contract: as_of and training_cutoff are normalized ISO timestamps
+    -- (a bare date is stored as end-of-day by src/model/registry.py), so the
+    -- lookahead check is a plain comparison valid for date AND timestamp inputs.
+    as_of                  TEXT NOT NULL CHECK (as_of GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]*'),  -- information time
     p_break                REAL NOT NULL CHECK (p_break >= 0 AND p_break <= 1),
     model_version          TEXT NOT NULL,
-    training_cutoff        TEXT NOT NULL,
+    training_cutoff        TEXT NOT NULL CHECK (training_cutoff GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]*'),
     feature_schema_version TEXT NOT NULL,
     prediction_timestamp   TEXT NOT NULL,
     PRIMARY KEY (deal_id, as_of, model_version, training_cutoff),
@@ -181,7 +184,7 @@ WHEN NOT EXISTS (SELECT 1 FROM model_registry WHERE model_version = NEW.model_ve
                  AND training_cutoff = NEW.training_cutoff)
 BEGIN SELECT RAISE(ABORT, 'prediction references unregistered model'); END;
 CREATE TRIGGER IF NOT EXISTS trg_mpred_lookahead BEFORE INSERT ON model_predictions
-WHEN NEW.training_cutoff > NEW.as_of || 'T23:59:59.999999'
+WHEN NEW.training_cutoff > NEW.as_of
 BEGIN SELECT RAISE(ABORT, 'model trained after prediction as_of (lookahead)'); END;
 CREATE TRIGGER IF NOT EXISTS trg_mpred_no_update BEFORE UPDATE ON model_predictions
 BEGIN SELECT RAISE(ABORT, 'model_predictions is immutable'); END;

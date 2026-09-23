@@ -2,7 +2,8 @@
 import sqlite3
 from contextlib import contextmanager
 
-from .config import DB_PATH, ROOT, SERIES
+from .config import DB_PATH, ROOT
+from .ingest.market_series import ALL_SERIES as SERIES
 
 
 @contextmanager

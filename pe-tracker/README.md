@@ -76,5 +76,6 @@ everything is point-in-time. See `STRATEGY.md`.
 - Phase 4 — generated workbook (`generate_workbook.py`) ✅
 
 See [docs/BITEMPORAL_POINT_IN_TIME.md](docs/BITEMPORAL_POINT_IN_TIME.md) for the valid-time / known-at / ingestion-time rules every historical read obeys.
+See [docs/BREAK_PROBABILITY_MODEL_V1.md](docs/BREAK_PROBABILITY_MODEL_V1.md) for the break-probability model (`python -m src.model.report`).
 
 _Research tooling, not investment advice._

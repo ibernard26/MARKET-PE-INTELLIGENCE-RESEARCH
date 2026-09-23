@@ -23,6 +23,7 @@ class MarketDataOverwriteError(RuntimeError):
 
 @dataclass(frozen=True)
 class MarketRecord:
+    """One immutable market print: what (field), when true (timestamp), value, source, when public (known_at)."""
     field: str
     timestamp: str       # valid time of the print (e.g. the session close)
     value: float
@@ -77,5 +78,6 @@ class PointInTimeMarketContext:
 
 
 def _age_days(ts: str, cutoff: str) -> float:
+    """Age of a print relative to the snapshot cutoff, in fractional days."""
     return (datetime.fromisoformat(cutoff[:19])
             - datetime.fromisoformat(ts[:19])).total_seconds() / 86400.0

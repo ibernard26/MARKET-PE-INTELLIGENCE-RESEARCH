@@ -7,6 +7,7 @@ from .config import DB_PATH, ROOT, SERIES
 
 @contextmanager
 def connect():
+    """Open the project SQLite DB with foreign keys ON; commits on success, always closes."""
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -34,6 +35,16 @@ def _upgrade_bitemporal_tables(conn):
                 raise RuntimeError(
                     f"{t} has {n} pre-bitemporal rows without known_at; refusing to "
                     "drop or infer known times — migrate explicitly")
+            conn.execute(f"DROP TABLE {t}")
+    # model tables from before the normalized-timestamp contract: recreate if empty
+    for t in ("model_predictions", "model_registry"):
+        r = conn.execute("SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+                         (t,)).fetchone()
+        if r and "GLOB" not in r[0]:
+            n = conn.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
+            if n:
+                raise RuntimeError(f"{t} has {n} rows under the old temporal contract; "
+                                   "refusing to drop — migrate explicitly")
             conn.execute(f"DROP TABLE {t}")
 
 
@@ -120,6 +131,7 @@ def coverage_report():
 
 
 def missing_dates(series_id):
+    """Trading days on which `series_id` has no stored close (the gap list for one series)."""
     sql = """
         SELECT c.obs_date
         FROM market_calendar c

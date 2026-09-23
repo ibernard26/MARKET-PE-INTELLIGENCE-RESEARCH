@@ -37,6 +37,7 @@ def normalize_ts(ts: str) -> str:
 
 
 def now_iso() -> str:
+    """Current UTC time as a normalized ISO timestamp (used as ingestion-time known_at)."""
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")
 
 

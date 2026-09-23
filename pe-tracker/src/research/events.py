@@ -52,6 +52,7 @@ class EventOverwriteError(RuntimeError):
 
 
 def _announcement_ts(deal_id: str, c: sqlite3.Connection) -> Optional[str]:
+    """Earliest recorded announcement valid time for a deal (lifecycle-ordering anchor)."""
     r = c.execute(
         "SELECT MIN(event_timestamp) FROM deal_events "
         "WHERE deal_id = ? AND event_type = 'announcement'",

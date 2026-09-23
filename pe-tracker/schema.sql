@@ -49,6 +49,61 @@ CREATE TABLE IF NOT EXISTS deals (
 CREATE INDEX IF NOT EXISTS ix_deals_status ON deals(status);
 CREATE INDEX IF NOT EXISTS ix_deals_date   ON deals(announce_date);
 
+-- ---------------------------------------------------------------------------
+-- Historical point-in-time research spine (feature/historical-arb-research-engine)
+-- ---------------------------------------------------------------------------
+
+-- Append-only market/deal observations. One row per (deal, as-of moment, source).
+-- Historical observations are NEVER overwritten (enforced in src/research/observations.py).
+-- observation_timestamp = the moment the fact was true (business/valid time);
+-- ingestion_timestamp    = when we recorded it (system time). Kept distinct so a
+-- point-in-time read `as_of D` uses only observation_timestamp <= D.
+CREATE TABLE IF NOT EXISTS deal_market_observations (
+    deal_id                TEXT NOT NULL,
+    observation_timestamp  TEXT NOT NULL,   -- ISO8601 business/valid time
+    source                 TEXT NOT NULL,   -- provenance (never NULL)
+    target_price           REAL,
+    offer_price            REAL,
+    unaffected_price       REAL,
+    acquirer_price         REAL,
+    announce_date          TEXT,
+    expected_close_date    TEXT,
+    resolution_date        TEXT,
+    status                 TEXT,            -- announced|pending|closed|broken|withdrawn|superseded
+    deal_type              TEXT,            -- strategic|LBO|take_private|JV|financing
+    consideration_type     TEXT,            -- cash|stock|mixed
+    exchange_ratio         REAL,            -- shares of acquirer per target share (stock/mixed)
+    deal_value_usd_mm      REAL,
+    sector                 TEXT,
+    geography              TEXT,
+    sponsor                TEXT,
+    regulatory_attrs       TEXT,            -- JSON blob (antitrust/CFIUS/CMA/EU exposure ...)
+    financing_attrs        TEXT,            -- JSON blob (financing condition/secured ...)
+    shareholder_vote_state TEXT,            -- none|required_pending|approved|rejected
+    regulatory_milestones  TEXT,            -- JSON blob (HSR/second_request/clearance ...)
+    source_timestamp       TEXT,            -- when the source published/observed it
+    ingestion_timestamp    TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (deal_id, observation_timestamp, source)
+);
+CREATE INDEX IF NOT EXISTS ix_dmo_deal ON deal_market_observations(deal_id);
+CREATE INDEX IF NOT EXISTS ix_dmo_ts   ON deal_market_observations(observation_timestamp);
+
+-- Append-only deal lifecycle events. Preserves chronology for reconstructing
+-- exactly what was knowable at any historical date.
+CREATE TABLE IF NOT EXISTS deal_events (
+    event_id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    deal_id             TEXT NOT NULL,
+    event_timestamp     TEXT NOT NULL,      -- when the event occurred (valid time)
+    event_type          TEXT NOT NULL,      -- see src/research/events.py EVENT_TYPES
+    source              TEXT NOT NULL,      -- provenance (never NULL)
+    source_timestamp    TEXT,
+    ingestion_timestamp TEXT NOT NULL DEFAULT (datetime('now')),
+    attributes          TEXT,               -- optional JSON blob
+    UNIQUE (deal_id, event_timestamp, event_type, source)
+);
+CREATE INDEX IF NOT EXISTS ix_devents_deal ON deal_events(deal_id);
+CREATE INDEX IF NOT EXISTS ix_devents_ts   ON deal_events(event_timestamp);
+
 -- Signals are recomputed, never hand-entered. Versioned by ruleset.
 CREATE TABLE IF NOT EXISTS signals (
     series_id   TEXT NOT NULL REFERENCES series(series_id),

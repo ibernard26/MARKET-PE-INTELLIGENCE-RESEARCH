@@ -10,6 +10,7 @@ import pytest
 
 from src.research import events as ev
 from src.research import features as ft
+from src.research.market_context import PointInTimeMarketContext
 from src.research.observations import Observation, record_observation
 
 SCHEMA = (Path(__file__).resolve().parents[1] / "schema.sql").read_text()
@@ -19,18 +20,33 @@ def mem():
     c = sqlite3.connect(":memory:")
     c.row_factory = sqlite3.Row
     c.executescript(SCHEMA)
+    c.execute("PRAGMA foreign_keys = ON")
+    for d in ("D1", "D2"):   # observations/events must reference a real deal
+        c.execute("INSERT INTO deals (deal_id, announce_date, status) VALUES (?, '2026-01-01', 'pending')", (d,))
     return c
 
 
+def O(*a, **k):
+    """Observation published at its valid time (explicit known_at)."""
+    k.setdefault("known_at", a[1])
+    return Observation(*a, **k)
+
+
+def rec_event(*a, **k):
+    """Event published when it occurred (explicit known_at)."""
+    k.setdefault("known_at", a[1])
+    return ev.record_event(*a, **k)
+
+
 def _seed(c):
-    record_observation(Observation(
+    record_observation(O(
         "D1", "2026-02-01T00:00:00", "sec_filing",
         offer_price=100.0, target_price=95.0, unaffected_price=80.0,
         expected_close_date="2026-08-01", deal_type="take_private",
         consideration_type="cash", deal_value_usd_mm=5000.0,
         shareholder_vote_state="required_pending",
         regulatory_attrs={"cfius": True, "antitrust": False}), conn=c)
-    ev.record_event("D1", "2026-02-01", "announcement", "s", conn=c)
+    rec_event("D1", "2026-02-01", "announcement", "s", conn=c)
 
 
 def test_economics_match_hand_work():
@@ -53,7 +69,7 @@ def test_no_lookahead_future_event_does_not_change_past_features():
     c = mem(); _seed(c)
     before = ft.build_features_for_deal("D1", "2026-05-01", conn=c)
     # a DOJ challenge occurs AFTER the as-of date
-    ev.record_event("D1", "2026-06-15", "doj_challenge", "s", conn=c)
+    rec_event("D1", "2026-06-15", "doj_challenge", "s", conn=c)
     after = ft.build_features_for_deal("D1", "2026-05-01", conn=c)
     assert before == after                                  # as-of view is immutable
     # but as-of a later date the challenge is visible
@@ -63,7 +79,7 @@ def test_no_lookahead_future_event_does_not_change_past_features():
 
 def test_missing_inputs_yield_none_not_zero():
     c = mem()
-    record_observation(Observation("D2", "2026-03-01T00:00:00", "s",
+    record_observation(O("D2", "2026-03-01T00:00:00", "s",
                                    offer_price=50.0), conn=c)   # no current/unaffected
     f = ft.build_features_for_deal("D2", "2026-03-02", conn=c)
     assert f["raw_spread"] is None
@@ -75,6 +91,14 @@ def test_market_context_passes_through_only_when_supplied():
     c = mem(); _seed(c)
     f0 = ft.build_features_for_deal("D1", "2026-03-01", conn=c)
     assert f0["sp_return"] is None
-    f1 = ft.build_features_for_deal("D1", "2026-03-01",
-                                    market_ctx={"sp_return": 0.012, "ust10y": 4.5}, conn=c)
+    mkt = PointInTimeMarketContext()
+    mkt.add("sp_return", "2026-02-27T16:00:00", 0.012, "fred:SP500", known_at="2026-02-27T16:30:00")
+    mkt.add("ust10y", "2026-02-27T16:00:00", 4.5, "fred:DGS10", known_at="2026-02-28T09:00:00")
+    f1 = ft.build_features_for_deal("D1", "2026-03-01", market_ctx=mkt, conn=c)
     assert f1["sp_return"] == 0.012 and f1["ust10y"] == 4.5
+
+
+def test_raw_dict_market_context_is_rejected():
+    c = mem(); _seed(c)
+    with pytest.raises(TypeError):
+        ft.build_features_for_deal("D1", "2026-03-01", market_ctx={"sp_return": 0.01}, conn=c)

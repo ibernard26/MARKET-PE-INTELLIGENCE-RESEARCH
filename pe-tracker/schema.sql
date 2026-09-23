@@ -53,19 +53,32 @@ CREATE INDEX IF NOT EXISTS ix_deals_date   ON deals(announce_date);
 -- Historical point-in-time research spine (feature/historical-arb-research-engine)
 -- ---------------------------------------------------------------------------
 
--- Append-only market/deal observations. One row per (deal, as-of moment, source).
--- Historical observations are NEVER overwritten (enforced in src/research/observations.py).
--- observation_timestamp = the moment the fact was true (business/valid time);
--- ingestion_timestamp    = when we recorded it (system time). Kept distinct so a
--- point-in-time read `as_of D` uses only observation_timestamp <= D.
+-- Bitemporal research spine. Every fact carries THREE times:
+--   valid time      (observation_timestamp / event_timestamp): when the fact was true
+--                   or the event occurred;
+--   known_at        : when the information became publicly knowable. Set from an
+--                   explicit, reliable source publication timestamp; otherwise from
+--                   source_timestamp; otherwise the ingestion time (live capture).
+--                   A historical known time is NEVER inferred without support —
+--                   an unsupported backfill is therefore invisible to past as-of reads.
+--   ingestion_timestamp: when this system recorded it.
+-- A point-in-time read as_of T admits a row only if valid_time <= T AND known_at <= T.
+-- known_at_basis records which rule produced known_at (explicit|source_timestamp|ingestion).
+--
+-- Integrity is enforced at the DB layer, not only in application code:
+--   * deal_id must reference deals(deal_id)  (FK + BEFORE INSERT trigger, so orphans
+--     are rejected even when PRAGMA foreign_keys is off);
+--   * rows are append-only: BEFORE UPDATE / BEFORE DELETE triggers abort.
+
+-- Append-only market/deal observations. One row per (deal, valid moment, source).
 CREATE TABLE IF NOT EXISTS deal_market_observations (
-    deal_id                TEXT NOT NULL,
-    observation_timestamp  TEXT NOT NULL,   -- ISO8601 business/valid time
+    deal_id                TEXT NOT NULL REFERENCES deals(deal_id),
+    observation_timestamp  TEXT NOT NULL,   -- ISO8601 valid time
     source                 TEXT NOT NULL,   -- provenance (never NULL)
-    target_price           REAL,
-    offer_price            REAL,
+    target_price           REAL,            -- market print (never forward-filled)
+    offer_price            REAL,            -- cash consideration per share (state term)
     unaffected_price       REAL,
-    acquirer_price         REAL,
+    acquirer_price         REAL,            -- market print (never forward-filled)
     announce_date          TEXT,
     expected_close_date    TEXT,
     resolution_date        TEXT,
@@ -81,28 +94,51 @@ CREATE TABLE IF NOT EXISTS deal_market_observations (
     financing_attrs        TEXT,            -- JSON blob (financing condition/secured ...)
     shareholder_vote_state TEXT,            -- none|required_pending|approved|rejected
     regulatory_milestones  TEXT,            -- JSON blob (HSR/second_request/clearance ...)
-    source_timestamp       TEXT,            -- when the source published/observed it
-    ingestion_timestamp    TEXT NOT NULL DEFAULT (datetime('now')),
+    source_timestamp       TEXT,            -- when the source published it (if stated)
+    known_at               TEXT NOT NULL,   -- when it became publicly knowable
+    known_at_basis         TEXT NOT NULL CHECK (known_at_basis IN
+                               ('explicit','source_timestamp','ingestion')),
+    ingestion_timestamp    TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%f','now')),
     PRIMARY KEY (deal_id, observation_timestamp, source)
 );
-CREATE INDEX IF NOT EXISTS ix_dmo_deal ON deal_market_observations(deal_id);
-CREATE INDEX IF NOT EXISTS ix_dmo_ts   ON deal_market_observations(observation_timestamp);
+CREATE INDEX IF NOT EXISTS ix_dmo_deal  ON deal_market_observations(deal_id);
+CREATE INDEX IF NOT EXISTS ix_dmo_ts    ON deal_market_observations(observation_timestamp);
+CREATE INDEX IF NOT EXISTS ix_dmo_known ON deal_market_observations(known_at);
 
--- Append-only deal lifecycle events. Preserves chronology for reconstructing
--- exactly what was knowable at any historical date.
+CREATE TRIGGER IF NOT EXISTS trg_dmo_fk BEFORE INSERT ON deal_market_observations
+WHEN NOT EXISTS (SELECT 1 FROM deals WHERE deal_id = NEW.deal_id)
+BEGIN SELECT RAISE(ABORT, 'orphan observation: deal_id not in deals'); END;
+CREATE TRIGGER IF NOT EXISTS trg_dmo_no_update BEFORE UPDATE ON deal_market_observations
+BEGIN SELECT RAISE(ABORT, 'deal_market_observations is append-only'); END;
+CREATE TRIGGER IF NOT EXISTS trg_dmo_no_delete BEFORE DELETE ON deal_market_observations
+BEGIN SELECT RAISE(ABORT, 'deal_market_observations is append-only'); END;
+
+-- Append-only deal lifecycle events.
 CREATE TABLE IF NOT EXISTS deal_events (
     event_id            INTEGER PRIMARY KEY AUTOINCREMENT,
-    deal_id             TEXT NOT NULL,
+    deal_id             TEXT NOT NULL REFERENCES deals(deal_id),
     event_timestamp     TEXT NOT NULL,      -- when the event occurred (valid time)
     event_type          TEXT NOT NULL,      -- see src/research/events.py EVENT_TYPES
     source              TEXT NOT NULL,      -- provenance (never NULL)
     source_timestamp    TEXT,
-    ingestion_timestamp TEXT NOT NULL DEFAULT (datetime('now')),
+    known_at            TEXT NOT NULL,      -- when it became publicly knowable
+    known_at_basis      TEXT NOT NULL CHECK (known_at_basis IN
+                            ('explicit','source_timestamp','ingestion')),
+    ingestion_timestamp TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%f','now')),
     attributes          TEXT,               -- optional JSON blob
     UNIQUE (deal_id, event_timestamp, event_type, source)
 );
-CREATE INDEX IF NOT EXISTS ix_devents_deal ON deal_events(deal_id);
-CREATE INDEX IF NOT EXISTS ix_devents_ts   ON deal_events(event_timestamp);
+CREATE INDEX IF NOT EXISTS ix_devents_deal  ON deal_events(deal_id);
+CREATE INDEX IF NOT EXISTS ix_devents_ts    ON deal_events(event_timestamp);
+CREATE INDEX IF NOT EXISTS ix_devents_known ON deal_events(known_at);
+
+CREATE TRIGGER IF NOT EXISTS trg_dev_fk BEFORE INSERT ON deal_events
+WHEN NOT EXISTS (SELECT 1 FROM deals WHERE deal_id = NEW.deal_id)
+BEGIN SELECT RAISE(ABORT, 'orphan event: deal_id not in deals'); END;
+CREATE TRIGGER IF NOT EXISTS trg_dev_no_update BEFORE UPDATE ON deal_events
+BEGIN SELECT RAISE(ABORT, 'deal_events is append-only'); END;
+CREATE TRIGGER IF NOT EXISTS trg_dev_no_delete BEFORE DELETE ON deal_events
+BEGIN SELECT RAISE(ABORT, 'deal_events is append-only'); END;
 
 -- Signals are recomputed, never hand-entered. Versioned by ruleset.
 CREATE TABLE IF NOT EXISTS signals (

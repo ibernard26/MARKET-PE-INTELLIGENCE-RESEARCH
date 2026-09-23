@@ -75,4 +75,6 @@ everything is point-in-time. See `STRATEGY.md`.
 - Phase 3 — deal-break evaluation (metrics, scorecard, strategy contract) ✅
 - Phase 4 — generated workbook (`generate_workbook.py`) ✅
 
+See [docs/BITEMPORAL_POINT_IN_TIME.md](docs/BITEMPORAL_POINT_IN_TIME.md) for the valid-time / known-at / ingestion-time rules every historical read obeys.
+
 _Research tooling, not investment advice._

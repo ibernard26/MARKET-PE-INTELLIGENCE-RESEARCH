@@ -5,8 +5,9 @@ rejection of a resolution that precedes entry (no lookahead).
 """
 import pytest
 
-from src.research.backtest import (BacktestConfig, Trade, evaluate_trade,
-                                   run_backtest)
+from src.research.backtest import (BacktestConfig, Trade,
+                                   UnsupportedConsiderationError,
+                                   evaluate_trade, run_backtest)
 
 # No transaction costs makes the arithmetic checkable by hand.
 NOCOST = BacktestConfig(tx_cost_bps=0.0, capital_per_deal=1_000_000.0)
@@ -25,15 +26,59 @@ def test_closed_deal_pnl_hand_worked():
     assert r["is_break_loss"] is False
 
 
-def test_broken_deal_is_a_loss_to_unaffected():
-    # buy at 95, deal breaks -> exit at unaffected 80. gross = shares*(80-95) < 0
+def test_broken_deal_without_sourced_exit_is_modeled_not_realized():
+    # buy at 95, deal breaks, no sourced post-break print -> modeled exit at
+    # unaffected 80. Reported as modeled_break_pnl, NEVER as realized_pnl.
     t = Trade("B", "2026-02-01", entry_price=95.0, offer_price=100.0,
               unaffected_price=80.0, expected_close_date="2026-08-01",
               status="broken", resolution_date="2026-05-01")
     r = evaluate_trade(t, NOCOST)
-    assert r["realized_pnl"] == pytest.approx(1_000_000 / 95 * (80 - 95))
-    assert r["realized_pnl"] < 0
+    assert r["pnl_type"] == "modeled_break"
+    assert r["realized_pnl"] is None
+    assert r["modeled_break_pnl"] == pytest.approx(1_000_000 / 95 * (80 - 95))
+    assert r["exit_source"] == "modeled:unaffected_price"
     assert r["is_break_loss"] is True
+
+
+def test_broken_deal_with_sourced_exit_is_realized():
+    t = Trade("B", "2026-02-01", 95.0, 100.0, 80.0, "2026-08-01",
+              status="broken", resolution_date="2026-05-01",
+              break_exit_price=83.0, break_exit_source="nyse_close",
+              break_exit_timestamp="2026-05-02T16:00:00")
+    r = evaluate_trade(t, NOCOST)
+    assert r["pnl_type"] == "realized"
+    assert r["realized_pnl"] == pytest.approx(1_000_000 / 95 * (83 - 95))
+    assert r["modeled_break_pnl"] is None
+    assert (r["exit_source"], r["exit_timestamp"]) == ("nyse_close", "2026-05-02T16:00:00")
+
+
+def test_sourced_exit_requires_provenance_and_post_break_timestamp():
+    base = dict(status="broken", resolution_date="2026-05-01", break_exit_price=83.0)
+    with pytest.raises(ValueError):
+        evaluate_trade(Trade("B", "2026-02-01", 95.0, 100.0, 80.0, "2026-08-01", **base), NOCOST)
+    with pytest.raises(ValueError):   # exit before the break is lookahead-impossible
+        evaluate_trade(Trade("B", "2026-02-01", 95.0, 100.0, 80.0, "2026-08-01", **base,
+                             break_exit_source="s", break_exit_timestamp="2026-04-01"), NOCOST)
+
+
+def test_break_without_exit_or_fallback_is_unresolved():
+    t = Trade("B", "2026-02-01", 95.0, 100.0, None, "2026-08-01",
+              status="broken", resolution_date="2026-05-01")
+    r = evaluate_trade(t, NOCOST)
+    assert r["pnl_type"] == "unresolved_exit"
+    assert r["realized_pnl"] is None and r["modeled_break_pnl"] is None
+    t2 = Trade("B", "2026-02-01", 95.0, 100.0, 80.0, "2026-08-01",
+               status="broken", resolution_date="2026-05-01")
+    r2 = evaluate_trade(t2, BacktestConfig(tx_cost_bps=0.0, allow_modeled_break_fallback=False))
+    assert r2["pnl_type"] == "unresolved_exit"
+
+
+@pytest.mark.parametrize("ct", ["stock", "mixed"])
+def test_non_cash_deals_are_rejected_not_run_through_cash_formulas(ct):
+    t = Trade("S", "2026-02-01", 95.0, 100.0, 80.0, "2026-08-01",
+              status="closed", resolution_date="2026-08-01", consideration_type=ct)
+    with pytest.raises(UnsupportedConsiderationError):
+        evaluate_trade(t, NOCOST)
 
 
 def test_transaction_costs_reduce_pnl():
@@ -70,6 +115,8 @@ def test_run_backtest_excludes_pending_from_realized_summary():
     assert out["summary"]["n_resolved"] == 2
     assert out["summary"]["n_censored_pending"] == 1
     assert out["summary"]["break_rate"] == pytest.approx(0.5)
-    # realized P&L reconciles to the sum of resolved positions
+    # realized P&L reconciles to realized positions only; the modeled break is separate
+    assert out["summary"]["n_realized"] == 1 and out["summary"]["n_modeled_break"] == 1
     assert out["summary"]["realized_pnl"] == pytest.approx(
-        sum(p["realized_pnl"] for p in out["positions"]))
+        sum(p["realized_pnl"] for p in out["positions"] if p["pnl_type"] == "realized"))
+    assert out["summary"]["modeled_break_pnl"] == pytest.approx(1_000_000 / 95 * (80 - 95))

@@ -66,6 +66,25 @@ def cmd_scorecard(args):
                                      args.group_by), indent=2))
 
 
+def cmd_arb(args):
+    from .arb import crude_spread, index_rv, merger
+    out = {}
+    if args.engine in ("all", "merger"):
+        out["merger"] = merger.rank_live_deals(as_of=args.as_of)
+    if args.engine in ("all", "crude"):
+        out["crude_spread"] = crude_spread.latest(window=args.window, band=args.band)
+    if args.engine in ("all", "index"):
+        df = index_rv.run(window=args.window).dropna(subset=["zscore"])
+        out["index_rv"] = ({"status": "no_data",
+                            "note": "need a full window of both indices"}
+                           if df.empty else
+                           {"date": df.iloc[-1]["date"].strftime("%Y-%m-%d"),
+                            "ratio": round(float(df.iloc[-1]["ratio"]), 4),
+                            "zscore": round(float(df.iloc[-1]["zscore"]), 2),
+                            "note": "BASELINE ONLY — exists to be beaten"})
+    print(json.dumps(out, indent=2, default=str))
+
+
 def cmd_backtest(args):
     from .compute.signals import backtest, run
     print(json.dumps(backtest(run(args.series, persist_result=False)), indent=2))
@@ -96,6 +115,13 @@ def main():
     a.add_argument("--group-by", dest="group_by", default="all",
                    choices=["all", "quarter", "geography", "deal_type"])
     a.set_defaults(fn=cmd_scorecard)
+    a = sub.add_parser("arb")
+    a.add_argument("--engine", default="all",
+                   choices=["all", "merger", "crude", "index"])
+    a.add_argument("--as-of", dest="as_of")
+    a.add_argument("--window", type=int, default=20)
+    a.add_argument("--band", type=float, default=2.0)
+    a.set_defaults(fn=cmd_arb)
     a = sub.add_parser("backtest")
     a.add_argument("--series", default="SP500", choices=list(SERIES))
     a.set_defaults(fn=cmd_backtest)

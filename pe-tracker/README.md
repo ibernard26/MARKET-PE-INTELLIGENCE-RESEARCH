@@ -38,8 +38,21 @@ python -m src.cli signals --tail 15
 python -m src.cli sweep                                  # threshold grid (thin-flagged)
 python seed_deals.py                                     # seed the deal ledger
 python -m src.cli scorecard --group-by all               # deal-break scorecard
+python -m src.cli arb                                    # arbitrage opportunities (all engines)
 pytest -q
 ```
+
+## Arbitrage engines (`src/arb/`)
+- **Merger arb** (`merger.py`) — for each live (pending) deal: gross spread,
+  annualized return, and **break-adjusted EV** `= (1-p_break)·upside − p_break·downside`,
+  ranked by annualized break-adjusted EV. Point-in-time (only deals pending as-of
+  the date; horizon measured from it). Deals without a stored live quote surface as
+  `awaiting_quote`, never fabricated. (Seed quotes are illustrative.)
+- **Crude spread** (`crude_spread.py`) — Brent−WTI spread from the store, rolling
+  z-score + percentile, mean-reversion entry flags. Fully data-backed; a missing leg
+  stays NaN, never filled.
+- **Index RV** (`index_rv.py`) — S&P 500 / NASDAQ ratio z-score, explicitly a weak
+  **baseline** (exists to be beaten, not traded).
 
 ## Data (FRED)
 | Series | FRED id |

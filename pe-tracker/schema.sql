@@ -39,6 +39,10 @@ CREATE TABLE IF NOT EXISTS deals (
   resolution_date DATE,           -- NULL while pending
   status          TEXT CHECK (status IN ('pending','closed','broken')),
   p_break         REAL,           -- model score set AT announce (point-in-time)
+  offer_price     REAL,           -- arb: per-share offer (NULL if n/a)
+  current_price   REAL,           -- arb: live quote (NULL = awaiting_quote; illustrative in seed)
+  unaffected_price REAL,          -- arb: pre-announcement price
+  expected_close_date DATE,       -- arb: expected close (point-in-time horizon)
   model_version   TEXT,
   source_note     TEXT
 );

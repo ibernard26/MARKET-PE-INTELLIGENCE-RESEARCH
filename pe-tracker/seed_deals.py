@@ -43,6 +43,29 @@ if __name__ == "__main__":
                 sector, geography, offer_premium, deal_type, resolution_date,
                 status, p_break, model_version, source_note)
                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", DEALS)
+
+        # ILLUSTRATIVE arb quote inputs (not live market data) for the two
+        # clean take-private / strategic cash deals, so the merger-arb ranker
+        # demonstrably runs. The JV, carve-out and financing deals are left
+        # without quotes and surface as `awaiting_quote` — never fabricated.
+        # Units: easyJet in pence; Organon in USD. Replace with a live quote
+        # feed for real use.
+        illustrative = [
+            # deal_id, offer_price, current_price, unaffected_price, expected_close
+            ("EZJ-CASTLELAKE-2026", 690.0, 662.0, 505.0, "2026-12-31"),
+            ("ORGN-SUNP-2026", 42.00, 39.60, 31.50, "2027-03-31"),
+        ]
+        for deal_id, offer, cur, unaff, close in illustrative:
+            conn.execute(
+                """UPDATE deals SET offer_price=?, current_price=?,
+                       unaffected_price=?, expected_close_date=?,
+                       source_note = source_note || ' (illustrative arb quotes)'
+                   WHERE deal_id=?""",
+                (offer, cur, unaff, close, deal_id),
+            )
+
         n = conn.execute("SELECT COUNT(*) FROM deals").fetchone()[0]
         pend = conn.execute("SELECT COUNT(*) FROM deals WHERE status='pending'").fetchone()[0]
-    print(f"seeded {n} deals ({pend} pending/censored)")
+        quoted = conn.execute(
+            "SELECT COUNT(*) FROM deals WHERE current_price IS NOT NULL").fetchone()[0]
+    print(f"seeded {n} deals ({pend} pending/censored, {quoted} with illustrative arb quotes)")

@@ -42,6 +42,12 @@ def migrate_schema():
         cols = [r["name"] for r in conn.execute("PRAGMA table_info(prices)")]
         if "is_derived" not in cols:
             conn.execute("ALTER TABLE prices ADD COLUMN is_derived INTEGER NOT NULL DEFAULT 0")
+        dealcols = [r["name"] for r in conn.execute("PRAGMA table_info(deals)")]
+        for coldef in ("offer_price REAL", "current_price REAL",
+                       "unaffected_price REAL", "expected_close_date DATE"):
+            name = coldef.split()[0]
+            if dealcols and name not in dealcols:
+                conn.execute(f"ALTER TABLE deals ADD COLUMN {coldef}")
         dcols = [r["name"] for r in conn.execute("PRAGMA table_info(deals)")]
         if dcols and "p_break" not in dcols:
             n = conn.execute("SELECT COUNT(*) FROM deals").fetchone()[0]

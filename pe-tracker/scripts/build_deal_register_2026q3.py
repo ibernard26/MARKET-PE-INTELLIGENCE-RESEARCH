@@ -13,6 +13,9 @@ Conventions: unknown values stay empty (never estimated); `verification` is
   press_multi    - two or more independent press sources agree
   press_single   - one source; treat as provisional
   reported_only  - media report / non-binding; not a signed deal
+Rows 050+ came from the ChatGPT staging package (see
+data/public_mna_intelligence/2026-07-01_2026-09-24/) and were re-checked here
+with EDGAR metadata or independent search before inclusion.
 Run:  python scripts/build_deal_register_2026q3.py
 """
 import csv
@@ -118,7 +121,7 @@ add(deal_id="2026Q3-008", window_event="closed", window_event_date="2026-07-31",
     resolution_date="2026-07-31", sector="semiconductor foundry / quantum", geography="US",
     sec_cik="1819974", sec_resolution_accession="0001193125-26-327137", verification="sec_confirmed",
     sources="https://www.nasdaq.com/press-release/ionq-completes-acquisition-skywater-technology-2026-07-31",
-    notes="Announced pre-window (Jan 2026). FTC early termination granted per search summary (unverified).")
+    notes="Announced pre-window (Jan 2026). FTC granted early termination 2026-07-31 (FTC chairman statement; per ChatGPT staging MNA-20260731-IONQ-SKYWATER and search summary; ftc.gov unreachable here).")
 
 add(deal_id="2026Q3-009", window_event="announced", window_event_date="2026-07",
     target="Seattle Seahawks", acquirer="Khosla family-led group", deal_type="control sale",
@@ -175,7 +178,7 @@ add(deal_id="2026Q3-014", window_event="announced", window_event_date="2026-08-0
     status_2026_09_24="pending", expected_close="by end-Mar 2027",
     sector="airlines", geography="UK", verification="press_multi",
     sources="https://www.cnbc.com/2026/08/06/easyjet-apollo-castlelake-private-equity-budget-airline.html; https://www.easyjet.com/en/news/airline/article/acquisition-of-easyjet-updates",
-    notes="Castlelake (final 690p) withdrew 2026-08-06. Scheme document deadline extended to 2026-10-15.")
+    notes="Castlelake (final 690p) withdrew 2026-08-06. Scheme document deadline extended to 2026-10-15. Reuters (via ChatGPT staging) flags an EU airline-ownership execution issue - regulatory risk factor.")
 
 add(deal_id="2026Q3-015", window_event="announced", window_event_date="2026-08-06",
     target="Beazer Homes USA", target_ticker="BZH", acquirer="Dream Finders Homes",
@@ -226,7 +229,7 @@ add(deal_id="2026Q3-019", window_event="blocked", window_event_date="2026-08-14"
     resolution_date="2026-08-14", sector="construction adhesives", geography="US",
     verification="press_multi",
     sources="https://www.cooley.com/news/insight/2026/2026-08-21-ftc-court-win-blocks-henkels-acquisition-of-liquid-nails; https://natlawreview.com/article/ftcs-new-litigation-strategy-sticks-court-blocks-henkels-725m-bid-for-liquid-nails",
-    notes="BROKEN (regulatory). SDNY permanent injunction after 7-day trial - first win of FTC's federal-court-only strategy. Formal abandonment / appeal status n/d - GAP.")
+    notes="BLOCKED, NOT YET A BREAK LABEL: SDNY permanent injunction 2026-08-14 (valid time); FTC public case summary dated 2026-08-17 (known time, per ChatGPT staging MNA-20260814-HENKEL-LIQUIDNAILS). Y=1 only after party termination/abandonment is verified - GAP. First win of FTC's federal-court-only strategy.")
 
 add(deal_id="2026Q3-020", window_event="announced", window_event_date="2026-08-14",
     target="Harte Hanks", target_ticker="HHS", acquirer="Star Equity Holdings", deal_type="strategic",
@@ -428,8 +431,8 @@ add(deal_id="2026Q3-042", window_event="announced", window_event_date="2026-09-2
     announce_known_at_utc="2026-09-21T11:40:34Z", status_2026_09_24="pending", expected_close="H1 2027",
     sector="payments", geography="US", sec_cik="1653558",
     sec_announce_accession="0001213900-26-101651", verification="sec_confirmed",
-    sources="https://www.businesswire.com/news/home/20260920050170/en/Priority-Technology-Holdings-Inc.-Announces-Definitive-Agreement-with-Investor-Group-Led-by-Chairman-and-CEO-Thomas-Priore-to-Take-Company-Private",
-    notes="Special-committee process. Several roundups say 2026-09-22; SEC acceptance is 2026-09-21 11:40 UTC.")
+    sources="https://ir.prioritycommerce.com/news-releases/news-release-details/priority-technology-holdings-inc-announces-definitive-agreement; https://www.businesswire.com/news/home/20260920050170/en/Priority-Technology-Holdings-Inc.-Announces-Definitive-Agreement-with-Investor-Group-Led-by-Chairman-and-CEO-Thomas-Priore-to-Take-Company-Private",
+    notes="Special-committee process; no financing condition; needs majority-of-unaffiliated vote + regulatory approvals (issuer IR per ChatGPT staging MNA-20260921-PRIORITY-TAKEPRIVATE). Several roundups say 2026-09-22; SEC acceptance is 2026-09-21 11:40 UTC.")
 
 add(deal_id="2026Q3-043", window_event="terminated", window_event_date="2026-09-20",
     target="Carbonium Core", acquirer="TOMI Environmental Solutions (TOMZ)", deal_type="merger",
@@ -475,7 +478,7 @@ add(deal_id="2026Q3-047", window_event="milestone (state AG settlement)", window
     status_2026_09_24="pending (close expected ~early Oct 2026)", sector="media", geography="US",
     sec_cik="1437107", sec_announce_accession="0001193125-26-256559", verification="press_multi",
     sources="https://www.cnbc.com/2026/09/21/paramount-reaches-settlement-over-warner-bros-merger.html; https://www.cnn.com/2026/09/21/media/paramount-wbd-settlement-cnn-ellison-bonta-lawsuit",
-    notes="12-state AG suit (filed July) settled 2026-09-21: 30+ films/yr, studios run separately, news independence board, no divestitures. HSR expired; EC cleared July. Accession = latest 8-K 1.01 (2026-06-04), not necessarily the original agreement.")
+    notes="12-state AG suit (filed July) settled 2026-09-21: 30+ films/yr, studios run separately, news independence board, no divestitures. HSR expired; EC cleared July; UK CMA Phase 1 clearance 2026-08-06, case closed 2026-08-17 (ChatGPT staging, gov.uk unreachable here). Accession = latest 8-K 1.01 (2026-06-04), not necessarily the original agreement.")
 
 add(deal_id="2026Q3-048", window_event="pending (no in-window event found)", window_event_date="",
     target="Intertek Group", target_ticker="ITRK.L", acquirer="EQT (Isotope Bidco)", sponsor="EQT",
@@ -491,6 +494,134 @@ add(deal_id="2026Q3-049", window_event="milestone (go-shop expired)", window_eve
     status_2026_09_24="pending", verification="press_multi",
     sources="https://bowman.com/news/bowman-consulting-group-announces-expiration-of-go-shop-period",
     notes="Milestone row for 2026Q3-016 (no superior proposal).")
+
+
+# ------------- added from the ChatGPT staging package, re-verified 2026-09-24
+add(deal_id="2026Q3-050", window_event="terminated", window_event_date="2026-07-07",
+    target="Shutterstock", target_ticker="SSTK", acquirer="Getty Images Holdings (GETY)",
+    deal_type="strategic merger", consideration_type="mixed (cash/stock election)",
+    announce_date="2025-01 (pre-window)", status_2026_09_24="terminated", resolution_date="2026-07-07",
+    sector="stock imagery / content licensing", geography="US / UK", sec_cik="1549346",
+    sec_resolution_accession="0001140361-26-028035", verification="sec_confirmed",
+    sources="https://www.gov.uk/cma-cases/getty-images-slash-shutterstock-merger-inquiry; https://www.morningstar.com/news/alliance-news/1782908390072304000/getty-terminates-shutterstock-merger-over-uk-competition-conditions; https://www.tradingview.com/news/tradingview:654ec45e79dc2:0-shutterstock-getty-images-merger-agreement-terminated-after-cma-condition-deal-expires-july-7-2026/",
+    notes="BROKEN DEAL (regulatory-driven). Getty delivered written termination notice 2026-07-07 after declining the CMA-required sale of Shutterstock's editorial business; CMA recorded abandonment 2026-07-08; Shutterstock 8-K item 1.02 accepted 2026-07-09T10:03Z (Getty 8-K 8.01 2026-07-07T10:05Z, acc 0001213900-26-075721). Termination fee paid: n/d (agreement had $40M/$32.7M fee provisions) - GAP. Per-share terms n/d - GAP.")
+
+add(deal_id="2026Q3-051", window_event="closed", window_event_date="2026-07-30",
+    target="Depop (from Etsy)", acquirer="eBay", sponsor="", deal_type="strategic carve-out",
+    consideration_type="cash", headline_value="~$1.4B at close ($1.2B price + ~$0.2B adjustments/interest)",
+    value_basis="cash paid", announce_date="2026-02 (agreement 2026-02-15, public 2026-02-18)",
+    status_2026_09_24="closed", resolution_date="2026-07-30", sector="online resale marketplace",
+    geography="UK / US", verification="press_multi",
+    sources="https://investors.ebayinc.com/investor-news/press-release-details/2026/eBay-Completes-Acquisition-of-Depop/default.aspx; https://www.marketscreener.com/news/ebay-inc-completed-the-acquisition-of-depop-limited-from-etsy-inc--ce7f50dad189ff27; https://www.cnbc.com/2026/02/18/ebay-buying-depop-etsy.html",
+    notes="CMA Phase 1 clearance 2026-07-15. Private target (carve-out from Etsy) - no target spread, so not usable for break_logit_v1 features. Tracked theme #3 (carve-outs).")
+
+add(deal_id="2026Q3-052", window_event="announced+closed", window_event_date="2026-08-03",
+    target="Momentum Midstream (private)", acquirer="Williams Companies (WMB)", deal_type="strategic",
+    consideration_type="cash + stock", offer_terms="~$3.5B cash/debt + ~$2.0B WMB equity",
+    headline_value="up to $5.5B", value_basis="total consideration", announce_date="2026-08-03",
+    status_2026_09_24="closed", resolution_date="2026-09-03", sector="midstream (Haynesville gas)",
+    geography="US", sec_cik="107263", verification="press_multi",
+    sources="https://www.williams.com/2026/08/03/williams-delivers-strong-second-quarter-2026-results-announces-strategic-acquisition-of-momentum-midstream-connecting-haynesville-to-gulf-coast-lng-and-power-demand/; https://www.williams.com/2026/09/03/williams-completes-acquisition-of-momentum-midstream/",
+    notes="ChatGPT staging had this as pending; it CLOSED 2026-09-03 (Williams release; WMB 8-K item 8.01 accepted 2026-09-03T20:21Z). Announced with Q2 earnings (8-K 2.02 2026-08-03), no separate 1.01. Signed-to-close in 31 days.")
+
+add(deal_id="2026Q3-053", window_event="litigation (specific performance)", window_event_date="2026-08-07",
+    target="AccuLynx (private)", acquirer="Verisk Analytics (VRSK)", deal_type="strategic",
+    headline_value="$2.35B", value_basis="deal value", announce_date="2025 (pre-window)",
+    status_2026_09_24="contested - buyer ordered to close; appeal filed 2026-08-18",
+    sector="insurance/roofing software", geography="US", sec_cik="1442145",
+    verification="press_multi",
+    sources="https://www.insurancejournal.com/news/east/2026/08/11/880962.htm; https://www.hsfkramer.com/insights/2026-08/verisk-analytics-v-acculynx-sorry-you-actually-do-have-to-comply-with-that-second-request; https://courts.delaware.gov/opinions/download.aspx?id=399420",
+    notes="Del. Chancery (2026-08-07) held Verisk's Dec-2025 termination invalid (its willful conduct caused the FTC-clearance condition to fail) and ordered specific performance; Verisk appealed 2026-08-18 (VRSK 8-K 8.01 same day). NOT a resolved label either way. Buyer-walk risk case study.")
+
+add(deal_id="2026Q3-054", window_event="closed", window_event_date="2026-08-25",
+    target="AmSurg (private)", acquirer="Ascension Health", deal_type="strategic",
+    consideration_type="cash", headline_value="$3.9B", announce_date="pre-window",
+    status_2026_09_24="closed", resolution_date="2026-08 (days after 2026-08-25; exact date n/d)",
+    sector="ambulatory surgery centers", geography="US", verification="press_multi",
+    sources="https://www.ftc.gov/news-events/news/press-releases/2026/08/ftc-approves-final-consent-order-ascension-health-amsurg-deal; https://www.healthcaredive.com/news/ascension-closes-acquisition-amsurg-following-ftc-scrutiny/822070/",
+    notes="FTC final consent order 2026-08-25 requires 7 ASC divestitures (6 to SC Affiliates, 1 to Florida Gastroenterology Center). Close followed within days. Private target.")
+
+add(deal_id="2026Q3-055", window_event="closed", window_event_date="2026-09-01",
+    target="Fairfield Medical Center (nonprofit)", acquirer="Adena Health", deal_type="nonprofit hospital acquisition",
+    announce_date="2026-09-01", status_2026_09_24="closed", resolution_date="2026-09-01",
+    sector="hospitals", geography="US (Ohio)", verification="press_multi",
+    sources="https://www.ftc.gov/news-events/news/press-releases/2026/09/statement-regarding-fairfield-medical-centers-sale-adena-health; https://www.adena.org/articles/adena-health-finalizes-acquisition-of-fairfield-medical-center",
+    notes="Earlier OhioHealth/FMC proposal ABANDONED after FTC staff concerns (abandonment date n/d - GAP); treat as a separate deal record. ChatGPT flagged completion wording as needing party confirmation - Adena's own release says 'finalizes acquisition'.")
+
+add(deal_id="2026Q3-056", window_event="milestone (approvals; close scheduled)", window_event_date="2026-09-22",
+    target="Schroders plc", target_ticker="SDR.L", acquirer="Nuveen", deal_type="strategic (scheme)",
+    headline_value="~GBP9.9B", value_basis="equity", announce_date="2026-02-12",
+    status_2026_09_24="pending - court sanction hearing 2026-09-29, completion 2026-10-01",
+    expected_close="2026-10-01", sector="asset management", geography="UK", verification="press_multi",
+    sources="https://www.scottishfinancialnews.com/articles/nuveen-completes-ps99bn-schroders-takeover-on-october-1; https://fxnewsgroup.com/forex-news/institutional/schroders-nuveen-confirm-receipt-of-antitrust-and-regulatory-approvals-for-9-9bn-deal/",
+    notes="All antitrust/regulatory approvals received. Label stays censored until completion is confirmed.")
+
+add(deal_id="2026Q3-057", window_event="milestone (CMA Phase 1 launched 2026-08-26)", window_event_date="2026-08-26",
+    target="NCR Atleos", target_ticker="NATL", acquirer="Brink's (BCO)", deal_type="strategic",
+    consideration_type="cash + stock", offer_terms="$30.00 cash + 0.1574 BCO sh (implied $50.40 at 2026-02-25)",
+    headline_value="~$6.6B incl. debt", value_basis="enterprise", premium="24% to prior-day close",
+    announce_date="2026-02-26", status_2026_09_24="pending (both holder votes passed 2026-06-30)",
+    expected_close="Q1 2027", sector="ATM / cash infrastructure", geography="US", sec_cik="1974138",
+    verification="press_multi",
+    sources="https://investors.brinks.com/news-releases/news-release-details/brinks-acquire-ncr-atleos-66-billion-creating-leading-financial; https://www.gov.uk/cma-cases/the-brinks-company-slash-ncr-atleos-corporation-merger-inquiry",
+    notes="CMA Phase 1 decision deadline 2026-10-22 (ChatGPT staging).")
+
+add(deal_id="2026Q3-058", window_event="milestone (CMA Phase 1 launched 2026-09-16)", window_event_date="2026-09-16",
+    target="Unilever Foods (carve-out)", acquirer="McCormick (MKC)", deal_type="Reverse Morris Trust",
+    consideration_type="stock + $15.7B cash to Unilever", headline_value="~$44.8B EV (Unilever Foods)",
+    value_basis="enterprise", announce_date="2026-03-31", status_2026_09_24="pending",
+    sector="food / flavours", geography="Global", sec_cik="63754", verification="press_multi",
+    sources="https://www.unilever.com/news/press-and-media/press-releases/2026/unilever-announces-the-combination-of-unilever-foods-with-mccormick/; https://www.gov.uk/cma-cases/mccormick-slash-unilever-merger-inquiry",
+    notes="Pro forma: Unilever holders ~55.1%, MKC holders ~35.0%, Unilever ~9.9%. CMA invitation to comment 2026-07-21; Phase 1 deadline 2026-11-11. Tracked theme #3 (carve-outs).")
+
+add(deal_id="2026Q3-059", window_event="milestone (CMA invitation to comment 2026-09-22)", window_event_date="2026-09-22",
+    target="TK Elevator", acquirer="KONE", deal_type="strategic",
+    consideration_type="cash + stock", offer_terms="EUR5B cash + up to 270M new KONE B shares",
+    headline_value="EUR29.4B (~$34.4B)", value_basis="enterprise", announce_date="2026-04-29",
+    status_2026_09_24="pending", sector="elevators & escalators", geography="Europe", verification="press_multi",
+    sources="https://www.kone.com/global/en/newsroom/releases/2026/inside-information--kone-and-tke-to-combine--creating-a-world-class-company-in-the-elevator-and-escalator-industry-2026-04-29.html; https://www.gov.uk/cma-cases/kone-slash-tk-elevator-merger-inquiry",
+    notes="Largest pending deal touched in window by a regulator step. Heavy antitrust exposure (EU/UK/US). Seller identity not captured - GAP.")
+
+add(deal_id="2026Q3-060", window_event="milestone (CMA Phase 1 launched 2026-09-02)", window_event_date="2026-09-02",
+    target="OVO Energy (retail business)", acquirer="E.ON", deal_type="strategic",
+    announce_date="2026-05-11", status_2026_09_24="pending", expected_close="H2 2026",
+    sector="energy retail", geography="UK", verification="press_multi",
+    sources="https://www.eon.com/en/about-us/media/press-release/2026/eon-announces-acquisition-of-uk-energy-supplier-ovo.html; https://www.gov.uk/cma-cases/eon-slash-ovo-merger-inquiry",
+    notes="CMA invitation to comment 2026-07-08; Phase 1 deadline 2026-10-28. OVO Home Services sold separately to Hometree. Price n/d - GAP.")
+
+add(deal_id="2026Q3-061", window_event="milestone (CMA invitation to comment 2026-07-23)", window_event_date="2026-07-23",
+    target="ITV Media & Entertainment", acquirer="Sky (Comcast)", deal_type="carve-out",
+    consideration_type="cash + asset", offer_terms="GBP1.2B cash + Love Productions (~GBP200M) + earn-out up to GBP200M",
+    headline_value="up to GBP1.6B", value_basis="total consideration", announce_date="2026-07 (pre-ITC)",
+    status_2026_09_24="pending (CMA review)", sector="broadcasting / streaming", geography="UK",
+    verification="press_multi",
+    sources="https://www.cityam.com/sky-and-itv-mount-defence-of-1-6bn-merger-as-regulators-probe-deal/; https://www.gov.uk/cma-cases/sky-slash-itv-merger-inquiry",
+    notes="Exact signing date n/d - GAP. Tracked theme #3 (carve-outs).")
+
+add(deal_id="2026Q3-062", window_event="rejected", window_event_date="2026-09-21",
+    target="Ingenia Communities", target_ticker="INA.AX", acquirer="Warburg Pincus", sponsor="Warburg Pincus",
+    deal_type="unsolicited proposal (revised)", consideration_type="cash",
+    offer_terms="A$5.05/sh (revised from A$4.75)", headline_value="~A$2.06B (~$1.47B)",
+    status_2026_09_24="rejected", resolution_date="2026-09-21", sector="residential communities / REIT",
+    geography="Australia", verification="press_multi",
+    sources="https://www.bloomberg.com/news/articles/2026-09-20/ingenia-rejects-new-1-5-billion-warburg-pincus-takeover-bid; https://grafa.com/en/news/australia/ingenia-communities-rejects-revised-5-05-takeover-bid-from-warburg",
+    notes="PROPOSAL HISTORY ONLY - never a break label. Conditional on Ingenia not proceeding with its Peet acquisition.")
+
+add(deal_id="2026Q3-063", window_event="rejected", window_event_date="2026-09-22",
+    target="IDP Education", target_ticker="IEL.AX", acquirer="Blackstone", sponsor="Blackstone",
+    deal_type="unsolicited proposal (revised)", consideration_type="cash",
+    offer_terms="A$2.50/sh (revised from A$2.30; submitted 2026-09-09)", headline_value="~A$694.7M (~$494M)",
+    premium="56% to 2026-09-08 close", status_2026_09_24="rejected", resolution_date="2026-09-22",
+    sector="education services", geography="Australia", verification="press_multi",
+    sources="https://www.marketscreener.com/news/idp-education-rejects-blackstone-s-takeover-proposal-ce785ad9d98ef02d; https://grafa.com/en/news/australia/idp-education-rejects-2-50-blackstone-takeover-offer",
+    notes="PROPOSAL HISTORY ONLY - never a break label. Board called it 'highly opportunistic'.")
+
+add(deal_id="2026Q3-064", window_event="milestone (FTC proposed consent)", window_event_date="2026-09-16",
+    target="Sturm, Ruger & Co. (minority stake)", target_ticker="RGR", acquirer="Beretta Holding",
+    deal_type="minority stock purchase", status_2026_09_24="pending - behavioural remedy",
+    sector="firearms", geography="US", sec_cik="95029", verification="press_single",
+    sources="https://www.ftc.gov/legal-library/browse/cases-proceedings/berettaruger",
+    notes="FTC proposed consent addresses board/governance entanglement (per ChatGPT staging; ftc.gov unreachable). Ruger 8-K items 1.01/1.02/3.03 accepted 2026-09-16T20:45Z (acc 0001174947-26-000877) and a Schedule 13D/A 2026-09-17 - consistent, content unread. Not a whole-company merger label.")
 
 
 def main():

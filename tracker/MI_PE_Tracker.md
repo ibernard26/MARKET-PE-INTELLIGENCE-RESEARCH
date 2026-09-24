@@ -186,3 +186,17 @@ Full detail: `outputs/Deal_Research_2026Q3.md`. Rows: `pe-tracker/data/research/
 | 2026-09-23 | Closed / Vote | Zymeworks / Theravance **closed**; Bio-Techne holders approve Merck KGaA | Durable |
 
 **Sources:** press releases and wire copy found by web search (URLs are in the CSV), plus EDGAR metadata from data.sec.gov. News sites and www.sec.gov are blocked in this environment, so page text wasn't read. Rows marked `reported_only` in the CSV (Seahawks, WDP/Argan, Stripe/OpenRouter, MARI/ATG, Kobayashi) are **unverified**. Gaps are listed in the output doc.
+
+**Section 7 addendum (2026-09-24, ChatGPT public-source package) 🟡 NEW**
+Adds 15 deals to the register (now 64 rows). All 33 package rows were reconciled in `pe-tracker/data/public_mna_intelligence/2026-07-01_2026-09-24/reconciliation.csv`.
+| Date | Event | Deal | Durable / Noise |
+|---|---|---|---|
+| 2026-07-07 | **Terminated** | Getty / Shutterstock: Getty walked away rather than sell the editorial business the CMA required (Shutterstock 8-K 1.02 on 7/9) | **Durable: regulatory-driven break** |
+| 2026-07-30 | Closed | eBay / Depop (~$1.4B, carve-out from Etsy) | Durable (theme #3) |
+| 2026-08-07 | Court ruling | Delaware Chancery orders Verisk to close the $2.35B AccuLynx deal; Verisk appealed 8/18 | Durable (buyer-walk risk) |
+| late Aug | Closed | Ascension / AmSurg $3.9B after FTC consent order (7 surgery-center divestitures) | Durable |
+| 2026-09-01 | Closed | Adena / Fairfield Medical Center (OhioHealth deal abandoned after FTC scrutiny) | Durable |
+| 2026-09-03 | Closed | Williams / Momentum Midstream up to $5.5B (31 days from signing to close) | Durable |
+| 2026-09-21 / 22 | Rejected | Ingenia rejects Warburg A$5.05; IDP rejects Blackstone A$2.50 | Noise (proposals, never labels) |
+| Jul–Sep | UK CMA steps | McCormick / Unilever Foods ($44.8B EV), KONE / TKE (€29.4B), E.ON / OVO, Sky / ITV, Brink's / NCR Atleos | Monitor |
+| 2026-10-01 (scheduled) | Close | Nuveen / Schroders £9.9B after the court sanction hearing on 9/29 | Monitor |

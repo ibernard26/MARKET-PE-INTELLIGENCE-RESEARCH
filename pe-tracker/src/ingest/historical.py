@@ -24,6 +24,7 @@ from __future__ import annotations
 import os
 import sqlite3
 from dataclasses import asdict, dataclass
+from pathlib import Path
 from typing import Iterable, Optional, Protocol
 
 from ..research import events as ev
@@ -53,6 +54,13 @@ PROHIBITED_SOURCE_MARKERS = (
 
 class ProhibitedSourceError(RuntimeError):
     """A non-reviewed source tried to write into the canonical/model store."""
+
+
+# Reviewed manifest required for any write to the canonical on-disk SQLite store.
+# Resolved absolute path so comparisons are path-string exact, not cwd-relative.
+CANONICAL_MANIFEST_PATH = (
+    Path(__file__).resolve().parents[2] / "data" / "sec_deal_manifest.json"
+).resolve()
 
 
 def prohibited_source(r: "HistoricalDealRecord") -> Optional[str]:
@@ -283,11 +291,18 @@ def ingest(provider: HistoricalDealProvider, conn: sqlite3.Connection) -> dict:
     (SECEdgarProvider over data/sec_deal_manifest.json). Any record citing a
     research/staging source is quarantined on every connection."""
     from .providers.sec_edgar import SECEdgarProvider   # lazy: providers import this module
-    if _is_on_disk_store(conn) and not isinstance(provider, SECEdgarProvider):
-        raise ProhibitedSourceError(
-            f"provider {getattr(provider, 'name', provider)!r} may not write to the canonical "
-            f"store; the only legal path is the reviewed sec_deal_manifest.json via "
-            f"SECEdgarProvider")
+    if _is_on_disk_store(conn):
+        if not isinstance(provider, SECEdgarProvider):
+            raise ProhibitedSourceError(
+                f"provider {getattr(provider, 'name', provider)!r} may not write to the canonical "
+                f"store; the only legal path is the reviewed sec_deal_manifest.json via "
+                f"SECEdgarProvider")
+        provider_manifest = Path(provider.manifest_path).resolve()
+        if provider_manifest != CANONICAL_MANIFEST_PATH:
+            raise ProhibitedSourceError(
+                f"SECEdgarProvider manifest {provider_manifest} is not the reviewed canonical "
+                f"manifest {CANONICAL_MANIFEST_PATH}; alternate manifests may not write to the "
+                f"canonical on-disk store")
     written, quarantined = [], []
     for r in provider.records():
         marker = prohibited_source(r)

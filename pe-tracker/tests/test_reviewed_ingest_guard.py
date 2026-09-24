@@ -6,6 +6,10 @@
 Research/staging material (the Q3 register, public_mna_intelligence staging,
 canonical_* research outputs, seed_deals illustrative quotes, automation
 outputs) must never write into deals / deal_events / deal_market_observations.
+
+On-disk canonical store additionally requires the provider's manifest_path to
+resolve exactly to pe-tracker/data/sec_deal_manifest.json. Alternate manifests
+are allowed only against in-memory test databases.
 """
 import re
 import sqlite3
@@ -14,8 +18,8 @@ from pathlib import Path
 import pytest
 
 import src.config as config
-from src.ingest.historical import (PROHIBITED_SOURCE_MARKERS, ProhibitedSourceError,
-                                   SourceRef, ingest)
+from src.ingest.historical import (CANONICAL_MANIFEST_PATH, PROHIBITED_SOURCE_MARKERS,
+                                   ProhibitedSourceError, SourceRef, ingest)
 from src.ingest.providers.sec_edgar import SECEdgarProvider
 from tests.test_historical_ingest import SCHEMA, ListProvider, client, manifest, mem, rec
 
@@ -32,16 +36,40 @@ def _disk_store(tmp_path, monkeypatch):
 
 
 def test_on_disk_store_rejects_any_non_sec_provider(tmp_path, monkeypatch):
+    """A. canonical on-disk store + non-SEC provider → rejected."""
     c = _disk_store(tmp_path, monkeypatch)
     with pytest.raises(ProhibitedSourceError, match="only legal path"):
         ingest(ListProvider([rec()]), c)
     assert c.execute("SELECT COUNT(*) FROM deals").fetchone()[0] == 0
 
 
-def test_on_disk_store_accepts_reviewed_sec_provider(tmp_path, monkeypatch):
+def test_on_disk_store_rejects_sec_provider_with_alternate_manifest(tmp_path, monkeypatch):
+    """B. canonical on-disk store + SECEdgarProvider(alternate_manifest) → rejected."""
     c = _disk_store(tmp_path, monkeypatch)
+    alt = SECEdgarProvider(manifest(tmp_path), client=client())
+    with pytest.raises(ProhibitedSourceError, match="not the reviewed canonical manifest"):
+        ingest(alt, c)
+    assert c.execute("SELECT COUNT(*) FROM deals").fetchone()[0] == 0
+
+
+def test_on_disk_store_permits_sec_provider_with_canonical_manifest(tmp_path, monkeypatch):
+    """C. on-disk store + SECEdgarProvider(canonical manifest) → guard permits.
+
+    The real manifest is empty (0 deals); authorization is what this asserts.
+    """
+    c = _disk_store(tmp_path, monkeypatch)
+    assert CANONICAL_MANIFEST_PATH.is_file()
+    out = ingest(SECEdgarProvider(CANONICAL_MANIFEST_PATH, client=client()), c)
+    assert out["n_written"] == 0
+    assert c.execute("SELECT COUNT(*) FROM deals").fetchone()[0] == 0
+
+
+def test_in_memory_store_allows_fixture_manifest(tmp_path):
+    """D. in-memory DB + SECEdgarProvider(fixture manifest) → allowed."""
+    c = mem()
     out = ingest(SECEdgarProvider(manifest(tmp_path), client=client()), c)
     assert out["n_written"] == 1
+    assert c.execute("SELECT COUNT(*) FROM deals").fetchone()[0] == 1
 
 
 @pytest.mark.parametrize("ident", [

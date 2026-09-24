@@ -156,3 +156,56 @@ Legend: ▲ rising · ▼ falling · ◼ flat/mixed · ⚠ high volatility
 - **PE/M&A:** No new specific deals surfaced Jun 23; structural context from PwC/PE Hub (H1 barbell persists).
 
 *Next cycle: Cycle #5 — next weekday. Recurrence: CronJob 1bdabe09 (7:03 AM ET weekdays). This run = Cycle #4, executed via /daily-report 2026-06-24.*
+
+---
+
+## 7. Q3 2026 DEAL BACKFILL (Jul 1 – Sep 24): appended 2026-09-24 🟡 NEW
+The daily loop has had no entries since Jun 24. This section backfills deal flow only, not market prints.
+Full detail: `outputs/Deal_Research_2026Q3.md`. Rows: `pe-tracker/data/research/deal_register_2026Q3.csv` (49 rows; 20 confirmed against SEC filings).
+
+| Date | Event | Deal | Durable / Noise |
+|---|---|---|---|
+| 2026-07-06 | Signed | Vertex / Crinetics $85 cash ($10.0B); **closed 9/1** | Durable |
+| 2026-07-06 | Signed → **terminated 8/27** | Solstice / Element Solutions (~$14.5B); mutual, no fee | **Durable: in-window break** |
+| 2026-07-06 | Signed | Lockheed / Ultra Maritime $3.45B (Advent exit) | Durable (theme #2) |
+| 2026-07-26 | Rejected | Brown-Forman board rejects Sazerac $32 bid (made May 1) | Noise for M&A count |
+| 2026-07-27 | Signed | Wynnchurch / Luxfer $17.37 cash | Durable |
+| 2026-07-30 | Signed | ICE / MarketAxess $167 cash | Durable |
+| 2026-07-31 | Closed | IonQ / SkyWater | Durable |
+| 2026-08-03 | Signed | KKR / Integer $127 cash (~$5.7B EV); Curium / Lantheus $102.50 + CVR | Durable |
+| 2026-08-04 | Signed / Closed | Prologis / SEGRO (~£14B, stock); **EA $55B LBO closed** | Durable |
+| 2026-08-06 | Signed | Apollo / easyJet 715p (Castlelake out); Dream Finders / Beazer $33.50 | Durable |
+| 2026-08-10 | Signed | Bernhard Capital / Bowman $43 (+58%); go-shop drew no bids | Durable (theme #1) |
+| 2026-08-13 | Signed / Proposal | Thoma Bravo / Accelerant $20.25; EQT / Cleanaway A$3.13 (non-binding) | Durable / Monitor |
+| 2026-08-14 | **Blocked** | FTC wins permanent injunction on Henkel / Liquid Nails ($725M) | **Durable: regulatory break** |
+| 2026-08-26 / 31 | Signed | Victory / First Eagle ~$7.0B (Genstar exit); Aon / USI $17.0B (KKR exit) | Durable (sponsor exits) |
+| 2026-09-02 | Signed | Nvidia / Hugging Face ~$12.9B | Durable |
+| 2026-09-09 / 14 | Signed | IRT / Centerspace (3.800x stock); Sequence + DFO / Baldwin $32.50 (~$7.7B) | Durable |
+| 2026-09-18 / 21 | Signed | H.I.G. / Mistras $20.35 (thin premium); CEO group / Priority $8.05 | Durable (Mistras: monitor the vote) |
+| 2026-09-21 | Milestone | Paramount / WBD state attorneys general suit settled; close ~early Oct | Durable |
+| 2026-09-23 | Closed / Vote | Zymeworks / Theravance **closed**; Bio-Techne holders approve Merck KGaA | Durable |
+
+**Sources:** press releases and wire copy found by web search (URLs are in the CSV), plus EDGAR metadata from data.sec.gov. News sites and www.sec.gov are blocked in this environment, so page text wasn't read. Rows marked `reported_only` in the CSV (Seahawks, WDP/Argan, Stripe/OpenRouter, MARI/ATG, Kobayashi) are **unverified**. Gaps are listed in the output doc.
+
+**Section 7 addendum (2026-09-24, ChatGPT public-source package) 🟡 NEW**
+Adds 15 deals to the register (now 64 rows). All 33 package rows were reconciled in `pe-tracker/data/public_mna_intelligence/2026-07-01_2026-09-24/reconciliation.csv`.
+| Date | Event | Deal | Durable / Noise |
+|---|---|---|---|
+| 2026-07-07 | **Terminated** | Getty / Shutterstock: Getty walked away rather than sell the editorial business the CMA required (Shutterstock 8-K 1.02 on 7/9) | **Durable: regulatory-driven break** |
+| 2026-07-30 | Closed | eBay / Depop (~$1.4B, carve-out from Etsy) | Durable (theme #3) |
+| 2026-08-07 | Court ruling | Delaware Chancery orders Verisk to close the $2.35B AccuLynx deal; Verisk appealed 8/18 | Durable (buyer-walk risk) |
+| late Aug | Closed | Ascension / AmSurg $3.9B after FTC consent order (7 surgery-center divestitures) | Durable |
+| 2026-09-01 | Closed | Adena / Fairfield Medical Center (OhioHealth deal abandoned after FTC scrutiny) | Durable |
+| 2026-09-03 | Closed | Williams / Momentum Midstream up to $5.5B (31 days from signing to close) | Durable |
+| 2026-09-21 / 22 | Rejected | Ingenia rejects Warburg A$5.05; IDP rejects Blackstone A$2.50 | Noise (proposals, never labels) |
+| Jul–Sep | UK CMA steps | McCormick / Unilever Foods ($44.8B EV), KONE / TKE (€29.4B), E.ON / OVO, Sky / ITV, Brink's / NCR Atleos | Monitor |
+| 2026-10-01 (scheduled) | Close | Nuveen / Schroders £9.9B after the court sanction hearing on 9/29 | Monitor |
+
+**Section 7 corrections (2026-09-24, reviewer pass) 🟡 NEW.** These are append-only notes. They replace the matching facts above but leave the earlier rows in place.
+- **Paramount / WBD:** the definitive agreement is dated **2026-02-27**. The "close ~early Oct" note above is **withdrawn as a fact**. No primary source gives a dated close; status is pending, with a close likely soon now the litigation is settled.
+- **Uber / Delivery Hero:** announced **2026-07-16** (business combination agreement, UBER 8-K 1.01). 2026-08-27 is the offer-document publication date, not the announcement.
+- **Nvidia / Hugging Face:** agreement dated 2026-09-02; `known_at` is the first public disclosure on **2026-09-03** (8-K accepted 08:03:56 ET).
+- **Solstice / Element:** $10.00 cash + 0.500 SOLS shares per ESI share; initial $4.685B bridge commitment.
+- **Magnolia / WildFire:** ~$4.06B incl. debt; 32.2M MGY shares + $600M notes assumed. An MGY 8-K with item 2.01 (completion) was filed 2026-09-14, so the deal has **likely closed**; confirm from the filing text before labeling.
+- **KONE / TK Elevator:** seller is Vertical Topco I S.A., jointly controlled by Advent and Cinven.
+- **Evidence wording:** "SEC-confirmed" is now "SEC-metadata-confirmed" (25 rows; 29 cited accessions matched their companies). No filing text has been read.

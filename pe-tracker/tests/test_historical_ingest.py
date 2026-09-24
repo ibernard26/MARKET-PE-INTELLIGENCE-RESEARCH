@@ -184,12 +184,20 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_exactly_two_reviewed_deals():
-    """First filing-text-reviewed labels: one closed (Y=0) + one terminated (Y=1)."""
+def test_shipped_manifest_has_exactly_four_reviewed_deals():
+    """Two reviewed batches: 2 closed (Y=0) + 2 terminated (Y=1). SkyWater/Theravance excluded."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
-    assert [d["deal_id"] for d in deals] == ["DEAL-CRNX-VRTX-2026", "DEAL-ESI-SOLS-2026"]
-    crnx, esi = deals
+    ids = [d["deal_id"] for d in deals]
+    assert ids == [
+        "DEAL-CRNX-VRTX-2026",
+        "DEAL-ESI-SOLS-2026",
+        "DEAL-EA-PIFSLAFF-2025",
+        "DEAL-SSTK-GETY-2025",
+    ]
+    assert "DEAL-SKYT-IONQ-2026" not in ids and "DEAL-TBPH-ZYME-2026" not in ids
+    by_id = {d["deal_id"]: d for d in deals}
+    crnx, esi = by_id["DEAL-CRNX-VRTX-2026"], by_id["DEAL-ESI-SOLS-2026"]
     assert crnx["resolution_type"] == "closed" and crnx["offer_price"] == 85.0
     assert crnx["announcement_accession"] == crnx["terms_accession"] == "0001140361-26-027642"
     assert crnx["resolution_accession"] == "0001140361-26-035195"
@@ -199,6 +207,17 @@ def test_shipped_manifest_has_exactly_two_reviewed_deals():
     assert esi["announcement_accession"] == esi["terms_accession"] == "0001104659-26-080825"
     assert esi["resolution_accession"] == "0001104659-26-102559"
     assert esi["resolution_timestamp"] == "2026-08-27T16:00:00"
+    ea, sstk = by_id["DEAL-EA-PIFSLAFF-2025"], by_id["DEAL-SSTK-GETY-2025"]
+    assert ea["deal_type"] == "take_private" and ea["consideration_type"] == "cash"
+    assert ea["offer_price"] == 210.0 and ea["resolution_type"] == "closed"
+    assert ea["announcement_accession"] == ea["terms_accession"] == "0001140361-25-036415"
+    assert ea["resolution_accession"] == "0001140361-26-031157"
+    assert ea["resolution_timestamp"] == "2026-08-04"
+    assert sstk["consideration_type"] == "mixed" and sstk["resolution_type"] == "terminated"
+    assert sstk["offer_price"] == 9.5 and sstk["exchange_ratio"] == 9.17
+    assert sstk["announcement_accession"] == sstk["terms_accession"] == "0001140361-25-000468"
+    assert sstk["resolution_accession"] == "0001140361-26-028035"
+    assert sstk["resolution_timestamp"] == "2026-07-07"
 
 
 # ------------------------------------------------- quality + readiness

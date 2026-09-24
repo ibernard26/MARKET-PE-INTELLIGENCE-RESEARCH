@@ -32,6 +32,37 @@
       "resolution_type": "terminated",
       "resolution_accession": "0001104659-26-102559",
       "resolution_timestamp": "2026-08-27T16:00:00"
+    },
+    {
+      "deal_id": "DEAL-EA-PIFSLAFF-2025",
+      "target": "Electronic Arts Inc.",
+      "acquirer": "Oak-Eagle AcquireCo, Inc.",
+      "target_cik": 712515,
+      "announcement_accession": "0001140361-25-036415",
+      "terms_accession": "0001140361-25-036415",
+      "announcement_timestamp": "2025-09-28",
+      "deal_type": "take_private",
+      "consideration_type": "cash",
+      "offer_price": 210.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001140361-26-031157",
+      "resolution_timestamp": "2026-08-04"
+    },
+    {
+      "deal_id": "DEAL-SSTK-GETY-2025",
+      "target": "Shutterstock, Inc.",
+      "acquirer": "Getty Images Holdings, Inc.",
+      "target_cik": 1549346,
+      "announcement_accession": "0001140361-25-000468",
+      "terms_accession": "0001140361-25-000468",
+      "announcement_timestamp": "2025-01-06",
+      "deal_type": "strategic",
+      "consideration_type": "mixed",
+      "offer_price": 9.50,
+      "exchange_ratio": 9.17,
+      "resolution_type": "terminated",
+      "resolution_accession": "0001140361-26-028035",
+      "resolution_timestamp": "2026-07-07"
     }
   ]
 }

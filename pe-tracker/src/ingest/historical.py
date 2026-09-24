@@ -21,8 +21,10 @@ No concrete data ships with the repo; nothing is fabricated.
 """
 from __future__ import annotations
 
+import os
 import sqlite3
 from dataclasses import asdict, dataclass
+from pathlib import Path
 from typing import Iterable, Optional, Protocol
 
 from ..research import events as ev
@@ -32,6 +34,60 @@ from ..research.observations import Observation, record_observation
 RESOLUTION_TYPES = {"closed": "closing", "terminated": "termination",
                     "withdrawn": "withdrawal"}
 CONSIDERATION = {"cash", "stock", "mixed"}
+
+# ---------------------------------------------------------------------------
+# The ONLY legal path for real historical deals into the canonical/model store:
+#
+#   HistoricalDealRecord.validate() -> data/sec_deal_manifest.json (reviewed,
+#   filing text read) -> SECEdgarProvider -> record_provenance
+#
+# Research / staging material is never a source for deals, deal_events or
+# deal_market_observations (the tables the training set is built from):
+PROHIBITED_SOURCE_MARKERS = (
+    "deal_register_2026Q3",            # Q3 research register (research-only)
+    "public_mna_intelligence",         # ChatGPT / public-source staging tree
+    "canonical_deal",                  # canonical_* research outputs (PR #8)
+    "seed_deals",                      # illustrative ledger quotes
+    "automation/", "outputs/",         # loop prompts and generated deliverables
+)
+
+
+class ProhibitedSourceError(RuntimeError):
+    """A non-reviewed source tried to write into the canonical/model store."""
+
+
+# Reviewed manifest required for any write to the canonical on-disk SQLite store.
+# Resolved absolute path so comparisons are path-string exact, not cwd-relative.
+CANONICAL_MANIFEST_PATH = (
+    Path(__file__).resolve().parents[2] / "data" / "sec_deal_manifest.json"
+).resolve()
+
+
+def prohibited_source(r: "HistoricalDealRecord") -> Optional[str]:
+    """Return the offending marker if any source reference of `r` points at
+    research/staging material, else None."""
+    refs = [r.announcement_source, r.terms_source, r.unaffected_price_source,
+            r.resolution_source]
+    for ref in refs:
+        if ref is None:
+            continue
+        text = " ".join(str(v) for v in (ref.source_name, ref.source_identifier) if v)
+        for marker in PROHIBITED_SOURCE_MARKERS:
+            if marker in text:
+                return marker
+    return None
+
+
+def _is_on_disk_store(conn: sqlite3.Connection) -> bool:
+    """True when `conn` is the real SQLite store (not a test/in-memory db)."""
+    from ..config import DB_PATH
+    for _, name, path in conn.execute("PRAGMA database_list"):
+        if name == "main" and path:
+            try:
+                return os.path.samefile(path, DB_PATH)
+            except FileNotFoundError:
+                return False
+    return False
 
 
 @dataclass
@@ -229,9 +285,32 @@ def _event(conn, deal_id, ts, etype, ref: SourceRef, wrote):
 
 def ingest(provider: HistoricalDealProvider, conn: sqlite3.Connection) -> dict:
     """Validate and write a provider's records. Returns counts plus the
-    quarantined records and their reasons. Never triggers model fitting."""
+    quarantined records and their reasons. Never triggers model fitting.
+
+    The on-disk store accepts records ONLY from the reviewed SEC path
+    (SECEdgarProvider over data/sec_deal_manifest.json). Any record citing a
+    research/staging source is quarantined on every connection."""
+    from .providers.sec_edgar import SECEdgarProvider   # lazy: providers import this module
+    if _is_on_disk_store(conn):
+        if not isinstance(provider, SECEdgarProvider):
+            raise ProhibitedSourceError(
+                f"provider {getattr(provider, 'name', provider)!r} may not write to the canonical "
+                f"store; the only legal path is the reviewed sec_deal_manifest.json via "
+                f"SECEdgarProvider")
+        provider_manifest = Path(provider.manifest_path).resolve()
+        if provider_manifest != CANONICAL_MANIFEST_PATH:
+            raise ProhibitedSourceError(
+                f"SECEdgarProvider manifest {provider_manifest} is not the reviewed canonical "
+                f"manifest {CANONICAL_MANIFEST_PATH}; alternate manifests may not write to the "
+                f"canonical on-disk store")
     written, quarantined = [], []
     for r in provider.records():
+        marker = prohibited_source(r)
+        if marker:
+            quarantined.append({"deal_id": r.deal_id,
+                                "problems": [f"prohibited source ({marker}): research/staging "
+                                             f"data never enters the canonical store"]})
+            continue
         problems = r.validate()
         if problems:
             quarantined.append({"deal_id": r.deal_id, "problems": problems})

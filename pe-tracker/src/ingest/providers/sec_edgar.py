@@ -124,7 +124,8 @@ class SECEdgarProvider:
     name = "sec_edgar"
 
     def __init__(self, manifest_path, client: Optional[EdgarClient] = None):
-        self.manifest = json.loads(Path(manifest_path).read_text())
+        self.manifest_path = Path(manifest_path).resolve()
+        self.manifest = json.loads(self.manifest_path.read_text())
         self.client = client or EdgarClient()
         self.rejected: list[dict] = []
 

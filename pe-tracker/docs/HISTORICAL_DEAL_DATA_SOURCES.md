@@ -5,10 +5,12 @@ each with the time it became public), so `break_logit_v1` can be trained on real
 labels. An auditable set matters more than a large one.
 
 **Status (this branch):** the `SECEdgarProvider` is implemented and tested against mocked
-EDGAR responses. **0 real deals are ingested.** The sandbox's network policy blocks
-`data.sec.gov` / `www.sec.gov`, and the reviewed manifest is intentionally empty. Every
-claim below about a source's API or policy needs checking against that source's current
-documentation once network access is granted.
+EDGAR responses. **0 real deals are ingested.** `data.sec.gov` metadata checks have already
+run for the Q3 2026 research register (`scripts/verify_deals_sec.py`). What remains blocked is
+**filing text**: the cited documents on `www.sec.gov` cannot be read from this environment, and a
+manifest entry requires the filing to be read. The manifest therefore stays empty (reviewed
+entries only). Every claim below about a source's API or policy needs checking against that
+source's current documentation.
 
 ## What a real provider must supply
 Enforced by `HistoricalDealRecord.validate()` in `src/ingest/historical.py`. A record
@@ -83,7 +85,8 @@ cannot supply the full deal record.
   the filing time.
 
 ## To activate
-1. Allow `data.sec.gov` and `www.sec.gov` in the environment's network settings.
+1. Allow `www.sec.gov` (filing text) in the environment's network settings. `data.sec.gov`
+   (metadata) is already reachable.
 2. Set `SEC_USER_AGENT` (for example `"Your Name your@email"`). It is required by SEC policy
    and never committed.
 3. Add reviewed manifest entries, then run the provider and the dataset-quality report.

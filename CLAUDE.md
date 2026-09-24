@@ -1,22 +1,24 @@
 # MI | PE Market Intelligence — Project
 
 ## What this repo is
-A living PE/M&A market intelligence tracker. The canonical data source is a Google Drive
-spreadsheet; this repo is the working layer that extends, analyses, and publishes from it.
+A living PE/M&A market intelligence tracker with a research pipeline (`pe-tracker/`) and a
+data estate (`arb-intelligence/`).
 
-## Canonical source
-| Item | Value |
-|---|---|
-| File | `MI PE Tracking System v1.xlsx` |
-| Drive path | `My Drive → Market research → Financial markets` |
-| File ID | `1WnTvf-CKyj-p8FSZQBDQEEn6ISFj1Fne` |
-| Last canonical entry | June 5, 2026 (Drive original; automation lapsed May 6–Jun 4) |
-| Repo canonical workbook | `MI_PE_Tracking_System.xlsx` — continuous Apr 20 → today; May 6–Jun 4 backfilled with verified milestones; the loop appends here every cycle |
+## Sources of truth
+1. **SQLite store** (`pe-tracker/data/pe_tracker.db`, schema `pe-tracker/schema.sql`) — the source of truth.
+2. **Reviewed `pe-tracker/data/sec_deal_manifest.json`** — the only intake for historical deals
+   (`HistoricalDealRecord.validate()` → manifest → `SECEdgarProvider` → `record_provenance`).
+   Research files (Q3 register, `data/public_mna_intelligence/`, canonical_* research outputs)
+   never enter the store.
+3. **`event_driven_v1`** (`pe-tracker/STRATEGY.md`) — the locked strategy contract.
+
+The workbook `MI_PE_Tracking_System.xlsx` and the Google Drive spreadsheets are outputs, not
+sources of truth.
 
 ## Project structure
 ```
 CLAUDE.md                          ← this file (auto-loaded by Claude Code)
-MI_PE_Tracking_System.xlsx         ← CANONICAL 5-tab workbook, primary loop target (Apr 20→today)
+MI_PE_Tracking_System.xlsx         ← 5-tab workbook (output), loop target (Apr 20→today)
 tracker/MI_PE_Tracker.md           ← living working layer (append-only, never delete rows)
 memos/Weekly_Memo_YYYY-MM-DD.md    ← Saturday weekly memos
 automation/daily_tracker_loop.md   ← loop prompt + cron config for both triggers
@@ -45,7 +47,7 @@ Never create Google Docs for numeric data — spreadsheets only.
 
 Full prompts in `automation/daily_tracker_loop.md`. Cron job IDs this session: `1bdabe09` (daily), `ccd524e3` (weekly).
 
-## Core conventions (inherited from canonical sheet)
+## Core conventions (inherited from the original tracking sheet)
 - **Verifiable data only** — no fabricated figures; gaps explicitly flagged.
 - **Append-only** — never delete historical rows from the tracker.
 - `🟡 NEW` marks rows added in the current cycle; `🟡🟡` = Cycle 2, `🟡🟡🟡` = Cycle 3, etc.

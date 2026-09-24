@@ -40,7 +40,13 @@ near a 10% base rate): **ROC AUC** (rank statistic, cross-checked against `sklea
 reported *beside* **PR AUC** and its baseline π, with a **cost-based operating point**
 (a missed break costs ~15× a needless hedge, so the threshold sits far below 0.5).
 The strategy is a **locked, versioned contract** (`STRATEGY.md`) that a test fails the
-build on if any constant drifts. `36 tests pass` (1 skipped).
+build on if any constant drifts. CI runs pytest (and the dbt tests) on every push and pull request.
+
+**Data status.** The SQLite store (`pe-tracker/data/pe_tracker.db`) is the source of truth;
+`MI_PE_Tracking_System.xlsx` is an output generated from it. The Q3 2026 deal register
+(`pe-tracker/data/research/`) is research-only and never enters the model store. Historical
+deals enter only through the reviewed `sec_deal_manifest.json`, which is currently empty, so the
+break model has **no real labels** (`MODEL_DATA_STATUS = NO_REAL_LABELS`).
 
 ### 2 · `arb-intelligence/` — the production data architecture
 The same estate rebuilt as a modern stack: **DuckDB + dbt + Dagster**. Raw → Silver →
@@ -55,8 +61,8 @@ Ready-to-use handoff prompts that carry this project's real data and rules into 
 tools: one for **ChatGPT** (build the `market-arb` quant engine) and one for **Gemini**
 (design the target data architecture).
 
-Plus the source intelligence layer: `MI_PE_Tracking_System.xlsx` (the canonical 5-tab
-workbook), the daily `tracker/`, weekly `memos/`, the `automation/` loop, a
+Plus the source intelligence layer: `MI_PE_Tracking_System.xlsx` (a 5-tab workbook that is an
+output of the SQLite store), the daily `tracker/`, weekly `memos/`, the `automation/` loop, a
 contrarian opportunities brief, and the full market-intelligence report.
 
 ---
@@ -132,7 +138,7 @@ dagster dev -m orchestrator.pipeline     # launch the orchestrator UI
 pe-tracker/          research pipeline (SQLite) + locked strategy contract + tests
 arb-intelligence/    DuckDB + dbt + Dagster data estate + invariant tests
 outputs/             ChatGPT (quant engine) & Gemini (data architecture) prompts
-MI_PE_Tracking_System.xlsx        canonical 5-tab market/deal workbook
+MI_PE_Tracking_System.xlsx        5-tab market/deal workbook (output; SQLite is the source of truth)
 tracker/  memos/  automation/     daily working layer, weekly memos, loop config
 MI_PE_Market_Intelligence_Report.md         full intelligence report
 Asymmetric_PE_MA_Opportunities_Mid2026.md   contrarian opportunities brief

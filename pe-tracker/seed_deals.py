@@ -44,28 +44,22 @@ if __name__ == "__main__":
                 status, p_break, model_version, source_note)
                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", DEALS)
 
-        # ILLUSTRATIVE arb quote inputs (not live market data) for the two
-        # clean take-private / strategic cash deals, so the merger-arb ranker
-        # demonstrably runs. The JV, carve-out and financing deals are left
-        # without quotes and surface as `awaiting_quote` — never fabricated.
-        # Units: easyJet in pence; Organon in USD. Replace with a live quote
-        # feed for real use.
+        # ILLUSTRATIVE arb quote inputs (not live market data). Kept here for
+        # reference only: illustrative prices are a PROHIBITED source for the
+        # canonical/model store (deals, deal_events, deal_market_observations)
+        # and are no longer written. Deals without real quotes surface as
+        # `awaiting_quote` — never fabricated. Units: easyJet in pence;
+        # Organon in USD.
         illustrative = [
             # deal_id, offer_price, current_price, unaffected_price, expected_close
             ("EZJ-CASTLELAKE-2026", 690.0, 662.0, 505.0, "2026-12-31"),
             ("ORGN-SUNP-2026", 42.00, 39.60, 31.50, "2027-03-31"),
         ]
-        for deal_id, offer, cur, unaff, close in illustrative:
-            conn.execute(
-                """UPDATE deals SET offer_price=?, current_price=?,
-                       unaffected_price=?, expected_close_date=?,
-                       source_note = source_note || ' (illustrative arb quotes)'
-                   WHERE deal_id=?""",
-                (offer, cur, unaff, close, deal_id),
-            )
+        _ = illustrative        # intentionally not written (see comment above)
 
         n = conn.execute("SELECT COUNT(*) FROM deals").fetchone()[0]
         pend = conn.execute("SELECT COUNT(*) FROM deals WHERE status='pending'").fetchone()[0]
         quoted = conn.execute(
             "SELECT COUNT(*) FROM deals WHERE current_price IS NOT NULL").fetchone()[0]
-    print(f"seeded {n} deals ({pend} pending/censored, {quoted} with illustrative arb quotes)")
+    print(f"seeded {n} deals ({pend} pending/censored, {quoted} with quotes; "
+          f"illustrative quotes are not written to the store)")

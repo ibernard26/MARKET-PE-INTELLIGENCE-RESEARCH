@@ -19,7 +19,7 @@ Bronze→Silver→Gold model and **programmatically enforces five data invariant
 python -m pip install -e .          # or: pip install duckdb dbt-core dbt-duckdb dagster dagster-dbt requests openpyxl pydantic
 python scripts/migrate_sqlite_to_silver.py     # lands silver.* (uses ./local.db, else a 6-deal fixture)
 dbt run  --profiles-dir . --project-dir .      # builds staging → gold → marts
-dbt test --profiles-dir . --project-dir .      # runs the 4 invariant tests
+dbt test --profiles-dir . --project-dir .      # runs the 6 SQL tests in tests/
 # full orchestrated run (gate → ingest → dbt run+test → export xlsx):
 dagster asset materialize --select '*' -m orchestrator.pipeline
 # or launch the UI:  dagster dev -m orchestrator.pipeline
@@ -34,13 +34,13 @@ scripts/migrate_sqlite_to_silver.py   SQLite→DuckDB silver load (+ Parquet mir
 models/staging/                       views over the landed silver sources
 models/gold/                          dim_date, dim_series, dim_deal, fact_price (incremental), fact_deal_state (bitemporal)
 models/marts/mart_deal_scorecard.sql  censored Brier scorecard
-tests/                                4 singular SQL tests (one per invariant, rows-on-failure)
+tests/                                6 singular SQL tests (rows-on-failure)
 orchestrator/pipeline.py              Dagster assets + weekday 17:00 schedule
 macros/generate_schema_name.sql       verbatim schema names (staging/silver/gold)
 ```
 
 ## Verified
-On a clean run against the fixture: **8 dbt models build, 4 invariant tests pass**,
+On a clean run against the fixture: **8 dbt models build, 6 SQL tests pass**,
 the full Dagster job returns `RUN_SUCCESS`, and `outputs/Deal_Grade_Scorecard_Gold.xlsx`
 is produced. Spot-checks confirm the weekend print is gated out of `fact_price`, a
 genuinely-missing print survives as `NULL`, and the 5 pending deals are censored

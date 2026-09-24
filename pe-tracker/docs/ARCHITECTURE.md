@@ -55,6 +55,6 @@ The research contract (`event_driven_v1`) lives in `STRATEGY.md` and `src/config
 `tests/test_strategy_contract.py` fails the build if it drifts.
 
 ## Current status
-The infrastructure is built and tested (129 tests plus 6 dbt invariants in CI). The real store
+The infrastructure is built and tested (pytest plus 6 dbt invariants in CI). The real store
 has **0 labelled deals**, so no predictive claim is made: *model infrastructure validated,
 insufficient data for alpha claim.*

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "_doc": "Reviewed manifest for SECEdgarProvider. Each entry cites SEC accession numbers; terms must be read from the cited filing by a reviewer. Entries are verified against EDGAR at ingestion; unverifiable entries are rejected. Intentionally empty: no deal is added without a verified primary source. See docs/HISTORICAL_DEAL_DATA_SOURCES.md for the entry format.",
+  "_doc": "Reviewed manifest for SECEdgarProvider. Each entry cites SEC accession numbers; terms must be read from the cited filing by a reviewer. Entries are verified against EDGAR at ingestion; unverifiable entries are rejected. Contains only reviewer-read entries backed by verified primary-source filings; no deal is added without a verified primary source. See docs/HISTORICAL_DEAL_DATA_SOURCES.md for the entry format.",
   "deals": [
     {
       "deal_id": "DEAL-CRNX-VRTX-2026",

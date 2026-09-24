@@ -1,0 +1,64 @@
+canonical_deal_id,as_of,outcome_candidate,resolution_event_id,resolution_valid_at,basis,requires_review,model_eligible
+DEAL-ACCULYNX-VRSK-2025,2026-09-24T23:59:59,censored,,,pending (seen: court_order_specific_performance),yes,no
+DEAL-AMBROS-HOWL-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-AMSURG-ASCENSION-2026,2026-09-24T23:59:59,Y0_closed,EVT-7137FF04900E1BA7,2026-08,closing (press_multi),yes,no
+DEAL-ARX-THOMABRAVO-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-ATOME-GRAB-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-BIRCH-DEC-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-BWIN-SEQDFO-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-BWMN-BCP-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-BZH-DFH-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-CARBONIUM-TOMZ-2026,2026-09-24T23:59:59,Y1_broken,EVT-15E61D0F65799083,2026-09-20,termination (press_multi),yes,no
+DEAL-CONVERGENT-VCYT-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-CRNX-VRTX-2026,2026-09-24T23:59:59,Y0_closed,EVT-EF4B6AF335CC2DCC,2026-09-01,closing (sec_metadata_confirmed),yes,no
+DEAL-CSR-IRT-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-DEPOP-EBAY-2026,2026-09-24T23:59:59,Y0_closed,EVT-0B7C6F7C501F4AED,2026-07-30,closing (press_multi),yes,no
+DEAL-DHER-UBER-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-DIANOMI-TBLA-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-EA-PIFSLAFF-2025,2026-09-24T23:59:59,Y0_closed,EVT-A97C07E24BB64BD8,2026-08-04,closing (sec_metadata_confirmed),yes,no
+DEAL-EFSI-JMSB-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-ESI-SOLS-2026,2026-09-24T23:59:59,Y1_broken,EVT-463D8B2CBA97A878,2026-08-27,termination (sec_metadata_confirmed),yes,no
+DEAL-EZJ-APOLLO-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-FIRSTEAGLE-VCTR-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-FMC-ADENA-2026,2026-09-24T23:59:59,Y0_closed,EVT-D5C21DEAB46EADBD,2026-09-01,closing (press_multi),yes,no
+DEAL-HHS-STRR-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-HUGGINGFACE-NVDA-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-ITGR-KKR-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-ITM-TELIX-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-ITRK-EQT-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-ITVME-SKY-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-LINCOLN-EQBK-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-LIQUIDNAILS-HENKEL-2025,2026-09-24T23:59:59,censored,,,pending (seen: court_injunction),yes,no
+DEAL-LNTH-CURIUM-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-LXFR-WYNNCHURCH-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-MG-HIG-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-MKTX-ICE-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-MOMENTUM-WMB-2026,2026-09-24T23:59:59,Y0_closed,EVT-0884A9DA74CBD422,2026-09-03,closing (press_multi),yes,no
+DEAL-NATL-BCO-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-OVO-EON-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-PRTH-PRIOREGRP-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-RGR-BERETTA-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-SDR-NUVEEN-2026,2026-09-24T23:59:59,censored,,,pending (seen: regulatory_approvals_received),yes,no
+DEAL-SEALINK-JOURNEYB-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-SGRO-PLD-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-SKYT-IONQ-2026,2026-09-24T23:59:59,Y0_closed,EVT-2A0BA2F274189F9D,2026-07-31,closing (sec_metadata_confirmed),yes,no
+DEAL-SSTK-GETY-2025,2026-09-24T23:59:59,Y1_broken,EVT-2002D16F6D80A7A2,2026-07-07,termination (sec_metadata_confirmed),yes,no
+DEAL-TALLGRASS-ENB-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-TBPH-ZYME-2026,2026-09-24T23:59:59,Y0_closed,EVT-A1AD85F1D587B28F,2026-09-23,closing (sec_metadata_confirmed),yes,no
+DEAL-TECH-MERCKKGAA-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-TKE-KONE-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-ULTRAMAR-LMT-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-ULVRFOODS-MKC-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-USI-AON-2026,2026-09-24T23:59:59,censored,,,pending,yes,no
+DEAL-WBD-PSKY-2026,2026-09-24T23:59:59,censored,,,"pending (seen: litigation_settlement, regulatory_clearance)",yes,no
+DEAL-WILDFIRE-MGY-2026,2026-09-24T23:59:59,censored,,,pending (seen: completion_indicated),yes,no
+PROP-BF-SAZERAC-2026,2026-09-24T23:59:59,censored,,,proposal: never a signed-deal label,yes,no
+PROP-CWY-EQT-2026,2026-09-24T23:59:59,censored,,,proposal: never a signed-deal label,yes,no
+PROP-IEL-BX-2026,2026-09-24T23:59:59,censored,,,proposal: never a signed-deal label,yes,no
+PROP-INA-WARBURG-2026,2026-09-24T23:59:59,censored,,,proposal: never a signed-deal label,yes,no
+PROP-KOBAYASHI-CVCNSSK-2026,2026-09-24T23:59:59,censored,,,proposal: never a signed-deal label,yes,no
+UNVR-ARGAN-WDP-2026,2026-09-24T23:59:59,censored,,,unverified: never a signed-deal label,yes,no
+UNVR-ATG-MARI-2026,2026-09-24T23:59:59,censored,,,unverified: never a signed-deal label,yes,no
+UNVR-OPENROUTER-STRIPE-2026,2026-09-24T23:59:59,censored,,,unverified: never a signed-deal label,yes,no
+UNVR-SEAHAWKS-KHOSLA-2026,2026-09-24T23:59:59,censored,,,unverified: never a signed-deal label,yes,no
+UNVR-WAKEMED-ATRIUM-2026,2026-09-24T23:59:59,censored,,,unverified: never a signed-deal label,yes,no

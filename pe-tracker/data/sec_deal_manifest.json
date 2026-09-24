@@ -1,5 +1,37 @@
 {
   "schema_version": 1,
   "_doc": "Reviewed manifest for SECEdgarProvider. Each entry cites SEC accession numbers; terms must be read from the cited filing by a reviewer. Entries are verified against EDGAR at ingestion; unverifiable entries are rejected. Intentionally empty: no deal is added without a verified primary source. See docs/HISTORICAL_DEAL_DATA_SOURCES.md for the entry format.",
-  "deals": []
+  "deals": [
+    {
+      "deal_id": "DEAL-CRNX-VRTX-2026",
+      "target": "Crinetics Pharmaceuticals, Inc.",
+      "acquirer": "Vertex Pharmaceuticals Incorporated",
+      "target_cik": 1658247,
+      "announcement_accession": "0001140361-26-027642",
+      "terms_accession": "0001140361-26-027642",
+      "announcement_timestamp": "2026-07-06",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 85.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001140361-26-035195",
+      "resolution_timestamp": "2026-09-01"
+    },
+    {
+      "deal_id": "DEAL-ESI-SOLS-2026",
+      "target": "Element Solutions Inc",
+      "acquirer": "Solstice Advanced Materials Inc.",
+      "target_cik": 1590714,
+      "announcement_accession": "0001104659-26-080825",
+      "terms_accession": "0001104659-26-080825",
+      "announcement_timestamp": "2026-07-06",
+      "deal_type": "strategic",
+      "consideration_type": "mixed",
+      "offer_price": 10.00,
+      "exchange_ratio": 0.500,
+      "resolution_type": "terminated",
+      "resolution_accession": "0001104659-26-102559",
+      "resolution_timestamp": "2026-08-27T16:00:00"
+    }
+  ]
 }

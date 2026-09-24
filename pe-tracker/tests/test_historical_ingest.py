@@ -184,9 +184,21 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_is_empty():
+def test_shipped_manifest_has_exactly_two_reviewed_deals():
+    """First filing-text-reviewed labels: one closed (Y=0) + one terminated (Y=1)."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
-    assert json.loads(p.read_text())["deals"] == []
+    deals = json.loads(p.read_text())["deals"]
+    assert [d["deal_id"] for d in deals] == ["DEAL-CRNX-VRTX-2026", "DEAL-ESI-SOLS-2026"]
+    crnx, esi = deals
+    assert crnx["resolution_type"] == "closed" and crnx["offer_price"] == 85.0
+    assert crnx["announcement_accession"] == crnx["terms_accession"] == "0001140361-26-027642"
+    assert crnx["resolution_accession"] == "0001140361-26-035195"
+    assert crnx["resolution_timestamp"] == "2026-09-01"
+    assert esi["resolution_type"] == "terminated" and esi["consideration_type"] == "mixed"
+    assert esi["offer_price"] == 10.0 and esi["exchange_ratio"] == 0.5
+    assert esi["announcement_accession"] == esi["terms_accession"] == "0001104659-26-080825"
+    assert esi["resolution_accession"] == "0001104659-26-102559"
+    assert esi["resolution_timestamp"] == "2026-08-27T16:00:00"
 
 
 # ------------------------------------------------- quality + readiness

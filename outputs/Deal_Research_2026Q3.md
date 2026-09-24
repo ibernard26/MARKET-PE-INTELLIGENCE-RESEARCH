@@ -4,14 +4,17 @@
 
 ## How this was built
 - **Search:** web search results with source links. Most news and wire sites (Reuters, Business Wire, PR Newswire, GlobeNewswire, Yahoo, FactSet, Intellizence, `www.sec.gov`) are **blocked by this environment's network policy**, so I couldn't open and read the pages themselves. Each fact is backed by the search results, with the cited URLs listed in the CSV.
-- **SEC check:** `data.sec.gov` is reachable. For every US-listed target, I pulled the company's EDGAR filing list and matched the deal against it: 8-K item 1.01 (agreement signed), 1.02 (terminated) and 2.01 (completed), plus Form 25 or 15 (delisting). The SEC acceptance time is used as the deal's point-in-time `known_at`. All 20 cited accession numbers matched EDGAR.
+- **SEC check:** `data.sec.gov` is reachable. For every US-listed target, I pulled the company's EDGAR filing list and matched the deal against it: 8-K item 1.01 (agreement signed), 1.02 (terminated) and 2.01 (completed), plus Form 25 or 15 (delisting). The earliest verified disclosure time (usually the SEC acceptance time, in UTC) is used as the deal's point-in-time `known_at`.
+- **What the SEC check does and doesn't prove:** all 29 accession numbers cited in the register (across 25 rows) matched the expected company's EDGAR filing list. That confirms **filing metadata only**: form type, 8-K item numbers, acceptance time and accession. **No filing text was read** (`www.sec.gov` is blocked), so `filing_content_verified` is `no` on every row. The other 39 rows are verified by press only, or not verified at all.
 - **Verification levels:**
-  - `sec_confirmed`: 21 rows
-  - `press_multi` (two or more sources agree): 29
-  - `press_single`: 9
+  - `sec_metadata_confirmed`: 25 rows (EDGAR metadata matches the event; filing text not read)
+  - `press_multi` (two or more sources agree): 26
+  - `press_single`: 8
   - `reported_only`: 5 (listed in monthly roundups but not confirmed; don't use these without checking)
+  - The separate column `filing_content_verified` is `no` on all 64 rows.
 - **Missing values:** anything not found stays **blank or `n/d`**. Nothing is estimated.
-- **Not loaded into the model:** these rows are **not** in the `deals` table or the SEC manifest. Their terms come from press coverage rather than a reviewer reading the filing, and the strategy contract requires the latter.
+- **Not loaded into the model:** these rows are **not** in the `deals` table, the bitemporal store or the SEC manifest. Their terms come from press coverage rather than a reviewer reading the filing, and the strategy contract requires the latter.
+- **Research candidates only:** `reported_only` rows and regulator-only events (UK CMA and US FTC steps) stay as research and event candidates. They are never loaded into model data automatically.
 
 ## Scoreboard: deals that resolved in the window
 | Outcome | Deal | Date | Evidence |
@@ -29,7 +32,10 @@
 | Closed | Ascension / **AmSurg** ($3.9B), after the FTC consent order with 7 surgery-center divestitures | late Aug | press (multiple) |
 | Closed | Adena / **Fairfield Medical Center** (OhioHealth's earlier deal abandoned) | 2026-09-01 | press (multiple) |
 | Closed | Williams / **Momentum Midstream** (up to $5.5B), 31 days from signing to close | 2026-09-03 | press + WMB 8-K |
+| *Likely closed* | Magnolia / **WildFire Energy** (~$4.06B) | 2026-09-14 | MGY 8-K item 2.01 (metadata only; confirm from filing text) |
 | **Contested** | Verisk / **AccuLynx** ($2.35B): Delaware court ordered Verisk to close; Verisk appealed 8/18 | 2026-08-07 | press (multiple) |
+
+*SEC evidence in this table is filing metadata (form type and 8-K items). The filings' text was not read.*
 
 Solstice/Element is the cleanest example for the break model: a large signed deal that broke with no regulatory block and no fee paid. The two sides called it off after hearing from shareholders, about seven weeks after signing.
 
@@ -37,9 +43,10 @@ Solstice/Element is the cleanest example for the break model: a large signed dea
 | Target | Acquirer | Terms | Value | Status |
 |---|---|---|---|---|
 | Crinetics (CRNX) | Vertex | $85.00 cash | $10.0B equity | **closed 9/1** |
-| Element Solutions (ESI) | Solstice | cash + stock | ~$14.5B incl. net debt | **terminated 8/27** |
+| Element Solutions (ESI) | Solstice | $10.00 cash + 0.500 SOLS sh (~$50.10 implied); $4.685B bridge | ~$14.5B incl. net debt | **terminated 8/27** |
 | Ultra Maritime | Lockheed Martin (from Advent) | cash | $3.45B | pending |
-| WildFire Energy | Magnolia O&G | n/d | n/d | pending |
+| WildFire Energy | Magnolia O&G | 32.2M MGY Class A sh + $600M notes assumed; rest cash/debt/new equity | ~$4.06B incl. debt | likely closed 9/14 (8-K 2.01 metadata) |
+| Delivery Hero | Uber | €41.50 cash tender offer (agreement 7/16; offer document 8/27) | $14.8B equity | acceptance period ends 11/5 |
 | Luxfer (LXFR) | Wynnchurch | $17.37 cash (+30.7%) | n/d | pending, close before YE26 |
 | MarketAxess (MKTX) | ICE | $167.00 cash (+33%) | ~$6.0B equity | pending, H1 2027 |
 | SkyWater (SKYT) | IonQ | $15 + 0.4883 IONQ | ~$1.8B | **closed 7/31** |
@@ -60,7 +67,6 @@ Solstice/Element is the cleanest example for the break model: a large signed dea
 | Harte Hanks (HHS) | Star Equity | $5.00 (cash + preferred) | $38.4M | pending |
 | Ambros (private) | Werewolf (reverse merger) | stock + $150M PIPE | $500M pre-money | pending |
 | First Eagle | Victory Capital (from **Genstar**) | $4.4B cash + $2.0B stock | ~$7.0B | pending |
-| Delivery Hero | Uber | €41.50 cash offer (launched 8/27) | $14.8B | acceptance period ends 11/5 |
 | USI | Aon (from **KKR**) | cash | $17.0B | pending, Q4 |
 | EA | PIF / **Silver Lake** / Affinity | $210 cash | ~$55B | **closed 8/4** |
 | *OpenRouter; ATG* | *Stripe; MARI* | – | *>$8B; ~$6B* | *reported only* |
@@ -69,7 +75,7 @@ Solstice/Element is the cleanest example for the break model: a large signed dea
 | Target | Acquirer | Terms | Value | Status |
 |---|---|---|---|---|
 | Birch Permian | Diversified Energy (from Elliott) | n/d | ~$1.8B | pending |
-| Hugging Face | Nvidia | ~$11.9B + ~$1.0B retention | ~$12.9B | pending, H1 2027 |
+| Hugging Face | Nvidia | ~$11.9B + ~$1.0B retention (agreed 9/2; first disclosed 9/3) | ~$12.9B | pending, H1 2027 |
 | Lincoln Bancorp | Equity Bancshares | cash + stock | $123.8M | pending |
 | Eagle Financial (EFSI) | John Marshall Bancorp | stock (1.30x tangible book) | $253M | pending |
 | Centerspace (CSR) | IRT | 3.800 IRT sh (fixed ratio) | ~$2.14B | pending |
@@ -88,9 +94,9 @@ Solstice/Element is the cleanest example for the break model: a large signed dea
 
 **Pre-window deals with events in the window:**
 - **Bio-Techne:** Merck KGaA's $73 offer won the shareholder vote on 9/23.
-- **Paramount / WBD:** the 12-state attorneys general suit settled on 9/21. Close is expected around early October. A $0.25 per quarter ticking fee starts accruing after 9/30.
+- **Paramount / WBD** (agreement signed 2026-02-27): the 12-state attorneys general suit settled on 9/21. The deal is **pending, with a close likely soon now the litigation is settled**. No primary source gives a dated close; an "early October" close appears only in press reports of an internal memo. A $0.25/share per-quarter ticking fee accrues if the deal hasn't closed by 9/30.
 - **EQT / Intertek:** pending, with no event in the window.
-- **Uber / Delivery Hero:** the tender offer launched 8/27, and Delivery Hero's boards recommended it on 9/2.
+- **Uber / Delivery Hero** is now listed under July: the agreement was signed 7/16. The 8/27 offer document and the boards' 9/2 recommendation are milestones, not the announcement.
 
 ## ChatGPT's public-source package: how it was integrated
 The package had 33 event rows, mostly UK CMA and US FTC milestones. The original files are stored unchanged in `pe-tracker/data/public_mna_intelligence/2026-07-01_2026-09-24/staging_chatgpt/`. The row-by-row review is in `reconciliation.csv` next to them.
@@ -108,7 +114,7 @@ The package had 33 event rows, mostly UK CMA and US FTC milestones. The original
 - **Deals new to the register:**
   - Getty/Shutterstock, eBay/Depop, Williams/Momentum, Verisk/AccuLynx, Ascension/AmSurg, Adena/FMC
   - Nuveen/Schroders: completion scheduled for 10/1
-  - Brink's/NCR Atleos, McCormick/Unilever Foods ($44.8B EV), KONE/TK Elevator (€29.4B), E.ON/OVO, Sky/ITV
+  - Brink's/NCR Atleos, McCormick/Unilever Foods ($44.8B EV), KONE/TK Elevator (€29.4B; seller Vertical Topco I S.A., jointly controlled by Advent and Cinven), E.ON/OVO, Sky/ITV
   - Ingenia/Warburg and IDP/Blackstone: rejected proposals, never labels
   - Beretta/Ruger
 - **Label rules applied** (the package's rules match the repo's strategy contract):
@@ -121,8 +127,8 @@ The package had 33 event rows, mostly UK CMA and US FTC milestones. The original
 | | Public target (usable by `break_logit_v1` once reviewed) | Private or nonprofit target (no spread features) |
 |---|---|---|
 | **Y=1 (broke)** | Element Solutions (8/27), Shutterstock (7/7) | TOMI/Carbonium (micro-cap; 9/20) |
-| **Y=0 (closed)** | SkyWater (7/31), EA (8/4), Crinetics (9/1), Theravance (9/23) | Depop, AmSurg, Momentum, Fairfield MC |
-| **Censored (unresolved)** | everything else, including Henkel (blocked, not confirmed terminated), Verisk (on appeal) and Schroders (closes 10/1) | |
+| **Y=0 (closed)** | SkyWater (7/31), EA (8/4), Crinetics (9/1), Theravance (9/23) | Depop, AmSurg, Momentum, Fairfield MC; WildFire (likely 9/14, confirm) |
+| **Censored (unresolved)** | everything else, including Henkel (blocked, not confirmed terminated), Verisk (on appeal), Schroders (completion scheduled 10/1 per press) and Paramount/WBD (settled, pending) | |
 
 `MODEL_DATA_STATUS` is still **NO_REAL_LABELS**. None of these rows is in the canonical bitemporal store yet. The six public-target candidates (2 breaks, 4 closes) are what would be ingested first once a reviewer confirms terms against the filings. That is far below any sample size needed to fit a model.
 
@@ -143,13 +149,15 @@ The package had 33 event rows, mostly UK CMA and US FTC milestones. The original
 | Priority Technology announced 9/22 | SEC acceptance is **9/21 11:40 UTC**. |
 | Victory–First Eagle $6.4B | **~$7.0B** including $575M of assumed notes. |
 | Solstice–Element $12.2B | **~$14.5B** including net debt (per the companies). |
+| Uber–Delivery Hero announced with the 8/27 offer | Agreement signed **7/16** (UBER 8-K 1.01). 8/27 is the offer-document date. |
+| Nvidia–Hugging Face announced 8/27 | 8/27 was an unconfirmed media report. Agreement dated **9/2**; first public disclosure **9/3** (8-K accepted 08:03:56 ET). |
 
 ## Gaps: what to ask ChatGPT or another source
 Paste this and paste the answers back. I'll reconcile them against EDGAR where I can.
 
 > For each deal below, give: the exact announcement date, the per-share terms or exchange ratio, the equity value and the enterprise value, the expected close date, the key conditions (regulatory approvals, shareholder vote, financing), and a primary-source URL (press release or SEC filing). If you're not sure, say so. Don't estimate.
-> 1. Solstice Advanced Materials / Element Solutions (July 6, 2026): the per-share cash + stock terms
-> 2. Magnolia Oil & Gas / WildFire Energy (July 20, 2026): price and structure
+> 1. ~~Solstice / Element per-share terms~~ (resolved 2026-09-24)
+> 2. Magnolia / WildFire (July 20, 2026): confirm the closing date (8-K item 2.01 filed September 14, 2026). Terms resolved 2026-09-24
 > 3. WDP / Argan (July 2026): structure, value and status
 > 4. Seattle Seahawks sale (July 2026): buyer group, price, league approval status
 > 5. Stripe / OpenRouter and MARI Group / Ambassador Theatre Group (August 2026): terms and whether signed
@@ -163,7 +171,8 @@ Paste this and paste the answers back. I'll reconcile them against EDGAR where I
 > 13. Getty / Shutterstock: the per-share terms, and whether any termination fee was paid on the July 7, 2026 termination
 > 14. OhioHealth / Fairfield Medical Center: the date the deal was abandoned
 > 15. Ascension / AmSurg: the exact closing date
-> 16. E.ON / OVO: the price. Sky / ITV: the signing date. KONE / TK Elevator: the sellers
+> 16. E.ON / OVO: the price. Sky / ITV: the signing date
+> 18. Paramount / WBD: a primary-source closing date, if one is announced
 > 17. Brink's / NCR Atleos: the outcome of the CMA Phase 1 review (deadline October 22, 2026)
 
 ## Access limits hit

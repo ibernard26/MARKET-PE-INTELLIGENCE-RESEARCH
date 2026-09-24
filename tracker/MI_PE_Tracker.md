@@ -200,3 +200,12 @@ Adds 15 deals to the register (now 64 rows). All 33 package rows were reconciled
 | 2026-09-21 / 22 | Rejected | Ingenia rejects Warburg A$5.05; IDP rejects Blackstone A$2.50 | Noise (proposals, never labels) |
 | Jul–Sep | UK CMA steps | McCormick / Unilever Foods ($44.8B EV), KONE / TKE (€29.4B), E.ON / OVO, Sky / ITV, Brink's / NCR Atleos | Monitor |
 | 2026-10-01 (scheduled) | Close | Nuveen / Schroders £9.9B after the court sanction hearing on 9/29 | Monitor |
+
+**Section 7 corrections (2026-09-24, reviewer pass) 🟡 NEW.** These are append-only notes. They replace the matching facts above but leave the earlier rows in place.
+- **Paramount / WBD:** the definitive agreement is dated **2026-02-27**. The "close ~early Oct" note above is **withdrawn as a fact**. No primary source gives a dated close; status is pending, with a close likely soon now the litigation is settled.
+- **Uber / Delivery Hero:** announced **2026-07-16** (business combination agreement, UBER 8-K 1.01). 2026-08-27 is the offer-document publication date, not the announcement.
+- **Nvidia / Hugging Face:** agreement dated 2026-09-02; `known_at` is the first public disclosure on **2026-09-03** (8-K accepted 08:03:56 ET).
+- **Solstice / Element:** $10.00 cash + 0.500 SOLS shares per ESI share; initial $4.685B bridge commitment.
+- **Magnolia / WildFire:** ~$4.06B incl. debt; 32.2M MGY shares + $600M notes assumed. An MGY 8-K with item 2.01 (completion) was filed 2026-09-14, so the deal has **likely closed**; confirm from the filing text before labeling.
+- **KONE / TK Elevator:** seller is Vertical Topco I S.A., jointly controlled by Advent and Cinven.
+- **Evidence wording:** "SEC-confirmed" is now "SEC-metadata-confirmed" (25 rows; 29 cited accessions matched their companies). No filing text has been read.

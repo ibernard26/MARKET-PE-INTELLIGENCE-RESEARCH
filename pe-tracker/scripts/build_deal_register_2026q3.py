@@ -9,7 +9,10 @@ written to the deals table or the SEC manifest; that needs a reviewer reading
 the cited filings (see docs/HISTORICAL_DEAL_DATA_SOURCES.md).
 
 Conventions: unknown values stay empty (never estimated); `verification` is
-  sec_confirmed  - EDGAR filing(s) confirm the event and its timestamp
+  sec_metadata_confirmed - EDGAR filing METADATA (form, 8-K items, acceptance
+                   time, accession) matches the event; filing text NOT read
+  (separate column filing_content_verified = yes only if the filing text was read;
+   it is "no" on every row today because www.sec.gov is unreachable here)
   press_multi    - two or more independent press sources agree
   press_single   - one source; treat as provisional
   reported_only  - media report / non-binding; not a signed deal
@@ -28,7 +31,8 @@ FIELDS = [
     "sponsor", "deal_type", "consideration_type", "offer_terms", "headline_value",
     "value_basis", "premium", "announce_date", "announce_known_at_utc", "status_2026_09_24",
     "resolution_date", "expected_close", "sector", "geography", "sec_cik",
-    "sec_announce_accession", "sec_resolution_accession", "verification", "sources", "notes",
+    "sec_announce_accession", "sec_resolution_accession", "verification", "filing_content_verified",
+    "sources", "notes",
 ]
 
 R = []
@@ -36,6 +40,7 @@ R = []
 
 def add(**kw):
     row = {f: "" for f in FIELDS}
+    row["filing_content_verified"] = "no"
     unknown = set(kw) - set(FIELDS)
     assert not unknown, unknown
     row.update(kw)
@@ -51,21 +56,22 @@ add(deal_id="2026Q3-001", window_event="announced", window_event_date="2026-07-0
     status_2026_09_24="closed", resolution_date="2026-09-01",
     sector="biotech", geography="US", sec_cik="1658247",
     sec_announce_accession="0001140361-26-027642", sec_resolution_accession="0001140361-26-035195",
-    verification="sec_confirmed",
+    verification="sec_metadata_confirmed",
     sources="https://www.biopharmadive.com/news/vertex-crinetics-acquire-deal-palsonify-acromegaly/824545/",
     notes="Closed: 8-K items 2.01/3.01 + Form 25-NSE on 2026-09-01; 15-12G 2026-09-11. FactSet roundup cites $9B (headline mismatch). $4.5B bridge (BofA/MS).")
 
 add(deal_id="2026Q3-002", window_event="announced+terminated", window_event_date="2026-07-06",
     target="Element Solutions", target_ticker="ESI", acquirer="Solstice Advanced Materials",
-    deal_type="strategic", consideration_type="mixed", offer_terms="cash + stock (per-share terms n/d)",
+    deal_type="strategic", consideration_type="mixed",
+    offer_terms="$10.00 cash + 0.500 SOLS sh per ESI sh (implied ~$50.10; ~15% premium to 2026-07-02 close)",
     headline_value="~$14.5B incl. net debt", value_basis="enterprise",
-    announce_date="2026-07-06", announce_known_at_utc="2026-07-06T21:18:48Z",
+    announce_date="2026-07-06", announce_known_at_utc="2026-07-06T13:13:10Z",
     status_2026_09_24="terminated", resolution_date="2026-08-27",
     sector="specialty chemicals", geography="US", sec_cik="1590714",
     sec_announce_accession="0001104659-26-080825", sec_resolution_accession="0001104659-26-102559",
-    verification="sec_confirmed",
-    sources="https://ir.elementsolutionsinc.com/Investors/news/news-details/2026/Element-Solutions-Announces-Mutual-Termination-of-Merger-Agreement-with-Solstice-Advanced-Materials/default.aspx",
-    notes="BROKEN DEAL (positive class). Mutual termination, no fee either side, after shareholder conversations. 8-K items 1.01/1.02 accepted 2026-08-27. FactSet cites $12.2B (headline mismatch). Per-share exchange terms not captured - GAP.")
+    verification="sec_metadata_confirmed",
+    sources="https://www.tradingview.com/news/tradingview:1db2d00a69fdf:0-solstice-to-acquire-element-solutions-in-stock-and-cash-deal-0-5-share-plus-10-per-share/; https://www.cnbc.com/2026/07/06/honeywell-spinoff-solstice-to-buy-element-solutions-for-14point5-billion.html; https://ir.elementsolutionsinc.com/Investors/news/news-details/2026/Element-Solutions-Announces-Mutual-Termination-of-Merger-Agreement-with-Solstice-Advanced-Materials/default.aspx",
+    notes="BROKEN DEAL (positive class). Mutual termination, no fee either side, after shareholder conversations. 8-K items 1.01/1.02 accepted 2026-08-27. FactSet cites $12.2B (headline mismatch). Financing: initial $4.685B senior secured 364-day bridge term loan commitment (+ $1.0B backstop revolver, Goldman Sachs). known_at = earliest disclosure (ESI 8-K item 7.01 acc 0001104659-26-080612, 13:13:10Z); 1.01 8-K followed 21:18:48Z. Terms per reviewer correction 2026-09-24, corroborated by TradingView/CNBC.")
 
 add(deal_id="2026Q3-003", window_event="announced", window_event_date="2026-07-06",
     target="Ultra Maritime", acquirer="Lockheed Martin", sponsor="Advent International (seller)",
@@ -77,11 +83,17 @@ add(deal_id="2026Q3-003", window_event="announced", window_event_date="2026-07-0
     notes="Tracked theme #2 (defense sub-tier). Expected close n/d.")
 
 add(deal_id="2026Q3-004", window_event="announced", window_event_date="2026-07-20",
-    target="WildFire Energy", acquirer="Magnolia Oil & Gas", deal_type="strategic",
-    announce_date="2026-07-20", status_2026_09_24="pending", sector="upstream oil & gas", geography="US",
-    verification="press_single",
-    sources="https://www.magnoliaoilgas.com/investors/press-releases/year/2026/07-20-2026-120106731",
-    notes="Terms not captured - GAP.")
+    target="WildFire Energy (private)", acquirer="Magnolia Oil & Gas (MGY)", deal_type="strategic",
+    consideration_type="stock + debt assumption + cash",
+    offer_terms="32.2M MGY Class A sh + assumption of $600M notes due 2029; remaining consideration funded with cash/debt/new equity",
+    headline_value="~$4.06B incl. debt", value_basis="enterprise", announce_date="2026-07-20",
+    announce_known_at_utc="2026-07-20T11:12:06Z",
+    status_2026_09_24="likely closed 2026-09-14 per 8-K item 2.01 metadata (filing text unread - confirm before labeling)",
+    sec_resolution_accession="0001104659-26-107498",
+    expected_close="late Q3 2026", sector="upstream oil & gas (Eagle Ford)", geography="US",
+    sec_cik="1698990", sec_announce_accession="0001104659-26-084859", verification="sec_metadata_confirmed",
+    sources="https://www.businesswire.com/news/home/20260719614998/en/Magnolia-Oil-Gas-Announces-Acquisition-of-WildFire-Energy; https://www.worldoil.com/news/2026/7/20/magnolia-s-4-06-billion-wildfire-deal-creates-major-south-texas-position/; https://www.bloomberg.com/news/articles/2026-07-20/magnolia-oil-agrees-to-buy-wildfire-energy-in-4-1-billion-deal",
+    notes="MGY 8-K items 1.01/2.03/3.02 accepted 2026-07-20T11:12:06Z (consistent with share issuance + debt). MGY 8-K items 1.01/2.01/2.03/3.02/7.01 accepted 2026-09-14T20:10:29Z - item 2.01 (completion of acquisition) indicates closing; resolution_date left blank until the filing text is read. Terms per reviewer correction 2026-09-24, corroborated by World Oil/Bloomberg. Private target.")
 
 add(deal_id="2026Q3-005", window_event="rejected", window_event_date="2026-07-26",
     target="Brown-Forman", target_ticker="BF.B", acquirer="Sazerac", deal_type="unsolicited proposal",
@@ -99,7 +111,7 @@ add(deal_id="2026Q3-006", window_event="announced", window_event_date="2026-07-2
     announce_date="2026-07-27", announce_known_at_utc="2026-07-27T12:31:57Z",
     status_2026_09_24="pending", expected_close="before end-2026",
     sector="industrials - gas containment/materials", geography="US-listed (UK plc)", sec_cik="1096056",
-    sec_announce_accession="0002077096-26-000223", verification="sec_confirmed",
+    sec_announce_accession="0002077096-26-000223", verification="sec_metadata_confirmed",
     sources="https://www.businesswire.com/news/home/20260727527925/en/Luxfer-Enters-Into-Agreement-to-Be-Acquired-for-$17.37-Per-Share-in-All-Cash-Transaction",
     notes="No financing condition. DEFM14A on file.")
 
@@ -110,7 +122,7 @@ add(deal_id="2026Q3-007", window_event="announced", window_event_date="2026-07-3
     premium="33% to 2026-07-29 close", announce_date="2026-07-30",
     announce_known_at_utc="2026-07-30T11:44:54Z", status_2026_09_24="pending", expected_close="H1 2027",
     sector="market structure / fixed-income trading", geography="US", sec_cik="1278021",
-    sec_announce_accession="0001193125-26-324933", verification="sec_confirmed",
+    sec_announce_accession="0001193125-26-324933", verification="sec_metadata_confirmed",
     sources="https://ir.theice.com/press/news-details/2026/Intercontinental-Exchange-to-Acquire-MarketAxess-Creating-a-Premier-Fixed-Income-Marketplace/default.aspx; https://www.cnbc.com/2026/07/30/intercontinental-exchange-to-buy-marketaxess.html",
     notes="Debt-financed (bonds, term loan, CP). HSR + MKTX vote required.")
 
@@ -119,7 +131,7 @@ add(deal_id="2026Q3-008", window_event="closed", window_event_date="2026-07-31",
     consideration_type="mixed", offer_terms="$15.00 cash + 0.4883 IONQ sh (collar-fixed at close)",
     headline_value="~$1.8B", value_basis="total consideration", status_2026_09_24="closed",
     resolution_date="2026-07-31", sector="semiconductor foundry / quantum", geography="US",
-    sec_cik="1819974", sec_resolution_accession="0001193125-26-327137", verification="sec_confirmed",
+    sec_cik="1819974", sec_resolution_accession="0001193125-26-327137", verification="sec_metadata_confirmed",
     sources="https://www.nasdaq.com/press-release/ionq-completes-acquisition-skywater-technology-2026-07-31",
     notes="Announced pre-window (Jan 2026). FTC granted early termination 2026-07-31 (FTC chairman statement; per ChatGPT staging MNA-20260731-IONQ-SKYWATER and search summary; ftc.gov unreachable here).")
 
@@ -145,7 +157,7 @@ add(deal_id="2026Q3-011", window_event="announced", window_event_date="2026-08-0
     headline_value="up to ~$8.0B", value_basis="total incl. CVR", announce_date="2026-08-03",
     announce_known_at_utc="2026-08-03T12:37:46Z", status_2026_09_24="pending", expected_close="H1 2027",
     sector="radiopharma / diagnostics", geography="US", sec_cik="1521036",
-    sec_announce_accession="0001193125-26-331138", verification="sec_confirmed",
+    sec_announce_accession="0001193125-26-331138", verification="sec_metadata_confirmed",
     sources="https://investor.lantheus.com/news-releases/news-release-details/curium-announces-definitive-agreement-merge-lantheus",
     notes="known_at = first deal 8-K (7.01/8.01) 12:37Z; 1.01 8-K accepted 2026-08-04T01:00Z. Some roundups cite $7.5B (cash-only).")
 
@@ -156,7 +168,7 @@ add(deal_id="2026Q3-012", window_event="announced", window_event_date="2026-08-0
     premium="51.8% to 2026-04-29 (pre-strategic-review); 28.8% to 30-day VWAP", announce_date="2026-08-03",
     announce_known_at_utc="2026-08-03T21:14:02Z", status_2026_09_24="pending", expected_close="by end-2026",
     sector="medtech contract manufacturing", geography="US", sec_cik="1114483",
-    sec_announce_accession="0000950103-26-011881", verification="sec_confirmed",
+    sec_announce_accession="0000950103-26-011881", verification="sec_metadata_confirmed",
     sources="https://investor.integer.net/news-events/press-releases/news-details/2026/Integer-to-Be-Acquired-by-KKR-in-Transaction-Valued-at-Approximately-5-7-Billion/default.aspx",
     notes="known_at = first DEFA14A; 1.01 8-K accepted 2026-08-04T20:32Z.")
 
@@ -186,7 +198,7 @@ add(deal_id="2026Q3-015", window_event="announced", window_event_date="2026-08-0
     headline_value="~$2.2B", value_basis="enterprise", announce_date="2026-08-06",
     announce_known_at_utc="2026-08-07T10:10:15Z", status_2026_09_24="pending", expected_close="Q4 2026",
     sector="homebuilding", geography="US", sec_cik="915840",
-    sec_announce_accession="0001104659-26-092299", verification="sec_confirmed",
+    sec_announce_accession="0001104659-26-092299", verification="sec_metadata_confirmed",
     sources="https://investors.dreamfindershomes.com/news-events/press-releases/detail/65/dream-finders-homes-to-acquire-beazer-homes-creating",
     notes="Agreement dated 2026-08-06; $31.3M target break fee; DEFM14A 2026-09-15. OPEN QUESTION: new 8-K item 1.01 accepted 2026-09-18T20:05Z (acc 0001104659-26-108933) - content unreadable here (www.sec.gov blocked); may be an amendment.")
 
@@ -197,7 +209,7 @@ add(deal_id="2026Q3-016", window_event="announced", window_event_date="2026-08-1
     premium="58% to 2026-08-07 unaffected close; 57% to 30-day VWAP", announce_date="2026-08-10",
     announce_known_at_utc="2026-08-10T13:21:17Z", status_2026_09_24="pending", expected_close="Q4 2026",
     sector="engineering / infrastructure services", geography="US", sec_cik="1847590",
-    sec_announce_accession="0001193125-26-341431", verification="sec_confirmed",
+    sec_announce_accession="0001193125-26-341431", verification="sec_metadata_confirmed",
     sources="https://investors.bowman.com/news-releases/news-release-details/bowman-consulting-group-enters-definitive-agreement-be-acquired; https://bowman.com/news/bowman-consulting-group-announces-expiration-of-go-shop-period",
     notes="35-day go-shop expired 2026-09-13, 76 parties contacted, no proposals. Tracked theme #1 (grid/electrical services).")
 
@@ -218,7 +230,7 @@ add(deal_id="2026Q3-018", window_event="announced", window_event_date="2026-08-1
     announce_date="2026-08-13", announce_known_at_utc="2026-08-13T11:59:29Z",
     status_2026_09_24="pending", expected_close="H1 2027", sector="insurance risk exchange / insurtech",
     geography="US", sec_cik="1997350", sec_announce_accession="0001193125-26-349973",
-    verification="sec_confirmed",
+    verification="sec_metadata_confirmed",
     sources="https://investor.accelerant.ai/news/news-details/2026/Accelerant-Enters-into-Definitive-Agreement-to-be-Acquired-by-Thoma-Bravo/default.aspx",
     notes="6% p.a. ticking fee if insurance-regulatory approvals delay close. known_at = first DEFA14A; 1.01 8-K accepted 2026-08-14T01:14Z.")
 
@@ -237,7 +249,7 @@ add(deal_id="2026Q3-020", window_event="announced", window_event_date="2026-08-1
     headline_value="$38.4M", value_basis="equity", announce_date="2026-08-14",
     status_2026_09_24="pending", expected_close="before end-2026", sector="marketing services",
     geography="US", sec_cik="45919", sec_announce_accession="0000045919-26-000009",
-    verification="sec_confirmed",
+    verification="sec_metadata_confirmed",
     sources="https://www.globenewswire.com/news-release/2026/08/14/3345329/0/en/star-equity-holdings-enters-into-merger-agreement-to-acquire-harte-hanks.html",
     notes="Press release 2026-08-14; Harte Hanks 1.01 8-K accepted 2026-08-19T20:17Z. Cash/preferred split n/d.")
 
@@ -247,7 +259,7 @@ add(deal_id="2026Q3-021", window_event="announced", window_event_date="2026-08-2
     headline_value="Ambros $500M pre-money; Werewolf $47.5M", value_basis="pre-money",
     announce_date="2026-08-21", announce_known_at_utc="2026-08-20T20:06:14Z",
     status_2026_09_24="pending", expected_close="by Q1 2027", sector="biotech", geography="US",
-    sec_cik="1785530", sec_announce_accession="0001193125-26-359185", verification="sec_confirmed",
+    sec_cik="1785530", sec_announce_accession="0001193125-26-359185", verification="sec_metadata_confirmed",
     sources="https://www.globenewswire.com/news-release/2026/08/21/3349041/0/en/werewolf-therapeutics-and-ambros-therapeutics-announce-merger-agreement-and-concurrent-oversubscribed-150-million-private-placement.html",
     notes="Pro forma: Werewolf holders ~6.8%, Ambros ~71.7%, PIPE ~21.5%. Renamed Ambros (AMBX).")
 
@@ -261,15 +273,15 @@ add(deal_id="2026Q3-022", window_event="announced", window_event_date="2026-08-2
     sources="https://ir.vcm.com/news/news-details/2026/Victory-Capital-to-Acquire-First-Eagle-Investments-Creating-a-571-Billion-Diversified-Global-Asset-Manager/default.aspx; https://www.bloomberg.com/news/articles/2026-08-26/victory-capital-agrees-to-buy-first-eagle-in-7-billion-deal",
     notes="Some roundups cite $6.4B (excludes assumed notes). Genstar ~14.6% of VCTR post-close, voting capped 4.9%.")
 
-add(deal_id="2026Q3-023", window_event="milestone (offer launched)", window_event_date="2026-08-27",
+add(deal_id="2026Q3-023", window_event="announced (business combination agreement)", window_event_date="2026-07-16",
     target="Delivery Hero", target_ticker="DHER.DE", acquirer="Uber", deal_type="strategic tender offer",
-    consideration_type="cash", offer_terms="EUR41.50/sh cash", headline_value="$14.8B equity (100%)",
-    value_basis="equity", premium="~108% to 2026-05-08 unaffected close",
-    announce_date="2026-05 (offer confirmed 2026-05-23)", status_2026_09_24="pending",
+    consideration_type="cash", offer_terms="EUR41.50/sh cash (min. acceptance 50% + 1 share incl. Uber's stake)",
+    headline_value="$14.8B equity (100%)", value_basis="equity", premium="~108% to 2026-05-08 unaffected close",
+    announce_date="2026-07-16", announce_known_at_utc="2026-07-16T10:35:59Z", status_2026_09_24="pending",
     expected_close="settlement H2 2027", sector="food delivery", geography="Germany",
-    verification="press_multi",
-    sources="https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Publishes-Offer-Document-for-its-Takeover-Offer-for-Delivery-Hero/default.aspx; https://www.cnbc.com/2026/05/23/delivery-hero-confirms-takeover-offer-from-uber.html",
-    notes="Acceptance period 2026-08-27 to 2026-11-05; boards recommended 2026-09-02; Prosus irrevocable (~17%). Announced pre-window.")
+    sec_cik="1543151", sec_announce_accession="0001552781-26-000382", verification="sec_metadata_confirmed",
+    sources="https://www.sec.gov/Archives/edgar/data/1543151/000155278126000382/e26302_ex99-1.htm; https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Publishes-Offer-Document-for-its-Takeover-Offer-for-Delivery-Hero/default.aspx; https://www.cnbc.com/2026/05/23/delivery-hero-confirms-takeover-offer-from-uber.html",
+    notes="Definitive BCA 2026-07-16 (UBER 8-K items 1.01/2.03/7.01; EUR14.2B bridge signed same day). offer_document_published = 2026-08-27 (acceptance period 2026-08-27 to 2026-11-05) - a milestone, NOT the announcement. Boards recommended 2026-09-02; Prosus irrevocable (~17%). Earlier approach confirmed 2026-05-23 (CNBC) - proposal history only.")
 
 add(deal_id="2026Q3-024", window_event="announced", window_event_date="2026-08-31",
     target="USI Insurance Services (private)", acquirer="Aon", sponsor="KKR (seller)",
@@ -300,7 +312,7 @@ add(deal_id="2026Q3-027", window_event="closed", window_event_date="2026-08-04",
     consideration_type="cash", offer_terms="$210.00/sh cash", headline_value="~$55B",
     value_basis="enterprise", announce_date="2025-09-29", status_2026_09_24="closed",
     resolution_date="2026-08-04", sector="video games", geography="US", sec_cik="712515",
-    sec_resolution_accession="0001140361-26-031157", verification="sec_confirmed",
+    sec_resolution_accession="0001140361-26-031157", verification="sec_metadata_confirmed",
     sources="https://www.ea.com/news/ea-announces-completion-of-acquisition",
     notes="Largest LBO on record. 8-K 2.01 + Form 25-NSE 2026-08-04; 15-12G 2026-08-14.")
 
@@ -317,10 +329,11 @@ add(deal_id="2026Q3-029", window_event="announced", window_event_date="2026-09-0
     consideration_type="cash + equity retention",
     offer_terms="~$11.9B purchase price + up to ~$1.0B equity retention",
     headline_value="~$12.9B", value_basis="total incl. retention", announce_date="2026-09-02",
-    status_2026_09_24="pending", expected_close="H1 2027", sector="AI platform", geography="US",
-    sec_cik="1045810", verification="press_multi",
+    announce_known_at_utc="2026-09-03T12:03:56Z", status_2026_09_24="pending", expected_close="H1 2027",
+    sector="AI platform", geography="US", sec_cik="1045810", sec_announce_accession="0001045810-26-000078",
+    verification="sec_metadata_confirmed",
     sources="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/; https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
-    notes="Reports from 2026-08-27; definitive agreement per Nvidia 8-K dated 2026-09-02. Some roundups file it under August. Full EU/US/UK review likely.")
+    notes="Event (agreement) date 2026-09-02; known_at = earliest verified public disclosure: NVDA 8-K item 8.01 accepted 2026-09-03T12:03:56Z (= 08:03:56 ET), public announcement dated 2026-09-03. Media reports from 2026-08-27 were unconfirmed and are not used as known_at. Full EU/US/UK review likely.")
 
 add(deal_id="2026Q3-030", window_event="announced", window_event_date="2026-09-03",
     target="Lincoln Bancorp (private)", acquirer="Equity Bancshares (EQBK)", deal_type="bank merger",
@@ -336,7 +349,7 @@ add(deal_id="2026Q3-031", window_event="announced", window_event_date="2026-09-0
     value_basis="deal value", premium="130% of tangible book (price/TBV)", announce_date="2026-09-08",
     announce_known_at_utc="2026-09-08T12:45:26Z", status_2026_09_24="pending", expected_close="Q1 2027",
     sector="banking (US community)", geography="US", sec_cik="880641",
-    sec_announce_accession="0001193125-26-384457", verification="sec_confirmed",
+    sec_announce_accession="0001193125-26-384457", verification="sec_metadata_confirmed",
     sources="http://bankingjournal.aba.com/2026/09/proposed-bank-acquisitions-announced-in-three-states/",
     notes="Exchange ratio n/d - GAP. Target ~$1.8B assets (Bank of Clarke).")
 
@@ -347,7 +360,7 @@ add(deal_id="2026Q3-032", window_event="announced", window_event_date="2026-09-0
     value_basis="deal value / combined EV", announce_date="2026-09-09",
     announce_known_at_utc="2026-09-09T10:49:06Z", status_2026_09_24="pending",
     expected_close="as early as end-Q4 2026", sector="multifamily REIT", geography="US",
-    sec_cik="798359", sec_announce_accession="0001140361-26-035986", verification="sec_confirmed",
+    sec_cik="798359", sec_announce_accession="0001140361-26-035986", verification="sec_metadata_confirmed",
     sources="https://www.businesswire.com/news/home/20260909840602/en/Independence-Realty-Trust-and-Centerspace-to-Merge-in-%248.1-Billion-Combination; https://www.insidearbitrage.com/2026/09/independence-realty-trust-to-acquire-centerspace-for-2-14-billion/",
     notes="Pro forma IRT ~78% / CSR ~22%. OPEN QUESTION: new 8-K item 1.01 accepted 2026-09-23T21:16Z (acc 0001140361-26-037453) - content unreadable here; possibly an amendment.")
 
@@ -364,7 +377,7 @@ add(deal_id="2026Q3-034", window_event="announced", window_event_date="2026-09-1
     premium="88% to 2026-06-17 unaffected close (reported)", announce_date="2026-09-14",
     announce_known_at_utc="2026-09-14T13:19:14Z", status_2026_09_24="pending",
     sector="insurance distribution", geography="US", sec_cik="1781755",
-    sec_announce_accession="0000950103-26-013874", verification="sec_confirmed",
+    sec_announce_accession="0000950103-26-013874", verification="sec_metadata_confirmed",
     sources="https://baldwin.com/news/the-baldwin-group-to-go-private-through-majority-investment-by-sequence-holdings-and-dell-family-office/; https://www.insidearbitrage.com/2026/09/sequence-holdings-and-dell-family-office-to-take-the-baldwin-group-private-for-7-70-billion/",
     notes="Expected close n/d - GAP. Shareholder-fairness investigations announced.")
 
@@ -390,7 +403,7 @@ add(deal_id="2026Q3-037", window_event="announced", window_event_date="2026-09-1
     announce_known_at_utc="2026-09-18T20:05:33Z", status_2026_09_24="pending",
     expected_close="late 2026 / early 2027", sector="industrial asset-integrity testing",
     geography="US", sec_cik="1436126", sec_announce_accession="0001140361-26-037107",
-    verification="sec_confirmed",
+    verification="sec_metadata_confirmed",
     sources="https://www.globenewswire.com/news-release/2026/09/18/3364639/12235/en/mistras-group-inc-enters-into-definitive-agreement-to-be-acquired-by-h-i-g-capital-for-20-35-per-share-in-cash.html",
     notes="Agreement dated 2026-09-17. Thin premium vs VWAP - watch for holder pushback. Tracked theme #5-adjacent (mandated inspection).")
 
@@ -430,7 +443,7 @@ add(deal_id="2026Q3-042", window_event="announced", window_event_date="2026-09-2
     premium="38% to 2026-09-18 close; 65% to 2025-11-07 (pre-proposal)", announce_date="2026-09-21",
     announce_known_at_utc="2026-09-21T11:40:34Z", status_2026_09_24="pending", expected_close="H1 2027",
     sector="payments", geography="US", sec_cik="1653558",
-    sec_announce_accession="0001213900-26-101651", verification="sec_confirmed",
+    sec_announce_accession="0001213900-26-101651", verification="sec_metadata_confirmed",
     sources="https://ir.prioritycommerce.com/news-releases/news-release-details/priority-technology-holdings-inc-announces-definitive-agreement; https://www.businesswire.com/news/home/20260920050170/en/Priority-Technology-Holdings-Inc.-Announces-Definitive-Agreement-with-Investor-Group-Led-by-Chairman-and-CEO-Thomas-Priore-to-Take-Company-Private",
     notes="Special-committee process; no financing condition; needs majority-of-unaffiliated vote + regulatory approvals (issuer IR per ChatGPT staging MNA-20260921-PRIORITY-TAKEPRIVATE). Several roundups say 2026-09-22; SEC acceptance is 2026-09-21 11:40 UTC.")
 
@@ -456,7 +469,7 @@ add(deal_id="2026Q3-045", window_event="milestone (holder vote)", window_event_d
     value_basis="enterprise", announce_date="2026-06-25", announce_known_at_utc="2026-06-25T12:21:30Z",
     status_2026_09_24="pending (shareholders approved 2026-09-23)", expected_close="late 2026 / early 2027",
     sector="life-science tools", geography="US", sec_cik="842023",
-    sec_announce_accession="0001999371-26-013527", verification="sec_confirmed",
+    sec_announce_accession="0001999371-26-013527", verification="sec_metadata_confirmed",
     sources="https://investors.bio-techne.com/news/detail/535/merck-kgaa-darmstadt-germany-agrees-to-acquire-bio-techne-strengthening-leadership-position-in-fast-growing-life-sciences-markets",
     notes="Announced pre-window (some roundups list it under August). Remaining: regulatory approvals.")
 
@@ -467,18 +480,20 @@ add(deal_id="2026Q3-046", window_event="closed", window_event_date="2026-09-23",
     announce_known_at_utc="2026-06-29T10:30:58Z", status_2026_09_24="closed", resolution_date="2026-09-23",
     sector="biopharma", geography="US", sec_cik="1583107",
     sec_announce_accession="0001104659-26-078453", sec_resolution_accession="0001104659-26-109979",
-    verification="sec_confirmed",
+    verification="sec_metadata_confirmed",
     sources="https://investor.theravance.com/news-releases/news-release-details/theravance-biopharma-enters-definitive-agreement-be-acquired",
     notes="Closed: 8-K 2.01 + Form 25-NSE 2026-09-23.")
 
 add(deal_id="2026Q3-047", window_event="milestone (state AG settlement)", window_event_date="2026-09-21",
-    target="Warner Bros. Discovery", target_ticker="WBD", acquirer="Paramount Skydance",
-    deal_type="strategic", consideration_type="cash", offer_terms="$31.00/sh cash (+$0.25/qtr ticking fee after 2026-09-30)",
-    headline_value="~$110-111B", value_basis="enterprise", announce_date="pre-window (n/d exact)",
-    status_2026_09_24="pending (close expected ~early Oct 2026)", sector="media", geography="US",
-    sec_cik="1437107", sec_announce_accession="0001193125-26-256559", verification="press_multi",
-    sources="https://www.cnbc.com/2026/09/21/paramount-reaches-settlement-over-warner-bros-merger.html; https://www.cnn.com/2026/09/21/media/paramount-wbd-settlement-cnn-ellison-bonta-lawsuit",
-    notes="12-state AG suit (filed July) settled 2026-09-21: 30+ films/yr, studios run separately, news independence board, no divestitures. HSR expired; EC cleared July; UK CMA Phase 1 clearance 2026-08-06, case closed 2026-08-17 (ChatGPT staging, gov.uk unreachable here). Accession = latest 8-K 1.01 (2026-06-04), not necessarily the original agreement.")
+    target="Warner Bros. Discovery", target_ticker="WBD", acquirer="Paramount Skydance", deal_type="strategic",
+    consideration_type="cash", offer_terms="$31.00/sh cash (+$0.25/sh per quarter ticking fee if not closed by 2026-09-30)",
+    headline_value="~$110-111B", value_basis="enterprise", announce_date="2026-02-27",
+    announce_known_at_utc="2026-02-27T22:06:16Z",
+    status_2026_09_24="pending - near-term after litigation settlement (no dated primary-source close)",
+    sector="media", geography="US", sec_cik="1437107", sec_announce_accession="0001437107-26-000018",
+    verification="sec_metadata_confirmed",
+    sources="https://www.sec.gov/Archives/edgar/data/1437107/000143710726000018/exhibit991.htm; https://www.cnbc.com/2026/09/21/paramount-reaches-settlement-over-warner-bros-merger.html; https://www.cnn.com/2026/09/21/media/paramount-wbd-settlement-cnn-ellison-bonta-lawsuit",
+    notes="Definitive agreement 2026-02-27 (WBD 8-K items 1.01/1.02 accepted 22:06:16Z; PSKY 8-K 1.01 2026-03-02). 12-state AG suit (filed July) settled 2026-09-21: 30+ films/yr, studios run separately, news independence board, no divestitures. HSR expired; EC cleared July; UK CMA Phase 1 clearance 2026-08-06, case closed 2026-08-17 (ChatGPT staging). Close timing: press reports an internal memo expecting close by early October - NOT a primary-source date; treat as pending/near-term.")
 
 add(deal_id="2026Q3-048", window_event="pending (no in-window event found)", window_event_date="",
     target="Intertek Group", target_ticker="ITRK.L", acquirer="EQT (Isotope Bidco)", sponsor="EQT",
@@ -502,7 +517,7 @@ add(deal_id="2026Q3-050", window_event="terminated", window_event_date="2026-07-
     deal_type="strategic merger", consideration_type="mixed (cash/stock election)",
     announce_date="2025-01 (pre-window)", status_2026_09_24="terminated", resolution_date="2026-07-07",
     sector="stock imagery / content licensing", geography="US / UK", sec_cik="1549346",
-    sec_resolution_accession="0001140361-26-028035", verification="sec_confirmed",
+    sec_resolution_accession="0001140361-26-028035", verification="sec_metadata_confirmed",
     sources="https://www.gov.uk/cma-cases/getty-images-slash-shutterstock-merger-inquiry; https://www.morningstar.com/news/alliance-news/1782908390072304000/getty-terminates-shutterstock-merger-over-uk-competition-conditions; https://www.tradingview.com/news/tradingview:654ec45e79dc2:0-shutterstock-getty-images-merger-agreement-terminated-after-cma-condition-deal-expires-july-7-2026/",
     notes="BROKEN DEAL (regulatory-driven). Getty delivered written termination notice 2026-07-07 after declining the CMA-required sale of Shutterstock's editorial business; CMA recorded abandonment 2026-07-08; Shutterstock 8-K item 1.02 accepted 2026-07-09T10:03Z (Getty 8-K 8.01 2026-07-07T10:05Z, acc 0001213900-26-075721). Termination fee paid: n/d (agreement had $40M/$32.7M fee provisions) - GAP. Per-share terms n/d - GAP.")
 
@@ -575,12 +590,13 @@ add(deal_id="2026Q3-058", window_event="milestone (CMA Phase 1 launched 2026-09-
     notes="Pro forma: Unilever holders ~55.1%, MKC holders ~35.0%, Unilever ~9.9%. CMA invitation to comment 2026-07-21; Phase 1 deadline 2026-11-11. Tracked theme #3 (carve-outs).")
 
 add(deal_id="2026Q3-059", window_event="milestone (CMA invitation to comment 2026-09-22)", window_event_date="2026-09-22",
-    target="TK Elevator", acquirer="KONE", deal_type="strategic",
+    target="TK Elevator", acquirer="KONE",
+    sponsor="Vertical Topco I S.A. (seller; jointly controlled by Advent and Cinven)", deal_type="strategic (sponsor exit)",
     consideration_type="cash + stock", offer_terms="EUR5B cash + up to 270M new KONE B shares",
     headline_value="EUR29.4B (~$34.4B)", value_basis="enterprise", announce_date="2026-04-29",
     status_2026_09_24="pending", sector="elevators & escalators", geography="Europe", verification="press_multi",
-    sources="https://www.kone.com/global/en/newsroom/releases/2026/inside-information--kone-and-tke-to-combine--creating-a-world-class-company-in-the-elevator-and-escalator-industry-2026-04-29.html; https://www.gov.uk/cma-cases/kone-slash-tk-elevator-merger-inquiry",
-    notes="Largest pending deal touched in window by a regulator step. Heavy antitrust exposure (EU/UK/US). Seller identity not captured - GAP.")
+    sources="https://www.kone.com/global/en/newsroom/releases/2026/inside-information--kone-and-tke-to-combine--creating-a-world-class-company-in-the-elevator-and-escalator-industry-2026-04-29.html; https://peinsights.substack.com/p/advent-and-cinven-exit-tke-in-294bn; https://www.gov.uk/cma-cases/kone-slash-tk-elevator-merger-inquiry",
+    notes="Largest pending deal touched in window by a regulator step. Heavy antitrust exposure (EU/UK/US). Seller per KONE release: Vertical Topco I S.A., receiving EUR5B cash + up to 270M KONE B shares at completion (no earlier than Q2 2027 per reporting).")
 
 add(deal_id="2026Q3-060", window_event="milestone (CMA Phase 1 launched 2026-09-02)", window_event_date="2026-09-02",
     target="OVO Energy (retail business)", acquirer="E.ON", deal_type="strategic",

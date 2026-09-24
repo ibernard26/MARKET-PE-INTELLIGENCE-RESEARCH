@@ -156,3 +156,33 @@ Legend: ▲ rising · ▼ falling · ◼ flat/mixed · ⚠ high volatility
 - **PE/M&A:** No new specific deals surfaced Jun 23; structural context from PwC/PE Hub (H1 barbell persists).
 
 *Next cycle: Cycle #5 — next weekday. Recurrence: CronJob 1bdabe09 (7:03 AM ET weekdays). This run = Cycle #4, executed via /daily-report 2026-06-24.*
+
+---
+
+## 7. Q3 2026 DEAL BACKFILL (Jul 1 – Sep 24): appended 2026-09-24 🟡 NEW
+The daily loop has had no entries since Jun 24. This section backfills deal flow only, not market prints.
+Full detail: `outputs/Deal_Research_2026Q3.md`. Rows: `pe-tracker/data/research/deal_register_2026Q3.csv` (49 rows; 20 confirmed against SEC filings).
+
+| Date | Event | Deal | Durable / Noise |
+|---|---|---|---|
+| 2026-07-06 | Signed | Vertex / Crinetics $85 cash ($10.0B); **closed 9/1** | Durable |
+| 2026-07-06 | Signed → **terminated 8/27** | Solstice / Element Solutions (~$14.5B); mutual, no fee | **Durable: in-window break** |
+| 2026-07-06 | Signed | Lockheed / Ultra Maritime $3.45B (Advent exit) | Durable (theme #2) |
+| 2026-07-26 | Rejected | Brown-Forman board rejects Sazerac $32 bid (made May 1) | Noise for M&A count |
+| 2026-07-27 | Signed | Wynnchurch / Luxfer $17.37 cash | Durable |
+| 2026-07-30 | Signed | ICE / MarketAxess $167 cash | Durable |
+| 2026-07-31 | Closed | IonQ / SkyWater | Durable |
+| 2026-08-03 | Signed | KKR / Integer $127 cash (~$5.7B EV); Curium / Lantheus $102.50 + CVR | Durable |
+| 2026-08-04 | Signed / Closed | Prologis / SEGRO (~£14B, stock); **EA $55B LBO closed** | Durable |
+| 2026-08-06 | Signed | Apollo / easyJet 715p (Castlelake out); Dream Finders / Beazer $33.50 | Durable |
+| 2026-08-10 | Signed | Bernhard Capital / Bowman $43 (+58%); go-shop drew no bids | Durable (theme #1) |
+| 2026-08-13 | Signed / Proposal | Thoma Bravo / Accelerant $20.25; EQT / Cleanaway A$3.13 (non-binding) | Durable / Monitor |
+| 2026-08-14 | **Blocked** | FTC wins permanent injunction on Henkel / Liquid Nails ($725M) | **Durable: regulatory break** |
+| 2026-08-26 / 31 | Signed | Victory / First Eagle ~$7.0B (Genstar exit); Aon / USI $17.0B (KKR exit) | Durable (sponsor exits) |
+| 2026-09-02 | Signed | Nvidia / Hugging Face ~$12.9B | Durable |
+| 2026-09-09 / 14 | Signed | IRT / Centerspace (3.800x stock); Sequence + DFO / Baldwin $32.50 (~$7.7B) | Durable |
+| 2026-09-18 / 21 | Signed | H.I.G. / Mistras $20.35 (thin premium); CEO group / Priority $8.05 | Durable (Mistras: monitor the vote) |
+| 2026-09-21 | Milestone | Paramount / WBD state attorneys general suit settled; close ~early Oct | Durable |
+| 2026-09-23 | Closed / Vote | Zymeworks / Theravance **closed**; Bio-Techne holders approve Merck KGaA | Durable |
+
+**Sources:** press releases and wire copy found by web search (URLs are in the CSV), plus EDGAR metadata from data.sec.gov. News sites and www.sec.gov are blocked in this environment, so page text wasn't read. Rows marked `reported_only` in the CSV (Seahawks, WDP/Argan, Stripe/OpenRouter, MARI/ATG, Kobayashi) are **unverified**. Gaps are listed in the output doc.

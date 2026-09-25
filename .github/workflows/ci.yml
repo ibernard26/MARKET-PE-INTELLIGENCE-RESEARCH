@@ -8,6 +8,8 @@ on:
 jobs:
   pe-tracker-tests:
     runs-on: ubuntu-latest
+    env:
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
     defaults:
       run:
         working-directory: pe-tracker

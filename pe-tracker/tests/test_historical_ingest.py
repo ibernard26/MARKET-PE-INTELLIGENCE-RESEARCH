@@ -184,8 +184,8 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_exactly_sixteen_reviewed_deals():
-    """Five reviewed batches: 8 closed (Y=0) + 8 terminated (Y=1). SkyWater/Theravance excluded."""
+def test_shipped_manifest_has_exactly_twenty_reviewed_deals():
+    """Six reviewed batches: 10 closed (Y=0) + 10 terminated (Y=1). SkyWater/Theravance excluded."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
@@ -206,6 +206,10 @@ def test_shipped_manifest_has_exactly_sixteen_reviewed_deals():
         "DEAL-MON-BAYER-2016",
         "DEAL-CI-ANTM-2015",
         "DEAL-BHI-HAL-2014",
+        "DEAL-ATVI-MSFT-2022",
+        "DEAL-TWTR-XHOLDINGS-2022",
+        "DEAL-TWC-CMCSA-2014",
+        "DEAL-PACB-ILMN-2018",
     ]
     assert "DEAL-SKYT-IONQ-2026" not in ids and "DEAL-TBPH-ZYME-2026" not in ids
     by_id = {d["deal_id"]: d for d in deals}
@@ -295,6 +299,27 @@ def test_shipped_manifest_has_exactly_sixteen_reviewed_deals():
     assert bhi["announcement_accession"] == bhi["terms_accession"] == "0000950103-14-008110"
     assert bhi["resolution_accession"] == "0000950103-16-013026"
     assert bhi["resolution_timestamp"] == "2016-04-30"
+    atvi, twtr = by_id["DEAL-ATVI-MSFT-2022"], by_id["DEAL-TWTR-XHOLDINGS-2022"]
+    assert atvi["offer_price"] == 95.0 and atvi["resolution_type"] == "closed"
+    assert atvi["announcement_accession"] == atvi["terms_accession"] == "0001104659-22-005154"
+    assert atvi["announcement_timestamp"] == "2022-01-18"
+    assert atvi["resolution_accession"] == "0001104659-23-108985"
+    assert atvi["resolution_timestamp"] == "2023-10-13"
+    assert twtr["deal_type"] == "take_private" and twtr["offer_price"] == 54.2
+    assert twtr["announcement_accession"] == twtr["terms_accession"] == "0001193125-22-120461"
+    assert twtr["resolution_type"] == "closed"
+    assert twtr["resolution_accession"] == "0001193125-22-272772"
+    assert twtr["resolution_timestamp"] == "2022-10-27"
+    twc, pacb = by_id["DEAL-TWC-CMCSA-2014"], by_id["DEAL-PACB-ILMN-2018"]
+    assert twc["consideration_type"] == "stock" and twc.get("offer_price") is None
+    assert twc["exchange_ratio"] == 2.875 and twc["resolution_type"] == "terminated"
+    assert twc["announcement_accession"] == twc["terms_accession"] == "0001193125-14-051452"
+    assert twc["resolution_accession"] == "0000950142-15-000864"
+    assert twc["resolution_timestamp"] == "2015-04-24"
+    assert pacb["offer_price"] == 8.0 and pacb["resolution_type"] == "terminated"
+    assert pacb["announcement_accession"] == pacb["terms_accession"] == "0001193125-18-318421"
+    assert pacb["resolution_accession"] == "0001193125-20-000641"
+    assert pacb["resolution_timestamp"] == "2020-01-02"
 
 
 # ------------------------------------------------- quality + readiness

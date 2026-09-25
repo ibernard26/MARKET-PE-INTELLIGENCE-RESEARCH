@@ -63,6 +63,66 @@
       "resolution_type": "terminated",
       "resolution_accession": "0001140361-26-028035",
       "resolution_timestamp": "2026-07-07"
+    },
+    {
+      "deal_id": "DEAL-JNPR-HPE-2024",
+      "target": "Juniper Networks, Inc.",
+      "acquirer": "Hewlett Packard Enterprise Company",
+      "target_cik": 1043604,
+      "announcement_accession": "0001193125-24-005659",
+      "terms_accession": "0001193125-24-005659",
+      "announcement_timestamp": "2024-01-09",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 40.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001193125-25-154400",
+      "resolution_timestamp": "2025-07-02"
+    },
+    {
+      "deal_id": "DEAL-HCP-IBM-2024",
+      "target": "HashiCorp, Inc.",
+      "acquirer": "International Business Machines Corporation",
+      "target_cik": 1720671,
+      "announcement_accession": "0001193125-24-114310",
+      "terms_accession": "0001193125-24-114310",
+      "announcement_timestamp": "2024-04-24",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 35.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001193125-25-037910",
+      "resolution_timestamp": "2025-02-27"
+    },
+    {
+      "deal_id": "DEAL-CPRI-TPR-2023",
+      "target": "Capri Holdings Limited",
+      "acquirer": "Tapestry, Inc.",
+      "target_cik": 1530721,
+      "announcement_accession": "0001193125-23-208278",
+      "terms_accession": "0001193125-23-208278",
+      "announcement_timestamp": "2023-08-10",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 57.00,
+      "resolution_type": "terminated",
+      "resolution_accession": "0001193125-24-258691",
+      "resolution_timestamp": "2024-11-13"
+    },
+    {
+      "deal_id": "DEAL-WLTW-AON-2020",
+      "target": "Willis Towers Watson Public Limited Company",
+      "acquirer": "Aon plc",
+      "target_cik": 1140536,
+      "announcement_accession": "0001193125-20-066129",
+      "terms_accession": "0001193125-20-067406",
+      "announcement_timestamp": "2020-03-09",
+      "deal_type": "strategic",
+      "consideration_type": "stock",
+      "exchange_ratio": 1.08,
+      "resolution_type": "terminated",
+      "resolution_accession": "0001193125-21-224367",
+      "resolution_timestamp": "2021-07-26"
     }
   ]
 }

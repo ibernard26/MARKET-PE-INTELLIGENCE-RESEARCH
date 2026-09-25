@@ -185,6 +185,68 @@
       "resolution_type": "terminated",
       "resolution_accession": "0000049071-17-000016",
       "resolution_timestamp": "2017-02-14"
+    },
+    {
+      "deal_id": "DEAL-WFM-AMZN-2017",
+      "target": "Whole Foods Market, Inc.",
+      "acquirer": "Amazon.com, Inc.",
+      "target_cik": 865436,
+      "announcement_accession": "0001047469-17-004058",
+      "terms_accession": "0001047469-17-004058",
+      "announcement_timestamp": "2017-06-15",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 42.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001144204-17-045261",
+      "resolution_timestamp": "2017-08-28"
+    },
+    {
+      "deal_id": "DEAL-MON-BAYER-2016",
+      "target": "Monsanto Company",
+      "acquirer": "Bayer Aktiengesellschaft",
+      "target_cik": 1110783,
+      "announcement_accession": "0001193125-16-714915",
+      "terms_accession": "0001193125-16-714915",
+      "announcement_timestamp": "2016-09-14",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 128.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001193125-18-188226",
+      "resolution_timestamp": "2018-06-07"
+    },
+    {
+      "deal_id": "DEAL-CI-ANTM-2015",
+      "target": "Cigna Corporation",
+      "acquirer": "Anthem, Inc.",
+      "target_cik": 701221,
+      "announcement_accession": "0000950159-15-000230",
+      "terms_accession": "0000950159-15-000230",
+      "announcement_timestamp": "2015-07-23",
+      "deal_type": "strategic",
+      "consideration_type": "mixed",
+      "offer_price": 103.40,
+      "exchange_ratio": 0.5152,
+      "resolution_type": "terminated",
+      "resolution_accession": "0000950159-17-000134",
+      "resolution_timestamp": "2017-05-12"
+    },
+    {
+      "deal_id": "DEAL-BHI-HAL-2014",
+      "target": "Baker Hughes Incorporated",
+      "acquirer": "Halliburton Company",
+      "target_cik": 808362,
+      "announcement_accession": "0000950103-14-008110",
+      "terms_accession": "0000950103-14-008110",
+      "announcement_timestamp": "2014-11-16",
+      "deal_type": "strategic",
+      "consideration_type": "mixed",
+      "offer_price": 19.00,
+      "exchange_ratio": 1.12,
+      "resolution_type": "terminated",
+      "resolution_accession": "0000950103-16-013026",
+      "resolution_timestamp": "2016-04-30"
     }
 
   ]

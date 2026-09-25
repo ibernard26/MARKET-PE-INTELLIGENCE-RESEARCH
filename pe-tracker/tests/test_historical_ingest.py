@@ -184,8 +184,8 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_exactly_twelve_reviewed_deals():
-    """Four reviewed batches: 6 closed (Y=0) + 6 terminated (Y=1). SkyWater/Theravance excluded."""
+def test_shipped_manifest_has_exactly_sixteen_reviewed_deals():
+    """Five reviewed batches: 8 closed (Y=0) + 8 terminated (Y=1). SkyWater/Theravance excluded."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
@@ -202,6 +202,10 @@ def test_shipped_manifest_has_exactly_twelve_reviewed_deals():
         "DEAL-LNKD-MSFT-2016",
         "DEAL-ODP-SPLS-2015",
         "DEAL-HUM-AET-2015",
+        "DEAL-WFM-AMZN-2017",
+        "DEAL-MON-BAYER-2016",
+        "DEAL-CI-ANTM-2015",
+        "DEAL-BHI-HAL-2014",
     ]
     assert "DEAL-SKYT-IONQ-2026" not in ids and "DEAL-TBPH-ZYME-2026" not in ids
     by_id = {d["deal_id"]: d for d in deals}
@@ -270,6 +274,27 @@ def test_shipped_manifest_has_exactly_twelve_reviewed_deals():
     assert hum["announcement_accession"] == hum["terms_accession"] == "0001193125-15-246897"
     assert hum["resolution_accession"] == "0000049071-17-000016"
     assert hum["resolution_timestamp"] == "2017-02-14"
+    wfm, mon = by_id["DEAL-WFM-AMZN-2017"], by_id["DEAL-MON-BAYER-2016"]
+    assert wfm["offer_price"] == 42.0 and wfm["resolution_type"] == "closed"
+    assert wfm["announcement_accession"] == wfm["terms_accession"] == "0001047469-17-004058"
+    assert wfm["announcement_timestamp"] == "2017-06-15"
+    assert wfm["resolution_accession"] == "0001144204-17-045261"
+    assert wfm["resolution_timestamp"] == "2017-08-28"
+    assert mon["offer_price"] == 128.0 and mon["resolution_type"] == "closed"
+    assert mon["announcement_accession"] == mon["terms_accession"] == "0001193125-16-714915"
+    assert mon["resolution_accession"] == "0001193125-18-188226"
+    assert mon["resolution_timestamp"] == "2018-06-07"
+    ci, bhi = by_id["DEAL-CI-ANTM-2015"], by_id["DEAL-BHI-HAL-2014"]
+    assert ci["consideration_type"] == "mixed" and ci["resolution_type"] == "terminated"
+    assert ci["offer_price"] == 103.4 and ci["exchange_ratio"] == 0.5152
+    assert ci["announcement_accession"] == ci["terms_accession"] == "0000950159-15-000230"
+    assert ci["resolution_accession"] == "0000950159-17-000134"
+    assert ci["resolution_timestamp"] == "2017-05-12"
+    assert bhi["consideration_type"] == "mixed" and bhi["resolution_type"] == "terminated"
+    assert bhi["offer_price"] == 19.0 and bhi["exchange_ratio"] == 1.12
+    assert bhi["announcement_accession"] == bhi["terms_accession"] == "0000950103-14-008110"
+    assert bhi["resolution_accession"] == "0000950103-16-013026"
+    assert bhi["resolution_timestamp"] == "2016-04-30"
 
 
 # ------------------------------------------------- quality + readiness

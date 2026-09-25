@@ -184,8 +184,8 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_exactly_eight_reviewed_deals():
-    """Three reviewed batches: 4 closed (Y=0) + 4 terminated (Y=1). SkyWater/Theravance excluded."""
+def test_shipped_manifest_has_exactly_twelve_reviewed_deals():
+    """Four reviewed batches: 6 closed (Y=0) + 6 terminated (Y=1). SkyWater/Theravance excluded."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
@@ -198,6 +198,10 @@ def test_shipped_manifest_has_exactly_eight_reviewed_deals():
         "DEAL-HCP-IBM-2024",
         "DEAL-CPRI-TPR-2023",
         "DEAL-WLTW-AON-2020",
+        "DEAL-RHT-IBM-2018",
+        "DEAL-LNKD-MSFT-2016",
+        "DEAL-ODP-SPLS-2015",
+        "DEAL-HUM-AET-2015",
     ]
     assert "DEAL-SKYT-IONQ-2026" not in ids and "DEAL-TBPH-ZYME-2026" not in ids
     by_id = {d["deal_id"]: d for d in deals}
@@ -244,6 +248,28 @@ def test_shipped_manifest_has_exactly_eight_reviewed_deals():
     assert wltw["resolution_type"] == "terminated"
     assert wltw["resolution_accession"] == "0001193125-21-224367"
     assert wltw["resolution_timestamp"] == "2021-07-26"
+    rht, lnkd = by_id["DEAL-RHT-IBM-2018"], by_id["DEAL-LNKD-MSFT-2016"]
+    assert rht["offer_price"] == 190.0 and rht["resolution_type"] == "closed"
+    assert rht["announcement_accession"] == rht["terms_accession"] == "0001193125-18-310577"
+    assert rht["resolution_accession"] == "0000950142-19-001516"
+    assert rht["resolution_timestamp"] == "2019-07-09"
+    assert lnkd["offer_price"] == 196.0 and lnkd["resolution_type"] == "closed"
+    assert lnkd["announcement_accession"] == lnkd["terms_accession"] == "0001104659-16-126712"
+    assert lnkd["resolution_accession"] == "0001104659-16-161289"
+    assert lnkd["announcement_timestamp"] == "2016-06-11"
+    assert lnkd["resolution_timestamp"] == "2016-12-08"
+    odp, hum = by_id["DEAL-ODP-SPLS-2015"], by_id["DEAL-HUM-AET-2015"]
+    assert odp["consideration_type"] == "mixed" and odp["resolution_type"] == "terminated"
+    assert odp["offer_price"] == 7.25 and odp["exchange_ratio"] == 0.2188
+    assert odp["announcement_accession"] == odp["terms_accession"] == "0001193125-15-033873"
+    assert odp["announcement_accession"] != "0001193125-15-033875"
+    assert odp["resolution_accession"] == "0001193125-16-592186"
+    assert odp["resolution_timestamp"] == "2016-05-16"
+    assert hum["consideration_type"] == "mixed" and hum["resolution_type"] == "terminated"
+    assert hum["offer_price"] == 125.0 and hum["exchange_ratio"] == 0.8375
+    assert hum["announcement_accession"] == hum["terms_accession"] == "0001193125-15-246897"
+    assert hum["resolution_accession"] == "0000049071-17-000016"
+    assert hum["resolution_timestamp"] == "2017-02-14"
 
 
 # ------------------------------------------------- quality + readiness

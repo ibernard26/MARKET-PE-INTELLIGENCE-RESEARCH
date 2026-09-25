@@ -123,6 +123,69 @@
       "resolution_type": "terminated",
       "resolution_accession": "0001193125-21-224367",
       "resolution_timestamp": "2021-07-26"
+    },
+    {
+      "deal_id": "DEAL-RHT-IBM-2018",
+      "target": "Red Hat, Inc.",
+      "acquirer": "International Business Machines Corporation",
+      "target_cik": 1087423,
+      "announcement_accession": "0001193125-18-310577",
+      "terms_accession": "0001193125-18-310577",
+      "announcement_timestamp": "2018-10-28",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 190.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0000950142-19-001516",
+      "resolution_timestamp": "2019-07-09"
+    },
+    {
+      "deal_id": "DEAL-LNKD-MSFT-2016",
+      "target": "LinkedIn Corporation",
+      "acquirer": "Microsoft Corporation",
+      "target_cik": 1271024,
+      "announcement_accession": "0001104659-16-126712",
+      "terms_accession": "0001104659-16-126712",
+      "announcement_timestamp": "2016-06-11",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 196.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001104659-16-161289",
+      "resolution_timestamp": "2016-12-08"
+    },
+    {
+      "deal_id": "DEAL-ODP-SPLS-2015",
+      "target": "Office Depot, Inc.",
+      "acquirer": "Staples, Inc.",
+      "target_cik": 800240,
+      "announcement_accession": "0001193125-15-033873",
+      "terms_accession": "0001193125-15-033873",
+      "announcement_timestamp": "2015-02-04",
+      "deal_type": "strategic",
+      "consideration_type": "mixed",
+      "offer_price": 7.25,
+      "exchange_ratio": 0.2188,
+      "resolution_type": "terminated",
+      "resolution_accession": "0001193125-16-592186",
+      "resolution_timestamp": "2016-05-16"
+    },
+    {
+      "deal_id": "DEAL-HUM-AET-2015",
+      "target": "Humana Inc.",
+      "acquirer": "Aetna Inc.",
+      "target_cik": 49071,
+      "announcement_accession": "0001193125-15-246897",
+      "terms_accession": "0001193125-15-246897",
+      "announcement_timestamp": "2015-07-02",
+      "deal_type": "strategic",
+      "consideration_type": "mixed",
+      "offer_price": 125.00,
+      "exchange_ratio": 0.8375,
+      "resolution_type": "terminated",
+      "resolution_accession": "0000049071-17-000016",
+      "resolution_timestamp": "2017-02-14"
     }
+
   ]
 }

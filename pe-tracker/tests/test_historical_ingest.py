@@ -184,8 +184,8 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_exactly_four_reviewed_deals():
-    """Two reviewed batches: 2 closed (Y=0) + 2 terminated (Y=1). SkyWater/Theravance excluded."""
+def test_shipped_manifest_has_exactly_eight_reviewed_deals():
+    """Three reviewed batches: 4 closed (Y=0) + 4 terminated (Y=1). SkyWater/Theravance excluded."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
@@ -194,6 +194,10 @@ def test_shipped_manifest_has_exactly_four_reviewed_deals():
         "DEAL-ESI-SOLS-2026",
         "DEAL-EA-PIFSLAFF-2025",
         "DEAL-SSTK-GETY-2025",
+        "DEAL-JNPR-HPE-2024",
+        "DEAL-HCP-IBM-2024",
+        "DEAL-CPRI-TPR-2023",
+        "DEAL-WLTW-AON-2020",
     ]
     assert "DEAL-SKYT-IONQ-2026" not in ids and "DEAL-TBPH-ZYME-2026" not in ids
     by_id = {d["deal_id"]: d for d in deals}
@@ -218,6 +222,28 @@ def test_shipped_manifest_has_exactly_four_reviewed_deals():
     assert sstk["announcement_accession"] == sstk["terms_accession"] == "0001140361-25-000468"
     assert sstk["resolution_accession"] == "0001140361-26-028035"
     assert sstk["resolution_timestamp"] == "2026-07-07"
+    jnpr, hcp = by_id["DEAL-JNPR-HPE-2024"], by_id["DEAL-HCP-IBM-2024"]
+    assert jnpr["offer_price"] == 40.0 and jnpr["resolution_type"] == "closed"
+    assert jnpr["announcement_accession"] == jnpr["terms_accession"] == "0001193125-24-005659"
+    assert jnpr["resolution_accession"] == "0001193125-25-154400"
+    assert jnpr["resolution_timestamp"] == "2025-07-02"
+    assert hcp["offer_price"] == 35.0 and hcp["resolution_type"] == "closed"
+    assert hcp["announcement_accession"] == hcp["terms_accession"] == "0001193125-24-114310"
+    assert hcp["resolution_accession"] == "0001193125-25-037910"
+    assert hcp["resolution_timestamp"] == "2025-02-27"
+    cpri, wltw = by_id["DEAL-CPRI-TPR-2023"], by_id["DEAL-WLTW-AON-2020"]
+    assert cpri["offer_price"] == 57.0 and cpri["resolution_type"] == "terminated"
+    assert cpri["announcement_accession"] == cpri["terms_accession"] == "0001193125-23-208278"
+    assert cpri["resolution_accession"] == "0001193125-24-258691"
+    assert cpri["resolution_timestamp"] == "2024-11-13"
+    assert wltw["consideration_type"] == "stock" and wltw["exchange_ratio"] == 1.08
+    assert wltw.get("offer_price") is None
+    assert wltw["announcement_accession"] == "0001193125-20-066129"
+    assert wltw["terms_accession"] == "0001193125-20-067406"
+    assert wltw["announcement_accession"] != wltw["terms_accession"]
+    assert wltw["resolution_type"] == "terminated"
+    assert wltw["resolution_accession"] == "0001193125-21-224367"
+    assert wltw["resolution_timestamp"] == "2021-07-26"
 
 
 # ------------------------------------------------- quality + readiness

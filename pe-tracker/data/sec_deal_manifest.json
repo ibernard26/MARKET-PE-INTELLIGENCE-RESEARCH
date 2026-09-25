@@ -247,6 +247,66 @@
       "resolution_type": "terminated",
       "resolution_accession": "0000950103-16-013026",
       "resolution_timestamp": "2016-04-30"
+    },
+    {
+      "deal_id": "DEAL-ATVI-MSFT-2022",
+      "target": "Activision Blizzard, Inc.",
+      "acquirer": "Microsoft Corporation",
+      "target_cik": 718877,
+      "announcement_accession": "0001104659-22-005154",
+      "terms_accession": "0001104659-22-005154",
+      "announcement_timestamp": "2022-01-18",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 95.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001104659-23-108985",
+      "resolution_timestamp": "2023-10-13"
+    },
+    {
+      "deal_id": "DEAL-TWTR-XHOLDINGS-2022",
+      "target": "Twitter, Inc.",
+      "acquirer": "X Holdings I, Inc.",
+      "target_cik": 1418091,
+      "announcement_accession": "0001193125-22-120461",
+      "terms_accession": "0001193125-22-120461",
+      "announcement_timestamp": "2022-04-25",
+      "deal_type": "take_private",
+      "consideration_type": "cash",
+      "offer_price": 54.20,
+      "resolution_type": "closed",
+      "resolution_accession": "0001193125-22-272772",
+      "resolution_timestamp": "2022-10-27"
+    },
+    {
+      "deal_id": "DEAL-TWC-CMCSA-2014",
+      "target": "Time Warner Cable Inc.",
+      "acquirer": "Comcast Corporation",
+      "target_cik": 1377013,
+      "announcement_accession": "0001193125-14-051452",
+      "terms_accession": "0001193125-14-051452",
+      "announcement_timestamp": "2014-02-12",
+      "deal_type": "strategic",
+      "consideration_type": "stock",
+      "exchange_ratio": 2.8750,
+      "resolution_type": "terminated",
+      "resolution_accession": "0000950142-15-000864",
+      "resolution_timestamp": "2015-04-24"
+    },
+    {
+      "deal_id": "DEAL-PACB-ILMN-2018",
+      "target": "Pacific Biosciences of California, Inc.",
+      "acquirer": "Illumina, Inc.",
+      "target_cik": 1299130,
+      "announcement_accession": "0001193125-18-318421",
+      "terms_accession": "0001193125-18-318421",
+      "announcement_timestamp": "2018-11-01",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 8.00,
+      "resolution_type": "terminated",
+      "resolution_accession": "0001193125-20-000641",
+      "resolution_timestamp": "2020-01-02"
     }
 
   ]

@@ -307,6 +307,66 @@
       "resolution_type": "terminated",
       "resolution_accession": "0001193125-20-000641",
       "resolution_timestamp": "2020-01-02"
+    },
+    {
+      "deal_id": "DEAL-CERN-ORCL-2021",
+      "target": "Cerner Corporation",
+      "acquirer": "Oracle Corporation",
+      "target_cik": 804753,
+      "announcement_accession": "0001193125-21-363898",
+      "terms_accession": "0001193125-21-363898",
+      "announcement_timestamp": "2021-12-20",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 95.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001193125-22-169841",
+      "resolution_timestamp": "2022-06-08"
+    },
+    {
+      "deal_id": "DEAL-NUAN-MSFT-2021",
+      "target": "Nuance Communications, Inc.",
+      "acquirer": "Microsoft Corporation",
+      "target_cik": 1002517,
+      "announcement_accession": "0001193125-21-113796",
+      "terms_accession": "0001193125-21-113796",
+      "announcement_timestamp": "2021-04-11",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "offer_price": 56.00,
+      "resolution_type": "closed",
+      "resolution_accession": "0001193125-22-066065",
+      "resolution_timestamp": "2022-03-04"
+    },
+    {
+      "deal_id": "DEAL-FIVN-ZM-2021",
+      "target": "Five9, Inc.",
+      "acquirer": "Zoom Video Communications, Inc.",
+      "target_cik": 1288847,
+      "announcement_accession": "0001193125-21-217962",
+      "terms_accession": "0001193125-21-217962",
+      "announcement_timestamp": "2021-07-16",
+      "deal_type": "strategic",
+      "consideration_type": "stock",
+      "exchange_ratio": 0.5533,
+      "resolution_type": "terminated",
+      "resolution_accession": "0001193125-21-289272",
+      "resolution_timestamp": "2021-09-30"
+    },
+    {
+      "deal_id": "DEAL-MNTV-ZEN-2021",
+      "target": "Momentive Global Inc.",
+      "acquirer": "Zendesk, Inc.",
+      "target_cik": 1739936,
+      "announcement_accession": "0001193125-21-313506",
+      "terms_accession": "0001193125-21-313506",
+      "announcement_timestamp": "2021-10-28",
+      "deal_type": "strategic",
+      "consideration_type": "stock",
+      "exchange_ratio": 0.225,
+      "resolution_type": "terminated",
+      "resolution_accession": "0001193125-22-056288",
+      "resolution_timestamp": "2022-02-25"
     }
 
   ]

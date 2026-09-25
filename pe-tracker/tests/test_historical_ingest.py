@@ -184,8 +184,8 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_exactly_twenty_reviewed_deals():
-    """Six reviewed batches: 10 closed (Y=0) + 10 terminated (Y=1). SkyWater/Theravance excluded."""
+def test_shipped_manifest_has_exactly_twenty_four_reviewed_deals():
+    """Seven reviewed batches: 12 closed (Y=0) + 12 terminated (Y=1). CA/Broadcom withdrawn; SkyWater/Theravance excluded."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
@@ -210,8 +210,13 @@ def test_shipped_manifest_has_exactly_twenty_reviewed_deals():
         "DEAL-TWTR-XHOLDINGS-2022",
         "DEAL-TWC-CMCSA-2014",
         "DEAL-PACB-ILMN-2018",
+        "DEAL-CERN-ORCL-2021",
+        "DEAL-NUAN-MSFT-2021",
+        "DEAL-FIVN-ZM-2021",
+        "DEAL-MNTV-ZEN-2021",
     ]
     assert "DEAL-SKYT-IONQ-2026" not in ids and "DEAL-TBPH-ZYME-2026" not in ids
+    assert "DEAL-CA-AVGO-2018" not in ids
     by_id = {d["deal_id"]: d for d in deals}
     crnx, esi = by_id["DEAL-CRNX-VRTX-2026"], by_id["DEAL-ESI-SOLS-2026"]
     assert crnx["resolution_type"] == "closed" and crnx["offer_price"] == 85.0
@@ -320,6 +325,30 @@ def test_shipped_manifest_has_exactly_twenty_reviewed_deals():
     assert pacb["announcement_accession"] == pacb["terms_accession"] == "0001193125-18-318421"
     assert pacb["resolution_accession"] == "0001193125-20-000641"
     assert pacb["resolution_timestamp"] == "2020-01-02"
+    cern, nuan = by_id["DEAL-CERN-ORCL-2021"], by_id["DEAL-NUAN-MSFT-2021"]
+    assert cern["offer_price"] == 95.0 and cern["resolution_type"] == "closed"
+    assert cern["announcement_accession"] == cern["terms_accession"] == "0001193125-21-363898"
+    assert cern["announcement_timestamp"] == "2021-12-20"
+    assert cern["resolution_accession"] == "0001193125-22-169841"
+    assert cern["resolution_timestamp"] == "2022-06-08"
+    assert nuan["offer_price"] == 56.0 and nuan["resolution_type"] == "closed"
+    assert nuan["announcement_accession"] == nuan["terms_accession"] == "0001193125-21-113796"
+    assert nuan["announcement_timestamp"] == "2021-04-11"
+    assert nuan["resolution_accession"] == "0001193125-22-066065"
+    assert nuan["resolution_timestamp"] == "2022-03-04"
+    fivn, mntv = by_id["DEAL-FIVN-ZM-2021"], by_id["DEAL-MNTV-ZEN-2021"]
+    assert fivn["consideration_type"] == "stock" and fivn.get("offer_price") is None
+    assert fivn["exchange_ratio"] == 0.5533 and fivn["resolution_type"] == "terminated"
+    assert fivn["announcement_accession"] == fivn["terms_accession"] == "0001193125-21-217962"
+    assert fivn["announcement_timestamp"] == "2021-07-16"
+    assert fivn["resolution_accession"] == "0001193125-21-289272"
+    assert fivn["resolution_timestamp"] == "2021-09-30"
+    assert mntv["consideration_type"] == "stock" and mntv.get("offer_price") is None
+    assert mntv["exchange_ratio"] == 0.225 and mntv["resolution_type"] == "terminated"
+    assert mntv["announcement_accession"] == mntv["terms_accession"] == "0001193125-21-313506"
+    assert mntv["announcement_timestamp"] == "2021-10-28"
+    assert mntv["resolution_accession"] == "0001193125-22-056288"
+    assert mntv["resolution_timestamp"] == "2022-02-25"
 
 
 # ------------------------------------------------- quality + readiness

@@ -536,9 +536,14 @@ def clean_acquirer_name(name: str) -> Optional[str]:
     name = re.sub(r"^(?:an?\s+)?affiliate\s+of\s+", "", name, flags=re.I)
     name = re.sub(r"\s+for\s+\$\s*[0-9].*$", "", name, flags=re.I)
     name = re.sub(r"\s*\([^)]*\)\s*$", "", name).strip()
+    # "Funds Advised by Apax Partners" → Apax Partners
+    m_adv = re.search(r"\bfunds?\s+advised\s+by\s+(.+)$", name, re.I)
+    if m_adv:
+        name = m_adv.group(1).strip(" ,.;")
     # Truncate at common trailers
     name = re.split(
-        r"\s+(?:will|to|for approximately|pursuant|has agreed)\b",
+        r"\s+(?:will|to|for approximately|pursuant|has agreed|,?\s*which|"
+        r"in\s+20\d{2})\b",
         name, maxsplit=1, flags=re.I)[0].strip(" ,.;")
     if len(name) < 3 or len(name) > 80:
         return None
@@ -591,8 +596,11 @@ def acquirer_acceptable(acquirer: str, target: str) -> tuple[bool, str]:
             r"\b(desires?|intends?|proposes?|agrees?|wishes|pursuant|"
             r"non-binding|proposal from|under the terms|e-?mail|"
             r"this agreement|adopt this|led by|as a result|"
-            r"surviving corporation)\b", low):
+            r"surviving corporation|funds? advised by|, which|"
+            r"\bin 20\d{2}\b)\b", low):
         return False, f"acquirer string contains verb/boilerplate residue: {acquirer!r}"
+    if re.search(r",\s*which\b", low) or re.search(r"\bin 20\d{2}\b", low):
+        return False, f"acquirer has trailing clause/year residue: {acquirer!r}"
     if re.search(r"^\(?[ivx]+\)\b", low) or re.search(r"\bthe company\b", low):
         return False, f"acquirer looks like agreement clause residue: {acquirer!r}"
     if re.search(r"\binvestor group\b", low):

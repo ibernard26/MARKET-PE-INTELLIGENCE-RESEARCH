@@ -41,8 +41,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 1
@@ -69,8 +69,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 2
@@ -90,8 +90,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 3
@@ -118,8 +118,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 4
@@ -146,8 +146,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 5
@@ -174,8 +174,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 6
@@ -195,8 +195,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 7
@@ -223,8 +223,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 8
@@ -251,8 +251,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 9
@@ -279,8 +279,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 10
@@ -307,8 +307,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 11
@@ -328,8 +328,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 12
@@ -356,8 +356,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 13
@@ -377,8 +377,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 14
@@ -405,8 +405,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 15
@@ -426,8 +426,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 16
@@ -454,8 +454,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 17
@@ -475,8 +475,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 18
@@ -503,8 +503,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 19
@@ -524,8 +524,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 20
@@ -552,8 +552,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 21
@@ -580,8 +580,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 22
@@ -608,8 +608,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 23
@@ -636,8 +636,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 24
@@ -664,8 +664,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 25
@@ -685,8 +685,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 26
@@ -706,8 +706,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 27
@@ -734,8 +734,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 28
@@ -762,8 +762,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 29
@@ -783,8 +783,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 30
@@ -811,8 +811,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 31
@@ -839,8 +839,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 32
@@ -867,8 +867,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 33
@@ -888,8 +888,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 34
@@ -916,8 +916,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 35
@@ -944,8 +944,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 36
@@ -965,8 +965,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 37
@@ -993,8 +993,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 38
@@ -1021,8 +1021,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 39
@@ -1049,8 +1049,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 40
@@ -1077,8 +1077,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 41
@@ -1105,8 +1105,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "DEFER",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 42
@@ -1126,8 +1126,8 @@
         "terms_extract": null,
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 43
@@ -1154,8 +1154,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 44
@@ -1182,8 +1182,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 45
@@ -1210,8 +1210,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 46
@@ -1238,8 +1238,8 @@
         },
         "decision_was": "DEFER"
       },
-      "retry_count": 0,
-      "resolution_status": "PENDING",
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 47
@@ -1260,7 +1260,7 @@
         "decision_was": "DEFER"
       },
       "retry_count": 0,
-      "resolution_status": "PENDING",
+      "resolution_status": "ADMIT",
       "retryable": true,
       "likely_permanent": false,
       "queue_rank": 48

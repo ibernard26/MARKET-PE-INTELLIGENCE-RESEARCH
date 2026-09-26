@@ -563,13 +563,31 @@ _ACQ_ENTITY_SUFFIX = re.compile(
 )
 
 
+_ACQ_SHELL = {
+    "parent", "purchaser", "buyer", "holdings", "holding", "inc", "corp",
+    "corporation", "company", "ltd", "llc", "lp", "plc", "group", "partners",
+    "acquisition", "acquireco", "merger", "merger sub", "newco", "unk",
+    "the buyer consortium", "buyer consortium", "the consortium", "consortium",
+}
+
+
 def acquirer_acceptable(acquirer: str, target: str) -> tuple[bool, str]:
     if not acquirer:
         return False, "missing acquirer"
     low = acquirer.lower().strip()
+    if low.startswith(("an ", "a ", "the ")) and low not in {
+            # allow "The Permira Funds"-style only via PE_SPONSOR path after clean
+    }:
+        # Strip a single leading article for shell checks; still reject "the buyer…"
+        pass
     if low.startswith(("an ", "a ")) or low in {
             "the company", "the operating partnership", "the registrant"}:
         return False, f"acquirer looks non-entity: {acquirer!r}"
+    if low in _ACQ_SHELL or re.sub(r"^the\s+", "", low) in _ACQ_SHELL:
+        return False, f"acquirer is a shell/role word: {acquirer!r}"
+    if re.search(
+            r"\b(desires?|intends?|proposes?|agrees?|wishes|pursuant)\b", low):
+        return False, f"acquirer string contains verb residue: {acquirer!r}"
     if _ACQ_BAD.search(acquirer):
         return False, f"acquirer string not a clean entity name: {acquirer!r}"
     if "for $" in low or re.search(r"\$\s*\d", acquirer):
@@ -578,6 +596,12 @@ def acquirer_acceptable(acquirer: str, target: str) -> tuple[bool, str]:
         return False, f"acquirer not a third-party buyer: {acquirer!r}"
     if ticker_token(acquirer) == ticker_token(target):
         return False, "acquirer token equals target token (likely filer≠target confusion)"
+    # Reject compounds that still contain the target's core token ("Suntory … and Beam").
+    ttok = ticker_token(target)
+    if ttok and ttok != "UNK" and re.search(rf"\b{re.escape(ttok)}\b", acquirer, re.I):
+        return False, f"acquirer string contains target token {ttok!r}"
+    if " and " in low:
+        return False, f"acquirer looks like a multi-party compound: {acquirer!r}"
     words = [w for w in re.split(r"\s+", acquirer) if w]
     has_suffix = bool(_ACQ_ENTITY_SUFFIX.search(acquirer))
     titleish = sum(1 for w in words if w[:1].isupper()) >= max(1, len(words) // 2)
@@ -585,6 +609,7 @@ def acquirer_acceptable(acquirer: str, target: str) -> tuple[bool, str]:
     single_brand = (
         len(words) == 1 and len(words[0]) >= 4 and words[0][0].isupper()
         and words[0].replace("-", "").isalnum()
+        and words[0].lower() not in _ACQ_SHELL
     )
     if not has_suffix and not (2 <= len(words) <= 6 and titleish) and not single_brand:
         return False, f"acquirer lacks entity form: {acquirer!r}"
@@ -619,19 +644,29 @@ def extract_acquirer_candidates(text: str, *, target: str = "") -> list[str]:
         if m:
             _add(m.group(1))
 
-    # Item 1.01 / press: "Parent / Buyer will acquire"
+    # Item 1.01 / press: named entity will acquire (reject bare Parent/Buyer/…).
     for m in re.finditer(
             r"(?:affiliate of\s+)?([A-Z][^,]{2,70}?)(?:\s*\([^)]+\))?\s+"
             r"(?:will acquire|to acquire|has agreed to acquire)",
             head, re.I):
-        _add(m.group(1))
+        raw = m.group(1).strip()
+        if raw.lower() in _ACQ_SHELL or raw.lower().startswith(
+                ("parent ", "purchaser ", "buyer ", "the company")):
+            continue
+        if re.search(r"\b(desires?|intends?|proposes?)\b", raw, re.I):
+            continue
+        _add(raw)
 
-    # Merger agreement parties: "among Parent, Merger Sub and the Company"
+    # Merger agreement parties: "among ParentName, Merger Sub and the Company"
     for m in re.finditer(
             r"(?:Agreement and Plan of Merger|Merger Agreement)[^.]{0,80}?"
             r"(?:by and )?among\s+([^,]{3,80}),",
             text[:40000], re.I):
-        _add(m.group(1))
+        raw = m.group(1).strip()
+        if raw.lower() in {"parent", "purchaser", "buyer", "the company"}:
+            continue
+        _add(raw)
+    # Quoted role definitions: Parent "Imerys SA" / "Imerys SA" ("Parent")
     for m in re.finditer(
             r"\b(?:Parent|Purchaser|Buyer)\s*[\"“]([A-Z][^\"”]{2,70})[\"”]",
             text[:40000]):
@@ -660,32 +695,64 @@ def extract_acquirer_candidates(text: str, *, target: str = "") -> list[str]:
 
 def pick_resolution_from_timeline(
     resolutions: list[tuple[str, str, dict]],
+    *,
+    announcement_date: str = "",
+    max_years: int = 5,
 ) -> tuple[Optional[tuple[str, str, dict]], Optional[str]]:
     """Choose a single resolution event under locked EVENT_RULES chronology.
 
     Rules (fail-closed):
+    - Keep only resolution filings within `max_years` of announcement (guards
+      against unrelated later Item 1.02 / 2.01 hits on the same CIK).
     - Sort by acceptanceDateTime / filingDate ascending.
-    - Same-direction duplicates → earliest definitive event (announcement→outcome).
-    - Mixed close + terminate/withdraw across filings → last chronological event
-      wins when it is a clean single label (later definitive close may supersede
-      an earlier dispute/termination filing; later terminate supersedes earlier
-      close only when it is the last event).
-    - Still DEFER if empty.
+    - Same-direction duplicates → earliest definitive event.
+    - Mixed close + terminate/withdraw within the window → last chronological
+      event wins (later definitive close may supersede an earlier dispute;
+      later terminate supersedes earlier close only as the last in-window event).
+    - Still DEFER if empty after window filter.
     """
     if not resolutions:
         return None, "no EVENT_RULES resolution filing found after announcement"
-    resolutions = sorted(
-        resolutions,
+
+    def _in_window(meta: dict) -> bool:
+        if not announcement_date or len(announcement_date) < 4:
+            return True
+        fdate = (meta.get("filingDate") or "")[:10]
+        if not fdate:
+            return True
+        try:
+            ay, am, ad = (int(x) for x in announcement_date[:10].split("-"))
+            fy, fm, fd = (int(x) for x in fdate.split("-"))
+        except ValueError:
+            return True
+        # Approximate year gap via ordinal months.
+        months = (fy - ay) * 12 + (fm - am)
+        return 0 <= months <= max_years * 12
+
+    in_window = [r for r in resolutions if _in_window(r[2])]
+    if not in_window:
+        return None, (
+            f"no EVENT_RULES resolution filing within {max_years}y of announcement"
+        )
+    in_window = sorted(
+        in_window,
         key=lambda x: (x[2].get("acceptanceDateTime") or x[2].get("filingDate") or ""),
     )
-    types = {r[0] for r in resolutions}
+    types = {r[0] for r in in_window}
     break_like = bool(types & {"terminated", "withdrawn"})
     has_close = "closed" in types
     if break_like and has_close:
-        # Last clean event is authoritative chronology under locked tags.
-        return resolutions[-1], None
-    # Homogeneous outcome: earliest resolution filing (standard path).
-    return resolutions[0], None
+        last = in_window[-1]
+        # Later definitive close may supersede an earlier dispute/termination.
+        if last[0] == "closed":
+            return last, None
+        # Later break after an earlier close is contradictory under locked tags
+        # without prose disambiguation — fail closed.
+        return None, (
+            "contradictory resolution filings in-window "
+            "(close present and later terminate/withdraw)"
+        )
+    return in_window[0], None
 
 
 def classify_resolution_event(meta: dict) -> Optional[str]:
@@ -761,6 +828,8 @@ def resolve_candidate(
     client: EdgarClient,
     cand: dict,
     existing_deal_ids: set[str],
+    *,
+    existing_ciks: Optional[set[int]] = None,
 ) -> dict:
     """SEC evidence resolution → ADMIT / EXCLUDE / DEFER with reason."""
     cik = int(cand["target_cik"])
@@ -775,6 +844,10 @@ def resolve_candidate(
         "reason": None,
         "manifest_entry": None,
     }
+    if existing_ciks is not None and cik in existing_ciks:
+        result["decision"] = "EXCLUDE"
+        result["reason"] = "DUPLICATE_TRANSACTION: target_cik already in canonical corpus or batch"
+        return result
     try:
         meta = client.filing(cik, ann_acc)
     except Exception as exc:
@@ -927,7 +1000,8 @@ def resolve_candidate(
         )
         return result
 
-    pick, pick_err = pick_resolution_from_timeline(resolutions)
+    pick, pick_err = pick_resolution_from_timeline(
+        resolutions, announcement_date=ann_date)
     if pick is None:
         result["decision"] = "DEFER"
         result["reason"] = pick_err or "no EVENT_RULES resolution filing found after announcement"
@@ -1038,7 +1112,7 @@ def cmd_resolve(args: argparse.Namespace) -> int:
     fetcher = RateLimitedFetcher(UA)
     client = EdgarClient(user_agent=UA)
     manifest = load_manifest()
-    deal_ids, _, _ = existing_sets(manifest)
+    deal_ids, ciks, _ = existing_sets(manifest)
     qpath = REVIEW_DIR / f"batch_{args.batch}_candidate_queue.json"
     queue = json.loads(qpath.read_text())["candidates"]
     ledger = {
@@ -1054,12 +1128,13 @@ def cmd_resolve(args: argparse.Namespace) -> int:
             break
         print(f"resolving rank={cand['candidate_rank']} cik={cand['target_cik']} "
               f"acc={cand['announcement_accession']} ...", flush=True)
-        rec = resolve_candidate(fetcher, client, cand, deal_ids)
+        rec = resolve_candidate(fetcher, client, cand, deal_ids, existing_ciks=ciks)
         ledger["examined"] += 1
         decision = rec["decision"]
         if decision == "ADMIT":
             entry = rec["manifest_entry"]
             deal_ids.add(entry["deal_id"])
+            ciks.add(int(entry["target_cik"]))
             ledger["admitted"].append(rec)
             print(f"  ADMIT {entry['deal_id']}", flush=True)
         elif decision == "EXCLUDE":
@@ -1108,13 +1183,16 @@ def cmd_resolve_deferred(args: argparse.Namespace) -> int:
     fetcher = RateLimitedFetcher(UA)
     client = EdgarClient(user_agent=UA)
     manifest = load_manifest()
-    deal_ids, _, existing_accs = existing_sets(manifest)
+    deal_ids, ciks, existing_accs = existing_sets(manifest)
     qpath = REVIEW_DIR / "deferred_resolution_queue.json"
     queue_doc = json.loads(qpath.read_text())
     candidates = queue_doc["candidates"]
-    # Resume: skip already-decided accessions from prior deferred ledgers.
+    # Resume: skip already-decided accessions from prior deferred ledgers,
+    # but not the current revolution's ledger (rewritten each run).
     already: set[str] = set()
     for path in sorted(REVIEW_DIR.glob("deferred_resolution_batch_*_ledger.json")):
+        if path.name == f"deferred_resolution_batch_{args.revolution}_ledger.json":
+            continue
         try:
             led = json.loads(path.read_text())
         except Exception:
@@ -1162,7 +1240,8 @@ def cmd_resolve_deferred(args: argparse.Namespace) -> int:
             f"acc={acc} ...",
             flush=True,
         )
-        rec = resolve_candidate(fetcher, client, resolve_cand, deal_ids)
+        rec = resolve_candidate(
+            fetcher, client, resolve_cand, deal_ids, existing_ciks=ciks)
         rec["original_batch"] = cand.get("original_batch")
         rec["primary_class"] = cand.get("primary_class")
         rec["defer_reason_raw"] = cand.get("defer_reason_raw")
@@ -1170,10 +1249,21 @@ def cmd_resolve_deferred(args: argparse.Namespace) -> int:
         decision = rec["decision"]
         if decision == "ADMIT":
             entry = rec["manifest_entry"]
-            deal_ids.add(entry["deal_id"])
-            existing_accs.add(entry["announcement_accession"])
-            ledger["admitted"].append(rec)
-            print(f"  ADMIT {entry['deal_id']}", flush=True)
+            # Belt-and-suspenders uniqueness (target_cik + deal_id).
+            if int(entry["target_cik"]) in ciks or entry["deal_id"] in deal_ids:
+                rec["decision"] = "EXCLUDE"
+                rec["reason"] = (
+                    "DUPLICATE_TRANSACTION: collided with earlier admit in batch"
+                )
+                rec["manifest_entry"] = None
+                ledger["excluded"].append(rec)
+                print(f"  EXCLUDE {rec['reason']}", flush=True)
+            else:
+                deal_ids.add(entry["deal_id"])
+                ciks.add(int(entry["target_cik"]))
+                existing_accs.add(entry["announcement_accession"])
+                ledger["admitted"].append(rec)
+                print(f"  ADMIT {entry['deal_id']}", flush=True)
         elif decision == "EXCLUDE":
             ledger["excluded"].append(rec)
             print(f"  EXCLUDE {rec['reason'][:140]}", flush=True)

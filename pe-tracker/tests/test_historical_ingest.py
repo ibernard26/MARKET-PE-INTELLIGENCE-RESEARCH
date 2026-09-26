@@ -184,12 +184,12 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_sixty_nine_canonical_deals():
-    """Batches 1–8 (N=62) + autonomous Batches 9–11 (+7). KLAC/LRCX and AKRX/Fresenius excluded."""
+def test_shipped_manifest_has_eighty_nine_canonical_deals():
+    """Batches 1–8 (N=62) + Batches 9–11 (+7) + deferred-resolution batch 1 (+20)."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
-    assert len(ids) == 69
+    assert len(ids) == 89
     assert ids[:24] == [
         "DEAL-CRNX-VRTX-2026",
         "DEAL-ESI-SOLS-2026",
@@ -239,9 +239,18 @@ def test_shipped_manifest_has_sixty_nine_canonical_deals():
         "DEAL-SABA-VECTOR-2015", "DEAL-SUTRON-HACH-2015",
         "DEAL-SCIQUE-ACCEL-2016", "DEAL-IMPRIV-THOMA-2016",
     }.issubset(set(ids))
-    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 50
+    assert {
+        "DEAL-MATERI-NEW-2014", "DEAL-AMERIC-HIGLAS-2014", "DEAL-BEAM-SUNTOR-2014",
+        "DEAL-CEC-APOLLO-2014", "DEAL-AMCOL-IMERYS-2014", "DEAL-COLE-AMERIC-2014",
+        "DEAL-DFC-LONE-2014", "DEAL-ZYGO-AMETEK-2014", "DEAL-POKERT-MULTIM-2014",
+        "DEAL-BARRY-MRGB-2014", "DEAL-MKTG-AEGIS-2014", "DEAL-HILLSH-TYSON-2014",
+        "DEAL-VITACO-KROGER-2014", "DEAL-LORILL-IMPERI-2014", "DEAL-REYNOL-IMPERI-2014",
+        "DEAL-SYMMET-TECOST-2014", "DEAL-INTERM-ROCHE-2014", "DEAL-BOLT-TELEDY-2014",
+        "DEAL-TRW-ZFFRIE-2014", "DEAL-TAMINC-EASTMA-2014",
+    }.issubset(set(ids))
+    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 69
     assert sum(1 for d in deals if d["resolution_type"] == "terminated") == 19
-    assert sum(1 for d in deals if d["resolution_type"] == "withdrawn") == 0
+    assert sum(1 for d in deals if d["resolution_type"] == "withdrawn") == 1
     by_id = {d["deal_id"]: d for d in deals}
     crnx, esi = by_id["DEAL-CRNX-VRTX-2026"], by_id["DEAL-ESI-SOLS-2026"]
     assert crnx["resolution_type"] == "closed" and crnx["offer_price"] == 85.0

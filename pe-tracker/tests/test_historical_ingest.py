@@ -184,12 +184,13 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_exactly_twenty_four_reviewed_deals():
-    """Seven reviewed batches: 12 closed (Y=0) + 12 terminated (Y=1). CA/Broadcom withdrawn; SkyWater/Theravance excluded."""
+def test_shipped_manifest_has_exactly_sixty_two_reviewed_deals():
+    """Eight reviewed batches: prior 24 + Batch 8 (+38). KLAC/LRCX and AKRX/Fresenius excluded."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
-    assert ids == [
+    assert len(ids) == 62
+    assert ids[:24] == [
         "DEAL-CRNX-VRTX-2026",
         "DEAL-ESI-SOLS-2026",
         "DEAL-EA-PIFSLAFF-2025",
@@ -217,6 +218,24 @@ def test_shipped_manifest_has_exactly_twenty_four_reviewed_deals():
     ]
     assert "DEAL-SKYT-IONQ-2026" not in ids and "DEAL-TBPH-ZYME-2026" not in ids
     assert "DEAL-CA-AVGO-2018" not in ids
+    assert "DEAL-KLAC-LRCX-2015" not in ids and "DEAL-AKRX-FRESENIUS-2017" not in ids
+    assert set(ids[24:]) == {
+        "DEAL-ALTR-INTC-2015", "DEAL-APC-OXY-2019", "DEAL-ARNA-PFE-2021",
+        "DEAL-AVLR-VISTA-2022", "DEAL-CHNG-UNH-2021", "DEAL-CLDR-KKRCDR-2021",
+        "DEAL-CONE-KKRGIP-2021", "DEAL-COR-AMT-2021", "DEAL-COUP-TB-2022",
+        "DEAL-CTXS-PE-2022", "DEAL-CXO-COP-2020", "DEAL-DRE-PLD-2022",
+        "DEAL-GNW-OCEANWIDE-2016", "DEAL-HZNP-AMGN-2022", "DEAL-IMGN-ABBV-2023",
+        "DEAL-IRBT-AMZN-2022", "DEAL-LLTC-ADI-2016", "DEAL-LSCC-CANYONBRIDGE-2016",
+        "DEAL-MDLA-TB-2021", "DEAL-MRO-COP-2024", "DEAL-MXIM-ADI-2020",
+        "DEAL-NLSN-EVERGREEN-2022", "DEAL-PFPT-TB-2021", "DEAL-PXD-XOM-2023",
+        "DEAL-RAD-WBA-2015", "DEAL-RCII-VINTAGE-2018", "DEAL-RESI-AMHERST-2020",
+        "DEAL-RP-TB-2020", "DEAL-SAIL-TB-2022", "DEAL-SAVE-ULCC-2022",
+        "DEAL-SGEN-PFE-2023", "DEAL-SPLK-CSCO-2023", "DEAL-STOR-GIC-2022",
+        "DEAL-SWCH-DIGITALBRIDGE-2022", "DEAL-WORK-CRM-2020", "DEAL-XLNX-AMD-2020",
+        "DEAL-XLRN-MRK-2021", "DEAL-ZEN-ZORO-2022",
+    }
+    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 43
+    assert sum(1 for d in deals if d["resolution_type"] == "terminated") == 19
     by_id = {d["deal_id"]: d for d in deals}
     crnx, esi = by_id["DEAL-CRNX-VRTX-2026"], by_id["DEAL-ESI-SOLS-2026"]
     assert crnx["resolution_type"] == "closed" and crnx["offer_price"] == 85.0
@@ -349,6 +368,21 @@ def test_shipped_manifest_has_exactly_twenty_four_reviewed_deals():
     assert mntv["announcement_timestamp"] == "2021-10-28"
     assert mntv["resolution_accession"] == "0001193125-22-056288"
     assert mntv["resolution_timestamp"] == "2022-02-25"
+    # Batch 8 human-authorized admits (announcement-time PIT terms)
+    lltc, rad, irbt = (by_id["DEAL-LLTC-ADI-2016"], by_id["DEAL-RAD-WBA-2015"],
+                       by_id["DEAL-IRBT-AMZN-2022"])
+    assert lltc["consideration_type"] == "mixed" and lltc["offer_price"] == 46.0
+    assert lltc["exchange_ratio"] == 0.2321 and lltc["resolution_type"] == "closed"
+    assert lltc["announcement_accession"] == "0001193125-16-658166"  # Form 425
+    assert lltc["resolution_accession"] == "0001193125-17-078946"
+    assert rad["consideration_type"] == "cash" and rad["offer_price"] == 9.0
+    assert rad["resolution_type"] == "terminated"
+    assert rad["announcement_accession"] == rad["terms_accession"] == "0001104659-15-073813"
+    assert rad["resolution_accession"] == "0001104659-17-042360"
+    assert irbt["consideration_type"] == "cash" and irbt["offer_price"] == 61.0
+    assert irbt["resolution_type"] == "terminated"
+    assert irbt["announcement_accession"] == irbt["terms_accession"] == "0001193125-22-213174"
+    assert irbt["resolution_accession"] == "0001193125-24-017523"
 
 
 # ------------------------------------------------- quality + readiness

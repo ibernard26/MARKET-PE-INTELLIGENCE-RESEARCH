@@ -2,14 +2,15 @@
 
 **Status: MODEL INFRASTRUCTURE VALIDATED — NO ALPHA CLAIM.**
 
-At base commit `82638705278ca5da14fa1dd47cb585ce71adafd5`, the reviewed SEC
-manifest / canonical store supports **24 eligible labeled rows**
-(`MODEL_DATA_STATUS = READY_FOR_EXPERIMENTAL_WALK_FORWARD` per
-`python -m src.model.data_quality`). That is a **reviewer-curated research
-corpus**, not a population sample (see `SAMPLING_FRAME.md`). No real-data fit,
-calibration, or walk-forward has been authorized in the architecture remediation
-PR. Metrics in unit tests still come from clearly labeled **SYNTHETIC**
-fixtures and only show that the mechanics work.
+At Batch 8 freeze commit `f5f634b6290fa078f9018da2ae3da48f316cf655`, the
+reviewed SEC manifest supports **62 eligible labeled rows** (Y0=43, Y1=19).
+That is a **reviewer-curated research corpus**, not a population sample
+(see `SAMPLING_FRAME.md`). The first chronological walk-forward is
+**prepared but not executed** (`docs/FIRST_WALKFORWARD_EXPERIMENT_V1.md`).
+No real-data fit or calibration is authorized until
+`AUTHORIZE FIRST REAL WALKFORWARD`. Metrics in unit tests still come from
+clearly labeled **SYNTHETIC** fixtures unless an experiment plan explicitly
+says otherwise.
 
 ## Contract (unchanged: `event_driven_v1`)
 y = 1 ⇔ the deal breaks (termination/withdrawal); y = 0 ⇔ closing; pending ⇒ **censored**.

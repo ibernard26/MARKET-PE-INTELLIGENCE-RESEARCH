@@ -7,5 +7,6 @@ Layers, kept separate on purpose:
               + pre-test threshold selection + frozen-threshold evaluation
   validation  chronological split + walk-forward, baselines
   registry    model metadata + immutable predictions (SQLite, append-only)
+  experiment_prep  freeze cohort/fingerprints for a walk-forward (no fit)
   decision    EV = (1-p)·U − p·D, separate from the probability model
 """

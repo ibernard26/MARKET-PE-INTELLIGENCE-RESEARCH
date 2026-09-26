@@ -1,0 +1,897 @@
+{
+  "experiment_id": "first_walkforward_v1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "execution_authorized": false,
+  "code_commit": "f5f634b6290fa078f9018da2ae3da48f316cf655",
+  "manifest_freeze_commit": "f5f634b6290fa078f9018da2ae3da48f316cf655",
+  "cohort_id": "sec_reviewed_corpus_batch8",
+  "cohort_version": "v1",
+  "cohort_n": 62,
+  "feature_names": [
+    "pct_spread",
+    "annualized_spread",
+    "days_to_expected_close",
+    "premium_to_unaffected",
+    "log_deal_value",
+    "is_sponsor",
+    "is_all_cash",
+    "cfius_exposure",
+    "antitrust_exposure",
+    "cma_eu_exposure",
+    "second_request_open",
+    "under_regulatory_challenge",
+    "financing_condition",
+    "shareholder_approval_required"
+  ],
+  "feature_schema_version": "fs_v1",
+  "model_version": "break_logit_v1",
+  "strategy_version": "event_driven_v1",
+  "calibration": "none",
+  "horizon": "2026-09-26",
+  "cutoffs": [
+    "2021-06-30",
+    "2023-06-30",
+    "2025-06-30"
+  ],
+  "n_labeled_at_horizon": 62,
+  "n_pos_at_horizon": 19,
+  "n_censored_at_horizon": 0,
+  "windows": [
+    {
+      "window": 0,
+      "train_cutoff": "2021-06-30",
+      "test_start": "2021-06-30",
+      "test_end": "2023-06-30",
+      "n_train": 20,
+      "n_pos": 11,
+      "n_neg": 9,
+      "sample_prevalence": 0.55,
+      "meets_min_sample_n": true,
+      "meets_min_class_n": true,
+      "n_censored_at_cutoff": 8,
+      "dataset_fingerprint": "8d0e153c4285a1300e2bcb783778c06265eb5b9334517ebde09b50a91eecd346",
+      "n_test": 23,
+      "test_pos": 4,
+      "test_neg": 19,
+      "test_dataset_fingerprint": "1c8959c3465cc7869cc06899d29f445865cfc46fad6c16a310a5d43145f701a1",
+      "train_rows": [
+        {
+          "deal_id": "DEAL-ALTR-INTC-2015",
+          "feature_as_of": "2015-06-01T16:11:05",
+          "label": 0,
+          "label_known_at": "2015-12-28T16:04:35"
+        },
+        {
+          "deal_id": "DEAL-APC-OXY-2019",
+          "feature_as_of": "2019-05-09T16:21:06",
+          "label": 0,
+          "label_known_at": "2019-08-08T16:34:37"
+        },
+        {
+          "deal_id": "DEAL-BHI-HAL-2014",
+          "feature_as_of": "2014-11-18T19:41:08",
+          "label": 1,
+          "label_known_at": "2016-05-02T11:11:09"
+        },
+        {
+          "deal_id": "DEAL-CI-ANTM-2015",
+          "feature_as_of": "2015-07-24T18:43:57",
+          "label": 1,
+          "label_known_at": "2017-05-12T15:12:34"
+        },
+        {
+          "deal_id": "DEAL-CXO-COP-2020",
+          "feature_as_of": "2020-10-19T07:19:41",
+          "label": 0,
+          "label_known_at": "2021-01-15T17:01:08"
+        },
+        {
+          "deal_id": "DEAL-GNW-OCEANWIDE-2016",
+          "feature_as_of": "2016-10-24T10:15:04",
+          "label": 1,
+          "label_known_at": "2021-04-06T20:44:03"
+        },
+        {
+          "deal_id": "DEAL-HUM-AET-2015",
+          "feature_as_of": "2015-07-07T21:23:34",
+          "label": 1,
+          "label_known_at": "2017-02-14T23:10:32"
+        },
+        {
+          "deal_id": "DEAL-LLTC-ADI-2016",
+          "feature_as_of": "2016-07-26T16:29:39",
+          "label": 0,
+          "label_known_at": "2017-03-10T17:09:02"
+        },
+        {
+          "deal_id": "DEAL-LNKD-MSFT-2016",
+          "feature_as_of": "2016-06-13T08:39:06",
+          "label": 0,
+          "label_known_at": "2016-12-08T16:20:36"
+        },
+        {
+          "deal_id": "DEAL-LSCC-CANYONBRIDGE-2016",
+          "feature_as_of": "2016-11-03T12:18:56",
+          "label": 1,
+          "label_known_at": "2017-09-14T00:01:05"
+        },
+        {
+          "deal_id": "DEAL-MON-BAYER-2016",
+          "feature_as_of": "2016-09-20T17:03:33",
+          "label": 0,
+          "label_known_at": "2018-06-08T17:01:00"
+        },
+        {
+          "deal_id": "DEAL-ODP-SPLS-2015",
+          "feature_as_of": "2015-02-04T17:32:34",
+          "label": 1,
+          "label_known_at": "2016-05-16T19:22:37"
+        },
+        {
+          "deal_id": "DEAL-PACB-ILMN-2018",
+          "feature_as_of": "2018-11-05T21:33:11",
+          "label": 1,
+          "label_known_at": "2020-01-02T21:25:55"
+        },
+        {
+          "deal_id": "DEAL-RAD-WBA-2015",
+          "feature_as_of": "2015-10-29T06:09:17",
+          "label": 1,
+          "label_known_at": "2017-06-29T08:55:55"
+        },
+        {
+          "deal_id": "DEAL-RCII-VINTAGE-2018",
+          "feature_as_of": "2018-06-19T12:03:00",
+          "label": 1,
+          "label_known_at": "2018-12-20T20:53:35"
+        },
+        {
+          "deal_id": "DEAL-RESI-AMHERST-2020",
+          "feature_as_of": "2020-02-18T08:29:06",
+          "label": 1,
+          "label_known_at": "2020-05-04T17:57:09"
+        },
+        {
+          "deal_id": "DEAL-RHT-IBM-2018",
+          "feature_as_of": "2018-10-29T16:09:01",
+          "label": 0,
+          "label_known_at": "2019-07-09T08:54:09"
+        },
+        {
+          "deal_id": "DEAL-RP-TB-2020",
+          "feature_as_of": "2020-12-21T08:21:54",
+          "label": 0,
+          "label_known_at": "2021-04-22T09:29:08"
+        },
+        {
+          "deal_id": "DEAL-TWC-CMCSA-2014",
+          "feature_as_of": "2014-02-13T22:18:06",
+          "label": 1,
+          "label_known_at": "2015-04-24T20:30:04"
+        },
+        {
+          "deal_id": "DEAL-WFM-AMZN-2017",
+          "feature_as_of": "2017-06-16T09:18:17",
+          "label": 0,
+          "label_known_at": "2017-08-28T06:02:06"
+        }
+      ],
+      "test_deal_ids": [
+        "DEAL-ARNA-PFE-2021",
+        "DEAL-ATVI-MSFT-2022",
+        "DEAL-AVLR-VISTA-2022",
+        "DEAL-CERN-ORCL-2021",
+        "DEAL-CONE-KKRGIP-2021",
+        "DEAL-COR-AMT-2021",
+        "DEAL-COUP-TB-2022",
+        "DEAL-CTXS-PE-2022",
+        "DEAL-DRE-PLD-2022",
+        "DEAL-FIVN-ZM-2021",
+        "DEAL-HZNP-AMGN-2022",
+        "DEAL-IRBT-AMZN-2022",
+        "DEAL-MDLA-TB-2021",
+        "DEAL-MNTV-ZEN-2021",
+        "DEAL-NLSN-EVERGREEN-2022",
+        "DEAL-SAIL-TB-2022",
+        "DEAL-SAVE-ULCC-2022",
+        "DEAL-SGEN-PFE-2023",
+        "DEAL-STOR-GIC-2022",
+        "DEAL-SWCH-DIGITALBRIDGE-2022",
+        "DEAL-TWTR-XHOLDINGS-2022",
+        "DEAL-XLRN-MRK-2021",
+        "DEAL-ZEN-ZORO-2022"
+      ],
+      "fit_executed": false,
+      "status": "PREPARED_NOT_FITTED"
+    },
+    {
+      "window": 1,
+      "train_cutoff": "2023-06-30",
+      "test_start": "2023-06-30",
+      "test_end": "2025-06-30",
+      "n_train": 47,
+      "n_pos": 15,
+      "n_neg": 32,
+      "sample_prevalence": 0.3191489361702128,
+      "meets_min_sample_n": true,
+      "meets_min_class_n": true,
+      "n_censored_at_cutoff": 4,
+      "dataset_fingerprint": "369cf517055a18cfd147f5466b64976e6a7d1496c7774c1bb7427f07fe8df273",
+      "n_test": 8,
+      "test_pos": 2,
+      "test_neg": 6,
+      "test_dataset_fingerprint": "46b6b0555ff550a65b9f0577ee8231a3d54b5fcaee4acdf935c04fb70dcd3e7f",
+      "train_rows": [
+        {
+          "deal_id": "DEAL-ALTR-INTC-2015",
+          "feature_as_of": "2015-06-01T16:11:05",
+          "label": 0,
+          "label_known_at": "2015-12-28T16:04:35"
+        },
+        {
+          "deal_id": "DEAL-APC-OXY-2019",
+          "feature_as_of": "2019-05-09T16:21:06",
+          "label": 0,
+          "label_known_at": "2019-08-08T16:34:37"
+        },
+        {
+          "deal_id": "DEAL-ARNA-PFE-2021",
+          "feature_as_of": "2021-12-13T06:04:59",
+          "label": 0,
+          "label_known_at": "2022-03-11T08:54:18"
+        },
+        {
+          "deal_id": "DEAL-AVLR-VISTA-2022",
+          "feature_as_of": "2022-08-08T19:31:58",
+          "label": 0,
+          "label_known_at": "2022-10-19T10:57:57"
+        },
+        {
+          "deal_id": "DEAL-BHI-HAL-2014",
+          "feature_as_of": "2014-11-18T19:41:08",
+          "label": 1,
+          "label_known_at": "2016-05-02T11:11:09"
+        },
+        {
+          "deal_id": "DEAL-CERN-ORCL-2021",
+          "feature_as_of": "2021-12-21T20:06:33",
+          "label": 0,
+          "label_known_at": "2022-06-08T08:55:02"
+        },
+        {
+          "deal_id": "DEAL-CHNG-UNH-2021",
+          "feature_as_of": "2021-01-06T17:00:59",
+          "label": 0,
+          "label_known_at": "2022-10-03T09:06:02"
+        },
+        {
+          "deal_id": "DEAL-CI-ANTM-2015",
+          "feature_as_of": "2015-07-24T18:43:57",
+          "label": 1,
+          "label_known_at": "2017-05-12T15:12:34"
+        },
+        {
+          "deal_id": "DEAL-CLDR-KKRCDR-2021",
+          "feature_as_of": "2021-06-01T06:09:34",
+          "label": 0,
+          "label_known_at": "2021-10-08T13:02:59"
+        },
+        {
+          "deal_id": "DEAL-CONE-KKRGIP-2021",
+          "feature_as_of": "2021-11-15T16:45:33",
+          "label": 0,
+          "label_known_at": "2022-03-25T16:13:33"
+        },
+        {
+          "deal_id": "DEAL-COR-AMT-2021",
+          "feature_as_of": "2021-11-15T07:11:03",
+          "label": 0,
+          "label_known_at": "2021-12-28T10:01:01"
+        },
+        {
+          "deal_id": "DEAL-COUP-TB-2022",
+          "feature_as_of": "2022-12-12T17:19:05",
+          "label": 0,
+          "label_known_at": "2023-02-28T16:58:05"
+        },
+        {
+          "deal_id": "DEAL-CTXS-PE-2022",
+          "feature_as_of": "2022-01-31T17:14:59",
+          "label": 0,
+          "label_known_at": "2022-09-30T09:58:07"
+        },
+        {
+          "deal_id": "DEAL-CXO-COP-2020",
+          "feature_as_of": "2020-10-19T07:19:41",
+          "label": 0,
+          "label_known_at": "2021-01-15T17:01:08"
+        },
+        {
+          "deal_id": "DEAL-DRE-PLD-2022",
+          "feature_as_of": "2022-06-13T09:19:12",
+          "label": 0,
+          "label_known_at": "2022-10-03T09:43:19"
+        },
+        {
+          "deal_id": "DEAL-FIVN-ZM-2021",
+          "feature_as_of": "2021-07-19T10:05:04",
+          "label": 1,
+          "label_known_at": "2021-10-01T15:01:10"
+        },
+        {
+          "deal_id": "DEAL-GNW-OCEANWIDE-2016",
+          "feature_as_of": "2016-10-24T10:15:04",
+          "label": 1,
+          "label_known_at": "2021-04-06T20:44:03"
+        },
+        {
+          "deal_id": "DEAL-HUM-AET-2015",
+          "feature_as_of": "2015-07-07T21:23:34",
+          "label": 1,
+          "label_known_at": "2017-02-14T23:10:32"
+        },
+        {
+          "deal_id": "DEAL-LLTC-ADI-2016",
+          "feature_as_of": "2016-07-26T16:29:39",
+          "label": 0,
+          "label_known_at": "2017-03-10T17:09:02"
+        },
+        {
+          "deal_id": "DEAL-LNKD-MSFT-2016",
+          "feature_as_of": "2016-06-13T08:39:06",
+          "label": 0,
+          "label_known_at": "2016-12-08T16:20:36"
+        },
+        {
+          "deal_id": "DEAL-LSCC-CANYONBRIDGE-2016",
+          "feature_as_of": "2016-11-03T12:18:56",
+          "label": 1,
+          "label_known_at": "2017-09-14T00:01:05"
+        },
+        {
+          "deal_id": "DEAL-MDLA-TB-2021",
+          "feature_as_of": "2021-07-27T16:42:53",
+          "label": 0,
+          "label_known_at": "2021-10-29T16:12:19"
+        },
+        {
+          "deal_id": "DEAL-MNTV-ZEN-2021",
+          "feature_as_of": "2021-10-29T17:01:37",
+          "label": 1,
+          "label_known_at": "2022-02-28T09:29:06"
+        },
+        {
+          "deal_id": "DEAL-MON-BAYER-2016",
+          "feature_as_of": "2016-09-20T17:03:33",
+          "label": 0,
+          "label_known_at": "2018-06-08T17:01:00"
+        },
+        {
+          "deal_id": "DEAL-MXIM-ADI-2020",
+          "feature_as_of": "2020-07-13T06:24:06",
+          "label": 0,
+          "label_known_at": "2021-08-26T16:25:03"
+        },
+        {
+          "deal_id": "DEAL-NLSN-EVERGREEN-2022",
+          "feature_as_of": "2022-03-30T16:51:59",
+          "label": 0,
+          "label_known_at": "2022-10-11T16:02:09"
+        },
+        {
+          "deal_id": "DEAL-NUAN-MSFT-2021",
+          "feature_as_of": "2021-04-13T06:05:03",
+          "label": 0,
+          "label_known_at": "2022-03-04T16:07:10"
+        },
+        {
+          "deal_id": "DEAL-ODP-SPLS-2015",
+          "feature_as_of": "2015-02-04T17:32:34",
+          "label": 1,
+          "label_known_at": "2016-05-16T19:22:37"
+        },
+        {
+          "deal_id": "DEAL-PACB-ILMN-2018",
+          "feature_as_of": "2018-11-05T21:33:11",
+          "label": 1,
+          "label_known_at": "2020-01-02T21:25:55"
+        },
+        {
+          "deal_id": "DEAL-PFPT-TB-2021",
+          "feature_as_of": "2021-04-27T16:58:56",
+          "label": 0,
+          "label_known_at": "2021-08-31T08:40:03"
+        },
+        {
+          "deal_id": "DEAL-RAD-WBA-2015",
+          "feature_as_of": "2015-10-29T06:09:17",
+          "label": 1,
+          "label_known_at": "2017-06-29T08:55:55"
+        },
+        {
+          "deal_id": "DEAL-RCII-VINTAGE-2018",
+          "feature_as_of": "2018-06-19T12:03:00",
+          "label": 1,
+          "label_known_at": "2018-12-20T20:53:35"
+        },
+        {
+          "deal_id": "DEAL-RESI-AMHERST-2020",
+          "feature_as_of": "2020-02-18T08:29:06",
+          "label": 1,
+          "label_known_at": "2020-05-04T17:57:09"
+        },
+        {
+          "deal_id": "DEAL-RHT-IBM-2018",
+          "feature_as_of": "2018-10-29T16:09:01",
+          "label": 0,
+          "label_known_at": "2019-07-09T08:54:09"
+        },
+        {
+          "deal_id": "DEAL-RP-TB-2020",
+          "feature_as_of": "2020-12-21T08:21:54",
+          "label": 0,
+          "label_known_at": "2021-04-22T09:29:08"
+        },
+        {
+          "deal_id": "DEAL-SAIL-TB-2022",
+          "feature_as_of": "2022-04-11T07:04:03",
+          "label": 0,
+          "label_known_at": "2022-08-16T09:12:24"
+        },
+        {
+          "deal_id": "DEAL-SAVE-ULCC-2022",
+          "feature_as_of": "2022-02-07T11:43:02",
+          "label": 1,
+          "label_known_at": "2022-07-28T12:02:00"
+        },
+        {
+          "deal_id": "DEAL-STOR-GIC-2022",
+          "feature_as_of": "2022-09-15T12:11:55",
+          "label": 0,
+          "label_known_at": "2023-02-03T19:47:03"
+        },
+        {
+          "deal_id": "DEAL-SWCH-DIGITALBRIDGE-2022",
+          "feature_as_of": "2022-05-11T17:16:02",
+          "label": 0,
+          "label_known_at": "2022-12-06T13:47:27"
+        },
+        {
+          "deal_id": "DEAL-TWC-CMCSA-2014",
+          "feature_as_of": "2014-02-13T22:18:06",
+          "label": 1,
+          "label_known_at": "2015-04-24T20:30:04"
+        },
+        {
+          "deal_id": "DEAL-TWTR-XHOLDINGS-2022",
+          "feature_as_of": "2022-04-26T17:10:18",
+          "label": 0,
+          "label_known_at": "2022-10-28T20:22:36"
+        },
+        {
+          "deal_id": "DEAL-WFM-AMZN-2017",
+          "feature_as_of": "2017-06-16T09:18:17",
+          "label": 0,
+          "label_known_at": "2017-08-28T06:02:06"
+        },
+        {
+          "deal_id": "DEAL-WLTW-AON-2020",
+          "feature_as_of": "2020-03-09T11:24:17",
+          "label": 1,
+          "label_known_at": "2021-07-26T20:33:05"
+        },
+        {
+          "deal_id": "DEAL-WORK-CRM-2020",
+          "feature_as_of": "2020-12-01T17:18:56",
+          "label": 0,
+          "label_known_at": "2021-07-21T11:01:48"
+        },
+        {
+          "deal_id": "DEAL-XLNX-AMD-2020",
+          "feature_as_of": "2020-10-27T06:33:15",
+          "label": 0,
+          "label_known_at": "2022-02-14T08:49:46"
+        },
+        {
+          "deal_id": "DEAL-XLRN-MRK-2021",
+          "feature_as_of": "2021-09-30T07:13:02",
+          "label": 0,
+          "label_known_at": "2021-11-22T08:52:10"
+        },
+        {
+          "deal_id": "DEAL-ZEN-ZORO-2022",
+          "feature_as_of": "2022-06-24T17:19:04",
+          "label": 0,
+          "label_known_at": "2022-11-22T09:43:09"
+        }
+      ],
+      "test_deal_ids": [
+        "DEAL-CPRI-TPR-2023",
+        "DEAL-HCP-IBM-2024",
+        "DEAL-IMGN-ABBV-2023",
+        "DEAL-JNPR-HPE-2024",
+        "DEAL-MRO-COP-2024",
+        "DEAL-PXD-XOM-2023",
+        "DEAL-SPLK-CSCO-2023",
+        "DEAL-SSTK-GETY-2025"
+      ],
+      "fit_executed": false,
+      "status": "PREPARED_NOT_FITTED"
+    },
+    {
+      "window": 2,
+      "train_cutoff": "2025-06-30",
+      "test_start": "2025-06-30",
+      "test_end": "2026-09-26",
+      "n_train": 57,
+      "n_pos": 17,
+      "n_neg": 40,
+      "sample_prevalence": 0.2982456140350877,
+      "meets_min_sample_n": true,
+      "meets_min_class_n": true,
+      "n_censored_at_cutoff": 2,
+      "dataset_fingerprint": "a15992b40875b645d7f4fc5c850b8023b41a3dfa9dc270f9349654654d2b24ae",
+      "n_test": 3,
+      "test_pos": 1,
+      "test_neg": 2,
+      "test_dataset_fingerprint": "f7914907c81dba0dd15ee21eecd26150c09676a003662f34f3c52462a9e8fd04",
+      "train_rows": [
+        {
+          "deal_id": "DEAL-ALTR-INTC-2015",
+          "feature_as_of": "2015-06-01T16:11:05",
+          "label": 0,
+          "label_known_at": "2015-12-28T16:04:35"
+        },
+        {
+          "deal_id": "DEAL-APC-OXY-2019",
+          "feature_as_of": "2019-05-09T16:21:06",
+          "label": 0,
+          "label_known_at": "2019-08-08T16:34:37"
+        },
+        {
+          "deal_id": "DEAL-ARNA-PFE-2021",
+          "feature_as_of": "2021-12-13T06:04:59",
+          "label": 0,
+          "label_known_at": "2022-03-11T08:54:18"
+        },
+        {
+          "deal_id": "DEAL-ATVI-MSFT-2022",
+          "feature_as_of": "2022-01-19T07:00:32",
+          "label": 0,
+          "label_known_at": "2023-10-13T08:34:52"
+        },
+        {
+          "deal_id": "DEAL-AVLR-VISTA-2022",
+          "feature_as_of": "2022-08-08T19:31:58",
+          "label": 0,
+          "label_known_at": "2022-10-19T10:57:57"
+        },
+        {
+          "deal_id": "DEAL-BHI-HAL-2014",
+          "feature_as_of": "2014-11-18T19:41:08",
+          "label": 1,
+          "label_known_at": "2016-05-02T11:11:09"
+        },
+        {
+          "deal_id": "DEAL-CERN-ORCL-2021",
+          "feature_as_of": "2021-12-21T20:06:33",
+          "label": 0,
+          "label_known_at": "2022-06-08T08:55:02"
+        },
+        {
+          "deal_id": "DEAL-CHNG-UNH-2021",
+          "feature_as_of": "2021-01-06T17:00:59",
+          "label": 0,
+          "label_known_at": "2022-10-03T09:06:02"
+        },
+        {
+          "deal_id": "DEAL-CI-ANTM-2015",
+          "feature_as_of": "2015-07-24T18:43:57",
+          "label": 1,
+          "label_known_at": "2017-05-12T15:12:34"
+        },
+        {
+          "deal_id": "DEAL-CLDR-KKRCDR-2021",
+          "feature_as_of": "2021-06-01T06:09:34",
+          "label": 0,
+          "label_known_at": "2021-10-08T13:02:59"
+        },
+        {
+          "deal_id": "DEAL-CONE-KKRGIP-2021",
+          "feature_as_of": "2021-11-15T16:45:33",
+          "label": 0,
+          "label_known_at": "2022-03-25T16:13:33"
+        },
+        {
+          "deal_id": "DEAL-COR-AMT-2021",
+          "feature_as_of": "2021-11-15T07:11:03",
+          "label": 0,
+          "label_known_at": "2021-12-28T10:01:01"
+        },
+        {
+          "deal_id": "DEAL-COUP-TB-2022",
+          "feature_as_of": "2022-12-12T17:19:05",
+          "label": 0,
+          "label_known_at": "2023-02-28T16:58:05"
+        },
+        {
+          "deal_id": "DEAL-CPRI-TPR-2023",
+          "feature_as_of": "2023-08-10T13:20:28",
+          "label": 1,
+          "label_known_at": "2024-11-14T21:36:54"
+        },
+        {
+          "deal_id": "DEAL-CTXS-PE-2022",
+          "feature_as_of": "2022-01-31T17:14:59",
+          "label": 0,
+          "label_known_at": "2022-09-30T09:58:07"
+        },
+        {
+          "deal_id": "DEAL-CXO-COP-2020",
+          "feature_as_of": "2020-10-19T07:19:41",
+          "label": 0,
+          "label_known_at": "2021-01-15T17:01:08"
+        },
+        {
+          "deal_id": "DEAL-DRE-PLD-2022",
+          "feature_as_of": "2022-06-13T09:19:12",
+          "label": 0,
+          "label_known_at": "2022-10-03T09:43:19"
+        },
+        {
+          "deal_id": "DEAL-FIVN-ZM-2021",
+          "feature_as_of": "2021-07-19T10:05:04",
+          "label": 1,
+          "label_known_at": "2021-10-01T15:01:10"
+        },
+        {
+          "deal_id": "DEAL-GNW-OCEANWIDE-2016",
+          "feature_as_of": "2016-10-24T10:15:04",
+          "label": 1,
+          "label_known_at": "2021-04-06T20:44:03"
+        },
+        {
+          "deal_id": "DEAL-HCP-IBM-2024",
+          "feature_as_of": "2024-04-25T17:15:05",
+          "label": 0,
+          "label_known_at": "2025-02-27T09:11:19"
+        },
+        {
+          "deal_id": "DEAL-HUM-AET-2015",
+          "feature_as_of": "2015-07-07T21:23:34",
+          "label": 1,
+          "label_known_at": "2017-02-14T23:10:32"
+        },
+        {
+          "deal_id": "DEAL-HZNP-AMGN-2022",
+          "feature_as_of": "2022-12-12T07:39:25",
+          "label": 0,
+          "label_known_at": "2023-10-06T16:05:31"
+        },
+        {
+          "deal_id": "DEAL-IMGN-ABBV-2023",
+          "feature_as_of": "2023-11-30T16:05:25",
+          "label": 0,
+          "label_known_at": "2024-02-12T07:52:11"
+        },
+        {
+          "deal_id": "DEAL-IRBT-AMZN-2022",
+          "feature_as_of": "2022-08-05T08:15:41",
+          "label": 1,
+          "label_known_at": "2024-01-29T08:36:01"
+        },
+        {
+          "deal_id": "DEAL-LLTC-ADI-2016",
+          "feature_as_of": "2016-07-26T16:29:39",
+          "label": 0,
+          "label_known_at": "2017-03-10T17:09:02"
+        },
+        {
+          "deal_id": "DEAL-LNKD-MSFT-2016",
+          "feature_as_of": "2016-06-13T08:39:06",
+          "label": 0,
+          "label_known_at": "2016-12-08T16:20:36"
+        },
+        {
+          "deal_id": "DEAL-LSCC-CANYONBRIDGE-2016",
+          "feature_as_of": "2016-11-03T12:18:56",
+          "label": 1,
+          "label_known_at": "2017-09-14T00:01:05"
+        },
+        {
+          "deal_id": "DEAL-MDLA-TB-2021",
+          "feature_as_of": "2021-07-27T16:42:53",
+          "label": 0,
+          "label_known_at": "2021-10-29T16:12:19"
+        },
+        {
+          "deal_id": "DEAL-MNTV-ZEN-2021",
+          "feature_as_of": "2021-10-29T17:01:37",
+          "label": 1,
+          "label_known_at": "2022-02-28T09:29:06"
+        },
+        {
+          "deal_id": "DEAL-MON-BAYER-2016",
+          "feature_as_of": "2016-09-20T17:03:33",
+          "label": 0,
+          "label_known_at": "2018-06-08T17:01:00"
+        },
+        {
+          "deal_id": "DEAL-MRO-COP-2024",
+          "feature_as_of": "2024-05-29T07:17:33",
+          "label": 0,
+          "label_known_at": "2024-11-22T09:37:11"
+        },
+        {
+          "deal_id": "DEAL-MXIM-ADI-2020",
+          "feature_as_of": "2020-07-13T06:24:06",
+          "label": 0,
+          "label_known_at": "2021-08-26T16:25:03"
+        },
+        {
+          "deal_id": "DEAL-NLSN-EVERGREEN-2022",
+          "feature_as_of": "2022-03-30T16:51:59",
+          "label": 0,
+          "label_known_at": "2022-10-11T16:02:09"
+        },
+        {
+          "deal_id": "DEAL-NUAN-MSFT-2021",
+          "feature_as_of": "2021-04-13T06:05:03",
+          "label": 0,
+          "label_known_at": "2022-03-04T16:07:10"
+        },
+        {
+          "deal_id": "DEAL-ODP-SPLS-2015",
+          "feature_as_of": "2015-02-04T17:32:34",
+          "label": 1,
+          "label_known_at": "2016-05-16T19:22:37"
+        },
+        {
+          "deal_id": "DEAL-PACB-ILMN-2018",
+          "feature_as_of": "2018-11-05T21:33:11",
+          "label": 1,
+          "label_known_at": "2020-01-02T21:25:55"
+        },
+        {
+          "deal_id": "DEAL-PFPT-TB-2021",
+          "feature_as_of": "2021-04-27T16:58:56",
+          "label": 0,
+          "label_known_at": "2021-08-31T08:40:03"
+        },
+        {
+          "deal_id": "DEAL-PXD-XOM-2023",
+          "feature_as_of": "2023-10-11T17:22:39",
+          "label": 0,
+          "label_known_at": "2024-05-03T10:06:00"
+        },
+        {
+          "deal_id": "DEAL-RAD-WBA-2015",
+          "feature_as_of": "2015-10-29T06:09:17",
+          "label": 1,
+          "label_known_at": "2017-06-29T08:55:55"
+        },
+        {
+          "deal_id": "DEAL-RCII-VINTAGE-2018",
+          "feature_as_of": "2018-06-19T12:03:00",
+          "label": 1,
+          "label_known_at": "2018-12-20T20:53:35"
+        },
+        {
+          "deal_id": "DEAL-RESI-AMHERST-2020",
+          "feature_as_of": "2020-02-18T08:29:06",
+          "label": 1,
+          "label_known_at": "2020-05-04T17:57:09"
+        },
+        {
+          "deal_id": "DEAL-RHT-IBM-2018",
+          "feature_as_of": "2018-10-29T16:09:01",
+          "label": 0,
+          "label_known_at": "2019-07-09T08:54:09"
+        },
+        {
+          "deal_id": "DEAL-RP-TB-2020",
+          "feature_as_of": "2020-12-21T08:21:54",
+          "label": 0,
+          "label_known_at": "2021-04-22T09:29:08"
+        },
+        {
+          "deal_id": "DEAL-SAIL-TB-2022",
+          "feature_as_of": "2022-04-11T07:04:03",
+          "label": 0,
+          "label_known_at": "2022-08-16T09:12:24"
+        },
+        {
+          "deal_id": "DEAL-SAVE-ULCC-2022",
+          "feature_as_of": "2022-02-07T11:43:02",
+          "label": 1,
+          "label_known_at": "2022-07-28T12:02:00"
+        },
+        {
+          "deal_id": "DEAL-SGEN-PFE-2023",
+          "feature_as_of": "2023-03-13T07:27:57",
+          "label": 0,
+          "label_known_at": "2023-12-14T08:00:59"
+        },
+        {
+          "deal_id": "DEAL-SPLK-CSCO-2023",
+          "feature_as_of": "2023-09-21T07:56:31",
+          "label": 0,
+          "label_known_at": "2024-03-18T08:40:31"
+        },
+        {
+          "deal_id": "DEAL-STOR-GIC-2022",
+          "feature_as_of": "2022-09-15T12:11:55",
+          "label": 0,
+          "label_known_at": "2023-02-03T19:47:03"
+        },
+        {
+          "deal_id": "DEAL-SWCH-DIGITALBRIDGE-2022",
+          "feature_as_of": "2022-05-11T17:16:02",
+          "label": 0,
+          "label_known_at": "2022-12-06T13:47:27"
+        },
+        {
+          "deal_id": "DEAL-TWC-CMCSA-2014",
+          "feature_as_of": "2014-02-13T22:18:06",
+          "label": 1,
+          "label_known_at": "2015-04-24T20:30:04"
+        },
+        {
+          "deal_id": "DEAL-TWTR-XHOLDINGS-2022",
+          "feature_as_of": "2022-04-26T17:10:18",
+          "label": 0,
+          "label_known_at": "2022-10-28T20:22:36"
+        },
+        {
+          "deal_id": "DEAL-WFM-AMZN-2017",
+          "feature_as_of": "2017-06-16T09:18:17",
+          "label": 0,
+          "label_known_at": "2017-08-28T06:02:06"
+        },
+        {
+          "deal_id": "DEAL-WLTW-AON-2020",
+          "feature_as_of": "2020-03-09T11:24:17",
+          "label": 1,
+          "label_known_at": "2021-07-26T20:33:05"
+        },
+        {
+          "deal_id": "DEAL-WORK-CRM-2020",
+          "feature_as_of": "2020-12-01T17:18:56",
+          "label": 0,
+          "label_known_at": "2021-07-21T11:01:48"
+        },
+        {
+          "deal_id": "DEAL-XLNX-AMD-2020",
+          "feature_as_of": "2020-10-27T06:33:15",
+          "label": 0,
+          "label_known_at": "2022-02-14T08:49:46"
+        },
+        {
+          "deal_id": "DEAL-XLRN-MRK-2021",
+          "feature_as_of": "2021-09-30T07:13:02",
+          "label": 0,
+          "label_known_at": "2021-11-22T08:52:10"
+        },
+        {
+          "deal_id": "DEAL-ZEN-ZORO-2022",
+          "feature_as_of": "2022-06-24T17:19:04",
+          "label": 0,
+          "label_known_at": "2022-11-22T09:43:09"
+        }
+      ],
+      "test_deal_ids": [
+        "DEAL-CRNX-VRTX-2026",
+        "DEAL-EA-PIFSLAFF-2025",
+        "DEAL-ESI-SOLS-2026"
+      ],
+      "fit_executed": false,
+      "status": "PREPARED_NOT_FITTED"
+    }
+  ],
+  "notes": [
+    "Fingerprints are authoritative hashes of reconstructed PIT training rows.",
+    "No BreakModel.fit / walk_forward / register_model was invoked.",
+    "sample_prevalence is the training-row class fraction, not a population rate.",
+    "Thin out-of-sample test windows are reported honestly; they are not padded."
+  ]
+}

@@ -204,9 +204,11 @@ def _fitted_registry():
 def test_registry_metadata_complete_and_append_only():
     c, m, meta = _fitted_registry()
     for k in ("model_id", "model_version", "feature_schema_version", "training_cutoff",
-              "n_train", "n_pos", "n_neg", "prevalence", "hyperparameters",
+              "n_train", "n_pos", "n_neg", "prevalence", "sample_prevalence",
+              "dataset_fingerprint", "hyperparameters",
               "fit_timestamp", "code_commit"):
         assert meta[k] is not None
+    assert meta["sample_prevalence"] == meta["prevalence"]
     with pytest.raises(sqlite3.IntegrityError):
         c.execute("UPDATE model_registry SET n_train = 0")
     assert meta["training_cutoff"] == "2025-06-30T23:59:59.999999"

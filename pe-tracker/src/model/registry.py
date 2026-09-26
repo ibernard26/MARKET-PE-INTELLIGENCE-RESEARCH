@@ -8,7 +8,9 @@ from typing import Optional
 
 from ..config import ROOT
 from ..research.bitemporal import normalize_as_of, now_iso
+from .cohort import ModelCohort
 from .dataset import FEATURE_SCHEMA_VERSION
+from .fingerprint import dataset_fingerprint
 from .logistic import MODEL_ID, MODEL_VERSION, BreakModel
 
 
@@ -22,25 +24,45 @@ def code_commit() -> str:
 
 
 def register_model(model: BreakModel, training_set: dict,
-                   conn: sqlite3.Connection) -> dict:
-    """Append a fitted model plus its training metadata to model_registry; returns the metadata."""
+                   conn: sqlite3.Connection,
+                   cohort: Optional[ModelCohort] = None,
+                   fingerprint: Optional[str] = None) -> dict:
+    """Append a fitted model plus its training metadata to model_registry.
+
+    `prevalence` / `sample_prevalence` record SAMPLE class prevalence
+    (n_pos / n_train). They are never a population break rate.
+    """
     n, n_pos = training_set["n"], training_set["n_pos"]
+    sample_pi = n_pos / n
+    rows = training_set.get("rows") or []
+    fp = fingerprint if fingerprint is not None else (
+        dataset_fingerprint(rows) if rows else None)
+    if cohort is not None:
+        cohort.validate(conn)
     meta = {"model_id": MODEL_ID, "model_version": MODEL_VERSION,
             "feature_schema_version": FEATURE_SCHEMA_VERSION,
             "training_cutoff": normalize_as_of(training_set["cutoff"]), "n_train": n,
-            "n_pos": n_pos, "n_neg": n - n_pos, "prevalence": n_pos / n,
+            "n_pos": n_pos, "n_neg": n - n_pos,
+            "prevalence": sample_pi,
+            "sample_prevalence": sample_pi,
             "hyperparameters": model.hp, "calibration": model.calibration,
-            "fit_timestamp": now_iso(), "code_commit": code_commit()}
+            "fit_timestamp": now_iso(), "code_commit": code_commit(),
+            "cohort_id": None if cohort is None else cohort.cohort_id,
+            "cohort_version": None if cohort is None else cohort.cohort_version,
+            "dataset_fingerprint": fp}
     conn.execute(
         """INSERT INTO model_registry (model_id, model_version, feature_schema_version,
            training_cutoff, n_train, n_pos, n_neg, prevalence, hyperparameters,
-           calibration, artifact, fit_timestamp, code_commit)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+           calibration, artifact, fit_timestamp, code_commit,
+           cohort_id, cohort_version, dataset_fingerprint, sample_prevalence)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
         (meta["model_id"], meta["model_version"], meta["feature_schema_version"],
          meta["training_cutoff"], n, n_pos, n - n_pos, meta["prevalence"],
          json.dumps(model.hp, sort_keys=True), json.dumps(model.calibration, sort_keys=True),
          json.dumps(model.to_dict(), sort_keys=True), meta["fit_timestamp"],
-         meta["code_commit"]))
+         meta["code_commit"],
+         meta["cohort_id"], meta["cohort_version"], meta["dataset_fingerprint"],
+         meta["sample_prevalence"]))
     return meta
 
 

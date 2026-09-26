@@ -184,12 +184,12 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_one_hundred_nine_canonical_deals():
-    """Batches 1–8 (N=62) + Batches 9–11 (+7) + deferred-resolution batches 1–2 (+40)."""
+def test_shipped_manifest_has_one_hundred_twenty_nine_canonical_deals():
+    """Batches 1–8 (N=62) + Batches 9–11 (+7) + deferred-resolution batches 1–3 (+60)."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
-    assert len(ids) == 109
+    assert len(ids) == 129
     assert ids[:24] == [
         "DEAL-CRNX-VRTX-2026",
         "DEAL-ESI-SOLS-2026",
@@ -257,7 +257,16 @@ def test_shipped_manifest_has_one_hundred_nine_canonical_deals():
         "DEAL-ORBITZ-EXPEDI-2015", "DEAL-SAPIEN-PUBLIC-2014", "DEAL-RIVERB-PROJEC-2014",
         "DEAL-ADVENT-SSCTEC-2015", "DEAL-SALIX-VALEAN-2015",
     }.issubset(set(ids))
-    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 89
+    assert {
+        "DEAL-INFORM-ITALIC-2015", "DEAL-EXCEL-BLACKS-2015", "DEAL-DOVER-WEBSTE-2015",
+        "DEAL-PROCER-FRANCI-2015", "DEAL-OMNIVI-HUA-2015", "DEAL-BORDER-PITNEY-2015",
+        "DEAL-QUALIT-FUNDS-2015", "DEAL-ANN-ASCENA-2015", "DEAL-FRISCH-NRD-2015",
+        "DEAL-OM-APOLLO-2015", "DEAL-NAUGAT-LIBERT-2015", "DEAL-INTEGR-UPHILL-2015",
+        "DEAL-COAST-LKQ-2015", "DEAL-REMY-BORGWA-2015", "DEAL-STJUDE-SJM-2015",
+        "DEAL-TECUMS-MUELLE-2015", "DEAL-STEINE-CATTER-2015", "DEAL-BLYTH-CARLYL-2015",
+        "DEAL-STRATE-BLACKS-2015", "DEAL-BIOMED-BLACKS-2015",
+    }.issubset(set(ids))
+    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 109
     assert sum(1 for d in deals if d["resolution_type"] == "terminated") == 19
     assert sum(1 for d in deals if d["resolution_type"] == "withdrawn") == 1
     by_id = {d["deal_id"]: d for d in deals}

@@ -49,7 +49,7 @@ become an alternate canonical writer.
 | FRED store | `src/ingest/fred.py`, `src/research/market_data.py` | FRED data flows into the append-only `market_observations` table with known_at and provenance, then into point-in-time returns, levels and spreads, then into `PointInTimeMarketContext`. None of these are active model features. See `MARKET_DATA.md`. |
 | Historical deals | `src/ingest/historical.py`, `providers/sec_edgar.py` | Strict record contract. Incomplete records are quarantined. Every fact gets a `record_provenance` row. Ingestion never fits the model. See `HISTORICAL_DEAL_DATA_SOURCES.md`. |
 | Data readiness | `src/model/data_quality.py` | Dataset-quality report and `MODEL_DATA_STATUS` gate. |
-| Registry | `src/model/registry.py` | Fitted models store version, cutoff, n, sample prevalence, cohort ids, dataset fingerprint, hyperparameters, calibration JSON, code commit. Predictions are immutable; DB rejects lookahead. |
+| Registry | `src/model/registry.py`, `docs/MODEL_RUN_REGISTRY.md` | Fitted artifacts keyed by `model_run_id` (SHA-256 of run identity). Version+cutoff may be shared by many runs. Predictions FK to `model_run_id`; immutable; DB rejects lookahead. |
 | Use | `decision.py`, `backtest.py`, `bridge.py` | Trade decisions are kept separate from the probability model. The backtester only uses a p_break that was available at entry. Break losses without a sourced exit price are labelled *modeled*, never *realized*. |
 
 ## Where to start reading

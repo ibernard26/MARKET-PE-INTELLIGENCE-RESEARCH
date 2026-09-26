@@ -29,9 +29,10 @@ same AP quantity. Its no-skill reference is π.
 | `src/model/logistic.py` | L2 logistic, fixed C=1.0 on standardized inputs; train-median imputation + missingness indicators (no zero-fill); Platt/isotonic calibration only when the sample allows it |
 | `src/model/evaluate.py` | `probability_metrics` (π, ROC AUC, AP beside π, Brier, log loss, calibration table — no threshold); `select_threshold` (pre-test data only); `evaluate_frozen_threshold` (applies a frozen t*, cannot re-optimize) |
 | `src/model/validation.py` | Chronological split + expanding walk-forward; baselines: constant base rate, spread-only logistic; per-window metadata |
-| `src/model/registry.py` | `model_registry` (model_id, version, feature schema, cutoff, n, pos/neg, **sample** prevalence, cohort_id/version, dataset_fingerprint, hyperparameters, calibration, fit_timestamp, code_commit) + immutable `model_predictions` |
+| `src/model/registry.py` | `model_registry` keyed by `model_run_id` (concrete fit); stores version, cutoff, cohort, dataset_fingerprint, **sample** prevalence, artifact, code_commit; predictions FK to `model_run_id` |
 | `src/model/cohort.py` | Non-destructive model-cohort membership (canonical store unchanged) |
 | `src/model/fingerprint.py` | Deterministic SHA-256 fingerprint of canonical training rows |
+| `docs/MODEL_RUN_REGISTRY.md` | model_id / model_version / model_run_id identity contract |
 | `src/model/bridge.py` | Attaches the contemporaneous stored p_break to backtest trades |
 | `src/model/decision.py` | EV = (1−p)·U − p·D, kept separate from the model; no trade without a validated t* |
 | `src/ingest/historical.py` | Provider interface; no concrete provider ships (it never fabricates) |

@@ -203,12 +203,13 @@ def _fitted_registry():
 
 def test_registry_metadata_complete_and_append_only():
     c, m, meta = _fitted_registry()
-    for k in ("model_id", "model_version", "feature_schema_version", "training_cutoff",
-              "n_train", "n_pos", "n_neg", "prevalence", "sample_prevalence",
-              "dataset_fingerprint", "hyperparameters",
+    for k in ("model_run_id", "model_id", "model_version", "feature_schema_version",
+              "training_cutoff", "n_train", "n_pos", "n_neg", "prevalence",
+              "sample_prevalence", "dataset_fingerprint", "hyperparameters",
               "fit_timestamp", "code_commit"):
         assert meta[k] is not None
     assert meta["sample_prevalence"] == meta["prevalence"]
+    assert len(meta["model_run_id"]) == 64
     with pytest.raises(sqlite3.IntegrityError):
         c.execute("UPDATE model_registry SET n_train = 0")
     assert meta["training_cutoff"] == "2025-06-30T23:59:59.999999"
@@ -217,14 +218,17 @@ def test_registry_metadata_complete_and_append_only():
 
 def test_predictions_immutable_and_no_lookahead():
     c, m, meta = _fitted_registry()
-    record_prediction("S050", "2025-07-15", 0.12, "2025-06-30", c)
+    record_prediction("S050", "2025-07-15", 0.12, "2025-06-30", c,
+                      model_run_id=meta["model_run_id"])
     with pytest.raises(sqlite3.IntegrityError):
-        record_prediction("S050", "2025-07-15", 0.50, "2025-06-30", c)   # no overwrite
+        record_prediction("S050", "2025-07-15", 0.50, "2025-06-30", c,
+                          model_run_id=meta["model_run_id"])   # no overwrite
     with pytest.raises(sqlite3.IntegrityError):
         c.execute("DELETE FROM model_predictions")
     with pytest.raises(sqlite3.IntegrityError):   # model trained after as_of
-        record_prediction("S001", "2025-01-15", 0.1, "2025-06-30", c)
-    with pytest.raises(sqlite3.IntegrityError):   # unregistered model
+        record_prediction("S001", "2025-01-15", 0.1, "2025-06-30", c,
+                          model_run_id=meta["model_run_id"])
+    with pytest.raises(KeyError):   # unregistered version+cutoff
         record_prediction("S050", "2025-08-01", 0.1, "2099-01-01", c)
 
 
@@ -328,10 +332,10 @@ def test_prediction_time_contract_date_and_timestamp(as_of, cutoff, ok):
 def test_raw_non_normalized_prediction_time_rejected_by_db():
     c, m, meta = _fitted_registry()
     with pytest.raises(sqlite3.IntegrityError):
-        c.execute("INSERT INTO model_predictions (deal_id, as_of, p_break, model_version, "
-                  "training_cutoff, feature_schema_version, prediction_timestamp) "
-                  "VALUES ('S050','2025-07-15',0.1,?,?,'fs_v1','x')",
-                  (meta["model_version"], meta["training_cutoff"]))
+        c.execute("INSERT INTO model_predictions (deal_id, as_of, p_break, model_run_id, "
+                  "model_version, training_cutoff, feature_schema_version, prediction_timestamp) "
+                  "VALUES ('S050','2025-07-15',0.1,?,?,?,'fs_v1','x')",
+                  (meta["model_run_id"], meta["model_version"], meta["training_cutoff"]))
 
 
 def test_registry_records_uncalibrated_v1():

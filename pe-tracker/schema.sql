@@ -174,7 +174,11 @@ BEGIN SELECT RAISE(ABORT, 'deal_events is append-only'); END;
 -- ---------------------------------------------------------------------------
 -- Break-probability model registry + immutable predictions (break_logit_v1)
 -- ---------------------------------------------------------------------------
+-- model_run_id is the primary identity of one concrete fitted artifact.
+-- model_version is the predictive specification (e.g. break_logit_v1); many
+-- runs may share a version. See docs/MODEL_RUN_REGISTRY.md.
 CREATE TABLE IF NOT EXISTS model_registry (
+    model_run_id           TEXT PRIMARY KEY,
     model_id               TEXT NOT NULL,
     model_version          TEXT NOT NULL,
     feature_schema_version TEXT NOT NULL,
@@ -192,9 +196,8 @@ CREATE TABLE IF NOT EXISTS model_registry (
     code_commit            TEXT NOT NULL,
     cohort_id              TEXT,            -- optional; NULL = unspecified cohort
     cohort_version         TEXT,
-    dataset_fingerprint    TEXT,            -- SHA-256 of canonical training rows
-    sample_prevalence      REAL,            -- n_pos/n_train; not a population rate
-    PRIMARY KEY (model_version, training_cutoff)
+    dataset_fingerprint    TEXT NOT NULL,   -- SHA-256 of canonical training rows
+    sample_prevalence      REAL NOT NULL    -- n_pos/n_train; not a population rate
 );
 CREATE TRIGGER IF NOT EXISTS trg_mreg_no_update BEFORE UPDATE ON model_registry
 BEGIN SELECT RAISE(ABORT, 'model_registry is append-only'); END;
@@ -208,18 +211,17 @@ CREATE TABLE IF NOT EXISTS model_predictions (
     -- lookahead check is a plain comparison valid for date AND timestamp inputs.
     as_of                  TEXT NOT NULL CHECK (as_of GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]*'),  -- information time
     p_break                REAL NOT NULL CHECK (p_break >= 0 AND p_break <= 1),
+    model_run_id           TEXT NOT NULL REFERENCES model_registry(model_run_id),
+    -- Denormalized audit fields copied from the registered run at write time.
     model_version          TEXT NOT NULL,
     training_cutoff        TEXT NOT NULL CHECK (training_cutoff GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]*'),
     feature_schema_version TEXT NOT NULL,
     prediction_timestamp   TEXT NOT NULL,
-    PRIMARY KEY (deal_id, as_of, model_version, training_cutoff),
-    FOREIGN KEY (model_version, training_cutoff)
-        REFERENCES model_registry(model_version, training_cutoff)
+    PRIMARY KEY (deal_id, as_of, model_run_id)
 );
 CREATE TRIGGER IF NOT EXISTS trg_mpred_model BEFORE INSERT ON model_predictions
-WHEN NOT EXISTS (SELECT 1 FROM model_registry WHERE model_version = NEW.model_version
-                 AND training_cutoff = NEW.training_cutoff)
-BEGIN SELECT RAISE(ABORT, 'prediction references unregistered model'); END;
+WHEN NOT EXISTS (SELECT 1 FROM model_registry WHERE model_run_id = NEW.model_run_id)
+BEGIN SELECT RAISE(ABORT, 'prediction references unregistered model_run_id'); END;
 CREATE TRIGGER IF NOT EXISTS trg_mpred_lookahead BEFORE INSERT ON model_predictions
 WHEN NEW.training_cutoff > NEW.as_of
 BEGIN SELECT RAISE(ABORT, 'model trained after prediction as_of (lookahead)'); END;

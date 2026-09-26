@@ -1,14 +1,11 @@
 """Unit tests for model cohorts and dataset fingerprints (no live SEC)."""
-import sqlite3
-
 import pytest
 
-from src.db import _upgrade_model_registry_columns
 from src.model.cohort import CohortError, ModelCohort
 from src.model.dataset import FEATURES, build_training_set
 from src.model.fingerprint import canonicalize_training_rows, dataset_fingerprint
 from src.model.logistic import BreakModel
-from src.model.registry import register_model
+from src.model.registry import load_model_run, register_model
 from tests.model_fixtures import mem, synthetic_book
 
 
@@ -164,88 +161,26 @@ def test_registry_persists_cohort_fingerprint_sample_prevalence():
     meta = register_model(m, ts, c, cohort=cohort)
     assert meta["cohort_id"] == "synth_unit"
     assert meta["cohort_version"] == "v0"
+    assert meta["model_run_id"]
     assert meta["dataset_fingerprint"] == dataset_fingerprint(ts["rows"])
     # reversing training-set row order must not change the registered fingerprint
     assert meta["dataset_fingerprint"] == dataset_fingerprint(list(reversed(ts["rows"])))
     assert meta["sample_prevalence"] == meta["prevalence"] == ts["n_pos"] / ts["n"]
     row = c.execute(
-        "SELECT cohort_id, cohort_version, dataset_fingerprint, sample_prevalence "
-        "FROM model_registry WHERE model_version = ?",
-        (meta["model_version"],)).fetchone()
+        "SELECT model_run_id, cohort_id, cohort_version, dataset_fingerprint, sample_prevalence "
+        "FROM model_registry WHERE model_run_id = ?",
+        (meta["model_run_id"],)).fetchone()
     assert dict(row)["cohort_id"] == "synth_unit"
     assert dict(row)["dataset_fingerprint"] == meta["dataset_fingerprint"]
     assert dict(row)["sample_prevalence"] == meta["sample_prevalence"]
+    assert load_model_run(meta["model_run_id"], c).to_dict() == m.to_dict()
 
 
-# ------------------------------------------- registry migration / legacy
-_LEGACY_REGISTRY_DDL = """
-CREATE TABLE model_registry (
-    model_id               TEXT NOT NULL,
-    model_version          TEXT NOT NULL,
-    feature_schema_version TEXT NOT NULL,
-    training_cutoff        TEXT NOT NULL CHECK (training_cutoff GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]*'),
-    n_train                INTEGER NOT NULL,
-    n_pos                  INTEGER NOT NULL,
-    n_neg                  INTEGER NOT NULL,
-    prevalence             REAL NOT NULL,
-    hyperparameters        TEXT NOT NULL,
-    calibration            TEXT NOT NULL,
-    artifact               TEXT NOT NULL,
-    fit_timestamp          TEXT NOT NULL,
-    code_commit            TEXT NOT NULL,
-    PRIMARY KEY (model_version, training_cutoff)
-);
-CREATE TRIGGER trg_mreg_no_update BEFORE UPDATE ON model_registry
-BEGIN SELECT RAISE(ABORT, 'model_registry is append-only'); END;
-CREATE TRIGGER trg_mreg_no_delete BEFORE DELETE ON model_registry
-BEGIN SELECT RAISE(ABORT, 'model_registry is append-only'); END;
-"""
-
-
-def test_legacy_populated_registry_migration_preserves_history():
-    c = sqlite3.connect(":memory:")
-    c.row_factory = sqlite3.Row
-    c.executescript(_LEGACY_REGISTRY_DDL)
-    c.execute(
-        """INSERT INTO model_registry
-           (model_id, model_version, feature_schema_version, training_cutoff,
-            n_train, n_pos, n_neg, prevalence, hyperparameters, calibration,
-            artifact, fit_timestamp, code_commit)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-        ("break_logit", "break_logit_v1", "fs_v1", "2025-01-01T23:59:59.999999",
-         40, 8, 32, 0.2, "{}", "{}", '{"w":[]}', "2025-01-02T00:00:00",
-         "legacycommit"))
-    before = dict(c.execute("SELECT * FROM model_registry").fetchone())
-    assert "cohort_id" not in before
-
-    _upgrade_model_registry_columns(c)
-    cols = {r[1] for r in c.execute("PRAGMA table_info(model_registry)")}
-    for col in ("cohort_id", "cohort_version", "dataset_fingerprint", "sample_prevalence"):
-        assert col in cols
-
-    after = dict(c.execute("SELECT * FROM model_registry").fetchone())
-    for k, v in before.items():
-        assert after[k] == v
-    assert after["cohort_id"] is None
-    assert after["cohort_version"] is None
-    assert after["dataset_fingerprint"] is None
-    assert after["sample_prevalence"] is None
-
-    # idempotent
-    _upgrade_model_registry_columns(c)
-    after2 = dict(c.execute("SELECT * FROM model_registry").fetchone())
-    assert after2 == after
-
-    # append-only retained
-    with pytest.raises(sqlite3.IntegrityError):
-        c.execute("UPDATE model_registry SET n_train = 0")
-    with pytest.raises(sqlite3.IntegrityError):
-        c.execute("DELETE FROM model_registry")
-
-
-def test_fresh_schema_has_registry_metadata_columns():
+def test_fresh_schema_has_model_run_id_pk():
     c = mem()
     cols = {r[1] for r in c.execute("PRAGMA table_info(model_registry)")}
-    for col in ("cohort_id", "cohort_version", "dataset_fingerprint",
+    for col in ("model_run_id", "cohort_id", "cohort_version", "dataset_fingerprint",
                 "sample_prevalence", "prevalence"):
         assert col in cols
+    pk = sorted((r[5], r[1]) for r in c.execute("PRAGMA table_info(model_registry)") if r[5])
+    assert [name for _, name in pk] == ["model_run_id"]

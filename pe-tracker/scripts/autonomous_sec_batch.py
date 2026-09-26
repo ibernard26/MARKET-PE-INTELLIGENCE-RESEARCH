@@ -526,7 +526,12 @@ def clean_acquirer_name(name: str) -> Optional[str]:
         return None
     name = re.sub(r"\s+", " ", name).strip(" ,.;")
     name = re.sub(r"\S+@\S+", " ", name)  # strip emails glued into press HTML
+    name = re.sub(r"^\s*e-?mail\s*:\s*", "", name, flags=re.I)
     name = re.sub(r"\s+", " ", name).strip(" ,.;")
+    # Prefer the named sponsor inside "Investor Group Led by X"
+    m_led = re.search(r"\bled by\s+(.+)$", name, re.I)
+    if m_led:
+        name = m_led.group(1).strip(" ,.;")
     name = re.sub(r"^(?:and|or)\s+", "", name, flags=re.I)
     name = re.sub(r"^(?:an?\s+)?affiliate\s+of\s+", "", name, flags=re.I)
     name = re.sub(r"\s+for\s+\$\s*[0-9].*$", "", name, flags=re.I)
@@ -556,9 +561,10 @@ _ACQ_BAD = re.compile(
     re.I,
 )
 _ACQ_ENTITY_SUFFIX = re.compile(
-    r"\b(Inc|Incorporated|Corp|Corporation|LLC|L\.L\.C\.|Ltd|LP|L\.P\.|PLC|"
+    r"\b(Inc|Incorporated|Corp|Corporation|LLC|L\.L\.C\.?|Ltd|LP|L\.P\.?|PLC|"
     r"Partners|Capital|Management|Company|Co|Bancorp|Bank|Holdings|Group|"
-    r"Acquisition|AcquireCo|Investments|Advisors|Partnershi)\b",
+    r"Acquisition|AcquireCo|Investments|Advisors|Partnership|KGaA|GmbH|"
+    r"S\.A\.?|N\.V\.?|plc)\b",
     re.I,
 )
 
@@ -568,6 +574,7 @@ _ACQ_SHELL = {
     "corporation", "company", "ltd", "llc", "lp", "plc", "group", "partners",
     "acquisition", "acquireco", "merger", "merger sub", "newco", "unk",
     "the buyer consortium", "buyer consortium", "the consortium", "consortium",
+    "acquisition sub", "the company", "investor group",
 }
 
 
@@ -575,19 +582,23 @@ def acquirer_acceptable(acquirer: str, target: str) -> tuple[bool, str]:
     if not acquirer:
         return False, "missing acquirer"
     low = acquirer.lower().strip()
-    if low.startswith(("an ", "a ", "the ")) and low not in {
-            # allow "The Permira Funds"-style only via PE_SPONSOR path after clean
-    }:
-        # Strip a single leading article for shell checks; still reject "the buyer…"
-        pass
     if low.startswith(("an ", "a ")) or low in {
             "the company", "the operating partnership", "the registrant"}:
         return False, f"acquirer looks non-entity: {acquirer!r}"
     if low in _ACQ_SHELL or re.sub(r"^the\s+", "", low) in _ACQ_SHELL:
         return False, f"acquirer is a shell/role word: {acquirer!r}"
     if re.search(
-            r"\b(desires?|intends?|proposes?|agrees?|wishes|pursuant)\b", low):
-        return False, f"acquirer string contains verb residue: {acquirer!r}"
+            r"\b(desires?|intends?|proposes?|agrees?|wishes|pursuant|"
+            r"non-binding|proposal from|under the terms|e-?mail|"
+            r"this agreement|adopt this|led by|as a result|"
+            r"surviving corporation)\b", low):
+        return False, f"acquirer string contains verb/boilerplate residue: {acquirer!r}"
+    if re.search(r"^\(?[ivx]+\)\b", low) or re.search(r"\bthe company\b", low):
+        return False, f"acquirer looks like agreement clause residue: {acquirer!r}"
+    if re.search(r"\binvestor group\b", low):
+        return False, f"acquirer is an investor-group phrase, not a legal entity: {acquirer!r}"
+    if low.startswith("the surviving") or low.startswith("surviving "):
+        return False, f"acquirer is merger-survivor residue: {acquirer!r}"
     if _ACQ_BAD.search(acquirer):
         return False, f"acquirer string not a clean entity name: {acquirer!r}"
     if "for $" in low or re.search(r"\$\s*\d", acquirer):
@@ -605,16 +616,38 @@ def acquirer_acceptable(acquirer: str, target: str) -> tuple[bool, str]:
     words = [w for w in re.split(r"\s+", acquirer) if w]
     has_suffix = bool(_ACQ_ENTITY_SUFFIX.search(acquirer))
     titleish = sum(1 for w in words if w[:1].isupper()) >= max(1, len(words) // 2)
-    # Allow single-token brand/PE names (MaxLinear, GTCR, Permira, Vector).
+    # Allow single-token brand/PE names (MaxLinear, GTCR, Permira, Vector, Lindsay).
     single_brand = (
         len(words) == 1 and len(words[0]) >= 4 and words[0][0].isupper()
         and words[0].replace("-", "").isalnum()
         and words[0].lower() not in _ACQ_SHELL
     )
-    if not has_suffix and not (2 <= len(words) <= 6 and titleish) and not single_brand:
+    # Multi-word without formal suffix needs a real entity/PE middle token
+    # (rejects "EnerNOC Worcester"-style place residue).
+    multi_brand = (
+        2 <= len(words) <= 6 and titleish and bool(re.search(
+            r"\b(Capital|Partners|Management|Holdings|Holding|Equity|Group|"
+            r"Fund|Funds|Advisors|Industries|Pharmaceutical|Pharma|"
+            r"Technologies|Semiconductor|International|Corporation|Corp|"
+            r"Company|Inc|LLC|LP|Ltd|PLC|SA|AG|Acquisition|Bravo|Vista|"
+            r"Blackstone|Carlyle|Apollo|Permira|Bain|KKR|TPG)\b",
+            acquirer, re.I))
+    )
+    if not has_suffix and not multi_brand and not single_brand:
         return False, f"acquirer lacks entity form: {acquirer!r}"
     if len(words) > 8:
         return False, f"acquirer unreasonably long: {acquirer!r}"
+    # Trailing bare place-name after a completed entity suffix (e.g. "Corp Olathe").
+    if has_suffix and len(words) >= 3:
+        last = words[-1]
+        if last[0].isupper() and last.lower() not in {
+                "inc", "incorporated", "corp", "corporation", "llc", "ltd",
+                "lp", "plc", "company", "co", "group", "holdings", "partners",
+                "capital", "management", "sa", "ag", "nv", "plc"} and not re.search(
+                r"\b" + re.escape(last) + r"\b", " ".join(words[:-1]), re.I):
+            # only flag when last token is a single Titlecase word with no suffix role
+            if not _ACQ_ENTITY_SUFFIX.search(last) and last.isalpha() and len(last) >= 4:
+                return False, f"acquirer has trailing place/residue token: {acquirer!r}"
     return True, "ok"
 
 

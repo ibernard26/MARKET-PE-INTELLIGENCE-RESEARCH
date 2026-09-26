@@ -54,7 +54,13 @@ When `register_model` is called:
 - Version-only query: allowed only when a single run has admissible
   predictions for that deal; otherwise ambiguous
 
-## Walk-forward (future, not executed here)
+## Walk-forward (prepared, not executed)
+
+`docs/FIRST_WALKFORWARD_EXPERIMENT_V1.md` and
+`data/experiments/first_walkforward_v1/` freeze the cohort, cutoff grid, and
+per-window dataset fingerprints for the first real chronological walk-forward.
+Preparation is `PREPARED_NOT_EXECUTED` until
+`AUTHORIZE FIRST REAL WALKFORWARD`.
 
 Each chronological window should eventually record at least:
 

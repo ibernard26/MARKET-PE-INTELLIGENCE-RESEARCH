@@ -4,8 +4,9 @@
 **Canonical writes:** none.  
 `sec_deal_manifest.json`, `EVENT_RULES`, and `fs_v1` were **not** modified.
 
-**Corpus context (unchanged):** N = 24 reviewer-approved deals on `main`.  
-**Batch 8 ingestion:** not authorized by this document.
+**Corpus context at packet write:** N = 24 on `main`.  
+**Human decisions (later):** KLAC/AKRX **EXCLUDE**; LLTC/RAD/IRBT **ADMIT**
+(see `BATCH8_ADMISSION_LIST.md`). Ingestion uses those decisions only.
 
 **Locked classifiers used for scoring:**
 

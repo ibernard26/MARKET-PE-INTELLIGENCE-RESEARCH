@@ -1,11 +1,10 @@
 # Sampling frame for deal-break probability research
 
-**At commit `82638705278ca5da14fa1dd47cb585ce71adafd5` (and this architecture
-branch built on it):** the reviewed SEC manifest holds **24** resolved deals
-(`data_quality`: eligible N = 24, Y=0 = 12, Y=1 = 12, censored = 0,
-`MODEL_DATA_STATUS = READY_FOR_EXPERIMENTAL_WALK_FORWARD`).
-
-That count describes the **canonical research corpus**, not a population.
+**Canonical reviewed SEC manifest (Batch 8):** **62** resolved deals
+(prior N = 24 + Batch 8 admitted N = 38; KLAC/LRCX and AKRX/Fresenius
+excluded without substitution). Label mix after Batch 8: Y=0 closed = 43,
+Y=1 terminated = 19, censored = 0. Counts describe the **canonical research
+corpus**, not a population.
 
 ## Canonical corpus vs model cohort
 

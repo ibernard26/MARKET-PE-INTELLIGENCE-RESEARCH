@@ -1,6 +1,6 @@
 {
   "experiment_id": "first_walkforward_v1",
-  "status": "AUTHORIZED_PENDING_EXECUTE",
+  "status": "EXECUTED",
   "execution_authorized": true,
   "authorization_command_required": "AUTHORIZE FIRST REAL WALKFORWARD",
   "authorization_note": "Authorized by explicit user instruction to execute only the frozen first_walkforward_v1 protocol on the N=62 cohort, preserve break_logit_v1/fs_v1, register by model_run_id, report OOS metrics without calibration/tuning/alpha claims.",
@@ -29,22 +29,41 @@
     "MIN_CLASS_N": 2,
     "COST_FN": 15,
     "COST_FP": 1,
-    "COST_RATIO_GRID": [5, 10, 15, 20]
+    "COST_RATIO_GRID": [
+      5,
+      10,
+      15,
+      20
+    ]
   },
   "walk_forward": {
     "design": "expanding_window_chronological",
-    "cutoffs": ["2021-06-30", "2023-06-30", "2025-06-30"],
+    "cutoffs": [
+      "2021-06-30",
+      "2023-06-30",
+      "2025-06-30"
+    ],
     "horizon": "2026-09-26",
     "cutoff_rationale": "First cutoff is the earliest month-end at which build_training_set reaches MIN_SAMPLE_N=20 with both classes >= MIN_CLASS_N. Subsequent cutoffs expand by ~24 months. Horizon is the Batch-8 freeze as-of date used for data_quality.",
     "test_rule": "feature_as_of in (train_cutoff, next_cutoff_or_horizon]; labels known by horizon when assembling the eval set",
     "threshold_policy": "select_threshold on training in-sample predictions only; freeze t*; apply to untouched test window",
-    "baselines": ["constant_train_prevalence", "spread_only_logit"],
+    "baselines": [
+      "constant_train_prevalence",
+      "spread_only_logit"
+    ],
     "random_kfold": false,
     "hyperparameter_tuning": false,
     "calibration": false
   },
   "reporting_contract": {
-    "metrics": ["sample_prevalence_pi", "roc_auc", "average_precision_beside_pi", "brier", "log_loss", "calibration_bins_diagnostic"],
+    "metrics": [
+      "sample_prevalence_pi",
+      "roc_auc",
+      "average_precision_beside_pi",
+      "brier",
+      "log_loss",
+      "calibration_bins_diagnostic"
+    ],
     "population_calibrated_probability_claim": false,
     "alpha_or_pnl_claim": false
   },

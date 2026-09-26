@@ -184,12 +184,12 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_sixty_five_canonical_deals():
-    """Batches 1–8 (N=62) + autonomous Batch 9 (+3). KLAC/LRCX and AKRX/Fresenius excluded."""
+def test_shipped_manifest_has_sixty_seven_canonical_deals():
+    """Batches 1–8 (N=62) + autonomous Batches 9–10 (+5). KLAC/LRCX and AKRX/Fresenius excluded."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
-    assert len(ids) == 65
+    assert len(ids) == 67
     assert ids[:24] == [
         "DEAL-CRNX-VRTX-2026",
         "DEAL-ESI-SOLS-2026",
@@ -236,8 +236,9 @@ def test_shipped_manifest_has_sixty_five_canonical_deals():
     }.issubset(set(ids))
     assert {
         "DEAL-VOCUS-GTCR-2014", "DEAL-COBRA-MONOMO-2014", "DEAL-ANNIE-GENERA-2014",
+        "DEAL-SABA-VECTOR-2015", "DEAL-SUTRON-HACH-2015",
     }.issubset(set(ids))
-    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 46
+    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 48
     assert sum(1 for d in deals if d["resolution_type"] == "terminated") == 19
     assert sum(1 for d in deals if d["resolution_type"] == "withdrawn") == 0
     by_id = {d["deal_id"]: d for d in deals}

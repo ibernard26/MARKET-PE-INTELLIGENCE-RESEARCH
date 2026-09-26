@@ -986,6 +986,36 @@
       "resolution_accession": "0001193125-14-376973",
       "resolution_timestamp": "2014-10-21",
       "offer_price": 46.0
+    },
+    {
+      "deal_id": "DEAL-SABA-VECTOR-2015",
+      "target": "SABA SOFTWARE INC",
+      "acquirer": "Vector Capital",
+      "target_cik": 1070380,
+      "announcement_accession": "0001193125-15-043836",
+      "terms_accession": "0001193125-15-043836",
+      "announcement_timestamp": "2015-02-11",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "resolution_type": "closed",
+      "resolution_accession": "0001193125-15-061739",
+      "resolution_timestamp": "2015-02-25",
+      "offer_price": 9.0
+    },
+    {
+      "deal_id": "DEAL-SUTRON-HACH-2015",
+      "target": "SUTRON CORP",
+      "acquirer": "Hach Company",
+      "target_cik": 728331,
+      "announcement_accession": "0001185185-15-001668",
+      "terms_accession": "0001185185-15-001668",
+      "announcement_timestamp": "2015-06-22",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "resolution_type": "closed",
+      "resolution_accession": "0001185185-15-001947",
+      "resolution_timestamp": "2015-07-28",
+      "offer_price": 8.5
     }
   ]
 }

@@ -184,12 +184,12 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_eighty_nine_canonical_deals():
-    """Batches 1–8 (N=62) + Batches 9–11 (+7) + deferred-resolution batch 1 (+20)."""
+def test_shipped_manifest_has_one_hundred_nine_canonical_deals():
+    """Batches 1–8 (N=62) + Batches 9–11 (+7) + deferred-resolution batches 1–2 (+40)."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
-    assert len(ids) == 89
+    assert len(ids) == 109
     assert ids[:24] == [
         "DEAL-CRNX-VRTX-2026",
         "DEAL-ESI-SOLS-2026",
@@ -248,7 +248,16 @@ def test_shipped_manifest_has_eighty_nine_canonical_deals():
         "DEAL-SYMMET-TECOST-2014", "DEAL-INTERM-ROCHE-2014", "DEAL-BOLT-TELEDY-2014",
         "DEAL-TRW-ZFFRIE-2014", "DEAL-TAMINC-EASTMA-2014",
     }.issubset(set(ids))
-    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 69
+    assert {
+        "DEAL-SIGMA-MERCK-2014", "DEAL-TIBCO-VISTA-2014", "DEAL-EINSTE-JAB-2014",
+        "DEAL-CLECO-COMO-2014", "DEAL-DIGITA-INVEST-2014", "DEAL-CHYRON-VECTOR-2014",
+        "DEAL-OPLINK-KOCH-2014", "DEAL-AVANIR-OTSUKA-2014", "DEAL-MICROF-FORTRE-2014",
+        "DEAL-PEERLE-MOBIUS-2014", "DEAL-SILICO-LATTIC-2015", "DEAL-ATHLON-ENCANA-2014",
+        "DEAL-ELECSY-LINDSA-2014", "DEAL-ENTROP-MAXLIN-2015", "DEAL-E2OPEN-INSIGH-2015",
+        "DEAL-ORBITZ-EXPEDI-2015", "DEAL-SAPIEN-PUBLIC-2014", "DEAL-RIVERB-PROJEC-2014",
+        "DEAL-ADVENT-SSCTEC-2015", "DEAL-SALIX-VALEAN-2015",
+    }.issubset(set(ids))
+    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 89
     assert sum(1 for d in deals if d["resolution_type"] == "terminated") == 19
     assert sum(1 for d in deals if d["resolution_type"] == "withdrawn") == 1
     by_id = {d["deal_id"]: d for d in deals}

@@ -1,0 +1,5397 @@
+{
+  "schema_version": 1,
+  "created_from_main_sha": "1c477c8fa47c70ba6b27fe99a05beb2aea5e0a1d",
+  "start_n": 69,
+  "start_y0": 50,
+  "start_y1": 19,
+  "start_censored": 0,
+  "n_deferred_unique": 214,
+  "dup_skipped_across_ledgers": 0,
+  "class_counts": {
+    "AMBIGUOUS_RESOLUTION_EVENT": 67,
+    "ACQUIRER_EXTRACTION": 123,
+    "SEC_TRANSIENT_FAILURE": 23,
+    "TERMS_EXTRACTION": 1
+  },
+  "batch_counts": {
+    "1": 95,
+    "2": 41,
+    "3": 78
+  },
+  "chronological_range": [
+    "2014-01-09",
+    "2016-10-11"
+  ],
+  "retryable_n": 214,
+  "likely_permanent_n": 0,
+  "selection_order": "original_chronological_announcement_filing_date",
+  "candidates": [
+    {
+      "deferred_id": "DEF-B1-R6-0001193125-14-006030",
+      "original_batch": 1,
+      "candidate_rank": 6,
+      "target": "MATERIAL SCIENCES CORP",
+      "acquirer": null,
+      "target_cik": 755003,
+      "announcement_accession": "0001193125-14-006030",
+      "announcement_filing_date": "2014-01-09",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 1
+    },
+    {
+      "deferred_id": "DEF-B1-R7-0001193125-14-007344",
+      "original_batch": 1,
+      "candidate_rank": 7,
+      "target": "AMERICAN PACIFIC CORP",
+      "acquirer": null,
+      "target_cik": 350832,
+      "announcement_accession": "0001193125-14-007344",
+      "announcement_filing_date": "2014-01-10",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'H.I'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 46.5,
+          "exchange_ratio": null,
+          "acquirer": "H.I",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 2
+    },
+    {
+      "deferred_id": "DEF-B1-R8-0001193125-14-008765",
+      "original_batch": 1,
+      "candidate_rank": 8,
+      "target": "BEAM INC",
+      "acquirer": null,
+      "target_cik": 789073,
+      "announcement_accession": "0001193125-14-008765",
+      "announcement_filing_date": "2014-01-13",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 3
+    },
+    {
+      "deferred_id": "DEF-B1-R11-0001193125-14-013338",
+      "original_batch": 1,
+      "candidate_rank": 11,
+      "target": "CEC ENTERTAINMENT INC",
+      "acquirer": null,
+      "target_cik": 813920,
+      "announcement_accession": "0001193125-14-013338",
+      "announcement_filing_date": "2014-01-16",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 54.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 4
+    },
+    {
+      "deferred_id": "DEF-B1-R20-0001477932-14-000409",
+      "original_batch": 1,
+      "candidate_rank": 20,
+      "target": "OLIE INC",
+      "acquirer": null,
+      "target_cik": 1533311,
+      "announcement_accession": "0001477932-14-000409",
+      "announcement_filing_date": "2014-01-28",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 4.14,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 5
+    },
+    {
+      "deferred_id": "DEF-B1-R24-0001104659-14-005818",
+      "original_batch": 1,
+      "candidate_rank": 24,
+      "target": "ARTHROCARE CORP",
+      "acquirer": null,
+      "target_cik": 1005010,
+      "announcement_accession": "0001104659-14-005818",
+      "announcement_filing_date": "2014-02-03",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'pursuant'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 48.25,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 6
+    },
+    {
+      "deferred_id": "DEF-B1-R25-0001104659-14-006023",
+      "original_batch": 1,
+      "candidate_rank": 25,
+      "target": "ARTHROCARE CORP",
+      "acquirer": null,
+      "target_cik": 1005010,
+      "announcement_accession": "0001104659-14-006023",
+      "announcement_filing_date": "2014-02-03",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 7
+    },
+    {
+      "deferred_id": "DEF-B1-R28-0000909518-14-000023",
+      "original_batch": 1,
+      "candidate_rank": 28,
+      "target": "ATMI INC",
+      "acquirer": null,
+      "target_cik": 1041577,
+      "announcement_accession": "0000909518-14-000023",
+      "announcement_filing_date": "2014-02-04",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'i) each option'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 34.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 8
+    },
+    {
+      "deferred_id": "DEF-B1-R36-0001193125-14-041288",
+      "original_batch": 1,
+      "candidate_rank": 36,
+      "target": "Hallwood Group Inc",
+      "acquirer": null,
+      "target_cik": 355766,
+      "announcement_accession": "0001193125-14-041288",
+      "announcement_filing_date": "2014-02-10",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 3.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 9
+    },
+    {
+      "deferred_id": "DEF-B1-R42-0001193125-14-047575",
+      "original_batch": 1,
+      "candidate_rank": 42,
+      "target": "AMCOL INTERNATIONAL CORP",
+      "acquirer": null,
+      "target_cik": 813621,
+      "announcement_accession": "0001193125-14-047575",
+      "announcement_filing_date": "2014-02-12",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 41.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 10
+    },
+    {
+      "deferred_id": "DEF-B1-R44-0001437749-14-002081",
+      "original_batch": 1,
+      "candidate_rank": 44,
+      "target": "LCA VISION INC",
+      "acquirer": null,
+      "target_cik": 1003130,
+      "announcement_accession": "0001437749-14-002081",
+      "announcement_filing_date": "2014-02-13",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.37,
+          "exchange_ratio": null,
+          "acquirer": "and LCA-Vision, Inc",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 11
+    },
+    {
+      "deferred_id": "DEF-B1-R45-0001140361-14-008197",
+      "original_batch": 1,
+      "candidate_rank": 45,
+      "target": "CHINDEX INTERNATIONAL INC",
+      "acquirer": null,
+      "target_cik": 922717,
+      "announcement_accession": "0001140361-14-008197",
+      "announcement_filing_date": "2014-02-18",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 12
+    },
+    {
+      "deferred_id": "DEF-B1-R46-0000711665-14-000006",
+      "original_batch": 1,
+      "candidate_rank": 46,
+      "target": "PHOTOMEDEX INC",
+      "acquirer": null,
+      "target_cik": 711665,
+      "announcement_accession": "0000711665-14-000006",
+      "announcement_filing_date": "2014-02-19",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'ment and Plan of Merger (the \u201cMerger Agreement\u201d) under which PhotoMedex'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.37,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 13
+    },
+    {
+      "deferred_id": "DEF-B2-R5-0001213900-14-001050",
+      "original_batch": 2,
+      "candidate_rank": 5,
+      "target": "Excel Corp",
+      "acquirer": null,
+      "target_cik": 1512890,
+      "announcement_accession": "0001213900-14-001050",
+      "announcement_filing_date": "2014-02-21",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 14
+    },
+    {
+      "deferred_id": "DEF-B1-R51-0001437749-14-002750",
+      "original_batch": 1,
+      "candidate_rank": 51,
+      "target": "ARDEN GROUP INC",
+      "acquirer": null,
+      "target_cik": 225051,
+      "announcement_accession": "0001437749-14-002750",
+      "announcement_filing_date": "2014-02-25",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'Parent'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 126.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 15
+    },
+    {
+      "deferred_id": "DEF-B1-R52-0001193125-14-071339",
+      "original_batch": 1,
+      "candidate_rank": 52,
+      "target": "AMCOL INTERNATIONAL CORP",
+      "acquirer": null,
+      "target_cik": 813621,
+      "announcement_accession": "0001193125-14-071339",
+      "announcement_filing_date": "2014-02-27",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 16
+    },
+    {
+      "deferred_id": "DEF-B1-R55-0001193125-14-083388",
+      "original_batch": 1,
+      "candidate_rank": 55,
+      "target": "AMCOL INTERNATIONAL CORP",
+      "acquirer": null,
+      "target_cik": 813621,
+      "announcement_accession": "0001193125-14-083388",
+      "announcement_filing_date": "2014-03-05",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'ved a revised proposed merger agreement from Minerals Technologies Inc'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 45.25,
+          "exchange_ratio": null,
+          "acquirer": "ved a revised proposed merger agreement from Minerals Technologies Inc",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 17
+    },
+    {
+      "deferred_id": "DEF-B1-R64-0001193125-14-104806",
+      "original_batch": 1,
+      "candidate_rank": 64,
+      "target": "Alphatec Holdings, Inc.  (ATEC)",
+      "acquirer": null,
+      "target_cik": 1350653,
+      "announcement_accession": "0001193125-14-104806",
+      "announcement_filing_date": "2014-03-19",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 18
+    },
+    {
+      "deferred_id": "DEF-B1-R65-0001193125-14-108739",
+      "original_batch": 1,
+      "candidate_rank": 65,
+      "target": "Cole Credit Property Trust Inc",
+      "acquirer": null,
+      "target_cik": 1289272,
+      "announcement_accession": "0001193125-14-108739",
+      "announcement_filing_date": "2014-03-21",
+      "defer_reason_raw": "acquirer validation: acquirer looks non-entity: 'the Company'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 7.25,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 19
+    },
+    {
+      "deferred_id": "DEF-B1-R74-0001193125-14-127092",
+      "original_batch": 1,
+      "candidate_rank": 74,
+      "target": "DFC GLOBAL CORP.",
+      "acquirer": null,
+      "target_cik": 1271625,
+      "announcement_accession": "0001193125-14-127092",
+      "announcement_filing_date": "2014-04-02",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 20
+    },
+    {
+      "deferred_id": "DEF-B1-R82-0000930413-14-001779",
+      "original_batch": 1,
+      "candidate_rank": 82,
+      "target": "ZYGO CORP",
+      "acquirer": null,
+      "target_cik": 730716,
+      "announcement_accession": "0000930413-14-001779",
+      "announcement_filing_date": "2014-04-15",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 19.25,
+          "exchange_ratio": null,
+          "acquirer": "and Zygo Corporation",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 21
+    },
+    {
+      "deferred_id": "DEF-B1-R91-0001140361-14-017115",
+      "original_batch": 1,
+      "candidate_rank": 91,
+      "target": "CHINDEX INTERNATIONAL INC",
+      "acquirer": null,
+      "target_cik": 922717,
+      "announcement_accession": "0001140361-14-017115",
+      "announcement_filing_date": "2014-04-21",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 24.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 22
+    },
+    {
+      "deferred_id": "DEF-B1-R100-0001445866-14-000396",
+      "original_batch": 1,
+      "candidate_rank": 100,
+      "target": "POKERTEK, INC.",
+      "acquirer": null,
+      "target_cik": 1302177,
+      "announcement_accession": "0001445866-14-000396",
+      "announcement_filing_date": "2014-04-30",
+      "defer_reason_raw": "acquirer validation: acquirer unreasonably long: 'dia Games, Inc., a subsidiary of Multimedia Games Holding Company, Inc'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 1.35,
+          "exchange_ratio": null,
+          "acquirer": "dia Games, Inc., a subsidiary of Multimedia Games Holding Company, Inc",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 23
+    },
+    {
+      "deferred_id": "DEF-B1-R103-0001193125-14-178569",
+      "original_batch": 1,
+      "candidate_rank": 103,
+      "target": "BARRY R G CORP /OH/",
+      "acquirer": null,
+      "target_cik": 749872,
+      "announcement_accession": "0001193125-14-178569",
+      "announcement_filing_date": "2014-05-02",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'ced today the signing of a merger agreement'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 19.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 24
+    },
+    {
+      "deferred_id": "DEF-B1-R104-0001193125-14-183988",
+      "original_batch": 1,
+      "candidate_rank": 104,
+      "target": "National CineMedia, Inc.  (NCMI)",
+      "acquirer": null,
+      "target_cik": 1377630,
+      "announcement_accession": "0001193125-14-183988",
+      "announcement_filing_date": "2014-05-06",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 15.15,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 25
+    },
+    {
+      "deferred_id": "DEF-B1-R106-0001580695-14-000243",
+      "original_batch": 1,
+      "candidate_rank": 106,
+      "target": "Vertex Energy Inc.  (VTNR)",
+      "acquirer": null,
+      "target_cik": 890447,
+      "announcement_accession": "0001580695-14-000243",
+      "announcement_filing_date": "2014-05-06",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 26
+    },
+    {
+      "deferred_id": "DEF-B1-R111-0001193125-14-195206",
+      "original_batch": 1,
+      "candidate_rank": 111,
+      "target": "TELIK INC",
+      "acquirer": null,
+      "target_cik": 1109196,
+      "announcement_accession": "0001193125-14-195206",
+      "announcement_filing_date": "2014-05-12",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 27
+    },
+    {
+      "deferred_id": "DEF-B1-R112-0000711665-14-000018",
+      "original_batch": 1,
+      "candidate_rank": 112,
+      "target": "PHOTOMEDEX INC",
+      "acquirer": null,
+      "target_cik": 711665,
+      "announcement_accession": "0000711665-14-000018",
+      "announcement_filing_date": "2014-05-13",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'each outstanding option'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.37,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 28
+    },
+    {
+      "deferred_id": "DEF-B1-R113-0001437749-14-008760",
+      "original_batch": 1,
+      "candidate_rank": 113,
+      "target": "LCA VISION INC",
+      "acquirer": null,
+      "target_cik": 1003130,
+      "announcement_accession": "0001437749-14-008760",
+      "announcement_filing_date": "2014-05-13",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'each outstanding option'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.37,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 29
+    },
+    {
+      "deferred_id": "DEF-B1-R115-0001415889-14-001541",
+      "original_batch": 1,
+      "candidate_rank": 115,
+      "target": "Marathon Patent Group, Inc.  (MARA)",
+      "acquirer": null,
+      "target_cik": 1507605,
+      "announcement_accession": "0001415889-14-001541",
+      "announcement_filing_date": "2014-05-16",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 30
+    },
+    {
+      "deferred_id": "DEF-B1-R118-0001019056-14-000764",
+      "original_batch": 1,
+      "candidate_rank": 118,
+      "target": "'mktg, inc.'",
+      "acquirer": null,
+      "target_cik": 886475,
+      "announcement_accession": "0001019056-14-000764",
+      "announcement_filing_date": "2014-05-27",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'Dentsu Aegis Network through its subsidiary Aegis Lifestyle'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 2.8,
+          "exchange_ratio": null,
+          "acquirer": "Dentsu Aegis Network through its subsidiary Aegis Lifestyle",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 31
+    },
+    {
+      "deferred_id": "DEF-B1-R130-0001047469-14-005372",
+      "original_batch": 1,
+      "candidate_rank": 130,
+      "target": "PROTECTIVE LIFE CORP",
+      "acquirer": null,
+      "target_cik": 355429,
+      "announcement_accession": "0001047469-14-005372",
+      "announcement_filing_date": "2014-06-04",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 70.0,
+          "exchange_ratio": null,
+          "acquirer": "and Protective Life Corporation",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 32
+    },
+    {
+      "deferred_id": "DEF-B1-R132-0001144204-14-036241",
+      "original_batch": 1,
+      "candidate_rank": 132,
+      "target": "NTS, INC.",
+      "acquirer": null,
+      "target_cik": 1126216,
+      "announcement_accession": "0001144204-14-036241",
+      "announcement_filing_date": "2014-06-06",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'thout interest and less any applicable tax withholding; (2) each option'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 2.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 33
+    },
+    {
+      "deferred_id": "DEF-B1-R139-0001193125-14-236294",
+      "original_batch": 1,
+      "candidate_rank": 139,
+      "target": "DFC GLOBAL CORP.",
+      "acquirer": null,
+      "target_cik": 1271625,
+      "announcement_accession": "0001193125-14-236294",
+      "announcement_filing_date": "2014-06-13",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 34
+    },
+    {
+      "deferred_id": "DEF-B1-R148-0000100493-14-000107",
+      "original_batch": 1,
+      "candidate_rank": 148,
+      "target": "TYSON FOODS INC  (TSN)",
+      "acquirer": null,
+      "target_cik": 100493,
+      "announcement_accession": "0000100493-14-000107",
+      "announcement_filing_date": "2014-07-02",
+      "defer_reason_raw": "acquirer validation: acquirer looks non-entity: 'a unilaterally binding offer'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 63.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 35
+    },
+    {
+      "deferred_id": "DEF-B1-R150-0001193125-14-259322",
+      "original_batch": 1,
+      "candidate_rank": 150,
+      "target": "Hillshire Brands Co",
+      "acquirer": null,
+      "target_cik": 23666,
+      "announcement_accession": "0001193125-14-259322",
+      "announcement_filing_date": "2014-07-02",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 63.0,
+          "exchange_ratio": null,
+          "acquirer": "and The Hillshire Brands Company",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 36
+    },
+    {
+      "deferred_id": "DEF-B1-R151-0001437749-14-012337",
+      "original_batch": 1,
+      "candidate_rank": 151,
+      "target": "Vitacost.com, Inc.",
+      "acquirer": null,
+      "target_cik": 1401688,
+      "announcement_accession": "0001437749-14-012337",
+      "announcement_filing_date": "2014-07-02",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 37
+    },
+    {
+      "deferred_id": "DEF-B1-R157-0001193125-14-269240",
+      "original_batch": 1,
+      "candidate_rank": 157,
+      "target": "ZIPREALTY INC",
+      "acquirer": null,
+      "target_cik": 1142512,
+      "announcement_accession": "0001193125-14-269240",
+      "announcement_filing_date": "2014-07-15",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 6.75,
+          "exchange_ratio": null,
+          "acquirer": "and ZipRealty, Inc",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 38
+    },
+    {
+      "deferred_id": "DEF-B1-R158-0001193125-14-269311",
+      "original_batch": 1,
+      "candidate_rank": 158,
+      "target": "LORILLARD, INC.",
+      "acquirer": null,
+      "target_cik": 1424847,
+      "announcement_accession": "0001193125-14-269311",
+      "announcement_filing_date": "2014-07-15",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'r Relations: Bob Bannon (336) 741-3116 (336) 335-7665 REYNOLDS AMERICAN'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 68.88,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 39
+    },
+    {
+      "deferred_id": "DEF-B1-R159-0001193125-14-269467",
+      "original_batch": 1,
+      "candidate_rank": 159,
+      "target": "REYNOLDS AMERICAN INC",
+      "acquirer": null,
+      "target_cik": 1275283,
+      "announcement_accession": "0001193125-14-269467",
+      "announcement_filing_date": "2014-07-16",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'r Relations: Bob Bannon (336) 741-3116 (336) 335-7665 REYNOLDS AMERICAN'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 68.88,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 40
+    },
+    {
+      "deferred_id": "DEF-B1-R167-0001193125-14-275561",
+      "original_batch": 1,
+      "candidate_rank": 167,
+      "target": "ANALOG DEVICES INC  (ADI)",
+      "acquirer": null,
+      "target_cik": 6281,
+      "announcement_accession": "0001193125-14-275561",
+      "announcement_filing_date": "2014-07-22",
+      "defer_reason_raw": "acquirer validation: acquirer looks non-entity: 'the Company'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 78.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 41
+    },
+    {
+      "deferred_id": "DEF-B1-R170-0001437749-14-013462",
+      "original_batch": 1,
+      "candidate_rank": 170,
+      "target": "PAULSON CAPITAL (DELAWARE) CORP.",
+      "acquirer": null,
+      "target_cik": 704159,
+      "announcement_accession": "0001437749-14-013462",
+      "announcement_filing_date": "2014-07-28",
+      "defer_reason_raw": "acquirer validation: acquirer looks non-entity: 'the Company'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "mixed",
+          "offer_price": 2.145,
+          "exchange_ratio": 1.0,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "DEFER",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 42
+    },
+    {
+      "deferred_id": "DEF-B1-R176-0001144204-14-046808",
+      "original_batch": 1,
+      "candidate_rank": 176,
+      "target": "Symmetry Medical Inc.",
+      "acquirer": null,
+      "target_cik": 1292055,
+      "announcement_accession": "0001144204-14-046808",
+      "announcement_filing_date": "2014-08-04",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 43
+    },
+    {
+      "deferred_id": "DEF-B1-R177-0000912593-14-000069",
+      "original_batch": 1,
+      "candidate_rank": 177,
+      "target": "SUN COMMUNITIES INC  (SUI)",
+      "acquirer": null,
+      "target_cik": 912593,
+      "announcement_accession": "0000912593-14-000069",
+      "announcement_filing_date": "2014-08-05",
+      "defer_reason_raw": "acquirer validation: acquirer looks non-entity: 'the Company'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 50.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "EXCLUDE",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 44
+    },
+    {
+      "deferred_id": "DEF-B1-R191-0000950157-14-000846",
+      "original_batch": 1,
+      "candidate_rank": 191,
+      "target": "INTERMUNE INC",
+      "acquirer": null,
+      "target_cik": 1087432,
+      "announcement_accession": "0000950157-14-000846",
+      "announcement_filing_date": "2014-08-25",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 's Release Roche and InterMune Reach Definitive Merger Agreement \u00b7 Roche'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 74.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 45
+    },
+    {
+      "deferred_id": "DEF-B1-R196-0001144204-14-054075",
+      "original_batch": 1,
+      "candidate_rank": 196,
+      "target": "BOLT TECHNOLOGY CORP",
+      "acquirer": null,
+      "target_cik": 354655,
+      "announcement_accession": "0001144204-14-054075",
+      "announcement_filing_date": "2014-09-03",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'v388305_ex99-1.htm EXHIBIT 99.1 Exhibit 99.1 News Release Teledyne'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 22.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 46
+    },
+    {
+      "deferred_id": "DEF-B1-R203-0001104659-14-066397",
+      "original_batch": 1,
+      "candidate_rank": 203,
+      "target": "TRW AUTOMOTIVE HOLDINGS CORP",
+      "acquirer": null,
+      "target_cik": 1267097,
+      "announcement_accession": "0001104659-14-066397",
+      "announcement_filing_date": "2014-09-15",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 105.6,
+          "exchange_ratio": null,
+          "acquirer": "TRW Automotive Holdings Corp",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 1,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 47
+    },
+    {
+      "deferred_id": "DEF-B1-R207-0001193125-14-343139",
+      "original_batch": 1,
+      "candidate_rank": 207,
+      "target": "TAMINCO Corp",
+      "acquirer": null,
+      "target_cik": 1547063,
+      "announcement_accession": "0001193125-14-343139",
+      "announcement_filing_date": "2014-09-16",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "ADMIT",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 48
+    },
+    {
+      "deferred_id": "DEF-B1-R208-0001104659-14-066889",
+      "original_batch": 1,
+      "candidate_rank": 208,
+      "target": "AUXILIUM PHARMACEUTICALS INC",
+      "acquirer": null,
+      "target_cik": 1182129,
+      "announcement_accession": "0001104659-14-066889",
+      "announcement_filing_date": "2014-09-17",
+      "defer_reason_raw": "acquirer validation: acquirer unreasonably long: 'ceived an unsolicited, non-binding proposal from Endo International plc'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 28.1,
+          "exchange_ratio": null,
+          "acquirer": "ceived an unsolicited, non-binding proposal from Endo International plc",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 49
+    },
+    {
+      "deferred_id": "DEF-B1-R210-0001445866-14-001151",
+      "original_batch": 1,
+      "candidate_rank": 210,
+      "target": "Eos Petro, Inc.",
+      "acquirer": null,
+      "target_cik": 1419583,
+      "announcement_accession": "0001445866-14-001151",
+      "announcement_filing_date": "2014-09-18",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 50
+    },
+    {
+      "deferred_id": "DEF-B1-R215-0001193125-14-347713",
+      "original_batch": 1,
+      "candidate_rank": 215,
+      "target": "SIGMA ALDRICH CORP",
+      "acquirer": null,
+      "target_cik": 90185,
+      "announcement_accession": "0001193125-14-347713",
+      "announcement_filing_date": "2014-09-22",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 51
+    },
+    {
+      "deferred_id": "DEF-B1-R221-0001493152-14-003110",
+      "original_batch": 1,
+      "candidate_rank": 221,
+      "target": "Bone Biologics, Corp.  (BBLG, BBLGW)",
+      "acquirer": null,
+      "target_cik": 1419554,
+      "announcement_accession": "0001493152-14-003110",
+      "announcement_filing_date": "2014-09-25",
+      "defer_reason_raw": "post-filter: cash offer_price<=1.0 fails closed (likely nonstandard)",
+      "primary_class": "TERMS_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 1.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 52
+    },
+    {
+      "deferred_id": "DEF-B1-R222-0001193125-14-355829",
+      "original_batch": 1,
+      "candidate_rank": 222,
+      "target": "TIBCO SOFTWARE INC",
+      "acquirer": null,
+      "target_cik": 1085280,
+      "announcement_accession": "0001193125-14-355829",
+      "announcement_filing_date": "2014-09-29",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 53
+    },
+    {
+      "deferred_id": "DEF-B1-R223-0001193125-14-355998",
+      "original_batch": 1,
+      "candidate_rank": 223,
+      "target": "EINSTEIN NOAH RESTAURANT GROUP INC",
+      "acquirer": null,
+      "target_cik": 949373,
+      "announcement_accession": "0001193125-14-355998",
+      "announcement_filing_date": "2014-09-29",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'today announced a definitive agreement under which an affiliate of JAB'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 20.25,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 54
+    },
+    {
+      "deferred_id": "DEF-B1-R228-0001104659-14-069680",
+      "original_batch": 1,
+      "candidate_rank": 228,
+      "target": "Athlon Energy Inc.",
+      "acquirer": null,
+      "target_cik": 1574648,
+      "announcement_accession": "0001104659-14-069680",
+      "announcement_filing_date": "2014-10-02",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'wo companies have entered into a definitive merger agreement for Encana'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 58.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 55
+    },
+    {
+      "deferred_id": "DEF-B1-R231-0001354488-14-004931",
+      "original_batch": 1,
+      "candidate_rank": 231,
+      "target": "Islet Sciences, Inc",
+      "acquirer": null,
+      "target_cik": 1425919,
+      "announcement_accession": "0001354488-14-004931",
+      "announcement_filing_date": "2014-10-02",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 56
+    },
+    {
+      "deferred_id": "DEF-B1-R235-0001140361-14-037343",
+      "original_batch": 1,
+      "candidate_rank": 235,
+      "target": "BIOTIME INC  (LCTX)",
+      "acquirer": null,
+      "target_cik": 876343,
+      "announcement_accession": "0001140361-14-037343",
+      "announcement_filing_date": "2014-10-03",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'institutional investors'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 3.12,
+          "exchange_ratio": null,
+          "acquirer": "institutional investors",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 57
+    },
+    {
+      "deferred_id": "DEF-B1-R237-0001104659-14-070311",
+      "original_batch": 1,
+      "candidate_rank": 237,
+      "target": "Global Cash Access Holdings, Inc.  (EVRI)",
+      "acquirer": null,
+      "target_cik": 1318568,
+      "announcement_accession": "0001104659-14-070311",
+      "announcement_filing_date": "2014-10-06",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'pursuant'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 36.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 58
+    },
+    {
+      "deferred_id": "DEF-B1-R246-0001089819-14-000034",
+      "original_batch": 1,
+      "candidate_rank": 246,
+      "target": "CLECO CORP",
+      "acquirer": null,
+      "target_cik": 1089819,
+      "announcement_accession": "0001089819-14-000034",
+      "announcement_filing_date": "2014-10-20",
+      "defer_reason_raw": "acquirer validation: acquirer looks non-entity: 'the Company'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 55.37,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 59
+    },
+    {
+      "deferred_id": "DEF-B1-R252-0001144204-14-062361",
+      "original_batch": 1,
+      "candidate_rank": 252,
+      "target": "Cardigant Medical Inc.",
+      "acquirer": null,
+      "target_cik": 1491487,
+      "announcement_accession": "0001144204-14-062361",
+      "announcement_filing_date": "2014-10-22",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 60
+    },
+    {
+      "deferred_id": "DEF-B1-R254-0001104659-14-073492",
+      "original_batch": 1,
+      "candidate_rank": 254,
+      "target": "DIGITAL RIVER INC /DE",
+      "acquirer": null,
+      "target_cik": 1062530,
+      "announcement_accession": "0001104659-14-073492",
+      "announcement_filing_date": "2014-10-24",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 61
+    },
+    {
+      "deferred_id": "DEF-B1-R257-0001193125-14-391233",
+      "original_batch": 1,
+      "candidate_rank": 257,
+      "target": "XRS Corp",
+      "acquirer": null,
+      "target_cik": 854398,
+      "announcement_accession": "0001193125-14-391233",
+      "announcement_filing_date": "2014-10-31",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.6,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 62
+    },
+    {
+      "deferred_id": "DEF-B1-R259-0000950157-14-001152",
+      "original_batch": 1,
+      "candidate_rank": 259,
+      "target": "SAPIENT CORP",
+      "acquirer": null,
+      "target_cik": 1008817,
+      "announcement_accession": "0000950157-14-001152",
+      "announcement_filing_date": "2014-11-03",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 25.0,
+          "exchange_ratio": null,
+          "acquirer": "and Sapient",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 63
+    },
+    {
+      "deferred_id": "DEF-B1-R261-0001140361-14-040135",
+      "original_batch": 1,
+      "candidate_rank": 261,
+      "target": "ELECSYS CORP",
+      "acquirer": null,
+      "target_cik": 914398,
+      "announcement_accession": "0001140361-14-040135",
+      "announcement_filing_date": "2014-11-04",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 64
+    },
+    {
+      "deferred_id": "DEF-B1-R264-0001193125-14-397381",
+      "original_batch": 1,
+      "candidate_rank": 264,
+      "target": "World Energy Solutions, Inc.",
+      "acquirer": null,
+      "target_cik": 1371781,
+      "announcement_accession": "0001193125-14-397381",
+      "announcement_filing_date": "2014-11-05",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 65
+    },
+    {
+      "deferred_id": "DEF-B1-R266-0001104659-14-078406",
+      "original_batch": 1,
+      "candidate_rank": 266,
+      "target": "Athlon Energy Inc.",
+      "acquirer": null,
+      "target_cik": 1574648,
+      "announcement_accession": "0001104659-14-078406",
+      "announcement_filing_date": "2014-11-07",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'them in the Offer'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 58.5,
+          "exchange_ratio": null,
+          "acquirer": "them in the Offer",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 66
+    },
+    {
+      "deferred_id": "DEF-B1-R270-0001437749-14-020985",
+      "original_batch": 1,
+      "candidate_rank": 270,
+      "target": "ChyronHego Corp",
+      "acquirer": null,
+      "target_cik": 20232,
+      "announcement_accession": "0001437749-14-020985",
+      "announcement_filing_date": "2014-11-17",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 67
+    },
+    {
+      "deferred_id": "DEF-B1-R271-0001047469-14-009363",
+      "original_batch": 1,
+      "candidate_rank": 271,
+      "target": "OPLINK COMMUNICATIONS INC",
+      "acquirer": null,
+      "target_cik": 1022225,
+      "announcement_accession": "0001047469-14-009363",
+      "announcement_filing_date": "2014-11-19",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 24.25,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 68
+    },
+    {
+      "deferred_id": "DEF-B1-R279-0001469709-14-000509",
+      "original_batch": 1,
+      "candidate_rank": 279,
+      "target": "INTEGRATED ENERGY SOLUTIONS, INC.",
+      "acquirer": null,
+      "target_cik": 1448763,
+      "announcement_accession": "0001469709-14-000509",
+      "announcement_filing_date": "2014-11-26",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 69
+    },
+    {
+      "deferred_id": "DEF-B1-R282-0001193125-14-430241",
+      "original_batch": 1,
+      "candidate_rank": 282,
+      "target": "AVANIR PHARMACEUTICALS, INC.",
+      "acquirer": null,
+      "target_cik": 858803,
+      "announcement_accession": "0001193125-14-430241",
+      "announcement_filing_date": "2014-12-02",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 70
+    },
+    {
+      "deferred_id": "DEF-B1-R292-0001193125-14-442790",
+      "original_batch": 1,
+      "candidate_rank": 292,
+      "target": "Riverbed Technology, Inc.",
+      "acquirer": null,
+      "target_cik": 1357326,
+      "announcement_accession": "0001193125-14-442790",
+      "announcement_filing_date": "2014-12-15",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'leading private equity investment firm Thoma Bravo'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 21.0,
+          "exchange_ratio": null,
+          "acquirer": "leading private equity investment firm Thoma Bravo",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 71
+    },
+    {
+      "deferred_id": "DEF-B1-R294-0001047469-14-009943",
+      "original_batch": 1,
+      "candidate_rank": 294,
+      "target": "MICROFINANCIAL INC",
+      "acquirer": null,
+      "target_cik": 827230,
+      "announcement_accession": "0001047469-14-009943",
+      "announcement_filing_date": "2014-12-16",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'funds managed by affiliates of Fortress Investment Group LLC'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 10.2,
+          "exchange_ratio": null,
+          "acquirer": "an affiliate of funds managed by affiliates of Fortress Investment Group LLC",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 72
+    },
+    {
+      "deferred_id": "DEF-B1-R295-0001047469-14-009992",
+      "original_batch": 1,
+      "candidate_rank": 295,
+      "target": "MICROFINANCIAL INC",
+      "acquirer": null,
+      "target_cik": 827230,
+      "announcement_accession": "0001047469-14-009992",
+      "announcement_filing_date": "2014-12-18",
+      "defer_reason_raw": "post-filter: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 10.2,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 73
+    },
+    {
+      "deferred_id": "DEF-B1-R302-0001437749-14-022588",
+      "original_batch": 1,
+      "candidate_rank": 302,
+      "target": "PEERLESS SYSTEMS CORP",
+      "acquirer": null,
+      "target_cik": 897893,
+      "announcement_accession": "0001437749-14-022588",
+      "announcement_filing_date": "2014-12-24",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 74
+    },
+    {
+      "deferred_id": "DEF-B1-R308-0001002014-15-000002",
+      "original_batch": 1,
+      "candidate_rank": 308,
+      "target": "City Media, Inc.",
+      "acquirer": null,
+      "target_cik": 1508594,
+      "announcement_accession": "0001002014-15-000002",
+      "announcement_filing_date": "2015-01-06",
+      "defer_reason_raw": "acquirer validation: acquirer looks non-entity: 'a Nevada corporation'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 1.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 75
+    },
+    {
+      "deferred_id": "DEF-B1-R313-0001104659-15-001685",
+      "original_batch": 1,
+      "candidate_rank": 313,
+      "target": "NPS PHARMACEUTICALS INC",
+      "acquirer": null,
+      "target_cik": 890465,
+      "announcement_accession": "0001104659-15-001685",
+      "announcement_filing_date": "2015-01-12",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 46.0,
+          "exchange_ratio": null,
+          "acquirer": "and NPS Pharmaceuticals, Inc",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 76
+    },
+    {
+      "deferred_id": "DEF-B1-R314-0001193125-15-008866",
+      "original_batch": 1,
+      "candidate_rank": 314,
+      "target": "Aldeyra Therapeutics, Inc.  (ALDX)",
+      "acquirer": null,
+      "target_cik": 1341235,
+      "announcement_accession": "0001193125-15-008866",
+      "announcement_filing_date": "2015-01-13",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 77
+    },
+    {
+      "deferred_id": "DEF-B2-R42-0001437749-15-001219",
+      "original_batch": 2,
+      "candidate_rank": 42,
+      "target": "LAKES ENTERTAINMENT INC  (GDEN)",
+      "acquirer": null,
+      "target_cik": 1071255,
+      "announcement_accession": "0001437749-15-001219",
+      "announcement_filing_date": "2015-01-26",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'current shareholders (assuming the exercise of all outstanding options'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 9.57,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 78
+    },
+    {
+      "deferred_id": "DEF-B1-R321-0001193125-15-021000",
+      "original_batch": 1,
+      "candidate_rank": 321,
+      "target": "SILICON IMAGE INC",
+      "acquirer": null,
+      "target_cik": 1003214,
+      "announcement_accession": "0001193125-15-021000",
+      "announcement_filing_date": "2015-01-27",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'htm EX-99.1 EX-99.1 Exhibit 99.1 News Release LATTICE SEMICONDUCTOR'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 7.3,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 79
+    },
+    {
+      "deferred_id": "DEF-B2-R53-0000950103-15-000836",
+      "original_batch": 2,
+      "candidate_rank": 53,
+      "target": "SS&C Technologies Holdings Inc  (SSNC)",
+      "acquirer": null,
+      "target_cik": 1402436,
+      "announcement_accession": "0000950103-15-000836",
+      "announcement_filing_date": "2015-02-03",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'hat the Companies have entered into a definitive agreement wherein SS&C'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 44.25,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 80
+    },
+    {
+      "deferred_id": "DEF-B2-R54-0001047469-15-000551",
+      "original_batch": 2,
+      "candidate_rank": 54,
+      "target": "ADVENT SOFTWARE INC /DE/",
+      "acquirer": null,
+      "target_cik": 1002225,
+      "announcement_accession": "0001047469-15-000551",
+      "announcement_filing_date": "2015-02-03",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 81
+    },
+    {
+      "deferred_id": "DEF-B2-R57-0001227930-15-000003",
+      "original_batch": 2,
+      "candidate_rank": 57,
+      "target": "ENTROPIC COMMUNICATIONS INC",
+      "acquirer": null,
+      "target_cik": 1227930,
+      "announcement_accession": "0001227930-15-000003",
+      "announcement_filing_date": "2015-02-03",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 82
+    },
+    {
+      "deferred_id": "DEF-B1-R327-0001193125-15-034709",
+      "original_batch": 1,
+      "candidate_rank": 327,
+      "target": "E2open Inc",
+      "acquirer": null,
+      "target_cik": 1540400,
+      "announcement_accession": "0001193125-15-034709",
+      "announcement_filing_date": "2015-02-05",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 8.6,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 83
+    },
+    {
+      "deferred_id": "DEF-B2-R61-0001193125-15-036495",
+      "original_batch": 2,
+      "candidate_rank": 61,
+      "target": "Exelis Inc.",
+      "acquirer": null,
+      "target_cik": 1524471,
+      "announcement_accession": "0001193125-15-036495",
+      "announcement_filing_date": "2015-02-06",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 23.75,
+          "exchange_ratio": null,
+          "acquirer": "and Exelis, Inc",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 84
+    },
+    {
+      "deferred_id": "DEF-B2-R64-0001193125-15-039363",
+      "original_batch": 2,
+      "candidate_rank": 64,
+      "target": "HARRIS CORP /DE/  (LHX)",
+      "acquirer": null,
+      "target_cik": 202058,
+      "announcement_accession": "0001193125-15-039363",
+      "announcement_filing_date": "2015-02-09",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'poration and a wholly owned subsidiary of Harris (\u201cMerger Sub\u201d). Harris'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 23.75,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 85
+    },
+    {
+      "deferred_id": "DEF-B2-R67-0001193125-15-048176",
+      "original_batch": 2,
+      "candidate_rank": 67,
+      "target": "Orbitz Worldwide, Inc.",
+      "acquirer": null,
+      "target_cik": 1394159,
+      "announcement_accession": "0001193125-15-048176",
+      "announcement_filing_date": "2015-02-13",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 86
+    },
+    {
+      "deferred_id": "DEF-B2-R69-0001193125-15-057077",
+      "original_batch": 2,
+      "candidate_rank": 69,
+      "target": "SALIX PHARMACEUTICALS LTD",
+      "acquirer": null,
+      "target_cik": 1009356,
+      "announcement_accession": "0001193125-15-057077",
+      "announcement_filing_date": "2015-02-23",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 158.0,
+          "exchange_ratio": null,
+          "acquirer": "and Salix Pharmaceuticals, Ltd",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 87
+    },
+    {
+      "deferred_id": "DEF-B2-R76-0001144204-15-014033",
+      "original_batch": 2,
+      "candidate_rank": 76,
+      "target": "Bionik Laboratories Corp.",
+      "acquirer": null,
+      "target_cik": 1508381,
+      "announcement_accession": "0001144204-15-014033",
+      "announcement_filing_date": "2015-03-04",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 88
+    },
+    {
+      "deferred_id": "DEF-B2-R79-0001104659-15-017182",
+      "original_batch": 2,
+      "candidate_rank": 79,
+      "target": "Government Properties Income Trust  (OPI, OPINL)",
+      "acquirer": null,
+      "target_cik": 1456772,
+      "announcement_accession": "0001104659-15-017182",
+      "announcement_filing_date": "2015-03-05",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'S RELEASE DESCRIBES TRANSACTIONS BY WHICH GOV AND THE PRINCIPALS OF RMR'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 27.85,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 89
+    },
+    {
+      "deferred_id": "DEF-B1-R343-0001193805-15-000329",
+      "original_batch": 1,
+      "candidate_rank": 343,
+      "target": "AIR INDUSTRIES GROUP  (AIRI)",
+      "acquirer": null,
+      "target_cik": 1009891,
+      "announcement_accession": "0001193805-15-000329",
+      "announcement_filing_date": "2015-03-05",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'Sterling\u201d) and all of its stockholders. The Agreement provides that we'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 10.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 90
+    },
+    {
+      "deferred_id": "DEF-B1-R349-0001193125-15-089387",
+      "original_batch": 1,
+      "candidate_rank": 349,
+      "target": "INTEGRATED SILICON SOLUTION INC",
+      "acquirer": null,
+      "target_cik": 854701,
+      "announcement_accession": "0001193125-15-089387",
+      "announcement_filing_date": "2015-03-12",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'e entered into a definitive merger agreement under which the Consortium'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 19.25,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 91
+    },
+    {
+      "deferred_id": "DEF-B1-R352-0001193125-15-094067",
+      "original_batch": 1,
+      "candidate_rank": 352,
+      "target": "LIFE TIME FITNESS, INC.",
+      "acquirer": null,
+      "target_cik": 1076195,
+      "announcement_accession": "0001193125-15-094067",
+      "announcement_filing_date": "2015-03-16",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'er agreement under which affiliates of Leonard Green & Partners and TPG'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 72.1,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 92
+    },
+    {
+      "deferred_id": "DEF-B1-R359-0001193125-15-114434",
+      "original_batch": 1,
+      "candidate_rank": 359,
+      "target": "Norcraft Companies, Inc.",
+      "acquirer": null,
+      "target_cik": 1582616,
+      "announcement_accession": "0001193125-15-114434",
+      "announcement_filing_date": "2015-03-31",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'FORTUNE BRANDS HOME & SECURITY - Net Sales Increase 16'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 25.5,
+          "exchange_ratio": null,
+          "acquirer": "FORTUNE BRANDS HOME & SECURITY - Net Sales Increase 16",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 93
+    },
+    {
+      "deferred_id": "DEF-B2-R112-0001104659-15-026225",
+      "original_batch": 2,
+      "candidate_rank": 112,
+      "target": "INFORMATICA CORP",
+      "acquirer": null,
+      "target_cik": 1080099,
+      "announcement_accession": "0001104659-15-026225",
+      "announcement_filing_date": "2015-04-07",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'are The Permira Funds Partner with Canada Pension Plan Investment Board'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 48.75,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 94
+    },
+    {
+      "deferred_id": "DEF-B1-R362-0001104659-15-026467",
+      "original_batch": 1,
+      "candidate_rank": 362,
+      "target": "Zep Inc.",
+      "acquirer": null,
+      "target_cik": 1408287,
+      "announcement_accession": "0001104659-15-026467",
+      "announcement_filing_date": "2015-04-08",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 95
+    },
+    {
+      "deferred_id": "DEF-B2-R114-0001193125-15-126195",
+      "original_batch": 2,
+      "candidate_rank": 114,
+      "target": "Excel Trust, Inc.",
+      "acquirer": null,
+      "target_cik": 1478950,
+      "announcement_accession": "0001193125-15-126195",
+      "announcement_filing_date": "2015-04-10",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 96
+    },
+    {
+      "deferred_id": "DEF-B1-R366-0001299933-15-000548",
+      "original_batch": 1,
+      "candidate_rank": 366,
+      "target": "DOVER SADDLERY INC",
+      "acquirer": null,
+      "target_cik": 1071625,
+      "announcement_accession": "0001299933-15-000548",
+      "announcement_filing_date": "2015-04-14",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'which'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 8.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 97
+    },
+    {
+      "deferred_id": "DEF-B1-R370-0001193125-15-140936",
+      "original_batch": 1,
+      "candidate_rank": 370,
+      "target": "PROCERA NETWORKS, INC.",
+      "acquirer": null,
+      "target_cik": 1165231,
+      "announcement_accession": "0001193125-15-140936",
+      "announcement_filing_date": "2015-04-22",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'private funds managed by Francisco Partners Management'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 11.5,
+          "exchange_ratio": null,
+          "acquirer": "private funds managed by Francisco Partners Management",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 98
+    },
+    {
+      "deferred_id": "DEF-B1-R375-0001104659-15-032001",
+      "original_batch": 1,
+      "candidate_rank": 375,
+      "target": "OMNIVISION TECHNOLOGIES INC",
+      "acquirer": null,
+      "target_cik": 1106851,
+      "announcement_accession": "0001104659-15-032001",
+      "announcement_filing_date": "2015-04-30",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 99
+    },
+    {
+      "deferred_id": "DEF-B1-R379-0001277141-15-000027",
+      "original_batch": 1,
+      "candidate_rank": 379,
+      "target": "Borderfree, Inc.",
+      "acquirer": null,
+      "target_cik": 1277141,
+      "announcement_accession": "0001277141-15-000027",
+      "announcement_filing_date": "2015-05-06",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'Pitney Bowes NEW YORK - May 5'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 14.0,
+          "exchange_ratio": null,
+          "acquirer": "Pitney Bowes NEW YORK - May 5",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 100
+    },
+    {
+      "deferred_id": "DEF-B1-R380-0001193125-15-176042",
+      "original_batch": 1,
+      "candidate_rank": 380,
+      "target": "QUALITY DISTRIBUTION INC",
+      "acquirer": null,
+      "target_cik": 922863,
+      "announcement_accession": "0001193125-15-176042",
+      "announcement_filing_date": "2015-05-07",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 101
+    },
+    {
+      "deferred_id": "DEF-B1-R384-0001193125-15-191007",
+      "original_batch": 1,
+      "candidate_rank": 384,
+      "target": "ANN INC.",
+      "acquirer": null,
+      "target_cik": 874214,
+      "announcement_accession": "0001193125-15-191007",
+      "announcement_filing_date": "2015-05-18",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 50.0,
+          "exchange_ratio": null,
+          "acquirer": "and ANN INC",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 102
+    },
+    {
+      "deferred_id": "DEF-B1-R386-0001193125-15-191067",
+      "original_batch": 1,
+      "candidate_rank": 386,
+      "target": "GRAFTECH INTERNATIONAL LTD  (EAF)",
+      "acquirer": null,
+      "target_cik": 931148,
+      "announcement_accession": "0001193125-15-191067",
+      "announcement_filing_date": "2015-05-18",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 103
+    },
+    {
+      "deferred_id": "DEF-B1-R389-0001144204-15-033064",
+      "original_batch": 1,
+      "candidate_rank": 389,
+      "target": "FRISCHS RESTAURANTS INC",
+      "acquirer": null,
+      "target_cik": 39047,
+      "announcement_accession": "0001144204-15-033064",
+      "announcement_filing_date": "2015-05-22",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 104
+    },
+    {
+      "deferred_id": "DEF-B2-R137-0001104659-15-040537",
+      "original_batch": 2,
+      "candidate_rank": 137,
+      "target": "Geeknet, Inc",
+      "acquirer": null,
+      "target_cik": 1096199,
+      "announcement_accession": "0001104659-15-040537",
+      "announcement_filing_date": "2015-05-26",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'EX-99.1 5 a15-12721_1ex99d1.htm EX-99.1 Exhibit 99.1 Hot Topic'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 17.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 105
+    },
+    {
+      "deferred_id": "DEF-B1-R392-0001104659-15-041062",
+      "original_batch": 1,
+      "candidate_rank": 392,
+      "target": "SFX Entertainment, INC",
+      "acquirer": null,
+      "target_cik": 1553588,
+      "announcement_accession": "0001104659-15-041062",
+      "announcement_filing_date": "2015-05-27",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'TAINMENT ENTERS INTO DEFINITIVE AGREEMENT WHEREBY ROBERT F.X. SILLERMAN'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.25,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 106
+    },
+    {
+      "deferred_id": "DEF-B2-R145-0001193125-15-206906",
+      "original_batch": 2,
+      "candidate_rank": 145,
+      "target": "CHARTER COMMUNICATIONS, INC. /MO/  (CHTR)",
+      "acquirer": null,
+      "target_cik": 1091667,
+      "announcement_accession": "0001193125-15-206906",
+      "announcement_filing_date": "2015-05-29",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'agreed'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "mixed",
+          "offer_price": 172.9963,
+          "exchange_ratio": 1.106,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 107
+    },
+    {
+      "deferred_id": "DEF-B1-R395-0001193125-15-209410",
+      "original_batch": 1,
+      "candidate_rank": 395,
+      "target": "OM GROUP INC",
+      "acquirer": null,
+      "target_cik": 899723,
+      "announcement_accession": "0001193125-15-209410",
+      "announcement_filing_date": "2015-06-01",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'funds managed by affiliates of Apollo Global Management'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 34.0,
+          "exchange_ratio": null,
+          "acquirer": "funds managed by affiliates of Apollo Global Management",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 108
+    },
+    {
+      "deferred_id": "DEF-B2-R146-0001104659-15-042929",
+      "original_batch": 2,
+      "candidate_rank": 146,
+      "target": "Geeknet, Inc",
+      "acquirer": null,
+      "target_cik": 1096199,
+      "announcement_accession": "0001104659-15-042929",
+      "announcement_filing_date": "2015-06-02",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'ex99d1.htm EX-99.1 Exhibit 99.1 GameStop Corp. Announces Agreement'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 20.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 109
+    },
+    {
+      "deferred_id": "DEF-B2-R150-0001144204-15-035543",
+      "original_batch": 2,
+      "candidate_rank": 150,
+      "target": "Naugatuck Valley Financial Corp",
+      "acquirer": null,
+      "target_cik": 1493552,
+      "announcement_accession": "0001144204-15-035543",
+      "announcement_filing_date": "2015-06-04",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 't and Plan of Merger (the \u201cMerger Agreement\u201d)'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 11.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 110
+    },
+    {
+      "deferred_id": "DEF-B1-R397-0001185185-15-001565",
+      "original_batch": 1,
+      "candidate_rank": 397,
+      "target": "Clean Coal Technologies Inc.  (NSGP)",
+      "acquirer": null,
+      "target_cik": 1445109,
+      "announcement_accession": "0001185185-15-001565",
+      "announcement_filing_date": "2015-06-08",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 111
+    },
+    {
+      "deferred_id": "DEF-B1-R398-0001104659-15-044425",
+      "original_batch": 1,
+      "candidate_rank": 398,
+      "target": "HCC INSURANCE HOLDINGS INC/DE/",
+      "acquirer": null,
+      "target_cik": 888919,
+      "announcement_accession": "0001104659-15-044425",
+      "announcement_filing_date": "2015-06-10",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'Exhibit 99.1 CONFIDENTIAL FOR IMMEDIATE RELEASE TOKIO MARINE HOLDINGS'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 78.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 112
+    },
+    {
+      "deferred_id": "DEF-B2-R156-0001193125-15-220346",
+      "original_batch": 2,
+      "candidate_rank": 156,
+      "target": "INTEGRATED SILICON SOLUTION INC",
+      "acquirer": null,
+      "target_cik": 854701,
+      "announcement_accession": "0001193125-15-220346",
+      "announcement_filing_date": "2015-06-11",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 21.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 113
+    },
+    {
+      "deferred_id": "DEF-B2-R179-0001193125-15-249139",
+      "original_batch": 2,
+      "candidate_rank": 179,
+      "target": "COAST DISTRIBUTION SYSTEM INC",
+      "acquirer": null,
+      "target_cik": 728303,
+      "announcement_accession": "0001193125-15-249139",
+      "announcement_filing_date": "2015-07-09",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.5,
+          "exchange_ratio": null,
+          "acquirer": "and The Coast Distribution System, Inc",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 114
+    },
+    {
+      "deferred_id": "DEF-B2-R183-0001193125-15-251363",
+      "original_batch": 2,
+      "candidate_rank": 183,
+      "target": "REMY INTERNATIONAL, INC.",
+      "acquirer": null,
+      "target_cik": 1046859,
+      "announcement_accession": "0001193125-15-251363",
+      "announcement_filing_date": "2015-07-13",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 115
+    },
+    {
+      "deferred_id": "DEF-B2-R195-0001104659-15-052337",
+      "original_batch": 2,
+      "candidate_rank": 195,
+      "target": "ST JUDE MEDICAL INC",
+      "acquirer": null,
+      "target_cik": 203077,
+      "announcement_accession": "0001104659-15-052337",
+      "announcement_filing_date": "2015-07-22",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'nanimously approved a definitive agreement under which St. Jude Medical'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 63.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 116
+    },
+    {
+      "deferred_id": "DEF-B2-R198-0001575965-15-000036",
+      "original_batch": 2,
+      "candidate_rank": 198,
+      "target": "Gaming & Leisure Properties, Inc.  (GLPI)",
+      "acquirer": null,
+      "target_cik": 1575965,
+      "announcement_accession": "0001575965-15-000036",
+      "announcement_filing_date": "2015-07-22",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 117
+    },
+    {
+      "deferred_id": "DEF-B2-R202-0001193125-15-266689",
+      "original_batch": 2,
+      "candidate_rank": 202,
+      "target": "Industrial Income Trust Inc.",
+      "acquirer": null,
+      "target_cik": 1464720,
+      "announcement_accession": "0001193125-15-266689",
+      "announcement_filing_date": "2015-07-29",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 118
+    },
+    {
+      "deferred_id": "DEF-B2-R209-0000096831-15-000058",
+      "original_batch": 2,
+      "candidate_rank": 209,
+      "target": "TECUMSEH PRODUCTS CO",
+      "acquirer": null,
+      "target_cik": 96831,
+      "announcement_accession": "0000096831-15-000058",
+      "announcement_filing_date": "2015-08-05",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 119
+    },
+    {
+      "deferred_id": "DEF-B2-R213-0001085706-15-000036",
+      "original_batch": 2,
+      "candidate_rank": 213,
+      "target": "METRO BANCORP, INC.",
+      "acquirer": null,
+      "target_cik": 1085706,
+      "announcement_accession": "0001085706-15-000036",
+      "announcement_filing_date": "2015-08-07",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 1.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 120
+    },
+    {
+      "deferred_id": "DEF-B2-R214-0001140361-15-030477",
+      "original_batch": 2,
+      "candidate_rank": 214,
+      "target": "MUELLER INDUSTRIES INC  (MLI)",
+      "acquirer": null,
+      "target_cik": 89439,
+      "announcement_accession": "0001140361-15-030477",
+      "announcement_filing_date": "2015-08-07",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'it or initiate discussions with third parties regarding other proposals'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 121
+    },
+    {
+      "deferred_id": "DEF-B2-R215-0001193125-15-283096",
+      "original_batch": 2,
+      "candidate_rank": 215,
+      "target": "FNB CORP/FL/  (FNB)",
+      "acquirer": null,
+      "target_cik": 37808,
+      "announcement_accession": "0001193125-15-283096",
+      "announcement_filing_date": "2015-08-07",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "stock",
+          "offer_price": null,
+          "exchange_ratio": 2.373,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 122
+    },
+    {
+      "deferred_id": "DEF-B2-R225-0001193125-15-299147",
+      "original_batch": 2,
+      "candidate_rank": 225,
+      "target": "STEINER LEISURE Ltd",
+      "acquirer": null,
+      "target_cik": 1018946,
+      "announcement_accession": "0001193125-15-299147",
+      "announcement_filing_date": "2015-08-21",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 123
+    },
+    {
+      "deferred_id": "DEF-B2-R231-0001193125-15-307511",
+      "original_batch": 2,
+      "candidate_rank": 231,
+      "target": "BLYTH INC",
+      "acquirer": null,
+      "target_cik": 921503,
+      "announcement_accession": "0001193125-15-307511",
+      "announcement_filing_date": "2015-08-31",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 124
+    },
+    {
+      "deferred_id": "DEF-B2-R239-0001193125-15-314638",
+      "original_batch": 2,
+      "candidate_rank": 239,
+      "target": "STRATEGIC HOTELS & RESORTS, INC",
+      "acquirer": null,
+      "target_cik": 1057436,
+      "announcement_accession": "0001193125-15-314638",
+      "announcement_filing_date": "2015-09-08",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 125
+    },
+    {
+      "deferred_id": "DEF-B2-R244-0001213900-15-006856",
+      "original_batch": 2,
+      "candidate_rank": 244,
+      "target": "Cambridge Capital Acquisition Corp",
+      "acquirer": null,
+      "target_cik": 1588869,
+      "announcement_accession": "0001213900-15-006856",
+      "announcement_filing_date": "2015-09-10",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 10.1,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 126
+    },
+    {
+      "deferred_id": "DEF-B2-R266-0001415889-15-003299",
+      "original_batch": 2,
+      "candidate_rank": 266,
+      "target": "AUTOBYTEL INC",
+      "acquirer": null,
+      "target_cik": 1023364,
+      "announcement_accession": "0001415889-15-003299",
+      "announcement_filing_date": "2015-10-06",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'in-the-money options'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 500.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 127
+    },
+    {
+      "deferred_id": "DEF-B2-R270-0001193125-15-340425",
+      "original_batch": 2,
+      "candidate_rank": 270,
+      "target": "BioMed Realty Trust Inc",
+      "acquirer": null,
+      "target_cik": 1289236,
+      "announcement_accession": "0001193125-15-340425",
+      "announcement_filing_date": "2015-10-08",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 128
+    },
+    {
+      "deferred_id": "DEF-B2-R275-0001104659-15-070587",
+      "original_batch": 2,
+      "candidate_rank": 275,
+      "target": "FX ENERGY INC",
+      "acquirer": null,
+      "target_cik": 907649,
+      "announcement_accession": "0001104659-15-070587",
+      "announcement_filing_date": "2015-10-14",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'definitive merger agreement'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 1.15,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 129
+    },
+    {
+      "deferred_id": "DEF-B2-R276-0001193125-15-343597",
+      "original_batch": 2,
+      "candidate_rank": 276,
+      "target": "DAEGIS INC.",
+      "acquirer": null,
+      "target_cik": 880562,
+      "announcement_accession": "0001193125-15-343597",
+      "announcement_filing_date": "2015-10-14",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'has entered into a definitive agreement with Open Text Corporation'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 0.82,
+          "exchange_ratio": null,
+          "acquirer": "has entered into a definitive agreement with Open Text Corporation",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 130
+    },
+    {
+      "deferred_id": "DEF-B2-R284-0001104659-15-071828",
+      "original_batch": 2,
+      "candidate_rank": 284,
+      "target": "SolarWinds, Inc.",
+      "acquirer": null,
+      "target_cik": 1428669,
+      "announcement_accession": "0001104659-15-071828",
+      "announcement_filing_date": "2015-10-21",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 131
+    },
+    {
+      "deferred_id": "DEF-B2-R288-0001193125-15-351905",
+      "original_batch": 2,
+      "candidate_rank": 288,
+      "target": "RENASANT CORP  (RNST)",
+      "acquirer": null,
+      "target_cik": 715072,
+      "announcement_accession": "0001193125-15-351905",
+      "announcement_filing_date": "2015-10-23",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'Worth\u2019s equity incentive plan or otherwise and each outstanding warrant'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 132
+    },
+    {
+      "deferred_id": "DEF-B2-R290-0001047469-15-008043",
+      "original_batch": 2,
+      "candidate_rank": 290,
+      "target": "PEP BOYS MANNY MOE & JACK",
+      "acquirer": null,
+      "target_cik": 77449,
+      "announcement_accession": "0001047469-15-008043",
+      "announcement_filing_date": "2015-10-26",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'Bridgestone Media Center 877-201-2373 For Immediate Release Bridgestone'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 15.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 133
+    },
+    {
+      "deferred_id": "DEF-B2-R296-0000930413-15-004108",
+      "original_batch": 2,
+      "candidate_rank": 296,
+      "target": "Diamond Foods Inc",
+      "acquirer": null,
+      "target_cik": 1320947,
+      "announcement_accession": "0000930413-15-004108",
+      "announcement_filing_date": "2015-10-28",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'Inc. Signs Definitive Agreement'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 0.64,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 134
+    },
+    {
+      "deferred_id": "DEF-B2-R297-0001054102-15-000053",
+      "original_batch": 2,
+      "candidate_rank": 297,
+      "target": "PDI INC  (IDXG)",
+      "acquirer": null,
+      "target_cik": 1054102,
+      "announcement_accession": "0001054102-15-000053",
+      "announcement_filing_date": "2015-11-02",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 135
+    },
+    {
+      "deferred_id": "DEF-B2-R298-0001193125-15-361413",
+      "original_batch": 2,
+      "candidate_rank": 298,
+      "target": "HUTCHINSON TECHNOLOGY INC",
+      "acquirer": null,
+      "target_cik": 772897,
+      "announcement_accession": "0001193125-15-361413",
+      "announcement_filing_date": "2015-11-02",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 4.0,
+          "exchange_ratio": null,
+          "acquirer": "and Hutchinson Technology Incorporated",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 136
+    },
+    {
+      "deferred_id": "DEF-B3-R5-0001104659-15-076953",
+      "original_batch": 3,
+      "candidate_rank": 5,
+      "target": "RealD Inc.",
+      "acquirer": null,
+      "target_cik": 1327471,
+      "announcement_accession": "0001104659-15-076953",
+      "announcement_filing_date": "2015-11-09",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 137
+    },
+    {
+      "deferred_id": "DEF-B3-R8-0001650132-15-000034",
+      "original_batch": 3,
+      "candidate_rank": 8,
+      "target": "Four Corners Property Trust, Inc.  (FCPT)",
+      "acquirer": null,
+      "target_cik": 1650132,
+      "announcement_accession": "0001650132-15-000034",
+      "announcement_filing_date": "2015-11-10",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 138
+    },
+    {
+      "deferred_id": "DEF-B3-R10-0001193125-15-374682",
+      "original_batch": 3,
+      "candidate_rank": 10,
+      "target": "Roundy's, Inc.",
+      "acquirer": null,
+      "target_cik": 1536035,
+      "announcement_accession": "0001193125-15-374682",
+      "announcement_filing_date": "2015-11-12",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'Kroger in a subsequent merger'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 3.6,
+          "exchange_ratio": null,
+          "acquirer": "Kroger in a subsequent merger",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 139
+    },
+    {
+      "deferred_id": "DEF-B3-R15-0001193125-15-381410",
+      "original_batch": 3,
+      "candidate_rank": 15,
+      "target": "BREEZE-EASTERN CORP",
+      "acquirer": null,
+      "target_cik": 99359,
+      "announcement_accession": "0001193125-15-381410",
+      "announcement_filing_date": "2015-11-19",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 140
+    },
+    {
+      "deferred_id": "DEF-B3-R21-0001193125-15-384259",
+      "original_batch": 3,
+      "candidate_rank": 21,
+      "target": "DIEBOLD INC  (DBD)",
+      "acquirer": null,
+      "target_cik": 28823,
+      "announcement_accession": "0001193125-15-384259",
+      "announcement_filing_date": "2015-11-23",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 141
+    },
+    {
+      "deferred_id": "DEF-B3-R35-0001104659-15-083470",
+      "original_batch": 3,
+      "candidate_rank": 35,
+      "target": "KEURIG GREEN MOUNTAIN, INC.",
+      "acquirer": null,
+      "target_cik": 909954,
+      "announcement_accession": "0001104659-15-083470",
+      "announcement_filing_date": "2015-12-08",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 142
+    },
+    {
+      "deferred_id": "DEF-B3-R41-0000950157-15-001389",
+      "original_batch": 3,
+      "candidate_rank": 41,
+      "target": "BLOUNT INTERNATIONAL INC",
+      "acquirer": null,
+      "target_cik": 1001606,
+      "announcement_accession": "0000950157-15-001389",
+      "announcement_filing_date": "2015-12-10",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 143
+    },
+    {
+      "deferred_id": "DEF-B3-R46-0001193125-15-402638",
+      "original_batch": 3,
+      "candidate_rank": 46,
+      "target": "NEWELL RUBBERMAID INC  (NWL)",
+      "acquirer": null,
+      "target_cik": 814453,
+      "announcement_accession": "0001193125-15-402638",
+      "announcement_filing_date": "2015-12-14",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 144
+    },
+    {
+      "deferred_id": "DEF-B3-R53-0000950123-15-012535",
+      "original_batch": 3,
+      "candidate_rank": 53,
+      "target": "Lynden Energy Corp.",
+      "acquirer": null,
+      "target_cik": 1622620,
+      "announcement_accession": "0000950123-15-012535",
+      "announcement_filing_date": "2015-12-17",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'y announced a definitive agreement (the \u201cAgreement\u201d) whereby Earthstone'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 0.52,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 145
+    },
+    {
+      "deferred_id": "DEF-B3-R57-0001171843-15-006916",
+      "original_batch": 3,
+      "candidate_rank": 57,
+      "target": "BAY BANCORP, INC.",
+      "acquirer": null,
+      "target_cik": 859222,
+      "announcement_accession": "0001171843-15-006916",
+      "announcement_filing_date": "2015-12-21",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 146
+    },
+    {
+      "deferred_id": "DEF-B3-R65-0001104659-15-087358",
+      "original_batch": 3,
+      "candidate_rank": 65,
+      "target": "PEP BOYS MANNY MOE & JACK",
+      "acquirer": null,
+      "target_cik": 77449,
+      "announcement_accession": "0001104659-15-087358",
+      "announcement_filing_date": "2015-12-30",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'ex99d1.htm EX-99.1 Exhibit 99.1 FOR IMMEDIATE RELEASE Icahn Enterprises'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 18.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 147
+    },
+    {
+      "deferred_id": "DEF-B3-R78-0001193125-16-425805",
+      "original_batch": 3,
+      "candidate_rank": 78,
+      "target": "Juno Therapeutics, Inc.",
+      "acquirer": null,
+      "target_cik": 1594864,
+      "announcement_accession": "0001193125-16-425805",
+      "announcement_filing_date": "2016-01-11",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 148
+    },
+    {
+      "deferred_id": "DEF-B3-R88-0001193125-16-432650",
+      "original_batch": 3,
+      "candidate_rank": 88,
+      "target": "MICROCHIP TECHNOLOGY INC  (MCHP)",
+      "acquirer": null,
+      "target_cik": 827054,
+      "announcement_accession": "0001193125-16-432650",
+      "announcement_filing_date": "2016-01-19",
+      "defer_reason_raw": "acquirer validation: acquirer unreasonably long: 'ler, mixed-signal, analog and Flash-IP solutions, and Atmel Corporation'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 8.15,
+          "exchange_ratio": null,
+          "acquirer": "ler, mixed-signal, analog and Flash-IP solutions, and Atmel Corporation",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 149
+    },
+    {
+      "deferred_id": "DEF-B3-R92-0001571049-16-010841",
+      "original_batch": 3,
+      "candidate_rank": 92,
+      "target": "ATMEL CORP",
+      "acquirer": null,
+      "target_cik": 872448,
+      "announcement_accession": "0001571049-16-010841",
+      "announcement_filing_date": "2016-01-20",
+      "defer_reason_raw": "acquirer validation: acquirer unreasonably long: 'ler, mixed-signal, analog and Flash-IP solutions, and Atmel Corporation'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 8.15,
+          "exchange_ratio": null,
+          "acquirer": "ler, mixed-signal, analog and Flash-IP solutions, and Atmel Corporation",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 150
+    },
+    {
+      "deferred_id": "DEF-B3-R101-0001193125-16-447680",
+      "original_batch": 3,
+      "candidate_rank": 101,
+      "target": "LOJACK CORP",
+      "acquirer": null,
+      "target_cik": 355777,
+      "announcement_accession": "0001193125-16-447680",
+      "announcement_filing_date": "2016-02-02",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'CalAmp and its subsidiaries'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 6.45,
+          "exchange_ratio": null,
+          "acquirer": "CalAmp and its subsidiaries",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 151
+    },
+    {
+      "deferred_id": "DEF-B3-R104-0001580695-16-000215",
+      "original_batch": 3,
+      "candidate_rank": 104,
+      "target": "Vertex Energy Inc.  (VTNR)",
+      "acquirer": null,
+      "target_cik": 890447,
+      "announcement_accession": "0001580695-16-000215",
+      "announcement_filing_date": "2016-02-03",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 152
+    },
+    {
+      "deferred_id": "DEF-B3-R107-0001193125-16-450951",
+      "original_batch": 3,
+      "candidate_rank": 107,
+      "target": "MULTI FINELINE ELECTRONIX INC",
+      "acquirer": null,
+      "target_cik": 830916,
+      "announcement_accession": "0001193125-16-450951",
+      "announcement_filing_date": "2016-02-04",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 153
+    },
+    {
+      "deferred_id": "DEF-B3-R108-0001193125-16-453049",
+      "original_batch": 3,
+      "candidate_rank": 108,
+      "target": "APOLLO EDUCATION GROUP INC",
+      "acquirer": null,
+      "target_cik": 929887,
+      "announcement_accession": "0001193125-16-453049",
+      "announcement_filing_date": "2016-02-08",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 9.5,
+          "exchange_ratio": null,
+          "acquirer": "Apollo",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 154
+    },
+    {
+      "deferred_id": "DEF-B3-R111-0001354488-16-006213",
+      "original_batch": 3,
+      "candidate_rank": 111,
+      "target": "Yuma Energy, Inc.",
+      "acquirer": null,
+      "target_cik": 81318,
+      "announcement_accession": "0001354488-16-006213",
+      "announcement_filing_date": "2016-02-12",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.7,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 155
+    },
+    {
+      "deferred_id": "DEF-B3-R112-0001193125-16-463994",
+      "original_batch": 3,
+      "candidate_rank": 112,
+      "target": "ADT Corp",
+      "acquirer": null,
+      "target_cik": 1546640,
+      "announcement_accession": "0001193125-16-463994",
+      "announcement_filing_date": "2016-02-16",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'Certain Funds Managed By Affiliates of Apollo Global Management, LLC'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 42.0,
+          "exchange_ratio": null,
+          "acquirer": "Certain Funds Managed By Affiliates of Apollo Global Management, LLC",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 156
+    },
+    {
+      "deferred_id": "DEF-B3-R113-0001354488-16-006237",
+      "original_batch": 3,
+      "candidate_rank": 113,
+      "target": "Yuma Energy, Inc.",
+      "acquirer": null,
+      "target_cik": 81318,
+      "announcement_accession": "0001354488-16-006237",
+      "announcement_filing_date": "2016-02-16",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 5.7,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 157
+    },
+    {
+      "deferred_id": "DEF-B3-R114-0001193125-16-467239",
+      "original_batch": 3,
+      "candidate_rank": 114,
+      "target": "INGRAM MICRO INC",
+      "acquirer": null,
+      "target_cik": 1018003,
+      "announcement_accession": "0001193125-16-467239",
+      "announcement_filing_date": "2016-02-17",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'entered into a definitive merger agreement under which Tianjin Tianhai'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 38.9,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 158
+    },
+    {
+      "deferred_id": "DEF-B3-R115-0001193125-16-467796",
+      "original_batch": 3,
+      "candidate_rank": 115,
+      "target": "LAKELAND BANCORP INC",
+      "acquirer": null,
+      "target_cik": 846901,
+      "announcement_accession": "0001193125-16-467796",
+      "announcement_filing_date": "2016-02-18",
+      "defer_reason_raw": "acquirer validation: acquirer unreasonably long: 'ucts (i.e. SBA loans) and services (i.e. wealth management) Opportunity'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "mixed",
+          "offer_price": 12.79,
+          "exchange_ratio": 1.25,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 159
+    },
+    {
+      "deferred_id": "DEF-B3-R119-0001193125-16-479781",
+      "original_batch": 3,
+      "candidate_rank": 119,
+      "target": "Apollo Residential Mortgage, Inc.",
+      "acquirer": null,
+      "target_cik": 1515980,
+      "announcement_accession": "0001193125-16-479781",
+      "announcement_filing_date": "2016-02-26",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 160
+    },
+    {
+      "deferred_id": "DEF-B3-R120-0001193125-16-481042",
+      "original_batch": 3,
+      "candidate_rank": 120,
+      "target": "Apollo Commercial Real Estate Finance, Inc.  (ARI)",
+      "acquirer": null,
+      "target_cik": 1467760,
+      "announcement_accession": "0001193125-16-481042",
+      "announcement_filing_date": "2016-02-26",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 161
+    },
+    {
+      "deferred_id": "DEF-B3-R121-0001104659-16-100628",
+      "original_batch": 3,
+      "candidate_rank": 121,
+      "target": "Rouse Properties, Inc.",
+      "acquirer": null,
+      "target_cik": 1528558,
+      "announcement_accession": "0001104659-16-100628",
+      "announcement_filing_date": "2016-02-29",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 162
+    },
+    {
+      "deferred_id": "DEF-B3-R122-0001193125-16-486124",
+      "original_batch": 3,
+      "candidate_rank": 122,
+      "target": "API Technologies Corp.",
+      "acquirer": null,
+      "target_cik": 1081078,
+      "announcement_accession": "0001193125-16-486124",
+      "announcement_filing_date": "2016-03-01",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 163
+    },
+    {
+      "deferred_id": "DEF-B3-R133-0001144204-16-086902",
+      "original_batch": 3,
+      "candidate_rank": 133,
+      "target": "LabStyle Innovations Corp.  (DRIO)",
+      "acquirer": null,
+      "target_cik": 1533998,
+      "announcement_accession": "0001144204-16-086902",
+      "announcement_filing_date": "2016-03-09",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 164
+    },
+    {
+      "deferred_id": "DEF-B3-R136-0001213900-16-011486",
+      "original_batch": 3,
+      "candidate_rank": 136,
+      "target": "CHINA YIDA HOLDING, CO.",
+      "acquirer": null,
+      "target_cik": 1091325,
+      "announcement_accession": "0001213900-16-011486",
+      "announcement_filing_date": "2016-03-10",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 165
+    },
+    {
+      "deferred_id": "DEF-B3-R137-0001104659-16-104311",
+      "original_batch": 3,
+      "candidate_rank": 137,
+      "target": "1st Century Bancshares, Inc.",
+      "acquirer": null,
+      "target_cik": 1420525,
+      "announcement_accession": "0001104659-16-104311",
+      "announcement_filing_date": "2016-03-11",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'they have entered into a definitive agreement'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 11.22,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 166
+    },
+    {
+      "deferred_id": "DEF-B3-R138-0000950157-16-001717",
+      "original_batch": 3,
+      "candidate_rank": 138,
+      "target": "Fresh Market, Inc.",
+      "acquirer": null,
+      "target_cik": 1489979,
+      "announcement_accession": "0000950157-16-001717",
+      "announcement_filing_date": "2016-03-14",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'Funds Managed by Affiliates of Apollo Global Management'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 28.5,
+          "exchange_ratio": null,
+          "acquirer": "Funds Managed by Affiliates of Apollo Global Management",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 167
+    },
+    {
+      "deferred_id": "DEF-B3-R153-0001144204-16-093181",
+      "original_batch": 3,
+      "candidate_rank": 153,
+      "target": "ZAIS Financial Corp.  (RC, RCB, RCC, RC-PC, RC-PE)",
+      "acquirer": null,
+      "target_cik": 1527590,
+      "announcement_accession": "0001144204-16-093181",
+      "announcement_filing_date": "2016-04-07",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'o purchase real estate used in their operations or by investors seeking'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "mixed",
+          "offer_price": 17.05,
+          "exchange_ratio": 0.7829,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 168
+    },
+    {
+      "deferred_id": "DEF-B3-R154-0001213900-16-012313",
+      "original_batch": 3,
+      "candidate_rank": 154,
+      "target": "Hennessy Capital Acquisition Corp II",
+      "acquirer": null,
+      "target_cik": 1642453,
+      "announcement_accession": "0001213900-16-012313",
+      "announcement_filing_date": "2016-04-07",
+      "defer_reason_raw": "acquirer validation: acquirer unreasonably long: 'the Company of all of the outstanding capital stock of USI Parent'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 30.0,
+          "exchange_ratio": null,
+          "acquirer": "the Company of all of the outstanding capital stock of USI Parent",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 169
+    },
+    {
+      "deferred_id": "DEF-B3-R156-0001206774-16-005373",
+      "original_batch": 3,
+      "candidate_rank": 156,
+      "target": "ALLIANCE FIBER OPTIC PRODUCTS INC",
+      "acquirer": null,
+      "target_cik": 1122342,
+      "announcement_accession": "0001206774-16-005373",
+      "announcement_filing_date": "2016-04-08",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'superior proposal is a written proposal'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 18.5,
+          "exchange_ratio": null,
+          "acquirer": "superior proposal is a written proposal pursuant to which a third party",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 170
+    },
+    {
+      "deferred_id": "DEF-B3-R162-0001193125-16-543979",
+      "original_batch": 3,
+      "candidate_rank": 162,
+      "target": "CVENT INC",
+      "acquirer": null,
+      "target_cik": 1122897,
+      "announcement_accession": "0001193125-16-543979",
+      "announcement_filing_date": "2016-04-18",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 171
+    },
+    {
+      "deferred_id": "DEF-B3-R166-0001193125-16-547242",
+      "original_batch": 3,
+      "candidate_rank": 166,
+      "target": "LEXMARK INTERNATIONAL INC /KY/",
+      "acquirer": null,
+      "target_cik": 1001288,
+      "announcement_accession": "0001193125-16-547242",
+      "announcement_filing_date": "2016-04-20",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 40.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 172
+    },
+    {
+      "deferred_id": "DEF-B3-R167-0001104659-16-114880",
+      "original_batch": 3,
+      "candidate_rank": 167,
+      "target": "ABBOTT LABORATORIES  (ABT)",
+      "acquirer": null,
+      "target_cik": 1800,
+      "announcement_accession": "0001104659-16-114880",
+      "announcement_filing_date": "2016-04-28",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'EX-99.1 3 a16-9714_1ex99d1.htm EX-99.1 Exhibit 99.1 News Release Abbott'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 85.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 173
+    },
+    {
+      "deferred_id": "DEF-B3-R168-0001104659-16-114893",
+      "original_batch": 3,
+      "candidate_rank": 168,
+      "target": "ST JUDE MEDICAL INC",
+      "acquirer": null,
+      "target_cik": 203077,
+      "announcement_accession": "0001104659-16-114893",
+      "announcement_filing_date": "2016-04-28",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'EX-99.1 4 a16-9709_1ex99d1.htm EX-99.1 Exhibit 99.1 News Release Abbott'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 85.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 174
+    },
+    {
+      "deferred_id": "DEF-B3-R169-0001437749-16-030171",
+      "original_batch": 3,
+      "candidate_rank": 169,
+      "target": "ExamWorks Group, Inc.",
+      "acquirer": null,
+      "target_cik": 1498021,
+      "announcement_accession": "0001437749-16-030171",
+      "announcement_filing_date": "2016-04-28",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 175
+    },
+    {
+      "deferred_id": "DEF-B3-R173-0001565337-16-000147",
+      "original_batch": 3,
+      "candidate_rank": 173,
+      "target": "Textura Corp",
+      "acquirer": null,
+      "target_cik": 1565337,
+      "announcement_accession": "0001565337-16-000147",
+      "announcement_filing_date": "2016-04-29",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'ent'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 26.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 176
+    },
+    {
+      "deferred_id": "DEF-B3-R174-0001144204-16-098376",
+      "original_batch": 3,
+      "candidate_rank": 174,
+      "target": "Symmetry Surgical Inc.",
+      "acquirer": null,
+      "target_cik": 1616101,
+      "announcement_accession": "0001144204-16-098376",
+      "announcement_filing_date": "2016-05-02",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 177
+    },
+    {
+      "deferred_id": "DEF-B3-R175-0001193125-16-571455",
+      "original_batch": 3,
+      "candidate_rank": 175,
+      "target": "OPOWER, INC.",
+      "acquirer": null,
+      "target_cik": 1412043,
+      "announcement_accession": "0001193125-16-571455",
+      "announcement_filing_date": "2016-05-02",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 178
+    },
+    {
+      "deferred_id": "DEF-B3-R178-0001088825-16-000289",
+      "original_batch": 3,
+      "candidate_rank": 178,
+      "target": "TIVO INC",
+      "acquirer": null,
+      "target_cik": 1088825,
+      "announcement_accession": "0001088825-16-000289",
+      "announcement_filing_date": "2016-05-04",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'pursuant'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "mixed",
+          "offer_price": 2.75,
+          "exchange_ratio": 2.2,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 179
+    },
+    {
+      "deferred_id": "DEF-B3-R193-0001105184-16-000072",
+      "original_batch": 3,
+      "candidate_rank": 193,
+      "target": "NANOSPHERE INC",
+      "acquirer": null,
+      "target_cik": 1105184,
+      "announcement_accession": "0001105184-16-000072",
+      "announcement_filing_date": "2016-05-16",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 180
+    },
+    {
+      "deferred_id": "DEF-B3-R203-0001193125-16-598291",
+      "original_batch": 3,
+      "candidate_rank": 203,
+      "target": "XURA, INC.",
+      "acquirer": null,
+      "target_cik": 1549872,
+      "announcement_accession": "0001193125-16-598291",
+      "announcement_filing_date": "2016-05-23",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 181
+    },
+    {
+      "deferred_id": "DEF-B3-R208-0001047469-16-013522",
+      "original_batch": 3,
+      "candidate_rank": 208,
+      "target": "Marketo, Inc.",
+      "acquirer": null,
+      "target_cik": 1490660,
+      "announcement_accession": "0001047469-16-013522",
+      "announcement_filing_date": "2016-05-31",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 182
+    },
+    {
+      "deferred_id": "DEF-B3-R213-0001193125-16-610594",
+      "original_batch": 3,
+      "candidate_rank": 213,
+      "target": "FEI CO",
+      "acquirer": null,
+      "target_cik": 914329,
+      "announcement_accession": "0001193125-16-610594",
+      "announcement_filing_date": "2016-06-02",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'to the Effective Time shall terminate and cease'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 107.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 183
+    },
+    {
+      "deferred_id": "DEF-B3-R216-0001193125-16-611764",
+      "original_batch": 3,
+      "candidate_rank": 216,
+      "target": "FIRST MARBLEHEAD CORP",
+      "acquirer": null,
+      "target_cik": 1262279,
+      "announcement_accession": "0001193125-16-611764",
+      "announcement_filing_date": "2016-06-03",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 184
+    },
+    {
+      "deferred_id": "DEF-B3-R219-0001193125-16-615463",
+      "original_batch": 3,
+      "candidate_rank": 219,
+      "target": "ZIMMER BIOMET HOLDINGS, INC.  (ZBH)",
+      "acquirer": null,
+      "target_cik": 1136869,
+      "announcement_accession": "0001193125-16-615463",
+      "announcement_filing_date": "2016-06-07",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 37.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 185
+    },
+    {
+      "deferred_id": "DEF-B3-R220-0001193125-16-615470",
+      "original_batch": 3,
+      "candidate_rank": 220,
+      "target": "LDR HOLDING CORP",
+      "acquirer": null,
+      "target_cik": 1348324,
+      "announcement_accession": "0001193125-16-615470",
+      "announcement_filing_date": "2016-06-07",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 186
+    },
+    {
+      "deferred_id": "DEF-B3-R229-0001174947-16-002821",
+      "original_batch": 3,
+      "candidate_rank": 229,
+      "target": "FIRST BANCORP /NC/  (FBNC)",
+      "acquirer": null,
+      "target_cik": 811589,
+      "announcement_accession": "0001174947-16-002821",
+      "announcement_filing_date": "2016-06-22",
+      "defer_reason_raw": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "mixed",
+          "offer_price": 20.0,
+          "exchange_ratio": 1.002,
+          "acquirer": "First Bank are located in Winston-Salem",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 187
+    },
+    {
+      "deferred_id": "DEF-B3-R231-0001144204-16-109534",
+      "original_batch": 3,
+      "candidate_rank": 231,
+      "target": "CAROLINA BANK HOLDINGS INC",
+      "acquirer": null,
+      "target_cik": 1127160,
+      "announcement_accession": "0001144204-16-109534",
+      "announcement_filing_date": "2016-06-23",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 188
+    },
+    {
+      "deferred_id": "DEF-B3-R235-0000947871-16-001298",
+      "original_batch": 3,
+      "candidate_rank": 235,
+      "target": "HeartWare International, Inc.",
+      "acquirer": null,
+      "target_cik": 1389072,
+      "announcement_accession": "0000947871-16-001298",
+      "announcement_filing_date": "2016-06-27",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'it or initiate discussions with third parties regarding other proposals'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 58.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 189
+    },
+    {
+      "deferred_id": "DEF-B3-R241-0001193125-16-636669",
+      "original_batch": 3,
+      "candidate_rank": 241,
+      "target": "Diamond Resorts International, Inc.",
+      "acquirer": null,
+      "target_cik": 1566897,
+      "announcement_accession": "0001193125-16-636669",
+      "announcement_filing_date": "2016-06-29",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 190
+    },
+    {
+      "deferred_id": "DEF-B3-R248-0001193125-16-642888",
+      "original_batch": 3,
+      "candidate_rank": 248,
+      "target": "WHITEWAVE FOODS Co",
+      "acquirer": null,
+      "target_cik": 1555365,
+      "announcement_accession": "0001193125-16-642888",
+      "announcement_filing_date": "2016-07-07",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 191
+    },
+    {
+      "deferred_id": "DEF-B3-R250-0001193125-16-644492",
+      "original_batch": 3,
+      "candidate_rank": 250,
+      "target": "POLYCOM INC",
+      "acquirer": null,
+      "target_cik": 1010552,
+      "announcement_accession": "0001193125-16-644492",
+      "announcement_filing_date": "2016-07-08",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'board of directors had received a unilaterally binding offer from Siris'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 12.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 192
+    },
+    {
+      "deferred_id": "DEF-B3-R256-0001144204-16-113498",
+      "original_batch": 3,
+      "candidate_rank": 256,
+      "target": "GOLDEN ENTERPRISES INC",
+      "acquirer": null,
+      "target_cik": 42228,
+      "announcement_accession": "0001144204-16-113498",
+      "announcement_filing_date": "2016-07-19",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'pursuant'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 12.0,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 193
+    },
+    {
+      "deferred_id": "DEF-B3-R259-0000898822-16-000397",
+      "original_batch": 3,
+      "candidate_rank": 259,
+      "target": "JOY GLOBAL INC",
+      "acquirer": null,
+      "target_cik": 801898,
+      "announcement_accession": "0000898822-16-000397",
+      "announcement_filing_date": "2016-07-21",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 194
+    },
+    {
+      "deferred_id": "DEF-B3-R261-0001144204-16-113944",
+      "original_batch": 3,
+      "candidate_rank": 261,
+      "target": "YADKIN FINANCIAL Corp",
+      "acquirer": null,
+      "target_cik": 1366367,
+      "announcement_accession": "0001144204-16-113944",
+      "announcement_filing_date": "2016-07-21",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "mixed",
+          "offer_price": 1.0,
+          "exchange_ratio": 2.16,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 195
+    },
+    {
+      "deferred_id": "DEF-B3-R263-0001193125-16-653806",
+      "original_batch": 3,
+      "candidate_rank": 263,
+      "target": "FNB CORP/FL/  (FNB)",
+      "acquirer": null,
+      "target_cik": 37808,
+      "announcement_accession": "0001193125-16-653806",
+      "announcement_filing_date": "2016-07-21",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "mixed",
+          "offer_price": 1.0,
+          "exchange_ratio": 2.16,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 196
+    },
+    {
+      "deferred_id": "DEF-B3-R270-0001193125-16-659216",
+      "original_batch": 3,
+      "candidate_rank": 270,
+      "target": "EPIQ SYSTEMS INC",
+      "acquirer": null,
+      "target_cik": 1027207,
+      "announcement_accession": "0001193125-16-659216",
+      "announcement_filing_date": "2016-07-27",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 197
+    },
+    {
+      "deferred_id": "DEF-B3-R273-0001193125-16-662444",
+      "original_batch": 3,
+      "candidate_rank": 273,
+      "target": "LogMeIn, Inc.",
+      "acquirer": null,
+      "target_cik": 1420302,
+      "announcement_accession": "0001193125-16-662444",
+      "announcement_filing_date": "2016-07-28",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 198
+    },
+    {
+      "deferred_id": "DEF-B3-R282-0001104659-16-137926",
+      "original_batch": 3,
+      "candidate_rank": 282,
+      "target": "MATTRESS FIRM HOLDING CORP.",
+      "acquirer": null,
+      "target_cik": 1419852,
+      "announcement_accession": "0001104659-16-137926",
+      "announcement_filing_date": "2016-08-08",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 199
+    },
+    {
+      "deferred_id": "DEF-B3-R283-0001144204-16-117007",
+      "original_batch": 3,
+      "candidate_rank": 283,
+      "target": "American Realty Capital Global Trust II, Inc.",
+      "acquirer": null,
+      "target_cik": 1609865,
+      "announcement_accession": "0001144204-16-117007",
+      "announcement_filing_date": "2016-08-08",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 200
+    },
+    {
+      "deferred_id": "DEF-B3-R285-0001020416-16-000190",
+      "original_batch": 3,
+      "candidate_rank": 285,
+      "target": "MONSTER WORLDWIDE, INC.",
+      "acquirer": null,
+      "target_cik": 1020416,
+      "announcement_accession": "0001020416-16-000190",
+      "announcement_filing_date": "2016-08-09",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 3.4,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 201
+    },
+    {
+      "deferred_id": "DEF-B3-R286-0001104659-16-138321",
+      "original_batch": 3,
+      "candidate_rank": 286,
+      "target": "Sizmek Inc.",
+      "acquirer": null,
+      "target_cik": 1591877,
+      "announcement_accession": "0001104659-16-138321",
+      "announcement_filing_date": "2016-08-09",
+      "defer_reason_raw": "acquirer validation: acquirer lacks entity form: 'indirectly acquires, or if consummated in accordance with its terms'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 3.9,
+          "exchange_ratio": null,
+          "acquirer": "or indirectly acquires, or if consummated in accordance with its terms",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 202
+    },
+    {
+      "deferred_id": "DEF-B3-R290-0001193125-16-682600",
+      "original_batch": 3,
+      "candidate_rank": 290,
+      "target": "G&K SERVICES INC",
+      "acquirer": null,
+      "target_cik": 39648,
+      "announcement_accession": "0001193125-16-682600",
+      "announcement_filing_date": "2016-08-16",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'ly approved a definitive agreement'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 97.5,
+          "exchange_ratio": null,
+          "acquirer": "ly approved a definitive agreement pursuant to which Cintas Corporation",
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 203
+    },
+    {
+      "deferred_id": "DEF-B3-R297-0001193125-16-689331",
+      "original_batch": 3,
+      "candidate_rank": 297,
+      "target": "SKULLCANDY, INC.",
+      "acquirer": null,
+      "target_cik": 1423542,
+      "announcement_accession": "0001193125-16-689331",
+      "announcement_filing_date": "2016-08-24",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 204
+    },
+    {
+      "deferred_id": "DEF-B3-R305-0001091818-16-000361",
+      "original_batch": 3,
+      "candidate_rank": 305,
+      "target": "SoOum Corp.",
+      "acquirer": null,
+      "target_cik": 78311,
+      "announcement_accession": "0001091818-16-000361",
+      "announcement_filing_date": "2016-08-31",
+      "defer_reason_raw": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "primary_class": "SEC_TRANSIENT_FAILURE",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 205
+    },
+    {
+      "deferred_id": "DEF-B3-R307-0001193125-16-701334",
+      "original_batch": 3,
+      "candidate_rank": 307,
+      "target": "CEPHEID",
+      "acquirer": null,
+      "target_cik": 1037760,
+      "announcement_accession": "0001193125-16-701334",
+      "announcement_filing_date": "2016-09-06",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 206
+    },
+    {
+      "deferred_id": "DEF-B3-R310-0001144204-16-122962",
+      "original_batch": 3,
+      "candidate_rank": 310,
+      "target": "AMERICAN REALTY CAPITAL - RETAIL CENTERS OF AMERICA, INC.",
+      "acquirer": null,
+      "target_cik": 1500554,
+      "announcement_accession": "0001144204-16-122962",
+      "announcement_filing_date": "2016-09-07",
+      "defer_reason_raw": "acquirer validation: acquirer string still contains price residue: 'Share Enterprise Value (1) : $3.9 billion Target Closing: Q1 2017 AFIN'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "mixed",
+          "offer_price": 0.64,
+          "exchange_ratio": 0.385,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 207
+    },
+    {
+      "deferred_id": "DEF-B3-R314-0001193125-16-705490",
+      "original_batch": 3,
+      "candidate_rank": 314,
+      "target": "Apigee Corp",
+      "acquirer": null,
+      "target_cik": 1324772,
+      "announcement_accession": "0001193125-16-705490",
+      "announcement_filing_date": "2016-09-08",
+      "defer_reason_raw": "acquirer validation: acquirer string not a clean entity name: 'nced that it has entered into a definitive agreement under which Google'",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 17.4,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 208
+    },
+    {
+      "deferred_id": "DEF-B3-R327-0001193125-16-712811",
+      "original_batch": 3,
+      "candidate_rank": 327,
+      "target": "INFOBLOX INC",
+      "acquirer": null,
+      "target_cik": 1223862,
+      "announcement_accession": "0001193125-16-712811",
+      "announcement_filing_date": "2016-09-19",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 209
+    },
+    {
+      "deferred_id": "DEF-B3-R331-0000950103-16-016524",
+      "original_batch": 3,
+      "candidate_rank": 331,
+      "target": "Chemtura CORP",
+      "acquirer": null,
+      "target_cik": 1091862,
+      "announcement_accession": "0000950103-16-016524",
+      "announcement_filing_date": "2016-09-26",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "cash",
+          "offer_price": 33.5,
+          "exchange_ratio": null,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 210
+    },
+    {
+      "deferred_id": "DEF-B3-R339-0001193125-16-728752",
+      "original_batch": 3,
+      "candidate_rank": 339,
+      "target": "Quintiles IMS Holdings, Inc.  (IQV)",
+      "acquirer": null,
+      "target_cik": 1478242,
+      "announcement_accession": "0001193125-16-728752",
+      "announcement_filing_date": "2016-10-03",
+      "defer_reason_raw": "acquirer validation: missing acquirer",
+      "primary_class": "ACQUIRER_EXTRACTION",
+      "evidence_already_collected": {
+        "terms_extract": {
+          "consideration_type": "stock",
+          "offer_price": null,
+          "exchange_ratio": 0.384,
+          "acquirer": null,
+          "representability": "OK",
+          "reason": null
+        },
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 211
+    },
+    {
+      "deferred_id": "DEF-B3-R340-0001341004-16-001672",
+      "original_batch": 3,
+      "candidate_rank": 340,
+      "target": "ENDURANCE SPECIALTY HOLDINGS LTD",
+      "acquirer": null,
+      "target_cik": 1179755,
+      "announcement_accession": "0001341004-16-001672",
+      "announcement_filing_date": "2016-10-05",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 212
+    },
+    {
+      "deferred_id": "DEF-B3-R344-0001144204-16-127707",
+      "original_batch": 3,
+      "candidate_rank": 344,
+      "target": "Gas Natural Inc.",
+      "acquirer": null,
+      "target_cik": 43350,
+      "announcement_accession": "0001144204-16-127707",
+      "announcement_filing_date": "2016-10-11",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 213
+    },
+    {
+      "deferred_id": "DEF-B3-R346-0001567619-16-003038",
+      "original_batch": 3,
+      "candidate_rank": 346,
+      "target": "ACCURIDE CORP",
+      "acquirer": null,
+      "target_cik": 817979,
+      "announcement_accession": "0001567619-16-003038",
+      "announcement_filing_date": "2016-10-11",
+      "defer_reason_raw": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "primary_class": "AMBIGUOUS_RESOLUTION_EVENT",
+      "evidence_already_collected": {
+        "terms_extract": null,
+        "decision_was": "DEFER"
+      },
+      "retry_count": 0,
+      "resolution_status": "PENDING",
+      "retryable": true,
+      "likely_permanent": false,
+      "queue_rank": 214
+    }
+  ],
+  "notes": [
+    "Deduplicated by announcement_accession across batch_1..3 deferred ledgers.",
+    "Already-admitted accessions excluded.",
+    "Working this backlog before fresh candidate scanning."
+  ]
+}

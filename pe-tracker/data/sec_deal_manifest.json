@@ -941,6 +941,51 @@
       "resolution_type": "closed",
       "resolution_accession": "0000876661-22-001017",
       "resolution_timestamp": "2022-11-22"
+    },
+    {
+      "deal_id": "DEAL-VOCUS-GTCR-2014",
+      "target": "Vocus, Inc.",
+      "acquirer": "GTCR Beltsville Holdings, LLC",
+      "target_cik": 1329919,
+      "announcement_accession": "0001193125-14-132656",
+      "terms_accession": "0001193125-14-132656",
+      "announcement_timestamp": "2014-04-07",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "resolution_type": "closed",
+      "resolution_accession": "0001354457-14-000086",
+      "resolution_timestamp": "2014-06-02",
+      "offer_price": 18.0
+    },
+    {
+      "deal_id": "DEAL-COBRA-MONOMO-2014",
+      "target": "COBRA ELECTRONICS CORP",
+      "acquirer": "Monomoy Capital Partners",
+      "target_cik": 30828,
+      "announcement_accession": "0001193125-14-325313",
+      "terms_accession": "0001193125-14-325313",
+      "announcement_timestamp": "2014-08-28",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "resolution_type": "closed",
+      "resolution_accession": "0001354457-14-000160",
+      "resolution_timestamp": "2014-10-08",
+      "offer_price": 4.3
+    },
+    {
+      "deal_id": "DEAL-ANNIE-GENERA-2014",
+      "target": "Annie's, Inc.",
+      "acquirer": "General Mills",
+      "target_cik": 1431897,
+      "announcement_accession": "0001193125-14-335723",
+      "terms_accession": "0001193125-14-335723",
+      "announcement_timestamp": "2014-09-08",
+      "deal_type": "strategic",
+      "consideration_type": "cash",
+      "resolution_type": "closed",
+      "resolution_accession": "0001193125-14-376973",
+      "resolution_timestamp": "2014-10-21",
+      "offer_price": 46.0
     }
   ]
 }

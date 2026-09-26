@@ -54,7 +54,9 @@ def test_frozen_cohort_file_matches_modelcohort_contract():
     manifest = json.loads(
         (Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json").read_text()
     )
-    assert set(raw["deal_ids"]) == {d["deal_id"] for d in manifest["deals"]}
+    # Frozen walk-forward cohort is a subset of the growing canonical corpus.
+    assert set(raw["deal_ids"]).issubset({d["deal_id"] for d in manifest["deals"]})
+    assert len(manifest["deals"]) >= len(raw["deal_ids"])
 
 
 def test_protocol_locked_contract_matches_code():

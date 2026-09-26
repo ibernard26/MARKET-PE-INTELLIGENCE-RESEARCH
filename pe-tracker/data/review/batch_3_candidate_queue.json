@@ -1,0 +1,5558 @@
+{
+  "batch_iteration": 3,
+  "selection_method": "efts_chronological_item_101_merger_agreement",
+  "outcome_blind": true,
+  "probability_calibration_eligible_claim": false,
+  "year_window": [
+    2015,
+    2019
+  ],
+  "n_candidates": 350,
+  "candidates": [
+    {
+      "candidate_rank": 1,
+      "announcement_accession": "0001520138-15-000444",
+      "target_cik": 1631282,
+      "target": "DATASEA INC.  (DTSS)",
+      "announcement_filing_date": "2015-11-03",
+      "items": [
+        "1.01",
+        "2.01",
+        "5.01",
+        "5.02",
+        "5.03",
+        "5.06",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 2,
+      "announcement_accession": "0001193125-15-364749",
+      "target_cik": 318833,
+      "target": "TEAM INC  (TISI)",
+      "announcement_filing_date": "2015-11-04",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 3,
+      "announcement_accession": "0001193125-15-367432",
+      "target_cik": 1371217,
+      "target": "EnteroMedics Inc",
+      "announcement_filing_date": "2015-11-05",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 4,
+      "announcement_accession": "0001615774-15-003122",
+      "target_cik": 1028153,
+      "target": "Axion Power International, Inc.",
+      "announcement_filing_date": "2015-11-05",
+      "items": [
+        "1.01",
+        "2.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 5,
+      "announcement_accession": "0001104659-15-076953",
+      "target_cik": 1327471,
+      "target": "RealD Inc.",
+      "announcement_filing_date": "2015-11-09",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 6,
+      "announcement_accession": "0001104659-15-077467",
+      "target_cik": 1140098,
+      "target": "Ocata Therapeutics, Inc.",
+      "announcement_filing_date": "2015-11-10",
+      "items": [
+        "1.01",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 7,
+      "announcement_accession": "0001493152-15-005291",
+      "target_cik": 278165,
+      "target": "Quest Solution, Inc.  (OMQS)",
+      "announcement_filing_date": "2015-11-10",
+      "items": [
+        "1.01",
+        "2.01",
+        "2.03",
+        "3.02",
+        "5.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 8,
+      "announcement_accession": "0001650132-15-000034",
+      "target_cik": 1650132,
+      "target": "Four Corners Property Trust, Inc.  (FCPT)",
+      "announcement_filing_date": "2015-11-10",
+      "items": [
+        "1.01",
+        "2.03",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 9,
+      "announcement_accession": "0001104659-15-078332",
+      "target_cik": 1591670,
+      "target": "Farmland Partners Inc.  (FPI)",
+      "announcement_filing_date": "2015-11-12",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 10,
+      "announcement_accession": "0001193125-15-374682",
+      "target_cik": 1536035,
+      "target": "Roundy's, Inc.",
+      "announcement_filing_date": "2015-11-12",
+      "items": [
+        "1.01",
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 11,
+      "announcement_accession": "0000950157-15-001303",
+      "target_cik": 316206,
+      "target": "STARWOOD HOTEL & RESORTS WORLDWIDE, INC",
+      "announcement_filing_date": "2015-11-16",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 12,
+      "announcement_accession": "0001193125-15-377593",
+      "target_cik": 1048286,
+      "target": "MARRIOTT INTERNATIONAL INC /MD/  (MAR)",
+      "announcement_filing_date": "2015-11-16",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 13,
+      "announcement_accession": "0001539497-15-001985",
+      "target_cik": 1654330,
+      "target": "COMM 2015-LC23 Mortgage Trust",
+      "announcement_filing_date": "2015-11-17",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 14,
+      "announcement_accession": "0001144204-15-067033",
+      "target_cik": 1513856,
+      "target": "Neurotrope, Inc.",
+      "announcement_filing_date": "2015-11-19",
+      "items": [
+        "1.01",
+        "3.02",
+        "3.03",
+        "5.01",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 15,
+      "announcement_accession": "0001193125-15-381410",
+      "target_cik": 99359,
+      "target": "BREEZE-EASTERN CORP",
+      "announcement_filing_date": "2015-11-19",
+      "items": [
+        "1.01",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 16,
+      "announcement_accession": "0001062993-15-006360",
+      "target_cik": 1273385,
+      "target": "Nutrastar International Inc.",
+      "announcement_filing_date": "2015-11-20",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 17,
+      "announcement_accession": "0001193125-15-382901",
+      "target_cik": 17485,
+      "target": "LIBERATOR MEDICAL HOLDINGS, INC.",
+      "announcement_filing_date": "2015-11-20",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 18,
+      "announcement_accession": "0001038838-15-000183",
+      "target_cik": 924805,
+      "target": "BMB MUNAI INC  (FRHC)",
+      "announcement_filing_date": "2015-11-23",
+      "items": [
+        "1.01",
+        "2.01",
+        "4.01",
+        "5.01",
+        "5.02",
+        "5.06",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 19,
+      "announcement_accession": "0001065949-15-000286",
+      "target_cik": 1313938,
+      "target": "Sibannac, Inc.  (SNNC)",
+      "announcement_filing_date": "2015-11-23",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 20,
+      "announcement_accession": "0001079974-15-000800",
+      "target_cik": 890821,
+      "target": "AMERI Holdings, Inc.  (ENVB)",
+      "announcement_filing_date": "2015-11-23",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 21,
+      "announcement_accession": "0001193125-15-384259",
+      "target_cik": 28823,
+      "target": "DIEBOLD INC  (DBD)",
+      "announcement_filing_date": "2015-11-23",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 22,
+      "announcement_accession": "0001571049-15-009516",
+      "target_cik": 23197,
+      "target": "COMTECH TELECOMMUNICATIONS CORP /DE/  (CMTL)",
+      "announcement_filing_date": "2015-11-23",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 23,
+      "announcement_accession": "0001571049-15-009519",
+      "target_cik": 1111665,
+      "target": "TELECOMMUNICATION SYSTEMS INC /FA/",
+      "announcement_filing_date": "2015-11-23",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 24,
+      "announcement_accession": "0000727273-15-000036",
+      "target_cik": 727273,
+      "target": "CADIZ INC  (CDZI, CDZIP)",
+      "announcement_filing_date": "2015-11-30",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 25,
+      "announcement_accession": "0001613665-15-000082",
+      "target_cik": 1613665,
+      "target": "Great Western Bancorp, Inc.",
+      "announcement_filing_date": "2015-11-30",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 26,
+      "announcement_accession": "0001613665-15-000090",
+      "target_cik": 1613665,
+      "target": "Great Western Bancorp, Inc.",
+      "announcement_filing_date": "2015-12-01",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 27,
+      "announcement_accession": "0001193125-15-392660",
+      "target_cik": 928421,
+      "target": "MATTSON TECHNOLOGY INC",
+      "announcement_filing_date": "2015-12-02",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 28,
+      "announcement_accession": "0001213900-15-009235",
+      "target_cik": 1029581,
+      "target": "Modsys International Ltd",
+      "announcement_filing_date": "2015-12-02",
+      "items": [
+        "1.01",
+        "3.02",
+        "3.03",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 29,
+      "announcement_accession": "0001185185-15-003238",
+      "target_cik": 1388319,
+      "target": "U.S. Stem Cell, Inc.  (USRM)",
+      "announcement_filing_date": "2015-12-04",
+      "items": [
+        "1.01",
+        "2.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 30,
+      "announcement_accession": "0001193125-15-395375",
+      "target_cik": 1449732,
+      "target": "Willbros Group, Inc.\\NEW\\",
+      "announcement_filing_date": "2015-12-04",
+      "items": [
+        "1.01",
+        "2.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 31,
+      "announcement_accession": "0001511284-15-000084",
+      "target_cik": 103096,
+      "target": "TRC COMPANIES INC /DE/",
+      "announcement_filing_date": "2015-12-04",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 32,
+      "announcement_accession": "0001010549-15-000375",
+      "target_cik": 1567900,
+      "target": "SMSA BALLINGER ACQUISITION CORP  (BLBX)",
+      "announcement_filing_date": "2015-12-07",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "3.03",
+        "5.01",
+        "5.02",
+        "5.06",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 33,
+      "announcement_accession": "0001104659-15-083161",
+      "target_cik": 1179060,
+      "target": "EnLink Midstream Partners, LP",
+      "announcement_filing_date": "2015-12-07",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 34,
+      "announcement_accession": "0001193125-15-396533",
+      "target_cik": 851310,
+      "target": "HARMONIC INC  (HLIT)",
+      "announcement_filing_date": "2015-12-07",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 35,
+      "announcement_accession": "0001104659-15-083470",
+      "target_cik": 909954,
+      "target": "KEURIG GREEN MOUNTAIN, INC.",
+      "announcement_filing_date": "2015-12-08",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 36,
+      "announcement_accession": "0001539497-15-002154",
+      "target_cik": 1651790,
+      "target": "COMM 2015-CCRE26 Mortgage Trust",
+      "announcement_filing_date": "2015-12-08",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 37,
+      "announcement_accession": "0000023082-15-000086",
+      "target_cik": 23082,
+      "target": "COMPUTER SCIENCES CORP",
+      "announcement_filing_date": "2015-12-09",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 38,
+      "announcement_accession": "0001193125-15-398392",
+      "target_cik": 945436,
+      "target": "SUNEDISON, INC.",
+      "announcement_filing_date": "2015-12-09",
+      "items": [
+        "1.01",
+        "1.02",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 39,
+      "announcement_accession": "0001193125-15-398397",
+      "target_cik": 1599947,
+      "target": "TerraForm Power, Inc.",
+      "announcement_filing_date": "2015-12-09",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 40,
+      "announcement_accession": "0001193125-15-398881",
+      "target_cik": 1031203,
+      "target": "GROUP 1 AUTOMOTIVE INC  (GPI)",
+      "announcement_filing_date": "2015-12-09",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 41,
+      "announcement_accession": "0000950157-15-001389",
+      "target_cik": 1001606,
+      "target": "BLOUNT INTERNATIONAL INC",
+      "announcement_filing_date": "2015-12-10",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 42,
+      "announcement_accession": "0001493152-15-006164",
+      "target_cik": 1487931,
+      "target": "DE Acquisition 6, Inc.",
+      "announcement_filing_date": "2015-12-10",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 43,
+      "announcement_accession": "0001104659-15-084413",
+      "target_cik": 30554,
+      "target": "DUPONT E I DE NEMOURS & CO  (CTA-PA, CTA-PB)",
+      "announcement_filing_date": "2015-12-11",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 44,
+      "announcement_accession": "0001193125-15-401629",
+      "target_cik": 29915,
+      "target": "DOW CHEMICAL CO /DE/",
+      "announcement_filing_date": "2015-12-11",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 45,
+      "announcement_accession": "0001193125-15-401964",
+      "target_cik": 1619917,
+      "target": "Patriot National, Inc.",
+      "announcement_filing_date": "2015-12-14",
+      "items": [
+        "1.01",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 46,
+      "announcement_accession": "0001193125-15-402638",
+      "target_cik": 814453,
+      "target": "NEWELL RUBBERMAID INC  (NWL)",
+      "announcement_filing_date": "2015-12-14",
+      "items": [
+        "1.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 47,
+      "announcement_accession": "0001193125-15-402649",
+      "target_cik": 1635718,
+      "target": "Gannett Co., Inc.",
+      "announcement_filing_date": "2015-12-14",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 48,
+      "announcement_accession": "0001354488-15-005526",
+      "target_cik": 1071411,
+      "target": "FUSION TELECOMMUNICATIONS INTERNATIONAL INC",
+      "announcement_filing_date": "2015-12-14",
+      "items": [
+        "1.01",
+        "2.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 49,
+      "announcement_accession": "0001104659-15-084910",
+      "target_cik": 923284,
+      "target": "INLAND REAL ESTATE CORP",
+      "announcement_filing_date": "2015-12-15",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 50,
+      "announcement_accession": "0001193125-15-402840",
+      "target_cik": 895655,
+      "target": "JARDEN CORP",
+      "announcement_filing_date": "2015-12-15",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 51,
+      "announcement_accession": "0001487952-15-000056",
+      "target_cik": 1487952,
+      "target": "Vishay Precision Group, Inc.  (VPG)",
+      "announcement_filing_date": "2015-12-15",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 52,
+      "announcement_accession": "0001493152-15-006226",
+      "target_cik": 1550020,
+      "target": "eWELLNESS HEALTHCARE Corp  (EWLL)",
+      "announcement_filing_date": "2015-12-15",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 53,
+      "announcement_accession": "0000950123-15-012535",
+      "target_cik": 1622620,
+      "target": "Lynden Energy Corp.",
+      "announcement_filing_date": "2015-12-17",
+      "items": [
+        "1.01",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 54,
+      "announcement_accession": "0001564590-15-011548",
+      "target_cik": 10254,
+      "target": "EARTHSTONE ENERGY INC",
+      "announcement_filing_date": "2015-12-17",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 55,
+      "announcement_accession": "0000886163-15-000122",
+      "target_cik": 886163,
+      "target": "LIGAND PHARMACEUTICALS INC  (LGND, LGNDZ, LGNXZ, LGNYZ, LGNZZ)",
+      "announcement_filing_date": "2015-12-18",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 56,
+      "announcement_accession": "0001424884-15-000185",
+      "target_cik": 1550518,
+      "target": "Cantabio Pharmaceuticals Inc.",
+      "announcement_filing_date": "2015-12-18",
+      "items": [
+        "1.01",
+        "2.01",
+        "5.06",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 57,
+      "announcement_accession": "0001171843-15-006916",
+      "target_cik": 859222,
+      "target": "BAY BANCORP, INC.",
+      "announcement_filing_date": "2015-12-21",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 58,
+      "announcement_accession": "0001193125-15-409161",
+      "target_cik": 46619,
+      "target": "HEICO CORP  (HEI, HEI-A)",
+      "announcement_filing_date": "2015-12-21",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 59,
+      "announcement_accession": "0001482512-15-000075",
+      "target_cik": 1482512,
+      "target": "Hudson Pacific Properties, Inc.  (HPP, HPP-PC)",
+      "announcement_filing_date": "2015-12-21",
+      "items": [
+        "1.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 60,
+      "announcement_accession": "0001477932-15-007733",
+      "target_cik": 1424328,
+      "target": "MULTIMEDIA PLATFORMS INC.",
+      "announcement_filing_date": "2015-12-22",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 61,
+      "announcement_accession": "0001193125-15-412810",
+      "target_cik": 1098972,
+      "target": "AGENUS INC  (AGEN)",
+      "announcement_filing_date": "2015-12-23",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 62,
+      "announcement_accession": "0001213900-15-009717",
+      "target_cik": 1318641,
+      "target": "CLEVELAND BIOLABS INC  (STAB)",
+      "announcement_filing_date": "2015-12-24",
+      "items": [
+        "1.01",
+        "1.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 63,
+      "announcement_accession": "0001144204-15-073036",
+      "target_cik": 1392960,
+      "target": "MONGOLIA HOLDINGS, INC.",
+      "announcement_filing_date": "2015-12-29",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 64,
+      "announcement_accession": "0001104659-15-087353",
+      "target_cik": 813762,
+      "target": "ICAHN ENTERPRISES L.P.  (IEP)",
+      "announcement_filing_date": "2015-12-30",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 65,
+      "announcement_accession": "0001104659-15-087358",
+      "target_cik": 77449,
+      "target": "PEP BOYS MANNY MOE & JACK",
+      "announcement_filing_date": "2015-12-30",
+      "items": [
+        "1.01",
+        "1.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 66,
+      "announcement_accession": "0001354488-15-005724",
+      "target_cik": 1309082,
+      "target": "LUCAS ENERGY, INC.  (CEIN)",
+      "announcement_filing_date": "2015-12-31",
+      "items": [
+        "1.01",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 67,
+      "announcement_accession": "0001477932-15-007842",
+      "target_cik": 1125699,
+      "target": "DAIS ANALYTIC CORP  (DLYT)",
+      "announcement_filing_date": "2015-12-31",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 68,
+      "announcement_accession": "0001144204-16-073991",
+      "target_cik": 1130144,
+      "target": "SIERRA BANCORP  (BSRR)",
+      "announcement_filing_date": "2016-01-05",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 69,
+      "announcement_accession": "0001199835-16-000584",
+      "target_cik": 1123312,
+      "target": "Yasheng Group",
+      "announcement_filing_date": "2016-01-05",
+      "items": [
+        "1.01",
+        "2.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 70,
+      "announcement_accession": "0000097196-16-000024",
+      "target_cik": 97196,
+      "target": "AMERICAN INDEPENDENCE CORP",
+      "announcement_filing_date": "2016-01-06",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 71,
+      "announcement_accession": "0000701869-16-000053",
+      "target_cik": 701869,
+      "target": "INDEPENDENCE HOLDING CO",
+      "announcement_filing_date": "2016-01-06",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 72,
+      "announcement_accession": "0001437749-16-023235",
+      "target_cik": 1389545,
+      "target": "NovaBay Pharmaceuticals, Inc.  (NBY)",
+      "announcement_filing_date": "2016-01-06",
+      "items": [
+        "1.01",
+        "2.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 73,
+      "announcement_accession": "0001493152-16-006636",
+      "target_cik": 897078,
+      "target": "Textmunication Holdings, Inc.  (KOAN)",
+      "announcement_filing_date": "2016-01-06",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "3.03",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 74,
+      "announcement_accession": "0001193125-16-423556",
+      "target_cik": 1609319,
+      "target": "Nuvola, Inc.",
+      "announcement_filing_date": "2016-01-07",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "5.01",
+        "5.02",
+        "5.03",
+        "5.05",
+        "5.06",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 75,
+      "announcement_accession": "0001539497-16-002249",
+      "target_cik": 1654330,
+      "target": "COMM 2015-LC23 Mortgage Trust",
+      "announcement_filing_date": "2016-01-07",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 76,
+      "announcement_accession": "0001437749-16-023396",
+      "target_cik": 353020,
+      "target": "Aegion Corp",
+      "announcement_filing_date": "2016-01-08",
+      "items": [
+        "1.01",
+        "2.05",
+        "2.06",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 77,
+      "announcement_accession": "0001047469-16-009624",
+      "target_cik": 936402,
+      "target": "Shire plc",
+      "announcement_filing_date": "2016-01-11",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 78,
+      "announcement_accession": "0001193125-16-425805",
+      "target_cik": 1594864,
+      "target": "Juno Therapeutics, Inc.",
+      "announcement_filing_date": "2016-01-11",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 79,
+      "announcement_accession": "0001193125-16-426678",
+      "target_cik": 1620546,
+      "target": "Baxalta Inc",
+      "announcement_filing_date": "2016-01-11",
+      "items": [
+        "1.01",
+        "3.03",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 80,
+      "announcement_accession": "0001493152-16-006725",
+      "target_cik": 849636,
+      "target": "RespireRx Pharmaceuticals Inc.  (RSPI)",
+      "announcement_filing_date": "2016-01-11",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 81,
+      "announcement_accession": "0001019687-16-004784",
+      "target_cik": 1157075,
+      "target": "PharmaCyte Biotech, Inc.  (PMCB)",
+      "announcement_filing_date": "2016-01-12",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 82,
+      "announcement_accession": "0001376339-16-000111",
+      "target_cik": 1376339,
+      "target": "MIMEDX GROUP, INC.  (MDXG)",
+      "announcement_filing_date": "2016-01-13",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 83,
+      "announcement_accession": "0001193125-16-429136",
+      "target_cik": 913077,
+      "target": "AFFYMETRIX INC",
+      "announcement_filing_date": "2016-01-14",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 84,
+      "announcement_accession": "0001437749-16-023598",
+      "target_cik": 1389545,
+      "target": "NovaBay Pharmaceuticals, Inc.  (NBY)",
+      "announcement_filing_date": "2016-01-14",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 85,
+      "announcement_accession": "0001065949-16-000326",
+      "target_cik": 1313938,
+      "target": "Sibannac, Inc.  (SNNC)",
+      "announcement_filing_date": "2016-01-19",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 86,
+      "announcement_accession": "0001104659-16-090287",
+      "target_cik": 36506,
+      "target": "MACKINAC FINANCIAL CORP /MI/",
+      "announcement_filing_date": "2016-01-19",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 87,
+      "announcement_accession": "0001104659-16-090438",
+      "target_cik": 929940,
+      "target": "ASPEN TECHNOLOGY INC /DE/",
+      "announcement_filing_date": "2016-01-19",
+      "items": [
+        "1.01",
+        "2.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 88,
+      "announcement_accession": "0001193125-16-432650",
+      "target_cik": 827054,
+      "target": "MICROCHIP TECHNOLOGY INC  (MCHP)",
+      "announcement_filing_date": "2016-01-19",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 89,
+      "announcement_accession": "0001437749-16-023805",
+      "target_cik": 1417663,
+      "target": "SANUWAVE Health, Inc.  (SNWV)",
+      "announcement_filing_date": "2016-01-19",
+      "items": [
+        "1.01",
+        "3.02",
+        "3.03",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 90,
+      "announcement_accession": "0001557234-16-000395",
+      "target_cik": 1001463,
+      "target": "Acacia Diversified Holdings, Inc.",
+      "announcement_filing_date": "2016-01-19",
+      "items": [
+        "1.01",
+        "2.01",
+        "5.01",
+        "5.02",
+        "5.07",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 91,
+      "announcement_accession": "0001193125-16-432742",
+      "target_cik": 849399,
+      "target": "SYMANTEC CORP  (GEN)",
+      "announcement_filing_date": "2016-01-20",
+      "items": [
+        "1.01",
+        "2.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 92,
+      "announcement_accession": "0001571049-16-010841",
+      "target_cik": 872448,
+      "target": "ATMEL CORP",
+      "announcement_filing_date": "2016-01-20",
+      "items": [
+        "1.01",
+        "1.02",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 93,
+      "announcement_accession": "0001615774-16-003964",
+      "target_cik": 1623590,
+      "target": "Vitaxel Group Ltd  (FINR)",
+      "announcement_filing_date": "2016-01-22",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "5.01",
+        "5.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 94,
+      "announcement_accession": "0000905729-16-000378",
+      "target_cik": 19612,
+      "target": "CHEMICAL FINANCIAL CORP",
+      "announcement_filing_date": "2016-01-26",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 95,
+      "announcement_accession": "0001360683-16-000050",
+      "target_cik": 1360683,
+      "target": "TALMER BANCORP, INC.",
+      "announcement_filing_date": "2016-01-26",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 96,
+      "announcement_accession": "0001045309-16-000125",
+      "target_cik": 1045309,
+      "target": "W R GRACE & CO",
+      "announcement_filing_date": "2016-01-28",
+      "items": [
+        "1.01",
+        "2.03"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 97,
+      "announcement_accession": "0001193125-16-442082",
+      "target_cik": 1336920,
+      "target": "Leidos Holdings, Inc.  (LDOS)",
+      "announcement_filing_date": "2016-01-28",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 98,
+      "announcement_accession": "0001644440-16-000068",
+      "target_cik": 1644440,
+      "target": "GCP Applied Technologies Inc.",
+      "announcement_filing_date": "2016-01-28",
+      "items": [
+        "1.01",
+        "2.03"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 99,
+      "announcement_accession": "0001013762-16-001288",
+      "target_cik": 1296205,
+      "target": "ZAGG Inc",
+      "announcement_filing_date": "2016-02-02",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 100,
+      "announcement_accession": "0001145443-16-001445",
+      "target_cik": 730255,
+      "target": "CalAmp Corp.",
+      "announcement_filing_date": "2016-02-02",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 101,
+      "announcement_accession": "0001193125-16-447680",
+      "target_cik": 355777,
+      "target": "LOJACK CORP",
+      "announcement_filing_date": "2016-02-02",
+      "items": [
+        "1.01",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 102,
+      "announcement_accession": "0001062993-16-007426",
+      "target_cik": 1273385,
+      "target": "Nutrastar International Inc.",
+      "announcement_filing_date": "2016-02-03",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 103,
+      "announcement_accession": "0001511164-16-000639",
+      "target_cik": 1630113,
+      "target": "BIOTRICITY INC.  (BTCY)",
+      "announcement_filing_date": "2016-02-03",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "4.01",
+        "5.01",
+        "5.02",
+        "5.03",
+        "5.06",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 104,
+      "announcement_accession": "0001580695-16-000215",
+      "target_cik": 890447,
+      "target": "Vertex Energy Inc.  (VTNR)",
+      "announcement_filing_date": "2016-02-03",
+      "items": [
+        "1.01",
+        "2.01",
+        "2.03",
+        "3.02",
+        "3.03",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 105,
+      "announcement_accession": "0001640334-16-000656",
+      "target_cik": 1634942,
+      "target": "Broke Out Inc.",
+      "announcement_filing_date": "2016-02-03",
+      "items": [
+        "1.01",
+        "2.01",
+        "5.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 106,
+      "announcement_accession": "0001013762-16-001294",
+      "target_cik": 1437491,
+      "target": "Magnolia Solar Corp  (ROII)",
+      "announcement_filing_date": "2016-02-04",
+      "items": [
+        "1.01",
+        "3.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 107,
+      "announcement_accession": "0001193125-16-450951",
+      "target_cik": 830916,
+      "target": "MULTI FINELINE ELECTRONIX INC",
+      "announcement_filing_date": "2016-02-04",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 108,
+      "announcement_accession": "0001193125-16-453049",
+      "target_cik": 929887,
+      "target": "APOLLO EDUCATION GROUP INC",
+      "announcement_filing_date": "2016-02-08",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 109,
+      "announcement_accession": "0001193125-16-455312",
+      "target_cik": 864559,
+      "target": "CASCADE MICROTECH INC",
+      "announcement_filing_date": "2016-02-09",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 110,
+      "announcement_accession": "0001193125-16-455318",
+      "target_cik": 1039399,
+      "target": "FORMFACTOR INC  (FORM)",
+      "announcement_filing_date": "2016-02-09",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 111,
+      "announcement_accession": "0001354488-16-006213",
+      "target_cik": 81318,
+      "target": "Yuma Energy, Inc.",
+      "announcement_filing_date": "2016-02-12",
+      "items": [
+        "1.01",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 112,
+      "announcement_accession": "0001193125-16-463994",
+      "target_cik": 1546640,
+      "target": "ADT Corp",
+      "announcement_filing_date": "2016-02-16",
+      "items": [
+        "1.01",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 113,
+      "announcement_accession": "0001354488-16-006237",
+      "target_cik": 81318,
+      "target": "Yuma Energy, Inc.",
+      "announcement_filing_date": "2016-02-16",
+      "items": [
+        "1.01",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 114,
+      "announcement_accession": "0001193125-16-467239",
+      "target_cik": 1018003,
+      "target": "INGRAM MICRO INC",
+      "announcement_filing_date": "2016-02-17",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 115,
+      "announcement_accession": "0001193125-16-467796",
+      "target_cik": 846901,
+      "target": "LAKELAND BANCORP INC",
+      "announcement_filing_date": "2016-02-18",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 116,
+      "announcement_accession": "0001193125-16-470137",
+      "target_cik": 1512138,
+      "target": "Great Basin Scientific, Inc.",
+      "announcement_filing_date": "2016-02-19",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 117,
+      "announcement_accession": "0001415889-16-004856",
+      "target_cik": 1404943,
+      "target": "MetaStat, Inc.",
+      "announcement_filing_date": "2016-02-19",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 118,
+      "announcement_accession": "0001144204-16-084086",
+      "target_cik": 1507986,
+      "target": "JetPay Corp",
+      "announcement_filing_date": "2016-02-24",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 119,
+      "announcement_accession": "0001193125-16-479781",
+      "target_cik": 1515980,
+      "target": "Apollo Residential Mortgage, Inc.",
+      "announcement_filing_date": "2016-02-26",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 120,
+      "announcement_accession": "0001193125-16-481042",
+      "target_cik": 1467760,
+      "target": "Apollo Commercial Real Estate Finance, Inc.  (ARI)",
+      "announcement_filing_date": "2016-02-26",
+      "items": [
+        "1.01",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 121,
+      "announcement_accession": "0001104659-16-100628",
+      "target_cik": 1528558,
+      "target": "Rouse Properties, Inc.",
+      "announcement_filing_date": "2016-02-29",
+      "items": [
+        "1.01",
+        "3.03",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 122,
+      "announcement_accession": "0001193125-16-486124",
+      "target_cik": 1081078,
+      "target": "API Technologies Corp.",
+      "announcement_filing_date": "2016-03-01",
+      "items": [
+        "1.01",
+        "5.03",
+        "5.07",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 123,
+      "announcement_accession": "0001511164-16-000665",
+      "target_cik": 1616495,
+      "target": "Viatar CTC Solutions Inc.",
+      "announcement_filing_date": "2016-03-01",
+      "items": [
+        "1.01",
+        "3.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 124,
+      "announcement_accession": "0001193125-16-489094",
+      "target_cik": 215419,
+      "target": "CHECKPOINT SYSTEMS INC",
+      "announcement_filing_date": "2016-03-02",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 125,
+      "announcement_accession": "0001104659-16-102617",
+      "target_cik": 1411579,
+      "target": "AMC ENTERTAINMENT HOLDINGS, INC.  (AMC)",
+      "announcement_filing_date": "2016-03-04",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 126,
+      "announcement_accession": "0001104659-16-102619",
+      "target_cik": 722077,
+      "target": "AMC ENTERTAINMENT INC",
+      "announcement_filing_date": "2016-03-04",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 127,
+      "announcement_accession": "0001193125-16-493398",
+      "target_cik": 799088,
+      "target": "CARMIKE CINEMAS INC",
+      "announcement_filing_date": "2016-03-04",
+      "items": [
+        "1.01",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 128,
+      "announcement_accession": "0001415889-16-004981",
+      "target_cik": 1058307,
+      "target": "Orbital Tracking Corp.  (NXPL, NXPLW)",
+      "announcement_filing_date": "2016-03-04",
+      "items": [
+        "1.01",
+        "1.02",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 129,
+      "announcement_accession": "0001079974-16-001016",
+      "target_cik": 1530244,
+      "target": "Petrus Resources Corp",
+      "announcement_filing_date": "2016-03-07",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 130,
+      "announcement_accession": "0001213900-16-011372",
+      "target_cik": 1614818,
+      "target": "FinTech Acquisition Corp",
+      "announcement_filing_date": "2016-03-07",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 131,
+      "announcement_accession": "0001511164-16-000673",
+      "target_cik": 949189,
+      "target": "CAPSALUS CORP",
+      "announcement_filing_date": "2016-03-08",
+      "items": [
+        "1.01",
+        "4.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 132,
+      "announcement_accession": "0001511164-16-000675",
+      "target_cik": 949189,
+      "target": "FORU Holdings, Inc.",
+      "announcement_filing_date": "2016-03-08",
+      "items": [
+        "1.01",
+        "4.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 133,
+      "announcement_accession": "0001144204-16-086902",
+      "target_cik": 1533998,
+      "target": "LabStyle Innovations Corp.  (DRIO)",
+      "announcement_filing_date": "2016-03-09",
+      "items": [
+        "1.01",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 134,
+      "announcement_accession": "0001193125-16-498390",
+      "target_cik": 1650962,
+      "target": "Manitowoc Foodservice, Inc.",
+      "announcement_filing_date": "2016-03-09",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 135,
+      "announcement_accession": "0001640334-16-000790",
+      "target_cik": 1422768,
+      "target": "Almost Never Films Inc.",
+      "announcement_filing_date": "2016-03-09",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 136,
+      "announcement_accession": "0001213900-16-011486",
+      "target_cik": 1091325,
+      "target": "CHINA YIDA HOLDING, CO.",
+      "announcement_filing_date": "2016-03-10",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 137,
+      "announcement_accession": "0001104659-16-104311",
+      "target_cik": 1420525,
+      "target": "1st Century Bancshares, Inc.",
+      "announcement_filing_date": "2016-03-11",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 138,
+      "announcement_accession": "0000950157-16-001717",
+      "target_cik": 1489979,
+      "target": "Fresh Market, Inc.",
+      "announcement_filing_date": "2016-03-14",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 139,
+      "announcement_accession": "0001477932-16-009052",
+      "target_cik": 1386936,
+      "target": "GOLD LAKES CORP.",
+      "announcement_filing_date": "2016-03-15",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 140,
+      "announcement_accession": "0001104659-16-105482",
+      "target_cik": 1324410,
+      "target": "Guaranty Bancorp",
+      "announcement_filing_date": "2016-03-16",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 141,
+      "announcement_accession": "0001193125-16-506920",
+      "target_cik": 1579157,
+      "target": "VINCE HOLDING CORP.  (VNCE)",
+      "announcement_filing_date": "2016-03-16",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 142,
+      "announcement_accession": "0001539497-16-002633",
+      "target_cik": 1663244,
+      "target": "COMM 2016-DC2 Mortgage Trust",
+      "announcement_filing_date": "2016-03-16",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 143,
+      "announcement_accession": "0001415889-16-005229",
+      "target_cik": 1402785,
+      "target": "FLUOROPHARMA MEDICAL, INC.",
+      "announcement_filing_date": "2016-03-23",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 144,
+      "announcement_accession": "0001640334-16-000861",
+      "target_cik": 1572565,
+      "target": "Indoor Harvest Corp  (INQD)",
+      "announcement_filing_date": "2016-03-24",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 145,
+      "announcement_accession": "0001193125-16-521561",
+      "target_cik": 1622620,
+      "target": "Lynden Energy Corp.",
+      "announcement_filing_date": "2016-03-29",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 146,
+      "announcement_accession": "0001564590-16-015512",
+      "target_cik": 10254,
+      "target": "EARTHSTONE ENERGY INC",
+      "announcement_filing_date": "2016-03-29",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 147,
+      "announcement_accession": "0001104659-16-109092",
+      "target_cik": 1020569,
+      "target": "IRON MOUNTAIN INC  (IRM)",
+      "announcement_filing_date": "2016-04-01",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 148,
+      "announcement_accession": "0001580695-16-000310",
+      "target_cik": 1309082,
+      "target": "LUCAS ENERGY, INC.  (CEIN)",
+      "announcement_filing_date": "2016-04-01",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "5.02",
+        "5.03",
+        "5.07",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 149,
+      "announcement_accession": "0001193125-16-528478",
+      "target_cik": 766421,
+      "target": "ALASKA AIR GROUP, INC.  (ALK)",
+      "announcement_filing_date": "2016-04-04",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 150,
+      "announcement_accession": "0001193125-16-528543",
+      "target_cik": 1614436,
+      "target": "Virgin America Inc.",
+      "announcement_filing_date": "2016-04-04",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 151,
+      "announcement_accession": "0001193125-16-528696",
+      "target_cik": 1009626,
+      "target": "BROCADE COMMUNICATIONS SYSTEMS INC",
+      "announcement_filing_date": "2016-04-04",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 152,
+      "announcement_accession": "0001193125-16-528752",
+      "target_cik": 1294016,
+      "target": "RUCKUS WIRELESS INC",
+      "announcement_filing_date": "2016-04-04",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 153,
+      "announcement_accession": "0001144204-16-093181",
+      "target_cik": 1527590,
+      "target": "ZAIS Financial Corp.  (RC, RCB, RCC, RC-PC, RC-PE)",
+      "announcement_filing_date": "2016-04-07",
+      "items": [
+        "1.01",
+        "1.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 154,
+      "announcement_accession": "0001213900-16-012313",
+      "target_cik": 1642453,
+      "target": "Hennessy Capital Acquisition Corp II",
+      "announcement_filing_date": "2016-04-07",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 155,
+      "announcement_accession": "0001580695-16-000313",
+      "target_cik": 1309082,
+      "target": "LUCAS ENERGY, INC.  (CEIN)",
+      "announcement_filing_date": "2016-04-07",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "3.03",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 156,
+      "announcement_accession": "0001206774-16-005373",
+      "target_cik": 1122342,
+      "target": "ALLIANCE FIBER OPTIC PRODUCTS INC",
+      "announcement_filing_date": "2016-04-08",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 157,
+      "announcement_accession": "0001104659-16-110751",
+      "target_cik": 1011290,
+      "target": "99 CENTS ONLY STORES LLC",
+      "announcement_filing_date": "2016-04-11",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 158,
+      "announcement_accession": "0001193125-16-537306",
+      "target_cik": 1606498,
+      "target": "Halyard Health, Inc.  (AVNS)",
+      "announcement_filing_date": "2016-04-11",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 159,
+      "announcement_accession": "0001101680-16-000066",
+      "target_cik": 1101680,
+      "target": "ZHONE TECHNOLOGIES INC  (DZSI)",
+      "announcement_filing_date": "2016-04-12",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 160,
+      "announcement_accession": "0001437749-16-029512",
+      "target_cik": 105608,
+      "target": "AG&E HOLDINGS INC.",
+      "announcement_filing_date": "2016-04-14",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 161,
+      "announcement_accession": "0001193125-16-543751",
+      "target_cik": 1170534,
+      "target": "MITEL NETWORKS CORP",
+      "announcement_filing_date": "2016-04-18",
+      "items": [
+        "1.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 162,
+      "announcement_accession": "0001193125-16-543979",
+      "target_cik": 1122897,
+      "target": "CVENT INC",
+      "announcement_filing_date": "2016-04-18",
+      "items": [
+        "1.01",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 163,
+      "announcement_accession": "0001193125-16-544639",
+      "target_cik": 1010552,
+      "target": "POLYCOM INC",
+      "announcement_filing_date": "2016-04-18",
+      "items": [
+        "1.01",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 164,
+      "announcement_accession": "0001193125-16-546572",
+      "target_cik": 28823,
+      "target": "DIEBOLD INC  (DBD)",
+      "announcement_filing_date": "2016-04-19",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 165,
+      "announcement_accession": "0001002014-16-000649",
+      "target_cik": 1375618,
+      "target": "Amazing Energy Oil & Gas, Co.",
+      "announcement_filing_date": "2016-04-20",
+      "items": [
+        "1.01",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 166,
+      "announcement_accession": "0001193125-16-547242",
+      "target_cik": 1001288,
+      "target": "LEXMARK INTERNATIONAL INC /KY/",
+      "announcement_filing_date": "2016-04-20",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 167,
+      "announcement_accession": "0001104659-16-114880",
+      "target_cik": 1800,
+      "target": "ABBOTT LABORATORIES  (ABT)",
+      "announcement_filing_date": "2016-04-28",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 168,
+      "announcement_accession": "0001104659-16-114893",
+      "target_cik": 203077,
+      "target": "ST JUDE MEDICAL INC",
+      "announcement_filing_date": "2016-04-28",
+      "items": [
+        "1.01",
+        "5.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 169,
+      "announcement_accession": "0001437749-16-030171",
+      "target_cik": 1498021,
+      "target": "ExamWorks Group, Inc.",
+      "announcement_filing_date": "2016-04-28",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 170,
+      "announcement_accession": "0001104659-16-116276",
+      "target_cik": 1551152,
+      "target": "AbbVie Inc.  (ABBV)",
+      "announcement_filing_date": "2016-04-29",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 171,
+      "announcement_accession": "0001193125-16-566259",
+      "target_cik": 25232,
+      "target": "COUSINS PROPERTIES INC  (CUZ)",
+      "announcement_filing_date": "2016-04-29",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 172,
+      "announcement_accession": "0001193125-16-566295",
+      "target_cik": 729237,
+      "target": "PARKWAY PROPERTIES INC",
+      "announcement_filing_date": "2016-04-29",
+      "items": [
+        "1.01",
+        "5.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 173,
+      "announcement_accession": "0001565337-16-000147",
+      "target_cik": 1565337,
+      "target": "Textura Corp",
+      "announcement_filing_date": "2016-04-29",
+      "items": [
+        "1.01",
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 174,
+      "announcement_accession": "0001144204-16-098376",
+      "target_cik": 1616101,
+      "target": "Symmetry Surgical Inc.",
+      "announcement_filing_date": "2016-05-02",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 175,
+      "announcement_accession": "0001193125-16-571455",
+      "target_cik": 1412043,
+      "target": "OPOWER, INC.",
+      "announcement_filing_date": "2016-05-02",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 176,
+      "announcement_accession": "0001364954-16-000335",
+      "target_cik": 1364954,
+      "target": "CHEGG, INC  (CHGG)",
+      "announcement_filing_date": "2016-05-02",
+      "items": [
+        "1.01",
+        "2.02",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 177,
+      "announcement_accession": "0001213900-16-012939",
+      "target_cik": 1630940,
+      "target": "Atlantic Alliance Partnership Corp.",
+      "announcement_filing_date": "2016-05-03",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 178,
+      "announcement_accession": "0001088825-16-000289",
+      "target_cik": 1088825,
+      "target": "TIVO INC",
+      "announcement_filing_date": "2016-05-04",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 179,
+      "announcement_accession": "0001193125-16-577599",
+      "target_cik": 1424454,
+      "target": "Rovi Corp",
+      "announcement_filing_date": "2016-05-04",
+      "items": [
+        "1.01",
+        "3.03",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 180,
+      "announcement_accession": "0001078782-16-002737",
+      "target_cik": 1187953,
+      "target": "JOLLEY MARKETING INC  (CELZ)",
+      "announcement_filing_date": "2016-05-05",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 181,
+      "announcement_accession": "0001144204-16-099585",
+      "target_cik": 1385818,
+      "target": "AYTU BIOSCIENCE, INC  (AYTU)",
+      "announcement_filing_date": "2016-05-06",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 182,
+      "announcement_accession": "0001206774-16-005893",
+      "target_cik": 1100270,
+      "target": "KRISPY KREME DOUGHNUTS INC",
+      "announcement_filing_date": "2016-05-09",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 183,
+      "announcement_accession": "0000276209-16-000057",
+      "target_cik": 276209,
+      "target": "CONNECTICUT WATER SERVICE INC / CT",
+      "announcement_filing_date": "2016-05-10",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 184,
+      "announcement_accession": "0001193125-16-584264",
+      "target_cik": 1342126,
+      "target": "Morgans Hotel Group Co.",
+      "announcement_filing_date": "2016-05-10",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 185,
+      "announcement_accession": "0001193125-16-584558",
+      "target_cik": 1344413,
+      "target": "Alexza Pharmaceuticals Inc.",
+      "announcement_filing_date": "2016-05-10",
+      "items": [
+        "1.01",
+        "1.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 186,
+      "announcement_accession": "0001193125-16-585570",
+      "target_cik": 1280784,
+      "target": "Hercules Capital, Inc.  (HCXY, HTGC)",
+      "announcement_filing_date": "2016-05-10",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 187,
+      "announcement_accession": "0001403161-16-000027",
+      "target_cik": 1403161,
+      "target": "VISA INC.  (V)",
+      "announcement_filing_date": "2016-05-10",
+      "items": [
+        "1.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 188,
+      "announcement_accession": "0001193125-16-588699",
+      "target_cik": 28823,
+      "target": "DIEBOLD INC  (DBD)",
+      "announcement_filing_date": "2016-05-12",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 189,
+      "announcement_accession": "0001144204-16-101939",
+      "target_cik": 1512077,
+      "target": "Global Eagle Entertainment Inc.",
+      "announcement_filing_date": "2016-05-13",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 190,
+      "announcement_accession": "0001493152-16-009753",
+      "target_cik": 1628468,
+      "target": "Sino Fortune Holding Corp",
+      "announcement_filing_date": "2016-05-13",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 191,
+      "announcement_accession": "0001551163-16-000383",
+      "target_cik": 1309141,
+      "target": "SYDYS CORP",
+      "announcement_filing_date": "2016-05-13",
+      "items": [
+        "1.01",
+        "3.02",
+        "5.01",
+        "5.02",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 192,
+      "announcement_accession": "0001615774-16-005384",
+      "target_cik": 1591913,
+      "target": "Asiya Pearls, Inc.  (IPSI)",
+      "announcement_filing_date": "2016-05-13",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "4.01",
+        "5.01",
+        "5.02",
+        "5.06",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 193,
+      "announcement_accession": "0001105184-16-000072",
+      "target_cik": 1105184,
+      "target": "NANOSPHERE INC",
+      "announcement_filing_date": "2016-05-16",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 194,
+      "announcement_accession": "0001144204-16-102018",
+      "target_cik": 1512077,
+      "target": "Global Eagle Entertainment Inc.",
+      "announcement_filing_date": "2016-05-16",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 195,
+      "announcement_accession": "0001193125-16-591088",
+      "target_cik": 1033905,
+      "target": "LUMINEX CORP",
+      "announcement_filing_date": "2016-05-16",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 196,
+      "announcement_accession": "0001477932-16-010436",
+      "target_cik": 1451929,
+      "target": "Avant Diagnostics, Inc",
+      "announcement_filing_date": "2016-05-17",
+      "items": [
+        "1.01",
+        "2.01",
+        "2.03",
+        "3.02",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 197,
+      "announcement_accession": "0001193125-16-594683",
+      "target_cik": 1087934,
+      "target": "inContact, Inc.",
+      "announcement_filing_date": "2016-05-18",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 198,
+      "announcement_accession": "0001078782-16-002867",
+      "target_cik": 1187953,
+      "target": "CREATIVE MEDICAL TECHNOLOGY HOLDINGS, INC.  (CELZ)",
+      "announcement_filing_date": "2016-05-19",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.01",
+        "3.02",
+        "4.01",
+        "5.01",
+        "5.02",
+        "5.06",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 199,
+      "announcement_accession": "0001193125-16-596195",
+      "target_cik": 1091667,
+      "target": "CHARTER COMMUNICATIONS, INC. /MO/  (CHTR)",
+      "announcement_filing_date": "2016-05-19",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "3.03",
+        "5.01",
+        "5.02",
+        "5.03",
+        "5.07",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 200,
+      "announcement_accession": "0001398432-16-000658",
+      "target_cik": 97216,
+      "target": "TEREX CORP  (TEX)",
+      "announcement_filing_date": "2016-05-19",
+      "items": [
+        "1.01",
+        "1.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 201,
+      "announcement_accession": "0001571049-16-015410",
+      "target_cik": 1649989,
+      "target": "Oncobiologics, Inc.  (OTLK)",
+      "announcement_filing_date": "2016-05-19",
+      "items": [
+        "1.01",
+        "3.02",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 202,
+      "announcement_accession": "0001193125-16-598149",
+      "target_cik": 1357615,
+      "target": "KBR, INC.  (KBR)",
+      "announcement_filing_date": "2016-05-23",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 203,
+      "announcement_accession": "0001193125-16-598291",
+      "target_cik": 1549872,
+      "target": "XURA, INC.",
+      "announcement_filing_date": "2016-05-23",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 204,
+      "announcement_accession": "0001539497-16-003012",
+      "target_cik": 1663244,
+      "target": "COMM 2016-DC2 Mortgage Trust",
+      "announcement_filing_date": "2016-05-23",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 205,
+      "announcement_accession": "0001104659-16-122870",
+      "target_cik": 36506,
+      "target": "MACKINAC FINANCIAL CORP /MI/",
+      "announcement_filing_date": "2016-05-24",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 206,
+      "announcement_accession": "0001193125-16-599493",
+      "target_cik": 83402,
+      "target": "RESOURCE AMERICA, INC.",
+      "announcement_filing_date": "2016-05-24",
+      "items": [
+        "1.01",
+        "5.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 207,
+      "announcement_accession": "0001047469-16-013429",
+      "target_cik": 1474464,
+      "target": "New York REIT, Inc.",
+      "announcement_filing_date": "2016-05-25",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 208,
+      "announcement_accession": "0001047469-16-013522",
+      "target_cik": 1490660,
+      "target": "Marketo, Inc.",
+      "announcement_filing_date": "2016-05-31",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 209,
+      "announcement_accession": "0001104659-16-124243",
+      "target_cik": 1583771,
+      "target": "ContraVir Pharmaceuticals, Inc.  (HEPA, CTRVP)",
+      "announcement_filing_date": "2016-05-31",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 210,
+      "announcement_accession": "0001104659-16-124541",
+      "target_cik": 1308711,
+      "target": "Behringer Harvard Opportunity REIT I, Inc.",
+      "announcement_filing_date": "2016-05-31",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 211,
+      "announcement_accession": "0001193125-16-607416",
+      "target_cik": 1082526,
+      "target": "SCIQUEST INC",
+      "announcement_filing_date": "2016-05-31",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 212,
+      "announcement_accession": "0001144204-16-106200",
+      "target_cik": 1375195,
+      "target": "3DICON CORP  (CRTG)",
+      "announcement_filing_date": "2016-06-01",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 213,
+      "announcement_accession": "0001193125-16-610594",
+      "target_cik": 914329,
+      "target": "FEI CO",
+      "announcement_filing_date": "2016-06-02",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 214,
+      "announcement_accession": "0000811808-16-000069",
+      "target_cik": 811808,
+      "target": "SUMMIT FINANCIAL GROUP INC",
+      "announcement_filing_date": "2016-06-03",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 215,
+      "announcement_accession": "0001144204-16-106835",
+      "target_cik": 1425205,
+      "target": "Lion Biotechnologies, Inc.  (IOVA)",
+      "announcement_filing_date": "2016-06-03",
+      "items": [
+        "1.01",
+        "3.02",
+        "3.03",
+        "5.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 216,
+      "announcement_accession": "0001193125-16-611764",
+      "target_cik": 1262279,
+      "target": "FIRST MARBLEHEAD CORP",
+      "announcement_filing_date": "2016-06-03",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 217,
+      "announcement_accession": "0001193125-16-613220",
+      "target_cik": 1622536,
+      "target": "Talen Energy Corp  (TLN)",
+      "announcement_filing_date": "2016-06-06",
+      "items": [
+        "1.01",
+        "2.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 218,
+      "announcement_accession": "0001161697-16-000877",
+      "target_cik": 1502152,
+      "target": "First Titan Corp.  (GSTC)",
+      "announcement_filing_date": "2016-06-07",
+      "items": [
+        "1.01",
+        "3.02",
+        "5.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 219,
+      "announcement_accession": "0001193125-16-615463",
+      "target_cik": 1136869,
+      "target": "ZIMMER BIOMET HOLDINGS, INC.  (ZBH)",
+      "announcement_filing_date": "2016-06-07",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 220,
+      "announcement_accession": "0001193125-16-615470",
+      "target_cik": 1348324,
+      "target": "LDR HOLDING CORP",
+      "announcement_filing_date": "2016-06-07",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 221,
+      "announcement_accession": "0001477932-16-010738",
+      "target_cik": 1451512,
+      "target": "Terra Tech Corp.",
+      "announcement_filing_date": "2016-06-07",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 222,
+      "announcement_accession": "0001140361-16-069394",
+      "target_cik": 1085913,
+      "target": "FARMERS & MERCHANTS BANCORP  (FMCB)",
+      "announcement_filing_date": "2016-06-10",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 223,
+      "announcement_accession": "0001104659-16-126697",
+      "target_cik": 1282648,
+      "target": "HALCON RESOURCES CORP  (BATL)",
+      "announcement_filing_date": "2016-06-13",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 224,
+      "announcement_accession": "0001493152-16-010770",
+      "target_cik": 1387135,
+      "target": "QUANTUMSPHERE, INC.",
+      "announcement_filing_date": "2016-06-13",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 225,
+      "announcement_accession": "0001193125-16-621891",
+      "target_cik": 1348911,
+      "target": "Carbylan Therapeutics, Inc.  (KALV)",
+      "announcement_filing_date": "2016-06-15",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.03",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 226,
+      "announcement_accession": "0001144204-16-108637",
+      "target_cik": 767884,
+      "target": "Ceres, Inc.",
+      "announcement_filing_date": "2016-06-17",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 227,
+      "announcement_accession": "0001104659-16-128465",
+      "target_cik": 5768,
+      "target": "AMERICAN SCIENCE & ENGINEERING, INC.",
+      "announcement_filing_date": "2016-06-21",
+      "items": [
+        "1.01",
+        "3.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 228,
+      "announcement_accession": "0001144204-16-109257",
+      "target_cik": 701719,
+      "target": "DGSE COMPANIES INC  (ELA)",
+      "announcement_filing_date": "2016-06-22",
+      "items": [
+        "1.01",
+        "3.02",
+        "5.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 229,
+      "announcement_accession": "0001174947-16-002821",
+      "target_cik": 811589,
+      "target": "FIRST BANCORP /NC/  (FBNC)",
+      "announcement_filing_date": "2016-06-22",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 230,
+      "announcement_accession": "0001575872-16-000372",
+      "target_cik": 797542,
+      "target": "Emerald Medical Applications Corp.  (VBIX)",
+      "announcement_filing_date": "2016-06-22",
+      "items": [
+        "1.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 231,
+      "announcement_accession": "0001144204-16-109534",
+      "target_cik": 1127160,
+      "target": "CAROLINA BANK HOLDINGS INC",
+      "announcement_filing_date": "2016-06-23",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 232,
+      "announcement_accession": "0001193125-16-629623",
+      "target_cik": 1459200,
+      "target": "Alarm.com Holdings, Inc.  (ALRM)",
+      "announcement_filing_date": "2016-06-23",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 233,
+      "announcement_accession": "0001554795-16-000729",
+      "target_cik": 1444145,
+      "target": "Demand Pooling, Inc.",
+      "announcement_filing_date": "2016-06-23",
+      "items": [
+        "1.01",
+        "1.02",
+        "3.02",
+        "5.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 234,
+      "announcement_accession": "0001193125-16-630863",
+      "target_cik": 1423542,
+      "target": "SKULLCANDY, INC.",
+      "announcement_filing_date": "2016-06-24",
+      "items": [
+        "1.01",
+        "5.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 235,
+      "announcement_accession": "0000947871-16-001298",
+      "target_cik": 1389072,
+      "target": "HeartWare International, Inc.",
+      "announcement_filing_date": "2016-06-27",
+      "items": [
+        "1.01",
+        "5.02",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 236,
+      "announcement_accession": "0001104659-16-129546",
+      "target_cik": 1297336,
+      "target": "ReachLocal Inc",
+      "announcement_filing_date": "2016-06-27",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 237,
+      "announcement_accession": "0001104659-16-129547",
+      "target_cik": 1635718,
+      "target": "Gannett Co., Inc.",
+      "announcement_filing_date": "2016-06-27",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 238,
+      "announcement_accession": "0001193125-16-634264",
+      "target_cik": 1556148,
+      "target": "Infor, Inc.",
+      "announcement_filing_date": "2016-06-28",
+      "items": [
+        "1.01",
+        "2.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 239,
+      "announcement_accession": "0001437749-16-034479",
+      "target_cik": 1078099,
+      "target": "MeetMe, Inc.",
+      "announcement_filing_date": "2016-06-28",
+      "items": [
+        "1.01",
+        "3.02",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 240,
+      "announcement_accession": "0001144204-16-110384",
+      "target_cik": 1641197,
+      "target": "Easterly Acquisition Corp.",
+      "announcement_filing_date": "2016-06-29",
+      "items": [
+        "1.01",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 241,
+      "announcement_accession": "0001193125-16-636669",
+      "target_cik": 1566897,
+      "target": "Diamond Resorts International, Inc.",
+      "announcement_filing_date": "2016-06-29",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 242,
+      "announcement_accession": "0000098618-16-000023",
+      "target_cik": 98618,
+      "target": "ALANCO TECHNOLOGIES INC",
+      "announcement_filing_date": "2016-07-05",
+      "items": [
+        "1.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 243,
+      "announcement_accession": "0001193125-16-641691",
+      "target_cik": 1644406,
+      "target": "Gores Holdings, Inc.",
+      "announcement_filing_date": "2016-07-05",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 244,
+      "announcement_accession": "0001019687-16-006863",
+      "target_cik": 1586372,
+      "target": "Knowledge Machine International, Inc.",
+      "announcement_filing_date": "2016-07-06",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 245,
+      "announcement_accession": "0001047469-16-014186",
+      "target_cik": 1216596,
+      "target": "NORTEK INC",
+      "announcement_filing_date": "2016-07-06",
+      "items": [
+        "1.01",
+        "5.02",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 246,
+      "announcement_accession": "0000721748-16-001424",
+      "target_cik": 1394130,
+      "target": "Event Cardio Group Inc.",
+      "announcement_filing_date": "2016-07-07",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 247,
+      "announcement_accession": "0001193125-16-642646",
+      "target_cik": 1062047,
+      "target": "CONVERGYS CORP",
+      "announcement_filing_date": "2016-07-07",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 248,
+      "announcement_accession": "0001193125-16-642888",
+      "target_cik": 1555365,
+      "target": "WHITEWAVE FOODS Co",
+      "announcement_filing_date": "2016-07-07",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 249,
+      "announcement_accession": "0001193125-16-643945",
+      "target_cik": 1390478,
+      "target": "Galena Biopharma, Inc.  (SLS)",
+      "announcement_filing_date": "2016-07-08",
+      "items": [
+        "1.01",
+        "2.02",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 250,
+      "announcement_accession": "0001193125-16-644492",
+      "target_cik": 1010552,
+      "target": "POLYCOM INC",
+      "announcement_filing_date": "2016-07-08",
+      "items": [
+        "1.01",
+        "1.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 251,
+      "announcement_accession": "0001193125-16-646873",
+      "target_cik": 1328015,
+      "target": "Imprivata Inc",
+      "announcement_filing_date": "2016-07-13",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 252,
+      "announcement_accession": "0001580695-16-000542",
+      "target_cik": 1444403,
+      "target": "CODE GREEN APPAREL CORP  (CGAC)",
+      "announcement_filing_date": "2016-07-13",
+      "items": [
+        "1.01",
+        "2.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 253,
+      "announcement_accession": "0001663577-16-000213",
+      "target_cik": 1599385,
+      "target": "RX Safes, Inc.",
+      "announcement_filing_date": "2016-07-13",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 254,
+      "announcement_accession": "0001393905-16-000980",
+      "target_cik": 1551887,
+      "target": "VGRAB COMMUNICATIONS INC.  (DUSYF)",
+      "announcement_filing_date": "2016-07-15",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 255,
+      "announcement_accession": "0001104659-16-133330",
+      "target_cik": 844143,
+      "target": "Differential Brands Group Inc.",
+      "announcement_filing_date": "2016-07-19",
+      "items": [
+        "1.01",
+        "2.01",
+        "2.03",
+        "3.02",
+        "3.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 256,
+      "announcement_accession": "0001144204-16-113498",
+      "target_cik": 42228,
+      "target": "GOLDEN ENTERPRISES INC",
+      "announcement_filing_date": "2016-07-19",
+      "items": [
+        "1.01",
+        "5.03",
+        "5.07",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 257,
+      "announcement_accession": "0000073605-16-000022",
+      "target_cik": 73605,
+      "target": "OAKRIDGE HOLDINGS INC",
+      "announcement_filing_date": "2016-07-20",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 258,
+      "announcement_accession": "0001072627-16-000218",
+      "target_cik": 1072627,
+      "target": "KINGSWAY FINANCIAL SERVICES INC  (KFS)",
+      "announcement_filing_date": "2016-07-20",
+      "items": [
+        "1.01",
+        "2.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 259,
+      "announcement_accession": "0000898822-16-000397",
+      "target_cik": 801898,
+      "target": "JOY GLOBAL INC",
+      "announcement_filing_date": "2016-07-21",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 260,
+      "announcement_accession": "0001079974-16-001432",
+      "target_cik": 1542624,
+      "target": "ACCELERATED ACQUISITIONS XIX",
+      "announcement_filing_date": "2016-07-21",
+      "items": [
+        "1.01",
+        "5.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 261,
+      "announcement_accession": "0001144204-16-113944",
+      "target_cik": 1366367,
+      "target": "YADKIN FINANCIAL Corp",
+      "announcement_filing_date": "2016-07-21",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 262,
+      "announcement_accession": "0001193125-16-652984",
+      "target_cik": 1385292,
+      "target": "Monotype Imaging Holdings Inc.",
+      "announcement_filing_date": "2016-07-21",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 263,
+      "announcement_accession": "0001193125-16-653806",
+      "target_cik": 37808,
+      "target": "FNB CORP/FL/  (FNB)",
+      "announcement_filing_date": "2016-07-21",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 264,
+      "announcement_accession": "0001104659-16-134139",
+      "target_cik": 1411579,
+      "target": "AMC ENTERTAINMENT HOLDINGS, INC.  (AMC)",
+      "announcement_filing_date": "2016-07-25",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 265,
+      "announcement_accession": "0001193125-16-655955",
+      "target_cik": 1288403,
+      "target": "W&T OFFSHORE INC  (WTI)",
+      "announcement_filing_date": "2016-07-25",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 266,
+      "announcement_accession": "0001193125-16-656419",
+      "target_cik": 799088,
+      "target": "CARMIKE CINEMAS INC",
+      "announcement_filing_date": "2016-07-25",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 267,
+      "announcement_accession": "0001079974-16-001438",
+      "target_cik": 1501257,
+      "target": "Yummy Flies, Inc.",
+      "announcement_filing_date": "2016-07-26",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "5.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 268,
+      "announcement_accession": "0000921895-16-005236",
+      "target_cik": 890821,
+      "target": "AMERI Holdings, Inc.  (ENVB)",
+      "announcement_filing_date": "2016-07-27",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 269,
+      "announcement_accession": "0001011034-16-000213",
+      "target_cik": 1515317,
+      "target": "MAGELLAN GOLD Corp  (MAGE)",
+      "announcement_filing_date": "2016-07-27",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 270,
+      "announcement_accession": "0001193125-16-659216",
+      "target_cik": 1027207,
+      "target": "EPIQ SYSTEMS INC",
+      "announcement_filing_date": "2016-07-27",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 271,
+      "announcement_accession": "0001193125-16-661833",
+      "target_cik": 315858,
+      "target": "BFC FINANCIAL CORP",
+      "announcement_filing_date": "2016-07-28",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 272,
+      "announcement_accession": "0001193125-16-661853",
+      "target_cik": 921768,
+      "target": "BBX CAPITAL CORP",
+      "announcement_filing_date": "2016-07-28",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 273,
+      "announcement_accession": "0001193125-16-662444",
+      "target_cik": 1420302,
+      "target": "LogMeIn, Inc.",
+      "announcement_filing_date": "2016-07-28",
+      "items": [
+        "1.01",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 274,
+      "announcement_accession": "0001193125-16-664694",
+      "target_cik": 1142417,
+      "target": "NEXSTAR BROADCASTING GROUP INC  (NXST)",
+      "announcement_filing_date": "2016-07-29",
+      "items": [
+        "1.01",
+        "2.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 275,
+      "announcement_accession": "0000921895-16-005270",
+      "target_cik": 890821,
+      "target": "AMERI Holdings, Inc.  (ENVB)",
+      "announcement_filing_date": "2016-08-01",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 276,
+      "announcement_accession": "0001104659-16-135792",
+      "target_cik": 1117106,
+      "target": "NETSUITE INC",
+      "announcement_filing_date": "2016-08-01",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 277,
+      "announcement_accession": "0000899715-16-000350",
+      "target_cik": 899715,
+      "target": "TANGER FACTORY OUTLET CENTERS INC  (SKT)",
+      "announcement_filing_date": "2016-08-02",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 278,
+      "announcement_accession": "0001495231-16-000130",
+      "target_cik": 1495231,
+      "target": "IZEA, Inc.  (IZEA)",
+      "announcement_filing_date": "2016-08-02",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 279,
+      "announcement_accession": "0001104659-16-136311",
+      "target_cik": 1591877,
+      "target": "Sizmek Inc.",
+      "announcement_filing_date": "2016-08-03",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 280,
+      "announcement_accession": "0000812011-16-000098",
+      "target_cik": 812011,
+      "target": "VAIL RESORTS INC  (MTN)",
+      "announcement_filing_date": "2016-08-08",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 281,
+      "announcement_accession": "0001104659-16-137720",
+      "target_cik": 1506492,
+      "target": "Sunshine Heart, Inc.  (NUWE, NUWEW)",
+      "announcement_filing_date": "2016-08-08",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.01",
+        "2.03",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 282,
+      "announcement_accession": "0001104659-16-137926",
+      "target_cik": 1419852,
+      "target": "MATTRESS FIRM HOLDING CORP.",
+      "announcement_filing_date": "2016-08-08",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 283,
+      "announcement_accession": "0001144204-16-117007",
+      "target_cik": 1609865,
+      "target": "American Realty Capital Global Trust II, Inc.",
+      "announcement_filing_date": "2016-08-08",
+      "items": [
+        "1.01",
+        "1.02",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 284,
+      "announcement_accession": "0001144204-16-117009",
+      "target_cik": 1526113,
+      "target": "Global Net Lease, Inc.  (GNL, GNL-PA, GNL-PB, GNL-PD, GNL-PE)",
+      "announcement_filing_date": "2016-08-08",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 285,
+      "announcement_accession": "0001020416-16-000190",
+      "target_cik": 1020416,
+      "target": "MONSTER WORLDWIDE, INC.",
+      "announcement_filing_date": "2016-08-09",
+      "items": [
+        "1.01",
+        "2.02",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 286,
+      "announcement_accession": "0001104659-16-138321",
+      "target_cik": 1591877,
+      "target": "Sizmek Inc.",
+      "announcement_filing_date": "2016-08-09",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 287,
+      "announcement_accession": "0001104659-16-138325",
+      "target_cik": 1633142,
+      "target": "Press Ganey Holdings, Inc.",
+      "announcement_filing_date": "2016-08-09",
+      "items": [
+        "1.01",
+        "3.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 288,
+      "announcement_accession": "0001193125-16-678199",
+      "target_cik": 879407,
+      "target": "ARROWHEAD PHARMACEUTICALS, INC.  (ARWR)",
+      "announcement_filing_date": "2016-08-10",
+      "items": [
+        "1.01",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 289,
+      "announcement_accession": "0001193125-16-682077",
+      "target_cik": 883975,
+      "target": "STEMCELLS INC  (MBOT)",
+      "announcement_filing_date": "2016-08-15",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.03",
+        "3.02",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 290,
+      "announcement_accession": "0001193125-16-682600",
+      "target_cik": 39648,
+      "target": "G&K SERVICES INC",
+      "announcement_filing_date": "2016-08-16",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 291,
+      "announcement_accession": "0001445866-16-002521",
+      "target_cik": 1360442,
+      "target": "Cannabis Sativa, Inc.  (CBDS)",
+      "announcement_filing_date": "2016-08-16",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 292,
+      "announcement_accession": "0001104659-16-140747",
+      "target_cik": 1649709,
+      "target": "CIFC LLC",
+      "announcement_filing_date": "2016-08-19",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 293,
+      "announcement_accession": "0001104659-16-141062",
+      "target_cik": 1499268,
+      "target": "Affinity Gaming",
+      "announcement_filing_date": "2016-08-23",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 294,
+      "announcement_accession": "0001193125-16-687821",
+      "target_cik": 1562039,
+      "target": "CST BRANDS, INC.",
+      "announcement_filing_date": "2016-08-23",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 295,
+      "announcement_accession": "0001193125-16-688065",
+      "target_cik": 1316835,
+      "target": "Builders FirstSource, Inc.  (BLDR)",
+      "announcement_filing_date": "2016-08-23",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 296,
+      "announcement_accession": "0001193125-16-688807",
+      "target_cik": 1541401,
+      "target": "Empire State Realty Trust, Inc.  (ESRT)",
+      "announcement_filing_date": "2016-08-23",
+      "items": [
+        "1.01",
+        "3.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 297,
+      "announcement_accession": "0001193125-16-689331",
+      "target_cik": 1423542,
+      "target": "SKULLCANDY, INC.",
+      "announcement_filing_date": "2016-08-24",
+      "items": [
+        "1.01",
+        "1.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 298,
+      "announcement_accession": "0001213900-16-016382",
+      "target_cik": 1665300,
+      "target": "Stellar Acquisition III Inc.  (PHUN)",
+      "announcement_filing_date": "2016-08-24",
+      "items": [
+        "1.01",
+        "3.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 299,
+      "announcement_accession": "0001193125-16-691914",
+      "target_cik": 315545,
+      "target": "PROVECTUS BIOPHARMACEUTICALS, INC.  (PVCT)",
+      "announcement_filing_date": "2016-08-25",
+      "items": [
+        "1.01",
+        "5.03",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 300,
+      "announcement_accession": "0001171843-16-011964",
+      "target_cik": 887151,
+      "target": "Capstone Therapeutics Corp.",
+      "announcement_filing_date": "2016-08-26",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 301,
+      "announcement_accession": "0001193125-16-695754",
+      "target_cik": 1411906,
+      "target": "Ampio Pharmaceuticals, Inc.  (AMPE)",
+      "announcement_filing_date": "2016-08-29",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 302,
+      "announcement_accession": "0001477932-16-012263",
+      "target_cik": 1409253,
+      "target": "North America Frac Sand, Inc.",
+      "announcement_filing_date": "2016-08-29",
+      "items": [
+        "1.01",
+        "5.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 303,
+      "announcement_accession": "0001193125-16-696852",
+      "target_cik": 315545,
+      "target": "PROVECTUS BIOPHARMACEUTICALS, INC.  (PVCT)",
+      "announcement_filing_date": "2016-08-30",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 304,
+      "announcement_accession": "0001445866-16-002589",
+      "target_cik": 748268,
+      "target": "EnergyTEK Corp.  (RCAT)",
+      "announcement_filing_date": "2016-08-30",
+      "items": [
+        "1.01",
+        "3.02",
+        "3.03",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 305,
+      "announcement_accession": "0001091818-16-000361",
+      "target_cik": 78311,
+      "target": "SoOum Corp.",
+      "announcement_filing_date": "2016-08-31",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 306,
+      "announcement_accession": "0001104659-16-142824",
+      "target_cik": 817979,
+      "target": "ACCURIDE CORP",
+      "announcement_filing_date": "2016-09-02",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 307,
+      "announcement_accession": "0001193125-16-701334",
+      "target_cik": 1037760,
+      "target": "CEPHEID",
+      "announcement_filing_date": "2016-09-06",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 308,
+      "announcement_accession": "0001193125-16-701448",
+      "target_cik": 808450,
+      "target": "NAVISTAR INTERNATIONAL CORP",
+      "announcement_filing_date": "2016-09-06",
+      "items": [
+        "1.01",
+        "3.02",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 309,
+      "announcement_accession": "0001096906-16-001897",
+      "target_cik": 1456212,
+      "target": "GROTE MOLEN INC",
+      "announcement_filing_date": "2016-09-07",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 310,
+      "announcement_accession": "0001144204-16-122962",
+      "target_cik": 1500554,
+      "target": "AMERICAN REALTY CAPITAL - RETAIL CENTERS OF AMERICA, INC.",
+      "announcement_filing_date": "2016-09-07",
+      "items": [
+        "1.01",
+        "1.02",
+        "5.03",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 311,
+      "announcement_accession": "0001144204-16-122964",
+      "target_cik": 1568162,
+      "target": "American Finance Trust, Inc",
+      "announcement_filing_date": "2016-09-07",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 312,
+      "announcement_accession": "0001415889-16-007074",
+      "target_cik": 1017655,
+      "target": "PAID INC  (PAYD)",
+      "announcement_filing_date": "2016-09-07",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 313,
+      "announcement_accession": "0001091818-16-000364",
+      "target_cik": 78311,
+      "target": "SoOum Corp.",
+      "announcement_filing_date": "2016-09-08",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K/A",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 314,
+      "announcement_accession": "0001193125-16-705490",
+      "target_cik": 1324772,
+      "target": "Apigee Corp",
+      "announcement_filing_date": "2016-09-08",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 315,
+      "announcement_accession": "0001104659-16-143987",
+      "target_cik": 1282648,
+      "target": "HALCON RESOURCES CORP  (BATL)",
+      "announcement_filing_date": "2016-09-09",
+      "items": [
+        "1.01",
+        "1.02",
+        "1.03",
+        "2.03",
+        "3.02",
+        "3.03",
+        "5.01",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 316,
+      "announcement_accession": "0001193125-16-706567",
+      "target_cik": 1571996,
+      "target": "Dell Technologies Inc  (DELL)",
+      "announcement_filing_date": "2016-09-09",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.01",
+        "2.03",
+        "3.02",
+        "3.03",
+        "5.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 317,
+      "announcement_accession": "0001415889-16-007105",
+      "target_cik": 1404943,
+      "target": "MetaStat, Inc.",
+      "announcement_filing_date": "2016-09-09",
+      "items": [
+        "1.01",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 318,
+      "announcement_accession": "0001079973-16-001172",
+      "target_cik": 1167419,
+      "target": "Venaxis, Inc.  (RIOT)",
+      "announcement_filing_date": "2016-09-13",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 319,
+      "announcement_accession": "0001193125-16-707886",
+      "target_cik": 1096325,
+      "target": "INTERSIL CORP/DE",
+      "announcement_filing_date": "2016-09-13",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 320,
+      "announcement_accession": "0001193125-16-708594",
+      "target_cik": 1288403,
+      "target": "W&T OFFSHORE INC  (WTI)",
+      "announcement_filing_date": "2016-09-13",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 321,
+      "announcement_accession": "0001445866-16-002616",
+      "target_cik": 748268,
+      "target": "EnergyTEK Corp.  (RCAT)",
+      "announcement_filing_date": "2016-09-13",
+      "items": [
+        "1.01",
+        "3.02",
+        "3.03",
+        "5.01",
+        "5.02",
+        "5.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 322,
+      "announcement_accession": "0001104659-16-144571",
+      "target_cik": 77877,
+      "target": "PDC ENERGY, INC.",
+      "announcement_filing_date": "2016-09-14",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 323,
+      "announcement_accession": "0001558370-16-008340",
+      "target_cik": 1082506,
+      "target": "Great Elm Capital Group, Inc.",
+      "announcement_filing_date": "2016-09-14",
+      "items": [
+        "1.01",
+        "2.04",
+        "3.02",
+        "5.05",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 324,
+      "announcement_accession": "0001193125-16-709890",
+      "target_cik": 77159,
+      "target": "PENN VIRGINIA CORP",
+      "announcement_filing_date": "2016-09-15",
+      "items": [
+        "1.01",
+        "1.02",
+        "3.02",
+        "3.03",
+        "5.01",
+        "5.02",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 325,
+      "announcement_accession": "0001193125-16-711588",
+      "target_cik": 1574815,
+      "target": "BMC STOCK HOLDINGS, INC.",
+      "announcement_filing_date": "2016-09-16",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 326,
+      "announcement_accession": "0001144204-16-124452",
+      "target_cik": 1615892,
+      "target": "AR CAPITAL ACQUISITION",
+      "announcement_filing_date": "2016-09-19",
+      "items": [
+        "1.01",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 327,
+      "announcement_accession": "0001193125-16-712811",
+      "target_cik": 1223862,
+      "target": "INFOBLOX INC",
+      "announcement_filing_date": "2016-09-19",
+      "items": [
+        "1.01",
+        "5.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 328,
+      "announcement_accession": "0001193125-16-714671",
+      "target_cik": 1558441,
+      "target": "INDUSTRIAL PROPERTY TRUST INC.",
+      "announcement_filing_date": "2016-09-20",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 329,
+      "announcement_accession": "0001193125-16-715368",
+      "target_cik": 1485003,
+      "target": "Eleven Biotherapeutics, Inc.  (CARM)",
+      "announcement_filing_date": "2016-09-21",
+      "items": [
+        "1.01",
+        "2.01",
+        "2.03",
+        "3.02",
+        "5.02",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 330,
+      "announcement_accession": "0001193125-16-717143",
+      "target_cik": 1022652,
+      "target": "NOVATEL WIRELESS INC  (INSG)",
+      "announcement_filing_date": "2016-09-22",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 331,
+      "announcement_accession": "0000950103-16-016524",
+      "target_cik": 1091862,
+      "target": "Chemtura CORP",
+      "announcement_filing_date": "2016-09-26",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 332,
+      "announcement_accession": "0001398432-16-000732",
+      "target_cik": 1477009,
+      "target": "GENERAL CANNABIS CORP  (CANN)",
+      "announcement_filing_date": "2016-09-26",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 333,
+      "announcement_accession": "0001193125-16-720602",
+      "target_cik": 1466085,
+      "target": "INDEPENDENCE REALTY TRUST, INC  (IRT)",
+      "announcement_filing_date": "2016-09-27",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 334,
+      "announcement_accession": "0001193125-16-720621",
+      "target_cik": 1045425,
+      "target": "RAIT Financial Trust",
+      "announcement_filing_date": "2016-09-27",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 335,
+      "announcement_accession": "0001193125-16-720839",
+      "target_cik": 1623919,
+      "target": "EndoChoice Holdings, Inc.",
+      "announcement_filing_date": "2016-09-27",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 336,
+      "announcement_accession": "0001144204-16-126042",
+      "target_cik": 317788,
+      "target": "Digital Turbine, Inc.  (APPS)",
+      "announcement_filing_date": "2016-09-29",
+      "items": [
+        "1.01",
+        "2.03",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 337,
+      "announcement_accession": "0001104659-16-148316",
+      "target_cik": 1065865,
+      "target": "JANUS CAPITAL GROUP INC",
+      "announcement_filing_date": "2016-10-03",
+      "items": [
+        "1.01",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 338,
+      "announcement_accession": "0001193125-16-728606",
+      "target_cik": 1669812,
+      "target": "LSC Communications, Inc.",
+      "announcement_filing_date": "2016-10-03",
+      "items": [
+        "1.01",
+        "2.01",
+        "3.02",
+        "5.02",
+        "5.03",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 339,
+      "announcement_accession": "0001193125-16-728752",
+      "target_cik": 1478242,
+      "target": "Quintiles IMS Holdings, Inc.  (IQV)",
+      "announcement_filing_date": "2016-10-03",
+      "items": [
+        "1.01",
+        "1.02",
+        "2.01",
+        "2.03",
+        "3.03",
+        "5.02",
+        "5.03",
+        "5.05",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 340,
+      "announcement_accession": "0001341004-16-001672",
+      "target_cik": 1179755,
+      "target": "ENDURANCE SPECIALTY HOLDINGS LTD",
+      "announcement_filing_date": "2016-10-05",
+      "items": [
+        "1.01",
+        "5.02",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 341,
+      "announcement_accession": "0000899715-16-000366",
+      "target_cik": 899715,
+      "target": "TANGER FACTORY OUTLET CENTERS INC  (SKT)",
+      "announcement_filing_date": "2016-10-06",
+      "items": [
+        "1.01",
+        "2.03",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 342,
+      "announcement_accession": "0000354908-16-000159",
+      "target_cik": 354908,
+      "target": "FLIR SYSTEMS INC",
+      "announcement_filing_date": "2016-10-07",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 343,
+      "announcement_accession": "0001144204-16-127355",
+      "target_cik": 1509477,
+      "target": "NowNews Digital Media Technology Co. Ltd.",
+      "announcement_filing_date": "2016-10-07",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 344,
+      "announcement_accession": "0001144204-16-127707",
+      "target_cik": 43350,
+      "target": "Gas Natural Inc.",
+      "announcement_filing_date": "2016-10-11",
+      "items": [
+        "1.01",
+        "7.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 345,
+      "announcement_accession": "0001437749-16-039632",
+      "target_cik": 1365101,
+      "target": "Primo Water Corp",
+      "announcement_filing_date": "2016-10-11",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 346,
+      "announcement_accession": "0001567619-16-003038",
+      "target_cik": 817979,
+      "target": "ACCURIDE CORP",
+      "announcement_filing_date": "2016-10-11",
+      "items": [
+        "1.01",
+        "3.03",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 347,
+      "announcement_accession": "0000276209-16-000100",
+      "target_cik": 276209,
+      "target": "CONNECTICUT WATER SERVICE INC / CT",
+      "announcement_filing_date": "2016-10-12",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 348,
+      "announcement_accession": "0001185185-16-005567",
+      "target_cik": 1418133,
+      "target": "Biostar Pharmaceuticals, Inc.",
+      "announcement_filing_date": "2016-10-12",
+      "items": [
+        "1.01",
+        "8.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 349,
+      "announcement_accession": "0001654954-16-002914",
+      "target_cik": 1404943,
+      "target": "MetaStat, Inc.",
+      "announcement_filing_date": "2016-10-17",
+      "items": [
+        "1.01",
+        "3.02",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    },
+    {
+      "candidate_rank": 350,
+      "announcement_accession": "0001104659-16-150578",
+      "target_cik": 1018164,
+      "target": "WILLIS LEASE FINANCE CORP  (WLFC)",
+      "announcement_filing_date": "2016-10-18",
+      "items": [
+        "1.01",
+        "9.01"
+      ],
+      "form": "8-K",
+      "initial_eligibility_basis": "EFTS 8-K hit for 'Agreement and Plan of Merger' with Item 1.01; outcome not inspected at queue construction",
+      "acquirer": null
+    }
+  ],
+  "notes": [
+    "Ranks frozen before any resolution inspection.",
+    "Corpus remains a research corpus; not a population sample."
+  ]
+}

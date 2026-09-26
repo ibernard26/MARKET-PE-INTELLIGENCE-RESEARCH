@@ -1,0 +1,4667 @@
+{
+  "batch_iteration": 3,
+  "max_admit": 20,
+  "admitted": [
+    {
+      "candidate_rank": 211,
+      "target_cik": 1082526,
+      "target": "SCIQUEST INC",
+      "announcement_accession": "0001193125-16-607416",
+      "announcement_filing_date": "2016-05-31",
+      "decision": "ADMIT",
+      "reason": "EVENT_RULES pass; fs_v1 cash; resolution=closed via 0001354457-16-000446",
+      "manifest_entry": {
+        "deal_id": "DEAL-SCIQUE-ACCEL-2016",
+        "target": "SCIQUEST INC",
+        "acquirer": "Accel-KKR",
+        "target_cik": 1082526,
+        "announcement_accession": "0001193125-16-607416",
+        "terms_accession": "0001193125-16-607416",
+        "announcement_timestamp": "2016-05-31",
+        "deal_type": "take_private",
+        "consideration_type": "cash",
+        "resolution_type": "closed",
+        "resolution_accession": "0001354457-16-000446",
+        "resolution_timestamp": "2016-07-28",
+        "offer_price": 17.75
+      },
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 17.75,
+        "exchange_ratio": null,
+        "acquirer": "Accel-KKR",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 251,
+      "target_cik": 1328015,
+      "target": "Imprivata Inc",
+      "announcement_accession": "0001193125-16-646873",
+      "announcement_filing_date": "2016-07-13",
+      "decision": "ADMIT",
+      "reason": "EVENT_RULES pass; fs_v1 cash; resolution=closed via 0000876661-16-001279",
+      "manifest_entry": {
+        "deal_id": "DEAL-IMPRIV-THOMA-2016",
+        "target": "Imprivata Inc",
+        "acquirer": "Thoma Bravo",
+        "target_cik": 1328015,
+        "announcement_accession": "0001193125-16-646873",
+        "terms_accession": "0001193125-16-646873",
+        "announcement_timestamp": "2016-07-13",
+        "deal_type": "take_private",
+        "consideration_type": "cash",
+        "resolution_type": "closed",
+        "resolution_accession": "0000876661-16-001279",
+        "resolution_timestamp": "2016-09-16",
+        "offer_price": 19.25
+      },
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 19.25,
+        "exchange_ratio": null,
+        "acquirer": "THOMA BRAVO",
+        "representability": "OK",
+        "reason": null
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "candidate_rank": 1,
+      "target_cik": 1631282,
+      "target": "DATASEA INC.  (DTSS)",
+      "announcement_accession": "0001520138-15-000444",
+      "announcement_filing_date": "2015-11-03",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 2,
+      "target_cik": 318833,
+      "target": "TEAM INC  (TISI)",
+      "announcement_accession": "0001193125-15-364749",
+      "announcement_filing_date": "2015-11-04",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 3,
+      "target_cik": 1371217,
+      "target": "EnteroMedics Inc",
+      "announcement_accession": "0001193125-15-367432",
+      "announcement_filing_date": "2015-11-05",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 4,
+      "target_cik": 1028153,
+      "target": "Axion Power International, Inc.",
+      "announcement_accession": "0001615774-15-003122",
+      "announcement_filing_date": "2015-11-05",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 6,
+      "target_cik": 1140098,
+      "target": "Ocata Therapeutics, Inc.",
+      "announcement_accession": "0001104659-15-077467",
+      "announcement_filing_date": "2015-11-10",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 7,
+      "target_cik": 278165,
+      "target": "Quest Solution, Inc.  (OMQS)",
+      "announcement_accession": "0001493152-15-005291",
+      "announcement_filing_date": "2015-11-10",
+      "decision": "EXCLUDE",
+      "reason": "Item 1.01 appears to be financing/credit, not equity M&A",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 9,
+      "target_cik": 1591670,
+      "target": "Farmland Partners Inc.  (FPI)",
+      "announcement_accession": "0001104659-15-078332",
+      "announcement_filing_date": "2015-11-12",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 11,
+      "target_cik": 316206,
+      "target": "STARWOOD HOTEL & RESORTS WORLDWIDE, INC",
+      "announcement_accession": "0000950157-15-001303",
+      "announcement_filing_date": "2015-11-16",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 12,
+      "target_cik": 1048286,
+      "target": "MARRIOTT INTERNATIONAL INC /MD/  (MAR)",
+      "announcement_accession": "0001193125-15-377593",
+      "announcement_filing_date": "2015-11-16",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 13,
+      "target_cik": 1654330,
+      "target": "COMM 2015-LC23 Mortgage Trust",
+      "announcement_accession": "0001539497-15-001985",
+      "announcement_filing_date": "2015-11-17",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Registrant from German American Capital Corporation",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 14,
+      "target_cik": 1513856,
+      "target": "Neurotrope, Inc.",
+      "announcement_accession": "0001144204-15-067033",
+      "announcement_filing_date": "2015-11-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 16,
+      "target_cik": 1273385,
+      "target": "Nutrastar International Inc.",
+      "announcement_accession": "0001062993-15-006360",
+      "announcement_filing_date": "2015-11-20",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 17,
+      "target_cik": 17485,
+      "target": "LIBERATOR MEDICAL HOLDINGS, INC.",
+      "announcement_accession": "0001193125-15-382901",
+      "announcement_filing_date": "2015-11-20",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "C. R",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 18,
+      "target_cik": 924805,
+      "target": "BMB MUNAI INC  (FRHC)",
+      "announcement_accession": "0001038838-15-000183",
+      "announcement_filing_date": "2015-11-23",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 19,
+      "target_cik": 1313938,
+      "target": "Sibannac, Inc.  (SNNC)",
+      "announcement_accession": "0001065949-15-000286",
+      "announcement_filing_date": "2015-11-23",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Company from PCI",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 20,
+      "target_cik": 890821,
+      "target": "AMERI Holdings, Inc.  (ENVB)",
+      "announcement_accession": "0001079974-15-000800",
+      "announcement_filing_date": "2015-11-23",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 22,
+      "target_cik": 23197,
+      "target": "COMTECH TELECOMMUNICATIONS CORP /DE/  (CMTL)",
+      "announcement_accession": "0001571049-15-009516",
+      "announcement_filing_date": "2015-11-23",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 23,
+      "target_cik": 1111665,
+      "target": "TELECOMMUNICATION SYSTEMS INC /FA/",
+      "announcement_accession": "0001571049-15-009519",
+      "announcement_filing_date": "2015-11-23",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 24,
+      "target_cik": 727273,
+      "target": "CADIZ INC  (CDZI, CDZIP)",
+      "announcement_accession": "0000727273-15-000036",
+      "announcement_filing_date": "2015-11-30",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 25,
+      "target_cik": 1613665,
+      "target": "Great Western Bancorp, Inc.",
+      "announcement_accession": "0001613665-15-000082",
+      "announcement_filing_date": "2015-11-30",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 26,
+      "target_cik": 1613665,
+      "target": "Great Western Bancorp, Inc.",
+      "announcement_accession": "0001613665-15-000090",
+      "announcement_filing_date": "2015-12-01",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 27,
+      "target_cik": 928421,
+      "target": "MATTSON TECHNOLOGY INC",
+      "announcement_accession": "0001193125-15-392660",
+      "announcement_filing_date": "2015-12-02",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 28,
+      "target_cik": 1029581,
+      "target": "Modsys International Ltd",
+      "announcement_accession": "0001213900-15-009235",
+      "announcement_filing_date": "2015-12-02",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 29,
+      "target_cik": 1388319,
+      "target": "U.S. Stem Cell, Inc.  (USRM)",
+      "announcement_accession": "0001185185-15-003238",
+      "announcement_filing_date": "2015-12-04",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 30,
+      "target_cik": 1449732,
+      "target": "Willbros Group, Inc.\\NEW\\",
+      "announcement_accession": "0001193125-15-395375",
+      "announcement_filing_date": "2015-12-04",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 31,
+      "target_cik": 103096,
+      "target": "TRC COMPANIES INC /DE/",
+      "announcement_accession": "0001511284-15-000084",
+      "announcement_filing_date": "2015-12-04",
+      "decision": "EXCLUDE",
+      "reason": "Item 1.01 appears to be financing/credit, not equity M&A",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 32,
+      "target_cik": 1567900,
+      "target": "SMSA BALLINGER ACQUISITION CORP  (BLBX)",
+      "announcement_accession": "0001010549-15-000375",
+      "announcement_filing_date": "2015-12-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 33,
+      "target_cik": 1179060,
+      "target": "EnLink Midstream Partners, LP",
+      "announcement_accession": "0001104659-15-083161",
+      "announcement_filing_date": "2015-12-07",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the General Partner",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 34,
+      "target_cik": 851310,
+      "target": "HARMONIC INC  (HLIT)",
+      "announcement_accession": "0001193125-15-396533",
+      "announcement_filing_date": "2015-12-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 36,
+      "target_cik": 1651790,
+      "target": "COMM 2015-CCRE26 Mortgage Trust",
+      "announcement_accession": "0001539497-15-002154",
+      "announcement_filing_date": "2015-12-08",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Company from German American Capital Corporation",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 37,
+      "target_cik": 23082,
+      "target": "COMPUTER SCIENCES CORP",
+      "announcement_accession": "0000023082-15-000086",
+      "announcement_filing_date": "2015-12-09",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 38,
+      "target_cik": 945436,
+      "target": "SUNEDISON, INC.",
+      "announcement_accession": "0001193125-15-398392",
+      "announcement_filing_date": "2015-12-09",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 39,
+      "target_cik": 1599947,
+      "target": "TerraForm Power, Inc.",
+      "announcement_accession": "0001193125-15-398397",
+      "announcement_filing_date": "2015-12-09",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 40,
+      "target_cik": 1031203,
+      "target": "GROUP 1 AUTOMOTIVE INC  (GPI)",
+      "announcement_accession": "0001193125-15-398881",
+      "announcement_filing_date": "2015-12-09",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 42,
+      "target_cik": 1487931,
+      "target": "DE Acquisition 6, Inc.",
+      "announcement_accession": "0001493152-15-006164",
+      "announcement_filing_date": "2015-12-10",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 43,
+      "target_cik": 30554,
+      "target": "DUPONT E I DE NEMOURS & CO  (CTA-PA, CTA-PB)",
+      "announcement_accession": "0001104659-15-084413",
+      "announcement_filing_date": "2015-12-11",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 44,
+      "target_cik": 29915,
+      "target": "DOW CHEMICAL CO /DE/",
+      "announcement_accession": "0001193125-15-401629",
+      "announcement_filing_date": "2015-12-11",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 45,
+      "target_cik": 1619917,
+      "target": "Patriot National, Inc.",
+      "announcement_accession": "0001193125-15-401964",
+      "announcement_filing_date": "2015-12-14",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 47,
+      "target_cik": 1635718,
+      "target": "Gannett Co., Inc.",
+      "announcement_accession": "0001193125-15-402649",
+      "announcement_filing_date": "2015-12-14",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 48,
+      "target_cik": 1071411,
+      "target": "FUSION TELECOMMUNICATIONS INTERNATIONAL INC",
+      "announcement_accession": "0001354488-15-005526",
+      "announcement_filing_date": "2015-12-14",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 49,
+      "target_cik": 923284,
+      "target": "INLAND REAL ESTATE CORP",
+      "announcement_accession": "0001104659-15-084910",
+      "announcement_filing_date": "2015-12-15",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 50,
+      "target_cik": 895655,
+      "target": "JARDEN CORP",
+      "announcement_accession": "0001193125-15-402840",
+      "announcement_filing_date": "2015-12-15",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 51,
+      "target_cik": 1487952,
+      "target": "Vishay Precision Group, Inc.  (VPG)",
+      "announcement_accession": "0001487952-15-000056",
+      "announcement_filing_date": "2015-12-15",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 52,
+      "target_cik": 1550020,
+      "target": "eWELLNESS HEALTHCARE Corp  (EWLL)",
+      "announcement_accession": "0001493152-15-006226",
+      "announcement_filing_date": "2015-12-15",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 54,
+      "target_cik": 10254,
+      "target": "EARTHSTONE ENERGY INC",
+      "announcement_accession": "0001564590-15-011548",
+      "announcement_filing_date": "2015-12-17",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 55,
+      "target_cik": 886163,
+      "target": "LIGAND PHARMACEUTICALS INC  (LGND, LGNDZ, LGNXZ, LGNYZ, LGNZZ)",
+      "announcement_accession": "0000886163-15-000122",
+      "announcement_filing_date": "2015-12-18",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 56,
+      "target_cik": 1550518,
+      "target": "Cantabio Pharmaceuticals Inc.",
+      "announcement_accession": "0001424884-15-000185",
+      "announcement_filing_date": "2015-12-18",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 58,
+      "target_cik": 46619,
+      "target": "HEICO CORP  (HEI, HEI-A)",
+      "announcement_accession": "0001193125-15-409161",
+      "announcement_filing_date": "2015-12-21",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "HEICO",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 59,
+      "target_cik": 1482512,
+      "target": "Hudson Pacific Properties, Inc.  (HPP, HPP-PC)",
+      "announcement_accession": "0001482512-15-000075",
+      "announcement_filing_date": "2015-12-21",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 60,
+      "target_cik": 1424328,
+      "target": "MULTIMEDIA PLATFORMS INC.",
+      "announcement_accession": "0001477932-15-007733",
+      "announcement_filing_date": "2015-12-22",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 61,
+      "target_cik": 1098972,
+      "target": "AGENUS INC  (AGEN)",
+      "announcement_accession": "0001193125-15-412810",
+      "announcement_filing_date": "2015-12-23",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 62,
+      "target_cik": 1318641,
+      "target": "CLEVELAND BIOLABS INC  (STAB)",
+      "announcement_accession": "0001213900-15-009717",
+      "announcement_filing_date": "2015-12-24",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 63,
+      "target_cik": 1392960,
+      "target": "MONGOLIA HOLDINGS, INC.",
+      "announcement_accession": "0001144204-15-073036",
+      "announcement_filing_date": "2015-12-29",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 64,
+      "target_cik": 813762,
+      "target": "ICAHN ENTERPRISES L.P.  (IEP)",
+      "announcement_accession": "0001104659-15-087353",
+      "announcement_filing_date": "2015-12-30",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 66,
+      "target_cik": 1309082,
+      "target": "LUCAS ENERGY, INC.  (CEIN)",
+      "announcement_accession": "0001354488-15-005724",
+      "announcement_filing_date": "2015-12-31",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 67,
+      "target_cik": 1125699,
+      "target": "DAIS ANALYTIC CORP  (DLYT)",
+      "announcement_accession": "0001477932-15-007842",
+      "announcement_filing_date": "2015-12-31",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Shareholder pursuant hereto",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 68,
+      "target_cik": 1130144,
+      "target": "SIERRA BANCORP  (BSRR)",
+      "announcement_accession": "0001144204-16-073991",
+      "announcement_filing_date": "2016-01-05",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 69,
+      "target_cik": 1123312,
+      "target": "Yasheng Group",
+      "announcement_accession": "0001199835-16-000584",
+      "announcement_filing_date": "2016-01-05",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 70,
+      "target_cik": 97196,
+      "target": "AMERICAN INDEPENDENCE CORP",
+      "announcement_accession": "0000097196-16-000024",
+      "announcement_filing_date": "2016-01-06",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 71,
+      "target_cik": 701869,
+      "target": "INDEPENDENCE HOLDING CO",
+      "announcement_accession": "0000701869-16-000053",
+      "announcement_filing_date": "2016-01-06",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 72,
+      "target_cik": 1389545,
+      "target": "NovaBay Pharmaceuticals, Inc.  (NBY)",
+      "announcement_accession": "0001437749-16-023235",
+      "announcement_filing_date": "2016-01-06",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 73,
+      "target_cik": 897078,
+      "target": "Textmunication Holdings, Inc.  (KOAN)",
+      "announcement_accession": "0001493152-16-006636",
+      "announcement_filing_date": "2016-01-06",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 74,
+      "target_cik": 1609319,
+      "target": "Nuvola, Inc.",
+      "announcement_accession": "0001193125-16-423556",
+      "announcement_filing_date": "2016-01-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 75,
+      "target_cik": 1654330,
+      "target": "COMM 2015-LC23 Mortgage Trust",
+      "announcement_accession": "0001539497-16-002249",
+      "announcement_filing_date": "2016-01-07",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Company from German American Capital Corporation",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 76,
+      "target_cik": 353020,
+      "target": "Aegion Corp",
+      "announcement_accession": "0001437749-16-023396",
+      "announcement_filing_date": "2016-01-08",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 77,
+      "target_cik": 936402,
+      "target": "Shire plc",
+      "announcement_accession": "0001047469-16-009624",
+      "announcement_filing_date": "2016-01-11",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 79,
+      "target_cik": 1620546,
+      "target": "Baxalta Inc",
+      "announcement_accession": "0001193125-16-426678",
+      "announcement_filing_date": "2016-01-11",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 80,
+      "target_cik": 849636,
+      "target": "RespireRx Pharmaceuticals Inc.  (RSPI)",
+      "announcement_accession": "0001493152-16-006725",
+      "announcement_filing_date": "2016-01-11",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 81,
+      "target_cik": 1157075,
+      "target": "PharmaCyte Biotech, Inc.  (PMCB)",
+      "announcement_accession": "0001019687-16-004784",
+      "announcement_filing_date": "2016-01-12",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 82,
+      "target_cik": 1376339,
+      "target": "MIMEDX GROUP, INC.  (MDXG)",
+      "announcement_accession": "0001376339-16-000111",
+      "announcement_filing_date": "2016-01-13",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Company of Stability",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 83,
+      "target_cik": 913077,
+      "target": "AFFYMETRIX INC",
+      "announcement_accession": "0001193125-16-429136",
+      "announcement_filing_date": "2016-01-14",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 84,
+      "target_cik": 1389545,
+      "target": "NovaBay Pharmaceuticals, Inc.  (NBY)",
+      "announcement_accession": "0001437749-16-023598",
+      "announcement_filing_date": "2016-01-14",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 85,
+      "target_cik": 1313938,
+      "target": "Sibannac, Inc.  (SNNC)",
+      "announcement_accession": "0001065949-16-000326",
+      "announcement_filing_date": "2016-01-19",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Company from PCI",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 86,
+      "target_cik": 36506,
+      "target": "MACKINAC FINANCIAL CORP /MI/",
+      "announcement_accession": "0001104659-16-090287",
+      "announcement_filing_date": "2016-01-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 87,
+      "target_cik": 929940,
+      "target": "ASPEN TECHNOLOGY INC /DE/",
+      "announcement_accession": "0001104659-16-090438",
+      "announcement_filing_date": "2016-01-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 89,
+      "target_cik": 1417663,
+      "target": "SANUWAVE Health, Inc.  (SNWV)",
+      "announcement_accession": "0001437749-16-023805",
+      "announcement_filing_date": "2016-01-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 90,
+      "target_cik": 1001463,
+      "target": "Acacia Diversified Holdings, Inc.",
+      "announcement_accession": "0001557234-16-000395",
+      "announcement_filing_date": "2016-01-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 91,
+      "target_cik": 849399,
+      "target": "SYMANTEC CORP  (GEN)",
+      "announcement_accession": "0001193125-16-432742",
+      "announcement_filing_date": "2016-01-20",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 93,
+      "target_cik": 1623590,
+      "target": "Vitaxel Group Ltd  (FINR)",
+      "announcement_accession": "0001615774-16-003964",
+      "announcement_filing_date": "2016-01-22",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 94,
+      "target_cik": 19612,
+      "target": "CHEMICAL FINANCIAL CORP",
+      "announcement_accession": "0000905729-16-000378",
+      "announcement_filing_date": "2016-01-26",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 95,
+      "target_cik": 1360683,
+      "target": "TALMER BANCORP, INC.",
+      "announcement_accession": "0001360683-16-000050",
+      "announcement_filing_date": "2016-01-26",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 96,
+      "target_cik": 1045309,
+      "target": "W R GRACE & CO",
+      "announcement_accession": "0001045309-16-000125",
+      "announcement_filing_date": "2016-01-28",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 97,
+      "target_cik": 1336920,
+      "target": "Leidos Holdings, Inc.  (LDOS)",
+      "announcement_accession": "0001193125-16-442082",
+      "announcement_filing_date": "2016-01-28",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 98,
+      "target_cik": 1644440,
+      "target": "GCP Applied Technologies Inc.",
+      "announcement_accession": "0001644440-16-000068",
+      "announcement_filing_date": "2016-01-28",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 99,
+      "target_cik": 1296205,
+      "target": "ZAGG Inc",
+      "announcement_accession": "0001013762-16-001288",
+      "announcement_filing_date": "2016-02-02",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 100,
+      "target_cik": 730255,
+      "target": "CalAmp Corp.",
+      "announcement_accession": "0001145443-16-001445",
+      "announcement_filing_date": "2016-02-02",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 102,
+      "target_cik": 1273385,
+      "target": "Nutrastar International Inc.",
+      "announcement_accession": "0001062993-16-007426",
+      "announcement_filing_date": "2016-02-03",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 103,
+      "target_cik": 1630113,
+      "target": "BIOTRICITY INC.  (BTCY)",
+      "announcement_accession": "0001511164-16-000639",
+      "announcement_filing_date": "2016-02-03",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 105,
+      "target_cik": 1634942,
+      "target": "Broke Out Inc.",
+      "announcement_accession": "0001640334-16-000656",
+      "announcement_filing_date": "2016-02-03",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 106,
+      "target_cik": 1437491,
+      "target": "Magnolia Solar Corp  (ROII)",
+      "announcement_accession": "0001013762-16-001294",
+      "announcement_filing_date": "2016-02-04",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 109,
+      "target_cik": 864559,
+      "target": "CASCADE MICROTECH INC",
+      "announcement_accession": "0001193125-16-455312",
+      "announcement_filing_date": "2016-02-09",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 110,
+      "target_cik": 1039399,
+      "target": "FORMFACTOR INC  (FORM)",
+      "announcement_accession": "0001193125-16-455318",
+      "announcement_filing_date": "2016-02-09",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 116,
+      "target_cik": 1512138,
+      "target": "Great Basin Scientific, Inc.",
+      "announcement_accession": "0001193125-16-470137",
+      "announcement_filing_date": "2016-02-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 117,
+      "target_cik": 1404943,
+      "target": "MetaStat, Inc.",
+      "announcement_accession": "0001415889-16-004856",
+      "announcement_filing_date": "2016-02-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 118,
+      "target_cik": 1507986,
+      "target": "JetPay Corp",
+      "announcement_accession": "0001144204-16-084086",
+      "announcement_filing_date": "2016-02-24",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 123,
+      "target_cik": 1616495,
+      "target": "Viatar CTC Solutions Inc.",
+      "announcement_accession": "0001511164-16-000665",
+      "announcement_filing_date": "2016-03-01",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 124,
+      "target_cik": 215419,
+      "target": "CHECKPOINT SYSTEMS INC",
+      "announcement_accession": "0001193125-16-489094",
+      "announcement_filing_date": "2016-03-02",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 125,
+      "target_cik": 1411579,
+      "target": "AMC ENTERTAINMENT HOLDINGS, INC.  (AMC)",
+      "announcement_accession": "0001104659-16-102617",
+      "announcement_filing_date": "2016-03-04",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 126,
+      "target_cik": 722077,
+      "target": "AMC ENTERTAINMENT INC",
+      "announcement_accession": "0001104659-16-102619",
+      "announcement_filing_date": "2016-03-04",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 127,
+      "target_cik": 799088,
+      "target": "CARMIKE CINEMAS INC",
+      "announcement_accession": "0001193125-16-493398",
+      "announcement_filing_date": "2016-03-04",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 128,
+      "target_cik": 1058307,
+      "target": "Orbital Tracking Corp.  (NXPL, NXPLW)",
+      "announcement_accession": "0001415889-16-004981",
+      "announcement_filing_date": "2016-03-04",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 129,
+      "target_cik": 1530244,
+      "target": "Petrus Resources Corp",
+      "announcement_accession": "0001079974-16-001016",
+      "announcement_filing_date": "2016-03-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 130,
+      "target_cik": 1614818,
+      "target": "FinTech Acquisition Corp",
+      "announcement_accession": "0001213900-16-011372",
+      "announcement_filing_date": "2016-03-07",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "essing and technology solutions provider, and FinTech Acquisition Corp",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 131,
+      "target_cik": 949189,
+      "target": "CAPSALUS CORP",
+      "announcement_accession": "0001511164-16-000673",
+      "announcement_filing_date": "2016-03-08",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 132,
+      "target_cik": 949189,
+      "target": "FORU Holdings, Inc.",
+      "announcement_accession": "0001511164-16-000675",
+      "announcement_filing_date": "2016-03-08",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 134,
+      "target_cik": 1650962,
+      "target": "Manitowoc Foodservice, Inc.",
+      "announcement_accession": "0001193125-16-498390",
+      "announcement_filing_date": "2016-03-09",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 135,
+      "target_cik": 1422768,
+      "target": "Almost Never Films Inc.",
+      "announcement_accession": "0001640334-16-000790",
+      "announcement_filing_date": "2016-03-09",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 139,
+      "target_cik": 1386936,
+      "target": "GOLD LAKES CORP.",
+      "announcement_accession": "0001477932-16-009052",
+      "announcement_filing_date": "2016-03-15",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 140,
+      "target_cik": 1324410,
+      "target": "Guaranty Bancorp",
+      "announcement_accession": "0001104659-16-105482",
+      "announcement_filing_date": "2016-03-16",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 141,
+      "target_cik": 1579157,
+      "target": "VINCE HOLDING CORP.  (VNCE)",
+      "announcement_accession": "0001193125-16-506920",
+      "announcement_filing_date": "2016-03-16",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 142,
+      "target_cik": 1663244,
+      "target": "COMM 2016-DC2 Mortgage Trust",
+      "announcement_accession": "0001539497-16-002633",
+      "announcement_filing_date": "2016-03-16",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Registrant from German American Capital Corporation",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 143,
+      "target_cik": 1402785,
+      "target": "FLUOROPHARMA MEDICAL, INC.",
+      "announcement_accession": "0001415889-16-005229",
+      "announcement_filing_date": "2016-03-23",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 144,
+      "target_cik": 1572565,
+      "target": "Indoor Harvest Corp  (INQD)",
+      "announcement_accession": "0001640334-16-000861",
+      "announcement_filing_date": "2016-03-24",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 145,
+      "target_cik": 1622620,
+      "target": "Lynden Energy Corp.",
+      "announcement_accession": "0001193125-16-521561",
+      "announcement_filing_date": "2016-03-29",
+      "decision": "EXCLUDE",
+      "reason": "Item 1.01 appears to be financing/credit, not equity M&A",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 146,
+      "target_cik": 10254,
+      "target": "EARTHSTONE ENERGY INC",
+      "announcement_accession": "0001564590-16-015512",
+      "announcement_filing_date": "2016-03-29",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 147,
+      "target_cik": 1020569,
+      "target": "IRON MOUNTAIN INC  (IRM)",
+      "announcement_accession": "0001104659-16-109092",
+      "announcement_filing_date": "2016-04-01",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 148,
+      "target_cik": 1309082,
+      "target": "LUCAS ENERGY, INC.  (CEIN)",
+      "announcement_accession": "0001580695-16-000310",
+      "announcement_filing_date": "2016-04-01",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 149,
+      "target_cik": 766421,
+      "target": "ALASKA AIR GROUP, INC.  (ALK)",
+      "announcement_accession": "0001193125-16-528478",
+      "announcement_filing_date": "2016-04-04",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 150,
+      "target_cik": 1614436,
+      "target": "Virgin America Inc.",
+      "announcement_accession": "0001193125-16-528543",
+      "announcement_filing_date": "2016-04-04",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 151,
+      "target_cik": 1009626,
+      "target": "BROCADE COMMUNICATIONS SYSTEMS INC",
+      "announcement_accession": "0001193125-16-528696",
+      "announcement_filing_date": "2016-04-04",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 152,
+      "target_cik": 1294016,
+      "target": "RUCKUS WIRELESS INC",
+      "announcement_accession": "0001193125-16-528752",
+      "announcement_filing_date": "2016-04-04",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 155,
+      "target_cik": 1309082,
+      "target": "LUCAS ENERGY, INC.  (CEIN)",
+      "announcement_accession": "0001580695-16-000313",
+      "announcement_filing_date": "2016-04-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 157,
+      "target_cik": 1011290,
+      "target": "99 CENTS ONLY STORES LLC",
+      "announcement_accession": "0001104659-16-110751",
+      "announcement_filing_date": "2016-04-11",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 158,
+      "target_cik": 1606498,
+      "target": "Halyard Health, Inc.  (AVNS)",
+      "announcement_accession": "0001193125-16-537306",
+      "announcement_filing_date": "2016-04-11",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 159,
+      "target_cik": 1101680,
+      "target": "ZHONE TECHNOLOGIES INC  (DZSI)",
+      "announcement_accession": "0001101680-16-000066",
+      "announcement_filing_date": "2016-04-12",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 160,
+      "target_cik": 105608,
+      "target": "AG&E HOLDINGS INC.",
+      "announcement_accession": "0001437749-16-029512",
+      "announcement_filing_date": "2016-04-14",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 161,
+      "target_cik": 1170534,
+      "target": "MITEL NETWORKS CORP",
+      "announcement_accession": "0001193125-16-543751",
+      "announcement_filing_date": "2016-04-18",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 163,
+      "target_cik": 1010552,
+      "target": "POLYCOM INC",
+      "announcement_accession": "0001193125-16-544639",
+      "announcement_filing_date": "2016-04-18",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "and Polycom",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 164,
+      "target_cik": 28823,
+      "target": "DIEBOLD INC  (DBD)",
+      "announcement_accession": "0001193125-16-546572",
+      "announcement_filing_date": "2016-04-19",
+      "decision": "EXCLUDE",
+      "reason": "Item 1.01 appears to be financing/credit, not equity M&A",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 165,
+      "target_cik": 1375618,
+      "target": "Amazing Energy Oil & Gas, Co.",
+      "announcement_accession": "0001002014-16-000649",
+      "announcement_filing_date": "2016-04-20",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 170,
+      "target_cik": 1551152,
+      "target": "AbbVie Inc.  (ABBV)",
+      "announcement_accession": "0001104659-16-116276",
+      "announcement_filing_date": "2016-04-29",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 171,
+      "target_cik": 25232,
+      "target": "COUSINS PROPERTIES INC  (CUZ)",
+      "announcement_accession": "0001193125-16-566259",
+      "announcement_filing_date": "2016-04-29",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 172,
+      "target_cik": 729237,
+      "target": "PARKWAY PROPERTIES INC",
+      "announcement_accession": "0001193125-16-566295",
+      "announcement_filing_date": "2016-04-29",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 176,
+      "target_cik": 1364954,
+      "target": "CHEGG, INC  (CHGG)",
+      "announcement_accession": "0001364954-16-000335",
+      "announcement_filing_date": "2016-05-02",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 177,
+      "target_cik": 1630940,
+      "target": "Atlantic Alliance Partnership Corp.",
+      "announcement_accession": "0001213900-16-012939",
+      "announcement_filing_date": "2016-05-03",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 179,
+      "target_cik": 1424454,
+      "target": "Rovi Corp",
+      "announcement_accession": "0001193125-16-577599",
+      "announcement_filing_date": "2016-05-04",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 180,
+      "target_cik": 1187953,
+      "target": "JOLLEY MARKETING INC  (CELZ)",
+      "announcement_accession": "0001078782-16-002737",
+      "announcement_filing_date": "2016-05-05",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "JLLM",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 181,
+      "target_cik": 1385818,
+      "target": "AYTU BIOSCIENCE, INC  (AYTU)",
+      "announcement_accession": "0001144204-16-099585",
+      "announcement_filing_date": "2016-05-06",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 182,
+      "target_cik": 1100270,
+      "target": "KRISPY KREME DOUGHNUTS INC",
+      "announcement_accession": "0001206774-16-005893",
+      "announcement_filing_date": "2016-05-09",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 183,
+      "target_cik": 276209,
+      "target": "CONNECTICUT WATER SERVICE INC / CT",
+      "announcement_accession": "0000276209-16-000057",
+      "announcement_filing_date": "2016-05-10",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 184,
+      "target_cik": 1342126,
+      "target": "Morgans Hotel Group Co.",
+      "announcement_accession": "0001193125-16-584264",
+      "announcement_filing_date": "2016-05-10",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 185,
+      "target_cik": 1344413,
+      "target": "Alexza Pharmaceuticals Inc.",
+      "announcement_accession": "0001193125-16-584558",
+      "announcement_filing_date": "2016-05-10",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 186,
+      "target_cik": 1280784,
+      "target": "Hercules Capital, Inc.  (HCXY, HTGC)",
+      "announcement_accession": "0001193125-16-585570",
+      "announcement_filing_date": "2016-05-10",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 187,
+      "target_cik": 1403161,
+      "target": "VISA INC.  (V)",
+      "announcement_accession": "0001403161-16-000027",
+      "announcement_filing_date": "2016-05-10",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 188,
+      "target_cik": 28823,
+      "target": "DIEBOLD INC  (DBD)",
+      "announcement_accession": "0001193125-16-588699",
+      "announcement_filing_date": "2016-05-12",
+      "decision": "EXCLUDE",
+      "reason": "Item 1.01 appears to be financing/credit, not equity M&A",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 189,
+      "target_cik": 1512077,
+      "target": "Global Eagle Entertainment Inc.",
+      "announcement_accession": "0001144204-16-101939",
+      "announcement_filing_date": "2016-05-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 190,
+      "target_cik": 1628468,
+      "target": "Sino Fortune Holding Corp",
+      "announcement_accession": "0001493152-16-009753",
+      "announcement_filing_date": "2016-05-13",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Shareholder pursuant hereto",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 191,
+      "target_cik": 1309141,
+      "target": "SYDYS CORP",
+      "announcement_accession": "0001551163-16-000383",
+      "announcement_filing_date": "2016-05-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 192,
+      "target_cik": 1591913,
+      "target": "Asiya Pearls, Inc.  (IPSI)",
+      "announcement_accession": "0001615774-16-005384",
+      "announcement_filing_date": "2016-05-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 194,
+      "target_cik": 1512077,
+      "target": "Global Eagle Entertainment Inc.",
+      "announcement_accession": "0001144204-16-102018",
+      "announcement_filing_date": "2016-05-16",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 195,
+      "target_cik": 1033905,
+      "target": "LUMINEX CORP",
+      "announcement_accession": "0001193125-16-591088",
+      "announcement_filing_date": "2016-05-16",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 196,
+      "target_cik": 1451929,
+      "target": "Avant Diagnostics, Inc",
+      "announcement_accession": "0001477932-16-010436",
+      "announcement_filing_date": "2016-05-17",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 197,
+      "target_cik": 1087934,
+      "target": "inContact, Inc.",
+      "announcement_accession": "0001193125-16-594683",
+      "announcement_filing_date": "2016-05-18",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 198,
+      "target_cik": 1187953,
+      "target": "CREATIVE MEDICAL TECHNOLOGY HOLDINGS, INC.  (CELZ)",
+      "announcement_accession": "0001078782-16-002867",
+      "announcement_filing_date": "2016-05-19",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 199,
+      "target_cik": 1091667,
+      "target": "CHARTER COMMUNICATIONS, INC. /MO/  (CHTR)",
+      "announcement_accession": "0001193125-16-596195",
+      "announcement_filing_date": "2016-05-19",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[0.37334])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[0.37334])"
+      }
+    },
+    {
+      "candidate_rank": 200,
+      "target_cik": 97216,
+      "target": "TEREX CORP  (TEX)",
+      "announcement_accession": "0001398432-16-000658",
+      "announcement_filing_date": "2016-05-19",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 201,
+      "target_cik": 1649989,
+      "target": "Oncobiologics, Inc.  (OTLK)",
+      "announcement_accession": "0001571049-16-015410",
+      "announcement_filing_date": "2016-05-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 202,
+      "target_cik": 1357615,
+      "target": "KBR, INC.  (KBR)",
+      "announcement_accession": "0001193125-16-598149",
+      "announcement_filing_date": "2016-05-23",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 204,
+      "target_cik": 1663244,
+      "target": "COMM 2016-DC2 Mortgage Trust",
+      "announcement_accession": "0001539497-16-003012",
+      "announcement_filing_date": "2016-05-23",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Company from German American Capital Corporation",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 205,
+      "target_cik": 36506,
+      "target": "MACKINAC FINANCIAL CORP /MI/",
+      "announcement_accession": "0001104659-16-122870",
+      "announcement_filing_date": "2016-05-24",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 206,
+      "target_cik": 83402,
+      "target": "RESOURCE AMERICA, INC.",
+      "announcement_accession": "0001193125-16-599493",
+      "announcement_filing_date": "2016-05-24",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 207,
+      "target_cik": 1474464,
+      "target": "New York REIT, Inc.",
+      "announcement_accession": "0001047469-16-013429",
+      "announcement_filing_date": "2016-05-25",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 209,
+      "target_cik": 1583771,
+      "target": "ContraVir Pharmaceuticals, Inc.  (HEPA, CTRVP)",
+      "announcement_accession": "0001104659-16-124243",
+      "announcement_filing_date": "2016-05-31",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 210,
+      "target_cik": 1308711,
+      "target": "Behringer Harvard Opportunity REIT I, Inc.",
+      "announcement_accession": "0001104659-16-124541",
+      "announcement_filing_date": "2016-05-31",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 212,
+      "target_cik": 1375195,
+      "target": "3DICON CORP  (CRTG)",
+      "announcement_accession": "0001144204-16-106200",
+      "announcement_filing_date": "2016-06-01",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 214,
+      "target_cik": 811808,
+      "target": "SUMMIT FINANCIAL GROUP INC",
+      "announcement_accession": "0000811808-16-000069",
+      "announcement_filing_date": "2016-06-03",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 215,
+      "target_cik": 1425205,
+      "target": "Lion Biotechnologies, Inc.  (IOVA)",
+      "announcement_accession": "0001144204-16-106835",
+      "announcement_filing_date": "2016-06-03",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 217,
+      "target_cik": 1622536,
+      "target": "Talen Energy Corp  (TLN)",
+      "announcement_accession": "0001193125-16-613220",
+      "announcement_filing_date": "2016-06-06",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 218,
+      "target_cik": 1502152,
+      "target": "First Titan Corp.  (GSTC)",
+      "announcement_accession": "0001161697-16-000877",
+      "announcement_filing_date": "2016-06-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 221,
+      "target_cik": 1451512,
+      "target": "Terra Tech Corp.",
+      "announcement_accession": "0001477932-16-010738",
+      "announcement_filing_date": "2016-06-07",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "Terra Tech",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 222,
+      "target_cik": 1085913,
+      "target": "FARMERS & MERCHANTS BANCORP  (FMCB)",
+      "announcement_accession": "0001140361-16-069394",
+      "announcement_filing_date": "2016-06-10",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[0.031748])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[0.031748])"
+      }
+    },
+    {
+      "candidate_rank": 223,
+      "target_cik": 1282648,
+      "target": "HALCON RESOURCES CORP  (BATL)",
+      "announcement_accession": "0001104659-16-126697",
+      "announcement_filing_date": "2016-06-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 224,
+      "target_cik": 1387135,
+      "target": "QUANTUMSPHERE, INC.",
+      "announcement_accession": "0001493152-16-010770",
+      "announcement_filing_date": "2016-06-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 225,
+      "target_cik": 1348911,
+      "target": "Carbylan Therapeutics, Inc.  (KALV)",
+      "announcement_accession": "0001193125-16-621891",
+      "announcement_filing_date": "2016-06-15",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 226,
+      "target_cik": 767884,
+      "target": "Ceres, Inc.",
+      "announcement_accession": "0001144204-16-108637",
+      "announcement_filing_date": "2016-06-17",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 227,
+      "target_cik": 5768,
+      "target": "AMERICAN SCIENCE & ENGINEERING, INC.",
+      "announcement_accession": "0001104659-16-128465",
+      "announcement_filing_date": "2016-06-21",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 228,
+      "target_cik": 701719,
+      "target": "DGSE COMPANIES INC  (ELA)",
+      "announcement_accession": "0001144204-16-109257",
+      "announcement_filing_date": "2016-06-22",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 230,
+      "target_cik": 797542,
+      "target": "Emerald Medical Applications Corp.  (VBIX)",
+      "announcement_accession": "0001575872-16-000372",
+      "announcement_filing_date": "2016-06-22",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 232,
+      "target_cik": 1459200,
+      "target": "Alarm.com Holdings, Inc.  (ALRM)",
+      "announcement_accession": "0001193125-16-629623",
+      "announcement_filing_date": "2016-06-23",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 233,
+      "target_cik": 1444145,
+      "target": "Demand Pooling, Inc.",
+      "announcement_accession": "0001554795-16-000729",
+      "announcement_filing_date": "2016-06-23",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 234,
+      "target_cik": 1423542,
+      "target": "SKULLCANDY, INC.",
+      "announcement_accession": "0001193125-16-630863",
+      "announcement_filing_date": "2016-06-24",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 236,
+      "target_cik": 1297336,
+      "target": "ReachLocal Inc",
+      "announcement_accession": "0001104659-16-129546",
+      "announcement_filing_date": "2016-06-27",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 237,
+      "target_cik": 1635718,
+      "target": "Gannett Co., Inc.",
+      "announcement_accession": "0001104659-16-129547",
+      "announcement_filing_date": "2016-06-27",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 238,
+      "target_cik": 1556148,
+      "target": "Infor, Inc.",
+      "announcement_accession": "0001193125-16-634264",
+      "announcement_filing_date": "2016-06-28",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 239,
+      "target_cik": 1078099,
+      "target": "MeetMe, Inc.",
+      "announcement_accession": "0001437749-16-034479",
+      "announcement_filing_date": "2016-06-28",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 240,
+      "target_cik": 1641197,
+      "target": "Easterly Acquisition Corp.",
+      "announcement_accession": "0001144204-16-110384",
+      "announcement_filing_date": "2016-06-29",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 242,
+      "target_cik": 98618,
+      "target": "ALANCO TECHNOLOGIES INC",
+      "announcement_accession": "0000098618-16-000023",
+      "announcement_filing_date": "2016-07-05",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 243,
+      "target_cik": 1644406,
+      "target": "Gores Holdings, Inc.",
+      "announcement_accession": "0001193125-16-641691",
+      "announcement_filing_date": "2016-07-05",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 244,
+      "target_cik": 1586372,
+      "target": "Knowledge Machine International, Inc.",
+      "announcement_accession": "0001019687-16-006863",
+      "announcement_filing_date": "2016-07-06",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 245,
+      "target_cik": 1216596,
+      "target": "NORTEK INC",
+      "announcement_accession": "0001047469-16-014186",
+      "announcement_filing_date": "2016-07-06",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 246,
+      "target_cik": 1394130,
+      "target": "Event Cardio Group Inc.",
+      "announcement_accession": "0000721748-16-001424",
+      "announcement_filing_date": "2016-07-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 247,
+      "target_cik": 1062047,
+      "target": "CONVERGYS CORP",
+      "announcement_accession": "0001193125-16-642646",
+      "announcement_filing_date": "2016-07-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 249,
+      "target_cik": 1390478,
+      "target": "Galena Biopharma, Inc.  (SLS)",
+      "announcement_accession": "0001193125-16-643945",
+      "announcement_filing_date": "2016-07-08",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 252,
+      "target_cik": 1444403,
+      "target": "CODE GREEN APPAREL CORP  (CGAC)",
+      "announcement_accession": "0001580695-16-000542",
+      "announcement_filing_date": "2016-07-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 253,
+      "target_cik": 1599385,
+      "target": "RX Safes, Inc.",
+      "announcement_accession": "0001663577-16-000213",
+      "announcement_filing_date": "2016-07-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 254,
+      "target_cik": 1551887,
+      "target": "VGRAB COMMUNICATIONS INC.  (DUSYF)",
+      "announcement_accession": "0001393905-16-000980",
+      "announcement_filing_date": "2016-07-15",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 255,
+      "target_cik": 844143,
+      "target": "Differential Brands Group Inc.",
+      "announcement_accession": "0001104659-16-133330",
+      "announcement_filing_date": "2016-07-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 257,
+      "target_cik": 73605,
+      "target": "OAKRIDGE HOLDINGS INC",
+      "announcement_accession": "0000073605-16-000022",
+      "announcement_filing_date": "2016-07-20",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 258,
+      "target_cik": 1072627,
+      "target": "KINGSWAY FINANCIAL SERVICES INC  (KFS)",
+      "announcement_accession": "0001072627-16-000218",
+      "announcement_filing_date": "2016-07-20",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 260,
+      "target_cik": 1542624,
+      "target": "ACCELERATED ACQUISITIONS XIX",
+      "announcement_accession": "0001079974-16-001432",
+      "announcement_filing_date": "2016-07-21",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 262,
+      "target_cik": 1385292,
+      "target": "Monotype Imaging Holdings Inc.",
+      "announcement_accession": "0001193125-16-652984",
+      "announcement_filing_date": "2016-07-21",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 264,
+      "target_cik": 1411579,
+      "target": "AMC ENTERTAINMENT HOLDINGS, INC.  (AMC)",
+      "announcement_accession": "0001104659-16-134139",
+      "announcement_filing_date": "2016-07-25",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 265,
+      "target_cik": 1288403,
+      "target": "W&T OFFSHORE INC  (WTI)",
+      "announcement_accession": "0001193125-16-655955",
+      "announcement_filing_date": "2016-07-25",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 266,
+      "target_cik": 799088,
+      "target": "CARMIKE CINEMAS INC",
+      "announcement_accession": "0001193125-16-656419",
+      "announcement_filing_date": "2016-07-25",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 267,
+      "target_cik": 1501257,
+      "target": "Yummy Flies, Inc.",
+      "announcement_accession": "0001079974-16-001438",
+      "announcement_filing_date": "2016-07-26",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 268,
+      "target_cik": 890821,
+      "target": "AMERI Holdings, Inc.  (ENVB)",
+      "announcement_accession": "0000921895-16-005236",
+      "announcement_filing_date": "2016-07-27",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 269,
+      "target_cik": 1515317,
+      "target": "MAGELLAN GOLD Corp  (MAGE)",
+      "announcement_accession": "0001011034-16-000213",
+      "announcement_filing_date": "2016-07-27",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "reason of",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 271,
+      "target_cik": 315858,
+      "target": "BFC FINANCIAL CORP",
+      "announcement_accession": "0001193125-16-661833",
+      "announcement_filing_date": "2016-07-28",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 272,
+      "target_cik": 921768,
+      "target": "BBX CAPITAL CORP",
+      "announcement_accession": "0001193125-16-661853",
+      "announcement_filing_date": "2016-07-28",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 274,
+      "target_cik": 1142417,
+      "target": "NEXSTAR BROADCASTING GROUP INC  (NXST)",
+      "announcement_accession": "0001193125-16-664694",
+      "announcement_filing_date": "2016-07-29",
+      "decision": "EXCLUDE",
+      "reason": "announcement appears acquirer-side (filer acquiring another company); not admissible with filer as target",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 275,
+      "target_cik": 890821,
+      "target": "AMERI Holdings, Inc.  (ENVB)",
+      "announcement_accession": "0000921895-16-005270",
+      "announcement_filing_date": "2016-08-01",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 276,
+      "target_cik": 1117106,
+      "target": "NETSUITE INC",
+      "announcement_accession": "0001104659-16-135792",
+      "announcement_filing_date": "2016-08-01",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 277,
+      "target_cik": 899715,
+      "target": "TANGER FACTORY OUTLET CENTERS INC  (SKT)",
+      "announcement_accession": "0000899715-16-000350",
+      "announcement_filing_date": "2016-08-02",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 278,
+      "target_cik": 1495231,
+      "target": "IZEA, Inc.  (IZEA)",
+      "announcement_accession": "0001495231-16-000130",
+      "announcement_filing_date": "2016-08-02",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 279,
+      "target_cik": 1591877,
+      "target": "Sizmek Inc.",
+      "announcement_accession": "0001104659-16-136311",
+      "announcement_filing_date": "2016-08-03",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 280,
+      "target_cik": 812011,
+      "target": "VAIL RESORTS INC  (MTN)",
+      "announcement_accession": "0000812011-16-000098",
+      "announcement_filing_date": "2016-08-08",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 281,
+      "target_cik": 1506492,
+      "target": "Sunshine Heart, Inc.  (NUWE, NUWEW)",
+      "announcement_accession": "0001104659-16-137720",
+      "announcement_filing_date": "2016-08-08",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 284,
+      "target_cik": 1526113,
+      "target": "Global Net Lease, Inc.  (GNL, GNL-PA, GNL-PB, GNL-PD, GNL-PE)",
+      "announcement_accession": "0001144204-16-117009",
+      "announcement_filing_date": "2016-08-08",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 287,
+      "target_cik": 1633142,
+      "target": "Press Ganey Holdings, Inc.",
+      "announcement_accession": "0001104659-16-138325",
+      "announcement_filing_date": "2016-08-09",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 288,
+      "target_cik": 879407,
+      "target": "ARROWHEAD PHARMACEUTICALS, INC.  (ARWR)",
+      "announcement_accession": "0001193125-16-678199",
+      "announcement_filing_date": "2016-08-10",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 289,
+      "target_cik": 883975,
+      "target": "STEMCELLS INC  (MBOT)",
+      "announcement_accession": "0001193125-16-682077",
+      "announcement_filing_date": "2016-08-15",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 291,
+      "target_cik": 1360442,
+      "target": "Cannabis Sativa, Inc.  (CBDS)",
+      "announcement_accession": "0001445866-16-002521",
+      "announcement_filing_date": "2016-08-16",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 292,
+      "target_cik": 1649709,
+      "target": "CIFC LLC",
+      "announcement_accession": "0001104659-16-140747",
+      "announcement_filing_date": "2016-08-19",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 293,
+      "target_cik": 1499268,
+      "target": "Affinity Gaming",
+      "announcement_accession": "0001104659-16-141062",
+      "announcement_filing_date": "2016-08-23",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 294,
+      "target_cik": 1562039,
+      "target": "CST BRANDS, INC.",
+      "announcement_accession": "0001193125-16-687821",
+      "announcement_filing_date": "2016-08-23",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 295,
+      "target_cik": 1316835,
+      "target": "Builders FirstSource, Inc.  (BLDR)",
+      "announcement_accession": "0001193125-16-688065",
+      "announcement_filing_date": "2016-08-23",
+      "decision": "EXCLUDE",
+      "reason": "Item 1.01 appears to be financing/credit, not equity M&A",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 296,
+      "target_cik": 1541401,
+      "target": "Empire State Realty Trust, Inc.  (ESRT)",
+      "announcement_accession": "0001193125-16-688807",
+      "announcement_filing_date": "2016-08-23",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 298,
+      "target_cik": 1665300,
+      "target": "Stellar Acquisition III Inc.  (PHUN)",
+      "announcement_accession": "0001213900-16-016382",
+      "announcement_filing_date": "2016-08-24",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 299,
+      "target_cik": 315545,
+      "target": "PROVECTUS BIOPHARMACEUTICALS, INC.  (PVCT)",
+      "announcement_accession": "0001193125-16-691914",
+      "announcement_filing_date": "2016-08-25",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 300,
+      "target_cik": 887151,
+      "target": "Capstone Therapeutics Corp.",
+      "announcement_accession": "0001171843-16-011964",
+      "announcement_filing_date": "2016-08-26",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 301,
+      "target_cik": 1411906,
+      "target": "Ampio Pharmaceuticals, Inc.  (AMPE)",
+      "announcement_accession": "0001193125-16-695754",
+      "announcement_filing_date": "2016-08-29",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 302,
+      "target_cik": 1409253,
+      "target": "North America Frac Sand, Inc.",
+      "announcement_accession": "0001477932-16-012263",
+      "announcement_filing_date": "2016-08-29",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 303,
+      "target_cik": 315545,
+      "target": "PROVECTUS BIOPHARMACEUTICALS, INC.  (PVCT)",
+      "announcement_accession": "0001193125-16-696852",
+      "announcement_filing_date": "2016-08-30",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 304,
+      "target_cik": 748268,
+      "target": "EnergyTEK Corp.  (RCAT)",
+      "announcement_accession": "0001445866-16-002589",
+      "announcement_filing_date": "2016-08-30",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 306,
+      "target_cik": 817979,
+      "target": "ACCURIDE CORP",
+      "announcement_accession": "0001104659-16-142824",
+      "announcement_filing_date": "2016-09-02",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "such Person pursuant to any agreement",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 308,
+      "target_cik": 808450,
+      "target": "NAVISTAR INTERNATIONAL CORP",
+      "announcement_accession": "0001193125-16-701448",
+      "announcement_filing_date": "2016-09-06",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
+      }
+    },
+    {
+      "candidate_rank": 309,
+      "target_cik": 1456212,
+      "target": "GROTE MOLEN INC",
+      "announcement_accession": "0001096906-16-001897",
+      "announcement_filing_date": "2016-09-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 311,
+      "target_cik": 1568162,
+      "target": "American Finance Trust, Inc",
+      "announcement_accession": "0001144204-16-122964",
+      "announcement_filing_date": "2016-09-07",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[10.26], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[10.26], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 312,
+      "target_cik": 1017655,
+      "target": "PAID INC  (PAYD)",
+      "announcement_accession": "0001415889-16-007074",
+      "announcement_filing_date": "2016-09-07",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 313,
+      "target_cik": 78311,
+      "target": "SoOum Corp.",
+      "announcement_accession": "0001091818-16-000364",
+      "announcement_filing_date": "2016-09-08",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "reason of",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 315,
+      "target_cik": 1282648,
+      "target": "HALCON RESOURCES CORP  (BATL)",
+      "announcement_accession": "0001104659-16-143987",
+      "announcement_filing_date": "2016-09-09",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 316,
+      "target_cik": 1571996,
+      "target": "Dell Technologies Inc  (DELL)",
+      "announcement_accession": "0001193125-16-706567",
+      "announcement_filing_date": "2016-09-09",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 317,
+      "target_cik": 1404943,
+      "target": "MetaStat, Inc.",
+      "announcement_accession": "0001415889-16-007105",
+      "announcement_filing_date": "2016-09-09",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 318,
+      "target_cik": 1167419,
+      "target": "Venaxis, Inc.  (RIOT)",
+      "announcement_accession": "0001079973-16-001172",
+      "announcement_filing_date": "2016-09-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 319,
+      "target_cik": 1096325,
+      "target": "INTERSIL CORP/DE",
+      "announcement_accession": "0001193125-16-707886",
+      "announcement_filing_date": "2016-09-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 320,
+      "target_cik": 1288403,
+      "target": "W&T OFFSHORE INC  (WTI)",
+      "announcement_accession": "0001193125-16-708594",
+      "announcement_filing_date": "2016-09-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 321,
+      "target_cik": 748268,
+      "target": "EnergyTEK Corp.  (RCAT)",
+      "announcement_accession": "0001445866-16-002616",
+      "announcement_filing_date": "2016-09-13",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 322,
+      "target_cik": 77877,
+      "target": "PDC ENERGY, INC.",
+      "announcement_accession": "0001104659-16-144571",
+      "announcement_filing_date": "2016-09-14",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 323,
+      "target_cik": 1082506,
+      "target": "Great Elm Capital Group, Inc.",
+      "announcement_accession": "0001558370-16-008340",
+      "announcement_filing_date": "2016-09-14",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 324,
+      "target_cik": 77159,
+      "target": "PENN VIRGINIA CORP",
+      "announcement_accession": "0001193125-16-709890",
+      "announcement_filing_date": "2016-09-15",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 325,
+      "target_cik": 1574815,
+      "target": "BMC STOCK HOLDINGS, INC.",
+      "announcement_accession": "0001193125-16-711588",
+      "announcement_filing_date": "2016-09-16",
+      "decision": "EXCLUDE",
+      "reason": "Item 1.01 appears to be financing/credit, not equity M&A",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 326,
+      "target_cik": 1615892,
+      "target": "AR CAPITAL ACQUISITION",
+      "announcement_accession": "0001144204-16-124452",
+      "announcement_filing_date": "2016-09-19",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 328,
+      "target_cik": 1558441,
+      "target": "INDUSTRIAL PROPERTY TRUST INC.",
+      "announcement_accession": "0001193125-16-714671",
+      "announcement_filing_date": "2016-09-20",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 329,
+      "target_cik": 1485003,
+      "target": "Eleven Biotherapeutics, Inc.  (CARM)",
+      "announcement_accession": "0001193125-16-715368",
+      "announcement_filing_date": "2016-09-21",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 330,
+      "target_cik": 1022652,
+      "target": "NOVATEL WIRELESS INC  (INSG)",
+      "announcement_accession": "0001193125-16-717143",
+      "announcement_filing_date": "2016-09-22",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 332,
+      "target_cik": 1477009,
+      "target": "GENERAL CANNABIS CORP  (CANN)",
+      "announcement_accession": "0001398432-16-000732",
+      "announcement_filing_date": "2016-09-26",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 333,
+      "target_cik": 1466085,
+      "target": "INDEPENDENCE REALTY TRUST, INC  (IRT)",
+      "announcement_accession": "0001193125-16-720602",
+      "announcement_filing_date": "2016-09-27",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 334,
+      "target_cik": 1045425,
+      "target": "RAIT Financial Trust",
+      "announcement_accession": "0001193125-16-720621",
+      "announcement_filing_date": "2016-09-27",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 335,
+      "target_cik": 1623919,
+      "target": "EndoChoice Holdings, Inc.",
+      "announcement_accession": "0001193125-16-720839",
+      "announcement_filing_date": "2016-09-27",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 336,
+      "target_cik": 317788,
+      "target": "Digital Turbine, Inc.  (APPS)",
+      "announcement_accession": "0001144204-16-126042",
+      "announcement_filing_date": "2016-09-29",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 337,
+      "target_cik": 1065865,
+      "target": "JANUS CAPITAL GROUP INC",
+      "announcement_accession": "0001104659-16-148316",
+      "announcement_filing_date": "2016-10-03",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 338,
+      "target_cik": 1669812,
+      "target": "LSC Communications, Inc.",
+      "announcement_accession": "0001193125-16-728606",
+      "announcement_filing_date": "2016-10-03",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 341,
+      "target_cik": 899715,
+      "target": "TANGER FACTORY OUTLET CENTERS INC  (SKT)",
+      "announcement_accession": "0000899715-16-000366",
+      "announcement_filing_date": "2016-10-06",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 342,
+      "target_cik": 354908,
+      "target": "FLIR SYSTEMS INC",
+      "announcement_accession": "0000354908-16-000159",
+      "announcement_filing_date": "2016-10-07",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 343,
+      "target_cik": 1509477,
+      "target": "NowNews Digital Media Technology Co. Ltd.",
+      "announcement_accession": "0001144204-16-127355",
+      "announcement_filing_date": "2016-10-07",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "the Shareholder pursuant hereto",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 345,
+      "target_cik": 1365101,
+      "target": "Primo Water Corp",
+      "announcement_accession": "0001437749-16-039632",
+      "announcement_filing_date": "2016-10-11",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": "such Person pursuant to any Contract",
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 347,
+      "target_cik": 276209,
+      "target": "CONNECTICUT WATER SERVICE INC / CT",
+      "announcement_accession": "0000276209-16-000100",
+      "announcement_filing_date": "2016-10-12",
+      "decision": "EXCLUDE",
+      "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": null,
+        "offer_price": null,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "REPRESENTABILITY_FAIL",
+        "reason": "REPRESENTABILITY_FAIL: could not faithfully map consideration under fs_v1 (cash_vals=[], ratio_vals=[])"
+      }
+    },
+    {
+      "candidate_rank": 348,
+      "target_cik": 1418133,
+      "target": "Biostar Pharmaceuticals, Inc.",
+      "announcement_accession": "0001185185-16-005567",
+      "announcement_filing_date": "2016-10-12",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 349,
+      "target_cik": 1404943,
+      "target": "MetaStat, Inc.",
+      "announcement_accession": "0001654954-16-002914",
+      "announcement_filing_date": "2016-10-17",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 350,
+      "target_cik": 1018164,
+      "target": "WILLIS LEASE FINANCE CORP  (WLFC)",
+      "announcement_accession": "0001104659-16-150578",
+      "announcement_filing_date": "2016-10-18",
+      "decision": "EXCLUDE",
+      "reason": "announcement text lacks clear equity M&A language",
+      "manifest_entry": null
+    }
+  ],
+  "deferred": [
+    {
+      "candidate_rank": 5,
+      "target_cik": 1327471,
+      "target": "RealD Inc.",
+      "announcement_accession": "0001104659-15-076953",
+      "announcement_filing_date": "2015-11-09",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 8,
+      "target_cik": 1650132,
+      "target": "Four Corners Property Trust, Inc.  (FCPT)",
+      "announcement_accession": "0001650132-15-000034",
+      "announcement_filing_date": "2015-11-10",
+      "decision": "DEFER",
+      "reason": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 10,
+      "target_cik": 1536035,
+      "target": "Roundy's, Inc.",
+      "announcement_accession": "0001193125-15-374682",
+      "announcement_filing_date": "2015-11-12",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'Kroger in a subsequent merger'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 3.6,
+        "exchange_ratio": null,
+        "acquirer": "Kroger in a subsequent merger",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 15,
+      "target_cik": 99359,
+      "target": "BREEZE-EASTERN CORP",
+      "announcement_accession": "0001193125-15-381410",
+      "announcement_filing_date": "2015-11-19",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 21,
+      "target_cik": 28823,
+      "target": "DIEBOLD INC  (DBD)",
+      "announcement_accession": "0001193125-15-384259",
+      "announcement_filing_date": "2015-11-23",
+      "decision": "DEFER",
+      "reason": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 35,
+      "target_cik": 909954,
+      "target": "KEURIG GREEN MOUNTAIN, INC.",
+      "announcement_accession": "0001104659-15-083470",
+      "announcement_filing_date": "2015-12-08",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 41,
+      "target_cik": 1001606,
+      "target": "BLOUNT INTERNATIONAL INC",
+      "announcement_accession": "0000950157-15-001389",
+      "announcement_filing_date": "2015-12-10",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 46,
+      "target_cik": 814453,
+      "target": "NEWELL RUBBERMAID INC  (NWL)",
+      "announcement_accession": "0001193125-15-402638",
+      "announcement_filing_date": "2015-12-14",
+      "decision": "DEFER",
+      "reason": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 53,
+      "target_cik": 1622620,
+      "target": "Lynden Energy Corp.",
+      "announcement_accession": "0000950123-15-012535",
+      "announcement_filing_date": "2015-12-17",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'y announced a definitive agreement (the \u201cAgreement\u201d) whereby Earthstone'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 0.52,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 57,
+      "target_cik": 859222,
+      "target": "BAY BANCORP, INC.",
+      "announcement_accession": "0001171843-15-006916",
+      "announcement_filing_date": "2015-12-21",
+      "decision": "DEFER",
+      "reason": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 65,
+      "target_cik": 77449,
+      "target": "PEP BOYS MANNY MOE & JACK",
+      "announcement_accession": "0001104659-15-087358",
+      "announcement_filing_date": "2015-12-30",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'ex99d1.htm EX-99.1 Exhibit 99.1 FOR IMMEDIATE RELEASE Icahn Enterprises'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 18.5,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 78,
+      "target_cik": 1594864,
+      "target": "Juno Therapeutics, Inc.",
+      "announcement_accession": "0001193125-16-425805",
+      "announcement_filing_date": "2016-01-11",
+      "decision": "DEFER",
+      "reason": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 88,
+      "target_cik": 827054,
+      "target": "MICROCHIP TECHNOLOGY INC  (MCHP)",
+      "announcement_accession": "0001193125-16-432650",
+      "announcement_filing_date": "2016-01-19",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer unreasonably long: 'ler, mixed-signal, analog and Flash-IP solutions, and Atmel Corporation'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 8.15,
+        "exchange_ratio": null,
+        "acquirer": "ler, mixed-signal, analog and Flash-IP solutions, and Atmel Corporation",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 92,
+      "target_cik": 872448,
+      "target": "ATMEL CORP",
+      "announcement_accession": "0001571049-16-010841",
+      "announcement_filing_date": "2016-01-20",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer unreasonably long: 'ler, mixed-signal, analog and Flash-IP solutions, and Atmel Corporation'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 8.15,
+        "exchange_ratio": null,
+        "acquirer": "ler, mixed-signal, analog and Flash-IP solutions, and Atmel Corporation",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 101,
+      "target_cik": 355777,
+      "target": "LOJACK CORP",
+      "announcement_accession": "0001193125-16-447680",
+      "announcement_filing_date": "2016-02-02",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'CalAmp and its subsidiaries'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 6.45,
+        "exchange_ratio": null,
+        "acquirer": "CalAmp and its subsidiaries",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 104,
+      "target_cik": 890447,
+      "target": "Vertex Energy Inc.  (VTNR)",
+      "announcement_accession": "0001580695-16-000215",
+      "announcement_filing_date": "2016-02-03",
+      "decision": "DEFER",
+      "reason": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 107,
+      "target_cik": 830916,
+      "target": "MULTI FINELINE ELECTRONIX INC",
+      "announcement_accession": "0001193125-16-450951",
+      "announcement_filing_date": "2016-02-04",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 108,
+      "target_cik": 929887,
+      "target": "APOLLO EDUCATION GROUP INC",
+      "announcement_accession": "0001193125-16-453049",
+      "announcement_filing_date": "2016-02-08",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 9.5,
+        "exchange_ratio": null,
+        "acquirer": "Apollo",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 111,
+      "target_cik": 81318,
+      "target": "Yuma Energy, Inc.",
+      "announcement_accession": "0001354488-16-006213",
+      "announcement_filing_date": "2016-02-12",
+      "decision": "DEFER",
+      "reason": "acquirer validation: missing acquirer",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 5.7,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 112,
+      "target_cik": 1546640,
+      "target": "ADT Corp",
+      "announcement_accession": "0001193125-16-463994",
+      "announcement_filing_date": "2016-02-16",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'Certain Funds Managed By Affiliates of Apollo Global Management, LLC'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 42.0,
+        "exchange_ratio": null,
+        "acquirer": "Certain Funds Managed By Affiliates of Apollo Global Management, LLC",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 113,
+      "target_cik": 81318,
+      "target": "Yuma Energy, Inc.",
+      "announcement_accession": "0001354488-16-006237",
+      "announcement_filing_date": "2016-02-16",
+      "decision": "DEFER",
+      "reason": "acquirer validation: missing acquirer",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 5.7,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 114,
+      "target_cik": 1018003,
+      "target": "INGRAM MICRO INC",
+      "announcement_accession": "0001193125-16-467239",
+      "announcement_filing_date": "2016-02-17",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'entered into a definitive merger agreement under which Tianjin Tianhai'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 38.9,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 115,
+      "target_cik": 846901,
+      "target": "LAKELAND BANCORP INC",
+      "announcement_accession": "0001193125-16-467796",
+      "announcement_filing_date": "2016-02-18",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer unreasonably long: 'ucts (i.e. SBA loans) and services (i.e. wealth management) Opportunity'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "mixed",
+        "offer_price": 12.79,
+        "exchange_ratio": 1.25,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 119,
+      "target_cik": 1515980,
+      "target": "Apollo Residential Mortgage, Inc.",
+      "announcement_accession": "0001193125-16-479781",
+      "announcement_filing_date": "2016-02-26",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 120,
+      "target_cik": 1467760,
+      "target": "Apollo Commercial Real Estate Finance, Inc.  (ARI)",
+      "announcement_accession": "0001193125-16-481042",
+      "announcement_filing_date": "2016-02-26",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 121,
+      "target_cik": 1528558,
+      "target": "Rouse Properties, Inc.",
+      "announcement_accession": "0001104659-16-100628",
+      "announcement_filing_date": "2016-02-29",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 122,
+      "target_cik": 1081078,
+      "target": "API Technologies Corp.",
+      "announcement_accession": "0001193125-16-486124",
+      "announcement_filing_date": "2016-03-01",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 133,
+      "target_cik": 1533998,
+      "target": "LabStyle Innovations Corp.  (DRIO)",
+      "announcement_accession": "0001144204-16-086902",
+      "announcement_filing_date": "2016-03-09",
+      "decision": "DEFER",
+      "reason": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 136,
+      "target_cik": 1091325,
+      "target": "CHINA YIDA HOLDING, CO.",
+      "announcement_accession": "0001213900-16-011486",
+      "announcement_filing_date": "2016-03-10",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 137,
+      "target_cik": 1420525,
+      "target": "1st Century Bancshares, Inc.",
+      "announcement_accession": "0001104659-16-104311",
+      "announcement_filing_date": "2016-03-11",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'they have entered into a definitive agreement'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 11.22,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 138,
+      "target_cik": 1489979,
+      "target": "Fresh Market, Inc.",
+      "announcement_accession": "0000950157-16-001717",
+      "announcement_filing_date": "2016-03-14",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'Funds Managed by Affiliates of Apollo Global Management'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 28.5,
+        "exchange_ratio": null,
+        "acquirer": "Funds Managed by Affiliates of Apollo Global Management",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 153,
+      "target_cik": 1527590,
+      "target": "ZAIS Financial Corp.  (RC, RCB, RCC, RC-PC, RC-PE)",
+      "announcement_accession": "0001144204-16-093181",
+      "announcement_filing_date": "2016-04-07",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'o purchase real estate used in their operations or by investors seeking'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "mixed",
+        "offer_price": 17.05,
+        "exchange_ratio": 0.7829,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 154,
+      "target_cik": 1642453,
+      "target": "Hennessy Capital Acquisition Corp II",
+      "announcement_accession": "0001213900-16-012313",
+      "announcement_filing_date": "2016-04-07",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer unreasonably long: 'the Company of all of the outstanding capital stock of USI Parent'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 30.0,
+        "exchange_ratio": null,
+        "acquirer": "the Company of all of the outstanding capital stock of USI Parent",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 156,
+      "target_cik": 1122342,
+      "target": "ALLIANCE FIBER OPTIC PRODUCTS INC",
+      "announcement_accession": "0001206774-16-005373",
+      "announcement_filing_date": "2016-04-08",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'superior proposal is a written proposal'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 18.5,
+        "exchange_ratio": null,
+        "acquirer": "superior proposal is a written proposal pursuant to which a third party",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 162,
+      "target_cik": 1122897,
+      "target": "CVENT INC",
+      "announcement_accession": "0001193125-16-543979",
+      "announcement_filing_date": "2016-04-18",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 166,
+      "target_cik": 1001288,
+      "target": "LEXMARK INTERNATIONAL INC /KY/",
+      "announcement_accession": "0001193125-16-547242",
+      "announcement_filing_date": "2016-04-20",
+      "decision": "DEFER",
+      "reason": "acquirer validation: missing acquirer",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 40.5,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 167,
+      "target_cik": 1800,
+      "target": "ABBOTT LABORATORIES  (ABT)",
+      "announcement_accession": "0001104659-16-114880",
+      "announcement_filing_date": "2016-04-28",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'EX-99.1 3 a16-9714_1ex99d1.htm EX-99.1 Exhibit 99.1 News Release Abbott'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 85.0,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 168,
+      "target_cik": 203077,
+      "target": "ST JUDE MEDICAL INC",
+      "announcement_accession": "0001104659-16-114893",
+      "announcement_filing_date": "2016-04-28",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'EX-99.1 4 a16-9709_1ex99d1.htm EX-99.1 Exhibit 99.1 News Release Abbott'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 85.0,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 169,
+      "target_cik": 1498021,
+      "target": "ExamWorks Group, Inc.",
+      "announcement_accession": "0001437749-16-030171",
+      "announcement_filing_date": "2016-04-28",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 173,
+      "target_cik": 1565337,
+      "target": "Textura Corp",
+      "announcement_accession": "0001565337-16-000147",
+      "announcement_filing_date": "2016-04-29",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'ent'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 26.0,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 174,
+      "target_cik": 1616101,
+      "target": "Symmetry Surgical Inc.",
+      "announcement_accession": "0001144204-16-098376",
+      "announcement_filing_date": "2016-05-02",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 175,
+      "target_cik": 1412043,
+      "target": "OPOWER, INC.",
+      "announcement_accession": "0001193125-16-571455",
+      "announcement_filing_date": "2016-05-02",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 178,
+      "target_cik": 1088825,
+      "target": "TIVO INC",
+      "announcement_accession": "0001088825-16-000289",
+      "announcement_filing_date": "2016-05-04",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'pursuant'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "mixed",
+        "offer_price": 2.75,
+        "exchange_ratio": 2.2,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 193,
+      "target_cik": 1105184,
+      "target": "NANOSPHERE INC",
+      "announcement_accession": "0001105184-16-000072",
+      "announcement_filing_date": "2016-05-16",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 203,
+      "target_cik": 1549872,
+      "target": "XURA, INC.",
+      "announcement_accession": "0001193125-16-598291",
+      "announcement_filing_date": "2016-05-23",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 208,
+      "target_cik": 1490660,
+      "target": "Marketo, Inc.",
+      "announcement_accession": "0001047469-16-013522",
+      "announcement_filing_date": "2016-05-31",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 213,
+      "target_cik": 914329,
+      "target": "FEI CO",
+      "announcement_accession": "0001193125-16-610594",
+      "announcement_filing_date": "2016-06-02",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'to the Effective Time shall terminate and cease'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 107.5,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 216,
+      "target_cik": 1262279,
+      "target": "FIRST MARBLEHEAD CORP",
+      "announcement_accession": "0001193125-16-611764",
+      "announcement_filing_date": "2016-06-03",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 219,
+      "target_cik": 1136869,
+      "target": "ZIMMER BIOMET HOLDINGS, INC.  (ZBH)",
+      "announcement_accession": "0001193125-16-615463",
+      "announcement_filing_date": "2016-06-07",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 37.0,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 220,
+      "target_cik": 1348324,
+      "target": "LDR HOLDING CORP",
+      "announcement_accession": "0001193125-16-615470",
+      "announcement_filing_date": "2016-06-07",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 229,
+      "target_cik": 811589,
+      "target": "FIRST BANCORP /NC/  (FBNC)",
+      "announcement_accession": "0001174947-16-002821",
+      "announcement_filing_date": "2016-06-22",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer token equals target token (likely filer\u2260target confusion)",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "mixed",
+        "offer_price": 20.0,
+        "exchange_ratio": 1.002,
+        "acquirer": "First Bank are located in Winston-Salem",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 231,
+      "target_cik": 1127160,
+      "target": "CAROLINA BANK HOLDINGS INC",
+      "announcement_accession": "0001144204-16-109534",
+      "announcement_filing_date": "2016-06-23",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 235,
+      "target_cik": 1389072,
+      "target": "HeartWare International, Inc.",
+      "announcement_accession": "0000947871-16-001298",
+      "announcement_filing_date": "2016-06-27",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'it or initiate discussions with third parties regarding other proposals'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 58.0,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 241,
+      "target_cik": 1566897,
+      "target": "Diamond Resorts International, Inc.",
+      "announcement_accession": "0001193125-16-636669",
+      "announcement_filing_date": "2016-06-29",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 248,
+      "target_cik": 1555365,
+      "target": "WHITEWAVE FOODS Co",
+      "announcement_accession": "0001193125-16-642888",
+      "announcement_filing_date": "2016-07-07",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 250,
+      "target_cik": 1010552,
+      "target": "POLYCOM INC",
+      "announcement_accession": "0001193125-16-644492",
+      "announcement_filing_date": "2016-07-08",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'board of directors had received a unilaterally binding offer from Siris'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 12.5,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 256,
+      "target_cik": 42228,
+      "target": "GOLDEN ENTERPRISES INC",
+      "announcement_accession": "0001144204-16-113498",
+      "announcement_filing_date": "2016-07-19",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'pursuant'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 12.0,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 259,
+      "target_cik": 801898,
+      "target": "JOY GLOBAL INC",
+      "announcement_accession": "0000898822-16-000397",
+      "announcement_filing_date": "2016-07-21",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 261,
+      "target_cik": 1366367,
+      "target": "YADKIN FINANCIAL Corp",
+      "announcement_accession": "0001144204-16-113944",
+      "announcement_filing_date": "2016-07-21",
+      "decision": "DEFER",
+      "reason": "acquirer validation: missing acquirer",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "mixed",
+        "offer_price": 1.0,
+        "exchange_ratio": 2.16,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 263,
+      "target_cik": 37808,
+      "target": "FNB CORP/FL/  (FNB)",
+      "announcement_accession": "0001193125-16-653806",
+      "announcement_filing_date": "2016-07-21",
+      "decision": "DEFER",
+      "reason": "acquirer validation: missing acquirer",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "mixed",
+        "offer_price": 1.0,
+        "exchange_ratio": 2.16,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 270,
+      "target_cik": 1027207,
+      "target": "EPIQ SYSTEMS INC",
+      "announcement_accession": "0001193125-16-659216",
+      "announcement_filing_date": "2016-07-27",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 273,
+      "target_cik": 1420302,
+      "target": "LogMeIn, Inc.",
+      "announcement_accession": "0001193125-16-662444",
+      "announcement_filing_date": "2016-07-28",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 282,
+      "target_cik": 1419852,
+      "target": "MATTRESS FIRM HOLDING CORP.",
+      "announcement_accession": "0001104659-16-137926",
+      "announcement_filing_date": "2016-08-08",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 283,
+      "target_cik": 1609865,
+      "target": "American Realty Capital Global Trust II, Inc.",
+      "announcement_accession": "0001144204-16-117007",
+      "announcement_filing_date": "2016-08-08",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 285,
+      "target_cik": 1020416,
+      "target": "MONSTER WORLDWIDE, INC.",
+      "announcement_accession": "0001020416-16-000190",
+      "announcement_filing_date": "2016-08-09",
+      "decision": "DEFER",
+      "reason": "acquirer validation: missing acquirer",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 3.4,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 286,
+      "target_cik": 1591877,
+      "target": "Sizmek Inc.",
+      "announcement_accession": "0001104659-16-138321",
+      "announcement_filing_date": "2016-08-09",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer lacks entity form: 'indirectly acquires, or if consummated in accordance with its terms'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 3.9,
+        "exchange_ratio": null,
+        "acquirer": "or indirectly acquires, or if consummated in accordance with its terms",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 290,
+      "target_cik": 39648,
+      "target": "G&K SERVICES INC",
+      "announcement_accession": "0001193125-16-682600",
+      "announcement_filing_date": "2016-08-16",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'ly approved a definitive agreement'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 97.5,
+        "exchange_ratio": null,
+        "acquirer": "ly approved a definitive agreement pursuant to which Cintas Corporation",
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 297,
+      "target_cik": 1423542,
+      "target": "SKULLCANDY, INC.",
+      "announcement_accession": "0001193125-16-689331",
+      "announcement_filing_date": "2016-08-24",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 305,
+      "target_cik": 78311,
+      "target": "SoOum Corp.",
+      "announcement_accession": "0001091818-16-000361",
+      "announcement_filing_date": "2016-08-31",
+      "decision": "DEFER",
+      "reason": "filing text fetch failed: HTTP Error 503: Service Unavailable",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 307,
+      "target_cik": 1037760,
+      "target": "CEPHEID",
+      "announcement_accession": "0001193125-16-701334",
+      "announcement_filing_date": "2016-09-06",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 310,
+      "target_cik": 1500554,
+      "target": "AMERICAN REALTY CAPITAL - RETAIL CENTERS OF AMERICA, INC.",
+      "announcement_accession": "0001144204-16-122962",
+      "announcement_filing_date": "2016-09-07",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string still contains price residue: 'Share Enterprise Value (1) : $3.9 billion Target Closing: Q1 2017 AFIN'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "mixed",
+        "offer_price": 0.64,
+        "exchange_ratio": 0.385,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 314,
+      "target_cik": 1324772,
+      "target": "Apigee Corp",
+      "announcement_accession": "0001193125-16-705490",
+      "announcement_filing_date": "2016-09-08",
+      "decision": "DEFER",
+      "reason": "acquirer validation: acquirer string not a clean entity name: 'nced that it has entered into a definitive agreement under which Google'",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 17.4,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 327,
+      "target_cik": 1223862,
+      "target": "INFOBLOX INC",
+      "announcement_accession": "0001193125-16-712811",
+      "announcement_filing_date": "2016-09-19",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 331,
+      "target_cik": 1091862,
+      "target": "Chemtura CORP",
+      "announcement_accession": "0000950103-16-016524",
+      "announcement_filing_date": "2016-09-26",
+      "decision": "DEFER",
+      "reason": "acquirer validation: missing acquirer",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "cash",
+        "offer_price": 33.5,
+        "exchange_ratio": null,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 339,
+      "target_cik": 1478242,
+      "target": "Quintiles IMS Holdings, Inc.  (IQV)",
+      "announcement_accession": "0001193125-16-728752",
+      "announcement_filing_date": "2016-10-03",
+      "decision": "DEFER",
+      "reason": "acquirer validation: missing acquirer",
+      "manifest_entry": null,
+      "terms_extract": {
+        "consideration_type": "stock",
+        "offer_price": null,
+        "exchange_ratio": 0.384,
+        "acquirer": null,
+        "representability": "OK",
+        "reason": null
+      }
+    },
+    {
+      "candidate_rank": 340,
+      "target_cik": 1179755,
+      "target": "ENDURANCE SPECIALTY HOLDINGS LTD",
+      "announcement_accession": "0001341004-16-001672",
+      "announcement_filing_date": "2016-10-05",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 344,
+      "target_cik": 43350,
+      "target": "Gas Natural Inc.",
+      "announcement_accession": "0001144204-16-127707",
+      "announcement_filing_date": "2016-10-11",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    },
+    {
+      "candidate_rank": 346,
+      "target_cik": 817979,
+      "target": "ACCURIDE CORP",
+      "announcement_accession": "0001567619-16-003038",
+      "announcement_filing_date": "2016-10-11",
+      "decision": "DEFER",
+      "reason": "contradictory resolution filings (both close and terminate/withdraw present)",
+      "manifest_entry": null
+    }
+  ],
+  "examined": 350
+}

@@ -1016,6 +1016,36 @@
       "resolution_accession": "0001185185-15-001947",
       "resolution_timestamp": "2015-07-28",
       "offer_price": 8.5
+    },
+    {
+      "deal_id": "DEAL-SCIQUE-ACCEL-2016",
+      "target": "SCIQUEST INC",
+      "acquirer": "Accel-KKR",
+      "target_cik": 1082526,
+      "announcement_accession": "0001193125-16-607416",
+      "terms_accession": "0001193125-16-607416",
+      "announcement_timestamp": "2016-05-31",
+      "deal_type": "take_private",
+      "consideration_type": "cash",
+      "resolution_type": "closed",
+      "resolution_accession": "0001354457-16-000446",
+      "resolution_timestamp": "2016-07-28",
+      "offer_price": 17.75
+    },
+    {
+      "deal_id": "DEAL-IMPRIV-THOMA-2016",
+      "target": "Imprivata Inc",
+      "acquirer": "Thoma Bravo",
+      "target_cik": 1328015,
+      "announcement_accession": "0001193125-16-646873",
+      "terms_accession": "0001193125-16-646873",
+      "announcement_timestamp": "2016-07-13",
+      "deal_type": "take_private",
+      "consideration_type": "cash",
+      "resolution_type": "closed",
+      "resolution_accession": "0000876661-16-001279",
+      "resolution_timestamp": "2016-09-16",
+      "offer_price": 19.25
     }
   ]
 }

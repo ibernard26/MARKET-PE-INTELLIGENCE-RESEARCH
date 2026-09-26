@@ -59,8 +59,8 @@ def test_frozen_cohort_file_matches_modelcohort_contract():
 
 def test_protocol_locked_contract_matches_code():
     protocol = json.loads((EXP / "protocol.json").read_text())
-    assert protocol["execution_authorized"] is False
-    assert protocol["status"] == "PREPARED_NOT_EXECUTED"
+    # Authorization may be flipped for the dedicated execute path; the locked
+    # model contract itself must never drift from live constants.
     assert_locked_contract(protocol)
     assert protocol["locked_model_contract"]["STRATEGY_VERSION"] == STRATEGY_VERSION
     assert protocol["locked_model_contract"]["MODEL_VERSION"] == MODEL_VERSION
@@ -68,10 +68,12 @@ def test_protocol_locked_contract_matches_code():
     assert protocol["locked_model_contract"]["calibration"] == "none"
     assert protocol["walk_forward"]["cutoffs"] == [
         "2021-06-30", "2023-06-30", "2025-06-30"]
+    assert protocol["walk_forward"]["hyperparameter_tuning"] is False
 
 
 def test_refuse_execution_without_authorization():
-    protocol = json.loads((EXP / "protocol.json").read_text())
+    protocol = {"execution_authorized": False,
+                "authorization_command_required": "AUTHORIZE FIRST REAL WALKFORWARD"}
     with pytest.raises(ExperimentPrepError, match="NOT AUTHORIZED"):
         refuse_execution(protocol)
 

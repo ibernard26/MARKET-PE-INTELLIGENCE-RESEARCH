@@ -1,0 +1,969 @@
+{
+  "experiment_id": "first_walkforward_v1",
+  "status": "EXECUTED",
+  "execution_authorized": true,
+  "authorization": "AUTHORIZE FIRST REAL WALKFORWARD",
+  "code_commit_at_execute": "3037ff7edb13baa2bbd98fb15684a3fee600cd5c",
+  "manifest_freeze_commit": "f5f634b6290fa078f9018da2ae3da48f316cf655",
+  "cohort_id": "sec_reviewed_corpus_batch8",
+  "cohort_version": "v1",
+  "cohort_n": 62,
+  "feature_names": [
+    "pct_spread",
+    "annualized_spread",
+    "days_to_expected_close",
+    "premium_to_unaffected",
+    "log_deal_value",
+    "is_sponsor",
+    "is_all_cash",
+    "cfius_exposure",
+    "antitrust_exposure",
+    "cma_eu_exposure",
+    "second_request_open",
+    "under_regulatory_challenge",
+    "financing_condition",
+    "shareholder_approval_required"
+  ],
+  "feature_schema_version": "fs_v1",
+  "model_version": "break_logit_v1",
+  "strategy_version": "event_driven_v1",
+  "calibration": "none",
+  "horizon": "2026-09-26",
+  "cutoffs": [
+    "2021-06-30",
+    "2023-06-30",
+    "2025-06-30"
+  ],
+  "n_labeled_at_horizon": 62,
+  "n_pos_at_horizon": 19,
+  "n_censored_at_horizon": 0,
+  "windows": [
+    {
+      "window": 0,
+      "train_cutoff": "2021-06-30",
+      "test_start": "2021-06-30",
+      "test_end": "2023-06-30",
+      "n_train": 20,
+      "n_pos": 11,
+      "n_neg": 9,
+      "sample_prevalence": 0.55,
+      "n_test": 23,
+      "test_pos": 4,
+      "test_neg": 19,
+      "test_prevalence": 0.17391304347826086,
+      "dataset_fingerprint": "8d0e153c4285a1300e2bcb783778c06265eb5b9334517ebde09b50a91eecd346",
+      "test_dataset_fingerprint": "1c8959c3465cc7869cc06899d29f445865cfc46fad6c16a310a5d43145f701a1",
+      "model_run_id": "a625bb89203c80bcc4a42ce4cfdcbb6bd4f854b2f4c6c709251bee13d6514a2b",
+      "model_version": "break_logit_v1",
+      "feature_schema_version": "fs_v1",
+      "strategy_version": "event_driven_v1",
+      "calibration": "none",
+      "code_commit": "3037ff7edb13baa2bbd98fb15684a3fee600cd5c",
+      "cohort_id": "sec_reviewed_corpus_batch8",
+      "cohort_version": "v1",
+      "t_star_frozen": 0.3627299474752128,
+      "threshold_selection": {
+        "t_star": 0.3627299474752128,
+        "n_selection": 20,
+        "selection_cost": 8.0,
+        "cost_fp": 1.0,
+        "cost_fn": 15.0
+      },
+      "frozen_policy": {
+        "t_star_frozen": 0.3627299474752128,
+        "tp": 4,
+        "fp": 19,
+        "fn": 0,
+        "tn": 0,
+        "realized_cost": 19.0,
+        "cost_fp": 1.0,
+        "cost_fn": 15.0
+      },
+      "probability_metrics": {
+        "n": 23,
+        "n_pos": 4,
+        "n_neg": 19,
+        "pi": 0.17391304347826086,
+        "sufficient_sample": true,
+        "roc_auc": 0.34210526315789475,
+        "average_precision": 0.19347826086956524,
+        "average_precision_baseline_pi": 0.17391304347826086,
+        "brier": 0.35304431520985025,
+        "log_loss": 0.9252215463896433,
+        "calibration": [
+          {
+            "bin": "[0.2,0.4]",
+            "n": 8,
+            "mean_p": 0.3627299474752128,
+            "observed_rate": 0.125
+          },
+          {
+            "bin": "[0.6,0.8]",
+            "n": 15,
+            "mean_p": 0.7218120005165864,
+            "observed_rate": 0.2
+          }
+        ]
+      },
+      "baseline_constant": {
+        "probability_metrics": {
+          "n": 23,
+          "n_pos": 4,
+          "n_neg": 19,
+          "pi": 0.17391304347826086,
+          "sufficient_sample": true,
+          "roc_auc": 0.5,
+          "average_precision": 0.17391304347826086,
+          "average_precision_baseline_pi": 0.17391304347826086,
+          "brier": 0.285108695652174,
+          "log_loss": 0.7636084448330497,
+          "calibration": [
+            {
+              "bin": "[0.4,0.6]",
+              "n": 23,
+              "mean_p": 0.5500000000000003,
+              "observed_rate": 0.17391304347826086
+            }
+          ]
+        },
+        "threshold_selection": {
+          "t_star": 0.0,
+          "n_selection": 20,
+          "selection_cost": 9.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        },
+        "frozen_policy": {
+          "t_star_frozen": 0.0,
+          "tp": 4,
+          "fp": 19,
+          "fn": 0,
+          "tn": 0,
+          "realized_cost": 19.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        }
+      },
+      "baseline_spread": {
+        "probability_metrics": {
+          "n": 23,
+          "n_pos": 4,
+          "n_neg": 19,
+          "pi": 0.17391304347826086,
+          "sufficient_sample": true,
+          "roc_auc": 0.5,
+          "average_precision": 0.17391304347826086,
+          "average_precision_baseline_pi": 0.17391304347826086,
+          "brier": 0.28510481120928033,
+          "log_loss": 0.7636005974818554,
+          "calibration": [
+            {
+              "bin": "[0.4,0.6]",
+              "n": 23,
+              "mean_p": 0.5499948356763026,
+              "observed_rate": 0.17391304347826086
+            }
+          ]
+        },
+        "threshold_selection": {
+          "t_star": 0.0,
+          "n_selection": 20,
+          "selection_cost": 9.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        },
+        "frozen_policy": {
+          "t_star_frozen": 0.0,
+          "tp": 4,
+          "fp": 19,
+          "fn": 0,
+          "tn": 0,
+          "realized_cost": 19.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        }
+      },
+      "coefficients": [
+        {
+          "feature": "is_sponsor",
+          "coef_per_sd": 0.6962889626829858,
+          "odds_ratio_per_sd": 2.00629344538641
+        },
+        {
+          "feature": "is_all_cash",
+          "coef_per_sd": -0.612159911025525,
+          "odds_ratio_per_sd": 0.5421785460541274
+        },
+        {
+          "feature": "is_sponsor__missing",
+          "coef_per_sd": -0.2497270162109113,
+          "odds_ratio_per_sd": 0.7790134120809289
+        },
+        {
+          "feature": "is_all_cash__missing",
+          "coef_per_sd": -0.2497270162109113,
+          "odds_ratio_per_sd": 0.7790134120809289
+        },
+        {
+          "feature": "pct_spread",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "annualized_spread",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "days_to_expected_close",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "premium_to_unaffected",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "log_deal_value",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cfius_exposure",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "antitrust_exposure",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cma_eu_exposure",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "second_request_open",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "under_regulatory_challenge",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "financing_condition",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "shareholder_approval_required",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "pct_spread__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "annualized_spread__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "days_to_expected_close__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "premium_to_unaffected__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "log_deal_value__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cfius_exposure__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "antitrust_exposure__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cma_eu_exposure__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "financing_condition__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        }
+      ],
+      "fit_executed": true,
+      "status": "FITTED_AND_REGISTERED",
+      "sufficient_oos_sample": true,
+      "claims": {
+        "population_calibrated_probability": false,
+        "alpha_or_pnl": false,
+        "hyperparameter_tuning": false,
+        "calibration_applied": false
+      }
+    },
+    {
+      "window": 1,
+      "train_cutoff": "2023-06-30",
+      "test_start": "2023-06-30",
+      "test_end": "2025-06-30",
+      "n_train": 47,
+      "n_pos": 15,
+      "n_neg": 32,
+      "sample_prevalence": 0.3191489361702128,
+      "n_test": 8,
+      "test_pos": 2,
+      "test_neg": 6,
+      "test_prevalence": 0.25,
+      "dataset_fingerprint": "369cf517055a18cfd147f5466b64976e6a7d1496c7774c1bb7427f07fe8df273",
+      "test_dataset_fingerprint": "46b6b0555ff550a65b9f0577ee8231a3d54b5fcaee4acdf935c04fb70dcd3e7f",
+      "model_run_id": "242d5873468f68a1429f2d3b47ea234be3a932ea14bb3bf31c50fbacb90af8dc",
+      "model_version": "break_logit_v1",
+      "feature_schema_version": "fs_v1",
+      "strategy_version": "event_driven_v1",
+      "calibration": "none",
+      "code_commit": "3037ff7edb13baa2bbd98fb15684a3fee600cd5c",
+      "cohort_id": "sec_reviewed_corpus_batch8",
+      "cohort_version": "v1",
+      "t_star_frozen": 0.0,
+      "threshold_selection": {
+        "t_star": 0.0,
+        "n_selection": 47,
+        "selection_cost": 32.0,
+        "cost_fp": 1.0,
+        "cost_fn": 15.0
+      },
+      "frozen_policy": {
+        "t_star_frozen": 0.0,
+        "tp": 2,
+        "fp": 6,
+        "fn": 0,
+        "tn": 0,
+        "realized_cost": 6.0,
+        "cost_fp": 1.0,
+        "cost_fn": 15.0
+      },
+      "probability_metrics": {
+        "n": 8,
+        "n_pos": 2,
+        "n_neg": 6,
+        "pi": 0.25,
+        "sufficient_sample": false,
+        "roc_auc": 0.5833333333333334,
+        "average_precision": 0.29166666666666663,
+        "average_precision_baseline_pi": 0.25,
+        "brier": 0.20051397364727913,
+        "log_loss": 0.5863898801794222,
+        "calibration": [
+          {
+            "bin": "[0.0,0.2]",
+            "n": 5,
+            "mean_p": 0.18658562951614452,
+            "observed_rate": 0.2
+          },
+          {
+            "bin": "[0.4,0.6]",
+            "n": 3,
+            "mean_p": 0.546676090287314,
+            "observed_rate": 0.3333333333333333
+          }
+        ]
+      },
+      "baseline_constant": {
+        "probability_metrics": {
+          "n": 8,
+          "n_pos": 2,
+          "n_neg": 6,
+          "pi": 0.25,
+          "sufficient_sample": false,
+          "roc_auc": 0.5,
+          "average_precision": 0.25,
+          "average_precision_baseline_pi": 0.25,
+          "brier": 0.19228157537347218,
+          "log_loss": 0.5738331243347111,
+          "calibration": [
+            {
+              "bin": "[0.2,0.4]",
+              "n": 8,
+              "mean_p": 0.3191489361702128,
+              "observed_rate": 0.25
+            }
+          ]
+        },
+        "threshold_selection": {
+          "t_star": 0.0,
+          "n_selection": 47,
+          "selection_cost": 32.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        },
+        "frozen_policy": {
+          "t_star_frozen": 0.0,
+          "tp": 2,
+          "fp": 6,
+          "fn": 0,
+          "tn": 0,
+          "realized_cost": 6.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        }
+      },
+      "baseline_spread": {
+        "probability_metrics": {
+          "n": 8,
+          "n_pos": 2,
+          "n_neg": 6,
+          "pi": 0.25,
+          "sufficient_sample": false,
+          "roc_auc": 0.5,
+          "average_precision": 0.25,
+          "average_precision_baseline_pi": 0.25,
+          "brier": 0.19228140600264693,
+          "log_loss": 0.573832734604988,
+          "calibration": [
+            {
+              "bin": "[0.2,0.4]",
+              "n": 8,
+              "mean_p": 0.3191477114780159,
+              "observed_rate": 0.25
+            }
+          ]
+        },
+        "threshold_selection": {
+          "t_star": 0.0,
+          "n_selection": 47,
+          "selection_cost": 32.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        },
+        "frozen_policy": {
+          "t_star_frozen": 0.0,
+          "tp": 2,
+          "fp": 6,
+          "fn": 0,
+          "tn": 0,
+          "realized_cost": 6.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        }
+      },
+      "coefficients": [
+        {
+          "feature": "is_all_cash",
+          "coef_per_sd": -0.7589733807300577,
+          "odds_ratio_per_sd": 0.46814678890798356
+        },
+        {
+          "feature": "is_sponsor__missing",
+          "coef_per_sd": 0.1428620777222802,
+          "odds_ratio_per_sd": 1.153570687596831
+        },
+        {
+          "feature": "is_all_cash__missing",
+          "coef_per_sd": 0.1428620777222802,
+          "odds_ratio_per_sd": 1.153570687596831
+        },
+        {
+          "feature": "is_sponsor",
+          "coef_per_sd": 0.09933070238322013,
+          "odds_ratio_per_sd": 1.1044314772946247
+        },
+        {
+          "feature": "pct_spread",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "annualized_spread",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "days_to_expected_close",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "premium_to_unaffected",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "log_deal_value",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cfius_exposure",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "antitrust_exposure",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cma_eu_exposure",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "second_request_open",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "under_regulatory_challenge",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "financing_condition",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "shareholder_approval_required",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "pct_spread__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "annualized_spread__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "days_to_expected_close__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "premium_to_unaffected__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "log_deal_value__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cfius_exposure__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "antitrust_exposure__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cma_eu_exposure__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "financing_condition__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        }
+      ],
+      "fit_executed": true,
+      "status": "FITTED_AND_REGISTERED",
+      "sufficient_oos_sample": false,
+      "claims": {
+        "population_calibrated_probability": false,
+        "alpha_or_pnl": false,
+        "hyperparameter_tuning": false,
+        "calibration_applied": false
+      }
+    },
+    {
+      "window": 2,
+      "train_cutoff": "2025-06-30",
+      "test_start": "2025-06-30",
+      "test_end": "2026-09-26",
+      "n_train": 57,
+      "n_pos": 17,
+      "n_neg": 40,
+      "sample_prevalence": 0.2982456140350877,
+      "n_test": 3,
+      "test_pos": 1,
+      "test_neg": 2,
+      "test_prevalence": 0.3333333333333333,
+      "dataset_fingerprint": "a15992b40875b645d7f4fc5c850b8023b41a3dfa9dc270f9349654654d2b24ae",
+      "test_dataset_fingerprint": "f7914907c81dba0dd15ee21eecd26150c09676a003662f34f3c52462a9e8fd04",
+      "model_run_id": "0f23710600415f97a35a9dffd46bed375418c7a1cc609e811d1d4275bc884778",
+      "model_version": "break_logit_v1",
+      "feature_schema_version": "fs_v1",
+      "strategy_version": "event_driven_v1",
+      "calibration": "none",
+      "code_commit": "3037ff7edb13baa2bbd98fb15684a3fee600cd5c",
+      "cohort_id": "sec_reviewed_corpus_batch8",
+      "cohort_version": "v1",
+      "t_star_frozen": 0.0,
+      "threshold_selection": {
+        "t_star": 0.0,
+        "n_selection": 57,
+        "selection_cost": 40.0,
+        "cost_fp": 1.0,
+        "cost_fn": 15.0
+      },
+      "frozen_policy": {
+        "t_star_frozen": 0.0,
+        "tp": 1,
+        "fp": 2,
+        "fn": 0,
+        "tn": 0,
+        "realized_cost": 2.0,
+        "cost_fp": 1.0,
+        "cost_fn": 15.0
+      },
+      "probability_metrics": {
+        "n": 3,
+        "n_pos": 1,
+        "n_neg": 2,
+        "pi": 0.3333333333333333,
+        "sufficient_sample": false,
+        "roc_auc": 1.0,
+        "average_precision": 1.0,
+        "average_precision_baseline_pi": 0.3333333333333333,
+        "brier": 0.11913097673004158,
+        "log_loss": 0.40179455302637584,
+        "calibration": [
+          {
+            "bin": "[0.2,0.4]",
+            "n": 2,
+            "mean_p": 0.21301987566334207,
+            "observed_rate": 0.0
+          },
+          {
+            "bin": "[0.4,0.6]",
+            "n": 1,
+            "mean_p": 0.48375648945641636,
+            "observed_rate": 1.0
+          }
+        ]
+      },
+      "baseline_constant": {
+        "probability_metrics": {
+          "n": 3,
+          "n_pos": 1,
+          "n_neg": 2,
+          "pi": 0.3333333333333333,
+          "sufficient_sample": false,
+          "roc_auc": 0.5,
+          "average_precision": 0.3333333333333333,
+          "average_precision_baseline_pi": 0.3333333333333333,
+          "brier": 0.22345337026777468,
+          "log_loss": 0.6393938504065206,
+          "calibration": [
+            {
+              "bin": "[0.2,0.4]",
+              "n": 3,
+              "mean_p": 0.2982456140350877,
+              "observed_rate": 0.3333333333333333
+            }
+          ]
+        },
+        "threshold_selection": {
+          "t_star": 0.0,
+          "n_selection": 57,
+          "selection_cost": 40.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        },
+        "frozen_policy": {
+          "t_star_frozen": 0.0,
+          "tp": 1,
+          "fp": 2,
+          "fn": 0,
+          "tn": 0,
+          "realized_cost": 2.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        }
+      },
+      "baseline_spread": {
+        "probability_metrics": {
+          "n": 3,
+          "n_pos": 1,
+          "n_neg": 2,
+          "pi": 0.3333333333333333,
+          "sufficient_sample": false,
+          "roc_auc": 0.5,
+          "average_precision": 0.3333333333333333,
+          "average_precision_baseline_pi": 0.3333333333333333,
+          "brier": 0.22345339868974037,
+          "log_loss": 0.6393939183057872,
+          "calibration": [
+            {
+              "bin": "[0.2,0.4]",
+              "n": 3,
+              "mean_p": 0.2982452090244144,
+              "observed_rate": 0.3333333333333333
+            }
+          ]
+        },
+        "threshold_selection": {
+          "t_star": 0.0,
+          "n_selection": 57,
+          "selection_cost": 40.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        },
+        "frozen_policy": {
+          "t_star_frozen": 0.0,
+          "tp": 1,
+          "fp": 2,
+          "fn": 0,
+          "tn": 0,
+          "realized_cost": 2.0,
+          "cost_fp": 1.0,
+          "cost_fn": 15.0
+        }
+      },
+      "coefficients": [
+        {
+          "feature": "is_all_cash",
+          "coef_per_sd": -0.579972813167529,
+          "odds_ratio_per_sd": 0.5599135886354136
+        },
+        {
+          "feature": "is_sponsor__missing",
+          "coef_per_sd": 0.12063685744483488,
+          "odds_ratio_per_sd": 1.1282151350411398
+        },
+        {
+          "feature": "is_all_cash__missing",
+          "coef_per_sd": 0.12063685744483488,
+          "odds_ratio_per_sd": 1.1282151350411398
+        },
+        {
+          "feature": "is_sponsor",
+          "coef_per_sd": 0.04483517475470673,
+          "odds_ratio_per_sd": 1.0458554623182517
+        },
+        {
+          "feature": "pct_spread",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "annualized_spread",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "days_to_expected_close",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "premium_to_unaffected",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "log_deal_value",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cfius_exposure",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "antitrust_exposure",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cma_eu_exposure",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "second_request_open",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "under_regulatory_challenge",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "financing_condition",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "shareholder_approval_required",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "pct_spread__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "annualized_spread__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "days_to_expected_close__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "premium_to_unaffected__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "log_deal_value__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cfius_exposure__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "antitrust_exposure__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "cma_eu_exposure__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        },
+        {
+          "feature": "financing_condition__missing",
+          "coef_per_sd": 0.0,
+          "odds_ratio_per_sd": 1.0
+        }
+      ],
+      "fit_executed": true,
+      "status": "FITTED_AND_REGISTERED",
+      "sufficient_oos_sample": false,
+      "claims": {
+        "population_calibrated_probability": false,
+        "alpha_or_pnl": false,
+        "hyperparameter_tuning": false,
+        "calibration_applied": false
+      }
+    }
+  ],
+  "registry": [
+    {
+      "model_run_id": "a625bb89203c80bcc4a42ce4cfdcbb6bd4f854b2f4c6c709251bee13d6514a2b",
+      "model_id": "break_logit",
+      "model_version": "break_logit_v1",
+      "feature_schema_version": "fs_v1",
+      "training_cutoff": "2021-06-30T23:59:59.999999",
+      "n_train": 20,
+      "n_pos": 11,
+      "n_neg": 9,
+      "sample_prevalence": 0.55,
+      "cohort_id": "sec_reviewed_corpus_batch8",
+      "cohort_version": "v1",
+      "dataset_fingerprint": "8d0e153c4285a1300e2bcb783778c06265eb5b9334517ebde09b50a91eecd346",
+      "code_commit": "3037ff7edb13baa2bbd98fb15684a3fee600cd5c",
+      "calibration": {
+        "method": "none",
+        "note": "raw logistic probabilities (v1)"
+      },
+      "fit_timestamp": "2026-09-26T16:59:36.918433"
+    },
+    {
+      "model_run_id": "242d5873468f68a1429f2d3b47ea234be3a932ea14bb3bf31c50fbacb90af8dc",
+      "model_id": "break_logit",
+      "model_version": "break_logit_v1",
+      "feature_schema_version": "fs_v1",
+      "training_cutoff": "2023-06-30T23:59:59.999999",
+      "n_train": 47,
+      "n_pos": 15,
+      "n_neg": 32,
+      "sample_prevalence": 0.3191489361702128,
+      "cohort_id": "sec_reviewed_corpus_batch8",
+      "cohort_version": "v1",
+      "dataset_fingerprint": "369cf517055a18cfd147f5466b64976e6a7d1496c7774c1bb7427f07fe8df273",
+      "code_commit": "3037ff7edb13baa2bbd98fb15684a3fee600cd5c",
+      "calibration": {
+        "method": "none",
+        "note": "raw logistic probabilities (v1)"
+      },
+      "fit_timestamp": "2026-09-26T16:59:36.929077"
+    },
+    {
+      "model_run_id": "0f23710600415f97a35a9dffd46bed375418c7a1cc609e811d1d4275bc884778",
+      "model_id": "break_logit",
+      "model_version": "break_logit_v1",
+      "feature_schema_version": "fs_v1",
+      "training_cutoff": "2025-06-30T23:59:59.999999",
+      "n_train": 57,
+      "n_pos": 17,
+      "n_neg": 40,
+      "sample_prevalence": 0.2982456140350877,
+      "cohort_id": "sec_reviewed_corpus_batch8",
+      "cohort_version": "v1",
+      "dataset_fingerprint": "a15992b40875b645d7f4fc5c850b8023b41a3dfa9dc270f9349654654d2b24ae",
+      "code_commit": "3037ff7edb13baa2bbd98fb15684a3fee600cd5c",
+      "calibration": {
+        "method": "none",
+        "note": "raw logistic probabilities (v1)"
+      },
+      "fit_timestamp": "2026-09-26T16:59:36.939959"
+    }
+  ],
+  "reporting_contract": {
+    "metrics": [
+      "sample_prevalence_pi",
+      "roc_auc",
+      "average_precision_beside_pi",
+      "brier",
+      "log_loss",
+      "calibration_bins_diagnostic"
+    ],
+    "population_calibrated_probability_claim": false,
+    "alpha_or_pnl_claim": false
+  },
+  "notes": [
+    "Out-of-time metrics only; t* frozen from training in-sample predictions.",
+    "sample_prevalence / pi are sample class fractions, not population rates.",
+    "Thin OOS windows reported honestly; sufficient_oos_sample flags n < MIN_SAMPLE_N.",
+    "No calibration, no hyperparameter tuning, no alpha/P&L claim.",
+    "Each window artifact is identified by model_run_id in model_registry."
+  ]
+}

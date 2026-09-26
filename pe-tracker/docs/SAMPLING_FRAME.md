@@ -1,8 +1,8 @@
 # Sampling frame for deal-break probability research
 
-**Canonical reviewed SEC manifest (through autonomous Batch 9):** **65**
-resolved deals (Batch 8 N = 62 + Batch 9 admitted N = 3; KLAC/LRCX and
-AKRX/Fresenius excluded without substitution). Label mix: Y=0 closed = 46,
+**Canonical reviewed SEC manifest (through autonomous Batch 10):** **67**
+resolved deals (Batch 8 N = 62 + Batch 9 +3 + Batch 10 +2; KLAC/LRCX and
+AKRX/Fresenius excluded without substitution). Label mix: Y=0 closed = 48,
 Y=1 terminated = 19, censored = 0. Counts describe the **canonical research
 corpus**, not a population. The frozen `first_walkforward_v1` model cohort
 remains the Batch-8 N=62 identity and is a subset of this corpus.

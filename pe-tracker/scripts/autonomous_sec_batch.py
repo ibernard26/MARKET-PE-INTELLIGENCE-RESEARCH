@@ -97,6 +97,27 @@ def efts_search(fetcher: RateLimitedFetcher, *, start: str, end: str,
     return hits
 
 
+def prior_examined_accessions() -> set[str]:
+    """Accessions already decided in prior batch ledgers (continue the stream)."""
+    out: set[str] = set()
+    if not REVIEW_DIR.exists():
+        return out
+    for path in sorted(REVIEW_DIR.glob("batch_*_admission_ledger.json")):
+        try:
+            led = json.loads(path.read_text())
+        except Exception:
+            continue
+        for key in ("admitted", "excluded", "deferred"):
+            for rec in led.get(key) or []:
+                acc = rec.get("announcement_accession")
+                if acc:
+                    out.add(acc)
+                entry = rec.get("manifest_entry") or {}
+                if entry.get("announcement_accession"):
+                    out.add(entry["announcement_accession"])
+    return out
+
+
 def build_candidate_queue(
     fetcher: RateLimitedFetcher,
     *,
@@ -105,6 +126,7 @@ def build_candidate_queue(
     year_start: int = 2014,
     year_end: int = 2020,
     target_n: int = 80,
+    skip_accessions: Optional[set[str]] = None,
 ) -> list[dict]:
     """Outcome-blind chronological queue of Item 1.01 merger announcements.
 
@@ -113,11 +135,13 @@ def build_candidate_queue(
     # Outcome-blind announcement queries (no resolution / outcome terms).
     # Prefer target-side equity M&A language + per-share consideration.
     queries = [
+        '"to be acquired by" "per share in cash"',
+        '"to be acquired by" "per share"',
+        '"Definitive Agreement to be Acquired"',
+        '"will be acquired by" "cash"',
         '"to be acquired" "per share in cash"',
-        '"will be acquired" "per share"',
-        '"all-cash" "merger agreement"',
-        '"Agreement and Plan of Merger" "per share in cash"',
     ]
+    skip = set(existing_accessions) | set(skip_accessions or ()) | prior_examined_accessions()
     seen_acc: set[str] = set()
     raw: list[dict] = []
     for year in range(year_start, year_end + 1):
@@ -131,7 +155,7 @@ def build_candidate_queue(
         for h in hits:
             src = h.get("_source", {})
             adsh = src.get("adsh")
-            if not adsh or adsh in existing_accessions or adsh in seen_acc:
+            if not adsh or adsh in skip or adsh in seen_acc:
                 continue
             items = src.get("items") or []
             if isinstance(items, str):
@@ -271,6 +295,35 @@ UNSUPPORTED = re.compile(
 )
 
 
+# High-precision target-side cash pattern (Annie's / Vocus style press).
+TARGET_SIDE_CASH = re.compile(
+    r"(?:to be|will be)\s+acquired\s+by\s+"
+    r"((?:an?\s+affiliate\s+of\s+)?[A-Z][A-Za-z0-9&.,' \-]{1,70}?)\s+"
+    r"for\s+\$\s*([0-9]+(?:\.[0-9]+)?)\s+per\s+share(?:\s+in\s+cash)?",
+    re.I,
+)
+TARGET_SIDE_CASH_2 = re.compile(
+    r"acquired\s+by\s+"
+    r"((?:an?\s+affiliate\s+of\s+)?[A-Z][A-Za-z0-9&.,' \-]{1,70}?)\s+"
+    r"for\s+(?:approximately\s+)?\$\s*([0-9]+(?:\.[0-9]+)?)\s+per\s+share(?:\s+in\s+(?:an\s+)?(?:all[- ])?cash)?",
+    re.I,
+)
+# "affiliate(s) of Vector Capital ... $9.00 per share"
+TARGET_SIDE_CASH_3 = re.compile(
+    r"affiliates?\s+of\s+([A-Z][A-Za-z0-9&.,' \-]{1,50}?)\s+"
+    r"(?:\([^)]*\)\s*)?(?:under which|pursuant to which)?[^.]{0,80}?"
+    r"\$\s*([0-9]+(?:\.[0-9]+)?)\s+per\s+share",
+    re.I,
+)
+# "to be acquired by MaxLinear" then later "$X.XX in cash and N shares"
+TARGET_SIDE_ACQ_ONLY = re.compile(
+    r"(?:to be|will be)\s+acquired\s+by\s+"
+    r"((?:an?\s+affiliate\s+of\s+)?[A-Z][A-Za-z0-9&.,' \-]{1,70}?)"
+    r"(?:\s*\(|\s+for\s+|\s+in\s+a|\s*,)",
+    re.I,
+)
+
+
 def extract_terms(text: str) -> dict:
     """Fail-closed term extraction for fs_v1-representable structures."""
     out: dict[str, Any] = {
@@ -287,6 +340,25 @@ def extract_terms(text: str) -> dict:
         out["representability"] = "REPRESENTABILITY_FAIL"
         out["reason"] = "REPRESENTABILITY_FAIL: unsupported consideration mechanics"
         return out
+
+    # Prefer high-precision target-side cash extraction first.
+    for pat in (TARGET_SIDE_CASH, TARGET_SIDE_CASH_2, TARGET_SIDE_CASH_3):
+        m = pat.search(head)
+        if m:
+            acq = clean_acquirer_name(m.group(1))
+            try:
+                price = float(m.group(2))
+            except ValueError:
+                price = None
+            if acq and price and 0.5 <= price <= 5000:
+                out["consideration_type"] = "cash"
+                out["offer_price"] = price
+                out["acquirer"] = acq
+                out["representability"] = "OK"
+                return out
+    m_acq = TARGET_SIDE_ACQ_ONLY.search(head)
+    if m_acq:
+        out["acquirer"] = clean_acquirer_name(m_acq.group(1))
 
     cash_vals = []
     for pat in CASH_PATTERNS:
@@ -409,9 +481,15 @@ def clean_acquirer_name(name: str) -> Optional[str]:
         name, maxsplit=1, flags=re.I)[0].strip(" ,.;")
     if len(name) < 3 or len(name) > 80:
         return None
-    if name.lower() in {"purchaser", "buyer", "parent", "merger sub", "acquisition"}:
+    if name.lower() in {
+        "purchaser", "buyer", "parent", "merger sub", "acquisition",
+        "affiliate", "affiliates", "company", "the company",
+        "a wholly-owned subsidiary", "wholly-owned subsidiary",
+    }:
         return None
-    return name
+    # Drop trailing "AFFILIATE" residue from bad HTML joins.
+    name = re.sub(r"\s+AFFILIATE\s*$", "", name, flags=re.I).strip()
+    return name or None
 
 
 _ACQ_BAD = re.compile(
@@ -447,7 +525,12 @@ def acquirer_acceptable(acquirer: str, target: str) -> tuple[bool, str]:
     words = [w for w in re.split(r"\s+", acquirer) if w]
     has_suffix = bool(_ACQ_ENTITY_SUFFIX.search(acquirer))
     titleish = sum(1 for w in words if w[:1].isupper()) >= max(1, len(words) // 2)
-    if not has_suffix and not (2 <= len(words) <= 6 and titleish):
+    # Allow single-token brand/PE names (MaxLinear, GTCR, Permira, Vector).
+    single_brand = (
+        len(words) == 1 and len(words[0]) >= 4 and words[0][0].isupper()
+        and words[0].replace("-", "").isalnum()
+    )
+    if not has_suffix and not (2 <= len(words) <= 6 and titleish) and not single_brand:
         return False, f"acquirer lacks entity form: {acquirer!r}"
     if len(words) > 8:
         return False, f"acquirer unreasonably long: {acquirer!r}"

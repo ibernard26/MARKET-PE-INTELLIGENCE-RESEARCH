@@ -42,19 +42,23 @@ reported *beside* **PR AUC** and its baseline π, with a **cost-based operating 
 The strategy is a **locked, versioned contract** (`STRATEGY.md`) that a test fails the
 build on if any constant drifts. CI runs pytest (and the dbt tests) on every push and pull request.
 
-**Data status.** The SQLite store (`pe-tracker/data/pe_tracker.db`) is the source of truth;
-`MI_PE_Tracking_System.xlsx` is an output generated from it. The Q3 2026 deal register
-(`pe-tracker/data/research/`) is research-only and never enters the model store. Historical
-deals enter only through the reviewed `sec_deal_manifest.json`, which is currently empty, so the
-break model has **no real labels** (`MODEL_DATA_STATUS = NO_REAL_LABELS`).
+**Data status (at base commit `82638705278ca5da14fa1dd47cb585ce71adafd5`).**
+SQLite (`pe-tracker/data/pe_tracker.db`) is the **canonical write store**.
+`arb-intelligence` DuckDB/dbt is a **read-only analytical projection**, not a
+competing source of truth. Historical deals enter only through the reviewed
+`sec_deal_manifest.json`. At that commit, `python -m src.model.data_quality`
+reported **24 eligible labeled rows** and
+`MODEL_DATA_STATUS = READY_FOR_EXPERIMENTAL_WALK_FORWARD`. That is a
+**reviewer-curated research corpus** (see `pe-tracker/docs/SAMPLING_FRAME.md`) —
+not a validated probability model and **not** proven alpha. No automatic claim
+that sample prevalence equals a population break rate.
 
-### 2 · `arb-intelligence/` — the production data architecture
-The same estate rebuilt as a modern stack: **DuckDB + dbt + Dagster**. Raw → Silver →
-Gold tiers, a dimensional model (`fact_price`, bitemporal `fact_deal_state`, conformed
-dims) plus a Data-Vault-style deal satellite, and the invariants encoded as
-**dbt tests** (calendar gate, no-lookahead, censoring, no-fabrication, resolution ≥
-announce, pending-has-no-label). Verified end-to-end: **8 models build, 6 invariant
-tests pass, the Dagster job returns `RUN_SUCCESS`** and exports the deal scorecard.
+### 2 · `arb-intelligence/` — the analytical data estate
+**DuckDB + dbt + Dagster** as a read-optimized projection of the research estate:
+Raw → Silver → Gold, dimensional model (`fact_price`, bitemporal
+`fact_deal_state`, conformed dims) plus a Data-Vault-style deal satellite, with
+invariants as **dbt tests**. Dagster may orchestrate refresh; it must not become
+an alternate canonical writer for deal facts.
 
 ### 3 · `outputs/` — extension prompts
 Ready-to-use handoff prompts that carry this project's real data and rules into other

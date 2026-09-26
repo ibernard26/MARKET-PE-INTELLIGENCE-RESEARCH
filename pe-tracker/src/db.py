@@ -55,6 +55,7 @@ def init_db():
     with connect() as conn:
         _upgrade_bitemporal_tables(conn)
         conn.executescript(sql)
+        _upgrade_model_registry_columns(conn)
         conn.executemany(
             "INSERT OR IGNORE INTO series (series_id, label, unit, source) "
             "VALUES (?,?,?,'FRED')",
@@ -63,12 +64,28 @@ def init_db():
     return DB_PATH
 
 
+def _upgrade_model_registry_columns(conn):
+    """Backward-compatible registry metadata columns (nullable; no history rewrite)."""
+    cols = [r[1] for r in conn.execute("PRAGMA table_info(model_registry)")]
+    if not cols:
+        return
+    for col, typ in (
+        ("cohort_id", "TEXT"),
+        ("cohort_version", "TEXT"),
+        ("dataset_fingerprint", "TEXT"),
+        ("sample_prevalence", "REAL"),
+    ):
+        if col not in cols:
+            conn.execute(f"ALTER TABLE model_registry ADD COLUMN {col} {typ}")
+
+
 def migrate_schema():
     """Bring an existing database up to the current schema. Idempotent.
 
     - prices.is_derived (fabrication ban support)
     - deals table replaced with the current ledger IF the old empty
       stub is present (refuses to drop a table containing rows).
+    - model_registry cohort / fingerprint / sample_prevalence columns
     """
     with connect() as conn:
         cols = [r["name"] for r in conn.execute("PRAGMA table_info(prices)")]
@@ -89,6 +106,7 @@ def migrate_schema():
     with connect() as conn:
         _upgrade_bitemporal_tables(conn)
         conn.executescript((ROOT / "schema.sql").read_text())
+        _upgrade_model_registry_columns(conn)
 
 
 def upsert_prices(rows):

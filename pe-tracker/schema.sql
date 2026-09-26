@@ -182,12 +182,18 @@ CREATE TABLE IF NOT EXISTS model_registry (
     n_train                INTEGER NOT NULL,
     n_pos                  INTEGER NOT NULL,
     n_neg                  INTEGER NOT NULL,
+    -- Legacy column name. Value is SAMPLE prevalence (n_pos/n_train), never a
+    -- population break rate. Prefer sample_prevalence for new readers.
     prevalence             REAL NOT NULL,
     hyperparameters        TEXT NOT NULL,   -- JSON
     calibration            TEXT NOT NULL,   -- JSON
     artifact               TEXT NOT NULL,   -- JSON (serialized model)
     fit_timestamp          TEXT NOT NULL,
     code_commit            TEXT NOT NULL,
+    cohort_id              TEXT,            -- optional; NULL = unspecified cohort
+    cohort_version         TEXT,
+    dataset_fingerprint    TEXT,            -- SHA-256 of canonical training rows
+    sample_prevalence      REAL,            -- n_pos/n_train; not a population rate
     PRIMARY KEY (model_version, training_cutoff)
 );
 CREATE TRIGGER IF NOT EXISTS trg_mreg_no_update BEFORE UPDATE ON model_registry

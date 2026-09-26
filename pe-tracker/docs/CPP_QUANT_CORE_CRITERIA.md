@@ -1,9 +1,18 @@
-# C++ Quant-Core Criteria
+# C++ quant-core criteria
 
-This project is **Python-first**. C++ will only be introduced when profiling
-demonstrates a genuine, sustained computational bottleneck that vectorized Python
-(NumPy/pandas) and SQL/DuckDB cannot meet. C++ is not introduced on intuition,
-and it is not introduced by this work.
+C++ is **not** part of the current model architecture
+(`break_logit_v1` / `fs_v1` / `event_driven_v1`).
+
+## Required sequence before any native code
+
+1. Python prototype
+2. Statistical validation
+3. Profiling
+4. Identify a real bottleneck
+5. Benchmark a native candidate against the Python baseline
+6. **Only then** introduce C++ (or another native path)
+
+Skipping steps for “quant aesthetics” is not allowed.
 
 ## Current decision
 
@@ -20,57 +29,30 @@ performance-only synthetic data — see `benchmarks/bench.py`):
 
 Reading:
 - Feature generation, backtest, portfolio aggregation and covariance are all
-  **sub-30 ms even at 10,000 deals** — orders of magnitude below any research
-  latency requirement. No case for C++.
-- **Monte Carlo is the only hotspot** and it scales ~linearly in
-  `positions × paths`. At the *real* book size (single-digit deals × 50k paths)
-  it runs in well under a second. It only becomes material at large synthetic
-  scale (10k positions × 50k paths ≈ 52 s).
+  **sub-30 ms even at 10,000 deals** — far below research latency needs.
+- **Monte Carlo** is the only hotspot and only binds at large *synthetic* scale,
+  not at current real book size.
 
-So the bottleneck candidate is identified (Monte Carlo), but it does not yet
-bind at real research scale, and it is not yet exhausted in Python.
+## Potential future C++ candidates (after the sequence above)
 
-## Explicit triggers for reconsidering
+- large Monte Carlo
+- large-scale optimization
+- high-throughput simulation
+- performance-critical execution paths
 
-C++ (or another native path) should be reconsidered when **any** of these hold,
-and only after the Python-level path has first been vectorized/optimized:
+## Not C++ candidates merely because they are quantitative
 
-1. Monte Carlo at **10^6+ paths** on a realistic book becomes materially slow
-   (e.g. interactive research iteration exceeds a few seconds and blocks work).
-2. Large-portfolio simulation (thousands of correlated names × 10^6 paths)
-   dominates end-to-end runtime.
-3. Matrix operations (covariance/factor models) can no longer meet research
-   latency after NumPy-level optimization.
-4. Event simulation reaches **millions of observations/events** per run.
-5. Execution / order-book modeling is introduced (fine-grained, loop-heavy).
-6. Profiling shows **Python interpreter overhead remains the bottleneck after
-   vectorization** (i.e. the work is genuinely CPU-bound in Python, not I/O or
-   already in NumPy C).
+- SEC parsing
+- logistic regression on tens/hundreds of deals
+- dbt transformations
+- research notebooks
+- small portfolio calculations
 
-Before any of the above triggers C++, first try: larger NumPy batch sizes,
-`float32` where precision allows, chunked/streamed path generation, and
-`numpy`-native reductions. Reach for native code only if those are exhausted.
+## Explicit non-goals of this repository stage
 
-## Proposed future architecture (not built yet)
-
-```
-Python research / orchestration
-        |
-        v
-C++ quant-core
-        |
-        +-- simulation
-        +-- portfolio math
-        +-- pricing
-        +-- risk
-        +-- execution simulation
-```
-
-Likely interface options when the time comes: **pybind11** for in-process calls,
-**Apache Arrow / Parquet** for zero-copy data hand-off, or a clearly defined
-service/API boundary. The Python simulation module (`src/research/simulation.py`)
-is deliberately written behind a small, stable function surface so a native
-implementation could be swapped in without changing callers.
+- No CMake
+- No C++ source files
+- No pybind11
 
 ## Status
 

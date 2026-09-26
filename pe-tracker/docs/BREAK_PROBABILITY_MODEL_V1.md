@@ -1,9 +1,15 @@
 # Break probability model v1 (`break_logit_v1`, features `fs_v1`)
 
-**Status: MODEL INFRASTRUCTURE VALIDATED — INSUFFICIENT DATA FOR ALPHA CLAIM.**
-The real research store currently holds 6 ledger deals and 0 bitemporal
-announcement/resolution events, so there are **0 labeled rows**. Every metric below
-comes from clearly-labeled SYNTHETIC test fixtures and only shows that the mechanics work.
+**Status: MODEL INFRASTRUCTURE VALIDATED — NO ALPHA CLAIM.**
+
+At base commit `82638705278ca5da14fa1dd47cb585ce71adafd5`, the reviewed SEC
+manifest / canonical store supports **24 eligible labeled rows**
+(`MODEL_DATA_STATUS = READY_FOR_EXPERIMENTAL_WALK_FORWARD` per
+`python -m src.model.data_quality`). That is a **reviewer-curated research
+corpus**, not a population sample (see `SAMPLING_FRAME.md`). No real-data fit,
+calibration, or walk-forward has been authorized in the architecture remediation
+PR. Metrics in unit tests still come from clearly labeled **SYNTHETIC**
+fixtures and only show that the mechanics work.
 
 ## Contract (unchanged: `event_driven_v1`)
 y = 1 ⇔ the deal breaks (termination/withdrawal); y = 0 ⇔ closing; pending ⇒ **censored**.
@@ -23,7 +29,9 @@ same AP quantity. Its no-skill reference is π.
 | `src/model/logistic.py` | L2 logistic, fixed C=1.0 on standardized inputs; train-median imputation + missingness indicators (no zero-fill); Platt/isotonic calibration only when the sample allows it |
 | `src/model/evaluate.py` | `probability_metrics` (π, ROC AUC, AP beside π, Brier, log loss, calibration table — no threshold); `select_threshold` (pre-test data only); `evaluate_frozen_threshold` (applies a frozen t*, cannot re-optimize) |
 | `src/model/validation.py` | Chronological split + expanding walk-forward; baselines: constant base rate, spread-only logistic; per-window metadata |
-| `src/model/registry.py` | `model_registry` (model_id, version, feature schema, cutoff, n, pos/neg, prevalence, hyperparameters, calibration, fit_timestamp, code_commit) + immutable `model_predictions` |
+| `src/model/registry.py` | `model_registry` (model_id, version, feature schema, cutoff, n, pos/neg, **sample** prevalence, cohort_id/version, dataset_fingerprint, hyperparameters, calibration, fit_timestamp, code_commit) + immutable `model_predictions` |
+| `src/model/cohort.py` | Non-destructive model-cohort membership (canonical store unchanged) |
+| `src/model/fingerprint.py` | Deterministic SHA-256 fingerprint of canonical training rows |
 | `src/model/bridge.py` | Attaches the contemporaneous stored p_break to backtest trades |
 | `src/model/decision.py` | EV = (1−p)·U − p·D, kept separate from the model; no trade without a validated t* |
 | `src/ingest/historical.py` | Provider interface; no concrete provider ships (it never fabricates) |

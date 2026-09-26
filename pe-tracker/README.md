@@ -75,10 +75,27 @@ everything is point-in-time. See `STRATEGY.md`.
 - Phase 3 — deal-break evaluation (metrics, scorecard, strategy contract) ✅
 - Phase 4 — generated workbook (`generate_workbook.py`) ✅
 
-**Start here:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — how storage, the point-in-time research layer and the break model fit together.
+### What is / is not claimed
+| Layer | Claim |
+|---|---|
+| Research infrastructure | Present |
+| Validated software (tests / gates) | Present |
+| Validated probability model | **Not claimed** |
+| Proven alpha | **Not claimed** |
 
-See [docs/BITEMPORAL_POINT_IN_TIME.md](docs/BITEMPORAL_POINT_IN_TIME.md) for the valid-time / known-at / ingestion-time rules every historical read obeys.
-See [docs/MARKET_DATA.md](docs/MARKET_DATA.md) (FRED pipeline), [docs/HISTORICAL_DEAL_DATA_SOURCES.md](docs/HISTORICAL_DEAL_DATA_SOURCES.md) (deal-data sources), [docs/AUTOMATION.md](docs/AUTOMATION.md), and `python -m src.model.data_quality` (training readiness).
-See [docs/BREAK_PROBABILITY_MODEL_V1.md](docs/BREAK_PROBABILITY_MODEL_V1.md) for the break-probability model (`python -m src.model.report`).
+At base commit `82638705278ca5da14fa1dd47cb585ce71adafd5`,
+`python -m src.model.data_quality` reported 24 eligible labeled rows in a
+reviewer-curated corpus (`READY_FOR_EXPERIMENTAL_WALK_FORWARD`). See
+[docs/SAMPLING_FRAME.md](docs/SAMPLING_FRAME.md) before interpreting prevalence
+as a population break rate.
+
+**Start here:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — storage, PIT layer, models.
+
+Also: [docs/BITEMPORAL_POINT_IN_TIME.md](docs/BITEMPORAL_POINT_IN_TIME.md),
+[docs/MARKET_DATA.md](docs/MARKET_DATA.md),
+[docs/HISTORICAL_DEAL_DATA_SOURCES.md](docs/HISTORICAL_DEAL_DATA_SOURCES.md),
+[docs/MODEL_ARCHITECTURE_V2.md](docs/MODEL_ARCHITECTURE_V2.md),
+[docs/BREAK_PROBABILITY_MODEL_V1.md](docs/BREAK_PROBABILITY_MODEL_V1.md),
+`python -m src.model.data_quality`.
 
 _Research tooling, not investment advice._

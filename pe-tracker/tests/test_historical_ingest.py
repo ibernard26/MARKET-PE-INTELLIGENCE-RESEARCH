@@ -184,12 +184,12 @@ def test_event_filing_rules():
     assert matches("closed", {"form": "25-NSE", "items": ""})
 
 
-def test_shipped_manifest_has_exactly_sixty_two_reviewed_deals():
-    """Eight reviewed batches: prior 24 + Batch 8 (+38). KLAC/LRCX and AKRX/Fresenius excluded."""
+def test_shipped_manifest_has_sixty_five_canonical_deals():
+    """Batches 1–8 (N=62) + autonomous Batch 9 (+3). KLAC/LRCX and AKRX/Fresenius excluded."""
     p = Path(__file__).resolve().parents[1] / "data" / "sec_deal_manifest.json"
     deals = json.loads(p.read_text())["deals"]
     ids = [d["deal_id"] for d in deals]
-    assert len(ids) == 62
+    assert len(ids) == 65
     assert ids[:24] == [
         "DEAL-CRNX-VRTX-2026",
         "DEAL-ESI-SOLS-2026",
@@ -219,7 +219,7 @@ def test_shipped_manifest_has_exactly_sixty_two_reviewed_deals():
     assert "DEAL-SKYT-IONQ-2026" not in ids and "DEAL-TBPH-ZYME-2026" not in ids
     assert "DEAL-CA-AVGO-2018" not in ids
     assert "DEAL-KLAC-LRCX-2015" not in ids and "DEAL-AKRX-FRESENIUS-2017" not in ids
-    assert set(ids[24:]) == {
+    assert {
         "DEAL-ALTR-INTC-2015", "DEAL-APC-OXY-2019", "DEAL-ARNA-PFE-2021",
         "DEAL-AVLR-VISTA-2022", "DEAL-CHNG-UNH-2021", "DEAL-CLDR-KKRCDR-2021",
         "DEAL-CONE-KKRGIP-2021", "DEAL-COR-AMT-2021", "DEAL-COUP-TB-2022",
@@ -233,9 +233,13 @@ def test_shipped_manifest_has_exactly_sixty_two_reviewed_deals():
         "DEAL-SGEN-PFE-2023", "DEAL-SPLK-CSCO-2023", "DEAL-STOR-GIC-2022",
         "DEAL-SWCH-DIGITALBRIDGE-2022", "DEAL-WORK-CRM-2020", "DEAL-XLNX-AMD-2020",
         "DEAL-XLRN-MRK-2021", "DEAL-ZEN-ZORO-2022",
-    }
-    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 43
+    }.issubset(set(ids))
+    assert {
+        "DEAL-VOCUS-GTCR-2014", "DEAL-COBRA-MONOMO-2014", "DEAL-ANNIE-GENERA-2014",
+    }.issubset(set(ids))
+    assert sum(1 for d in deals if d["resolution_type"] == "closed") == 46
     assert sum(1 for d in deals if d["resolution_type"] == "terminated") == 19
+    assert sum(1 for d in deals if d["resolution_type"] == "withdrawn") == 0
     by_id = {d["deal_id"]: d for d in deals}
     crnx, esi = by_id["DEAL-CRNX-VRTX-2026"], by_id["DEAL-ESI-SOLS-2026"]
     assert crnx["resolution_type"] == "closed" and crnx["offer_price"] == 85.0

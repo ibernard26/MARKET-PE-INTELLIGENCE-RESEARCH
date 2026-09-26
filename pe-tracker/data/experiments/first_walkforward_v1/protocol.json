@@ -1,8 +1,9 @@
 {
   "experiment_id": "first_walkforward_v1",
-  "status": "PREPARED_NOT_EXECUTED",
-  "execution_authorized": false,
+  "status": "AUTHORIZED_PENDING_EXECUTE",
+  "execution_authorized": true,
   "authorization_command_required": "AUTHORIZE FIRST REAL WALKFORWARD",
+  "authorization_note": "Authorized by explicit user instruction to execute only the frozen first_walkforward_v1 protocol on the N=62 cohort, preserve break_logit_v1/fs_v1, register by model_run_id, report OOS metrics without calibration/tuning/alpha claims.",
   "dataset_freeze": {
     "manifest_path": "pe-tracker/data/sec_deal_manifest.json",
     "manifest_freeze_commit": "f5f634b6290fa078f9018da2ae3da48f316cf655",

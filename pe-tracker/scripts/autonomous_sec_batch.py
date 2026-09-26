@@ -322,6 +322,14 @@ TARGET_SIDE_ACQ_ONLY = re.compile(
     r"(?:\s*\(|\s+for\s+|\s+in\s+a|\s*,)",
     re.I,
 )
+# "Permira Funds ... $48.75 per share" / "Canada Pension Plan Investment Board"
+PE_SPONSOR_CASH = re.compile(
+    r"\b((?:The\s+)?Permira(?:\s+Funds)?|Canada Pension Plan Investment Board|"
+    r"Blackstone|KKR|Carlyle|Thoma Bravo|Vista Equity|Silver Lake|Apollo|"
+    r"Bain Capital|TPG|Warburg Pincus|Hellman\s*&\s*Friedman)\b"
+    r"[^.]{0,160}?\$\s*([0-9]+(?:\.[0-9]+)?)\s+per\s+share",
+    re.I,
+)
 
 
 def extract_terms(text: str) -> dict:
@@ -342,7 +350,7 @@ def extract_terms(text: str) -> dict:
         return out
 
     # Prefer high-precision target-side cash extraction first.
-    for pat in (TARGET_SIDE_CASH, TARGET_SIDE_CASH_2, TARGET_SIDE_CASH_3):
+    for pat in (TARGET_SIDE_CASH, TARGET_SIDE_CASH_2, TARGET_SIDE_CASH_3, PE_SPONSOR_CASH):
         m = pat.search(head)
         if m:
             acq = clean_acquirer_name(m.group(1))

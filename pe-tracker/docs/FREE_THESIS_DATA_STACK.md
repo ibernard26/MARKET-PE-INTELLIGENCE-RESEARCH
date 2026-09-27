@@ -45,6 +45,10 @@ Reconciliation rule: `price_reconcile_v1` (`ABS_EPS=1e-4`, `REL_EPS=1e-6`).
 ```bash
 cd pe-tracker
 
+# One-shot (preferred once secrets are visible):
+python -m scripts.resume_free_thesis_stack
+
+# Or step-wise:
 # 1) Live smoke (exits 3 if credentials missing; never prints values)
 python -m scripts.smoke_free_providers
 

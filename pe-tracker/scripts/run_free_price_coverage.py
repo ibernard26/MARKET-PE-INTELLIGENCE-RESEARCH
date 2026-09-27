@@ -193,16 +193,31 @@ def main() -> int:
     print(json.dumps(meta, indent=2))
     print(f"wrote {OUT_MATRIX}")
     print(f"wrote {DEFAULT_MANIFEST} ({len(all_obs)} prints)")
+
+    # Offline audit docs (no credentials required once matrix exists)
+    from scripts.audit_free_price_coverage import main as audit_main
+    audit_rc = audit_main()
+    if audit_rc != 0:
+        print("audit_free_price_coverage failed", file=sys.stderr)
+        return audit_rc
+
     if n_3plus < 20:
         print("HISTORICAL_PRICE_DATA_READY = NO", file=sys.stderr)
         print("SPREAD_STRESS_BACKTEST_STATUS = BLOCKED_INSUFFICIENT_PRICE_HISTORY",
               file=sys.stderr)
-    else:
-        print("HISTORICAL_PRICE_DATA_READY = YES", file=sys.stderr)
-        print("SPREAD_STRESS_READY_FOR_EXECUTION = YES", file=sys.stderr)
-        print("THESIS_PRICE_DATA_READY_FOR_REVIEW = YES", file=sys.stderr)
-        print("STOP — do not execute backtest without explicit authorization.",
-              file=sys.stderr)
+        return 0
+
+    print("HISTORICAL_PRICE_DATA_READY = YES", file=sys.stderr)
+    print("SPREAD_STRESS_READY_FOR_EXECUTION = YES", file=sys.stderr)
+    print("THESIS_PRICE_DATA_READY_FOR_REVIEW = YES", file=sys.stderr)
+    from scripts.freeze_thesis_price_cohort import main as freeze_main
+    freeze_rc = freeze_main()
+    if freeze_rc != 0:
+        print("cohort freeze failed after readiness", file=sys.stderr)
+        return freeze_rc
+    # Free-thesis goal: stop before model / spread_stress execution.
+    print("STOP — cohort frozen; do not execute backtest in this goal.",
+          file=sys.stderr)
     return 0
 
 

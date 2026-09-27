@@ -8,15 +8,14 @@ daily closes. FRED supplies index/commodity series, not single-name equities.
 ## Provider architecture
 
 ```
-CRSP ───────┐
-            │
-Yahoo ──────┼──► NORMALIZER ─► NormalizedEquityObservation
-            │                  ─► target_price_manifest.json
-future ─────┘
+OpenFIGI (identity) ──► Tiingo ──┐
+                                 ├──► NORMALIZER ─► NormalizedEquityObservation
+Yahoo (reconcile/fallback) ──────┘
+CRSP (frozen future robustness) ─ (not in active chain)
 ```
 
-Precedence: **CRSP → Yahoo → NO_HISTORY** (CRSP skipped when
-`credentials_required()`). See `docs/CRSP_ACCESS.md`.
+Active precedence: **Tiingo → Yahoo → NO_HISTORY**.  
+CRSP: `FROZEN_FUTURE_ROBUSTNESS_PROVIDER` (see `docs/FREE_THESIS_DATA_STACK.md`).
 
 | Module | Role |
 |---|---|

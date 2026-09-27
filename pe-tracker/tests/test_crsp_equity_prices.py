@@ -342,12 +342,20 @@ def test_compare_crsp_yahoo_conflict_defers():
     assert cmp["status"] == ProviderStatus.DEFER_PRICE_CONFLICT.value
 
 
-def test_default_providers_crsp_first():
-    from src.ingest.equity_prices.fetch import default_providers
+def test_crsp_provider_still_constructible_but_not_in_default_chain():
+    """CRSP is frozen for thesis; adapter remains for future robustness."""
+    from src.ingest.equity_prices.crsp import CRSPEquityPriceProvider
+    from src.ingest.equity_prices.fetch import (
+        CRSP_ACTIVE_INGESTION,
+        CRSP_STATUS,
+        default_providers,
+    )
     chain = default_providers()
-    assert chain[0].name == "crsp"
-    assert chain[1].name == "yahoo_finance_chart"
-    assert chain[0].credentials_required() is True
+    assert [p.name for p in chain] == ["tiingo", "yahoo_finance_chart"]
+    assert CRSP_STATUS == "FROZEN_FUTURE_ROBUSTNESS_PROVIDER"
+    assert CRSP_ACTIVE_INGESTION is False
+    p = CRSPEquityPriceProvider(force_credentials_required=True)
+    assert p.credentials_required() is True
 
 
 def test_no_synthetic_provider_in_normalized_obs():

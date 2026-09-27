@@ -4,6 +4,9 @@ data/*.db-wal
 data/*.db-shm
 # Licensed vendor extracts (CRSP/WRDS raw files) — never commit
 data/licensed/
+# Provider HTTP caches (may be regenerated; keep secrets out of Git)
+data/cache/
+
 __pycache__/
 *.pyc
 .venv/

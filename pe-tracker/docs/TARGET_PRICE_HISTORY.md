@@ -5,6 +5,28 @@
 resolution. The SEC reviewed deal manifest supplies terms and outcomes, not
 daily closes. FRED supplies index/commodity series, not single-name equities.
 
+## Provider architecture (Revolution 1)
+
+```
+Yahoo ──────┐
+            │
+Provider B ─┼──► NORMALIZER ─► NormalizedEquityObservation
+            │                  ─► target_price_manifest.json
+Provider C ─┘
+```
+
+| Module | Role |
+|---|---|
+| `src/ingest/equity_prices/protocol.py` | `HistoricalEquityPriceProvider` |
+| `src/ingest/equity_prices/schema.py` | normalized observation + `ProviderStatus` |
+| `src/ingest/equity_prices/identity.py` | security identity (separate from prices) |
+| `src/ingest/equity_prices/yahoo.py` | Yahoo adapter |
+| `src/ingest/equity_prices/orchestrator.py` | ordered fallback; no blind merges |
+| `src/ingest/equity_prices/normalize.py` | provider → manifest bridge |
+
+Yahoo-specific fields do **not** leak into modeling code. Failure states are
+explicit (`AVAILABLE`, `NO_HISTORY`, `DELISTED_UNAVAILABLE`, …).
+
 ## Sources used
 
 | Source | Role | Provenance |

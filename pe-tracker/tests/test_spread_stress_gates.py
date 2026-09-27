@@ -65,8 +65,8 @@ def test_write_print_requires_known_at_and_positive_price(tmp_path=None):
 def test_manifest_ingest_empty_is_noop():
     c = mem()
     add_deal(c, "D1", "2024-01-02", 0.05, 0)
-    # empty in-memory provider via empty list: use Manifest on empty file
-    p = Path("/workspace/pe-tracker/data/target_price_manifest.json")
+    # Repo scaffold (empty prints) — path relative to pe-tracker root, not the VM.
+    p = Path(__file__).resolve().parents[1] / "data" / "target_price_manifest.json"
     data = json.loads(p.read_text())
     assert data["prints"] == []
     stats = ingest_target_prices(ManifestTargetPriceProvider(p), c)

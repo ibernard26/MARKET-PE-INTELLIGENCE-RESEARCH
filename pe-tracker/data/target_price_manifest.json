@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "_doc": "Reviewed longitudinal target-price prints for spread_stress_v1. Each print needs deal_id, observation_timestamp, target_price, source_name, source_identifier, known_at. Never invent prices. Empty until a sourced provider fills it.",
+  "prints": []
+}

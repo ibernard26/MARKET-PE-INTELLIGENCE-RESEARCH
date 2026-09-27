@@ -25,6 +25,10 @@ DEAL_MANIFEST = ROOT / "data" / "sec_deal_manifest.json"
 
 
 def _covered(row: dict) -> bool:
+    # A deal whose prints were not admitted (identity veto / price conflict)
+    # is not covered, whatever raw provider counts say.
+    if row.get("prints_admitted") is False:
+        return False
     return int(row.get("combined_n") or row.get("tiingo_n") or 0) >= 3 or (
         int(row.get("yahoo_n") or 0) >= 3)
 

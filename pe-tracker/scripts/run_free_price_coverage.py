@@ -47,14 +47,31 @@ OUT_AUDIT = ROOT / "data" / "free_price_fetch_audit.json"
 PAD_DAYS = 3
 
 
+# Negative identity evidence: the ticker is not shown to be the SEC target.
+FIGI_IDENTITY_VETO = frozenset({"AMBIGUOUS", "NAME_MISMATCH"})
+
+
+def admit_prints(row: dict) -> bool:
+    """Fixed admission rule for the canonical price manifest (and thus the
+    >=20-deal readiness count): no identity veto from OpenFIGI or Tiingo and
+    no material Tiingo/Yahoo close conflict. OPENFIGI NO_MATCH is not
+    negative evidence (common for delisted names)."""
+    return (row.get("openfigi_status") not in FIGI_IDENTITY_VETO
+            and row.get("tiingo_status") != "IDENTITY_AMBIGUOUS"
+            and row.get("material_conflicts", 0) == 0)
+
+
 def _classify_deal(row: dict) -> str:
     if row.get("openfigi_status") == "AMBIGUOUS":
         return "SECURITY_IDENTITY_AMBIGUOUS"
+    if row.get("openfigi_status") == "NAME_MISMATCH":
+        return "SECURITY_IDENTITY_NAME_MISMATCH"
+    if row.get("tiingo_status") == "IDENTITY_AMBIGUOUS":
+        return "SECURITY_IDENTITY_AMBIGUOUS"
+    if row.get("material_conflicts", 0) > 0:
+        return "DEFER_PRICE_CONFLICT"
     if row.get("openfigi_status") == "NO_MATCH":
         return "OPENFIGI_NO_MATCH"
-    if row.get("material_conflicts", 0) > 0 and row.get("tiingo_n", 0) >= 3 and row.get("yahoo_n", 0) >= 3:
-        # conflicts recorded; do not enter as MULTI_PROVIDER_CONFIRMED
-        pass
     if row.get("tiingo_n", 0) >= 3 and row.get("yahoo_n", 0) >= 3 and row.get("material_conflicts", 0) == 0:
         return "MULTI_PROVIDER_CONFIRMED"
     if row.get("tiingo_n", 0) >= 3:
@@ -130,11 +147,6 @@ def main() -> int:
             for c in recon.get("conflicts", [])[:3]:
                 conflict_samples.append({"deal_id": d["deal_id"], **c})
 
-        # Canonical observations: combined orchestrator (Tiingo preferred)
-        # Skip committing conflicted multi-provider pairs as "confirmed";
-        # still keep Tiingo-preferred series from combined fetch.
-        all_obs.extend(c_res.get("observations") or [])
-
         row = {
             "deal_id": d["deal_id"],
             "target_cik": d.get("target_cik"),
@@ -158,7 +170,12 @@ def main() -> int:
             "combined_n": c_res.get("n_prints", len(c_res.get("observations") or [])),
         }
         row["final_coverage_status"] = _classify_deal(row)
+        row["prints_admitted"] = admit_prints(row)
         rows.append(row)
+        # Canonical observations: combined orchestrator (Tiingo preferred),
+        # only for deals that pass the identity + reconciliation admission rule.
+        if row["prints_admitted"]:
+            all_obs.extend(c_res.get("observations") or [])
 
     by_deal_prints = Counter(o.deal_id for o in all_obs)
     n_3plus = sum(1 for _, n in by_deal_prints.items() if n >= 3)
@@ -171,6 +188,7 @@ def main() -> int:
         "multi_provider_confirmed": sum(
             1 for r in rows if r["final_coverage_status"] == "MULTI_PROVIDER_CONFIRMED"),
         "uncovered_deals": sum(1 for r in rows if r["combined_n"] < 3),
+        "deals_not_admitted": sum(1 for r in rows if not r["prints_admitted"]),
         "historical_price_data_ready": n_3plus >= 20,
         "crsp_status": CRSP_STATUS,
         "provider_chain": [p.name for p in default_providers()],

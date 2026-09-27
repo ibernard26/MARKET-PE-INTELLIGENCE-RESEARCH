@@ -15,6 +15,8 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Callable, Optional, Sequence
 
+from .name_match import names_agree
+
 ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_CACHE_DIR = ROOT / "data" / "cache" / "openfigi"
 OPENFIGI_MAPPING_URL = "https://api.openfigi.com/v3/mapping"
@@ -24,6 +26,7 @@ ENV_KEY = "OPENFIGI_API_KEY"
 class OpenFIGIMappingStatus(str, Enum):
     MATCHED = "MATCHED"
     AMBIGUOUS = "AMBIGUOUS"
+    NAME_MISMATCH = "NAME_MISMATCH"
     NO_MATCH = "NO_MATCH"
     RATE_LIMITED = "RATE_LIMITED"
     TRANSIENT_FAILURE = "TRANSIENT_FAILURE"
@@ -229,6 +232,12 @@ class OpenFIGISecurityIdentityResolver:
             return base
 
         hit = next(r for r in pool if r.get("figi") in uniq_figi)
+        if base.target_name and not names_agree(hit.get("name"), base.target_name):
+            # A single candidate is not a match unless it is the target issuer
+            # (tickers get reused) — never map by ticker alone.
+            base.mapping_status = OpenFIGIMappingStatus.NAME_MISMATCH.value
+            base.error = "DEFER_SECURITY_IDENTITY_NAME_MISMATCH"
+            return base
         base.figi = hit.get("figi")
         base.composite_figi = hit.get("compositeFIGI")
         base.share_class_figi = hit.get("shareClassFIGI")

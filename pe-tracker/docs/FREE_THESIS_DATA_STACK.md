@@ -70,3 +70,25 @@ Writes:
 ## Gates
 
 Keep ≥20 deals with ≥3 real prints. Do not auto-run `spread_stress` / model fit.
+
+## Security-identity admission gate
+
+Tickers get reused, especially across the 2014–2015 corpus. A ticker's prices
+enter `target_price_manifest.json`, and so count toward the ≥20-deal readiness
+gate, only when the ticker is shown to be the SEC target. The rule below was
+fixed before any live provider data was seen.
+
+- **Name rule** (`security_identity/name_match.names_agree`): drop legal-form
+  and filler words. After that, one name's significant tokens must be a
+  non-empty subset of the other's.
+- **Tiingo:** the issuer name must agree with the SEC target name, and the
+  listing interval `[startDate, endDate]` must cover the announcement date.
+  Otherwise the result is `IDENTITY_AMBIGUOUS`, and no price call is made.
+- **Orchestrator:** after `IDENTITY_AMBIGUOUS` it does **not** fall back to
+  Yahoo on the same ticker.
+- **OpenFIGI:** a single candidate whose name disagrees gives `NAME_MISMATCH`,
+  never `MATCHED`.
+- **Manifest admission** (`run_free_price_coverage.admit_prints`): prints are
+  admitted only when there's no OpenFIGI `AMBIGUOUS`/`NAME_MISMATCH`, no Tiingo
+  `IDENTITY_AMBIGUOUS`, and no material Tiingo/Yahoo conflict. OpenFIGI
+  `NO_MATCH` is not negative evidence, because it's common for delisted names.

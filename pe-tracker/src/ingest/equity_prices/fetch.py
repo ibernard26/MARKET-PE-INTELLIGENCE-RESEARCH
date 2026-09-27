@@ -5,20 +5,25 @@ import json
 from pathlib import Path
 from typing import Optional, Sequence
 
-from .crsp import CRSPEquityPriceProvider
 from .identity import DEFAULT_TICKER_MAP, SecurityIdentityResolver
 from .normalize import observation_to_print, write_normalized_manifest
 from .orchestrator import PriceProviderOrchestrator
 from .protocol import HistoricalEquityPriceProvider
+from .tiingo import TiingoEquityPriceProvider
 from .yahoo import YahooEquityPriceProvider
 
 ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_DEAL_MANIFEST = ROOT / "data" / "sec_deal_manifest.json"
 
+# CRSP retained in codebase but frozen out of active thesis ingestion.
+CRSP_STATUS = "FROZEN_FUTURE_ROBUSTNESS_PROVIDER"
+CRSP_ACTIVE_INGESTION = False
+CRSP_REQUIRED_FOR_THESIS = False
+
 
 def default_providers() -> list[HistoricalEquityPriceProvider]:
-    """Ordered fallback: CRSP (authoritative when licensed) → Yahoo → NO_HISTORY."""
-    return [CRSPEquityPriceProvider(), YahooEquityPriceProvider()]
+    """Active thesis chain: Tiingo → Yahoo. CRSP not included (frozen)."""
+    return [TiingoEquityPriceProvider(), YahooEquityPriceProvider()]
 
 
 def fetch_manifest_prints(
@@ -59,6 +64,8 @@ def fetch_manifest_prints(
         "n_deals": len(deals),
         "n_prints": len(prints),
         "n_deals_with_ge3_prints": n_ok,
+        "crsp_status": CRSP_STATUS,
+        "crsp_active_ingestion": CRSP_ACTIVE_INGESTION,
         "audit": audit,
         "prints": prints,
         "observations": all_obs,

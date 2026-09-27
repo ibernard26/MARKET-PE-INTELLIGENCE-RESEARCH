@@ -1,9 +1,17 @@
 # CRSP integration report
 
+**CRSP_STATUS = FROZEN_FUTURE_ROBUSTNESS_PROVIDER**  
+**CRSP_ACTIVE_INGESTION = NO**  
+**CRSP_REQUIRED_FOR_THESIS = NO**  
+
 **CRSP_INTEGRATION_COMPLETE = YES** (adapter + identity + tests + access docs)  
 **CRSP_ACCESS_AVAILABLE = NO**  
 **CRSP_ACCESS_MODE = none**  
 **CRSP_LICENSE_DATA_COMMITTED_TO_GIT = NO**
+
+> Thesis phase uses OpenFIGI + Tiingo + Yahoo (`docs/FREE_THESIS_DATA_STACK.md`).
+> CRSP remains for future institutional replication / delisting robustness.
+> Do not attempt WRDS authentication in the free thesis loop.
 
 ## Delivered (PR1 — architecture)
 
@@ -17,7 +25,7 @@
 | `docs/CRSP_YAHOO_PRICE_RECONCILIATION.md` | reconciliation stub (blocked) |
 | `tests/test_crsp_equity_prices.py` | mocked contract tests |
 
-Provider precedence: **CRSP → Yahoo → NO_HISTORY**.
+Former precedence CRSP → Yahoo is **frozen**. Active thesis chain: **Tiingo → Yahoo**.
 
 ## Mapping (no live CRSP)
 

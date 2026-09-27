@@ -114,9 +114,15 @@ class PriceProviderOrchestrator:
                 "n_observations": len(result.observations),
                 "provider_symbol": result.provider_symbol,
                 "error": result.error,
+                "identity_verified": result.identity_verified,
             })
             if result.ok:
                 chosen = result
+                break
+            if result.status == ProviderStatus.IDENTITY_AMBIGUOUS:
+                # The ticker is not shown to be this target (e.g. reused symbol):
+                # a lower-precedence provider keyed on the same ticker must not
+                # be tried — defer the deal instead.
                 break
             if result.status in TRANSIENT_STATUSES:
                 # Already retried inside adapter; try next provider.

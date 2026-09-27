@@ -124,6 +124,9 @@ class ProviderFetchResult:
     error: Optional[str] = None
     provider_symbol: Optional[str] = None
     window: Optional[tuple[str, str]] = None
+    # True only when the provider affirmatively verified that the symbol is the
+    # SEC target (e.g. Tiingo issuer name + listing interval). Never inferred.
+    identity_verified: bool = False
 
     @property
     def ok(self) -> bool:

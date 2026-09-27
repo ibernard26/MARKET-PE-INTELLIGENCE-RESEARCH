@@ -2,6 +2,8 @@
 
 Credentials: TIINGO_API_TOKEN (alias TIINGO_API_KEY accepted). Never log values.
 Does not overwrite close with adjClose. No interpolation / forward-fill.
+Prices are attributed only after identity_problems() passes (name + listing
+interval); otherwise IDENTITY_AMBIGUOUS — tickers get reused.
 """
 from __future__ import annotations
 
@@ -12,6 +14,7 @@ from typing import Any, Callable, Optional
 from zoneinfo import ZoneInfo
 
 from .calendar_gate import filter_session_observations
+from ..security_identity.name_match import names_agree
 from .schema import (
     NormalizedEquityObservation,
     ProviderFetchResult,
@@ -43,6 +46,22 @@ def _token_from_env(env: Optional[dict] = None) -> str:
 def session_close_iso(d: date) -> str:
     aware = datetime(d.year, d.month, d.day, 16, 0, 0, tzinfo=NY)
     return aware.replace(tzinfo=None).isoformat()
+
+
+def identity_problems(meta: dict, identity: SecurityIdentity,
+                      window_start: date) -> list[str]:
+    """Fixed identity rule: issuer name agrees with the SEC target name AND the
+    Tiingo listing interval covers the announcement date. Empty list = passed."""
+    problems = []
+    if not names_agree(meta.get("name"), identity.target_name):
+        problems.append(f"issuer name {meta.get('name')!r} does not agree with "
+                        f"SEC target {identity.target_name!r}")
+    ann = identity.announcement_date or window_start.isoformat()
+    s, e = (meta.get("startDate") or "")[:10], (meta.get("endDate") or "")[:10]
+    if not s or s > ann or (e and e < ann):
+        problems.append(f"listing interval [{s or '?'}, {e or 'active'}] "
+                        f"does not cover announcement {ann}")
+    return problems
 
 
 class TiingoEquityPriceProvider:
@@ -144,18 +163,25 @@ class TiingoEquityPriceProvider:
                 error=str(meta.get("error") or meta.get("http_status")),
             )
 
-        # Soft identity consistency check — do not invent; may defer later upstream
+        problems = identity_problems(meta, identity, start)
+        if problems:
+            # Ticker not shown to be this target (e.g. reused symbol) — defer.
+            return ProviderFetchResult(
+                provider=self.name, status=ProviderStatus.IDENTITY_AMBIGUOUS,
+                identity=identity, provider_symbol=symbol, window=window,
+                error="; ".join(problems),
+            )
         meta_ticker = (meta.get("ticker") or symbol).upper()
         rows, err_status, err = self._fetch_eod(symbol, start, end)
         if err_status is not None:
             return ProviderFetchResult(
-                provider=self.name, status=err_status, identity=identity,
+                provider=self.name, status=err_status, identity=identity, identity_verified=True,
                 provider_symbol=symbol, window=window, error=err,
             )
         if not rows:
             return ProviderFetchResult(
                 provider=self.name, status=ProviderStatus.NO_HISTORY,
-                identity=identity, provider_symbol=symbol, window=window,
+                identity=identity, identity_verified=True, provider_symbol=symbol, window=window,
                 error="TIINGO_NO_HISTORY",
             )
 
@@ -230,12 +256,12 @@ class TiingoEquityPriceProvider:
         if not ok:
             return ProviderFetchResult(
                 provider=self.name, status=ProviderStatus.NO_HISTORY,
-                identity=identity, provider_symbol=symbol, window=window,
+                identity=identity, identity_verified=True, provider_symbol=symbol, window=window,
                 error="all prints rejected by session calendar gate",
             )
         return ProviderFetchResult(
             provider=self.name, status=ProviderStatus.AVAILABLE,
-            identity=identity, observations=ok, provider_symbol=symbol,
+            identity=identity, identity_verified=True, observations=ok, provider_symbol=symbol,
             window=window,
         )
 

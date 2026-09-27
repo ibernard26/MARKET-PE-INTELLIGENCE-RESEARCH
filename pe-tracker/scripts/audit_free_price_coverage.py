@@ -25,6 +25,11 @@ DEAL_MANIFEST = ROOT / "data" / "sec_deal_manifest.json"
 
 
 def _covered(row: dict) -> bool:
+    # Canonical coverage only: raw provider counts never make a deal covered.
+    if "canonical_status" in row:
+        return row["canonical_status"] == "CANONICALLY_ADMITTED"
+    if row.get("prints_admitted") is False:
+        return False
     return int(row.get("combined_n") or row.get("tiingo_n") or 0) >= 3 or (
         int(row.get("yahoo_n") or 0) >= 3)
 
@@ -38,7 +43,8 @@ def write_recon(doc: dict) -> None:
     lines = [
         "# Tiingo ↔ Yahoo price reconciliation",
         "",
-        f"**Rule:** `price_reconcile_v1` (see `src/ingest/equity_prices/reconciliation.py`)",
+        f"**Rule:** `{meta.get('reconcile_rule', 'price_reconcile_v1')}` "
+        "(see `src/ingest/equity_prices/reconciliation.py`)",
         "",
         "| Metric | Value |",
         "|---|---|",
@@ -50,6 +56,18 @@ def write_recon(doc: dict) -> None:
         f"| MATERIAL_CONFLICT_COUNT | {recon.get('conflict', 0)} |",
         f"| TIINGO_ONLY_COUNT | {sum(1 for r in deals if r.get('tiingo_n', 0) > 0 and r.get('yahoo_n', 0) == 0)} |",
         f"| YAHOO_ONLY_COUNT | {sum(1 for r in deals if r.get('yahoo_n', 0) > 0 and r.get('tiingo_n', 0) == 0)} |",
+        "",
+        "## Raw vs canonical coverage (readiness uses CANONICALLY_ADMITTED only)",
+        "",
+        "| Status | Deals |",
+        "|---|---|",
+        f"| RAW_PROVIDER_COVERED | {meta.get('raw_provider_covered', 'n/d')} |",
+        f"| CANONICALLY_ADMITTED | {meta.get('canonically_admitted', 'n/d')} |",
+        f"| DEFERRED_IDENTITY | {meta.get('deferred_identity', 'n/d')} |",
+        f"| DEFERRED_PRICE_CONFLICT | {meta.get('deferred_price_conflict', 'n/d')} |",
+        f"| NO_PRICE_HISTORY | {meta.get('no_price_history', 'n/d')} |",
+        f"| INSUFFICIENT_CANONICAL_PRINTS | {meta.get('insufficient_canonical_prints', 'n/d')} |",
+        f"| identity deferral reasons | {meta.get('identity_deferral_reasons', 'n/d')} |",
         "",
         "## Material conflict samples",
         "",

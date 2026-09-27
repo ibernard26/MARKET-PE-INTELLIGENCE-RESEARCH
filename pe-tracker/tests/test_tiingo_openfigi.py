@@ -233,11 +233,13 @@ def test_no_future_leakage_in_tiingo_window():
                  "adjClose": 99.0, "open": 99, "high": 99, "low": 99,
                  "volume": 1, "divCash": 0, "splitFactor": 1},
             ]
-        return 200, {"ticker": "X", "name": "X", "exchangeCode": "NYSE"}
+        return 200, {"ticker": "X", "name": "X CORP", "exchangeCode": "NYSE",
+                     "startDate": "2010-01-01", "endDate": ""}
 
     p = TiingoEquityPriceProvider(token="t", fetch_json=fetch, min_interval_s=0)
     res = p.fetch_history(
-        SecurityIdentity(deal_id="D", ticker="X"),
+        SecurityIdentity(deal_id="D", ticker="X", target_name="X Corp"),
         date(2020, 1, 2), date(2020, 1, 10))
+    assert res.status == ProviderStatus.AVAILABLE and res.observations
     assert all(o.session_date <= "2020-01-10" for o in res.observations)
     assert all(o.close != 99.0 for o in res.observations)

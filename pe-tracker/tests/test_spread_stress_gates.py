@@ -62,16 +62,27 @@ def test_write_print_requires_known_at_and_positive_price(tmp_path=None):
     assert any("known_at" in p for p in r["problems"])
 
 
-def test_manifest_ingest_empty_is_noop():
+def test_manifest_ingest_empty_file_is_noop(tmp_path):
     c = mem()
     add_deal(c, "D1", "2024-01-02", 0.05, 0)
-    # Repo scaffold (empty prints) — path relative to pe-tracker root, not the VM.
-    p = Path(__file__).resolve().parents[1] / "data" / "target_price_manifest.json"
-    data = json.loads(p.read_text())
-    assert data["prints"] == []
+    p = tmp_path / "empty_prices.json"
+    p.write_text(json.dumps({"schema_version": 1, "prints": []}))
     stats = ingest_target_prices(ManifestTargetPriceProvider(p), c)
     assert stats["accepted"] == 0
     assert count_target_prints(c) == 1  # announcement observation has target_price
+
+
+def test_repo_price_manifest_is_yahoo_sourced_not_synthetic():
+    """Guard: committed prints must carry yahoo_finance_chart provenance."""
+    p = Path(__file__).resolve().parents[1] / "data" / "target_price_manifest.json"
+    data = json.loads(p.read_text())
+    prints = data.get("prints") or []
+    if not prints:
+        return  # empty scaffold still allowed
+    assert data.get("meta", {}).get("provider") == "yahoo_finance_chart"
+    assert all(row.get("source_name") == "yahoo_finance_chart" for row in prints)
+    assert all("synthetic" not in (row.get("source_identifier") or "").lower()
+               for row in prints)
 
 
 def test_audit_blocks_without_longitudinal_history():

@@ -52,6 +52,10 @@ If longitudinal target-price history is insufficient:
 5. use the target-price ingestion architecture
    (`src/ingest/target_prices.py`) to unblock.
 
+See also `docs/TARGET_PRICE_HISTORY.md`. Real prints are fetched via
+`python -m scripts.fetch_target_prices` (Yahoo chart + SEC ticker map). Unit
+tests remain synthetic/mocked only.
+
 ## Modules
 
 | Path | Role |

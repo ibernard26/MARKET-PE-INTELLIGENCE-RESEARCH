@@ -1,0 +1,1775 @@
+{
+  "meta": {
+    "provider": "yahoo_finance_chart",
+    "n_deals": 129,
+    "n_prints": 3806,
+    "n_deals_with_ge3_prints": 14,
+    "sec_deal_manifest": "data/sec_deal_manifest.json"
+  },
+  "audit": [
+    {
+      "deal_id": "DEAL-CRNX-VRTX-2026",
+      "status": "ok",
+      "ticker": "CRNX",
+      "n_prints": 8,
+      "resolved": {
+        "ticker": "CRNX",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CRNX-VRTX-2026"
+      }
+    },
+    {
+      "deal_id": "DEAL-ESI-SOLS-2026",
+      "status": "ok",
+      "ticker": "ESI",
+      "n_prints": 39,
+      "resolved": {
+        "ticker": "ESI",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=1590714"
+      }
+    },
+    {
+      "deal_id": "DEAL-EA-PIFSLAFF-2025",
+      "status": "no_price_history",
+      "ticker": "EA",
+      "resolved": {
+        "ticker": "EA",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-EA-PIFSLAFF-2025"
+      },
+      "window": [
+        "2025-09-25",
+        "2026-08-07"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SSTK-GETY-2025",
+      "status": "ok",
+      "ticker": "SSTK",
+      "n_prints": 375,
+      "resolved": {
+        "ticker": "SSTK",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=1549346"
+      }
+    },
+    {
+      "deal_id": "DEAL-JNPR-HPE-2024",
+      "status": "no_price_history",
+      "ticker": "JNPR",
+      "resolved": {
+        "ticker": "JNPR",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-JNPR-HPE-2024"
+      },
+      "window": [
+        "2024-01-06",
+        "2025-07-05"
+      ]
+    },
+    {
+      "deal_id": "DEAL-HCP-IBM-2024",
+      "status": "no_price_history",
+      "ticker": "HCP",
+      "resolved": {
+        "ticker": "HCP",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-HCP-IBM-2024"
+      },
+      "window": [
+        "2024-04-21",
+        "2025-03-02"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CPRI-TPR-2023",
+      "status": "ok",
+      "ticker": "CPRI",
+      "n_prints": 319,
+      "resolved": {
+        "ticker": "CPRI",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=1530721"
+      }
+    },
+    {
+      "deal_id": "DEAL-WLTW-AON-2020",
+      "status": "ok",
+      "ticker": "WTW",
+      "n_prints": 349,
+      "resolved": {
+        "ticker": "WTW",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=1140536"
+      }
+    },
+    {
+      "deal_id": "DEAL-RHT-IBM-2018",
+      "status": "no_price_history",
+      "ticker": "RHT",
+      "resolved": {
+        "ticker": "RHT",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-RHT-IBM-2018"
+      },
+      "window": [
+        "2018-10-25",
+        "2019-07-12"
+      ]
+    },
+    {
+      "deal_id": "DEAL-LNKD-MSFT-2016",
+      "status": "no_price_history",
+      "ticker": "LNKD",
+      "resolved": {
+        "ticker": "LNKD",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-LNKD-MSFT-2016"
+      },
+      "window": [
+        "2016-06-08",
+        "2016-12-11"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ODP-SPLS-2015",
+      "status": "no_price_history",
+      "ticker": "ODP",
+      "resolved": {
+        "ticker": "ODP",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ODP-SPLS-2015"
+      },
+      "window": [
+        "2015-02-01",
+        "2016-05-19"
+      ]
+    },
+    {
+      "deal_id": "DEAL-HUM-AET-2015",
+      "status": "ok",
+      "ticker": "HUM",
+      "n_prints": 409,
+      "resolved": {
+        "ticker": "HUM",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=49071"
+      }
+    },
+    {
+      "deal_id": "DEAL-WFM-AMZN-2017",
+      "status": "no_price_history",
+      "ticker": "WFM",
+      "resolved": {
+        "ticker": "WFM",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-WFM-AMZN-2017"
+      },
+      "window": [
+        "2017-06-12",
+        "2017-08-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-MON-BAYER-2016",
+      "status": "no_price_history",
+      "ticker": "MON",
+      "resolved": {
+        "ticker": "MON",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-MON-BAYER-2016"
+      },
+      "window": [
+        "2016-09-11",
+        "2018-06-10"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CI-ANTM-2015",
+      "status": "ok",
+      "ticker": "CI",
+      "n_prints": 456,
+      "resolved": {
+        "ticker": "CI",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CI-ANTM-2015"
+      }
+    },
+    {
+      "deal_id": "DEAL-BHI-HAL-2014",
+      "status": "no_price_history",
+      "ticker": "BHI",
+      "resolved": {
+        "ticker": "BHI",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-BHI-HAL-2014"
+      },
+      "window": [
+        "2014-11-13",
+        "2016-05-03"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ATVI-MSFT-2022",
+      "status": "no_price_history",
+      "ticker": "ATVI",
+      "resolved": {
+        "ticker": "ATVI",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ATVI-MSFT-2022"
+      },
+      "window": [
+        "2022-01-15",
+        "2023-10-16"
+      ]
+    },
+    {
+      "deal_id": "DEAL-TWTR-XHOLDINGS-2022",
+      "status": "no_price_history",
+      "ticker": "TWTR",
+      "resolved": {
+        "ticker": "TWTR",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-TWTR-XHOLDINGS-2022"
+      },
+      "window": [
+        "2022-04-22",
+        "2022-10-30"
+      ]
+    },
+    {
+      "deal_id": "DEAL-TWC-CMCSA-2014",
+      "status": "no_price_history",
+      "ticker": "TWC",
+      "resolved": {
+        "ticker": "TWC",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-TWC-CMCSA-2014"
+      },
+      "window": [
+        "2014-02-09",
+        "2015-04-27"
+      ]
+    },
+    {
+      "deal_id": "DEAL-PACB-ILMN-2018",
+      "status": "ok",
+      "ticker": "PACB",
+      "n_prints": 293,
+      "resolved": {
+        "ticker": "PACB",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=1299130"
+      }
+    },
+    {
+      "deal_id": "DEAL-CERN-ORCL-2021",
+      "status": "no_price_history",
+      "ticker": "CERN",
+      "resolved": {
+        "ticker": "CERN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CERN-ORCL-2021"
+      },
+      "window": [
+        "2021-12-17",
+        "2022-06-11"
+      ]
+    },
+    {
+      "deal_id": "DEAL-NUAN-MSFT-2021",
+      "status": "no_price_history",
+      "ticker": "NUAN",
+      "resolved": {
+        "ticker": "NUAN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-NUAN-MSFT-2021"
+      },
+      "window": [
+        "2021-04-08",
+        "2022-03-07"
+      ]
+    },
+    {
+      "deal_id": "DEAL-FIVN-ZM-2021",
+      "status": "ok",
+      "ticker": "FIVN",
+      "n_prints": 54,
+      "resolved": {
+        "ticker": "FIVN",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=1288847"
+      }
+    },
+    {
+      "deal_id": "DEAL-MNTV-ZEN-2021",
+      "status": "no_price_history",
+      "ticker": "MNTV",
+      "resolved": {
+        "ticker": "MNTV",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-MNTV-ZEN-2021"
+      },
+      "window": [
+        "2021-10-25",
+        "2022-02-28"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ALTR-INTC-2015",
+      "status": "no_price_history",
+      "ticker": "ALTR",
+      "resolved": {
+        "ticker": "ALTR",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ALTR-INTC-2015"
+      },
+      "window": [
+        "2015-05-28",
+        "2015-12-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-APC-OXY-2019",
+      "status": "no_price_history",
+      "ticker": "APC",
+      "resolved": {
+        "ticker": "APC",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-APC-OXY-2019"
+      },
+      "window": [
+        "2019-05-06",
+        "2019-08-11"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ARNA-PFE-2021",
+      "status": "no_price_history",
+      "ticker": "ARNA",
+      "resolved": {
+        "ticker": "ARNA",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ARNA-PFE-2021"
+      },
+      "window": [
+        "2021-12-09",
+        "2022-03-14"
+      ]
+    },
+    {
+      "deal_id": "DEAL-AVLR-VISTA-2022",
+      "status": "no_price_history",
+      "ticker": "AVLR",
+      "resolved": {
+        "ticker": "AVLR",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-AVLR-VISTA-2022"
+      },
+      "window": [
+        "2022-08-05",
+        "2022-10-22"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CHNG-UNH-2021",
+      "status": "no_price_history",
+      "ticker": "CHNG",
+      "resolved": {
+        "ticker": "CHNG",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CHNG-UNH-2021"
+      },
+      "window": [
+        "2021-01-03",
+        "2022-10-06"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CLDR-KKRCDR-2021",
+      "status": "no_price_history",
+      "ticker": "CLDR",
+      "resolved": {
+        "ticker": "CLDR",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CLDR-KKRCDR-2021"
+      },
+      "window": [
+        "2021-05-29",
+        "2021-10-11"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CONE-KKRGIP-2021",
+      "status": "no_price_history",
+      "ticker": "CONE",
+      "resolved": {
+        "ticker": "CONE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CONE-KKRGIP-2021"
+      },
+      "window": [
+        "2021-11-11",
+        "2022-03-28"
+      ]
+    },
+    {
+      "deal_id": "DEAL-COR-AMT-2021",
+      "status": "ok",
+      "ticker": "COR",
+      "n_prints": 30,
+      "resolved": {
+        "ticker": "COR",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-COR-AMT-2021"
+      }
+    },
+    {
+      "deal_id": "DEAL-COUP-TB-2022",
+      "status": "no_price_history",
+      "ticker": "COUP",
+      "resolved": {
+        "ticker": "COUP",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-COUP-TB-2022"
+      },
+      "window": [
+        "2022-12-08",
+        "2023-03-03"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CTXS-PE-2022",
+      "status": "no_price_history",
+      "ticker": "CTXS",
+      "resolved": {
+        "ticker": "CTXS",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CTXS-PE-2022"
+      },
+      "window": [
+        "2022-01-28",
+        "2022-10-03"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CXO-COP-2020",
+      "status": "no_price_history",
+      "ticker": "CXO",
+      "resolved": {
+        "ticker": "CXO",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CXO-COP-2020"
+      },
+      "window": [
+        "2020-10-15",
+        "2021-01-18"
+      ]
+    },
+    {
+      "deal_id": "DEAL-DRE-PLD-2022",
+      "status": "no_price_history",
+      "ticker": "DRE",
+      "resolved": {
+        "ticker": "DRE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-DRE-PLD-2022"
+      },
+      "window": [
+        "2022-06-10",
+        "2022-10-06"
+      ]
+    },
+    {
+      "deal_id": "DEAL-GNW-OCEANWIDE-2016",
+      "status": "ok",
+      "ticker": "GNW",
+      "n_prints": 1120,
+      "resolved": {
+        "ticker": "GNW",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=1276520"
+      }
+    },
+    {
+      "deal_id": "DEAL-HZNP-AMGN-2022",
+      "status": "no_price_history",
+      "ticker": "HZNP",
+      "resolved": {
+        "ticker": "HZNP",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-HZNP-AMGN-2022"
+      },
+      "window": [
+        "2022-12-08",
+        "2023-10-09"
+      ]
+    },
+    {
+      "deal_id": "DEAL-IMGN-ABBV-2023",
+      "status": "no_price_history",
+      "ticker": "IMGN",
+      "resolved": {
+        "ticker": "IMGN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-IMGN-ABBV-2023"
+      },
+      "window": [
+        "2023-11-27",
+        "2024-02-15"
+      ]
+    },
+    {
+      "deal_id": "DEAL-IRBT-AMZN-2022",
+      "status": "no_price_history",
+      "ticker": "IRBT",
+      "resolved": {
+        "ticker": "IRBT",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-IRBT-AMZN-2022"
+      },
+      "window": [
+        "2022-08-01",
+        "2024-01-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-LLTC-ADI-2016",
+      "status": "no_price_history",
+      "ticker": "LLTC",
+      "resolved": {
+        "ticker": "LLTC",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-LLTC-ADI-2016"
+      },
+      "window": [
+        "2016-07-23",
+        "2017-03-13"
+      ]
+    },
+    {
+      "deal_id": "DEAL-LSCC-CANYONBRIDGE-2016",
+      "status": "ok",
+      "ticker": "LSCC",
+      "n_prints": 216,
+      "resolved": {
+        "ticker": "LSCC",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=855658"
+      }
+    },
+    {
+      "deal_id": "DEAL-MDLA-TB-2021",
+      "status": "no_price_history",
+      "ticker": "MDLA",
+      "resolved": {
+        "ticker": "MDLA",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-MDLA-TB-2021"
+      },
+      "window": [
+        "2021-07-22",
+        "2021-10-17"
+      ]
+    },
+    {
+      "deal_id": "DEAL-MRO-COP-2024",
+      "status": "no_price_history",
+      "ticker": "MRO",
+      "resolved": {
+        "ticker": "MRO",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-MRO-COP-2024"
+      },
+      "window": [
+        "2024-05-25",
+        "2024-11-25"
+      ]
+    },
+    {
+      "deal_id": "DEAL-MXIM-ADI-2020",
+      "status": "no_price_history",
+      "ticker": "MXIM",
+      "resolved": {
+        "ticker": "MXIM",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-MXIM-ADI-2020"
+      },
+      "window": [
+        "2020-07-09",
+        "2021-08-29"
+      ]
+    },
+    {
+      "deal_id": "DEAL-NLSN-EVERGREEN-2022",
+      "status": "no_price_history",
+      "ticker": "NLSN",
+      "resolved": {
+        "ticker": "NLSN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-NLSN-EVERGREEN-2022"
+      },
+      "window": [
+        "2022-03-25",
+        "2022-10-14"
+      ]
+    },
+    {
+      "deal_id": "DEAL-PFPT-TB-2021",
+      "status": "no_price_history",
+      "ticker": "PFPT",
+      "resolved": {
+        "ticker": "PFPT",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-PFPT-TB-2021"
+      },
+      "window": [
+        "2021-04-22",
+        "2021-09-03"
+      ]
+    },
+    {
+      "deal_id": "DEAL-PXD-XOM-2023",
+      "status": "no_price_history",
+      "ticker": "PXD",
+      "resolved": {
+        "ticker": "PXD",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-PXD-XOM-2023"
+      },
+      "window": [
+        "2023-10-07",
+        "2024-05-06"
+      ]
+    },
+    {
+      "deal_id": "DEAL-RAD-WBA-2015",
+      "status": "no_price_history",
+      "ticker": "RAD",
+      "resolved": {
+        "ticker": "RAD",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-RAD-WBA-2015"
+      },
+      "window": [
+        "2015-10-24",
+        "2017-07-02"
+      ]
+    },
+    {
+      "deal_id": "DEAL-RCII-VINTAGE-2018",
+      "status": "ok",
+      "ticker": "UPBD",
+      "n_prints": 128,
+      "resolved": {
+        "ticker": "UPBD",
+        "basis": "sec_company_tickers",
+        "source_identifier": "sec:company_tickers.json:cik=933036"
+      }
+    },
+    {
+      "deal_id": "DEAL-RESI-AMHERST-2020",
+      "status": "no_price_history",
+      "ticker": "RESI",
+      "resolved": {
+        "ticker": "RESI",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-RESI-AMHERST-2020"
+      },
+      "window": [
+        "2020-02-14",
+        "2020-05-07"
+      ]
+    },
+    {
+      "deal_id": "DEAL-RP-TB-2020",
+      "status": "no_price_history",
+      "ticker": "RP",
+      "resolved": {
+        "ticker": "RP",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-RP-TB-2020"
+      },
+      "window": [
+        "2020-12-17",
+        "2021-04-25"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SAIL-TB-2022",
+      "status": "no_price_history",
+      "ticker": "SAIL",
+      "resolved": {
+        "ticker": "SAIL",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SAIL-TB-2022"
+      },
+      "window": [
+        "2022-04-07",
+        "2022-08-19"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SAVE-ULCC-2022",
+      "status": "no_price_history",
+      "ticker": "SAVE",
+      "resolved": {
+        "ticker": "SAVE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SAVE-ULCC-2022"
+      },
+      "window": [
+        "2022-02-02",
+        "2022-07-30"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SGEN-PFE-2023",
+      "status": "no_price_history",
+      "ticker": "SGEN",
+      "resolved": {
+        "ticker": "SGEN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SGEN-PFE-2023"
+      },
+      "window": [
+        "2023-03-09",
+        "2023-12-17"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SPLK-CSCO-2023",
+      "status": "no_price_history",
+      "ticker": "SPLK",
+      "resolved": {
+        "ticker": "SPLK",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SPLK-CSCO-2023"
+      },
+      "window": [
+        "2023-09-17",
+        "2024-03-21"
+      ]
+    },
+    {
+      "deal_id": "DEAL-STOR-GIC-2022",
+      "status": "no_price_history",
+      "ticker": "STOR",
+      "resolved": {
+        "ticker": "STOR",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-STOR-GIC-2022"
+      },
+      "window": [
+        "2022-09-12",
+        "2023-02-06"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SWCH-DIGITALBRIDGE-2022",
+      "status": "no_price_history",
+      "ticker": "SWCH",
+      "resolved": {
+        "ticker": "SWCH",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SWCH-DIGITALBRIDGE-2022"
+      },
+      "window": [
+        "2022-05-08",
+        "2022-12-09"
+      ]
+    },
+    {
+      "deal_id": "DEAL-WORK-CRM-2020",
+      "status": "no_price_history",
+      "ticker": "WORK",
+      "resolved": {
+        "ticker": "WORK",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-WORK-CRM-2020"
+      },
+      "window": [
+        "2020-11-28",
+        "2021-07-24"
+      ]
+    },
+    {
+      "deal_id": "DEAL-XLNX-AMD-2020",
+      "status": "no_price_history",
+      "ticker": "XLNX",
+      "resolved": {
+        "ticker": "XLNX",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-XLNX-AMD-2020"
+      },
+      "window": [
+        "2020-10-23",
+        "2022-02-17"
+      ]
+    },
+    {
+      "deal_id": "DEAL-XLRN-MRK-2021",
+      "status": "no_price_history",
+      "ticker": "XLRN",
+      "resolved": {
+        "ticker": "XLRN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-XLRN-MRK-2021"
+      },
+      "window": [
+        "2021-09-26",
+        "2021-11-22"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ZEN-ZORO-2022",
+      "status": "no_price_history",
+      "ticker": "ZEN",
+      "resolved": {
+        "ticker": "ZEN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ZEN-ZORO-2022"
+      },
+      "window": [
+        "2022-06-21",
+        "2022-11-25"
+      ]
+    },
+    {
+      "deal_id": "DEAL-VOCUS-GTCR-2014",
+      "status": "no_price_history",
+      "ticker": "VOCUS",
+      "resolved": {
+        "ticker": "VOCUS",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-VOCUS-GTCR-2014"
+      },
+      "window": [
+        "2014-04-04",
+        "2014-06-05"
+      ]
+    },
+    {
+      "deal_id": "DEAL-COBRA-MONOMO-2014",
+      "status": "no_price_history",
+      "ticker": "COBRA",
+      "resolved": {
+        "ticker": "COBRA",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-COBRA-MONOMO-2014"
+      },
+      "window": [
+        "2014-08-25",
+        "2014-10-11"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ANNIE-GENERA-2014",
+      "status": "no_price_history",
+      "ticker": "ANNIE",
+      "resolved": {
+        "ticker": "ANNIE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ANNIE-GENERA-2014"
+      },
+      "window": [
+        "2014-09-05",
+        "2014-10-24"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SABA-VECTOR-2015",
+      "status": "ok",
+      "ticker": "SABA",
+      "n_prints": 10,
+      "resolved": {
+        "ticker": "SABA",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SABA-VECTOR-2015"
+      }
+    },
+    {
+      "deal_id": "DEAL-SUTRON-HACH-2015",
+      "status": "no_price_history",
+      "ticker": "SUTRON",
+      "resolved": {
+        "ticker": "SUTRON",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SUTRON-HACH-2015"
+      },
+      "window": [
+        "2015-06-19",
+        "2015-07-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SCIQUE-ACCEL-2016",
+      "status": "no_price_history",
+      "ticker": "SCIQUE",
+      "resolved": {
+        "ticker": "SCIQUE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SCIQUE-ACCEL-2016"
+      },
+      "window": [
+        "2016-05-28",
+        "2016-07-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-IMPRIV-THOMA-2016",
+      "status": "no_price_history",
+      "ticker": "IMPRIV",
+      "resolved": {
+        "ticker": "IMPRIV",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-IMPRIV-THOMA-2016"
+      },
+      "window": [
+        "2016-07-10",
+        "2016-09-19"
+      ]
+    },
+    {
+      "deal_id": "DEAL-MATERI-NEW-2014",
+      "status": "no_price_history",
+      "ticker": "MATERI",
+      "resolved": {
+        "ticker": "MATERI",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-MATERI-NEW-2014"
+      },
+      "window": [
+        "2014-01-06",
+        "2014-04-03"
+      ]
+    },
+    {
+      "deal_id": "DEAL-AMERIC-HIGLAS-2014",
+      "status": "no_price_history",
+      "ticker": "AMERIC",
+      "resolved": {
+        "ticker": "AMERIC",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-AMERIC-HIGLAS-2014"
+      },
+      "window": [
+        "2014-01-07",
+        "2014-03-02"
+      ]
+    },
+    {
+      "deal_id": "DEAL-BEAM-SUNTOR-2014",
+      "status": "no_price_history",
+      "ticker": "BEAM",
+      "resolved": {
+        "ticker": "BEAM",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-BEAM-SUNTOR-2014"
+      },
+      "window": [
+        "2014-01-10",
+        "2014-05-15"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CEC-APOLLO-2014",
+      "status": "no_price_history",
+      "ticker": "CEC",
+      "resolved": {
+        "ticker": "CEC",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CEC-APOLLO-2014"
+      },
+      "window": [
+        "2014-01-13",
+        "2014-02-21"
+      ]
+    },
+    {
+      "deal_id": "DEAL-AMCOL-IMERYS-2014",
+      "status": "no_price_history",
+      "ticker": "AMCOL",
+      "resolved": {
+        "ticker": "AMCOL",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-AMCOL-IMERYS-2014"
+      },
+      "window": [
+        "2014-02-09",
+        "2014-05-22"
+      ]
+    },
+    {
+      "deal_id": "DEAL-COLE-AMERIC-2014",
+      "status": "no_price_history",
+      "ticker": "COLE",
+      "resolved": {
+        "ticker": "COLE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-COLE-AMERIC-2014"
+      },
+      "window": [
+        "2014-03-18",
+        "2014-05-23"
+      ]
+    },
+    {
+      "deal_id": "DEAL-DFC-LONE-2014",
+      "status": "no_price_history",
+      "ticker": "DFC",
+      "resolved": {
+        "ticker": "DFC",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-DFC-LONE-2014"
+      },
+      "window": [
+        "2014-03-30",
+        "2014-06-27"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ZYGO-AMETEK-2014",
+      "status": "no_price_history",
+      "ticker": "ZYGO",
+      "resolved": {
+        "ticker": "ZYGO",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ZYGO-AMETEK-2014"
+      },
+      "window": [
+        "2014-04-12",
+        "2014-07-03"
+      ]
+    },
+    {
+      "deal_id": "DEAL-POKERT-MULTIM-2014",
+      "status": "no_price_history",
+      "ticker": "POKERT",
+      "resolved": {
+        "ticker": "POKERT",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-POKERT-MULTIM-2014"
+      },
+      "window": [
+        "2014-04-27",
+        "2014-10-17"
+      ]
+    },
+    {
+      "deal_id": "DEAL-BARRY-MRGB-2014",
+      "status": "no_price_history",
+      "ticker": "BARRY",
+      "resolved": {
+        "ticker": "BARRY",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-BARRY-MRGB-2014"
+      },
+      "window": [
+        "2014-04-29",
+        "2014-09-07"
+      ]
+    },
+    {
+      "deal_id": "DEAL-MKTG-AEGIS-2014",
+      "status": "no_price_history",
+      "ticker": "MKTG",
+      "resolved": {
+        "ticker": "MKTG",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-MKTG-AEGIS-2014"
+      },
+      "window": [
+        "2014-05-24",
+        "2014-08-30"
+      ]
+    },
+    {
+      "deal_id": "DEAL-HILLSH-TYSON-2014",
+      "status": "no_price_history",
+      "ticker": "HILLSH",
+      "resolved": {
+        "ticker": "HILLSH",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-HILLSH-TYSON-2014"
+      },
+      "window": [
+        "2014-06-29",
+        "2014-08-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-VITACO-KROGER-2014",
+      "status": "no_price_history",
+      "ticker": "VITACO",
+      "resolved": {
+        "ticker": "VITACO",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-VITACO-KROGER-2014"
+      },
+      "window": [
+        "2014-06-29",
+        "2014-08-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-LORILL-IMPERI-2014",
+      "status": "no_price_history",
+      "ticker": "LORILL",
+      "resolved": {
+        "ticker": "LORILL",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-LORILL-IMPERI-2014"
+      },
+      "window": [
+        "2014-07-12",
+        "2015-06-28"
+      ]
+    },
+    {
+      "deal_id": "DEAL-REYNOL-IMPERI-2014",
+      "status": "no_price_history",
+      "ticker": "REYNOL",
+      "resolved": {
+        "ticker": "REYNOL",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-REYNOL-IMPERI-2014"
+      },
+      "window": [
+        "2014-07-13",
+        "2017-08-07"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SYMMET-TECOST-2014",
+      "status": "no_price_history",
+      "ticker": "SYMMET",
+      "resolved": {
+        "ticker": "SYMMET",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SYMMET-TECOST-2014"
+      },
+      "window": [
+        "2014-08-01",
+        "2014-12-20"
+      ]
+    },
+    {
+      "deal_id": "DEAL-INTERM-ROCHE-2014",
+      "status": "no_price_history",
+      "ticker": "INTERM",
+      "resolved": {
+        "ticker": "INTERM",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-INTERM-ROCHE-2014"
+      },
+      "window": [
+        "2014-08-22",
+        "2014-10-30"
+      ]
+    },
+    {
+      "deal_id": "DEAL-BOLT-TELEDY-2014",
+      "status": "no_price_history",
+      "ticker": "BOLT",
+      "resolved": {
+        "ticker": "BOLT",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-BOLT-TELEDY-2014"
+      },
+      "window": [
+        "2014-08-31",
+        "2014-12-01"
+      ]
+    },
+    {
+      "deal_id": "DEAL-TRW-ZFFRIE-2014",
+      "status": "no_price_history",
+      "ticker": "TRW",
+      "resolved": {
+        "ticker": "TRW",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-TRW-ZFFRIE-2014"
+      },
+      "window": [
+        "2014-09-12",
+        "2015-05-29"
+      ]
+    },
+    {
+      "deal_id": "DEAL-TAMINC-EASTMA-2014",
+      "status": "no_price_history",
+      "ticker": "TAMINC",
+      "resolved": {
+        "ticker": "TAMINC",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-TAMINC-EASTMA-2014"
+      },
+      "window": [
+        "2014-09-13",
+        "2014-12-21"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SIGMA-MERCK-2014",
+      "status": "no_price_history",
+      "ticker": "SIGMA",
+      "resolved": {
+        "ticker": "SIGMA",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SIGMA-MERCK-2014"
+      },
+      "window": [
+        "2014-09-19",
+        "2015-12-03"
+      ]
+    },
+    {
+      "deal_id": "DEAL-TIBCO-VISTA-2014",
+      "status": "no_price_history",
+      "ticker": "TIBCO",
+      "resolved": {
+        "ticker": "TIBCO",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-TIBCO-VISTA-2014"
+      },
+      "window": [
+        "2014-09-26",
+        "2014-12-26"
+      ]
+    },
+    {
+      "deal_id": "DEAL-EINSTE-JAB-2014",
+      "status": "no_price_history",
+      "ticker": "EINSTE",
+      "resolved": {
+        "ticker": "EINSTE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-EINSTE-JAB-2014"
+      },
+      "window": [
+        "2014-09-26",
+        "2014-11-20"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CLECO-COMO-2014",
+      "status": "no_price_history",
+      "ticker": "CLECO",
+      "resolved": {
+        "ticker": "CLECO",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CLECO-COMO-2014"
+      },
+      "window": [
+        "2014-10-17",
+        "2019-02-11"
+      ]
+    },
+    {
+      "deal_id": "DEAL-DIGITA-INVEST-2014",
+      "status": "no_price_history",
+      "ticker": "DIGITA",
+      "resolved": {
+        "ticker": "DIGITA",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-DIGITA-INVEST-2014"
+      },
+      "window": [
+        "2014-10-21",
+        "2015-03-02"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CHYRON-VECTOR-2014",
+      "status": "no_price_history",
+      "ticker": "CHYRON",
+      "resolved": {
+        "ticker": "CHYRON",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-CHYRON-VECTOR-2014"
+      },
+      "window": [
+        "2014-11-14",
+        "2015-03-22"
+      ]
+    },
+    {
+      "deal_id": "DEAL-OPLINK-KOCH-2014",
+      "status": "no_price_history",
+      "ticker": "OPLINK",
+      "resolved": {
+        "ticker": "OPLINK",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-OPLINK-KOCH-2014"
+      },
+      "window": [
+        "2014-11-16",
+        "2014-12-26"
+      ]
+    },
+    {
+      "deal_id": "DEAL-AVANIR-OTSUKA-2014",
+      "status": "no_price_history",
+      "ticker": "AVANIR",
+      "resolved": {
+        "ticker": "AVANIR",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-AVANIR-OTSUKA-2014"
+      },
+      "window": [
+        "2014-11-29",
+        "2015-01-18"
+      ]
+    },
+    {
+      "deal_id": "DEAL-MICROF-FORTRE-2014",
+      "status": "no_price_history",
+      "ticker": "MICROF",
+      "resolved": {
+        "ticker": "MICROF",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-MICROF-FORTRE-2014"
+      },
+      "window": [
+        "2014-12-13",
+        "2015-02-05"
+      ]
+    },
+    {
+      "deal_id": "DEAL-PEERLE-MOBIUS-2014",
+      "status": "no_price_history",
+      "ticker": "PEERLE",
+      "resolved": {
+        "ticker": "PEERLE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-PEERLE-MOBIUS-2014"
+      },
+      "window": [
+        "2014-12-21",
+        "2015-02-28"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SILICO-LATTIC-2015",
+      "status": "no_price_history",
+      "ticker": "SILICO",
+      "resolved": {
+        "ticker": "SILICO",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SILICO-LATTIC-2015"
+      },
+      "window": [
+        "2015-01-24",
+        "2015-03-13"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ATHLON-ENCANA-2014",
+      "status": "no_price_history",
+      "ticker": "ATHLON",
+      "resolved": {
+        "ticker": "ATHLON",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ATHLON-ENCANA-2014"
+      },
+      "window": [
+        "2014-09-29",
+        "2014-12-20"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ELECSY-LINDSA-2014",
+      "status": "no_price_history",
+      "ticker": "ELECSY",
+      "resolved": {
+        "ticker": "ELECSY",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ELECSY-LINDSA-2014"
+      },
+      "window": [
+        "2014-11-01",
+        "2015-02-05"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ENTROP-MAXLIN-2015",
+      "status": "no_price_history",
+      "ticker": "ENTROP",
+      "resolved": {
+        "ticker": "ENTROP",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ENTROP-MAXLIN-2015"
+      },
+      "window": [
+        "2015-01-31",
+        "2015-05-14"
+      ]
+    },
+    {
+      "deal_id": "DEAL-E2OPEN-INSIGH-2015",
+      "status": "no_price_history",
+      "ticker": "E2OPEN",
+      "resolved": {
+        "ticker": "E2OPEN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-E2OPEN-INSIGH-2015"
+      },
+      "window": [
+        "2015-02-02",
+        "2015-04-09"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ORBITZ-EXPEDI-2015",
+      "status": "no_price_history",
+      "ticker": "ORBITZ",
+      "resolved": {
+        "ticker": "ORBITZ",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ORBITZ-EXPEDI-2015"
+      },
+      "window": [
+        "2015-02-10",
+        "2015-10-01"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SAPIEN-PUBLIC-2014",
+      "status": "no_price_history",
+      "ticker": "SAPIEN",
+      "resolved": {
+        "ticker": "SAPIEN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SAPIEN-PUBLIC-2014"
+      },
+      "window": [
+        "2014-10-31",
+        "2015-02-20"
+      ]
+    },
+    {
+      "deal_id": "DEAL-RIVERB-PROJEC-2014",
+      "status": "no_price_history",
+      "ticker": "RIVERB",
+      "resolved": {
+        "ticker": "RIVERB",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-RIVERB-PROJEC-2014"
+      },
+      "window": [
+        "2014-12-12",
+        "2015-05-23"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ADVENT-SSCTEC-2015",
+      "status": "no_price_history",
+      "ticker": "ADVENT",
+      "resolved": {
+        "ticker": "ADVENT",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ADVENT-SSCTEC-2015"
+      },
+      "window": [
+        "2015-01-31",
+        "2015-07-23"
+      ]
+    },
+    {
+      "deal_id": "DEAL-SALIX-VALEAN-2015",
+      "status": "no_price_history",
+      "ticker": "SALIX",
+      "resolved": {
+        "ticker": "SALIX",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-SALIX-VALEAN-2015"
+      },
+      "window": [
+        "2015-02-20",
+        "2015-04-16"
+      ]
+    },
+    {
+      "deal_id": "DEAL-INFORM-ITALIC-2015",
+      "status": "no_price_history",
+      "ticker": "INFORM",
+      "resolved": {
+        "ticker": "INFORM",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-INFORM-ITALIC-2015"
+      },
+      "window": [
+        "2015-04-04",
+        "2015-08-22"
+      ]
+    },
+    {
+      "deal_id": "DEAL-EXCEL-BLACKS-2015",
+      "status": "no_price_history",
+      "ticker": "EXCEL",
+      "resolved": {
+        "ticker": "EXCEL",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-EXCEL-BLACKS-2015"
+      },
+      "window": [
+        "2015-04-07",
+        "2015-08-16"
+      ]
+    },
+    {
+      "deal_id": "DEAL-DOVER-WEBSTE-2015",
+      "status": "no_price_history",
+      "ticker": "DOVER",
+      "resolved": {
+        "ticker": "DOVER",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-DOVER-WEBSTE-2015"
+      },
+      "window": [
+        "2015-04-11",
+        "2015-07-04"
+      ]
+    },
+    {
+      "deal_id": "DEAL-PROCER-FRANCI-2015",
+      "status": "no_price_history",
+      "ticker": "PROCER",
+      "resolved": {
+        "ticker": "PROCER",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-PROCER-FRANCI-2015"
+      },
+      "window": [
+        "2015-04-19",
+        "2015-06-18"
+      ]
+    },
+    {
+      "deal_id": "DEAL-OMNIVI-HUA-2015",
+      "status": "no_price_history",
+      "ticker": "OMNIVI",
+      "resolved": {
+        "ticker": "OMNIVI",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-OMNIVI-HUA-2015"
+      },
+      "window": [
+        "2015-04-27",
+        "2016-02-11"
+      ]
+    },
+    {
+      "deal_id": "DEAL-BORDER-PITNEY-2015",
+      "status": "no_price_history",
+      "ticker": "BORDER",
+      "resolved": {
+        "ticker": "BORDER",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-BORDER-PITNEY-2015"
+      },
+      "window": [
+        "2015-05-03",
+        "2015-06-13"
+      ]
+    },
+    {
+      "deal_id": "DEAL-QUALIT-FUNDS-2015",
+      "status": "no_price_history",
+      "ticker": "QUALIT",
+      "resolved": {
+        "ticker": "QUALIT",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-QUALIT-FUNDS-2015"
+      },
+      "window": [
+        "2015-05-04",
+        "2015-08-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-ANN-ASCENA-2015",
+      "status": "no_price_history",
+      "ticker": "ANN",
+      "resolved": {
+        "ticker": "ANN",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-ANN-ASCENA-2015"
+      },
+      "window": [
+        "2015-05-15",
+        "2015-09-07"
+      ]
+    },
+    {
+      "deal_id": "DEAL-FRISCH-NRD-2015",
+      "status": "no_price_history",
+      "ticker": "FRISCH",
+      "resolved": {
+        "ticker": "FRISCH",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-FRISCH-NRD-2015"
+      },
+      "window": [
+        "2015-05-19",
+        "2015-09-07"
+      ]
+    },
+    {
+      "deal_id": "DEAL-OM-APOLLO-2015",
+      "status": "no_price_history",
+      "ticker": "OM",
+      "resolved": {
+        "ticker": "OM",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-OM-APOLLO-2015"
+      },
+      "window": [
+        "2015-05-29",
+        "2015-11-12"
+      ]
+    },
+    {
+      "deal_id": "DEAL-NAUGAT-LIBERT-2015",
+      "status": "no_price_history",
+      "ticker": "NAUGAT",
+      "resolved": {
+        "ticker": "NAUGAT",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-NAUGAT-LIBERT-2015"
+      },
+      "window": [
+        "2015-06-01",
+        "2016-01-18"
+      ]
+    },
+    {
+      "deal_id": "DEAL-INTEGR-UPHILL-2015",
+      "status": "no_price_history",
+      "ticker": "INTEGR",
+      "resolved": {
+        "ticker": "INTEGR",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-INTEGR-UPHILL-2015"
+      },
+      "window": [
+        "2015-06-08",
+        "2015-12-17"
+      ]
+    },
+    {
+      "deal_id": "DEAL-COAST-LKQ-2015",
+      "status": "no_price_history",
+      "ticker": "COAST",
+      "resolved": {
+        "ticker": "COAST",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-COAST-LKQ-2015"
+      },
+      "window": [
+        "2015-07-06",
+        "2015-08-22"
+      ]
+    },
+    {
+      "deal_id": "DEAL-REMY-BORGWA-2015",
+      "status": "no_price_history",
+      "ticker": "REMY",
+      "resolved": {
+        "ticker": "REMY",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-REMY-BORGWA-2015"
+      },
+      "window": [
+        "2015-07-10",
+        "2015-11-23"
+      ]
+    },
+    {
+      "deal_id": "DEAL-STJUDE-SJM-2015",
+      "status": "no_price_history",
+      "ticker": "STJUDE",
+      "resolved": {
+        "ticker": "STJUDE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-STJUDE-SJM-2015"
+      },
+      "window": [
+        "2015-07-19",
+        "2017-01-20"
+      ]
+    },
+    {
+      "deal_id": "DEAL-TECUMS-MUELLE-2015",
+      "status": "no_price_history",
+      "ticker": "TECUMS",
+      "resolved": {
+        "ticker": "TECUMS",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-TECUMS-MUELLE-2015"
+      },
+      "window": [
+        "2015-08-02",
+        "2015-10-04"
+      ]
+    },
+    {
+      "deal_id": "DEAL-STEINE-CATTER-2015",
+      "status": "no_price_history",
+      "ticker": "STEINE",
+      "resolved": {
+        "ticker": "STEINE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-STEINE-CATTER-2015"
+      },
+      "window": [
+        "2015-08-18",
+        "2015-12-24"
+      ]
+    },
+    {
+      "deal_id": "DEAL-BLYTH-CARLYL-2015",
+      "status": "no_price_history",
+      "ticker": "BLYTH",
+      "resolved": {
+        "ticker": "BLYTH",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-BLYTH-CARLYL-2015"
+      },
+      "window": [
+        "2015-08-28",
+        "2015-10-29"
+      ]
+    },
+    {
+      "deal_id": "DEAL-STRATE-BLACKS-2015",
+      "status": "no_price_history",
+      "ticker": "STRATE",
+      "resolved": {
+        "ticker": "STRATE",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-STRATE-BLACKS-2015"
+      },
+      "window": [
+        "2015-09-05",
+        "2015-12-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-BIOMED-BLACKS-2015",
+      "status": "no_price_history",
+      "ticker": "BIOMED",
+      "resolved": {
+        "ticker": "BIOMED",
+        "basis": "deal_id_convention",
+        "source_identifier": "deal_id:DEAL-BIOMED-BLACKS-2015"
+      },
+      "window": [
+        "2015-10-05",
+        "2016-02-11"
+      ]
+    }
+  ]
+}

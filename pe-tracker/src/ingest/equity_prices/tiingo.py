@@ -175,13 +175,13 @@ class TiingoEquityPriceProvider:
         rows, err_status, err = self._fetch_eod(symbol, start, end)
         if err_status is not None:
             return ProviderFetchResult(
-                provider=self.name, status=err_status, identity=identity,
+                provider=self.name, status=err_status, identity=identity, identity_verified=True,
                 provider_symbol=symbol, window=window, error=err,
             )
         if not rows:
             return ProviderFetchResult(
                 provider=self.name, status=ProviderStatus.NO_HISTORY,
-                identity=identity, provider_symbol=symbol, window=window,
+                identity=identity, identity_verified=True, provider_symbol=symbol, window=window,
                 error="TIINGO_NO_HISTORY",
             )
 
@@ -256,12 +256,12 @@ class TiingoEquityPriceProvider:
         if not ok:
             return ProviderFetchResult(
                 provider=self.name, status=ProviderStatus.NO_HISTORY,
-                identity=identity, provider_symbol=symbol, window=window,
+                identity=identity, identity_verified=True, provider_symbol=symbol, window=window,
                 error="all prints rejected by session calendar gate",
             )
         return ProviderFetchResult(
             provider=self.name, status=ProviderStatus.AVAILABLE,
-            identity=identity, observations=ok, provider_symbol=symbol,
+            identity=identity, identity_verified=True, observations=ok, provider_symbol=symbol,
             window=window,
         )
 

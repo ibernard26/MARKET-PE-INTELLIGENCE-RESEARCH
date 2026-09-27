@@ -114,6 +114,7 @@ class PriceProviderOrchestrator:
                 "n_observations": len(result.observations),
                 "provider_symbol": result.provider_symbol,
                 "error": result.error,
+                "identity_verified": result.identity_verified,
             })
             if result.ok:
                 chosen = result

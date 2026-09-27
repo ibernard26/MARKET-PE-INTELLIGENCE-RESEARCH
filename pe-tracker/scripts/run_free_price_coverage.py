@@ -15,6 +15,7 @@ import os
 import sys
 from collections import Counter
 from pathlib import Path
+from typing import Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -34,7 +35,11 @@ from src.ingest.equity_prices.identity import (  # noqa: E402
 )
 from src.ingest.equity_prices.normalize import write_normalized_manifest  # noqa: E402
 from src.ingest.equity_prices.orchestrator import PriceProviderOrchestrator  # noqa: E402
-from src.ingest.equity_prices.reconciliation import reconcile_series  # noqa: E402
+from src.ingest.equity_prices.identity import REVIEWED_SEC_BASIS  # noqa: E402
+from src.ingest.equity_prices.reconciliation import (  # noqa: E402
+    THESIS_RECONCILE_RULE,
+    reconcile_series,
+)
 from src.ingest.equity_prices.tiingo import TiingoEquityPriceProvider  # noqa: E402
 from src.ingest.equity_prices.yahoo import YahooEquityPriceProvider  # noqa: E402
 from src.ingest.security_identity.openfigi import (  # noqa: E402
@@ -49,16 +54,61 @@ PAD_DAYS = 3
 
 # Negative identity evidence: the ticker is not shown to be the SEC target.
 FIGI_IDENTITY_VETO = frozenset({"AMBIGUOUS", "NAME_MISMATCH"})
+MIN_PRINTS = 3
+
+# Exclusive per-deal canonical status (readiness uses CANONICALLY_ADMITTED only).
+CANONICALLY_ADMITTED = "CANONICALLY_ADMITTED"
+DEFERRED_IDENTITY = "DEFERRED_IDENTITY"
+DEFERRED_PRICE_CONFLICT = "DEFERRED_PRICE_CONFLICT"
+NO_PRICE_HISTORY = "NO_PRICE_HISTORY"
+INSUFFICIENT_CANONICAL_PRINTS = "INSUFFICIENT_CANONICAL_PRINTS"
+DEFER_IDENTITY_UNCONFIRMED = "DEFER_IDENTITY_UNCONFIRMED"
+
+
+def identity_proofs(row: dict) -> list[str]:
+    """Affirmative historical-identity evidence (A/B/C). OpenFIGI NO_MATCH and
+    Tiingo SYMBOL_NOT_FOUND/NO_HISTORY are neither negative nor affirmative."""
+    proofs = []
+    if row.get("openfigi_status") == "MATCHED":
+        proofs.append("A_OPENFIGI_MATCHED")
+    if row.get("tiingo_identity_verified"):
+        proofs.append("B_TIINGO_NAME_AND_LISTING_WINDOW")
+    if row.get("identity_basis") == REVIEWED_SEC_BASIS:
+        proofs.append("C_REVIEWED_SEC_MAPPING")
+    return proofs
+
+
+def identity_veto(row: dict) -> Optional[str]:
+    if row.get("openfigi_status") in FIGI_IDENTITY_VETO:
+        return f"OPENFIGI_{row['openfigi_status']}"
+    if row.get("tiingo_status") == "IDENTITY_AMBIGUOUS":
+        return "TIINGO_IDENTITY_AMBIGUOUS"
+    return None
+
+
+def canonical_status(row: dict) -> tuple[str, Optional[str]]:
+    """(status, identity_deferral_reason). Fixed order: veto → conflict →
+    no raw history → no affirmative proof → print count."""
+    veto = identity_veto(row)
+    if veto:
+        return DEFERRED_IDENTITY, veto
+    if row.get("material_conflicts", 0) > 0:
+        return DEFERRED_PRICE_CONFLICT, None
+    if row.get("tiingo_n", 0) == 0 and row.get("yahoo_n", 0) == 0:
+        return NO_PRICE_HISTORY, None
+    if not identity_proofs(row):
+        return DEFERRED_IDENTITY, DEFER_IDENTITY_UNCONFIRMED
+    if row.get("combined_n", 0) >= MIN_PRINTS:
+        return CANONICALLY_ADMITTED, None
+    return INSUFFICIENT_CANONICAL_PRINTS, None
 
 
 def admit_prints(row: dict) -> bool:
-    """Fixed admission rule for the canonical price manifest (and thus the
-    >=20-deal readiness count): no identity veto from OpenFIGI or Tiingo and
-    no material Tiingo/Yahoo close conflict. OPENFIGI NO_MATCH is not
-    negative evidence (common for delisted names)."""
-    return (row.get("openfigi_status") not in FIGI_IDENTITY_VETO
-            and row.get("tiingo_status") != "IDENTITY_AMBIGUOUS"
-            and row.get("material_conflicts", 0) == 0)
+    """Prints enter the canonical manifest (and so the >=20-deal readiness
+    count) only with no identity veto, no material conflict under
+    price_reconcile_v2, and at least one affirmative identity proof."""
+    return canonical_status(row)[0] in (CANONICALLY_ADMITTED,
+                                        INSUFFICIENT_CANONICAL_PRINTS)
 
 
 def _classify_deal(row: dict) -> str:
@@ -70,6 +120,8 @@ def _classify_deal(row: dict) -> str:
         return "SECURITY_IDENTITY_AMBIGUOUS"
     if row.get("material_conflicts", 0) > 0:
         return "DEFER_PRICE_CONFLICT"
+    if (row.get("tiingo_n", 0) or row.get("yahoo_n", 0)) and not identity_proofs(row):
+        return DEFER_IDENTITY_UNCONFIRMED
     if row.get("openfigi_status") == "NO_MATCH":
         return "OPENFIGI_NO_MATCH"
     if row.get("tiingo_n", 0) >= 3 and row.get("yahoo_n", 0) >= 3 and row.get("material_conflicts", 0) == 0:
@@ -134,7 +186,7 @@ def main() -> int:
 
         t_obs = t_res.get("observations") or []
         y_obs = y_res.get("observations") or []
-        recon = reconcile_series(t_obs, y_obs) if t_obs or y_obs else {
+        recon = reconcile_series(t_obs, y_obs, rule=THESIS_RECONCILE_RULE) if t_obs or y_obs else {
             "n_overlap": 0, "exact_match": 0, "tolerable_match": 0,
             "material_conflict": 0, "tiingo_only": 0, "yahoo_only": 0,
             "conflicts": [], "status": "N/A",
@@ -155,6 +207,7 @@ def main() -> int:
             "resolution_date": (d.get("resolution_timestamp") or "")[:10],
             "resolution_type": d.get("resolution_type") or d.get("status"),
             "historical_ticker": ident.ticker,
+            "identity_basis": ident.ticker_basis,
             "historical_exchange": ident.exchange,
             "openfigi_status": figi_id.mapping_status,
             "figi": figi_id.figi,
@@ -162,14 +215,20 @@ def main() -> int:
             "share_class_figi": figi_id.share_class_figi,
             "tiingo_status": t_res.get("status"),
             "tiingo_n": len(t_obs),
+            "tiingo_identity_verified": any(
+                t.get("identity_verified") for t in t_res.get("provider_trace") or []),
             "yahoo_status": y_res.get("status"),
             "yahoo_n": len(y_obs),
             "overlap_sessions": recon.get("n_overlap", 0),
             "material_conflicts": recon.get("material_conflict", 0),
+            "reconcile_rule": THESIS_RECONCILE_RULE,
             "combined_provider": c_res.get("provider"),
             "combined_n": c_res.get("n_prints", len(c_res.get("observations") or [])),
         }
         row["final_coverage_status"] = _classify_deal(row)
+        row["identity_proofs"] = identity_proofs(row)
+        row["raw_provider_covered"] = max(row["tiingo_n"], row["yahoo_n"]) >= MIN_PRINTS
+        row["canonical_status"], row["identity_deferral"] = canonical_status(row)
         row["prints_admitted"] = admit_prints(row)
         rows.append(row)
         # Canonical observations: combined orchestrator (Tiingo preferred),
@@ -187,8 +246,24 @@ def main() -> int:
         "yahoo_deals_covered": sum(1 for r in rows if r["yahoo_n"] >= 3),
         "multi_provider_confirmed": sum(
             1 for r in rows if r["final_coverage_status"] == "MULTI_PROVIDER_CONFIRMED"),
-        "uncovered_deals": sum(1 for r in rows if r["combined_n"] < 3),
+        # Raw provider coverage is reported separately and never used for readiness.
+        "raw_provider_covered": sum(1 for r in rows if r["raw_provider_covered"]),
+        "canonically_admitted": sum(
+            1 for r in rows if r["canonical_status"] == CANONICALLY_ADMITTED),
+        "deferred_identity": sum(
+            1 for r in rows if r["canonical_status"] == DEFERRED_IDENTITY),
+        "deferred_price_conflict": sum(
+            1 for r in rows if r["canonical_status"] == DEFERRED_PRICE_CONFLICT),
+        "no_price_history": sum(
+            1 for r in rows if r["canonical_status"] == NO_PRICE_HISTORY),
+        "insufficient_canonical_prints": sum(
+            1 for r in rows if r["canonical_status"] == INSUFFICIENT_CANONICAL_PRINTS),
+        "identity_deferral_reasons": dict(Counter(
+            r["identity_deferral"] for r in rows if r["identity_deferral"])),
+        "uncovered_deals": sum(
+            1 for r in rows if r["canonical_status"] != CANONICALLY_ADMITTED),
         "deals_not_admitted": sum(1 for r in rows if not r["prints_admitted"]),
+        "reconcile_rule": THESIS_RECONCILE_RULE,
         "historical_price_data_ready": n_3plus >= 20,
         "crsp_status": CRSP_STATUS,
         "provider_chain": [p.name for p in default_providers()],

@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import json
 import os
+import re
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Callable, Optional
 
@@ -15,6 +17,27 @@ from .schema import ProviderStatus, SecurityIdentity
 ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_TICKER_MAP = ROOT / "data" / "target_ticker_map.json"
 SEC_TICKERS = "https://www.sec.gov/files/company_tickers.json"
+
+
+REVIEWED_SEC_BASIS = "reviewed_map_sec_evidence"
+SEC_ACCESSION = re.compile(r"^\d{10}-\d{2}-\d{6}$")
+CONTEMPORANEOUS_LOOKBACK_DAYS = 365
+
+
+def reviewed_sec_evidence(row: dict, announcement: Optional[str],
+                          resolution: Optional[str]) -> bool:
+    """Proof C: a reviewed ticker row counts as affirmative historical identity
+    only when it cites an SEC filing (accession) filed within 365 days before
+    announcement and on/before resolution (or announcement if unresolved)."""
+    acc, filed = row.get("sec_accession") or "", (row.get("sec_filed_date") or "")[:10]
+    if not SEC_ACCESSION.match(acc) or not filed or not announcement:
+        return False
+    try:
+        f, a = date.fromisoformat(filed), date.fromisoformat(announcement)
+        r = date.fromisoformat(resolution) if resolution else a
+    except ValueError:
+        return False
+    return a - timedelta(days=CONTEMPORANEOUS_LOOKBACK_DAYS) <= f <= max(a, r)
 
 
 def deal_id_ticker(deal_id: str) -> Optional[str]:
@@ -80,7 +103,10 @@ class SecurityIdentityResolver:
                 deal_id=deal_id, target_cik=cik_i, target_name=name,
                 ticker=rev["ticker"].upper(),
                 exchange=rev.get("exchange"),
-                ticker_basis=rev.get("basis", "reviewed_map"),
+                # The SEC-evidence basis is earned from the row's fields, never
+                # taken from a self-declared "basis" value.
+                ticker_basis=(REVIEWED_SEC_BASIS if reviewed_sec_evidence(rev, ann, res)
+                              else "reviewed_map"),
                 announcement_date=ann, resolution_date=res,
                 identity_source=rev.get("source_identifier") or "reviewed_map",
             )

@@ -17,13 +17,13 @@
 ## Revolutions
 
 ### 1 — Provider abstraction
-PR: #33 (`cursor/equity-price-providers-097a`)  
+PR: #33 (`cursor/equity-price-providers-097a`) — **merged**  
 Delivered: `src/ingest/equity_prices/` protocol, schema, identity, Yahoo adapter,
 orchestrator, normalizer, calendar gate, contract tests.  
 Yahoo semantic data unchanged (3806 / 14).
 
 ### 2 — Coverage analysis
-PR: #34 (`cursor/price-coverage-gaps-097a`, stacks on #33)  
+PR: #34 (`cursor/price-coverage-gaps-097a`) — **merged** onto main after #33  
 Delivered: `target_price_coverage_matrix.json`, `TARGET_PRICE_COVERAGE_GAPS.md`.  
 All 115 uncovered → `DELISTED_NO_PROVIDER_HISTORY`.
 
@@ -37,11 +37,13 @@ Delivered: `DELISTED_PRICE_PROVIDER_REQUIREMENTS.md`.
 
 | Item | Value |
 |---|---|
+| FINAL_MAIN_SHA | `bd0585ac6eb6fbc9ed3e67e9433dcce0e733eadb` (#33 + #34 merged) |
 | PRICE_PRINTS | 3806 |
 | DEALS_WITH_3PLUS_PRINTS | 14 |
 | NO_PRICE_HISTORY | 115 |
 | HISTORICAL_PRICE_DATA_READY | **NO** |
 | SPREAD_STRESS_BACKTEST_STATUS | `BLOCKED_INSUFFICIENT_PRICE_HISTORY` |
+| DELISTED_PRICE_DATA_LICENSE_REQUIRED | **YES** |
 
 ## Providers
 

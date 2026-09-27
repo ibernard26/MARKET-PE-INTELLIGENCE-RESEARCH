@@ -44,8 +44,18 @@ Reconciliation rule: `price_reconcile_v1` (`ABS_EPS=1e-4`, `REL_EPS=1e-6`).
 
 ```bash
 cd pe-tracker
-# presence only — exits 3 if missing
+
+# 1) Live smoke (exits 3 if credentials missing; never prints values)
+python -m scripts.smoke_free_providers
+
+# 2) Full 129-deal coverage + reconcile + audit docs
+#    If ≥20 deals with ≥3 prints: freezes spread_stress_thesis_v1 cohort
+#    Does NOT execute spread_stress / model fit
 python -m scripts.run_free_price_coverage
+
+# Offline regenerators (matrix must already exist):
+python -m scripts.audit_free_price_coverage
+python -m scripts.freeze_thesis_price_cohort   # gated on readiness
 ```
 
 Writes:
@@ -53,6 +63,9 @@ Writes:
 - `data/free_price_coverage_matrix.json`
 - `data/target_price_manifest.json` (normalized; license-safe free providers)
 - `data/free_price_fetch_audit.json`
+- `docs/TIINGO_YAHOO_PRICE_RECONCILIATION.md`
+- `docs/HISTORICAL_PRICE_AVAILABILITY_BIAS_AUDIT.md`
+- `data/spread_stress_thesis_v1_cohort.json` (only if gate passes)
 
 ## Gates
 

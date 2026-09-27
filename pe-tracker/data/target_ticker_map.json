@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "_doc": "Optional reviewed overrides of target tickers for deal_id. When empty, resolver uses SEC company_tickers.json then DEAL-{TICKER}-… convention. Add a row only when the heuristic is wrong and the ticker is verified from a primary source.",
+  "tickers": []
+}

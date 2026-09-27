@@ -2,7 +2,12 @@
 data/*.db
 data/*.db-wal
 data/*.db-shm
+# Licensed vendor extracts (CRSP/WRDS raw files) — never commit
+data/licensed/
 __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+.pgpass
+*.pgpass
+

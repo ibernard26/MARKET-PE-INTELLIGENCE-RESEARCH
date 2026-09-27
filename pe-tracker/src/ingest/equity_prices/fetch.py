@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 from typing import Optional, Sequence
 
+from .crsp import CRSPEquityPriceProvider
 from .identity import DEFAULT_TICKER_MAP, SecurityIdentityResolver
 from .normalize import observation_to_print, write_normalized_manifest
 from .orchestrator import PriceProviderOrchestrator
@@ -16,8 +17,8 @@ DEFAULT_DEAL_MANIFEST = ROOT / "data" / "sec_deal_manifest.json"
 
 
 def default_providers() -> list[HistoricalEquityPriceProvider]:
-    """Ordered fallback chain. Yahoo first; licensed adapters plug in next."""
-    return [YahooEquityPriceProvider()]
+    """Ordered fallback: CRSP (authoritative when licensed) → Yahoo → NO_HISTORY."""
+    return [CRSPEquityPriceProvider(), YahooEquityPriceProvider()]
 
 
 def fetch_manifest_prints(

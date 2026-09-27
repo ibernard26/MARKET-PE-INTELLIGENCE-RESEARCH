@@ -23,7 +23,7 @@ a licensed historical equity source with **delisted** coverage.
 | Polygon.io | Yes (flat files / aggregates) | API key + paid plans | `REQUIRES_PAID_LICENSE` | Strong candidate once credentials exist |
 | Tiingo | Some | API key | `REQUIRES_API_KEY` | Confirm delisted depth before purchase |
 | Alpha Vantage | Limited | API key | `REQUIRES_API_KEY` / `UNSUITABLE` for delisted depth | Not sufficient for corpus unblock |
-| CRSP (WRDS) | Yes (authoritative academic) | Institutional | `INSTITUTIONAL_ONLY` | Best scientific standard; needs WRDS access |
+| CRSP (WRDS) | Yes (authoritative academic) | Institutional | `INSTITUTIONAL_ONLY` — **adapter landed** | Preferred provider; see `docs/CRSP_ACCESS.md`; credentials still required |
 | Bloomberg / FactSet / LSEG | Yes | Terminal / licensed API | `INSTITUTIONAL_ONLY` | Full corporate-action stack |
 
 No paid credentials are configured in this repository. Do not pretend retrieval succeeded.
@@ -79,29 +79,31 @@ adjusted and unadjusted in one spread calculation without a version bump.
   store that the license permits
 - Do not scrape HTML or bypass auth
 
-## Adapter to implement once credentials exist
+## Adapter status
 
-Implement:
-
-```
-src/ingest/equity_prices/<vendor>.py
-```
-
-conforming to `HistoricalEquityPriceProvider`, then register it **after** Yahoo
-in `default_providers()`:
+CRSP adapter is implemented:
 
 ```
-[YahooEquityPriceProvider(), LicensedVendorProvider(...)]
+src/ingest/equity_prices/crsp.py          # CRSPEquityPriceProvider
+src/ingest/equity_prices/crsp_identity.py # deal → PERMNO
+src/ingest/equity_prices/crsp_access.py   # WRDS / flat_file detection
 ```
 
-Normalized output must be `NormalizedEquityObservation` — no vendor schema
-leakage. On credential absence:
+Registered **first** in `default_providers()`:
+
+```
+[CRSPEquityPriceProvider(), YahooEquityPriceProvider()]
+```
+
+On credential absence:
 
 ```
 credentials_required() -> True
 status -> CREDENTIALS_REQUIRED
 ```
 
+Live PERMNO mapping (PR2) and delisted backfill (PR3) wait on WRDS/CRSP access.
+Normalized output is `NormalizedEquityObservation` — no vendor schema leakage.
 Never fabricate responses.
 
 ## Readiness after integration

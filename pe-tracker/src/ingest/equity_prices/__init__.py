@@ -1,9 +1,12 @@
 """Multi-provider historical equity price architecture.
 
-Yahoo is one adapter. Downstream code consumes NormalizedEquityObservation
-only — never Yahoo-specific payloads.
+CRSP is preferred for delisted U.S. equities when licensed access exists.
+Yahoo is the secondary fallback. Downstream code consumes
+NormalizedEquityObservation only — never provider-specific payloads.
 """
 from .calendar_gate import filter_session_observations, is_valid_session
+from .crsp import CRSPEquityPriceProvider
+from .crsp_access import CrspAccessConfig, detect_crsp_access
 from .identity import SecurityIdentityResolver, deal_id_ticker
 from .normalize import observation_to_print, write_normalized_manifest
 from .orchestrator import PriceProviderOrchestrator, compare_provider_series
@@ -25,6 +28,9 @@ __all__ = [
     "ProviderFetchResult",
     "ProviderStatus",
     "FALLBACK_STATUSES",
+    "CRSPEquityPriceProvider",
+    "CrspAccessConfig",
+    "detect_crsp_access",
     "YahooEquityPriceProvider",
     "PriceProviderOrchestrator",
     "compare_provider_series",

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Controlled live smoke tests for OpenFIGI + Tiingo.
+"""Controlled live smoke tests for OpenFIGI + Tiingo + Yahoo.
 
-Never prints credential values. Exits 3 on CREDENTIAL_ENVIRONMENT_NOT_VISIBLE.
+Never prints credential values. Exits 3 on CREDENTIAL_ENVIRONMENT_NOT_VISIBLE
+for OpenFIGI/Tiingo. Yahoo smoke runs without those credentials.
 
   cd pe-tracker
   python -m scripts.smoke_free_providers
@@ -22,6 +23,7 @@ from src.ingest.equity_prices.credentials import (  # noqa: E402
 )
 from src.ingest.equity_prices.schema import SecurityIdentity  # noqa: E402
 from src.ingest.equity_prices.tiingo import TiingoEquityPriceProvider  # noqa: E402
+from src.ingest.equity_prices.yahoo import YahooEquityPriceProvider  # noqa: E402
 from src.ingest.security_identity.openfigi import (  # noqa: E402
     OpenFIGISecurityIdentityResolver,
 )
@@ -32,14 +34,65 @@ SMOKE_TICKER = "AAPL"
 SMOKE_NAME = "APPLE INC"
 
 
+def _yahoo_smoke(start: date, end: date) -> dict:
+    """Yahoo needs no API token; failures are infra vs empty history."""
+    try:
+        yahoo = YahooEquityPriceProvider()
+        y_res = yahoo.fetch_history(
+            SecurityIdentity(deal_id="SMOKE-AAPL", ticker=SMOKE_TICKER,
+                             target_name=SMOKE_NAME),
+            start, end,
+        )
+    except Exception as exc:
+        # Never include credential material (Yahoo has none); sanitize type only.
+        return {
+            "YAHOO_LIVE_TEST": "FAIL",
+            "yahoo_status": "INFRASTRUCTURE_FAILURE",
+            "n_observations": 0,
+            "error": type(exc).__name__,
+        }
+    status = y_res.status.value
+    n = len(y_res.observations)
+    # Distinguish infra-ish statuses from genuine empty history
+    if status in ("TRANSIENT_FAILURE", "PROVIDER_ERROR"):
+        return {
+            "YAHOO_LIVE_TEST": "FAIL",
+            "yahoo_status": status,
+            "n_observations": n,
+            "error": y_res.error,
+            "note": "infrastructure_or_provider_error_not_no_history",
+        }
+    ok = status == "AVAILABLE" and n >= 1
+    return {
+        "YAHOO_LIVE_TEST": "PASS" if ok else "FAIL",
+        "yahoo_status": status,
+        "n_observations": n,
+        "error": y_res.error,
+    }
+
+
 def main() -> int:
     presence = credential_presence()
     print(json.dumps({"credential_presence": presence}, indent=2))
+
+    end = date.today() - timedelta(days=3)
+    start = end - timedelta(days=14)
+
+    # --- Yahoo (no OpenFIGI/Tiingo credentials required) ---
+    y_report = _yahoo_smoke(start, end)
+    print(json.dumps(y_report, indent=2))
+    yahoo_pass = y_report.get("YAHOO_LIVE_TEST") == "PASS"
+
     missing = missing_credential_names()
     if missing:
         print("CREDENTIAL_ENVIRONMENT_NOT_VISIBLE", file=sys.stderr)
         for name in missing:
             print(name, file=sys.stderr)
+        print(json.dumps({
+            "OPENFIGI_LIVE_TEST": "NOT_RUN",
+            "TIINGO_LIVE_TEST": "NOT_RUN",
+            "YAHOO_LIVE_TEST": y_report.get("YAHOO_LIVE_TEST"),
+        }, indent=2))
         return 3
 
     # --- OpenFIGI ---
@@ -63,8 +116,6 @@ def main() -> int:
 
     # --- Tiingo ---
     tiingo = TiingoEquityPriceProvider(min_interval_s=0.25)
-    end = date.today() - timedelta(days=3)
-    start = end - timedelta(days=14)
     t_res = tiingo.fetch_history(
         SecurityIdentity(deal_id="SMOKE-AAPL", ticker=SMOKE_TICKER,
                          target_name=SMOKE_NAME),
@@ -83,7 +134,7 @@ def main() -> int:
         print("TIINGO_LIVE_TEST = FAIL (AUTH_FAILURE)", file=sys.stderr)
         return 4
 
-    if not (of_pass and t_pass):
+    if not (of_pass and t_pass and yahoo_pass):
         return 5
     print("SMOKE_OK")
     return 0

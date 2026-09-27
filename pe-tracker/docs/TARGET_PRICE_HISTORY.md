@@ -5,27 +5,33 @@
 resolution. The SEC reviewed deal manifest supplies terms and outcomes, not
 daily closes. FRED supplies index/commodity series, not single-name equities.
 
-## Provider architecture (Revolution 1)
+## Provider architecture
 
 ```
-Yahoo ──────┐
+CRSP ───────┐
             │
-Provider B ─┼──► NORMALIZER ─► NormalizedEquityObservation
+Yahoo ──────┼──► NORMALIZER ─► NormalizedEquityObservation
             │                  ─► target_price_manifest.json
-Provider C ─┘
+future ─────┘
 ```
+
+Precedence: **CRSP → Yahoo → NO_HISTORY** (CRSP skipped when
+`credentials_required()`). See `docs/CRSP_ACCESS.md`.
 
 | Module | Role |
 |---|---|
 | `src/ingest/equity_prices/protocol.py` | `HistoricalEquityPriceProvider` |
 | `src/ingest/equity_prices/schema.py` | normalized observation + `ProviderStatus` |
-| `src/ingest/equity_prices/identity.py` | security identity (separate from prices) |
-| `src/ingest/equity_prices/yahoo.py` | Yahoo adapter |
+| `src/ingest/equity_prices/identity.py` | deal ticker identity (separate from prices) |
+| `src/ingest/equity_prices/crsp.py` | CRSP adapter (PERMNO; licensed) |
+| `src/ingest/equity_prices/crsp_identity.py` | deal → PERMNO mapping |
+| `src/ingest/equity_prices/yahoo.py` | Yahoo adapter (fallback) |
 | `src/ingest/equity_prices/orchestrator.py` | ordered fallback; no blind merges |
 | `src/ingest/equity_prices/normalize.py` | provider → manifest bridge |
 
-Yahoo-specific fields do **not** leak into modeling code. Failure states are
-explicit (`AVAILABLE`, `NO_HISTORY`, `DELISTED_UNAVAILABLE`, …).
+Provider-specific fields do **not** leak into modeling code. Failure states are
+explicit (`AVAILABLE`, `NO_HISTORY`, `DELISTED_UNAVAILABLE`,
+`CREDENTIALS_REQUIRED`, …).
 
 ## Sources used
 
@@ -35,7 +41,9 @@ explicit (`AVAILABLE`, `NO_HISTORY`, `DELISTED_UNAVAILABLE`, …).
 | `https://www.sec.gov/files/company_tickers.json` | CIK → ticker for **current** filers | SEC; requires `SEC_USER_AGENT` |
 | `data/target_ticker_map.json` | optional reviewed ticker overrides | empty unless a human verifies a correction |
 | `DEAL-{TICKER}-…` deal_id convention | fallback ticker guess | corpus naming heuristic |
-| Yahoo Finance chart API (`query2…/v8/finance/chart`) | daily close prints | `source_name=yahoo_finance_chart` |
+| Yahoo Finance chart API (`query2…/v8/finance/chart`) | daily close prints (fallback) | `source_name=yahoo_finance_chart` |
+| CRSP via WRDS / licensed flat file | authoritative delisted history | `provider=crsp` (PERMNO); needs credentials |
+| `data/crsp_security_map.json` | deal → PERMNO evidence map | empty until WRDS/CRSP access |
 
 ## What is NOT claimed
 * Yahoo is **not** a licensed CRSP/Bloomberg archive. Delisted / taken-private

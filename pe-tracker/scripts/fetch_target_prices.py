@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Fetch real target-price prints into data/target_price_manifest.json.
 
-Uses the multi-provider orchestrator (Yahoo first). Requires SEC_USER_AGENT.
+Uses the multi-provider orchestrator (CRSP first when licensed, else Yahoo).
+Requires SEC_USER_AGENT. Optional: WRDS_USERNAME / CRSP_DATA_DIR (see docs/CRSP_ACCESS.md).
 
   cd pe-tracker
   SEC_USER_AGENT='…' python -m scripts.fetch_target_prices

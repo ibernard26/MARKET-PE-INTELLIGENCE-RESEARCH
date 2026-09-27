@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "_doc": "Deal → CRSP PERMNO mappings. Do not invent PERMNOs. Populate only from licensed CRSP/WRDS identity resolution with evidence. Raw CRSP price files stay outside Git (data/licensed/crsp/).",
+  "meta": {
+    "mapping_status": "CREDENTIALS_REQUIRED",
+    "crsp_access_available": false,
+    "crsp_access_mode": "none",
+    "preferred_provider": "crsp",
+    "fallback_provider": "yahoo_finance_chart",
+    "n_mappings": 0,
+    "n_matched": 0,
+    "n_ambiguous": 0,
+    "n_no_match": 0,
+    "note": "PR2 (PERMNO mapping) requires WRDS_USERNAME or CRSP_DATA_DIR. See docs/CRSP_ACCESS.md."
+  },
+  "mappings": []
+}

@@ -15,3 +15,9 @@ tmp/
 !**/.env.example
 secrets.*
 *.secret
+.pgpass
+**/.pgpass
+
+# Licensed market-data extracts (CRSP/WRDS raw) — redistribution restricted
+pe-tracker/data/licensed/
+**/data/licensed/crsp/

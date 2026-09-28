@@ -72,16 +72,20 @@ def test_manifest_ingest_empty_file_is_noop(tmp_path):
     assert count_target_prints(c) == 1  # announcement observation has target_price
 
 
-def test_repo_price_manifest_is_yahoo_sourced_not_synthetic():
-    """Guard: committed prints must carry yahoo_finance_chart provenance."""
+def test_repo_price_manifest_is_real_provider_not_synthetic():
+    """Committed prints must be Tiingo or Yahoo closes, never synthetic."""
+    allowed = {"tiingo", "yahoo_finance_chart"}
     p = Path(__file__).resolve().parents[1] / "data" / "target_price_manifest.json"
     data = json.loads(p.read_text())
     prints = data.get("prints") or []
     if not prints:
         return  # empty scaffold still allowed
-    assert data.get("meta", {}).get("provider") == "yahoo_finance_chart"
-    assert all(row.get("source_name") == "yahoo_finance_chart" for row in prints)
+    assert all(row.get("source_name") in allowed for row in prints)
+    assert all(row.get("provider") in allowed for row in prints)
+    assert all(row.get("close_field_used") in (None, "close") for row in prints)
     assert all("synthetic" not in (row.get("source_identifier") or "").lower()
+               for row in prints)
+    assert all("synthetic" not in (row.get("source_name") or "").lower()
                for row in prints)
 
 

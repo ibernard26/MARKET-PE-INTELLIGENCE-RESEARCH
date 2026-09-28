@@ -420,3 +420,114 @@ def test_committed_pit_flags_and_v1_diagnostic():
     assert diag["PRE_RESOLUTION_PRINTS_AVAILABLE"] > 0
     assert diag["PANEL_ROWS_EXCLUDED_FEATURE_NOT_BEFORE_RESOLUTION"] > 0
     assert "insufficient historical price" not in json.dumps(diag).lower()
+
+
+def _resume_row(**overrides):
+    row = {
+        "row_schema_version": 2,
+        "overlap_sessions": 0,
+        "exact_matches": 0,
+        "tolerable_matches": 0,
+        "material_conflicts": 0,
+        "reconcile_rule": "price_reconcile_v2",
+        "tiingo_status": "ok",
+        "yahoo_status": "NO_HISTORY",
+        "yahoo_n": 0,
+        "identity_deferral": None,
+        "final_coverage_status": "TIINGO_COVERED",
+        "raw_provider_covered": True,
+    }
+    row.update(overrides)
+    return row
+
+
+def _stale_prints(deal_id, n=3):
+    return [
+        {
+            "deal_id": deal_id,
+            "observation_timestamp": f"2016-01-{day:02d}T16:00:00",
+            "session_date": f"2016-01-{day:02d}",
+            "target_price": 10.0 + day,
+            "source_name": "tiingo",
+            "provider": "tiingo",
+            "close_field_used": "close",
+        }
+        for day in range(1, n + 1)
+    ]
+
+
+def test_resume_drops_stale_prints_for_non_admitted_cached_deal(tmp_path, monkeypatch):
+    """A cache hit must not republish prints for a deal the current rule rejects.
+
+    The stored row still says CANONICALLY_ADMITTED. OpenFIGI AMBIGUOUS is a
+    veto, so those prints cannot enter the manifest or DEALS_WITH_3PLUS_PRINTS.
+    """
+    import scripts.audit_free_price_coverage as audit
+    import scripts.run_free_price_coverage as cov
+
+    deals_path = tmp_path / "sec_deal_manifest.json"
+    matrix_path = tmp_path / "free_price_coverage_matrix.json"
+    manifest_path = tmp_path / "target_price_manifest.json"
+    deals_path.write_text(json.dumps({"deals": [
+        {"deal_id": "DEAL-STALE", "target": "Stale Co",
+         "announcement_timestamp": "2016-01-01",
+         "resolution_timestamp": "2016-06-01", "resolution_type": "closed"},
+        {"deal_id": "DEAL-KEEP", "target": "Keep Co",
+         "announcement_timestamp": "2016-02-01",
+         "resolution_timestamp": "2016-07-01", "resolution_type": "closed"},
+    ]}))
+    stale = _resume_row(
+        deal_id="DEAL-STALE",
+        canonical_status="CANONICALLY_ADMITTED",
+        identity_proofs=["B_TIINGO_NAME_AND_LISTING_WINDOW"],
+        tiingo_identity_verified=True,
+        tiingo_n=5,
+        combined_n=5,
+        openfigi_status="AMBIGUOUS",
+        prints_admitted=True,
+        final_coverage_status="SECURITY_IDENTITY_AMBIGUOUS",
+    )
+    keep = _resume_row(
+        deal_id="DEAL-KEEP",
+        canonical_status="CANONICALLY_ADMITTED",
+        identity_proofs=["B_TIINGO_NAME_AND_LISTING_WINDOW"],
+        tiingo_identity_verified=True,
+        tiingo_n=3,
+        combined_n=3,
+        openfigi_status="NO_MATCH",
+        prints_admitted=True,
+    )
+    matrix_path.write_text(json.dumps({
+        "schema_version": 1, "meta": {}, "deals": [stale, keep],
+        "conflict_samples": [],
+    }))
+    manifest_path.write_text(json.dumps({
+        "schema_version": 2,
+        "prints": _stale_prints("DEAL-STALE", 3) + _stale_prints("DEAL-KEEP", 3),
+    }))
+
+    monkeypatch.setenv("OPENFIGI_API_KEY", "test-key")
+    monkeypatch.setenv("TIINGO_API_TOKEN", "test-token")
+    monkeypatch.setenv("SEC_USER_AGENT", "resume-regression")
+    monkeypatch.setattr(cov, "DEFAULT_DEAL_MANIFEST", deals_path)
+    monkeypatch.setattr(cov, "OUT_MATRIX", matrix_path)
+    monkeypatch.setattr(cov, "DEFAULT_MANIFEST", manifest_path)
+    monkeypatch.setattr(cov, "OUT_AUDIT", tmp_path / "audit.json")
+    monkeypatch.setattr(cov, "INCOMPLETE_COVERAGE", tmp_path / "incomplete.json")
+    monkeypatch.setattr(audit, "MATRIX", matrix_path)
+    monkeypatch.setattr(audit, "DEAL_MANIFEST", deals_path)
+    monkeypatch.setattr(audit, "RECON_DOC", tmp_path / "recon.md")
+    monkeypatch.setattr(audit, "BIAS_DOC", tmp_path / "bias.md")
+
+    def _no_fetch(self, deal):
+        raise AssertionError(f"resume refetched {deal.get('deal_id')}")
+
+    monkeypatch.setattr(cov.PriceProviderOrchestrator, "fetch_deal", _no_fetch)
+
+    assert cov.main() == 0
+    manifest = json.loads(manifest_path.read_text())
+    printed = {p["deal_id"] for p in manifest["prints"]}
+    assert "DEAL-STALE" not in printed
+    assert printed == {"DEAL-KEEP"}
+    assert manifest["meta"]["deals_with_3plus_prints"] == 1
+    assert manifest["meta"]["total_real_price_prints"] == 3

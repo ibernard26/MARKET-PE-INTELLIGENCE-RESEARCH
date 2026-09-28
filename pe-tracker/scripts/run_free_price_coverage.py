@@ -291,6 +291,28 @@ def admit_prints(row: dict) -> bool:
                                         INSUFFICIENT_CANONICAL_PRINTS)
 
 
+def cached_row_canonically_admitted(row: dict) -> bool:
+    """Recompute admission. A stored canonical_status flag is not the rule."""
+    status, _reason = canonical_status(row)
+    return status == CANONICALLY_ADMITTED
+
+
+def retained_cached_prints(old_prints: list, rows: list, refetched_ids: set) -> list:
+    """Prior prints survive a resume only for deals that were not refetched
+    and whose cached row is canonically admitted under the current rule.
+
+    A non-admitted cached deal cannot contribute prints to the manifest or
+    to deals_with_3plus_prints, even when the stored row still says admitted.
+    """
+    admitted_cached = {
+        row.get("deal_id")
+        for row in rows
+        if row.get("deal_id") not in refetched_ids
+        and cached_row_canonically_admitted(row)
+    }
+    return [p for p in old_prints if p.get("deal_id") in admitted_cached]
+
+
 def _classify_deal(row: dict) -> str:
     if row.get("openfigi_status") == "AMBIGUOUS":
         return "SECURITY_IDENTITY_AMBIGUOUS"
@@ -520,14 +542,11 @@ def main() -> int:
     # is not added.
     recon_stats = reconcile_totals_from_rows(rows)
 
-    refetched_ids = fetched_now
     kept_prints = []
     if DEFAULT_MANIFEST.exists():
         old_manifest = json.loads(DEFAULT_MANIFEST.read_text())
-        kept_prints = [
-            p for p in (old_manifest.get("prints") or [])
-            if p.get("deal_id") not in refetched_ids
-        ]
+        kept_prints = retained_cached_prints(
+            old_manifest.get("prints") or [], rows, fetched_now)
 
     meta_stub = {"RUN_COMPLETE": "YES", "reconcile_rule": THESIS_RECONCILE_RULE}
     if historical_debug:

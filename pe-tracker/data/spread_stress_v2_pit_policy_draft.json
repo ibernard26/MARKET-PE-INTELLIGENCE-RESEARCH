@@ -126,6 +126,17 @@
   "weighting_rule_id": "deal_equal_snapshot_weight",
   "grouped_split": "Train/test assignment is by deal announcement date. Every snapshot of a deal stays on one side. Resolution is not the split key.",
   "weighting": "deal_equal_snapshot_weight = (1/n_deals)*(1/n_snapshots_deal). Defined before execution so long-duration deals cannot dominate.",
+  "SESSION_CALENDAR": "weekday_placeholder",
+  "FREEZE_SESSION_CALENDAR": "nyse_market_calendar",
+  "freeze_blockers": [
+    "SPEC_STATUS_DRAFT",
+    "NYSE_SESSION_CALENDAR_REQUIRED",
+    "TIMEZONE_AWARE_INTRADAY_REQUIRED",
+    "ACTIVE_AT_FEATURE_TIME_MUST_USE_PIT_KNOWN_AT",
+    "RESOLUTION_MUST_NOT_CHOOSE_FEATURE_DATES"
+  ],
+  "active_at_feature_time": "Pending vs resolved at a snapshot uses resolution known_at <= feature_time (label censoring). It does not choose the feature date.",
+  "intraday_timezone": "America/New_York",
   "execution": {
     "authorized": false,
     "V2_SPEC_STATUS": "draft",
@@ -135,6 +146,14 @@
     "BACKTEST_EXECUTED": "NO",
     "MIN_SAMPLE_N": 20,
     "MIN_CLASS_N": 2,
-    "recommended_policy_id": "ann_tplus_10_session"
+    "recommended_policy_id": "ann_tplus_10_session",
+    "SESSION_CALENDAR": "weekday_placeholder",
+    "freeze_blockers": [
+      "SPEC_STATUS_DRAFT",
+      "NYSE_SESSION_CALENDAR_REQUIRED",
+      "TIMEZONE_AWARE_INTRADAY_REQUIRED",
+      "ACTIVE_AT_FEATURE_TIME_MUST_USE_PIT_KNOWN_AT",
+      "RESOLUTION_MUST_NOT_CHOOSE_FEATURE_DATES"
+    ]
   }
 }

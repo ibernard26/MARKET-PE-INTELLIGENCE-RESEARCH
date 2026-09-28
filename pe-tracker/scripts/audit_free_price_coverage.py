@@ -104,6 +104,7 @@ def write_recon(doc: dict) -> None:
         "|---|---|",
         f"| OVERLAP_DEALS_CANONICALLY_ADMITTED | {sum(1 for r in deals if int(r.get('overlap_sessions') or 0) > 0 and r.get('canonical_status') == 'CANONICALLY_ADMITTED')} |",
         f"| OVERLAP_DEALS_IDENTITY_DEFERRED | {sum(1 for r in deals if int(r.get('overlap_sessions') or 0) > 0 and r.get('canonical_status') == 'DEFERRED_IDENTITY')} |",
+        f"| OVERLAP_DEALS_NO_PRICE_HISTORY | {sum(1 for r in deals if int(r.get('overlap_sessions') or 0) > 0 and r.get('canonical_status') == 'NO_PRICE_HISTORY')} |",
         f"| ADMITTED_DEALS_WITH_SECONDARY_OVERLAP | {sum(1 for r in deals if r.get('canonical_status') == 'CANONICALLY_ADMITTED' and int(r.get('overlap_sessions') or 0) > 0)} |",
         "",
         "## Raw vs canonical coverage (readiness uses CANONICALLY_ADMITTED only)",
@@ -145,6 +146,8 @@ def write_bias(doc: dict) -> None:
     by_year = defaultdict(lambda: Counter())
     by_consideration = defaultdict(lambda: Counter())
     by_deal_type = defaultdict(lambda: Counter())
+    by_uncovered_status = defaultdict(lambda: Counter())
+    by_offer_present = defaultdict(lambda: Counter())
 
     for d in canon:
         row = deals_cov.get(d["deal_id"], {})
@@ -160,6 +163,9 @@ def write_bias(doc: dict) -> None:
         by_year[year][bucket] += 1
         by_consideration[d.get("consideration_type") or "unknown"][bucket] += 1
         by_deal_type[d.get("deal_type") or "unknown"][bucket] += 1
+        if not ok:
+            by_uncovered_status[row.get("canonical_status") or "unknown"][bucket] += 1
+        by_offer_present["offer_price_present" if d.get("offer_price") is not None else "offer_price_absent"][bucket] += 1
 
     def rate(ctr: Counter) -> str:
         c = ctr.get("PRICE_COVERED", 0)
@@ -192,6 +198,18 @@ def write_bias(doc: dict) -> None:
     for k in sorted(by_deal_type):
         dt_lines.append(f"| {k} | {rate(by_deal_type[k])} |")
 
+    outcome_lines = ["| Resolution type | Coverage |", "|---|---|"]
+    for k in sorted(by_outcome):
+        outcome_lines.append(f"| {k} | {rate(by_outcome[k])} |")
+
+    offer_lines = ["| Offer-price field | Coverage |", "|---|---|"]
+    for k in sorted(by_offer_present):
+        offer_lines.append(f"| {k} | {rate(by_offer_present[k])} |")
+
+    uc_lines = ["| Uncovered canonical status | N |", "|---|---|"]
+    for k in sorted(by_uncovered_status):
+        uc_lines.append(f"| {k} | {by_uncovered_status[k].get('PRICE_UNCOVERED', 0)} |")
+
     n = covered + uncovered
     overall = f"{(covered / n):.1%}" if n else "n/d"
     body = [
@@ -222,6 +240,18 @@ def write_bias(doc: dict) -> None:
         "## Coverage by deal type",
         "",
         *dt_lines,
+        "",
+        "## Coverage by resolution type",
+        "",
+        *outcome_lines,
+        "",
+        "## Coverage by offer-price field presence",
+        "",
+        *offer_lines,
+        "",
+        "## Uncovered deals by canonical status",
+        "",
+        *uc_lines,
         "",
         "## Sponsor and regulatory flags",
         "",

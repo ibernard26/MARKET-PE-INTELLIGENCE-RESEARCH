@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from datetime import date, datetime, timedelta
 from typing import Callable, Iterable, Optional
+from zoneinfo import ZoneInfo
 
 from ...config import MIN_SAMPLE_N
 from ...ingest.equity_prices.pit_flags import DATE_ONLY, INTRADAY, time_precision
@@ -23,6 +24,9 @@ MODEL_ID = "spread_stress"
 MODEL_VERSION = "spread_stress_v2"
 FEATURE_SCHEMA_VERSION = "fs_spread_stress_v2"
 PIT_POLICY_STATUS = "draft"
+NY = ZoneInfo("America/New_York")
+SESSION_CALENDAR = "weekday_placeholder"
+FREEZE_SESSION_CALENDAR = "nyse_market_calendar"
 
 # Locked gates, imported rather than copied so they cannot silently diverge.
 assert MIN_SAMPLE_N == 20
@@ -34,8 +38,12 @@ IsSession = Callable[[date], bool]
 
 
 def weekday_session(d: date) -> bool:
-    """Placeholder session test (Mon–Fri). Execution, when later authorized,
-    must use the NYSE calendar in the store rather than this weekday proxy."""
+    """Placeholder session test (Mon–Fri). Not freeze-ready.
+
+    A later freeze must pass `is_session` bound to the NYSE calendar in the
+    store (`FREEZE_SESSION_CALENDAR`). This weekday proxy must not be used
+    as the frozen calendar.
+    """
     return d.weekday() < 5
 
 
@@ -43,21 +51,66 @@ def parse_announcement_date(announcement_ts: str) -> date:
     return date.fromisoformat(announcement_ts[:10])
 
 
+def parse_announcement_datetime(announcement_ts: str) -> Optional[datetime]:
+    """Parse an announcement timestamp into America/New_York.
+
+    Naive ISO datetimes are interpreted as ET for this draft only. A freeze
+    must require an explicit offset; DATE_ONLY values are not intraday.
+    """
+    if time_precision(announcement_ts) != INTRADAY:
+        return None
+    text = announcement_ts.replace("Z", "+00:00")
+    try:
+        ts = datetime.fromisoformat(text)
+    except ValueError:
+        return None
+    if ts.tzinfo is None:
+        ts = ts.replace(tzinfo=NY)
+    return ts.astimezone(NY)
+
+
 def announcement_session_is_eligible(announcement_ts: str) -> bool:
     """True only when an intraday announcement timestamp is strictly before
-    the 16:00 session close on that calendar date.
+    the 16:00 America/New_York session close on that calendar date.
 
     DATE_ONLY announcements cannot prove that the same-day close is after the
     event, so the announcement session is never eligible.
     """
-    if time_precision(announcement_ts) != INTRADAY:
+    ts = parse_announcement_datetime(announcement_ts)
+    if ts is None:
         return False
-    try:
-        ts = datetime.fromisoformat(announcement_ts.replace("Z", ""))
-    except ValueError:
-        return False
-    close = datetime(ts.year, ts.month, ts.day, 16, 0, 0)
+    close = datetime(ts.year, ts.month, ts.day, 16, 0, 0, tzinfo=NY)
     return ts < close
+
+
+def _as_new_york(ts: str) -> Optional[datetime]:
+    """Compare timestamps in America/New_York. DATE_ONLY → that date's 16:00 ET."""
+    parsed = parse_announcement_datetime(ts)
+    if parsed is not None:
+        return parsed
+    try:
+        d = parse_announcement_date(ts)
+    except ValueError:
+        return None
+    return datetime(d.year, d.month, d.day, 16, 0, 0, tzinfo=NY)
+
+
+def snapshot_is_active_at_feature_time(
+        feature_time: str,
+        resolution_known_at: Optional[str],
+) -> bool:
+    """Label/censor rule. Not a feature-date selector.
+
+    A snapshot stays unlabeled when resolution is already known_at as-of
+    feature_time. Resolution time is never used to choose the feature date.
+    """
+    if not resolution_known_at:
+        return True
+    ft = _as_new_york(feature_time)
+    kn = _as_new_york(resolution_known_at)
+    if ft is not None and kn is not None:
+        return kn > ft
+    return resolution_known_at[:19] > feature_time[:19]
 
 
 def iter_sessions_after_announcement(
@@ -288,7 +341,20 @@ def authorize_execution() -> dict:
         "MIN_SAMPLE_N": MIN_SAMPLE_N,
         "MIN_CLASS_N": MIN_CLASS_N,
         "recommended_policy_id": RECOMMENDED_POLICY_ID,
+        "SESSION_CALENDAR": SESSION_CALENDAR,
+        "freeze_blockers": freeze_blockers(),
     }
+
+
+def freeze_blockers() -> list[str]:
+    """Conditions that must be cleared in a later freeze commit. Not cleared here."""
+    return [
+        "SPEC_STATUS_DRAFT",
+        "NYSE_SESSION_CALENDAR_REQUIRED",
+        "TIMEZONE_AWARE_INTRADAY_REQUIRED",
+        "ACTIVE_AT_FEATURE_TIME_MUST_USE_PIT_KNOWN_AT",
+        "RESOLUTION_MUST_NOT_CHOOSE_FEATURE_DATES",
+    ]
 
 
 def fit(*_a, **_k):
@@ -381,5 +447,13 @@ def pit_policy_document() -> dict:
             "deal_equal_snapshot_weight = (1/n_deals)*(1/n_snapshots_deal). "
             "Defined before execution so long-duration deals cannot dominate."
         ),
+        "SESSION_CALENDAR": SESSION_CALENDAR,
+        "FREEZE_SESSION_CALENDAR": FREEZE_SESSION_CALENDAR,
+        "freeze_blockers": freeze_blockers(),
+        "active_at_feature_time": (
+            "Pending vs resolved at a snapshot uses resolution known_at <= "
+            "feature_time (label censoring). It does not choose the feature date."
+        ),
+        "intraday_timezone": "America/New_York",
         "execution": authorize_execution(),
     }

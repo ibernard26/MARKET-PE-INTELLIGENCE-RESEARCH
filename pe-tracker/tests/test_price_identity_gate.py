@@ -130,14 +130,15 @@ YAHOO_ONLY = {**BASE, "openfigi_status": "NO_MATCH", "tiingo_status": "SYMBOL_NO
 
 @pytest.mark.parametrize("patch,admitted,canon,reason,cls", [
     ({}, True, "CANONICALLY_ADMITTED", None, "MULTI_PROVIDER_CONFIRMED"),
-    # NO_MATCH is not negative evidence: Tiingo's own verification (B) suffices
-    ({"openfigi_status": "NO_MATCH"}, True, "CANONICALLY_ADMITTED", None, "OPENFIGI_NO_MATCH"),
+    # NO_MATCH is not a veto: Proof B admits; gap class follows the price mix.
+    ({"openfigi_status": "NO_MATCH"}, True, "CANONICALLY_ADMITTED", None,
+     "MULTI_PROVIDER_CONFIRMED"),
     # OpenFIGI MATCHED alone (A) suffices for Yahoo-only prices
     ({"tiingo_status": "SYMBOL_NOT_FOUND", "tiingo_n": 0, "tiingo_identity_verified": False},
      True, "CANONICALLY_ADMITTED", None, "YAHOO_ONLY"),
     # Tiingo verified identity but has no history in window: Yahoo prints admitted (B)
     ({"openfigi_status": "NO_MATCH", "tiingo_status": "NO_HISTORY", "tiingo_n": 0},
-     True, "CANONICALLY_ADMITTED", None, "OPENFIGI_NO_MATCH"),
+     True, "CANONICALLY_ADMITTED", None, "YAHOO_ONLY"),
     ({"openfigi_status": "AMBIGUOUS"}, False, "DEFERRED_IDENTITY", "OPENFIGI_AMBIGUOUS",
      "SECURITY_IDENTITY_AMBIGUOUS"),
     ({"openfigi_status": "NAME_MISMATCH"}, False, "DEFERRED_IDENTITY", "OPENFIGI_NAME_MISMATCH",
@@ -165,17 +166,36 @@ def test_yahoo_only_without_affirmative_proof_is_deferred(tiingo_status):
     """Reused-ticker risk: Yahoo serves whoever holds the symbol *today*."""
     row = {**YAHOO_ONLY, "tiingo_status": tiingo_status}
     assert identity_proofs(row) == []
-    assert canonical_status(row) == ("DEFERRED_IDENTITY", "DEFER_IDENTITY_UNCONFIRMED")
+    assert canonical_status(row) == ("DEFERRED_IDENTITY", "YAHOO_TICKER_REUSE_UNVALIDATED")
     assert admit_prints(row) is False
-    assert _classify_deal(row) == "DEFER_IDENTITY_UNCONFIRMED"
+    assert _classify_deal(row) == "YAHOO_TICKER_REUSE_UNVALIDATED"
     row["canonical_status"] = canonical_status(row)[0]
     assert _covered(row) is False
 
 
-def test_yahoo_only_admitted_with_reviewed_sec_mapping():
+def test_yahoo_only_admitted_with_reviewed_sec_mapping_requires_yahoo_identity():
+    """Proof C maps the historical ticker. It does not admit Yahoo-only reuse."""
     row = {**YAHOO_ONLY, "identity_basis": REVIEWED_SEC_BASIS}
     assert identity_proofs(row) == ["C_REVIEWED_SEC_MAPPING"]
-    assert canonical_status(row) == ("CANONICALLY_ADMITTED", None)
+    assert canonical_status(row) == ("DEFERRED_IDENTITY", "YAHOO_TICKER_REUSE_UNVALIDATED")
+    assert admit_prints(row) is False
+    verified = {**row, "yahoo_identity_verified": True}
+    assert canonical_status(verified) == ("CANONICALLY_ADMITTED", None)
+
+
+def test_proof_c_no_history_does_not_keep_figi_veto_gap_class():
+    row = {
+        **BASE,
+        "openfigi_status": "AMBIGUOUS",
+        "tiingo_status": "IDENTITY_AMBIGUOUS",
+        "tiingo_n": 0,
+        "yahoo_n": 0,
+        "combined_n": 0,
+        "tiingo_identity_verified": False,
+        "identity_basis": REVIEWED_SEC_BASIS,
+    }
+    assert canonical_status(row) == ("NO_PRICE_HISTORY", None)
+    assert _classify_deal(row) == "NO_PUBLIC_PRICE_HISTORY"
 
 
 def test_raw_coverage_never_counts_as_canonical():

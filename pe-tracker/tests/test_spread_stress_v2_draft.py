@@ -16,16 +16,21 @@ from src.model.logistic import MIN_CLASS_N, MODEL_VERSION as BREAK_LOGIT_V1
 from src.model.spread_stress.features import FEATURE_SCHEMA_VERSION as FS_SS_V1
 from src.model.spread_stress.model import MODEL_VERSION as SS_V1
 from src.model.spread_stress.v2_spec import (
+    FREEZE_SESSION_CALENDAR,
     POLICY_CANDIDATES,
     RECOMMENDED_POLICY_ID,
+    SESSION_CALENDAR,
     SPEC_STATUS,
     authorize_execution,
     calendar_offset_session,
     deal_equal_snapshot_weight,
     feature_session_date,
     fit,
+    freeze_blockers,
     grouped_chronological_split,
+    snapshot_is_active_at_feature_time,
     snapshot_rows_for_policy,
+    weekday_session,
 )
 from src.ingest.equity_prices.reconciliation import RECONCILE_RULES
 
@@ -148,3 +153,38 @@ def test_snapshot_builder_does_not_read_resolution_fields():
     assert len(rows) == 2
     assert rows[0]["feature_date"] == rows[1]["feature_date"]
     assert all("resolution" not in r for r in rows)
+
+
+def test_timezone_aware_intraday_announcement_uses_ny_close():
+    # 2015-06-01 is EDT (UTC-4). 16:00 ET == 20:00 UTC.
+    assert feature_session_date("2015-06-01T15:59:00-04:00", 1) == date(2015, 6, 1)
+    assert feature_session_date("2015-06-01T16:00:00-04:00", 1) == date(2015, 6, 2)
+    assert feature_session_date("2015-06-01T19:59:00+00:00", 1) == date(2015, 6, 1)
+    assert feature_session_date("2015-06-01T20:00:00+00:00", 1) == date(2015, 6, 2)
+    # Same instant in two zones: resolution already known_at feature_time.
+    assert snapshot_is_active_at_feature_time(
+        "2015-06-15T16:00:00-04:00", "2015-06-15T20:00:00+00:00") is False
+    assert snapshot_is_active_at_feature_time(
+        "2015-06-15T16:00:00-04:00", "2015-06-15T20:00:01+00:00") is True
+
+
+def test_freeze_requires_nyse_calendar_and_does_not_execute():
+    assert SPEC_STATUS == "draft"
+    assert SESSION_CALENDAR == "weekday_placeholder"
+    assert FREEZE_SESSION_CALENDAR == "nyse_market_calendar"
+    blockers = freeze_blockers()
+    assert "NYSE_SESSION_CALENDAR_REQUIRED" in blockers
+    assert "TIMEZONE_AWARE_INTRADAY_REQUIRED" in blockers
+    assert "ACTIVE_AT_FEATURE_TIME_MUST_USE_PIT_KNOWN_AT" in blockers
+    assert "RESOLUTION_MUST_NOT_CHOOSE_FEATURE_DATES" in blockers
+    gate = authorize_execution()
+    assert gate["authorized"] is False
+    assert weekday_session is not None  # placeholder exists
+    # known_at censors labels; it does not pick a different feature date
+    assert snapshot_is_active_at_feature_time("2015-06-15T16:00:00", None) is True
+    assert snapshot_is_active_at_feature_time(
+        "2015-06-15T16:00:00", "2015-06-10T12:00:00") is False
+    deals = [{"deal_id": "DEAL-A", "announcement_ts": "2015-06-01",
+              "resolution_timestamp": "2015-06-03"}]
+    rows = snapshot_rows_for_policy(deals, "ann_tplus_10_session")
+    assert rows[0]["feature_date"] == feature_session_date("2015-06-01", 10).isoformat()

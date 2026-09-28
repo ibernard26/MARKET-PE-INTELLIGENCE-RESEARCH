@@ -125,9 +125,21 @@ forward-filled / backfilled prints.
 `authorize_execution()` returns `authorized=False` while `SPEC_STATUS=draft`.
 `fit()` raises. `MODEL_FIT_EXECUTED=NO`. `BACKTEST_EXECUTED=NO`.
 
-A later commit that freezes this spec must bump `SPEC_STATUS` off `draft` in
-the same change that records the freeze. Until then v2 cannot run, including
-if identity expansion later clears `MIN_CLASS_N`.
+A later freeze must, in the same commit that leaves `draft`:
+
+- bind `is_session` to the NYSE calendar in the store (`nyse_market_calendar`),
+  not the weekday placeholder
+- require timezone-aware intraday announcement timestamps (America/New_York
+  close at 16:00); naive ISO is a draft convenience only
+- evaluate active-at-feature-time with PIT `known_at` semantics (label
+  censoring), never by moving the feature date
+- keep resolution timestamps out of feature-date selection
+
+`authorize_execution()` returns `authorized=False` while `SPEC_STATUS=draft`.
+`fit()` raises. `MODEL_FIT_EXECUTED=NO`. `BACKTEST_EXECUTED=NO`.
+
+Until then v2 cannot run, including if identity expansion later clears
+`MIN_CLASS_N`.
 
 ## Identity expansion is separate
 

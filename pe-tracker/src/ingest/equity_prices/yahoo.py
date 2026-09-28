@@ -11,6 +11,7 @@ from typing import Callable, Optional
 from zoneinfo import ZoneInfo
 
 from .calendar_gate import filter_session_observations
+from ..security_identity.name_match import names_agree
 from .schema import (
     NormalizedEquityObservation,
     ProviderFetchResult,
@@ -29,6 +30,44 @@ MAX_TRANSIENT_RETRIES = 2
 def session_close_iso(d: date) -> str:
     aware = datetime(d.year, d.month, d.day, 16, 0, 0, tzinfo=NY)
     return aware.replace(tzinfo=None).isoformat()
+
+
+def yahoo_issuer_name(meta: dict | None) -> str | None:
+    """Chart-meta issuer name. Never inferred from the close path."""
+    meta = meta or {}
+    for key in ("longName", "shortName", "longname", "shortname"):
+        val = meta.get(key)
+        if val:
+            return str(val)
+    return None
+
+
+def yahoo_identity_problems(meta: dict | None, identity: SecurityIdentity,
+                            window_start: date) -> list[str]:
+    """Reconstructable Yahoo issuer check (name + first-trade vs announcement).
+
+    Proof C maps a historical ticker. It does not prove that Yahoo's current
+    series for that ticker is the SEC target — tickers get reused.
+    Closes are not an input. Empty list = passed.
+    """
+    problems = []
+    name = yahoo_issuer_name(meta)
+    if not names_agree(name, identity.target_name):
+        problems.append(
+            f"yahoo issuer name {name!r} does not agree with "
+            f"SEC target {identity.target_name!r}")
+    ann = identity.announcement_date or window_start.isoformat()
+    first = (meta or {}).get("firstTradeDate")
+    first_s = ""
+    if first not in (None, "", 0):
+        try:
+            first_s = datetime.fromtimestamp(int(first), tz=timezone.utc).date().isoformat()
+        except (TypeError, ValueError, OSError):
+            first_s = ""
+    if not first_s or first_s > ann:
+        problems.append(
+            f"yahoo firstTradeDate {first_s or '?'} does not cover announcement {ann}")
+    return problems
 
 
 class YahooEquityPriceProvider:
@@ -77,9 +116,10 @@ class YahooEquityPriceProvider:
         symbol = identity.ticker
         assert symbol
         last_err = None
+        meta: dict = {}
         for attempt in range(MAX_TRANSIENT_RETRIES + 1):
             try:
-                series, http_code = self._daily_closes(symbol, start, end)
+                series, http_code, meta = self._daily_closes(symbol, start, end)
                 break
             except _Transient as exc:
                 last_err = str(exc)
@@ -110,6 +150,21 @@ class YahooEquityPriceProvider:
                 provider=self.name, status=status, identity=identity,
                 provider_symbol=symbol,
                 window=(start.isoformat(), end.isoformat()))
+
+        id_problems = yahoo_identity_problems(meta, identity, start)
+        name = yahoo_issuer_name(meta)
+        # Chart meta with an issuer name is reconstructable evidence. A name
+        # that does not agree with the SEC target is ticker reuse — do not
+        # attribute those closes. Empty meta cannot prove identity; those
+        # observations stay unverified and are not canonically admitted on
+        # Proof C alone.
+        if name and id_problems:
+            return ProviderFetchResult(
+                provider=self.name, status=ProviderStatus.IDENTITY_AMBIGUOUS,
+                identity=identity, error="; ".join(id_problems),
+                provider_symbol=symbol, identity_verified=False,
+                window=(start.isoformat(), end.isoformat()))
+        verified = bool(name) and not id_problems
 
         retrieved = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
         obs = []
@@ -150,6 +205,7 @@ class YahooEquityPriceProvider:
         return ProviderFetchResult(
             provider=self.name, status=ProviderStatus.AVAILABLE,
             identity=identity, observations=ok, provider_symbol=symbol,
+            identity_verified=verified,
             window=(start.isoformat(), end.isoformat()))
 
     def _daily_closes(self, symbol: str, start: date, end: date):
@@ -163,7 +219,8 @@ class YahooEquityPriceProvider:
         http_code = str(err.get("code") or "")
         res = ((payload.get("chart") or {}).get("result") or [None])[0]
         if not res:
-            return [], http_code
+            return [], http_code, {}
+        meta = dict(res.get("meta") or {})
         ts = res.get("timestamp") or []
         quote = ((res.get("indicators") or {}).get("quote") or [{}])[0]
         closes = quote.get("close") or []
@@ -176,7 +233,7 @@ class YahooEquityPriceProvider:
             d = datetime.fromtimestamp(int(t), tz=NY).date()
             if start <= d <= end:
                 out.append((d, float(c), float(a) if a is not None else None))
-        return out, http_code
+        return out, http_code, meta
 
 
 class _Transient(RuntimeError):

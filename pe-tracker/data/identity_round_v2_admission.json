@@ -1,16 +1,22 @@
 {
-  "created_at": "2026-09-28T15:11:04+00:00",
   "reconcile_rule": "price_reconcile_v2",
   "ABS_EPS": 0.01,
   "REL_EPS": 0.0001,
   "NEW_PROOF_C": 52,
-  "CANONICALLY_ADMITTED": 60,
-  "DEFERRED_IDENTITY": 4,
+  "CANONICALLY_ADMITTED": 59,
+  "DEFERRED_IDENTITY": 5,
   "NO_PRICE_HISTORY": 65,
-  "ADMITTED_CLOSED": 46,
+  "ADMITTED_CLOSED": 45,
   "ADMITTED_BREAK_LIKE": 14,
   "MIN_SAMPLE_GATE": 20,
   "MIN_CLASS_GATE": 2,
+  "TOTAL_REAL_PRICE_PRINTS": 10759,
+  "RAW_PROVIDER_COVERED": 62,
+  "COR_AMT_DISPOSITION": "DEFERRED_IDENTITY",
+  "WLTW_DISPOSITION": "NO_PRICE_HISTORY",
+  "OVERLAP_DEALS_CANONICALLY_ADMITTED": 10,
+  "OVERLAP_DEALS_IDENTITY_DEFERRED": 0,
+  "OVERLAP_DEALS_NO_PRICE_HISTORY": 0,
   "STOP_BELOW_MIN_CLASS": false,
   "MODEL_FIT_EXECUTED": "NO",
   "BACKTEST_EXECUTED": "NO",
@@ -23,7 +29,15 @@
     "BACKTEST_EXECUTED": "NO",
     "MIN_SAMPLE_N": 20,
     "MIN_CLASS_N": 2,
-    "recommended_policy_id": "ann_tplus_10_session"
+    "recommended_policy_id": "ann_tplus_10_session",
+    "SESSION_CALENDAR": "weekday_placeholder",
+    "freeze_blockers": [
+      "SPEC_STATUS_DRAFT",
+      "NYSE_SESSION_CALENDAR_REQUIRED",
+      "TIMEZONE_AWARE_INTRADAY_REQUIRED",
+      "ACTIVE_AT_FEATURE_TIME_MUST_USE_PIT_KNOWN_AT",
+      "RESOLUTION_MUST_NOT_CHOOSE_FEATURE_DATES"
+    ]
   },
   "per_deal": [
     {
@@ -104,6 +118,13 @@
       "combined_n": 30
     },
     {
+      "deal_id": "DEAL-COLE-AMERIC-2014",
+      "canonical_status": "DEFERRED_IDENTITY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
       "deal_id": "DEAL-CONE-KKRGIP-2021",
       "canonical_status": "CANONICALLY_ADMITTED",
       "tiingo_n": 91,
@@ -112,7 +133,7 @@
     },
     {
       "deal_id": "DEAL-COR-AMT-2021",
-      "canonical_status": "CANONICALLY_ADMITTED",
+      "canonical_status": "DEFERRED_IDENTITY",
       "tiingo_n": 0,
       "yahoo_n": 30,
       "combined_n": 30
@@ -223,6 +244,13 @@
       "combined_n": 216
     },
     {
+      "deal_id": "DEAL-MKTG-AEGIS-2014",
+      "canonical_status": "DEFERRED_IDENTITY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
       "deal_id": "DEAL-MON-BAYER-2016",
       "canonical_status": "NO_PRICE_HISTORY",
       "tiingo_n": 0,
@@ -265,6 +293,13 @@
       "combined_n": 0
     },
     {
+      "deal_id": "DEAL-RCII-VINTAGE-2018",
+      "canonical_status": "DEFERRED_IDENTITY",
+      "tiingo_n": 0,
+      "yahoo_n": 128,
+      "combined_n": 0
+    },
+    {
       "deal_id": "DEAL-RESI-AMHERST-2020",
       "canonical_status": "NO_PRICE_HISTORY",
       "tiingo_n": 0,
@@ -277,6 +312,13 @@
       "tiingo_n": 172,
       "yahoo_n": 0,
       "combined_n": 172
+    },
+    {
+      "deal_id": "DEAL-SABA-VECTOR-2015",
+      "canonical_status": "DEFERRED_IDENTITY",
+      "tiingo_n": 0,
+      "yahoo_n": 10,
+      "combined_n": 0
     },
     {
       "deal_id": "DEAL-SAIL-TB-2022",

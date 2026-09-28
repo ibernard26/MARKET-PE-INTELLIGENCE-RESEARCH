@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from datetime import date
 from pathlib import Path
 
 from src.ingest.equity_prices.identity import REVIEWED_SEC_BASIS, SEC_ACCESSION
@@ -17,7 +18,21 @@ from src.ingest.equity_prices.identity_review_v2 import (
     qualifies_as_proof_c,
     ticker_reuse_or_convention_is_not_proof,
 )
-from scripts.run_free_price_coverage import canonical_status, identity_proofs
+from scripts.run_free_price_coverage import (
+    _classify_deal,
+    canonical_status,
+    identity_proofs,
+    overlap_population_counts,
+    raw_provider_covered_count,
+    recompute_row_derived,
+    reconcile_totals_from_rows,
+)
+from src.ingest.equity_prices.schema import SecurityIdentity
+from src.ingest.equity_prices.yahoo import (
+    YahooEquityPriceProvider,
+    yahoo_identity_problems,
+)
+from src.ingest.security_identity.name_match import names_agree
 
 
 def test_committed_round_is_lexicographic_and_outcome_blind():
@@ -193,3 +208,118 @@ def test_ambiguous_parentheticals_without_name_link_stay_ambiguous():
     assert classify_extracted(out, deal_id="DEAL-X-Y-2015") in {
         STILL_AMBIGUOUS, NO_SUFFICIENT_EVIDENCE}
     assert out["historical_ticker"] is None
+
+
+CORESITE = SecurityIdentity(
+    deal_id="DEAL-COR-AMT-2021",
+    ticker="COR",
+    target_name="CoreSite Realty Corporation",
+    announcement_date="2021-11-14",
+)
+CENCORA_COR_META = {
+    "symbol": "COR",
+    "shortName": "Cencora, Inc.",
+    "longName": "Cencora, Inc.",
+    "firstTradeDate": 631152000,  # 1990-01-01 — listing window is not the discriminator
+}
+
+
+def test_coresite_cor_versus_cencora_cor_is_ticker_reuse():
+    assert names_agree("Cencora, Inc.", "CoreSite Realty Corporation") is False
+    problems = yahoo_identity_problems(CENCORA_COR_META, CORESITE, date(2021, 11, 14))
+    assert problems
+    assert any("does not agree" in p for p in problems)
+    # Closes are not an input to the identity rule.
+    assert all("close" not in p.lower() and "price" not in p.lower() for p in problems)
+
+    def fake_chart(url: str):
+        return {"chart": {"result": [{
+            "meta": CENCORA_COR_META,
+            "timestamp": [1636934400, 1637020800, 1637107200],
+            "indicators": {"quote": [{"close": [150.0, 151.0, 152.0]}]},
+        }]}}
+
+    res = YahooEquityPriceProvider(fetch_json=fake_chart).fetch_history(
+        CORESITE, date(2021, 11, 15), date(2021, 12, 28))
+    assert res.status.value == "IDENTITY_AMBIGUOUS"
+    assert res.observations == []
+    assert res.identity_verified is False
+
+
+def test_yahoo_only_proof_c_cannot_admit_without_yahoo_identity():
+    row = {
+        "deal_id": "DEAL-COR-AMT-2021",
+        "openfigi_status": "AMBIGUOUS",
+        "tiingo_status": "IDENTITY_AMBIGUOUS",
+        "tiingo_n": 0,
+        "yahoo_n": 30,
+        "combined_n": 30,
+        "tiingo_identity_verified": False,
+        "yahoo_identity_verified": False,
+        "material_conflicts": 0,
+        "identity_basis": REVIEWED_SEC_BASIS,
+    }
+    assert canonical_status(row) == ("DEFERRED_IDENTITY", "YAHOO_TICKER_REUSE_UNVALIDATED")
+    assert _classify_deal(row) == "YAHOO_TICKER_REUSE_UNVALIDATED"
+
+
+def test_committed_matrix_derived_fields_match_recompute():
+    matrix = json.loads(
+        (Path(__file__).resolve().parents[1] / "data" / "free_price_coverage_matrix.json").read_text())
+    rows = matrix["deals"]
+    meta = matrix["meta"]
+    assert meta["raw_provider_covered"] == raw_provider_covered_count(rows)
+    assert meta["gap_class_counts"] == {
+        k: sum(1 for r in rows if r.get("final_coverage_status") == k)
+        for k in meta["gap_class_counts"]
+    }
+    assert sum(meta["gap_class_counts"].values()) == len(rows)
+    overlap = overlap_population_counts(rows)
+    for key, val in overlap.items():
+        assert meta[key] == val
+    totals = reconcile_totals_from_rows(rows)
+    assert totals == meta["reconcile"]
+    for row in rows:
+        fresh = recompute_row_derived(dict(row))
+        assert fresh["raw_provider_covered"] == (
+            max(int(row["tiingo_n"] or 0), int(row["yahoo_n"] or 0)) >= 3)
+        assert fresh["identity_proofs"] == row["identity_proofs"]
+        assert fresh["canonical_status"] == row["canonical_status"]
+        assert fresh["identity_deferral"] == row["identity_deferral"]
+        assert fresh["prints_admitted"] == row["prints_admitted"]
+        assert fresh["final_coverage_status"] == row["final_coverage_status"]
+        if row["canonical_status"] == "CANONICALLY_ADMITTED":
+            assert row["final_coverage_status"] not in {
+                "SECURITY_IDENTITY_AMBIGUOUS", "SECURITY_IDENTITY_NAME_MISMATCH",
+                "OPENFIGI_NO_MATCH", "YAHOO_TICKER_REUSE_UNVALIDATED"}
+            if "C_REVIEWED_SEC_MAPPING" in (row.get("identity_proofs") or []):
+                assert row["final_coverage_status"] not in {
+                    "SECURITY_IDENTITY_AMBIGUOUS", "SECURITY_IDENTITY_NAME_MISMATCH"}
+        if row["canonical_status"] == "NO_PRICE_HISTORY":
+            assert row["final_coverage_status"] not in {
+                "SECURITY_IDENTITY_AMBIGUOUS", "SECURITY_IDENTITY_NAME_MISMATCH"}
+        if int(row.get("tiingo_n") or 0) == 0 or int(row.get("yahoo_n") or 0) == 0:
+            assert int(row.get("overlap_sessions") or 0) == 0
+
+
+def test_cor_amt_and_wltw_dispositions():
+    matrix = json.loads(
+        (Path(__file__).resolve().parents[1] / "data" / "free_price_coverage_matrix.json").read_text())
+    by = {r["deal_id"]: r for r in matrix["deals"]}
+    cor = by["DEAL-COR-AMT-2021"]
+    assert cor["canonical_status"] == "DEFERRED_IDENTITY"
+    assert cor["identity_deferral"] == "YAHOO_TICKER_REUSE_UNVALIDATED"
+    assert cor["prints_admitted"] is False
+    wltw = by["DEAL-WLTW-AON-2020"]
+    assert wltw["canonical_status"] == "NO_PRICE_HISTORY"
+    assert wltw["final_coverage_status"] in {
+        "NO_PUBLIC_PRICE_HISTORY", "TIINGO_NO_HISTORY", "TIINGO_NO_SYMBOL"}
+    assert int(wltw["overlap_sessions"] or 0) == 0
+    assert int(wltw["current_fetch_tiingo_n"] or 0) == 0
+    assert int(wltw["current_fetch_yahoo_n"] or 0) == 0
+    assert int(wltw["historical_reconciliation_sessions"] or 0) == 349
+    assert wltw["historical_reconciliation_provenance"]["era"] == "PR44"
+    assert wltw["historical_reconciliation_provenance"].get("historical_ticker") == "WTW"
+    prints = json.loads(
+        (Path(__file__).resolve().parents[1] / "data" / "target_price_manifest.json").read_text())["prints"]
+    assert "DEAL-COR-AMT-2021" not in {p["deal_id"] for p in prints}

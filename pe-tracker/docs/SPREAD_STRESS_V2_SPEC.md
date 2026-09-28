@@ -81,9 +81,11 @@ model using the same fixed preprocessing/hyperparameters as the existing
 training-fold median imputation plus missing indicators. Calibration is `none`.
 No hyperparameter search is authorized.
 
-Validation is grouped chronological **60/40 by deal announcement chronology**,
-ordered by `(announcement_timestamp, deal_id)`. The split uses no label or
-resolution field. Every row for a deal remains on one side. All preprocessing,
+Validation is grouped chronological **60/40 by deal announcement chronology**.
+Intraday announcement chronology is normalized to UTC; DATE_ONLY ties use
+market date then `deal_id`. No clock time is invented for DATE_ONLY events.
+The split uses no label, resolution timestamp, resolution `known_at`, or
+resolution type. Every row for a deal remains on one side. All preprocessing,
 coefficients, and the cost threshold are training-only. The untouched later 40%
 is the out-of-time test population.
 

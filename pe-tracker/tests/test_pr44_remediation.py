@@ -311,6 +311,7 @@ def test_committed_reconcile_totals_match_and_partition():
     assert totals == meta["reconcile"]
     assert totals["exact"] + totals["tolerable"] + totals["conflict"] == totals["overlap_sessions"]
     per = {r["deal_id"]: r for r in evidence["per_deal"]}
+    historical_only_sessions = 0
     for row in rows:
         overlap = int(row.get("overlap_sessions") or 0)
         parts = int(row["exact_matches"]) + int(row["tolerable_matches"]) + int(row["material_conflicts"])
@@ -321,7 +322,15 @@ def test_committed_reconcile_totals_match_and_partition():
             assert ev["exact_matches"] == row["exact_matches"]
             assert ev["tolerable_matches"] == row["tolerable_matches"]
             assert ev["material_conflicts"] == row["material_conflicts"]
-    assert len(evidence["sessions"]) == totals["overlap_sessions"]
+        hist = int(row.get("historical_reconciliation_sessions") or 0)
+        if hist and overlap == 0:
+            assert int(row.get("current_fetch_tiingo_n") or 0) == 0 or int(
+                row.get("current_fetch_yahoo_n") or 0) == 0
+            ev = per[row["deal_id"]]
+            assert ev["overlap_sessions"] == hist
+            historical_only_sessions += hist
+            assert row.get("historical_reconciliation_provenance")
+    assert len(evidence["sessions"]) == totals["overlap_sessions"] + historical_only_sessions
     for session in evidence["sessions"]:
         assert session["rule_version"] == "price_reconcile_v2"
         assert session["classification"] in {"EXACT", "TOLERABLE", "MATERIAL_CONFLICT"}

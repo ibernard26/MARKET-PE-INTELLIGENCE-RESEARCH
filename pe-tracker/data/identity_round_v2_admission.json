@@ -1,0 +1,436 @@
+{
+  "reconcile_rule": "price_reconcile_v2",
+  "ABS_EPS": 0.01,
+  "REL_EPS": 0.0001,
+  "NEW_PROOF_C": 52,
+  "CANONICALLY_ADMITTED": 59,
+  "DEFERRED_IDENTITY": 5,
+  "NO_PRICE_HISTORY": 65,
+  "ADMITTED_CLOSED": 45,
+  "ADMITTED_BREAK_LIKE": 14,
+  "MIN_SAMPLE_GATE": 20,
+  "MIN_CLASS_GATE": 2,
+  "TOTAL_REAL_PRICE_PRINTS": 10759,
+  "RAW_PROVIDER_COVERED": 62,
+  "COR_AMT_DISPOSITION": "DEFERRED_IDENTITY",
+  "WLTW_DISPOSITION": "NO_PRICE_HISTORY",
+  "OVERLAP_DEALS_CANONICALLY_ADMITTED": 10,
+  "OVERLAP_DEALS_IDENTITY_DEFERRED": 0,
+  "OVERLAP_DEALS_NO_PRICE_HISTORY": 0,
+  "STOP_BELOW_MIN_CLASS": false,
+  "MODEL_FIT_EXECUTED": "NO",
+  "BACKTEST_EXECUTED": "NO",
+  "v2_execution": {
+    "authorized": false,
+    "V2_SPEC_STATUS": "draft",
+    "SPEC_VERSION": "spread_stress_v2_draft",
+    "reason": "spread_stress_v2 cannot execute while the specification is draft",
+    "MODEL_FIT_EXECUTED": "NO",
+    "BACKTEST_EXECUTED": "NO",
+    "MIN_SAMPLE_N": 20,
+    "MIN_CLASS_N": 2,
+    "recommended_policy_id": "ann_tplus_10_session",
+    "SESSION_CALENDAR": "weekday_placeholder",
+    "freeze_blockers": [
+      "SPEC_STATUS_DRAFT",
+      "NYSE_SESSION_CALENDAR_REQUIRED",
+      "TIMEZONE_AWARE_INTRADAY_REQUIRED",
+      "ACTIVE_AT_FEATURE_TIME_MUST_USE_PIT_KNOWN_AT",
+      "RESOLUTION_MUST_NOT_CHOOSE_FEATURE_DATES"
+    ]
+  },
+  "per_deal": [
+    {
+      "deal_id": "DEAL-ADVENT-SSCTEC-2015",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 114,
+      "yahoo_n": 0,
+      "combined_n": 114
+    },
+    {
+      "deal_id": "DEAL-ALTR-INTC-2015",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-ANN-ASCENA-2015",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 74,
+      "yahoo_n": 0,
+      "combined_n": 74
+    },
+    {
+      "deal_id": "DEAL-APC-OXY-2019",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-ARNA-PFE-2021",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 62,
+      "yahoo_n": 0,
+      "combined_n": 62
+    },
+    {
+      "deal_id": "DEAL-BEAM-SUNTOR-2014",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-BHI-HAL-2014",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 365,
+      "yahoo_n": 0,
+      "combined_n": 365
+    },
+    {
+      "deal_id": "DEAL-BOLT-TELEDY-2014",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-CEC-APOLLO-2014",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-CI-ANTM-2015",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 456,
+      "yahoo_n": 456,
+      "combined_n": 456
+    },
+    {
+      "deal_id": "DEAL-COAST-LKQ-2015",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 30,
+      "yahoo_n": 0,
+      "combined_n": 30
+    },
+    {
+      "deal_id": "DEAL-COLE-AMERIC-2014",
+      "canonical_status": "DEFERRED_IDENTITY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-CONE-KKRGIP-2021",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 91,
+      "yahoo_n": 0,
+      "combined_n": 91
+    },
+    {
+      "deal_id": "DEAL-COR-AMT-2021",
+      "canonical_status": "DEFERRED_IDENTITY",
+      "tiingo_n": 0,
+      "yahoo_n": 30,
+      "combined_n": 30
+    },
+    {
+      "deal_id": "DEAL-CPRI-TPR-2023",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 319,
+      "yahoo_n": 319,
+      "combined_n": 319
+    },
+    {
+      "deal_id": "DEAL-CRNX-VRTX-2026",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 42,
+      "yahoo_n": 8,
+      "combined_n": 42
+    },
+    {
+      "deal_id": "DEAL-CTXS-PE-2022",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 169,
+      "yahoo_n": 0,
+      "combined_n": 169
+    },
+    {
+      "deal_id": "DEAL-CXO-COP-2020",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 62,
+      "yahoo_n": 0,
+      "combined_n": 62
+    },
+    {
+      "deal_id": "DEAL-DFC-LONE-2014",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 51,
+      "yahoo_n": 0,
+      "combined_n": 51
+    },
+    {
+      "deal_id": "DEAL-DRE-PLD-2022",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 78,
+      "yahoo_n": 0,
+      "combined_n": 78
+    },
+    {
+      "deal_id": "DEAL-EA-PIFSLAFF-2025",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 213,
+      "yahoo_n": 0,
+      "combined_n": 213
+    },
+    {
+      "deal_id": "DEAL-ESI-SOLS-2026",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 39,
+      "yahoo_n": 39,
+      "combined_n": 39
+    },
+    {
+      "deal_id": "DEAL-FIVN-ZM-2021",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 54,
+      "yahoo_n": 54,
+      "combined_n": 54
+    },
+    {
+      "deal_id": "DEAL-GNW-OCEANWIDE-2016",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 1120,
+      "yahoo_n": 1120,
+      "combined_n": 1120
+    },
+    {
+      "deal_id": "DEAL-HCP-IBM-2024",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 212,
+      "yahoo_n": 0,
+      "combined_n": 212
+    },
+    {
+      "deal_id": "DEAL-HUM-AET-2015",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 409,
+      "yahoo_n": 409,
+      "combined_n": 409
+    },
+    {
+      "deal_id": "DEAL-IRBT-AMZN-2022",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 372,
+      "yahoo_n": 0,
+      "combined_n": 372
+    },
+    {
+      "deal_id": "DEAL-JNPR-HPE-2024",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 371,
+      "yahoo_n": 0,
+      "combined_n": 371
+    },
+    {
+      "deal_id": "DEAL-LSCC-CANYONBRIDGE-2016",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 216,
+      "yahoo_n": 216,
+      "combined_n": 216
+    },
+    {
+      "deal_id": "DEAL-MKTG-AEGIS-2014",
+      "canonical_status": "DEFERRED_IDENTITY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-MON-BAYER-2016",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-MRO-COP-2024",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 126,
+      "yahoo_n": 0,
+      "combined_n": 126
+    },
+    {
+      "deal_id": "DEAL-ODP-SPLS-2015",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-OM-APOLLO-2015",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 112,
+      "yahoo_n": 0,
+      "combined_n": 112
+    },
+    {
+      "deal_id": "DEAL-PACB-ILMN-2018",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 293,
+      "yahoo_n": 293,
+      "combined_n": 293
+    },
+    {
+      "deal_id": "DEAL-RAD-WBA-2015",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-RCII-VINTAGE-2018",
+      "canonical_status": "DEFERRED_IDENTITY",
+      "tiingo_n": 0,
+      "yahoo_n": 128,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-RESI-AMHERST-2020",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-RHT-IBM-2018",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 172,
+      "yahoo_n": 0,
+      "combined_n": 172
+    },
+    {
+      "deal_id": "DEAL-SABA-VECTOR-2015",
+      "canonical_status": "DEFERRED_IDENTITY",
+      "tiingo_n": 0,
+      "yahoo_n": 10,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-SAIL-TB-2022",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-SALIX-VALEAN-2015",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 28,
+      "yahoo_n": 0,
+      "combined_n": 28
+    },
+    {
+      "deal_id": "DEAL-SAVE-ULCC-2022",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 118,
+      "yahoo_n": 0,
+      "combined_n": 118
+    },
+    {
+      "deal_id": "DEAL-SGEN-PFE-2023",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 193,
+      "yahoo_n": 0,
+      "combined_n": 193
+    },
+    {
+      "deal_id": "DEAL-SIGMA-MERCK-2014",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-SPLK-CSCO-2023",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 124,
+      "yahoo_n": 0,
+      "combined_n": 124
+    },
+    {
+      "deal_id": "DEAL-SSTK-GETY-2025",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 375,
+      "yahoo_n": 375,
+      "combined_n": 375
+    },
+    {
+      "deal_id": "DEAL-STOR-GIC-2022",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 98,
+      "yahoo_n": 0,
+      "combined_n": 98
+    },
+    {
+      "deal_id": "DEAL-SWCH-DIGITALBRIDGE-2022",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 144,
+      "yahoo_n": 0,
+      "combined_n": 144
+    },
+    {
+      "deal_id": "DEAL-TRW-ZFFRIE-2014",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 175,
+      "yahoo_n": 0,
+      "combined_n": 175
+    },
+    {
+      "deal_id": "DEAL-TWC-CMCSA-2014",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 302,
+      "yahoo_n": 0,
+      "combined_n": 302
+    },
+    {
+      "deal_id": "DEAL-TWTR-XHOLDINGS-2022",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 130,
+      "yahoo_n": 0,
+      "combined_n": 130
+    },
+    {
+      "deal_id": "DEAL-WFM-AMZN-2017",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 52,
+      "yahoo_n": 0,
+      "combined_n": 52
+    },
+    {
+      "deal_id": "DEAL-WLTW-AON-2020",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-WORK-CRM-2020",
+      "canonical_status": "NO_PRICE_HISTORY",
+      "tiingo_n": 0,
+      "yahoo_n": 0,
+      "combined_n": 0
+    },
+    {
+      "deal_id": "DEAL-ZEN-ZORO-2022",
+      "canonical_status": "CANONICALLY_ADMITTED",
+      "tiingo_n": 105,
+      "yahoo_n": 0,
+      "combined_n": 105
+    }
+  ]
+}

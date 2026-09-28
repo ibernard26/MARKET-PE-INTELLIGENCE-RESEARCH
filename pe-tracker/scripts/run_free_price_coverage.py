@@ -64,6 +64,7 @@ DEFERRED_PRICE_CONFLICT = "DEFERRED_PRICE_CONFLICT"
 NO_PRICE_HISTORY = "NO_PRICE_HISTORY"
 INSUFFICIENT_CANONICAL_PRINTS = "INSUFFICIENT_CANONICAL_PRINTS"
 DEFER_IDENTITY_UNCONFIRMED = "DEFER_IDENTITY_UNCONFIRMED"
+YAHOO_TICKER_REUSE_UNVALIDATED = "YAHOO_TICKER_REUSE_UNVALIDATED"
 
 # Tiingo Starter is 50 requests/hour. One deal is metadata + EOD (2 calls).
 # Stay under the cap and do not retry a 429 in a tight loop — that burns the
@@ -259,9 +260,28 @@ def identity_veto(row: dict) -> Optional[str]:
     return None
 
 
+def yahoo_only_unvalidated(row: dict, proofs: list[str]) -> bool:
+    """Yahoo-only series without reconstructable Yahoo issuer identity.
+
+    Proof C maps the historical ticker. It does not prove Yahoo's current
+    series for that ticker is the SEC target (COR CoreSite vs Cencora).
+    Proof A/B remain the existing Yahoo-only admission paths.
+    """
+    if int(row.get("tiingo_n") or 0) != 0:
+        return False
+    if int(row.get("yahoo_n") or 0) <= 0:
+        return False
+    if row.get("yahoo_identity_verified"):
+        return False
+    if "A_OPENFIGI_MATCHED" in proofs or "B_TIINGO_NAME_AND_LISTING_WINDOW" in proofs:
+        return False
+    return True
+
+
 def canonical_status(row: dict) -> tuple[Optional[str], Optional[str]]:
     """(status, identity_deferral_reason). Fixed order: infrastructure →
-    veto → conflict → no raw history → no affirmative proof → print count.
+    veto → conflict → no raw history → yahoo-only reuse → no affirmative
+    proof → print count.
 
     Unresolved provider/network failures return (None, UNRESOLVED_INFRASTRUCTURE).
     That is not a sixth canonical deal status and is not NO_PRICE_HISTORY.
@@ -269,14 +289,20 @@ def canonical_status(row: dict) -> tuple[Optional[str], Optional[str]]:
     """
     if unresolved_infrastructure(row):
         return None, UNRESOLVED_INFRASTRUCTURE
+    proofs = identity_proofs(row)
     veto = identity_veto(row)
-    if veto:
+    # Proof C is contemporaneous SEC mapping. It overrides an OpenFIGI/Tiingo
+    # uniqueness veto on the same ticker; it does not change price_reconcile_v2
+    # and it does not validate a Yahoo series under a reused ticker.
+    if veto and "C_REVIEWED_SEC_MAPPING" not in proofs:
         return DEFERRED_IDENTITY, veto
     if row.get("material_conflicts", 0) > 0:
         return DEFERRED_PRICE_CONFLICT, None
     if row.get("tiingo_n", 0) == 0 and row.get("yahoo_n", 0) == 0:
         return NO_PRICE_HISTORY, None
-    if not identity_proofs(row):
+    if yahoo_only_unvalidated(row, proofs):
+        return DEFERRED_IDENTITY, YAHOO_TICKER_REUSE_UNVALIDATED
+    if not proofs:
         return DEFERRED_IDENTITY, DEFER_IDENTITY_UNCONFIRMED
     if row.get("combined_n", 0) >= MIN_PRINTS:
         return CANONICALLY_ADMITTED, None
@@ -313,34 +339,111 @@ def retained_cached_prints(old_prints: list, rows: list, refetched_ids: set) -> 
     return [p for p in old_prints if p.get("deal_id") in admitted_cached]
 
 
+def _price_mix_class(row: dict) -> str:
+    """Coverage class from current provider counts. Used when a FIGI/Tiingo
+    uniqueness veto was overridden by Proof C and the deal is admitted."""
+    if row.get("material_conflicts", 0) > 0:
+        return "DEFER_PRICE_CONFLICT"
+    t_n = int(row.get("tiingo_n") or 0)
+    y_n = int(row.get("yahoo_n") or 0)
+    if t_n >= MIN_PRINTS and y_n >= MIN_PRINTS:
+        return "MULTI_PROVIDER_CONFIRMED"
+    if t_n >= MIN_PRINTS:
+        return "TIINGO_COVERED"
+    if y_n >= MIN_PRINTS and t_n == 0:
+        return "YAHOO_ONLY"
+    if t_n == 0 and y_n == 0:
+        return "NO_PUBLIC_PRICE_HISTORY"
+    return "OTHER"
+
+
+def _no_price_history_class(row: dict) -> str:
+    """Gap class for current no-history. Not an identity-veto leftover."""
+    if row.get("tiingo_status") == "SYMBOL_NOT_FOUND":
+        return "TIINGO_NO_SYMBOL"
+    if row.get("tiingo_status") in ("NO_HISTORY", "ok") and int(row.get("tiingo_n") or 0) == 0:
+        return "TIINGO_NO_HISTORY"
+    if row.get("tiingo_status") == "TRANSIENT_FAILURE":
+        return "PROVIDER_TRANSIENT_FAILURE"
+    return "NO_PUBLIC_PRICE_HISTORY"
+
+
 def _classify_deal(row: dict) -> str:
+    """Gap class follows current canonical_status, then current price mix.
+
+    Admitted rows never keep SECURITY_IDENTITY_* or OPENFIGI_NO_MATCH.
+    NO_PRICE_HISTORY never keeps an identity-veto leftover.
+    """
+    status, reason = canonical_status(row)
+    if status == CANONICALLY_ADMITTED:
+        return _price_mix_class(row)
+    if reason == YAHOO_TICKER_REUSE_UNVALIDATED:
+        return YAHOO_TICKER_REUSE_UNVALIDATED
+    if status == DEFERRED_PRICE_CONFLICT or row.get("material_conflicts", 0) > 0:
+        return "DEFER_PRICE_CONFLICT"
+    if status == NO_PRICE_HISTORY:
+        return _no_price_history_class(row)
     if row.get("openfigi_status") == "AMBIGUOUS":
         return "SECURITY_IDENTITY_AMBIGUOUS"
     if row.get("openfigi_status") == "NAME_MISMATCH":
         return "SECURITY_IDENTITY_NAME_MISMATCH"
     if row.get("tiingo_status") == "IDENTITY_AMBIGUOUS":
         return "SECURITY_IDENTITY_AMBIGUOUS"
-    if row.get("material_conflicts", 0) > 0:
-        return "DEFER_PRICE_CONFLICT"
     if (row.get("tiingo_n", 0) or row.get("yahoo_n", 0)) and not identity_proofs(row):
         return DEFER_IDENTITY_UNCONFIRMED
     if row.get("openfigi_status") == "NO_MATCH":
         return "OPENFIGI_NO_MATCH"
-    if row.get("tiingo_n", 0) >= 3 and row.get("yahoo_n", 0) >= 3 and row.get("material_conflicts", 0) == 0:
+    if row.get("tiingo_n", 0) >= 3 and row.get("yahoo_n", 0) >= 3:
         return "MULTI_PROVIDER_CONFIRMED"
     if row.get("tiingo_n", 0) >= 3:
-        return "TIINGO_COVERED" if row.get("yahoo_n", 0) == 0 else "TIINGO_COVERED"
+        return "TIINGO_COVERED"
     if row.get("yahoo_n", 0) >= 3 and row.get("tiingo_n", 0) == 0:
         return "YAHOO_ONLY"
-    if row.get("tiingo_status") == "SYMBOL_NOT_FOUND":
-        return "TIINGO_NO_SYMBOL"
-    if row.get("tiingo_status") in ("NO_HISTORY", "ok") and row.get("tiingo_n", 0) == 0:
-        return "TIINGO_NO_HISTORY"
-    if row.get("tiingo_status") == "TRANSIENT_FAILURE":
-        return "PROVIDER_TRANSIENT_FAILURE"
     if row.get("tiingo_n", 0) == 0 and row.get("yahoo_n", 0) == 0:
         return "NO_PUBLIC_PRICE_HISTORY"
     return "OTHER"
+
+
+def recompute_row_derived(row: dict) -> dict:
+    """Refresh derived admission fields from current provider counts.
+
+    Does not invent prices. Stale final_coverage_status is replaced.
+    """
+    t_n = int(row.get("tiingo_n") or 0)
+    y_n = int(row.get("yahoo_n") or 0)
+    row["current_fetch_tiingo_n"] = t_n
+    row["current_fetch_yahoo_n"] = y_n
+    row["raw_provider_covered"] = max(t_n, y_n) >= MIN_PRINTS
+    row["identity_proofs"] = identity_proofs(row)
+    row["canonical_status"], row["identity_deferral"] = canonical_status(row)
+    row["prints_admitted"] = admit_prints(row)
+    row["final_coverage_status"] = _classify_deal(row)
+    return row
+
+
+def raw_provider_covered_count(rows: list) -> int:
+    return sum(1 for r in rows if max(int(r.get("tiingo_n") or 0),
+                                      int(r.get("yahoo_n") or 0)) >= MIN_PRINTS)
+
+
+def overlap_population_counts(rows: list) -> dict:
+    """Current dual-provider overlap, partitioned by current canonical status."""
+    admitted = deferred = noph = 0
+    for r in rows:
+        if int(r.get("overlap_sessions") or 0) <= 0:
+            continue
+        status = r.get("canonical_status")
+        if status == CANONICALLY_ADMITTED:
+            admitted += 1
+        elif status == DEFERRED_IDENTITY:
+            deferred += 1
+        elif status == NO_PRICE_HISTORY:
+            noph += 1
+    return {
+        "OVERLAP_DEALS_CANONICALLY_ADMITTED": admitted,
+        "OVERLAP_DEALS_IDENTITY_DEFERRED": deferred,
+        "OVERLAP_DEALS_NO_PRICE_HISTORY": noph,
+    }
 
 
 def main() -> int:
@@ -497,11 +600,8 @@ def main() -> int:
             "combined_provider": c_res.get("provider"),
             "combined_n": c_res.get("n_prints", len(c_res.get("observations") or [])),
         }
-        row["final_coverage_status"] = _classify_deal(row)
         row["identity_proofs"] = identity_proofs(row)
-        row["raw_provider_covered"] = max(row["tiingo_n"], row["yahoo_n"]) >= MIN_PRINTS
-        row["canonical_status"], row["identity_deferral"] = canonical_status(row)
-        row["prints_admitted"] = admit_prints(row)
+        recompute_row_derived(row)
         row["row_schema_version"] = ROW_SCHEMA_VERSION
         rows.append(row)
         # Canonical observations: combined orchestrator (Tiingo preferred),
@@ -565,7 +665,7 @@ def main() -> int:
         "multi_provider_confirmed": sum(
             1 for r in rows if r["final_coverage_status"] == "MULTI_PROVIDER_CONFIRMED"),
         # Raw provider coverage is reported separately and never used for readiness.
-        "raw_provider_covered": sum(1 for r in rows if r["raw_provider_covered"]),
+        "raw_provider_covered": raw_provider_covered_count(rows),
         "canonically_admitted": sum(
             1 for r in rows if r["canonical_status"] == CANONICALLY_ADMITTED),
         "deferred_identity": sum(
@@ -594,6 +694,7 @@ def main() -> int:
             1 for r in rows if r.get("tiingo_identity_verified")),
         "gap_class_counts": dict(Counter(r["final_coverage_status"] for r in rows)),
         "reconcile": dict(recon_stats),
+        **overlap_population_counts(rows),
         "RUN_COMPLETE": "YES",
         "tiingo_hourly_limited_remaining": sum(
             1 for r in rows if r.get("tiingo_status") == "TRANSIENT_FAILURE"),

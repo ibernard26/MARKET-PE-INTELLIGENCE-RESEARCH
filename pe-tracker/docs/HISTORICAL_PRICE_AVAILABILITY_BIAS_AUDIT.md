@@ -3,49 +3,71 @@
 Descriptive only — no causal claims. Cohort not altered to balance stats.
 
 **Canonical N:** 129  
-**PRICE_COVERED (≥3 prints):** 21  
-**PRICE_UNCOVERED:** 108  
-**Overall coverage rate:** 16.3%
+**PRICE_COVERED (≥3 prints):** 59  
+**PRICE_UNCOVERED:** 70  
+**Overall coverage rate:** 45.7%
 
 ## Outcome
 
 | Metric | Value |
 |---|---|
-| COVERAGE_RATE_CLOSED | 20/109 (18.3%) |
-| COVERAGE_RATE_BREAK | 1/20 (5.0%) |
+| COVERAGE_RATE_CLOSED | 45/109 (41.3%) |
+| COVERAGE_RATE_BREAK | 14/20 (70.0%) |
 
 ## Coverage by announcement year
 
 | Year | Coverage |
 |---|---|
-| 2014 | 0/39 (0.0%) |
-| 2015 | 1/33 (3.0%) |
-| 2016 | 2/7 (28.6%) |
-| 2017 | 0/1 (0.0%) |
-| 2018 | 0/3 (0.0%) |
+| 2014 | 4/39 (10.3%) |
+| 2015 | 8/33 (24.2%) |
+| 2016 | 4/7 (57.1%) |
+| 2017 | 1/1 (100.0%) |
+| 2018 | 2/3 (66.7%) |
 | 2019 | 0/1 (0.0%) |
-| 2020 | 3/7 (42.9%) |
-| 2021 | 8/12 (66.7%) |
-| 2022 | 5/14 (35.7%) |
-| 2023 | 2/5 (40.0%) |
-| 2024 | 0/3 (0.0%) |
-| 2025 | 0/2 (0.0%) |
-| 2026 | 0/2 (0.0%) |
+| 2020 | 4/7 (57.1%) |
+| 2021 | 11/12 (91.7%) |
+| 2022 | 13/14 (92.9%) |
+| 2023 | 5/5 (100.0%) |
+| 2024 | 3/3 (100.0%) |
+| 2025 | 2/2 (100.0%) |
+| 2026 | 2/2 (100.0%) |
 
 ## Coverage by consideration type
 
 | Consideration | Coverage |
 |---|---|
-| cash | 16/108 (14.8%) |
-| mixed | 1/11 (9.1%) |
-| stock | 4/10 (40.0%) |
+| cash | 43/108 (39.8%) |
+| mixed | 7/11 (63.6%) |
+| stock | 9/10 (90.0%) |
 
 ## Coverage by deal type
 
 | Deal type | Coverage |
 |---|---|
-| strategic | 14/107 (13.1%) |
-| take_private | 7/22 (31.8%) |
+| strategic | 43/107 (40.2%) |
+| take_private | 16/22 (72.7%) |
+
+## Coverage by resolution type
+
+| Resolution type | Coverage |
+|---|---|
+| closed | 45/109 (41.3%) |
+| terminated | 14/19 (73.7%) |
+| withdrawn | 0/1 (0.0%) |
+
+## Coverage by offer-price field presence
+
+| Offer-price field | Coverage |
+|---|---|
+| offer_price_absent | 9/10 (90.0%) |
+| offer_price_present | 50/119 (42.0%) |
+
+## Uncovered deals by canonical status
+
+| Uncovered canonical status | N |
+|---|---|
+| DEFERRED_IDENTITY | 5 |
+| NO_PRICE_HISTORY | 65 |
 
 ## Sponsor and regulatory flags
 
@@ -53,15 +75,15 @@ Sponsor status and regulatory flags are not fields on the canonical SEC manifest
 
 ## Major observed coverage skews
 
-- closed coverage 20/109 (18.3%)
-- break_like coverage 1/20 (5.0%)
+- closed coverage 45/109 (41.3%)
+- break_like coverage 14/20 (70.0%)
 
 ## Provider mix (from matrix meta)
 
 | Metric | Value |
 |---|---|
-| TIINGO_DEALS_COVERED | 55 |
-| YAHOO_DEALS_COVERED | 14 |
-| MULTI_PROVIDER_CONFIRMED | 0 |
+| TIINGO_DEALS_COVERED | 59 |
+| YAHOO_DEALS_COVERED | 13 |
+| MULTI_PROVIDER_CONFIRMED | 10 |
 
 Canonical corpus is unchanged. Uncovered deals remain in SEC manifest.

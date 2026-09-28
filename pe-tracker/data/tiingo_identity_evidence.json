@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "provider": "tiingo",
+  "credential_stored": false,
+  "deals_revalidated": 21,
+  "proof_B_failures": [],
+  "deals": [
+    {
+      "deal_id": "DEAL-LNKD-MSFT-2016",
+      "canonical_target_name": "LinkedIn Corporation",
+      "historical_ticker": "LNKD",
+      "tiingo_provider_name": "LinkedIn Corp",
+      "tiingo_listing_start": "2011-05-19",
+      "tiingo_listing_end": "2016-12-16",
+      "announcement_date": "2016-06-11",
+      "normalized_target_tokens": [
+        "linkedin"
+      ],
+      "normalized_provider_tokens": [
+        "linkedin"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/LNKD"
+    },
+    {
+      "deal_id": "DEAL-ATVI-MSFT-2022",
+      "canonical_target_name": "Activision Blizzard, Inc.",
+      "historical_ticker": "ATVI",
+      "tiingo_provider_name": "Activision Blizzard Inc",
+      "tiingo_listing_start": "1993-10-25",
+      "tiingo_listing_end": "2023-10-13",
+      "announcement_date": "2022-01-18",
+      "normalized_target_tokens": [
+        "activision",
+        "blizzard"
+      ],
+      "normalized_provider_tokens": [
+        "activision",
+        "blizzard"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/ATVI"
+    },
+    {
+      "deal_id": "DEAL-CERN-ORCL-2021",
+      "canonical_target_name": "Cerner Corporation",
+      "historical_ticker": "CERN",
+      "tiingo_provider_name": "Cerner Corp",
+      "tiingo_listing_start": "1990-03-26",
+      "tiingo_listing_end": "2022-09-08",
+      "announcement_date": "2021-12-20",
+      "normalized_target_tokens": [
+        "cerner"
+      ],
+      "normalized_provider_tokens": [
+        "cerner"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/CERN"
+    },
+    {
+      "deal_id": "DEAL-NUAN-MSFT-2021",
+      "canonical_target_name": "Nuance Communications, Inc.",
+      "historical_ticker": "NUAN",
+      "tiingo_provider_name": "Nuance Communications Inc",
+      "tiingo_listing_start": "1995-12-11",
+      "tiingo_listing_end": "2022-03-04",
+      "announcement_date": "2021-04-11",
+      "normalized_target_tokens": [
+        "communications",
+        "nuance"
+      ],
+      "normalized_provider_tokens": [
+        "communications",
+        "nuance"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/NUAN"
+    },
+    {
+      "deal_id": "DEAL-MNTV-ZEN-2021",
+      "canonical_target_name": "Momentive Global Inc.",
+      "historical_ticker": "MNTV",
+      "tiingo_provider_name": "Momentive Global Inc",
+      "tiingo_listing_start": "2018-09-26",
+      "tiingo_listing_end": "2023-05-31",
+      "announcement_date": "2021-10-28",
+      "normalized_target_tokens": [
+        "global",
+        "momentive"
+      ],
+      "normalized_provider_tokens": [
+        "global",
+        "momentive"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/MNTV"
+    },
+    {
+      "deal_id": "DEAL-AVLR-VISTA-2022",
+      "canonical_target_name": "Avalara, Inc.",
+      "historical_ticker": "AVLR",
+      "tiingo_provider_name": "Avalara Inc",
+      "tiingo_listing_start": "2018-06-15",
+      "tiingo_listing_end": "2022-10-28",
+      "announcement_date": "2022-08-08",
+      "normalized_target_tokens": [
+        "avalara"
+      ],
+      "normalized_provider_tokens": [
+        "avalara"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/AVLR"
+    },
+    {
+      "deal_id": "DEAL-CHNG-UNH-2021",
+      "canonical_target_name": "Change Healthcare Inc.",
+      "historical_ticker": "CHNG",
+      "tiingo_provider_name": "Change Healthcare Inc",
+      "tiingo_listing_start": "2019-06-27",
+      "tiingo_listing_end": "2022-10-03",
+      "announcement_date": "2021-01-06",
+      "normalized_target_tokens": [
+        "change",
+        "healthcare"
+      ],
+      "normalized_provider_tokens": [
+        "change",
+        "healthcare"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/CHNG"
+    },
+    {
+      "deal_id": "DEAL-CLDR-KKRCDR-2021",
+      "canonical_target_name": "Cloudera, Inc.",
+      "historical_ticker": "CLDR",
+      "tiingo_provider_name": "Cloudera Inc",
+      "tiingo_listing_start": "2017-04-28",
+      "tiingo_listing_end": "2021-10-11",
+      "announcement_date": "2021-06-01",
+      "normalized_target_tokens": [
+        "cloudera"
+      ],
+      "normalized_provider_tokens": [
+        "cloudera"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/CLDR",
+      "openfigi": {
+        "status": "MATCHED",
+        "figi": "BBG00GCTN6X2",
+        "composite_figi": "BBG000DRJFC8",
+        "share_class_figi": "BBG001T1XG38",
+        "proof_A": true
+      }
+    },
+    {
+      "deal_id": "DEAL-COUP-TB-2022",
+      "canonical_target_name": "Coupa Software Incorporated",
+      "historical_ticker": "COUP",
+      "tiingo_provider_name": "Coupa Software Inc",
+      "tiingo_listing_start": "2016-10-06",
+      "tiingo_listing_end": "2023-02-28",
+      "announcement_date": "2022-12-11",
+      "normalized_target_tokens": [
+        "coupa",
+        "software"
+      ],
+      "normalized_provider_tokens": [
+        "coupa",
+        "software"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/COUP"
+    },
+    {
+      "deal_id": "DEAL-HZNP-AMGN-2022",
+      "canonical_target_name": "Horizon Therapeutics plc",
+      "historical_ticker": "HZNP",
+      "tiingo_provider_name": "Horizon Therapeutics Plc",
+      "tiingo_listing_start": "2011-07-28",
+      "tiingo_listing_end": "2023-10-06",
+      "announcement_date": "2022-12-11",
+      "normalized_target_tokens": [
+        "horizon",
+        "therapeutics"
+      ],
+      "normalized_provider_tokens": [
+        "horizon",
+        "therapeutics"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/HZNP"
+    },
+    {
+      "deal_id": "DEAL-IMGN-ABBV-2023",
+      "canonical_target_name": "ImmunoGen, Inc.",
+      "historical_ticker": "IMGN",
+      "tiingo_provider_name": "Immunogen Inc",
+      "tiingo_listing_start": "1990-03-26",
+      "tiingo_listing_end": "2026-09-25",
+      "announcement_date": "2023-11-30",
+      "normalized_target_tokens": [
+        "immunogen"
+      ],
+      "normalized_provider_tokens": [
+        "immunogen"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/IMGN"
+    },
+    {
+      "deal_id": "DEAL-LLTC-ADI-2016",
+      "canonical_target_name": "Linear Technology Corporation",
+      "historical_ticker": "LLTC",
+      "tiingo_provider_name": "Linear Technology Corp",
+      "tiingo_listing_start": "2016-01-04",
+      "tiingo_listing_end": "2017-03-20",
+      "announcement_date": "2016-07-26",
+      "normalized_target_tokens": [
+        "linear",
+        "technology"
+      ],
+      "normalized_provider_tokens": [
+        "linear",
+        "technology"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/LLTC"
+    },
+    {
+      "deal_id": "DEAL-MDLA-TB-2021",
+      "canonical_target_name": "Medallia, Inc.",
+      "historical_ticker": "MDLA",
+      "tiingo_provider_name": "Medallia Inc",
+      "tiingo_listing_start": "2019-07-19",
+      "tiingo_listing_end": "2021-10-29",
+      "announcement_date": "2021-07-25",
+      "normalized_target_tokens": [
+        "medallia"
+      ],
+      "normalized_provider_tokens": [
+        "medallia"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/MDLA",
+      "openfigi": {
+        "status": "MATCHED",
+        "figi": "BBG00PH8XNH3",
+        "composite_figi": "BBG001BPKGT0",
+        "share_class_figi": "BBG001TRQRS8",
+        "proof_A": true
+      }
+    },
+    {
+      "deal_id": "DEAL-MXIM-ADI-2020",
+      "canonical_target_name": "Maxim Integrated Products, Inc.",
+      "historical_ticker": "MXIM",
+      "tiingo_provider_name": "Maxim Integrated Products Inc",
+      "tiingo_listing_start": "1990-03-26",
+      "tiingo_listing_end": "2021-09-01",
+      "announcement_date": "2020-07-12",
+      "normalized_target_tokens": [
+        "integrated",
+        "maxim",
+        "products"
+      ],
+      "normalized_provider_tokens": [
+        "integrated",
+        "maxim",
+        "products"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/MXIM",
+      "openfigi": {
+        "status": "MATCHED",
+        "figi": "BBG000BPNX12",
+        "composite_figi": "BBG000BPNP00",
+        "share_class_figi": "BBG001S5TGX2",
+        "proof_A": true
+      }
+    },
+    {
+      "deal_id": "DEAL-NLSN-EVERGREEN-2022",
+      "canonical_target_name": "Nielsen Holdings plc",
+      "historical_ticker": "NLSN",
+      "tiingo_provider_name": "Nielsen Holdings plc",
+      "tiingo_listing_start": "2011-01-27",
+      "tiingo_listing_end": "2022-10-11",
+      "announcement_date": "2022-03-28",
+      "normalized_target_tokens": [
+        "nielsen"
+      ],
+      "normalized_provider_tokens": [
+        "nielsen"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/NLSN"
+    },
+    {
+      "deal_id": "DEAL-PFPT-TB-2021",
+      "canonical_target_name": "Proofpoint, Inc.",
+      "historical_ticker": "PFPT",
+      "tiingo_provider_name": "Proofpoint Inc",
+      "tiingo_listing_start": "2012-04-20",
+      "tiingo_listing_end": "2021-08-31",
+      "announcement_date": "2021-04-25",
+      "normalized_target_tokens": [
+        "proofpoint"
+      ],
+      "normalized_provider_tokens": [
+        "proofpoint"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/PFPT",
+      "openfigi": {
+        "status": "MATCHED",
+        "figi": "BBG002BDGJZ7",
+        "composite_figi": "BBG000RQ2GY7",
+        "share_class_figi": "BBG001SZ6T81",
+        "proof_A": true
+      }
+    },
+    {
+      "deal_id": "DEAL-PXD-XOM-2023",
+      "canonical_target_name": "Pioneer Natural Resources Company",
+      "historical_ticker": "PXD",
+      "tiingo_provider_name": "Pioneer Natural Resources Company",
+      "tiingo_listing_start": "1997-08-08",
+      "tiingo_listing_end": "2024-05-03",
+      "announcement_date": "2023-10-10",
+      "normalized_target_tokens": [
+        "natural",
+        "pioneer",
+        "resources"
+      ],
+      "normalized_provider_tokens": [
+        "natural",
+        "pioneer",
+        "resources"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/PXD"
+    },
+    {
+      "deal_id": "DEAL-RP-TB-2020",
+      "canonical_target_name": "RealPage, Inc.",
+      "historical_ticker": "RP",
+      "tiingo_provider_name": "RealPage Inc",
+      "tiingo_listing_start": "2010-08-12",
+      "tiingo_listing_end": "2021-04-22",
+      "announcement_date": "2020-12-20",
+      "normalized_target_tokens": [
+        "realpage"
+      ],
+      "normalized_provider_tokens": [
+        "realpage"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/RP",
+      "openfigi": {
+        "status": "MATCHED",
+        "figi": "BBG000CN6NT7",
+        "composite_figi": "BBG000CN5CJ3",
+        "share_class_figi": "BBG001SGCG20",
+        "proof_A": true
+      }
+    },
+    {
+      "deal_id": "DEAL-XLNX-AMD-2020",
+      "canonical_target_name": "Xilinx, Inc.",
+      "historical_ticker": "XLNX",
+      "tiingo_provider_name": "Xilinx Inc",
+      "tiingo_listing_start": "1990-06-18",
+      "tiingo_listing_end": "2022-02-14",
+      "announcement_date": "2020-10-26",
+      "normalized_target_tokens": [
+        "xilinx"
+      ],
+      "normalized_provider_tokens": [
+        "xilinx"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/XLNX",
+      "openfigi": {
+        "status": "MATCHED",
+        "figi": "BBG00GQ6SCB3",
+        "composite_figi": "BBG00GQ6SC96",
+        "share_class_figi": "BBG001S62S63",
+        "proof_A": true
+      }
+    },
+    {
+      "deal_id": "DEAL-XLRN-MRK-2021",
+      "canonical_target_name": "Acceleron Pharma Inc.",
+      "historical_ticker": "XLRN",
+      "tiingo_provider_name": "Acceleron Pharma Inc",
+      "tiingo_listing_start": "2013-09-19",
+      "tiingo_listing_end": "2021-11-22",
+      "announcement_date": "2021-09-29",
+      "normalized_target_tokens": [
+        "acceleron",
+        "pharma"
+      ],
+      "normalized_provider_tokens": [
+        "acceleron",
+        "pharma"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/XLRN",
+      "openfigi": {
+        "status": "MATCHED",
+        "figi": "BBG004YTQJF4",
+        "composite_figi": "BBG000R5HWZ1",
+        "share_class_figi": "BBG001T95WZ2",
+        "proof_A": true
+      }
+    },
+    {
+      "deal_id": "DEAL-REMY-BORGWA-2015",
+      "canonical_target_name": "REMY INTERNATIONAL, INC.",
+      "historical_ticker": "REMY",
+      "tiingo_provider_name": "Remy International Inc",
+      "tiingo_listing_start": "2010-03-26",
+      "tiingo_listing_end": "2015-11-11",
+      "announcement_date": "2015-07-13",
+      "normalized_target_tokens": [
+        "international",
+        "remy"
+      ],
+      "normalized_provider_tokens": [
+        "international",
+        "remy"
+      ],
+      "names_agree": true,
+      "listing_window_covers_announcement": true,
+      "proof_B_earned": true,
+      "retrieved_at": "2026-09-28T09:50:29+00:00",
+      "provider_endpoint": "https://api.tiingo.com/tiingo/daily/REMY"
+    }
+  ]
+}

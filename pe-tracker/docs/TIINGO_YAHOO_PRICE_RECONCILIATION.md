@@ -17,7 +17,7 @@
 
 Overlapping Tiingo/Yahoo sessions are not the admitted cohort. A zero material-conflict count is computed only on deals that have both series. It does not independently validate admitted Tiingo series that have no Yahoo overlap.
 
-Per-deal classification fields do not equal `meta.reconcile`. The gap is `meta.reconcile_pre_retry`, a side ledger that is not session-level evidence. It must not be treated as an audited partition.
+Per-deal `exact_matches` + `tolerable_matches` + `material_conflicts` equal `meta.reconcile`. `historical_debug` is not added to those totals.
 
 | Metric | Value |
 |---|---|

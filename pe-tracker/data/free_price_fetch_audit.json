@@ -37,18 +37,100 @@
       "OPENFIGI_NO_MATCH": 66,
       "TIINGO_COVERED": 7
     },
-    "reconcile_pre_retry": {
-      "overlap_sessions": 1499,
-      "exact": 98,
-      "tolerable": 1401,
-      "conflict": 0
-    },
     "reconcile": {
       "overlap_sessions": 3638,
       "exact": 215,
-      "tolerable": 3423
+      "tolerable": 3423,
+      "conflict": 0
     },
-    "tiingo_hourly_limited_remaining": 0
+    "RUN_COMPLETE": "YES",
+    "tiingo_hourly_limited_remaining": 0,
+    "historical_debug": {
+      "label": "NOT_INCLUDED_IN_SCIENTIFIC_RECONCILE_TOTALS",
+      "reconcile_pre_retry": {
+        "overlap_sessions": 1499,
+        "exact": 98,
+        "tolerable": 1401,
+        "conflict": 0
+      },
+      "prior_headline_reconcile": {
+        "overlap_sessions": 3638,
+        "exact": 215,
+        "tolerable": 3423
+      },
+      "per_deal_counts_before_session_evidence": {
+        "DEAL-CRNX-VRTX-2026": {
+          "overlap_sessions": 8,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-ESI-SOLS-2026": {
+          "overlap_sessions": 39,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-SSTK-GETY-2025": {
+          "overlap_sessions": 375,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-CPRI-TPR-2023": {
+          "overlap_sessions": 319,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-WLTW-AON-2020": {
+          "overlap_sessions": 349,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-HUM-AET-2015": {
+          "overlap_sessions": 409,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-CI-ANTM-2015": {
+          "overlap_sessions": 456,
+          "exact_matches": 42,
+          "tolerable_matches": 414,
+          "material_conflicts": 0
+        },
+        "DEAL-PACB-ILMN-2018": {
+          "overlap_sessions": 293,
+          "exact_matches": 10,
+          "tolerable_matches": 283,
+          "material_conflicts": 0
+        },
+        "DEAL-FIVN-ZM-2021": {
+          "overlap_sessions": 54,
+          "exact_matches": 3,
+          "tolerable_matches": 51,
+          "material_conflicts": 0
+        },
+        "DEAL-GNW-OCEANWIDE-2016": {
+          "overlap_sessions": 1120,
+          "exact_matches": 49,
+          "tolerable_matches": 1071,
+          "material_conflicts": 0
+        },
+        "DEAL-LSCC-CANYONBRIDGE-2016": {
+          "overlap_sessions": 216,
+          "exact_matches": 13,
+          "tolerable_matches": 203,
+          "material_conflicts": 0
+        }
+      },
+      "note": "Side-ledger and pre-evidence per-deal counts from the live acquisition. Scientific meta.reconcile is the sum of per-deal fields after session evidence. This object is not added to those totals."
+    },
+    "overlap_deals_canonically_admitted": 0,
+    "overlap_deals_identity_deferred": 11,
+    "admitted_deals_with_secondary_overlap": 0
   },
   "deals": [
     {
@@ -82,7 +164,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 0,
+      "tolerable_matches": 8,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ESI-SOLS-2026",
@@ -115,7 +201,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 2,
+      "tolerable_matches": 37,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-EA-PIFSLAFF-2025",
@@ -148,7 +238,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_NAME_MISMATCH",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 0,
+      "tolerable_matches": 0,
+      "row_migration": "zero_overlap_classifications_are_identically_zero",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SSTK-GETY-2025",
@@ -181,7 +275,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 12,
+      "tolerable_matches": 363,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-JNPR-HPE-2024",
@@ -214,7 +312,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 0,
+      "tolerable_matches": 0,
+      "row_migration": "zero_overlap_classifications_are_identically_zero",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-HCP-IBM-2024",
@@ -247,7 +349,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 0,
+      "tolerable_matches": 0,
+      "row_migration": "zero_overlap_classifications_are_identically_zero",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CPRI-TPR-2023",
@@ -280,7 +386,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 21,
+      "tolerable_matches": 298,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-WLTW-AON-2020",
@@ -313,7 +423,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 32,
+      "tolerable_matches": 317,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-RHT-IBM-2018",
@@ -346,7 +460,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 0,
+      "tolerable_matches": 0,
+      "row_migration": "zero_overlap_classifications_are_identically_zero",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-LNKD-MSFT-2016",
@@ -379,7 +497,11 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2,
+      "exact_matches": 0,
+      "tolerable_matches": 0,
+      "row_migration": "zero_overlap_classifications_are_identically_zero"
     },
     {
       "deal_id": "DEAL-ODP-SPLS-2015",
@@ -410,7 +532,11 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "TIINGO_IDENTITY_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 0,
+      "tolerable_matches": 0,
+      "row_migration": "zero_overlap_classifications_are_identically_zero",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-HUM-AET-2015",
@@ -443,7 +569,11 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "exact_matches": 31,
+      "tolerable_matches": 378,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-WFM-AMZN-2017",
@@ -478,7 +608,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_NAME_MISMATCH",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-MON-BAYER-2016",
@@ -511,7 +643,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CI-ANTM-2015",
@@ -546,7 +680,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-BHI-HAL-2014",
@@ -581,7 +717,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ATVI-MSFT-2022",
@@ -616,7 +754,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-TWTR-XHOLDINGS-2022",
@@ -651,7 +790,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-TWC-CMCSA-2014",
@@ -686,7 +827,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-PACB-ILMN-2018",
@@ -721,7 +864,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CERN-ORCL-2021",
@@ -756,7 +901,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-NUAN-MSFT-2021",
@@ -791,7 +937,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-FIVN-ZM-2021",
@@ -826,7 +973,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-MNTV-ZEN-2021",
@@ -861,7 +1010,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ALTR-INTC-2015",
@@ -894,7 +1044,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-APC-OXY-2019",
@@ -927,7 +1079,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ARNA-PFE-2021",
@@ -962,7 +1116,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_NAME_MISMATCH",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-AVLR-VISTA-2022",
@@ -997,7 +1153,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CHNG-UNH-2021",
@@ -1032,7 +1189,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CLDR-KKRCDR-2021",
@@ -1068,7 +1226,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CONE-KKRGIP-2021",
@@ -1103,7 +1262,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-COR-AMT-2021",
@@ -1136,7 +1297,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-COUP-TB-2022",
@@ -1171,7 +1334,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CTXS-PE-2022",
@@ -1206,7 +1370,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CXO-COP-2020",
@@ -1241,7 +1407,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-DRE-PLD-2022",
@@ -1276,7 +1444,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-GNW-OCEANWIDE-2016",
@@ -1311,7 +1481,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-HZNP-AMGN-2022",
@@ -1346,7 +1518,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-IMGN-ABBV-2023",
@@ -1381,7 +1554,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-IRBT-AMZN-2022",
@@ -1416,7 +1590,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-LLTC-ADI-2016",
@@ -1451,7 +1627,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-LSCC-CANYONBRIDGE-2016",
@@ -1486,7 +1663,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "refetched_session_evidence_price_reconcile_v2",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-MDLA-TB-2021",
@@ -1522,7 +1701,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-MRO-COP-2024",
@@ -1557,7 +1737,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-MXIM-ADI-2020",
@@ -1593,7 +1775,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-NLSN-EVERGREEN-2022",
@@ -1628,7 +1811,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-PFPT-TB-2021",
@@ -1664,7 +1848,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-PXD-XOM-2023",
@@ -1699,7 +1884,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-RAD-WBA-2015",
@@ -1732,7 +1918,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-RCII-VINTAGE-2018",
@@ -1765,7 +1953,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-RESI-AMHERST-2020",
@@ -1798,7 +1988,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_NAME_MISMATCH",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-RP-TB-2020",
@@ -1834,7 +2026,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SAIL-TB-2022",
@@ -1867,7 +2060,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SAVE-ULCC-2022",
@@ -1902,7 +2097,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SGEN-PFE-2023",
@@ -1937,7 +2134,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_NAME_MISMATCH",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SPLK-CSCO-2023",
@@ -1972,7 +2171,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-STOR-GIC-2022",
@@ -2007,7 +2208,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SWCH-DIGITALBRIDGE-2022",
@@ -2042,7 +2245,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-WORK-CRM-2020",
@@ -2077,7 +2282,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "TIINGO_IDENTITY_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-XLNX-AMD-2020",
@@ -2113,7 +2320,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-XLRN-MRK-2021",
@@ -2149,7 +2357,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ZEN-ZORO-2022",
@@ -2184,7 +2393,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-VOCUS-GTCR-2014",
@@ -2217,7 +2428,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-COBRA-MONOMO-2014",
@@ -2250,7 +2463,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ANNIE-GENERA-2014",
@@ -2283,7 +2498,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SABA-VECTOR-2015",
@@ -2316,7 +2533,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SUTRON-HACH-2015",
@@ -2349,7 +2568,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SCIQUE-ACCEL-2016",
@@ -2382,7 +2603,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-IMPRIV-THOMA-2016",
@@ -2415,7 +2638,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-MATERI-NEW-2014",
@@ -2448,7 +2673,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-AMERIC-HIGLAS-2014",
@@ -2481,7 +2708,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-BEAM-SUNTOR-2014",
@@ -2514,7 +2743,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CEC-APOLLO-2014",
@@ -2547,7 +2778,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-AMCOL-IMERYS-2014",
@@ -2580,7 +2813,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-COLE-AMERIC-2014",
@@ -2613,7 +2848,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-DFC-LONE-2014",
@@ -2646,7 +2883,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ZYGO-AMETEK-2014",
@@ -2679,7 +2918,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-POKERT-MULTIM-2014",
@@ -2712,7 +2953,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-BARRY-MRGB-2014",
@@ -2745,7 +2988,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-MKTG-AEGIS-2014",
@@ -2778,7 +3023,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "TIINGO_IDENTITY_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-HILLSH-TYSON-2014",
@@ -2811,7 +3058,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-VITACO-KROGER-2014",
@@ -2844,7 +3093,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-LORILL-IMPERI-2014",
@@ -2877,7 +3128,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-REYNOL-IMPERI-2014",
@@ -2910,7 +3163,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SYMMET-TECOST-2014",
@@ -2943,7 +3198,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-INTERM-ROCHE-2014",
@@ -2976,7 +3233,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-BOLT-TELEDY-2014",
@@ -3009,7 +3268,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-TRW-ZFFRIE-2014",
@@ -3044,7 +3305,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_NAME_MISMATCH",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-TAMINC-EASTMA-2014",
@@ -3077,7 +3340,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SIGMA-MERCK-2014",
@@ -3110,7 +3375,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-TIBCO-VISTA-2014",
@@ -3143,7 +3410,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-EINSTE-JAB-2014",
@@ -3176,7 +3445,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CLECO-COMO-2014",
@@ -3209,7 +3480,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-DIGITA-INVEST-2014",
@@ -3242,7 +3515,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-CHYRON-VECTOR-2014",
@@ -3275,7 +3550,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-OPLINK-KOCH-2014",
@@ -3308,7 +3585,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-AVANIR-OTSUKA-2014",
@@ -3341,7 +3620,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-MICROF-FORTRE-2014",
@@ -3374,7 +3655,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-PEERLE-MOBIUS-2014",
@@ -3407,7 +3690,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SILICO-LATTIC-2015",
@@ -3440,7 +3725,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ATHLON-ENCANA-2014",
@@ -3473,7 +3760,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ELECSY-LINDSA-2014",
@@ -3506,7 +3795,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ENTROP-MAXLIN-2015",
@@ -3539,7 +3830,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-E2OPEN-INSIGH-2015",
@@ -3572,7 +3865,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ORBITZ-EXPEDI-2015",
@@ -3605,7 +3900,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SAPIEN-PUBLIC-2014",
@@ -3638,7 +3935,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-RIVERB-PROJEC-2014",
@@ -3671,7 +3970,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ADVENT-SSCTEC-2015",
@@ -3704,7 +4005,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-SALIX-VALEAN-2015",
@@ -3737,7 +4040,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-INFORM-ITALIC-2015",
@@ -3770,7 +4075,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-EXCEL-BLACKS-2015",
@@ -3803,7 +4110,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-DOVER-WEBSTE-2015",
@@ -3836,7 +4145,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-PROCER-FRANCI-2015",
@@ -3869,7 +4180,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-OMNIVI-HUA-2015",
@@ -3902,7 +4215,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-BORDER-PITNEY-2015",
@@ -3935,7 +4250,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-QUALIT-FUNDS-2015",
@@ -3968,7 +4285,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-ANN-ASCENA-2015",
@@ -4003,7 +4322,9 @@
       "raw_provider_covered": true,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-FRISCH-NRD-2015",
@@ -4036,7 +4357,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-OM-APOLLO-2015",
@@ -4069,7 +4392,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_AMBIGUOUS",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-NAUGAT-LIBERT-2015",
@@ -4102,7 +4427,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-INTEGR-UPHILL-2015",
@@ -4135,7 +4462,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-COAST-LKQ-2015",
@@ -4168,7 +4497,9 @@
       "raw_provider_covered": false,
       "canonical_status": "DEFERRED_IDENTITY",
       "identity_deferral": "OPENFIGI_NAME_MISMATCH",
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-REMY-BORGWA-2015",
@@ -4203,7 +4534,8 @@
       "raw_provider_covered": true,
       "canonical_status": "CANONICALLY_ADMITTED",
       "identity_deferral": null,
-      "prints_admitted": true
+      "prints_admitted": true,
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-STJUDE-SJM-2015",
@@ -4236,7 +4568,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-TECUMS-MUELLE-2015",
@@ -4269,7 +4603,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-STEINE-CATTER-2015",
@@ -4302,7 +4638,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-BLYTH-CARLYL-2015",
@@ -4335,7 +4673,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-STRATE-BLACKS-2015",
@@ -4368,7 +4708,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     },
     {
       "deal_id": "DEAL-BIOMED-BLACKS-2015",
@@ -4401,7 +4743,9 @@
       "raw_provider_covered": false,
       "canonical_status": "NO_PRICE_HISTORY",
       "identity_deferral": null,
-      "prints_admitted": false
+      "prints_admitted": false,
+      "row_migration": "stamped_row_schema_version_from_complete_fields",
+      "row_schema_version": 2
     }
   ]
 }

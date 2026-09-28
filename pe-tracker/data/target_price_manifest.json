@@ -39,18 +39,100 @@
       "OPENFIGI_NO_MATCH": 66,
       "TIINGO_COVERED": 7
     },
-    "reconcile_pre_retry": {
-      "overlap_sessions": 1499,
-      "exact": 98,
-      "tolerable": 1401,
-      "conflict": 0
-    },
     "reconcile": {
       "overlap_sessions": 3638,
       "exact": 215,
-      "tolerable": 3423
+      "tolerable": 3423,
+      "conflict": 0
     },
-    "tiingo_hourly_limited_remaining": 0
+    "RUN_COMPLETE": "YES",
+    "tiingo_hourly_limited_remaining": 0,
+    "historical_debug": {
+      "label": "NOT_INCLUDED_IN_SCIENTIFIC_RECONCILE_TOTALS",
+      "reconcile_pre_retry": {
+        "overlap_sessions": 1499,
+        "exact": 98,
+        "tolerable": 1401,
+        "conflict": 0
+      },
+      "prior_headline_reconcile": {
+        "overlap_sessions": 3638,
+        "exact": 215,
+        "tolerable": 3423
+      },
+      "per_deal_counts_before_session_evidence": {
+        "DEAL-CRNX-VRTX-2026": {
+          "overlap_sessions": 8,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-ESI-SOLS-2026": {
+          "overlap_sessions": 39,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-SSTK-GETY-2025": {
+          "overlap_sessions": 375,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-CPRI-TPR-2023": {
+          "overlap_sessions": 319,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-WLTW-AON-2020": {
+          "overlap_sessions": 349,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-HUM-AET-2015": {
+          "overlap_sessions": 409,
+          "exact_matches": null,
+          "tolerable_matches": null,
+          "material_conflicts": 0
+        },
+        "DEAL-CI-ANTM-2015": {
+          "overlap_sessions": 456,
+          "exact_matches": 42,
+          "tolerable_matches": 414,
+          "material_conflicts": 0
+        },
+        "DEAL-PACB-ILMN-2018": {
+          "overlap_sessions": 293,
+          "exact_matches": 10,
+          "tolerable_matches": 283,
+          "material_conflicts": 0
+        },
+        "DEAL-FIVN-ZM-2021": {
+          "overlap_sessions": 54,
+          "exact_matches": 3,
+          "tolerable_matches": 51,
+          "material_conflicts": 0
+        },
+        "DEAL-GNW-OCEANWIDE-2016": {
+          "overlap_sessions": 1120,
+          "exact_matches": 49,
+          "tolerable_matches": 1071,
+          "material_conflicts": 0
+        },
+        "DEAL-LSCC-CANYONBRIDGE-2016": {
+          "overlap_sessions": 216,
+          "exact_matches": 13,
+          "tolerable_matches": 203,
+          "material_conflicts": 0
+        }
+      },
+      "note": "Side-ledger and pre-evidence per-deal counts from the live acquisition. Scientific meta.reconcile is the sum of per-deal fields after session evidence. This object is not added to those totals."
+    },
+    "overlap_deals_canonically_admitted": 0,
+    "overlap_deals_identity_deferred": 11,
+    "admitted_deals_with_secondary_overlap": 0
   },
   "prints": [
     {

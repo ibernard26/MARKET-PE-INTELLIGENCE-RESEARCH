@@ -188,18 +188,28 @@ def test_censored_never_negative(rt, ts, y):
 def test_same_deal_never_crosses_split():
     deals = [
         {"deal_id": "A", "announcement_timestamp": "2020-03-01",
-         "resolution_timestamp": "2020-09-01", "label": 0},
+         "resolution_timestamp": "2020-09-01", "label": 0,
+         "label_known_at": "2020-09-02T16:00:00"},
         {"deal_id": "B", "announcement_timestamp": "2020-11-01",
-         "resolution_timestamp": "2021-06-01", "label": 1},   # open at 2021-01-01
+         "resolution_timestamp": "2021-06-01", "label": 1,     # open at 2021-01-01
+         "label_known_at": "2021-06-02"},
         {"deal_id": "C", "announcement_timestamp": "2021-02-01",
-         "resolution_timestamp": "2021-05-01", "label": 0},
+         "resolution_timestamp": "2021-05-01", "label": 0,
+         "label_known_at": "2021-05-02"},
         {"deal_id": "P", "announcement_timestamp": "2021-03-01",
          "resolution_timestamp": None, "label": None},        # pending
+        {"deal_id": "L", "announcement_timestamp": "2020-04-01",
+         "resolution_timestamp": "2020-08-01", "label": 1,
+         "label_known_at": "2021-01-01"},                     # known on the cutoff
+        {"deal_id": "M", "announcement_timestamp": "2020-01-15",
+         "resolution_timestamp": "2020-06-01", "label": 0},   # no label_known_at
     ]
     folds = walk_forward(deals, annual_cutoffs(2021, 2022))
     f = folds[0]
     assert f["train"] == ["A"] and f["test"] == ["C", "P"]
     assert "B" not in f["train"] + f["test"]                  # censored at cutoff
+    assert "L" not in f["train"] + f["test"]                  # label_known_at not < cutoff
+    assert "M" not in f["train"] + f["test"]                  # missing label_known_at
     with pytest.raises(SplitLeakError):
         assert_disjoint({"cutoff": "x", "train": ["A"], "test": ["A"]})
 

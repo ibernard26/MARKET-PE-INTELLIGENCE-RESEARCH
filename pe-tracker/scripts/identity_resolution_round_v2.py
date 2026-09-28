@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Outcome-blind identity resolution round v2 for DEFERRED_IDENTITY deals.
+"""Label-blind/outcome-type-blind identity resolution round v2.
 
-Ordering rule (pre-declared): deal_id ascending. The review queue exposes only
-identity/timing fields (deal_id, target, target_cik, ticker, announcement and
-resolution dates). Outcome labels are never loaded, so they cannot influence
-order, effort or status.
+Ordering rule (pre-declared): deal_id ascending. The review queue exposes
+identity/timing fields, including resolution_date (the evidence window).
+Outcome type and y are never loaded, so they cannot influence order, effort
+or status. This round is label-blind/outcome-type-blind, not outcome-blind:
+the resolution date is still available.
 
 Steps (each writes data/identity_resolution_round_v2.json):
 
@@ -168,7 +169,9 @@ def summarize(results: list[dict]) -> dict:
 
 def write(results: list[dict], step: str, out: Path = OUT) -> dict:
     doc = {"schema_version": 1, "round": "identity_resolution_round_v2",
-           "ordering_rule": ORDERING_RULE, "outcome_blind": True, "step": step,
+           "ordering_rule": ORDERING_RULE,
+           "selection_blinding": "label-blind/outcome-type-blind",
+           "resolution_date_available": True, "step": step,
            "allowed_forms": list(ALLOWED_FORMS),
            "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
            "summary": summarize(results), "deals": results}

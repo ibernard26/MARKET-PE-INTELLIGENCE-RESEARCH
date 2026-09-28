@@ -1,11 +1,13 @@
 """Deal-grouped expanding walk-forward splits for spread_stress_v2.
 
-At cutoff c:
-  train = deals whose label is known strictly before c (resolved < c, not censored)
+At cutoff c, consistent with the frozen PIT policy ("label known, resolution < cutoff"):
+  train = deals with a known label, resolution < c, AND label_known_at < c
   test  = deals announced in [c, next cutoff)
-A deal announced before c but unresolved at c is in neither (censored at c —
-never a negative). Grouping is by deal_id, so every snapshot of a deal lands
-on exactly one side; `assert_disjoint` enforces it.
+A resolution date before c is not enough. Training requires label_known_at
+strictly before c; a missing stamp, or one on/after c, stays out of train.
+A deal announced before c whose label is not yet known at c is in neither
+(censored at c — never a negative). Grouping is by deal_id, so every snapshot
+of a deal lands on exactly one side; `assert_disjoint` enforces it.
 """
 from __future__ import annotations
 
@@ -28,7 +30,13 @@ def fold(deals: list[dict], cutoff: date, next_cutoff: date) -> dict:
     train, test = [], []
     for d in deals:
         ann, res = _d(d["announcement_timestamp"]), _d(d.get("resolution_timestamp"))
-        if d.get("label") is not None and res is not None and res < cutoff:
+        known = _d(d.get("label_known_at"))
+        label_known_before_cutoff = (
+            d.get("label") is not None
+            and res is not None and res < cutoff
+            and known is not None and known < cutoff
+        )
+        if label_known_before_cutoff:
             train.append(d["deal_id"])
         elif ann is not None and cutoff <= ann < next_cutoff:
             test.append(d["deal_id"])

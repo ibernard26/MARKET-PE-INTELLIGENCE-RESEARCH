@@ -1,0 +1,229 @@
+{
+  "rule": "identity_admission_v2 (PROPOSED)",
+  "deals": [
+    {
+      "deal_id": "DEAL-ADVENT-SSCTEC-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-ALTR-INTC-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-ANN-ASCENA-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-APC-OXY-2019",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-ARNA-PFE-2021",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-BEAM-SUNTOR-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-BHI-HAL-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-BOLT-TELEDY-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-CEC-APOLLO-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-CI-ANTM-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-COAST-LKQ-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-COLE-AMERIC-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-CONE-KKRGIP-2021",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-COR-AMT-2021",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-CPRI-TPR-2023",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-CRNX-VRTX-2026",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-CTXS-PE-2022",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-CXO-COP-2020",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-DFC-LONE-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-DRE-PLD-2022",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-EA-PIFSLAFF-2025",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-ESI-SOLS-2026",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-FIVN-ZM-2021",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-GNW-OCEANWIDE-2016",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-HCP-IBM-2024",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-HUM-AET-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-IRBT-AMZN-2022",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-JNPR-HPE-2024",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-LSCC-CANYONBRIDGE-2016",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-MKTG-AEGIS-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-MON-BAYER-2016",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-MRO-COP-2024",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-ODP-SPLS-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-OM-APOLLO-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-PACB-ILMN-2018",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-RAD-WBA-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-RCII-VINTAGE-2018",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-RESI-AMHERST-2020",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-RHT-IBM-2018",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-SABA-VECTOR-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-SAIL-TB-2022",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-SALIX-VALEAN-2015",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-SAVE-ULCC-2022",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-SGEN-PFE-2023",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-SIGMA-MERCK-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-SPLK-CSCO-2023",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-SSTK-GETY-2025",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-STOR-GIC-2022",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-SWCH-DIGITALBRIDGE-2022",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-TRW-ZFFRIE-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-TWC-CMCSA-2014",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-TWTR-XHOLDINGS-2022",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-WFM-AMZN-2017",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-WLTW-AON-2020",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-WORK-CRM-2020",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    },
+    {
+      "deal_id": "DEAL-ZEN-ZORO-2022",
+      "openfigi_v2": "NO_CACHED_RESPONSE"
+    }
+  ]
+}

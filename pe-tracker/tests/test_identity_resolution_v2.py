@@ -119,17 +119,24 @@ def test_fetch_and_classify_with_fake_sec(tmp_path):
     assert R.summarize(out)["RESOLVED_PROOF_C"] == 1
 
 
-def test_committed_round_is_plan_only_and_ordered():
+def test_committed_round_is_fetched_and_not_admitted():
     doc = json.loads((ROOT / "data" / "identity_resolution_round_v2.json").read_text())
     assert doc["selection_blinding"] == "label-blind/outcome-type-blind"
     assert doc["resolution_date_available"] is True
     assert "outcome_blind" not in doc
     assert doc["ordering_rule"] == "deal_id ascending"
+    assert doc["step"] == "fetch_and_classify"
+    summary = doc["summary"]
+    assert summary["queue_size"] == 56 and summary["reviewed"] == 56
+    assert summary["not_reviewed"] == 0
+    assert summary["RESOLVED_PROOF_C"] + summary["STILL_AMBIGUOUS"] + summary["NO_SUFFICIENT_EVIDENCE"] == 56
     ids = [d["deal_id"] for d in doc["deals"]]
-    assert ids == sorted(ids) and doc["summary"]["queue_size"] == 56
-    assert doc["summary"]["reviewed"] == 0 and doc["step"] == "plan"
+    assert ids == sorted(ids)
     for d in doc["deals"]:
         assert "resolution_type" not in d and "label" not in d
+        assert "resolution_date" in d
+    from src.ingest.security_identity.admission_v2 import RULE_STATUS
+    assert RULE_STATUS == "PROPOSED_PENDING_AUDIT"
 
 
 # --------------------------------------------------- identity_admission_v2

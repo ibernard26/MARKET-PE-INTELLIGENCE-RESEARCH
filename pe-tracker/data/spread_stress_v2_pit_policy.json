@@ -1,0 +1,194 @@
+{
+  "schema_version": 2,
+  "spec_version": "spread_stress_v2_frozen_1",
+  "V2_SPEC_STATUS": "frozen",
+  "PIT_POLICY_STATUS": "frozen",
+  "execution_authorized": false,
+  "model_id": "spread_stress",
+  "model_version": "spread_stress_v2",
+  "feature_schema_version": "fs_spread_stress_v2",
+  "does_not_modify": [
+    "first_walkforward_v1",
+    "EVENT_RULES",
+    "fs_v1",
+    "break_logit_v1",
+    "spread_stress_v1",
+    "price_reconcile_v2"
+  ],
+  "MIN_SAMPLE_N": 20,
+  "MIN_CLASS_N": 2,
+  "MODEL_HYPERPARAMETERS": {
+    "penalty": "l2",
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 1000,
+    "class_weight": null,
+    "standardize": true,
+    "impute": "train_median+missing_indicator"
+  },
+  "CALIBRATION_METHOD": "none",
+  "BASELINES": [
+    "constant_train_prevalence",
+    "pct_spread_only_logit"
+  ],
+  "threshold_selection": {
+    "rule": "train_only_cost_min",
+    "COST_FP": 1.0,
+    "COST_FN": 15.0,
+    "COST_RATIO_GRID": [
+      5,
+      10,
+      15,
+      20
+    ],
+    "source": "training predictions only; frozen before out-of-time scoring"
+  },
+  "VOL_WINDOW_DEFAULT": 10,
+  "VOL_MIN_DELTAS": 3,
+  "base_features": [
+    {
+      "name": "pct_spread",
+      "economic_rationale": "Gross merger-arb spread remaining in the market.",
+      "pit_definition": "(offer-known-at-feature-time - raw target close) / raw target close. Both offer valid_time/known_at and price observation/known_at must be <= feature_time."
+    },
+    {
+      "name": "delta_spread",
+      "economic_rationale": "Stress as widening or tightening of the merger-arb spread.",
+      "pit_definition": "First difference of PIT pct_spread using only observations knowable by feature_time."
+    },
+    {
+      "name": "spread_vol",
+      "economic_rationale": "Realized instability of the spread path before the frozen snapshot.",
+      "pit_definition": "Sample stdev of up to the last 10 non-null PIT delta_spread values; requires at least 3, otherwise missing."
+    },
+    {
+      "name": "n_delta_obs",
+      "economic_rationale": "Transparency measure for how much realized spread path is available.",
+      "pit_definition": "Count of non-null delta_spread observations knowable by feature_time."
+    }
+  ],
+  "feature_time_policy_candidates": [
+    {
+      "policy_id": "ann_tplus_5_session",
+      "family": "fixed_trading_day_offset",
+      "offset_sessions": 5,
+      "snapshots_per_deal": 1,
+      "uses_resolution_to_choose_feature_date": false
+    },
+    {
+      "policy_id": "ann_tplus_10_session",
+      "family": "fixed_trading_day_offset",
+      "offset_sessions": 10,
+      "snapshots_per_deal": 1,
+      "uses_resolution_to_choose_feature_date": false,
+      "rationale": "Ten PIT-safe XNYS sessions after announcement balances early stress capture with enough path history. VOL_WINDOW_DEFAULT=10 is a maximum delta window, not a requirement for 10 deltas: ten closes can produce at most nine post-announcement deltas. spread_vol uses up to the last 10 non-null deltas and requires at least 3. Short deals are censored at T+10; their feature date is never pulled toward resolution."
+    },
+    {
+      "policy_id": "ann_tplus_20_session",
+      "family": "fixed_trading_day_offset",
+      "offset_sessions": 20,
+      "snapshots_per_deal": 1,
+      "uses_resolution_to_choose_feature_date": false
+    },
+    {
+      "policy_id": "weekly_grid_5_60",
+      "family": "weekly_grid",
+      "offset_sessions": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        60
+      ],
+      "snapshots_per_deal": "variable",
+      "uses_resolution_to_choose_feature_date": false,
+      "weighting": "deal_equal_snapshot_weight"
+    },
+    {
+      "policy_id": "calendar_7_14_30",
+      "family": "calendar_offset",
+      "offset_days": [
+        7,
+        14,
+        30
+      ],
+      "snapshots_per_deal": "variable",
+      "uses_resolution_to_choose_feature_date": false,
+      "weighting": "deal_equal_snapshot_weight"
+    },
+    {
+      "policy_id": "active_deal_weekly_panel",
+      "family": "multi_snapshot_active_deal_panel",
+      "offset_sessions": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        60
+      ],
+      "snapshots_per_deal": "variable",
+      "uses_resolution_to_choose_feature_date": false,
+      "split": "grouped_chronological_by_announcement",
+      "weighting": "deal_equal_snapshot_weight"
+    }
+  ],
+  "frozen_policy_id": "ann_tplus_10_session",
+  "frozen_policy": {
+    "policy_id": "ann_tplus_10_session",
+    "family": "fixed_trading_day_offset",
+    "offset_sessions": 10,
+    "snapshots_per_deal": 1,
+    "uses_resolution_to_choose_feature_date": false,
+    "rationale": "Ten PIT-safe XNYS sessions after announcement balances early stress capture with enough path history. VOL_WINDOW_DEFAULT=10 is a maximum delta window, not a requirement for 10 deltas: ten closes can produce at most nine post-announcement deltas. spread_vol uses up to the last 10 non-null deltas and requires at least 3. Short deals are censored at T+10; their feature date is never pulled toward resolution."
+  },
+  "date_only_announcement_rule": "DATE_ONLY announcement-day close is never a v2 feature print.",
+  "intraday_announcement_rule": "Intraday announcements require an explicit UTC offset and are compared with the actual XNYS close, including early closes.",
+  "session_calendar": "XNYS_exchange_calendars",
+  "calendar_bounds": {
+    "start": "2010-01-01",
+    "end": "2031-12-31"
+  },
+  "active_at_feature_time": "Feature dates are generated first. Resolution known_at can only censor the frozen snapshot. Same-day DATE_ONLY or naive known_at is ORDERING_AMBIGUOUS and censored.",
+  "resolution_feature_date_rule": "Resolution timestamp and resolution known_at are forbidden inputs to feature-date generation.",
+  "validation": {
+    "split_rule_id": "grouped_chronological_60_40_by_announcement",
+    "train_fraction": 0.6,
+    "ordering": "announcement timestamp then deal_id",
+    "grouping": "all rows for one deal stay on one side",
+    "test_labels": "never used to fit preprocessing, coefficients, or threshold",
+    "minimum gates": "MIN_SAMPLE_N and MIN_CLASS_N are rechecked after T+10 censoring"
+  },
+  "weighting_rule_id": "deal_equal_snapshot_weight",
+  "freeze_blockers": [],
+  "execution_blockers": [
+    "V2_PANEL_COHORT_FREEZE_REQUIRED",
+    "V2_MODEL_IMPLEMENTATION_REQUIRED",
+    "EXPLICIT_EXECUTION_AUTHORIZATION_REQUIRED"
+  ],
+  "execution": {
+    "authorized": false,
+    "V2_SPEC_STATUS": "frozen",
+    "SPEC_VERSION": "spread_stress_v2_frozen_1",
+    "reason": "methodology frozen; execution requires panel/cohort freeze, v2 implementation, and explicit authorization",
+    "MODEL_FIT_EXECUTED": "NO",
+    "WALK_FORWARD_EXECUTED": "NO",
+    "CALIBRATION_EXECUTED": "NO",
+    "BACKTEST_EXECUTED": "NO",
+    "MIN_SAMPLE_N": 20,
+    "MIN_CLASS_N": 2,
+    "frozen_policy_id": "ann_tplus_10_session",
+    "SESSION_CALENDAR": "XNYS_exchange_calendars",
+    "freeze_blockers": [],
+    "execution_blockers": [
+      "V2_PANEL_COHORT_FREEZE_REQUIRED",
+      "V2_MODEL_IMPLEMENTATION_REQUIRED",
+      "EXPLICIT_EXECUTION_AUTHORIZATION_REQUIRED"
+    ]
+  }
+}

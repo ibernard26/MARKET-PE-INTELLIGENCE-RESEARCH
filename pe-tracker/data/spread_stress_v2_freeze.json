@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "freeze_id": "spread_stress_v2_frozen_1",
+  "baseline_main_sha": "a94b525219031b23eecf65ba404ea40550ec3201",
+  "canonical_n": 129,
+  "canonically_admitted": 59,
+  "admitted_closed": 45,
+  "admitted_break_like": 14,
+  "total_real_price_prints": 10759,
+  "raw_provider_covered": 62,
+  "new_proof_c": 52,
+  "cor_amt_disposition": "DEFERRED_IDENTITY:YAHOO_TICKER_REUSE_UNVALIDATED",
+  "wltw_disposition": "NO_PRICE_HISTORY",
+  "wltw_historical_reconciliation_sessions": 349,
+  "coverage_bias": {
+    "closed": "45/109 (41.3%)",
+    "break_like": "14/20 (70.0%)",
+    "note": "descriptive only; cohort is not rebalanced"
+  },
+  "frozen_policy_id": "ann_tplus_10_session",
+  "session_calendar": "XNYS_exchange_calendars",
+  "intraday_timezone": "America/New_York",
+  "freeze_blockers": [],
+  "execution_blockers": [
+    "V2_PANEL_COHORT_FREEZE_REQUIRED",
+    "V2_MODEL_IMPLEMENTATION_REQUIRED",
+    "EXPLICIT_EXECUTION_AUTHORIZATION_REQUIRED"
+  ],
+  "execution_authorized": false,
+  "model_fit_executed": "NO",
+  "walk_forward_executed": "NO",
+  "calibration_executed": "NO",
+  "backtest_executed": "NO"
+}

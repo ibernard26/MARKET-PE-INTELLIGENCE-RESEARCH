@@ -71,15 +71,166 @@ DEFER_IDENTITY_UNCONFIRMED = "DEFER_IDENTITY_UNCONFIRMED"
 HOURLY_TIINGO_DEALS = 18
 HOURLY_RESET_BUFFER_S = 120
 
+# Cached coverage rows are reusable only at this schema. A row from an older
+# pass that lacks the current fields is not a price outcome and is not reused.
+ROW_SCHEMA_VERSION = 2
+REQUIRED_ROW_FIELDS = (
+    "exact_matches",
+    "tolerable_matches",
+    "material_conflicts",
+    "canonical_status",
+    "identity_proofs",
+    "reconcile_rule",
+    "tiingo_identity_verified",
+)
+MAX_HOURLY_429_WAITS = 3
+MAX_NON429_TRANSIENT_ATTEMPTS = 3
+INFRA_STATUSES = frozenset({
+    "TRANSIENT_FAILURE", "PROVIDER_ERROR", "CREDENTIALS_REQUIRED",
+})
+UNRESOLVED_INFRASTRUCTURE = "UNRESOLVED_INFRASTRUCTURE"
+INCOMPLETE_COVERAGE = ROOT / "data" / "free_price_coverage_incomplete.json"
+
+
+def _trace_is_http_429(trace: dict) -> bool:
+    if not isinstance(trace, dict):
+        return False
+    if trace.get("http_status") == 429:
+        return True
+    return "429" in str(trace.get("error") or "")
+
 
 def tiingo_hourly_limited(res: dict) -> bool:
-    """True when Tiingo returned the hourly-allocation 429, not a price outcome."""
+    """True only for explicit HTTP 429 evidence on a Tiingo transient failure.
+
+    An empty TRANSIENT_FAILURE trace is not a 429. A 500/599/network failure
+    is not hourly-cap behavior.
+    """
     if res.get("status") != "TRANSIENT_FAILURE":
         return False
     traces = res.get("provider_trace") or []
-    if not traces:
-        return True
-    return any("429" in str(t.get("error") or "") for t in traces)
+    return any(_trace_is_http_429(t) for t in traces)
+
+
+def plan_tiingo_retry(res: dict, prior_attempts: int) -> str:
+    """Return accept, hourly_wait, bounded_retry, or unresolved.
+
+    Explicit 429 gets a bounded number of hourly waits. Any other transient
+    failure gets a bounded short retry. Neither result is NO_PRICE_HISTORY.
+    """
+    if res.get("status") != "TRANSIENT_FAILURE":
+        return "accept"
+    if tiingo_hourly_limited(res):
+        if prior_attempts >= MAX_HOURLY_429_WAITS:
+            return "unresolved"
+        return "hourly_wait"
+    if prior_attempts >= MAX_NON429_TRANSIENT_ATTEMPTS:
+        return "unresolved"
+    return "bounded_retry"
+
+
+def unresolved_infrastructure(row: dict) -> bool:
+    """Provider/network failure with no prints is not a price outcome."""
+    if (row.get("tiingo_n") or 0) > 0 or (row.get("yahoo_n") or 0) > 0:
+        return False
+    return any(row.get(f"{side}_status") in INFRA_STATUSES for side in ("tiingo", "yahoo"))
+
+
+def row_cache_reusable(cached: dict) -> bool:
+    """Reuse a cached row only when every current-schema field is present."""
+    if not cached or cached.get("row_schema_version") != ROW_SCHEMA_VERSION:
+        return False
+    if cached.get("tiingo_status") == "TRANSIENT_FAILURE":
+        return False
+    if cached.get("yahoo_status") == "TRANSIENT_FAILURE":
+        return False
+    if unresolved_infrastructure(cached):
+        return False
+    for field in REQUIRED_ROW_FIELDS:
+        if field not in cached or cached[field] is None:
+            return False
+    overlap = int(cached.get("overlap_sessions") or 0)
+    parts = (int(cached["exact_matches"]) + int(cached["tolerable_matches"])
+             + int(cached["material_conflicts"]))
+    return overlap == parts
+
+
+class CacheMigrationError(ValueError):
+    """Raised when a stale row cannot be migrated from auditable evidence."""
+
+
+def migrate_cached_row(cached: dict) -> dict:
+    """Stamp ROW_SCHEMA_VERSION without inventing overlap classifications.
+
+    A zero-overlap row is migrated by setting exact and tolerable to 0: there
+    are no sessions to classify. A positive overlap that lacks those fields
+    must be recomputed from session-level raw closes.
+    """
+    if row_cache_reusable(cached):
+        return dict(cached)
+    if (cached.get("tiingo_status") == "TRANSIENT_FAILURE"
+            or unresolved_infrastructure(cached)):
+        raise CacheMigrationError("infrastructure rows are not migrated as price outcomes")
+    out = dict(cached)
+    overlap = int(out.get("overlap_sessions") or 0)
+    if "exact_matches" not in out or "tolerable_matches" not in out:
+        if overlap != 0:
+            raise CacheMigrationError(
+                "positive overlap is missing classifications; refetch session evidence")
+        out["exact_matches"] = 0
+        out["tolerable_matches"] = 0
+        out["material_conflicts"] = int(out.get("material_conflicts") or 0)
+        out["row_migration"] = "zero_overlap_classifications_are_identically_zero"
+    else:
+        out["row_migration"] = "stamped_row_schema_version_from_complete_fields"
+    for field in REQUIRED_ROW_FIELDS:
+        if field not in out or out[field] is None:
+            raise CacheMigrationError(f"missing {field}")
+    parts = (int(out["exact_matches"]) + int(out["tolerable_matches"])
+             + int(out["material_conflicts"]))
+    if overlap != parts:
+        raise CacheMigrationError(
+            f"overlap {overlap} != exact+tolerable+conflict {parts}")
+    out["row_schema_version"] = ROW_SCHEMA_VERSION
+    if not row_cache_reusable(out):
+        raise CacheMigrationError("migration did not produce a reusable row")
+    return out
+
+
+def reconcile_totals_from_rows(rows: list) -> dict:
+    """Scientific reconciliation totals from per-deal fields only.
+
+    reconcile_pre_retry is not an input.
+    """
+    overlap = exact = tolerable = conflict = 0
+    for row in rows:
+        overlap += int(row.get("overlap_sessions") or 0)
+        exact += int(row["exact_matches"])
+        tolerable += int(row["tolerable_matches"])
+        conflict += int(row["material_conflicts"])
+    if overlap != exact + tolerable + conflict:
+        raise ValueError(
+            "reconcile invariant failed: "
+            f"overlap={overlap} exact+tolerable+conflict="
+            f"{exact + tolerable + conflict}")
+    return {
+        "overlap_sessions": overlap,
+        "exact": exact,
+        "tolerable": tolerable,
+        "conflict": conflict,
+    }
+
+
+def run_is_complete(rows: list) -> bool:
+    """A scientific coverage matrix requires every deal to have a real status."""
+    for row in rows:
+        if unresolved_infrastructure(row):
+            return False
+        if row.get("identity_deferral") == UNRESOLVED_INFRASTRUCTURE:
+            return False
+        if row.get("canonical_status") is None:
+            return False
+    return True
 
 
 def seconds_until_hourly_reset(now: float, buffer_s: int = HOURLY_RESET_BUFFER_S) -> float:
@@ -108,9 +259,16 @@ def identity_veto(row: dict) -> Optional[str]:
     return None
 
 
-def canonical_status(row: dict) -> tuple[str, Optional[str]]:
-    """(status, identity_deferral_reason). Fixed order: veto → conflict →
-    no raw history → no affirmative proof → print count."""
+def canonical_status(row: dict) -> tuple[Optional[str], Optional[str]]:
+    """(status, identity_deferral_reason). Fixed order: infrastructure →
+    veto → conflict → no raw history → no affirmative proof → print count.
+
+    Unresolved provider/network failures return (None, UNRESOLVED_INFRASTRUCTURE).
+    That is not a sixth canonical deal status and is not NO_PRICE_HISTORY.
+    A run that still has one does not publish a scientific coverage matrix.
+    """
+    if unresolved_infrastructure(row):
+        return None, UNRESOLVED_INFRASTRUCTURE
     veto = identity_veto(row)
     if veto:
         return DEFERRED_IDENTITY, veto
@@ -190,33 +348,36 @@ def main() -> int:
         providers=[yahoo], resolver=ticker_resolver, pad_days=PAD_DAYS)
 
     prior_rows = {}
-    reconcile_baseline = Counter()
     conflict_samples = []
+    historical_debug = None
     if OUT_MATRIX.exists():
         old_doc = json.loads(OUT_MATRIX.read_text())
         prior_rows = {r["deal_id"]: r for r in old_doc.get("deals") or []}
         old_meta = old_doc.get("meta") or {}
-        reconcile_baseline = Counter(
-            old_meta.get("reconcile_pre_retry") or old_meta.get("reconcile") or {})
         conflict_samples = list(old_doc.get("conflict_samples") or [])
+        # Side-ledger totals are historical/debug only. They are never added
+        # to the scientific reconcile totals.
+        if old_meta.get("historical_debug"):
+            historical_debug = old_meta["historical_debug"]
+        elif old_meta.get("reconcile_pre_retry"):
+            historical_debug = {
+                "label": "NOT_INCLUDED_IN_SCIENTIFIC_RECONCILE_TOTALS",
+                "reconcile_pre_retry": old_meta.get("reconcile_pre_retry"),
+                "note": (
+                    "Side-ledger retained from an earlier acquisition pass. "
+                    "It is not added to meta.reconcile."
+                ),
+            }
 
     rows = []
     all_obs = []
-    recon_extra = Counter()
-    for cached in prior_rows.values():
-        if "exact_matches" not in cached:
-            continue
-        recon_extra["overlap_sessions"] += cached.get("overlap_sessions") or 0
-        recon_extra["exact"] += cached.get("exact_matches") or 0
-        recon_extra["tolerable"] += cached.get("tolerable_matches") or 0
-        recon_extra["conflict"] += cached.get("material_conflicts") or 0
     deals_this_hour = 0
     hour_started = time.time()
     fetched_now = set()
 
     for d in deals:
         cached = prior_rows.get(d["deal_id"])
-        if cached and cached.get("tiingo_status") != "TRANSIENT_FAILURE":
+        if cached and row_cache_reusable(cached):
             rows.append(cached)
             continue
 
@@ -236,16 +397,35 @@ def main() -> int:
             d, ticker=ident.ticker, exchange=ident.exchange)
         # One Tiingo fetch per deal (metadata + EOD). A second combined fetch
         # would double the hourly allocation without changing admission.
+        attempt_429 = 0
+        attempt_transient = 0
         while True:
             t_res = orch_tiingo.fetch_deal(d)
-            if not tiingo_hourly_limited(t_res):
+            decision = plan_tiingo_retry(
+                t_res, attempt_429 if tiingo_hourly_limited(t_res) else attempt_transient)
+            if decision == "accept":
                 break
-            wait = seconds_until_hourly_reset(time.time())
-            print(f"TIINGO_HTTP_429 {d['deal_id']} sleep {wait:.0f}s",
+            if decision == "hourly_wait":
+                attempt_429 += 1
+                wait = seconds_until_hourly_reset(time.time())
+                print(f"TIINGO_HTTP_429 {d['deal_id']} sleep {wait:.0f}s "
+                      f"attempt {attempt_429}/{MAX_HOURLY_429_WAITS}",
+                      file=sys.stderr, flush=True)
+                time.sleep(wait)
+                deals_this_hour = 0
+                hour_started = time.time()
+                continue
+            if decision == "bounded_retry":
+                attempt_transient += 1
+                backoff = min(2 ** attempt_transient, 8)
+                print(f"TIINGO_TRANSIENT {d['deal_id']} retry {attempt_transient}/"
+                      f"{MAX_NON429_TRANSIENT_ATTEMPTS} sleep {backoff}s",
+                      file=sys.stderr, flush=True)
+                time.sleep(backoff)
+                continue
+            print(f"TIINGO_UNRESOLVED {d['deal_id']} status={t_res.get('status')}",
                   file=sys.stderr, flush=True)
-            time.sleep(wait)
-            deals_this_hour = 0
-            hour_started = time.time()
+            break
         deals_this_hour += 1
         y_res = orch_yahoo.fetch_deal(d)
         if t_res.get("status") == "ok":
@@ -263,10 +443,6 @@ def main() -> int:
             "material_conflict": 0, "tiingo_only": 0, "yahoo_only": 0,
             "conflicts": [], "status": "N/A",
         }
-        recon_extra["overlap_sessions"] += recon.get("n_overlap", 0)
-        recon_extra["exact"] += recon.get("exact_match", 0)
-        recon_extra["tolerable"] += recon.get("tolerable_match", 0)
-        recon_extra["conflict"] += recon.get("material_conflict", 0)
         if recon.get("material_conflict", 0):
             for c in recon.get("conflicts", [])[:3]:
                 conflict_samples.append({"deal_id": d["deal_id"], **c})
@@ -304,6 +480,7 @@ def main() -> int:
         row["raw_provider_covered"] = max(row["tiingo_n"], row["yahoo_n"]) >= MIN_PRINTS
         row["canonical_status"], row["identity_deferral"] = canonical_status(row)
         row["prints_admitted"] = admit_prints(row)
+        row["row_schema_version"] = ROW_SCHEMA_VERSION
         rows.append(row)
         # Canonical observations: combined orchestrator (Tiingo preferred),
         # only for deals that pass the identity + reconciliation admission rule.
@@ -318,9 +495,30 @@ def main() -> int:
             "canonical_status": row["canonical_status"],
         }), flush=True)
 
-    # Prior Tiingo 429 rows contributed no overlapping sessions. Keep that
-    # baseline and add only the paced retries.
-    recon_stats = reconcile_baseline + recon_extra
+    if not run_is_complete(rows):
+        incomplete = {
+            "RUN_COMPLETE": "NO",
+            "reason": (
+                "unresolved infrastructure failure after bounded retry; "
+                "scientific coverage matrix not published"
+            ),
+            "deals": [
+                {"deal_id": r.get("deal_id"),
+                 "tiingo_status": r.get("tiingo_status"),
+                 "yahoo_status": r.get("yahoo_status"),
+                 "identity_deferral": r.get("identity_deferral")}
+                for r in rows
+                if unresolved_infrastructure(r) or r.get("canonical_status") is None
+            ],
+        }
+        INCOMPLETE_COVERAGE.write_text(json.dumps(incomplete, indent=2) + "\n")
+        print("RUN_COMPLETE = NO", file=sys.stderr)
+        print(f"wrote {INCOMPLETE_COVERAGE}", file=sys.stderr)
+        return 4
+
+    # Scientific totals are the per-deal fields. The pre-retry side ledger
+    # is not added.
+    recon_stats = reconcile_totals_from_rows(rows)
 
     refetched_ids = fetched_now
     kept_prints = []
@@ -331,7 +529,9 @@ def main() -> int:
             if p.get("deal_id") not in refetched_ids
         ]
 
-    meta_stub = {"reconcile_pre_retry": dict(reconcile_baseline)}
+    meta_stub = {"RUN_COMPLETE": "YES", "reconcile_rule": THESIS_RECONCILE_RULE}
+    if historical_debug:
+        meta_stub["historical_debug"] = historical_debug
     write_normalized_manifest(all_obs, DEFAULT_MANIFEST, meta=meta_stub)
     manifest = json.loads(DEFAULT_MANIFEST.read_text())
     manifest["prints"] = kept_prints + manifest.get("prints", [])
@@ -374,11 +574,13 @@ def main() -> int:
         "tiingo_identity_verified": sum(
             1 for r in rows if r.get("tiingo_identity_verified")),
         "gap_class_counts": dict(Counter(r["final_coverage_status"] for r in rows)),
-        "reconcile_pre_retry": dict(reconcile_baseline),
         "reconcile": dict(recon_stats),
+        "RUN_COMPLETE": "YES",
         "tiingo_hourly_limited_remaining": sum(
             1 for r in rows if r.get("tiingo_status") == "TRANSIENT_FAILURE"),
     }
+    if historical_debug:
+        meta["historical_debug"] = historical_debug
     doc = {
         "schema_version": 1,
         "_doc": "Free thesis stack coverage matrix (OpenFIGI + Tiingo + Yahoo).",
@@ -408,7 +610,8 @@ def main() -> int:
         return 0
 
     print("HISTORICAL_PRICE_DATA_READY = YES", file=sys.stderr)
-    print("SPREAD_STRESS_READY_FOR_EXECUTION = YES", file=sys.stderr)
+    print("PRICE_COVERAGE_READY = YES", file=sys.stderr)
+    print("SPREAD_STRESS_V1_PANEL_VALID = SEE_DIAGNOSTIC", file=sys.stderr)
     print("THESIS_PRICE_DATA_READY_FOR_REVIEW = YES", file=sys.stderr)
     from scripts.freeze_thesis_price_cohort import main as freeze_main
     freeze_rc = freeze_main()

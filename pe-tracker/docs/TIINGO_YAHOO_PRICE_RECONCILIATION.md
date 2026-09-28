@@ -13,6 +13,18 @@
 | TIINGO_ONLY_COUNT | 44 |
 | YAHOO_ONLY_COUNT | 3 |
 
+## Overlap versus canonical admission
+
+Overlapping Tiingo/Yahoo sessions are not the admitted cohort. A zero material-conflict count is computed only on deals that have both series. It does not independently validate admitted Tiingo series that have no Yahoo overlap.
+
+Per-deal classification fields do not equal `meta.reconcile`. The gap is `meta.reconcile_pre_retry`, a side ledger that is not session-level evidence. It must not be treated as an audited partition.
+
+| Metric | Value |
+|---|---|
+| OVERLAP_DEALS_CANONICALLY_ADMITTED | 0 |
+| OVERLAP_DEALS_IDENTITY_DEFERRED | 11 |
+| ADMITTED_DEALS_WITH_SECONDARY_OVERLAP | 0 |
+
 ## Raw vs canonical coverage (readiness uses CANONICALLY_ADMITTED only)
 
 | Status | Deals |

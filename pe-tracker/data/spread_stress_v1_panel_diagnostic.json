@@ -1,0 +1,43 @@
+{
+  "PRICE_COVERAGE_READY": "YES",
+  "SPREAD_STRESS_V1_PANEL_VALID": "NO",
+  "SPREAD_STRESS_V1_EXECUTED": "NO",
+  "SPREAD_STRESS_V1_MODEL_FIT": "NO",
+  "SPREAD_STRESS_V1_BLOCK_REASON": "FEATURE_TIME_RESOLUTION_TIMESTAMP_COLLISION",
+  "PRE_RESOLUTION_PRINTS_AVAILABLE": 3273,
+  "DEALS_WITH_3PLUS_PRE_RESOLUTION_PRINTS": 21,
+  "PANEL_ROWS_EXCLUDED_FEATURE_NOT_BEFORE_RESOLUTION": 20,
+  "panel_rows_labeled": 1,
+  "panel_n_pos": 0,
+  "panel_n_neg": 1,
+  "insufficient_price_history_exclusions": 0,
+  "note": "PRICE_COVERAGE_READY records the historical-price coverage gate. SPREAD_STRESS_V1_PANEL_VALID records whether the existing v1 feature-time rule produced a usable panel. A feature-time collision with date-only resolution timestamps is not evidence that the dataset lacks longitudinal price history. This diagnostic does not select the last pre-resolution print and does not fit a model.",
+  "admitted_closed": 20,
+  "admitted_break_like": 1,
+  "MIN_CLASS_N": 2,
+  "labeled_deal_ids": [
+    "DEAL-REMY-BORGWA-2015"
+  ],
+  "collision_deal_ids": [
+    "DEAL-ATVI-MSFT-2022",
+    "DEAL-AVLR-VISTA-2022",
+    "DEAL-CERN-ORCL-2021",
+    "DEAL-CHNG-UNH-2021",
+    "DEAL-CLDR-KKRCDR-2021",
+    "DEAL-COUP-TB-2022",
+    "DEAL-HZNP-AMGN-2022",
+    "DEAL-IMGN-ABBV-2023",
+    "DEAL-LLTC-ADI-2016",
+    "DEAL-LNKD-MSFT-2016",
+    "DEAL-MDLA-TB-2021",
+    "DEAL-MNTV-ZEN-2021",
+    "DEAL-MXIM-ADI-2020",
+    "DEAL-NLSN-EVERGREEN-2022",
+    "DEAL-NUAN-MSFT-2021",
+    "DEAL-PFPT-TB-2021",
+    "DEAL-PXD-XOM-2023",
+    "DEAL-RP-TB-2020",
+    "DEAL-XLNX-AMD-2020",
+    "DEAL-XLRN-MRK-2021"
+  ]
+}

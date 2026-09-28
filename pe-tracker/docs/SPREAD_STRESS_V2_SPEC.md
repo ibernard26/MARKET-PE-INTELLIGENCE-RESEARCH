@@ -82,12 +82,16 @@ training-fold median imputation plus missing indicators. Calibration is `none`.
 No hyperparameter search is authorized.
 
 Validation is grouped chronological **60/40 by deal announcement chronology**.
-Intraday announcement chronology is normalized to UTC; DATE_ONLY ties use
-market date then `deal_id`. No clock time is invented for DATE_ONLY events.
-The split uses no label, resolution timestamp, resolution `known_at`, or
-resolution type. Every row for a deal remains on one side. All preprocessing,
-coefficients, and the cost threshold are training-only. The untouched later 40%
-is the out-of-time test population.
+Ordering primary key is America/New_York announcement market date.
+Offset-aware intraday events within a market date are ordered by UTC
+instant. DATE_ONLY announcements have no inferred clock time and are
+ordered by deal_id in a separate deterministic precision bucket
+(INTRADAY before DATE_ONLY on the same market date).
+The precision bucket is a split tie convention, not an assertion of
+actual intraday ordering. The split uses no label, resolution timestamp,
+resolution `known_at`, or resolution type. Every row for a deal remains
+on one side. All preprocessing, coefficients, and the cost threshold are
+training-only. The untouched later 40% is the out-of-time test population.
 
 Threshold selection remains the existing training-only cost policy:
 `COST_FP=1`, `COST_FN=15`, with sensitivity ratios 5/10/15/20. Baselines remain

@@ -12,7 +12,7 @@ feature date; resolution known_at can only censor an already-generated snapshot.
 from __future__ import annotations
 
 from datetime import date, datetime, timedelta, timezone
-from functools import cmp_to_key, lru_cache
+from functools import lru_cache
 from typing import Iterable, Optional
 from zoneinfo import ZoneInfo
 
@@ -44,6 +44,10 @@ CALIBRATION_METHOD = "none"
 MODEL_HYPERPARAMETERS = dict(HYPERPARAMETERS)
 BASELINES = ("constant_train_prevalence", "pct_spread_only_logit")
 THRESHOLD_SELECTION_RULE = "train_only_cost_min"
+INTRADAY_PRECISION_BUCKET = 0
+DATE_ONLY_PRECISION_BUCKET = 1
+# Sort placeholder only; never treated as an inferred announcement clock.
+DATE_ONLY_INSTANT_PLACEHOLDER = datetime.min.replace(tzinfo=timezone.utc)
 
 # Methodology is frozen; these are *execution* blockers, not freeze blockers.
 EXECUTION_BLOCKERS = (
@@ -279,43 +283,41 @@ def grouped_chronological_split(
 
 
 def announcement_order_key(announcement_ts: str, deal_id: str) -> tuple:
-    """Deterministic frozen announcement-order key.
+    """Directly sortable total-order key for the frozen validation split.
 
-    DATE_ONLY uses the literal NYSE market date and `deal_id`; no clock time
-    is invented. INTRADAY requires an explicit UTC offset and is normalized
-    to UTC before comparison. Labels and resolution fields are not inputs.
+    Primary: America/New_York announcement market date (DATE_ONLY literal
+    YYYY-MM-DD; INTRADAY converted to ET then that date). Precision bucket
+    is a split tie convention only: INTRADAY (0) before DATE_ONLY (1) on the
+    same market date — not a claim about actual event order. INTRADAY then
+    orders by UTC instant, then deal_id. DATE_ONLY has no clock time and
+    orders by deal_id only.
     """
+    market_date = announcement_market_date(announcement_ts)
     prec = time_precision(announcement_ts)
     if prec == DATE_ONLY:
-        return (parse_announcement_date(announcement_ts), None, deal_id)
+        return (
+            market_date,
+            DATE_ONLY_PRECISION_BUCKET,
+            DATE_ONLY_INSTANT_PLACEHOLDER,
+            deal_id,
+        )
     ts = parse_announcement_datetime(announcement_ts)
     if ts is None:
         raise ValueError("intraday announcement timestamp requires explicit timezone offset")
-    utc = ts.astimezone(timezone.utc)
-    return (utc.date(), utc, deal_id)
-
-
-def _cmp_announcement_order_keys(a: tuple, b: tuple) -> int:
-    da, ta, ida = a
-    db, tb, idb = b
-    if da != db:
-        return -1 if da < db else 1
-    if ta is not None and tb is not None and ta != tb:
-        return -1 if ta < tb else 1
-    # DATE_ONLY vs DATE_ONLY, equal instants, or mixed DATE_ONLY/INTRADAY on
-    # the same date: do not invent intraday rank; tie-break by deal_id.
-    if ida != idb:
-        return -1 if ida < idb else 1
-    return 0
+    return (
+        market_date,
+        INTRADAY_PRECISION_BUCKET,
+        ts.astimezone(timezone.utc),
+        deal_id,
+    )
 
 
 def chronological_group_split_by_fraction(
         rows: list[dict], train_fraction: float = FROZEN_TRAIN_FRACTION) -> dict:
     """Frozen outcome-blind 60/40 split by deal announcement chronology.
 
-    Unique deals are ordered by announcement_order_key (UTC-normalized
-    INTRADAY, DATE_ONLY market date, then deal_id). All rows for a deal remain
-    on one side. Labels and resolution fields are not inputs.
+    Unique deals are ordered by announcement_order_key. All rows for a deal
+    remain on one side. Labels and resolution fields are not inputs.
     """
     if not 0.0 < train_fraction < 1.0:
         raise ValueError("train_fraction must be between 0 and 1")
@@ -325,9 +327,7 @@ def chronological_group_split_by_fraction(
         prior = ann_by_deal.setdefault(deal_id, ann)
         if prior != ann:
             raise ValueError(f"{deal_id}: inconsistent announcement timestamps")
-    keys = {d: announcement_order_key(ann_by_deal[d], d) for d in ann_by_deal}
-    ordered = sorted(ann_by_deal, key=cmp_to_key(
-        lambda x, y: _cmp_announcement_order_keys(keys[x], keys[y])))
+    ordered = sorted(ann_by_deal, key=lambda d: announcement_order_key(ann_by_deal[d], d))
     if len(ordered) < 2:
         return {"train": list(rows), "test": [], "n_train_deals": len(ordered), "n_test_deals": 0}
     n_train = int(len(ordered) * train_fraction)
@@ -341,7 +341,7 @@ def chronological_group_split_by_fraction(
         "n_train_deals": n_train,
         "n_test_deals": len(ordered) - n_train,
         "train_fraction": train_fraction,
-        "split_basis": "utc_intraday_or_date_only_then_deal_id",
+        "split_basis": "ny_market_date_then_intraday_utc_then_date_only_deal_id",
         "ordered_deal_ids": ordered,
     }
 
@@ -511,8 +511,12 @@ def pit_policy_document() -> dict:
             "split_rule_id": SPLIT_RULE_ID,
             "train_fraction": FROZEN_TRAIN_FRACTION,
             "ordering": (
-                "intraday announcement chronology is normalized to UTC; "
-                "DATE_ONLY ties use market date then deal_id"
+                "Ordering primary key is America/New_York announcement market date. "
+                "Offset-aware intraday events within a market date are ordered by UTC "
+                "instant. DATE_ONLY announcements have no inferred clock time and are "
+                "ordered by deal_id in a separate deterministic precision bucket. "
+                "The precision bucket is a split tie convention, not an assertion of "
+                "actual intraday ordering."
             ),
             "grouping": "all rows for one deal stay on one side",
             "test_labels": "never used to fit preprocessing, coefficients, or threshold",

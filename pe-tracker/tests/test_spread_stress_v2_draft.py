@@ -17,9 +17,11 @@ from src.model.spread_stress.features import FEATURE_SCHEMA_VERSION as FS_SS_V1
 from src.model.spread_stress.model import MODEL_VERSION as SS_V1
 from src.model.spread_stress.v2_spec import (
     ACTIVE,
+    DATE_ONLY_PRECISION_BUCKET,
     EXECUTION_AUTHORIZED,
     FROZEN_POLICY_ID,
     FROZEN_TRAIN_FRACTION,
+    INTRADAY_PRECISION_BUCKET,
     ORDERING_AMBIGUOUS,
     RESOLVED_KNOWN,
     SESSION_CALENDAR,
@@ -173,7 +175,9 @@ def test_intraday_split_order_is_utc_not_raw_string():
     assert later_et < early_utc  # raw-string trap
     ka = announcement_order_key(early_utc, "A")
     kb = announcement_order_key(later_et, "B")
-    assert ka[1] < kb[1]
+    assert ka[0] == kb[0] == date(2024, 1, 1)
+    assert ka[1] == kb[1] == INTRADAY_PRECISION_BUCKET
+    assert ka[2] < kb[2]
     rows = [
         {"deal_id": "LATE", "announcement_ts": later_et, "label": 1,
          "resolution_timestamp": "2024-02-01", "resolution_known_at": "2024-02-01",
@@ -193,7 +197,8 @@ def test_intraday_split_order_is_utc_not_raw_string():
 def test_equivalent_offset_instants_sort_identically_then_deal_id():
     et = "2024-01-01T23:30:00-05:00"
     utc = "2024-01-02T04:30:00+00:00"
-    assert announcement_order_key(et, "X")[1] == announcement_order_key(utc, "X")[1]
+    assert announcement_order_key(et, "X")[2] == announcement_order_key(utc, "X")[2]
+    assert announcement_order_key(et, "X")[0] == date(2024, 1, 1)
     rows_et = [
         {"deal_id": "B", "announcement_ts": et},
         {"deal_id": "A", "announcement_ts": utc},
@@ -227,8 +232,51 @@ def test_date_only_same_day_ties_break_on_deal_id():
     assert {r["deal_id"] for r in out["test"]} == {"D", "E"}
     ka = announcement_order_key("2024-01-02", "A")
     kb = announcement_order_key("2024-01-02", "B")
-    assert ka[0] == kb[0] and ka[1] is None and kb[1] is None
-    assert ka[2] < kb[2]
+    assert ka[0] == kb[0] == date(2024, 1, 2)
+    assert ka[1] == kb[1] == DATE_ONLY_PRECISION_BUCKET
+    assert ka[3] < kb[3]
+
+
+def test_mixed_precision_same_market_date_is_a_total_order():
+    # 01:00 UTC and 02:00 UTC on 2024-01-02 are 20:00/21:00 ET on 2024-01-01.
+    rows = [
+        {"deal_id": "M", "announcement_ts": "2024-01-01"},
+        {"deal_id": "Z", "announcement_ts": "2024-01-02T01:00:00+00:00"},
+        {"deal_id": "A", "announcement_ts": "2024-01-02T02:00:00+00:00"},
+        {"deal_id": "C", "announcement_ts": "2024-06-01"},
+        {"deal_id": "D", "announcement_ts": "2024-07-01"},
+    ]
+    out = chronological_group_split_by_fraction(rows)
+    assert out["ordered_deal_ids"][:3] == ["Z", "A", "M"]
+    kz, ka, km = (announcement_order_key(ts, did) for did, ts in (
+        ("Z", "2024-01-02T01:00:00+00:00"),
+        ("A", "2024-01-02T02:00:00+00:00"),
+        ("M", "2024-01-01"),
+    ))
+    assert [kz, ka, km] == sorted([km, ka, kz])
+    assert kz < ka < km
+
+
+def test_mixed_precision_bucket_then_utc_or_deal_id():
+    rows = [
+        {"deal_id": "D2", "announcement_ts": "2024-01-01"},
+        {"deal_id": "D1", "announcement_ts": "2024-01-01"},
+        {"deal_id": "I2", "announcement_ts": "2024-01-01T23:00:00-05:00"},
+        {"deal_id": "I1", "announcement_ts": "2024-01-01T12:00:00-05:00"},
+        {"deal_id": "X", "announcement_ts": "2024-06-01"},
+    ]
+    out = chronological_group_split_by_fraction(rows)
+    assert out["ordered_deal_ids"][:4] == ["I1", "I2", "D1", "D2"]
+    assert announcement_order_key("2024-01-01T12:00:00-05:00", "I1")[1] == INTRADAY_PRECISION_BUCKET
+    assert announcement_order_key("2024-01-01", "D1")[1] == DATE_ONLY_PRECISION_BUCKET
+
+
+def test_intraday_market_date_is_new_york_not_utc_calendar_date():
+    ts = "2024-01-01T23:30:00-05:00"
+    assert announcement_market_date(ts) == date(2024, 1, 1)
+    key = announcement_order_key(ts, "X")
+    assert key[0] == date(2024, 1, 1)
+    assert key[2].date() == date(2024, 1, 2)  # UTC date is the next calendar day
 
 
 def test_model_and_threshold_specs_are_frozen_not_executed():
@@ -283,6 +331,19 @@ def test_frozen_split_ignores_resolution_and_labels():
     params = inspect.signature(chronological_group_split_by_fraction).parameters
     assert "resolution" not in params and "label" not in params
     assert "resolution_timestamp" not in params and "resolution_known_at" not in params
+
+
+def test_announcement_order_key_is_directly_sortable_without_cmp():
+    import src.model.spread_stress.v2_spec as mod
+    src = Path(mod.__file__).read_text()
+    assert "cmp_to_key" not in src
+    assert "_cmp_announcement_order_keys" not in src
+    keys = [
+        announcement_order_key("2024-01-01", "M"),
+        announcement_order_key("2024-01-02T02:00:00+00:00", "A"),
+        announcement_order_key("2024-01-02T01:00:00+00:00", "Z"),
+    ]
+    assert sorted(keys) == [keys[2], keys[1], keys[0]]
 
 
 def test_volatility_semantics_resolve_tplus10_delta_count():

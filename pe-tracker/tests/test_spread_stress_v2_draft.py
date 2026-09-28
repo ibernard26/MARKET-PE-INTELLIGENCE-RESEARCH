@@ -26,6 +26,7 @@ from src.model.spread_stress.v2_spec import (
     SPEC_STATUS,
     VOL_MIN_DELTAS,
     announcement_market_date,
+    announcement_order_key,
     authorize_execution,
     calendar_offset_session,
     chronological_group_split_by_fraction,
@@ -166,6 +167,70 @@ def test_frozen_split_is_outcome_blind_grouped_60_40():
     assert not train_ids & test_ids
 
 
+def test_intraday_split_order_is_utc_not_raw_string():
+    early_utc = "2024-01-02T00:00:00+00:00"
+    later_et = "2024-01-01T23:30:00-05:00"  # 04:30 UTC; later absolutely, earlier lexicographically
+    assert later_et < early_utc  # raw-string trap
+    ka = announcement_order_key(early_utc, "A")
+    kb = announcement_order_key(later_et, "B")
+    assert ka[1] < kb[1]
+    rows = [
+        {"deal_id": "LATE", "announcement_ts": later_et, "label": 1,
+         "resolution_timestamp": "2024-02-01", "resolution_known_at": "2024-02-01",
+         "resolution_type": "terminated"},
+        {"deal_id": "EARLY", "announcement_ts": early_utc, "label": 0,
+         "resolution_timestamp": "2023-01-01", "resolution_known_at": "2023-01-01",
+         "resolution_type": "closed"},
+        {"deal_id": "C", "announcement_ts": "2024-01-03T12:00:00+00:00", "label": 1},
+        {"deal_id": "D", "announcement_ts": "2024-01-04T12:00:00+00:00", "label": 0},
+        {"deal_id": "E", "announcement_ts": "2024-01-05T12:00:00+00:00", "label": 1},
+    ]
+    out = chronological_group_split_by_fraction(rows)
+    assert out["ordered_deal_ids"][:2] == ["EARLY", "LATE"]
+    assert out["ordered_deal_ids"][0] == "EARLY"
+
+
+def test_equivalent_offset_instants_sort_identically_then_deal_id():
+    et = "2024-01-01T23:30:00-05:00"
+    utc = "2024-01-02T04:30:00+00:00"
+    assert announcement_order_key(et, "X")[1] == announcement_order_key(utc, "X")[1]
+    rows_et = [
+        {"deal_id": "B", "announcement_ts": et},
+        {"deal_id": "A", "announcement_ts": utc},
+        {"deal_id": "C", "announcement_ts": "2024-06-01T12:00:00+00:00"},
+        {"deal_id": "D", "announcement_ts": "2024-07-01T12:00:00+00:00"},
+        {"deal_id": "E", "announcement_ts": "2024-08-01T12:00:00+00:00"},
+    ]
+    rows_swapped = [
+        {"deal_id": "B", "announcement_ts": utc},
+        {"deal_id": "A", "announcement_ts": et},
+        {"deal_id": "C", "announcement_ts": "2024-06-01T12:00:00+00:00"},
+        {"deal_id": "D", "announcement_ts": "2024-07-01T12:00:00+00:00"},
+        {"deal_id": "E", "announcement_ts": "2024-08-01T12:00:00+00:00"},
+    ]
+    a = chronological_group_split_by_fraction(rows_et)
+    b = chronological_group_split_by_fraction(rows_swapped)
+    assert a["ordered_deal_ids"][:2] == ["A", "B"] == b["ordered_deal_ids"][:2]
+
+
+def test_date_only_same_day_ties_break_on_deal_id():
+    rows = [
+        {"deal_id": "B", "announcement_ts": "2024-01-02"},
+        {"deal_id": "A", "announcement_ts": "2024-01-02"},
+        {"deal_id": "C", "announcement_ts": "2024-01-02"},
+        {"deal_id": "D", "announcement_ts": "2024-01-02"},
+        {"deal_id": "E", "announcement_ts": "2024-01-02"},
+    ]
+    out = chronological_group_split_by_fraction(rows)
+    assert out["ordered_deal_ids"] == ["A", "B", "C", "D", "E"]
+    assert {r["deal_id"] for r in out["train"]} == {"A", "B", "C"}
+    assert {r["deal_id"] for r in out["test"]} == {"D", "E"}
+    ka = announcement_order_key("2024-01-02", "A")
+    kb = announcement_order_key("2024-01-02", "B")
+    assert ka[0] == kb[0] and ka[1] is None and kb[1] is None
+    assert ka[2] < kb[2]
+
+
 def test_model_and_threshold_specs_are_frozen_not_executed():
     doc = pit_policy_document()
     assert doc["MODEL_HYPERPARAMETERS"] == {
@@ -188,23 +253,36 @@ def test_model_and_threshold_specs_are_frozen_not_executed():
 def test_frozen_split_ignores_resolution_and_labels():
     rows = [
         {"deal_id": "A", "announcement_ts": "2020-01-01", "label": 1,
-         "resolution_timestamp": "2020-02-01", "resolution_type": "terminated"},
+         "resolution_timestamp": "2020-02-01", "resolution_known_at": "2020-02-01T16:00:00-05:00",
+         "resolution_type": "terminated"},
         {"deal_id": "B", "announcement_ts": "2021-01-01", "label": 0,
-         "resolution_timestamp": "2021-02-01", "resolution_type": "closed"},
+         "resolution_timestamp": "2021-02-01", "resolution_known_at": "2021-02-01T16:00:00-05:00",
+         "resolution_type": "closed"},
         {"deal_id": "C", "announcement_ts": "2022-01-01", "label": 1,
-         "resolution_timestamp": "2022-02-01", "resolution_type": "withdrawn"},
+         "resolution_timestamp": "2022-02-01", "resolution_known_at": "2022-02-01T16:00:00-05:00",
+         "resolution_type": "withdrawn"},
         {"deal_id": "D", "announcement_ts": "2023-01-01", "label": 0,
-         "resolution_timestamp": "2023-02-01", "resolution_type": "closed"},
+         "resolution_timestamp": "2023-02-01", "resolution_known_at": "2023-02-01T16:00:00-05:00",
+         "resolution_type": "closed"},
         {"deal_id": "E", "announcement_ts": "2024-01-01", "label": 1,
-         "resolution_timestamp": "2024-02-01", "resolution_type": "terminated"},
+         "resolution_timestamp": "2024-02-01", "resolution_known_at": "2024-02-01T16:00:00-05:00",
+         "resolution_type": "terminated"},
     ]
     out = chronological_group_split_by_fraction(rows)
-    flipped = [{**r, "label": 1 - r["label"], "resolution_type": "closed"} for r in rows]
+    flipped = [{
+        **r,
+        "label": 1 - r["label"],
+        "resolution_type": "closed",
+        "resolution_timestamp": "1999-01-01",
+        "resolution_known_at": "1999-01-01T00:00:00+00:00",
+    } for r in rows]
     again = chronological_group_split_by_fraction(flipped)
     assert {r["deal_id"] for r in out["train"]} == {r["deal_id"] for r in again["train"]}
     assert {r["deal_id"] for r in out["test"]} == {r["deal_id"] for r in again["test"]}
+    assert out["ordered_deal_ids"] == again["ordered_deal_ids"]
     params = inspect.signature(chronological_group_split_by_fraction).parameters
     assert "resolution" not in params and "label" not in params
+    assert "resolution_timestamp" not in params and "resolution_known_at" not in params
 
 
 def test_volatility_semantics_resolve_tplus10_delta_count():

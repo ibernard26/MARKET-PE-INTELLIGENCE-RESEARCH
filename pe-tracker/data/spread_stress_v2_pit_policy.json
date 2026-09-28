@@ -159,7 +159,7 @@
   "validation": {
     "split_rule_id": "grouped_chronological_60_40_by_announcement",
     "train_fraction": 0.6,
-    "ordering": "announcement timestamp then deal_id",
+    "ordering": "intraday announcement chronology is normalized to UTC; DATE_ONLY ties use market date then deal_id",
     "grouping": "all rows for one deal stay on one side",
     "test_labels": "never used to fit preprocessing, coefficients, or threshold",
     "minimum gates": "MIN_SAMPLE_N and MIN_CLASS_N are rechecked after T+10 censoring"

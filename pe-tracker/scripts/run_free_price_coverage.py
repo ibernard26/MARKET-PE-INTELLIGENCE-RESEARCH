@@ -269,14 +269,17 @@ def canonical_status(row: dict) -> tuple[Optional[str], Optional[str]]:
     """
     if unresolved_infrastructure(row):
         return None, UNRESOLVED_INFRASTRUCTURE
+    proofs = identity_proofs(row)
     veto = identity_veto(row)
-    if veto:
+    # Proof C is contemporaneous SEC mapping. It overrides an OpenFIGI/Tiingo
+    # uniqueness veto on the same ticker; it does not change price_reconcile_v2.
+    if veto and "C_REVIEWED_SEC_MAPPING" not in proofs:
         return DEFERRED_IDENTITY, veto
     if row.get("material_conflicts", 0) > 0:
         return DEFERRED_PRICE_CONFLICT, None
     if row.get("tiingo_n", 0) == 0 and row.get("yahoo_n", 0) == 0:
         return NO_PRICE_HISTORY, None
-    if not identity_proofs(row):
+    if not proofs:
         return DEFERRED_IDENTITY, DEFER_IDENTITY_UNCONFIRMED
     if row.get("combined_n", 0) >= MIN_PRINTS:
         return CANONICALLY_ADMITTED, None

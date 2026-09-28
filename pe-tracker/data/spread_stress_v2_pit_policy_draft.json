@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "spec_version": "spread_stress_v2_draft",
+  "V2_SPEC_STATUS": "draft",
+  "PIT_POLICY_STATUS": "draft",
+  "model_id": "spread_stress",
+  "model_version": "spread_stress_v2",
+  "feature_schema_version": "fs_spread_stress_v2",
+  "does_not_modify": [
+    "first_walkforward_v1",
+    "EVENT_RULES",
+    "fs_v1",
+    "break_logit_v1",
+    "spread_stress_v1",
+    "price_reconcile_v2"
+  ],
+  "MIN_SAMPLE_N": 20,
+  "MIN_CLASS_N": 2,
+  "VOL_WINDOW_DEFAULT": 10,
+  "base_features": [
+    {
+      "name": "pct_spread",
+      "economic_rationale": "Gross arb spread (offer \u2212 target)/target. Levels show how much compensation the market is offering for remaining deal risk.",
+      "pit_definition": "Computed from the last known raw close at feature_time and the offer known_at <= feature_time. DATE_ONLY announcement-day closes are not used as the feature print."
+    },
+    {
+      "name": "delta_spread",
+      "economic_rationale": "First difference of pct_spread. Widening into the deal is the stress signal the challenger is built to measure.",
+      "pit_definition": "\u0394S at feature_time uses only prints with observation_timestamp <= feature_time and known_at <= feature_time. No forward-fill."
+    },
+    {
+      "name": "spread_vol",
+      "economic_rationale": "Rolling volatility of \u0394S. Elevated vol is the path through which financing, antitrust, or financing-stress news usually appears before a binary break.",
+      "pit_definition": "Sample stdev of the last 10 PIT \u0394S values ending at feature_time. Missing history stays missing."
+    },
+    {
+      "name": "n_delta_obs",
+      "economic_rationale": "Count of realized \u0394S observations. Sparse paths are less informative; the count is a transparency feature, not a fabricated vol input.",
+      "pit_definition": "Count of non-null \u0394S with timestamps <= feature_time."
+    }
+  ],
+  "new_features": [],
+  "feature_time_policy_candidates": [
+    {
+      "policy_id": "ann_tplus_5_session",
+      "family": "fixed_trading_day_offset",
+      "offset_sessions": 5,
+      "snapshots_per_deal": 1,
+      "uses_resolution_to_choose_feature_date": false
+    },
+    {
+      "policy_id": "ann_tplus_10_session",
+      "family": "fixed_trading_day_offset",
+      "offset_sessions": 10,
+      "snapshots_per_deal": 1,
+      "uses_resolution_to_choose_feature_date": false,
+      "rationale": "Ten post-announcement sessions matches VOL_WINDOW_DEFAULT=10 so spread_vol can be computed from a PIT-safe window that does not include a DATE_ONLY announcement-day close. Short deals that resolve before T+10 are excluded from this snapshot; their feature date is not pulled forward using the outcome time."
+    },
+    {
+      "policy_id": "ann_tplus_20_session",
+      "family": "fixed_trading_day_offset",
+      "offset_sessions": 20,
+      "snapshots_per_deal": 1,
+      "uses_resolution_to_choose_feature_date": false
+    },
+    {
+      "policy_id": "weekly_grid_5_60",
+      "family": "weekly_grid",
+      "offset_sessions": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        60
+      ],
+      "snapshots_per_deal": "variable",
+      "uses_resolution_to_choose_feature_date": false,
+      "weighting": "deal_equal_snapshot_weight"
+    },
+    {
+      "policy_id": "calendar_7_14_30",
+      "family": "calendar_offset",
+      "offset_days": [
+        7,
+        14,
+        30
+      ],
+      "snapshots_per_deal": "variable",
+      "uses_resolution_to_choose_feature_date": false,
+      "weighting": "deal_equal_snapshot_weight"
+    },
+    {
+      "policy_id": "active_deal_weekly_panel",
+      "family": "multi_snapshot_active_deal_panel",
+      "offset_sessions": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        60
+      ],
+      "snapshots_per_deal": "variable",
+      "uses_resolution_to_choose_feature_date": false,
+      "split": "grouped_chronological_by_announcement",
+      "weighting": "deal_equal_snapshot_weight",
+      "note": "Snapshot dates are generated from announcement only. Whether a deal is still pending at a snapshot is evaluated as-of that snapshot (label censoring), not by choosing a different feature date from the resolution timestamp."
+    }
+  ],
+  "recommended_policy_id": "ann_tplus_10_session",
+  "recommended_policy": {
+    "policy_id": "ann_tplus_10_session",
+    "family": "fixed_trading_day_offset",
+    "offset_sessions": 10,
+    "snapshots_per_deal": 1,
+    "uses_resolution_to_choose_feature_date": false,
+    "rationale": "Ten post-announcement sessions matches VOL_WINDOW_DEFAULT=10 so spread_vol can be computed from a PIT-safe window that does not include a DATE_ONLY announcement-day close. Short deals that resolve before T+10 are excluded from this snapshot; their feature date is not pulled forward using the outcome time."
+  },
+  "date_only_announcement_rule": "Same-day close on a DATE_ONLY announcement is ANNOUNCEMENT_DAY_ORDERING_AMBIGUOUS and is not a feature print unless an intraday announcement timestamp proves the close is later.",
+  "split_rule_id": "grouped_chronological_by_announcement",
+  "weighting_rule_id": "deal_equal_snapshot_weight",
+  "grouped_split": "Train/test assignment is by deal announcement date. Every snapshot of a deal stays on one side. Resolution is not the split key.",
+  "weighting": "deal_equal_snapshot_weight = (1/n_deals)*(1/n_snapshots_deal). Defined before execution so long-duration deals cannot dominate.",
+  "execution": {
+    "authorized": false,
+    "V2_SPEC_STATUS": "draft",
+    "SPEC_VERSION": "spread_stress_v2_draft",
+    "reason": "spread_stress_v2 cannot execute while the specification is draft",
+    "MODEL_FIT_EXECUTED": "NO",
+    "BACKTEST_EXECUTED": "NO",
+    "MIN_SAMPLE_N": 20,
+    "MIN_CLASS_N": 2,
+    "recommended_policy_id": "ann_tplus_10_session"
+  }
+}

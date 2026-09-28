@@ -2,9 +2,9 @@
   "schema_version": 1,
   "cohort_id": "spread_stress_thesis_v1",
   "_doc": "Deterministic thesis-eligible price cohort for spread_stress_v1. Does not overwrite first_walkforward_v1. Inclusion = \u22653 real provider-backed prints in announce\u2192resolution window. dataset_fingerprint is cohort_fingerprint_v2 (semantic). code_sha is provenance and is not part of the fingerprint.",
-  "created_at": "2026-09-28T09:51:19+00:00",
-  "commit_sha": "db1d4c08c5979d2737028abced32bb510aa87bf3",
-  "code_sha": "db1d4c08c5979d2737028abced32bb510aa87bf3",
+  "created_at": "2026-09-28T09:58:43+00:00",
+  "commit_sha": "42df9a08599a346ff32a9412afd0a9161cc9f7ff",
+  "code_sha": "42df9a08599a346ff32a9412afd0a9161cc9f7ff",
   "canonical_corpus": "data/sec_deal_manifest.json",
   "canonical_n": 129,
   "inclusion_rules": {

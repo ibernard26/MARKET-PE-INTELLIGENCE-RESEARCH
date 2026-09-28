@@ -92,6 +92,27 @@ def test_session_evidence_partitions_overlap_and_matches_counts():
     assert "adjusted" not in json.dumps(sessions)
 
 
+def test_one_sided_refetch_cache_is_not_session_evidence(tmp_path, monkeypatch):
+    """A Yahoo-only checkpoint is not price_reconcile_v2 evidence."""
+    import scripts.remediate_pr44_evidence as rem
+    monkeypatch.setattr(rem, "REFETCH_CACHE", tmp_path)
+    yahoo = [_obs("yahoo_finance_chart", "2015-03-02", 10.0)]
+    rem.save_refetch_side("D1", "yahoo", yahoo, retrieved_at="t")
+    assert rem.cached_observations("D1", "tiingo") == []
+    assert not (tmp_path / "price_reconcile_v2_evidence.json").exists()
+    cached, source = rem._resolve_side("TRANSIENT_FAILURE", [], "D1", "yahoo", "t2")
+    assert source == "refetch_cache"
+    assert cached[0].close == 10.0 and cached[0].close_field_used == "close"
+    missing, missing_source = rem._resolve_side(
+        "TRANSIENT_FAILURE", [], "D1", "tiingo", "t2")
+    assert missing == [] and missing_source == "missing"
+    live, live_source = rem._resolve_side(
+        "AVAILABLE", [_obs("tiingo", "2015-03-02", 10.5)], "D1", "tiingo", "t3")
+    assert live_source == "live" and live[0].close == 10.5
+    # Live Tiingo does not invent the paired classification by itself.
+    assert rem.cached_observations("D1", "yahoo")[0].close == 10.0
+
+
 def test_stale_cached_row_missing_schema_is_not_reused():
     stale = dict(COMPLETE_ROW)
     del stale["row_schema_version"]

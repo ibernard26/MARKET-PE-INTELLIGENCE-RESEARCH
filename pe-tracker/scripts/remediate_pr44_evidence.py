@@ -77,6 +77,9 @@ DIAGNOSTIC = ROOT / "data" / "spread_stress_v1_panel_diagnostic.json"
 POSTMORTEM = ROOT / "docs" / "SPREAD_STRESS_V1_POSTMORTEM.md"
 PAD_DAYS = 3
 BREAK_LIKE = frozenset({"terminated", "withdrawn", "broken"})
+# Gitignored raw-close checkpoint (data/cache/). Not a scientific artifact.
+# A one-sided checkpoint must not be published as price_reconcile_v2 evidence.
+REFETCH_CACHE = ROOT / "data" / "cache" / "pr44_overlap_refetch"
 
 
 def _now() -> str:
@@ -165,6 +168,101 @@ def _clip_observations(observations: list, ann: date, res: date) -> list:
     ]
     ok, _bad = filter_session_observations(in_window)
     return ok
+
+
+def _cache_path(deal_id: str) -> Path:
+    return REFETCH_CACHE / f"{deal_id}.json"
+
+
+def _series_records(observations: list) -> list[dict]:
+    """Raw close only. Adjusted closes are not the reconciliation input."""
+    rows = []
+    for obs in observations:
+        if obs.close_field_used != "close":
+            raise ValueError(f"{obs.deal_id} {obs.session_date} close_field_used={obs.close_field_used}")
+        rows.append({
+            "session_date": obs.session_date,
+            "raw_close": obs.close,
+            "close_field_used": "close",
+            "provider": obs.provider,
+        })
+    return rows
+
+
+def _observations_from_records(deal_id: str, records: list) -> list:
+    from src.ingest.equity_prices.schema import NormalizedEquityObservation
+    out = []
+    for row in records:
+        if row.get("close_field_used") != "close":
+            raise ValueError("cached series is not raw close")
+        if row.get("raw_close") is None:
+            raise ValueError("cached series is missing raw_close")
+        out.append(NormalizedEquityObservation(
+            deal_id=deal_id,
+            session_date=row["session_date"],
+            close=float(row["raw_close"]),
+            provider=row.get("provider") or "cached",
+            provider_symbol=row.get("provider") or "cached",
+            retrieval_timestamp=row.get("retrieved_at") or "",
+            close_field_used="close",
+        ))
+    return out
+
+
+def load_refetch_cache(deal_id: str) -> dict:
+    path = _cache_path(deal_id)
+    if not path.exists():
+        return {}
+    doc = json.loads(path.read_text())
+    if doc.get("rule_version") != THESIS_RECONCILE_RULE:
+        return {}
+    if doc.get("deal_id") != deal_id:
+        return {}
+    return doc
+
+
+def save_refetch_side(deal_id: str, side: str, observations: list, *,
+                      retrieved_at: str) -> None:
+    """Checkpoint one provider's raw closes. Does not write the scientific artifact."""
+    if side not in ("tiingo", "yahoo"):
+        raise ValueError(side)
+    REFETCH_CACHE.mkdir(parents=True, exist_ok=True)
+    doc = load_refetch_cache(deal_id)
+    doc.update({
+        "deal_id": deal_id,
+        "rule_version": THESIS_RECONCILE_RULE,
+        "scientific_artifact": False,
+        side: {
+            "retrieved_at": retrieved_at,
+            "prints": _series_records(observations),
+        },
+    })
+    _cache_path(deal_id).write_text(json.dumps(doc) + "\n")
+
+
+def cached_observations(deal_id: str, side: str) -> list:
+    doc = load_refetch_cache(deal_id)
+    block = doc.get(side) or {}
+    prints = block.get("prints") or []
+    if not prints:
+        return []
+    return _observations_from_records(deal_id, prints)
+
+
+def _resolve_side(live_status: str, live_obs: list, deal_id: str, side: str,
+                  retrieved_at: str) -> tuple[list, str]:
+    """Prefer a successful live series. A prior raw-close checkpoint fills a failed side.
+
+    Returns (observations, source) where source is live or refetch_cache.
+    Empty observations mean the side is unresolved.
+    """
+    if live_status == "AVAILABLE" and live_obs:
+        save_refetch_side(deal_id, side, live_obs, retrieved_at=retrieved_at)
+        return live_obs, "live"
+    cached = cached_observations(deal_id, side)
+    if cached:
+        return cached, "refetch_cache"
+    return [], "missing"
 
 
 def _identity_from_coverage_row(row: dict, deal: dict) -> SecurityIdentity:
@@ -507,9 +605,13 @@ def main() -> int:
             tiingo, identity, start, end, hourly=True, deal_id=deal_id)
         y_res = _bounded_history(
             yahoo, identity, start, end, hourly=False, deal_id=deal_id)
-        t_obs = _clip_observations(t_res.get("observations") or [], ann, res)
-        y_obs = _clip_observations(y_res.get("observations") or [], ann, res)
-        if t_res.get("status") != "AVAILABLE" or y_res.get("status") != "AVAILABLE" or not t_obs or not y_obs:
+        t_live = _clip_observations(t_res.get("observations") or [], ann, res)
+        y_live = _clip_observations(y_res.get("observations") or [], ann, res)
+        t_obs, t_source = _resolve_side(
+            t_res.get("status"), t_live, deal_id, "tiingo", retrieved_at)
+        y_obs, y_source = _resolve_side(
+            y_res.get("status"), y_live, deal_id, "yahoo", retrieved_at)
+        if not t_obs or not y_obs:
             print(json.dumps({
                 "RUN_COMPLETE": "NO",
                 "deal_id": deal_id,
@@ -517,6 +619,8 @@ def main() -> int:
                 "yahoo_status": y_res.get("status"),
                 "tiingo_n": len(t_obs),
                 "yahoo_n": len(y_obs),
+                "tiingo_source": t_source,
+                "yahoo_source": y_source,
                 "reason": "overlap refetch did not return both raw series",
             }), file=sys.stderr)
             return 4

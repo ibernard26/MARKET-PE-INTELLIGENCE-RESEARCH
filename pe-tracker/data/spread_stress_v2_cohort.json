@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "cohort_id": "spread_stress_v2_cohort",
+  "spec_id": "spread_stress_v2",
+  "spec_sha256": "6ae40d4845cef39838d69059c7a89bb49b0e81e8a670b266831568b9e5acc6c8",
+  "generated_at": "2026-09-28T10:11:58+00:00",
+  "source_commit": "a792d0154445dc6c6fe57512e51c9422748b1e17",
+  "input_sha256": {
+    "sec_deal_manifest.json": "4cf61925adff5fb57e55dc9e6ddfe6886b35fca57691b85dce2da359f5c483cd",
+    "free_price_coverage_matrix.json": "0745d812ced38102842ee656853ac714f25f121e2d9a0ecf778baf03d1fec475",
+    "target_price_manifest.json": "2cb1c8f2348397c7101e26ef83ded0129ec1f2be21b5eae5a67c834af246522d"
+  },
+  "summary": {
+    "n_deals_admitted": 21,
+    "n_deals_with_eligible_snapshot": 16,
+    "n_pos": 0,
+    "n_neg": 16,
+    "n_censored": 0,
+    "n_eligible_snapshots": 136,
+    "exclusions": {
+      "UNSUPPORTED_CONSIDERATION": 5
+    }
+  },
+  "gates": {
+    "labelled_deals": 16,
+    "n_pos": 0,
+    "n_neg": 16,
+    "MIN_SAMPLE_N": 20,
+    "MIN_CLASS_N": 2,
+    "min_sample_pass": false,
+    "min_class_pass": false
+  },
+  "status": "STOP_CLASS_OR_SAMPLE_GATE",
+  "model_fit_executed": false,
+  "dataset_fingerprint": "585250b1a80f45d166523d056be73eb2fbbd8260cab023705123a1be494bb217",
+  "deals": [
+    {
+      "deal_id": "DEAL-ATVI-MSFT-2022",
+      "excluded": null,
+      "n_eligible_snapshots": 12,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 12
+      },
+      "eligible_snapshots": [
+        "2022-02-02",
+        "2022-02-16",
+        "2022-03-03",
+        "2022-03-17",
+        "2022-03-31",
+        "2022-04-14",
+        "2022-04-29",
+        "2022-05-13",
+        "2022-05-27",
+        "2022-06-13",
+        "2022-06-28",
+        "2022-07-13"
+      ]
+    },
+    {
+      "deal_id": "DEAL-AVLR-VISTA-2022",
+      "excluded": null,
+      "n_eligible_snapshots": 4,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 4,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 8
+      },
+      "eligible_snapshots": [
+        "2022-08-23",
+        "2022-09-07",
+        "2022-09-21",
+        "2022-10-05"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CERN-ORCL-2021",
+      "excluded": null,
+      "n_eligible_snapshots": 11,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 11,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 1
+      },
+      "eligible_snapshots": [
+        "2022-01-05",
+        "2022-01-20",
+        "2022-02-03",
+        "2022-02-17",
+        "2022-03-04",
+        "2022-03-18",
+        "2022-04-01",
+        "2022-04-18",
+        "2022-05-02",
+        "2022-05-16",
+        "2022-05-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CHNG-UNH-2021",
+      "excluded": null,
+      "n_eligible_snapshots": 12,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 12
+      },
+      "eligible_snapshots": [
+        "2021-01-22",
+        "2021-02-05",
+        "2021-02-22",
+        "2021-03-08",
+        "2021-03-22",
+        "2021-04-06",
+        "2021-04-20",
+        "2021-05-04",
+        "2021-05-18",
+        "2021-06-02",
+        "2021-06-16",
+        "2021-06-30"
+      ]
+    },
+    {
+      "deal_id": "DEAL-CLDR-KKRCDR-2021",
+      "excluded": null,
+      "n_eligible_snapshots": 8,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 8,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 4
+      },
+      "eligible_snapshots": [
+        "2021-06-16",
+        "2021-06-30",
+        "2021-07-15",
+        "2021-07-29",
+        "2021-08-12",
+        "2021-08-26",
+        "2021-09-10",
+        "2021-09-24"
+      ]
+    },
+    {
+      "deal_id": "DEAL-COUP-TB-2022",
+      "excluded": null,
+      "n_eligible_snapshots": 5,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 5,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 7
+      },
+      "eligible_snapshots": [
+        "2022-12-27",
+        "2023-01-11",
+        "2023-01-26",
+        "2023-02-09",
+        "2023-02-24"
+      ]
+    },
+    {
+      "deal_id": "DEAL-HZNP-AMGN-2022",
+      "excluded": null,
+      "n_eligible_snapshots": 12,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 12
+      },
+      "eligible_snapshots": [
+        "2022-12-27",
+        "2023-01-11",
+        "2023-01-26",
+        "2023-02-09",
+        "2023-02-24",
+        "2023-03-10",
+        "2023-03-24",
+        "2023-04-10",
+        "2023-04-24",
+        "2023-05-08",
+        "2023-05-22",
+        "2023-06-06"
+      ]
+    },
+    {
+      "deal_id": "DEAL-IMGN-ABBV-2023",
+      "excluded": null,
+      "n_eligible_snapshots": 4,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 4,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 8
+      },
+      "eligible_snapshots": [
+        "2023-12-15",
+        "2024-01-02",
+        "2024-01-17",
+        "2024-01-31"
+      ]
+    },
+    {
+      "deal_id": "DEAL-LLTC-ADI-2016",
+      "excluded": "UNSUPPORTED_CONSIDERATION",
+      "n_eligible_snapshots": 0,
+      "snapshot_status_counts": {},
+      "eligible_snapshots": []
+    },
+    {
+      "deal_id": "DEAL-LNKD-MSFT-2016",
+      "excluded": null,
+      "n_eligible_snapshots": 12,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 12
+      },
+      "eligible_snapshots": [
+        "2016-06-27",
+        "2016-07-12",
+        "2016-07-26",
+        "2016-08-09",
+        "2016-08-23",
+        "2016-09-07",
+        "2016-09-21",
+        "2016-10-05",
+        "2016-10-19",
+        "2016-11-02",
+        "2016-11-16",
+        "2016-12-01"
+      ]
+    },
+    {
+      "deal_id": "DEAL-MDLA-TB-2021",
+      "excluded": null,
+      "n_eligible_snapshots": 5,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 5,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 7
+      },
+      "eligible_snapshots": [
+        "2021-08-09",
+        "2021-08-23",
+        "2021-09-07",
+        "2021-09-21",
+        "2021-10-05"
+      ]
+    },
+    {
+      "deal_id": "DEAL-MNTV-ZEN-2021",
+      "excluded": "UNSUPPORTED_CONSIDERATION",
+      "n_eligible_snapshots": 0,
+      "snapshot_status_counts": {},
+      "eligible_snapshots": []
+    },
+    {
+      "deal_id": "DEAL-MXIM-ADI-2020",
+      "excluded": "UNSUPPORTED_CONSIDERATION",
+      "n_eligible_snapshots": 0,
+      "snapshot_status_counts": {},
+      "eligible_snapshots": []
+    },
+    {
+      "deal_id": "DEAL-NLSN-EVERGREEN-2022",
+      "excluded": null,
+      "n_eligible_snapshots": 12,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 12
+      },
+      "eligible_snapshots": [
+        "2022-04-12",
+        "2022-04-27",
+        "2022-05-11",
+        "2022-05-25",
+        "2022-06-09",
+        "2022-06-24",
+        "2022-07-11",
+        "2022-07-25",
+        "2022-08-08",
+        "2022-08-22",
+        "2022-09-06",
+        "2022-09-20"
+      ]
+    },
+    {
+      "deal_id": "DEAL-NUAN-MSFT-2021",
+      "excluded": null,
+      "n_eligible_snapshots": 12,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 12
+      },
+      "eligible_snapshots": [
+        "2021-04-26",
+        "2021-05-10",
+        "2021-05-24",
+        "2021-06-08",
+        "2021-06-22",
+        "2021-07-07",
+        "2021-07-21",
+        "2021-08-04",
+        "2021-08-18",
+        "2021-09-01",
+        "2021-09-16",
+        "2021-09-30"
+      ]
+    },
+    {
+      "deal_id": "DEAL-PFPT-TB-2021",
+      "excluded": null,
+      "n_eligible_snapshots": 8,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 8,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 4
+      },
+      "eligible_snapshots": [
+        "2021-05-10",
+        "2021-05-24",
+        "2021-06-08",
+        "2021-06-22",
+        "2021-07-07",
+        "2021-07-21",
+        "2021-08-04",
+        "2021-08-18"
+      ]
+    },
+    {
+      "deal_id": "DEAL-PXD-XOM-2023",
+      "excluded": "UNSUPPORTED_CONSIDERATION",
+      "n_eligible_snapshots": 0,
+      "snapshot_status_counts": {},
+      "eligible_snapshots": []
+    },
+    {
+      "deal_id": "DEAL-REMY-BORGWA-2015",
+      "excluded": null,
+      "n_eligible_snapshots": 8,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 8,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 3,
+        "NO_PRINT_ON_SNAPSHOT_SESSION": 1
+      },
+      "eligible_snapshots": [
+        "2015-07-28",
+        "2015-08-11",
+        "2015-08-25",
+        "2015-09-09",
+        "2015-09-23",
+        "2015-10-07",
+        "2015-10-21",
+        "2015-11-04"
+      ]
+    },
+    {
+      "deal_id": "DEAL-RP-TB-2020",
+      "excluded": null,
+      "n_eligible_snapshots": 8,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 8,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 4
+      },
+      "eligible_snapshots": [
+        "2021-01-06",
+        "2021-01-21",
+        "2021-02-04",
+        "2021-02-19",
+        "2021-03-05",
+        "2021-03-19",
+        "2021-04-05",
+        "2021-04-19"
+      ]
+    },
+    {
+      "deal_id": "DEAL-XLNX-AMD-2020",
+      "excluded": "UNSUPPORTED_CONSIDERATION",
+      "n_eligible_snapshots": 0,
+      "snapshot_status_counts": {},
+      "eligible_snapshots": []
+    },
+    {
+      "deal_id": "DEAL-XLRN-MRK-2021",
+      "excluded": null,
+      "n_eligible_snapshots": 3,
+      "snapshot_status_counts": {
+        "ELIGIBLE": 3,
+        "NOT_PROVABLY_BEFORE_RESOLUTION": 9
+      },
+      "eligible_snapshots": [
+        "2021-10-14",
+        "2021-10-28",
+        "2021-11-11"
+      ]
+    }
+  ]
+}

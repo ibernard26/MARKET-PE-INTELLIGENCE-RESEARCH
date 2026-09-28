@@ -1,0 +1,4228 @@
+{
+  "schema_version": 1,
+  "round": "identity_resolution_round_v2",
+  "ordering_rule": "deal_id ascending",
+  "outcome_blind": true,
+  "step": "plan",
+  "allowed_forms": [
+    "DEFM14A",
+    "PREM14A",
+    "SC 14D9",
+    "SC 13E3",
+    "10-K",
+    "10-Q",
+    "DEFA14A",
+    "8-K"
+  ],
+  "generated_at": "2026-09-28T10:15:28+00:00",
+  "summary": {
+    "queue_size": 56,
+    "reviewed": 0,
+    "RESOLVED_PROOF_C": 0,
+    "STILL_AMBIGUOUS": 0,
+    "NO_SUFFICIENT_EVIDENCE": 0,
+    "not_reviewed": 56
+  },
+  "deals": [
+    {
+      "deal_id": "DEAL-ADVENT-SSCTEC-2015",
+      "target": "ADVENT SOFTWARE INC /DE/",
+      "target_cik": 1002225,
+      "ticker": "ADVENT",
+      "announcement_date": "2015-02-03",
+      "resolution_date": "2015-07-20",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001047469-15-001593",
+          "form": "DEFM14A",
+          "filing_date": "2015-03-03",
+          "filer_cik": 1002225,
+          "primary_document": "a2223289zdefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1002225/000104746915001593/a2223289zdefm14a.htm"
+        },
+        {
+          "accession": "0001047469-15-000922",
+          "form": "PREM14A",
+          "filing_date": "2015-02-18",
+          "filer_cik": 1002225,
+          "primary_document": "a2223124zprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1002225/000104746915000922/a2223124zprem14a.htm"
+        },
+        {
+          "accession": "0001047469-15-001120",
+          "form": "10-K",
+          "filing_date": "2015-02-24",
+          "filer_cik": 1002225,
+          "primary_document": "a2223148z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1002225/000104746915001120/a2223148z10-k.htm"
+        },
+        {
+          "accession": "0001047469-14-001313",
+          "form": "10-K",
+          "filing_date": "2014-02-25",
+          "filer_cik": 1002225,
+          "primary_document": "a2218386z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1002225/000104746914001313/a2218386z10-k.htm"
+        },
+        {
+          "accession": "0001104659-14-078400",
+          "form": "10-Q",
+          "filing_date": "2014-11-07",
+          "filer_cik": 1002225,
+          "primary_document": "a14-19598_110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1002225/000110465914078400/a14-19598_110q.htm"
+        },
+        {
+          "accession": "0001104659-15-035591",
+          "form": "10-Q",
+          "filing_date": "2015-05-07",
+          "filer_cik": 1002225,
+          "primary_document": "a15-7327_110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1002225/000110465915035591/a15-7327_110q.htm"
+        },
+        {
+          "accession": "0001104659-14-058508",
+          "form": "10-Q",
+          "filing_date": "2014-08-08",
+          "filer_cik": 1002225,
+          "primary_document": "a14-13324_110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1002225/000110465914058508/a14-13324_110q.htm"
+        },
+        {
+          "accession": "0001104659-14-035222",
+          "form": "10-Q",
+          "filing_date": "2014-05-06",
+          "filer_cik": 1002225,
+          "primary_document": "a14-7314_110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1002225/000110465914035222/a14-7314_110q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-ALTR-INTC-2015",
+      "target": "Altera Corporation",
+      "target_cik": 768251,
+      "ticker": "ALTR",
+      "announcement_date": "2015-05-31",
+      "resolution_date": "2015-12-28",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-300376",
+          "form": "DEFM14A",
+          "filing_date": "2015-08-24",
+          "filer_cik": 768251,
+          "primary_document": "d942513ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/768251/000119312515300376/d942513ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-15-257307",
+          "form": "PREM14A",
+          "filing_date": "2015-07-21",
+          "filer_cik": 768251,
+          "primary_document": "d942513dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/768251/000119312515257307/d942513dprem14a.htm"
+        },
+        {
+          "accession": "0000768251-15-000008",
+          "form": "10-K",
+          "filing_date": "2015-02-13",
+          "filer_cik": 768251,
+          "primary_document": "altera10k12312014.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/768251/000076825115000008/altera10k12312014.htm"
+        },
+        {
+          "accession": "0000768251-15-000021",
+          "form": "10-Q",
+          "filing_date": "2015-04-24",
+          "filer_cik": 768251,
+          "primary_document": "altera_2015q110-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/768251/000076825115000021/altera_2015q110-q.htm"
+        },
+        {
+          "accession": "0000768251-15-000033",
+          "form": "10-Q",
+          "filing_date": "2015-07-23",
+          "filer_cik": 768251,
+          "primary_document": "altera_2015q210-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/768251/000076825115000033/altera_2015q210-q.htm"
+        },
+        {
+          "accession": "0000768251-15-000042",
+          "form": "10-Q",
+          "filing_date": "2015-10-22",
+          "filer_cik": 768251,
+          "primary_document": "altera_2015q310-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/768251/000076825115000042/altera_2015q310-q.htm"
+        },
+        {
+          "accession": "0000768251-14-000037",
+          "form": "10-Q",
+          "filing_date": "2014-10-24",
+          "filer_cik": 768251,
+          "primary_document": "altera_2014q310-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/768251/000076825114000037/altera_2014q310-q.htm"
+        },
+        {
+          "accession": "0000768251-14-000031",
+          "form": "10-Q",
+          "filing_date": "2014-07-25",
+          "filer_cik": 768251,
+          "primary_document": "altera_2014q2x10-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/768251/000076825114000031/altera_2014q2x10-q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-ANN-ASCENA-2015",
+      "target": "ANN INC.",
+      "target_cik": 874214,
+      "ticker": "ANN",
+      "announcement_date": "2015-05-18",
+      "resolution_date": "2015-09-04",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-257026",
+          "form": "DEFM14A",
+          "filing_date": "2015-07-20",
+          "filer_cik": 874214,
+          "primary_document": "d18972ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/874214/000119312515257026/d18972ddefm14a.htm"
+        },
+        {
+          "accession": "0000874214-15-000001",
+          "form": "10-K",
+          "filing_date": "2015-03-13",
+          "filer_cik": 874214,
+          "primary_document": "ann_10kx2014.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/874214/000087421415000001/ann_10kx2014.htm"
+        },
+        {
+          "accession": "0000874214-15-000002",
+          "form": "10-Q",
+          "filing_date": "2015-05-22",
+          "filer_cik": 874214,
+          "primary_document": "ann_10qxq12015.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/874214/000087421415000002/ann_10qxq12015.htm"
+        },
+        {
+          "accession": "0000874214-14-000024",
+          "form": "10-Q",
+          "filing_date": "2014-11-21",
+          "filer_cik": 874214,
+          "primary_document": "ann_10qxq32014.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/874214/000087421414000024/ann_10qxq32014.htm"
+        },
+        {
+          "accession": "0000874214-14-000021",
+          "form": "10-Q",
+          "filing_date": "2014-08-22",
+          "filer_cik": 874214,
+          "primary_document": "ann_10qxq22014.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/874214/000087421414000021/ann_10qxq22014.htm"
+        },
+        {
+          "accession": "0000874214-14-000019",
+          "form": "10-Q",
+          "filing_date": "2014-05-30",
+          "filer_cik": 874214,
+          "primary_document": "ann_10qxq12014.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/874214/000087421414000019/ann_10qxq12014.htm"
+        },
+        {
+          "accession": "0001193125-15-191007",
+          "form": "8-K",
+          "filing_date": "2015-05-18",
+          "filer_cik": 874214,
+          "primary_document": "d927961d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/874214/000119312515191007/d927961d8k.htm"
+        },
+        {
+          "accession": "0001193125-15-197716",
+          "form": "8-K",
+          "filing_date": "2015-05-22",
+          "filer_cik": 874214,
+          "primary_document": "d932273d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/874214/000119312515197716/d932273d8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-APC-OXY-2019",
+      "target": "Anadarko Petroleum Corporation",
+      "target_cik": 773910,
+      "ticker": "APC",
+      "announcement_date": "2019-05-09",
+      "resolution_date": "2019-08-08",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001140361-19-012802",
+          "form": "DEFM14A",
+          "filing_date": "2019-07-11",
+          "filer_cik": 773910,
+          "primary_document": "nt10002584x1_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/773910/000114036119012802/nt10002584x1_defm14a.htm"
+        },
+        {
+          "accession": "0000773910-19-000009",
+          "form": "10-K",
+          "filing_date": "2019-02-14",
+          "filer_cik": 773910,
+          "primary_document": "apc201810k-10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/773910/000077391019000009/apc201810k-10k.htm"
+        },
+        {
+          "accession": "0000773910-19-000034",
+          "form": "10-Q",
+          "filing_date": "2019-05-08",
+          "filer_cik": 773910,
+          "primary_document": "apc20191q-10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/773910/000077391019000034/apc20191q-10q.htm"
+        },
+        {
+          "accession": "0000773910-19-000054",
+          "form": "10-Q",
+          "filing_date": "2019-07-30",
+          "filer_cik": 773910,
+          "primary_document": "apc20192q-10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/773910/000077391019000054/apc20192q-10q.htm"
+        },
+        {
+          "accession": "0000773910-18-000055",
+          "form": "10-Q",
+          "filing_date": "2018-10-30",
+          "filer_cik": 773910,
+          "primary_document": "apc20183q-10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/773910/000077391018000055/apc20183q-10q.htm"
+        },
+        {
+          "accession": "0000773910-18-000044",
+          "form": "10-Q",
+          "filing_date": "2018-07-31",
+          "filer_cik": 773910,
+          "primary_document": "apc20182q-10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/773910/000077391018000044/apc20182q-10q.htm"
+        },
+        {
+          "accession": "0001193125-19-106656",
+          "form": "DEFA14A",
+          "filing_date": "2019-04-15",
+          "filer_cik": 773910,
+          "primary_document": "d696718ddefa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/773910/000119312519106656/d696718ddefa14a.htm"
+        },
+        {
+          "accession": "0001193125-19-091508",
+          "form": "DEFA14A",
+          "filing_date": "2019-03-29",
+          "filer_cik": 773910,
+          "primary_document": "d675130ddefa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/773910/000119312519091508/d675130ddefa14a.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-ARNA-PFE-2021",
+      "target": "Arena Pharmaceuticals, Inc.",
+      "target_cik": 1080709,
+      "ticker": "ARNA",
+      "announcement_date": "2021-12-12",
+      "resolution_date": "2022-03-11",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001140361-22-000190",
+          "form": "DEFM14A",
+          "filing_date": "2022-01-03",
+          "filer_cik": 1080709,
+          "primary_document": "ny20001688x2_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1080709/000114036122000190/ny20001688x2_defm14a.htm"
+        },
+        {
+          "accession": "0001140361-21-042972",
+          "form": "PREM14A",
+          "filing_date": "2021-12-23",
+          "filer_cik": 1080709,
+          "primary_document": "ny20001688x1_prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1080709/000114036121042972/ny20001688x1_prem14a.htm"
+        },
+        {
+          "accession": "0001080709-22-000006",
+          "form": "10-K",
+          "filing_date": "2022-02-23",
+          "filer_cik": 1080709,
+          "primary_document": "arna-20211231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1080709/000108070922000006/arna-20211231.htm"
+        },
+        {
+          "accession": "0001564590-21-007609",
+          "form": "10-K",
+          "filing_date": "2021-02-23",
+          "filer_cik": 1080709,
+          "primary_document": "arna-10k_20201231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1080709/000156459021007609/arna-10k_20201231.htm"
+        },
+        {
+          "accession": "0001080709-21-000038",
+          "form": "10-Q",
+          "filing_date": "2021-11-04",
+          "filer_cik": 1080709,
+          "primary_document": "arna-20210930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1080709/000108070921000038/arna-20210930.htm"
+        },
+        {
+          "accession": "0001080709-21-000031",
+          "form": "10-Q",
+          "filing_date": "2021-08-05",
+          "filer_cik": 1080709,
+          "primary_document": "arna-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1080709/000108070921000031/arna-20210630.htm"
+        },
+        {
+          "accession": "0001628280-21-009104",
+          "form": "10-Q",
+          "filing_date": "2021-05-05",
+          "filer_cik": 1080709,
+          "primary_document": "arna-20210331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1080709/000162828021009104/arna-20210331.htm"
+        },
+        {
+          "accession": "0001140361-21-041322",
+          "form": "DEFA14A",
+          "filing_date": "2021-12-13",
+          "filer_cik": 1080709,
+          "primary_document": "brhc10031793_defa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1080709/000114036121041322/brhc10031793_defa14a.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-BEAM-SUNTOR-2014",
+      "target": "BEAM INC",
+      "target_cik": 789073,
+      "ticker": "BEAM",
+      "announcement_date": "2014-01-13",
+      "resolution_date": "2014-05-12",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-14-058774",
+          "form": "DEFM14A",
+          "filing_date": "2014-02-19",
+          "filer_cik": 789073,
+          "primary_document": "d664263ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/789073/000119312514058774/d664263ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-14-035028",
+          "form": "PREM14A",
+          "filing_date": "2014-02-04",
+          "filer_cik": 789073,
+          "primary_document": "d664263dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/789073/000119312514035028/d664263dprem14a.htm"
+        },
+        {
+          "accession": "0001193125-14-057299",
+          "form": "10-K",
+          "filing_date": "2014-02-18",
+          "filer_cik": 789073,
+          "primary_document": "d659544d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/789073/000119312514057299/d659544d10k.htm"
+        },
+        {
+          "accession": "0001193125-13-076953",
+          "form": "10-K",
+          "filing_date": "2013-02-26",
+          "filer_cik": 789073,
+          "primary_document": "d457573d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/789073/000119312513076953/d457573d10k.htm"
+        },
+        {
+          "accession": "0001193125-13-432988",
+          "form": "10-Q",
+          "filing_date": "2013-11-07",
+          "filer_cik": 789073,
+          "primary_document": "d606015d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/789073/000119312513432988/d606015d10q.htm"
+        },
+        {
+          "accession": "0001193125-13-328950",
+          "form": "10-Q",
+          "filing_date": "2013-08-09",
+          "filer_cik": 789073,
+          "primary_document": "d556740d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/789073/000119312513328950/d556740d10q.htm"
+        },
+        {
+          "accession": "0001193125-13-201838",
+          "form": "10-Q",
+          "filing_date": "2013-05-06",
+          "filer_cik": 789073,
+          "primary_document": "d515097d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/789073/000119312513201838/d515097d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-008766",
+          "form": "DEFA14A",
+          "filing_date": "2014-01-13",
+          "filer_cik": 789073,
+          "primary_document": "d659855d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/789073/000119312514008766/d659855d8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-BHI-HAL-2014",
+      "target": "Baker Hughes Incorporated",
+      "target_cik": 808362,
+      "ticker": "BHI",
+      "announcement_date": "2014-11-16",
+      "resolution_date": "2016-04-30",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-053038",
+          "form": "DEFM14A",
+          "filing_date": "2015-02-19",
+          "filer_cik": 808362,
+          "primary_document": "d822859ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/808362/000119312515053038/d822859ddefm14a.htm"
+        },
+        {
+          "accession": "0000808362-15-000006",
+          "form": "10-K",
+          "filing_date": "2015-02-26",
+          "filer_cik": 808362,
+          "primary_document": "fiscalyear2014form10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/808362/000080836215000006/fiscalyear2014form10-k.htm"
+        },
+        {
+          "accession": "0000808362-14-000007",
+          "form": "10-K",
+          "filing_date": "2014-02-12",
+          "filer_cik": 808362,
+          "primary_document": "fiscalyear2013form10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/808362/000080836214000007/fiscalyear2013form10-k.htm"
+        },
+        {
+          "accession": "0000808362-16-000053",
+          "form": "10-K",
+          "filing_date": "2016-02-17",
+          "filer_cik": 808362,
+          "primary_document": "fiscalyear2015form10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/808362/000080836216000053/fiscalyear2015form10-k.htm"
+        },
+        {
+          "accession": "0000808362-14-000051",
+          "form": "10-Q",
+          "filing_date": "2014-10-21",
+          "filer_cik": 808362,
+          "primary_document": "a2014093010-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/808362/000080836214000051/a2014093010-q.htm"
+        },
+        {
+          "accession": "0000808362-14-000041",
+          "form": "10-Q",
+          "filing_date": "2014-07-22",
+          "filer_cik": 808362,
+          "primary_document": "a2014063010-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/808362/000080836214000041/a2014063010-q.htm"
+        },
+        {
+          "accession": "0000808362-15-000018",
+          "form": "10-Q",
+          "filing_date": "2015-04-21",
+          "filer_cik": 808362,
+          "primary_document": "a2015033110-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/808362/000080836215000018/a2015033110-q.htm"
+        },
+        {
+          "accession": "0000808362-14-000025",
+          "form": "10-Q",
+          "filing_date": "2014-04-23",
+          "filer_cik": 808362,
+          "primary_document": "a2014033110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/808362/000080836214000025/a2014033110q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-BOLT-TELEDY-2014",
+      "target": "BOLT TECHNOLOGY CORP",
+      "target_cik": 354655,
+      "ticker": "BOLT",
+      "announcement_date": "2014-09-03",
+      "resolution_date": "2014-11-28",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001144204-14-059978",
+          "form": "DEFM14A",
+          "filing_date": "2014-10-07",
+          "filer_cik": 354655,
+          "primary_document": "v390812_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/354655/000114420414059978/v390812_defm14a.htm"
+        },
+        {
+          "accession": "0001144204-14-057637",
+          "form": "PREM14A",
+          "filing_date": "2014-09-24",
+          "filer_cik": 354655,
+          "primary_document": "v389700_prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/354655/000114420414057637/v389700_prem14a.htm"
+        },
+        {
+          "accession": "0001144204-14-055689",
+          "form": "10-K",
+          "filing_date": "2014-09-12",
+          "filer_cik": 354655,
+          "primary_document": "v387252_10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/354655/000114420414055689/v387252_10k.htm"
+        },
+        {
+          "accession": "0001144204-13-050613",
+          "form": "10-K",
+          "filing_date": "2013-09-13",
+          "filer_cik": 354655,
+          "primary_document": "v353283_10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/354655/000114420413050613/v353283_10k.htm"
+        },
+        {
+          "accession": "0001144204-14-066618",
+          "form": "10-Q",
+          "filing_date": "2014-11-10",
+          "filer_cik": 354655,
+          "primary_document": "v392388_10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/354655/000114420414066618/v392388_10q.htm"
+        },
+        {
+          "accession": "0001144204-14-028474",
+          "form": "10-Q",
+          "filing_date": "2014-05-08",
+          "filer_cik": 354655,
+          "primary_document": "v376367_10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/354655/000114420414028474/v376367_10q.htm"
+        },
+        {
+          "accession": "0001144204-14-007112",
+          "form": "10-Q",
+          "filing_date": "2014-02-10",
+          "filer_cik": 354655,
+          "primary_document": "v366495_10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/354655/000114420414007112/v366495_10q.htm"
+        },
+        {
+          "accession": "0001144204-13-059186",
+          "form": "10-Q",
+          "filing_date": "2013-11-06",
+          "filer_cik": 354655,
+          "primary_document": "v358224_10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/354655/000114420413059186/v358224_10q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-CEC-APOLLO-2014",
+      "target": "CEC ENTERTAINMENT INC",
+      "target_cik": 813920,
+      "ticker": "CEC",
+      "announcement_date": "2014-01-16",
+      "resolution_date": "2014-02-18",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-14-016647",
+          "form": "SC 14D9",
+          "filing_date": "2014-01-22",
+          "filer_cik": 813920,
+          "primary_document": "d662069dsc14d9.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/813920/000119312514016647/d662069dsc14d9.htm"
+        },
+        {
+          "accession": "0000813920-14-000015",
+          "form": "10-K",
+          "filing_date": "2014-02-12",
+          "filer_cik": 813920,
+          "primary_document": "cec10-k2013document.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/813920/000081392014000015/cec10-k2013document.htm"
+        },
+        {
+          "accession": "0001193125-13-069499",
+          "form": "10-K",
+          "filing_date": "2013-02-21",
+          "filer_cik": 813920,
+          "primary_document": "d446272d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/813920/000119312513069499/d446272d10k.htm"
+        },
+        {
+          "accession": "0000813920-13-000042",
+          "form": "10-Q",
+          "filing_date": "2013-10-31",
+          "filer_cik": 813920,
+          "primary_document": "cecfy201310-qq3.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/813920/000081392013000042/cecfy201310-qq3.htm"
+        },
+        {
+          "accession": "0001193125-13-315250",
+          "form": "10-Q",
+          "filing_date": "2013-08-01",
+          "filer_cik": 813920,
+          "primary_document": "d549080d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/813920/000119312513315250/d549080d10q.htm"
+        },
+        {
+          "accession": "0001193125-13-196361",
+          "form": "10-Q",
+          "filing_date": "2013-05-02",
+          "filer_cik": 813920,
+          "primary_document": "d497047d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/813920/000119312513196361/d497047d10q.htm"
+        },
+        {
+          "accession": "0001193125-13-112872",
+          "form": "DEFA14A",
+          "filing_date": "2013-03-18",
+          "filer_cik": 813920,
+          "primary_document": "d486670ddefa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/813920/000119312513112872/d486670ddefa14a.htm"
+        },
+        {
+          "accession": "0001193125-14-013338",
+          "form": "8-K",
+          "filing_date": "2014-01-16",
+          "filer_cik": 813920,
+          "primary_document": "d657499d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/813920/000119312514013338/d657499d8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-CI-ANTM-2015",
+      "target": "Cigna Corporation",
+      "target_cik": 701221,
+      "ticker": "CI",
+      "announcement_date": "2015-07-23",
+      "resolution_date": "2017-05-12",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-355335",
+          "form": "DEFM14A",
+          "filing_date": "2015-10-28",
+          "filer_cik": 701221,
+          "primary_document": "d53174ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/701221/000119312515355335/d53174ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-15-334491",
+          "form": "PREM14A",
+          "filing_date": "2015-10-01",
+          "filer_cik": 701221,
+          "primary_document": "d53174dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/701221/000119312515334491/d53174dprem14a.htm"
+        },
+        {
+          "accession": "0001047469-15-001276",
+          "form": "10-K",
+          "filing_date": "2015-02-26",
+          "filer_cik": 701221,
+          "primary_document": "a2223122z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/701221/000104746915001276/a2223122z10-k.htm"
+        },
+        {
+          "accession": "0001047469-16-010432",
+          "form": "10-K",
+          "filing_date": "2016-02-25",
+          "filer_cik": 701221,
+          "primary_document": "a2227373z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/701221/000104746916010432/a2227373z10-k.htm"
+        },
+        {
+          "accession": "0001047469-17-000899",
+          "form": "10-K",
+          "filing_date": "2017-02-23",
+          "filer_cik": 701221,
+          "primary_document": "a2230937z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/701221/000104746917000899/a2230937z10-k.htm"
+        },
+        {
+          "accession": "0001104659-15-054796",
+          "form": "10-Q",
+          "filing_date": "2015-07-30",
+          "filer_cik": 701221,
+          "primary_document": "a15-12152_110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/701221/000110465915054796/a15-12152_110q.htm"
+        },
+        {
+          "accession": "0001104659-15-032254",
+          "form": "10-Q",
+          "filing_date": "2015-04-30",
+          "filer_cik": 701221,
+          "primary_document": "a15-7960_110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/701221/000110465915032254/a15-7960_110q.htm"
+        },
+        {
+          "accession": "0001104659-15-076424",
+          "form": "10-Q",
+          "filing_date": "2015-11-06",
+          "filer_cik": 701221,
+          "primary_document": "a15-18040_110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/701221/000110465915076424/a15-18040_110q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-COAST-LKQ-2015",
+      "target": "COAST DISTRIBUTION SYSTEM INC",
+      "target_cik": 728303,
+      "ticker": "COAST",
+      "announcement_date": "2015-07-09",
+      "resolution_date": "2015-08-19",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-259993",
+          "form": "SC 14D9",
+          "filing_date": "2015-07-22",
+          "filer_cik": 728303,
+          "primary_document": "d74948dsc14d9.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/728303/000119312515259993/d74948dsc14d9.htm"
+        },
+        {
+          "accession": "0001193125-15-113703",
+          "form": "10-K",
+          "filing_date": "2015-03-31",
+          "filer_cik": 728303,
+          "primary_document": "d867960d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/728303/000119312515113703/d867960d10k.htm"
+        },
+        {
+          "accession": "0001193125-15-291379",
+          "form": "10-Q",
+          "filing_date": "2015-08-14",
+          "filer_cik": 728303,
+          "primary_document": "d946540d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/728303/000119312515291379/d946540d10q.htm"
+        },
+        {
+          "accession": "0001193125-15-189940",
+          "form": "10-Q",
+          "filing_date": "2015-05-15",
+          "filer_cik": 728303,
+          "primary_document": "d905002d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/728303/000119312515189940/d905002d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-412808",
+          "form": "10-Q",
+          "filing_date": "2014-11-14",
+          "filer_cik": 728303,
+          "primary_document": "d786053d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/728303/000119312514412808/d786053d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-309743",
+          "form": "10-Q",
+          "filing_date": "2014-08-14",
+          "filer_cik": 728303,
+          "primary_document": "d758380d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/728303/000119312514309743/d758380d10q.htm"
+        },
+        {
+          "accession": "0001193125-15-249139",
+          "form": "8-K",
+          "filing_date": "2015-07-09",
+          "filer_cik": 728303,
+          "primary_document": "d12004d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/728303/000119312515249139/d12004d8k.htm"
+        },
+        {
+          "accession": "0001193125-15-296289",
+          "form": "8-K",
+          "filing_date": "2015-08-19",
+          "filer_cik": 728303,
+          "primary_document": "d75728d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/728303/000119312515296289/d75728d8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-COLE-AMERIC-2014",
+      "target": "Cole Credit Property Trust Inc",
+      "target_cik": 1289272,
+      "ticker": "COLE",
+      "announcement_date": "2014-03-21",
+      "resolution_date": "2014-05-20",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001144204-14-019595",
+          "form": "SC 14D9",
+          "filing_date": "2014-03-31",
+          "filer_cik": 1289272,
+          "primary_document": "v373230_sc14d9.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1289272/000114420414019595/v373230_sc14d9.htm"
+        },
+        {
+          "accession": "0001144204-14-019569",
+          "form": "SC 13E3",
+          "filing_date": "2014-03-31",
+          "filer_cik": 1289272,
+          "primary_document": "v373052_sctot.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1289272/000114420414019569/v373052_sctot.htm"
+        },
+        {
+          "accession": "0001144204-14-019670",
+          "form": "SC 13E3",
+          "filing_date": "2014-04-01",
+          "filer_cik": 1289272,
+          "primary_document": "v373049_sctot.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1289272/000114420414019670/v373049_sctot.htm"
+        },
+        {
+          "accession": "0001289272-14-000011",
+          "form": "10-K",
+          "filing_date": "2014-03-31",
+          "filer_cik": 1289272,
+          "primary_document": "ccpt12311310k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1289272/000128927214000011/ccpt12311310k.htm"
+        },
+        {
+          "accession": "0001289272-13-000004",
+          "form": "10-K",
+          "filing_date": "2013-03-28",
+          "filer_cik": 1289272,
+          "primary_document": "ccpt12311210k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1289272/000128927213000004/ccpt12311210k.htm"
+        },
+        {
+          "accession": "0001289272-14-000017",
+          "form": "10-Q",
+          "filing_date": "2014-05-14",
+          "filer_cik": 1289272,
+          "primary_document": "ccpt3311410q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1289272/000128927214000017/ccpt3311410q.htm"
+        },
+        {
+          "accession": "0001289272-13-000018",
+          "form": "10-Q",
+          "filing_date": "2013-11-13",
+          "filer_cik": 1289272,
+          "primary_document": "ccpt9301310q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1289272/000128927213000018/ccpt9301310q.htm"
+        },
+        {
+          "accession": "0001289272-13-000014",
+          "form": "10-Q",
+          "filing_date": "2013-08-14",
+          "filer_cik": 1289272,
+          "primary_document": "ccpt6301310q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1289272/000128927213000014/ccpt6301310q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-CONE-KKRGIP-2021",
+      "target": "CyrusOne Inc.",
+      "target_cik": 1553023,
+      "ticker": "CONE",
+      "announcement_date": "2021-11-14",
+      "resolution_date": "2022-03-25",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001104659-21-154474",
+          "form": "DEFM14A",
+          "filing_date": "2021-12-30",
+          "filer_cik": 1553023,
+          "primary_document": "tm2134342-2_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000110465921154474/tm2134342-2_defm14a.htm"
+        },
+        {
+          "accession": "0001104659-21-151129",
+          "form": "PREM14A",
+          "filing_date": "2021-12-17",
+          "filer_cik": 1553023,
+          "primary_document": "tm2134342-1_prem14.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000110465921151129/tm2134342-1_prem14.htm"
+        },
+        {
+          "accession": "0001553023-22-000009",
+          "form": "10-K",
+          "filing_date": "2022-02-17",
+          "filer_cik": 1553023,
+          "primary_document": "cone-20211231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000155302322000009/cone-20211231.htm"
+        },
+        {
+          "accession": "0001553023-21-000012",
+          "form": "10-K",
+          "filing_date": "2021-02-19",
+          "filer_cik": 1553023,
+          "primary_document": "cone-20201231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000155302321000012/cone-20201231.htm"
+        },
+        {
+          "accession": "0001553023-21-000091",
+          "form": "10-Q",
+          "filing_date": "2021-10-28",
+          "filer_cik": 1553023,
+          "primary_document": "cone-20210930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000155302321000091/cone-20210930.htm"
+        },
+        {
+          "accession": "0001553023-21-000082",
+          "form": "10-Q",
+          "filing_date": "2021-07-29",
+          "filer_cik": 1553023,
+          "primary_document": "cone-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000155302321000082/cone-20210630.htm"
+        },
+        {
+          "accession": "0001553023-21-000037",
+          "form": "10-Q",
+          "filing_date": "2021-04-29",
+          "filer_cik": 1553023,
+          "primary_document": "cone-20210331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000155302321000037/cone-20210331.htm"
+        },
+        {
+          "accession": "0000950157-21-001170",
+          "form": "DEFA14A",
+          "filing_date": "2021-11-15",
+          "filer_cik": 1553023,
+          "primary_document": "defa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1553023/000095015721001170/defa14a.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-COR-AMT-2021",
+      "target": "CoreSite Realty Corporation",
+      "target_cik": 1490892,
+      "ticker": "COR",
+      "announcement_date": "2021-11-14",
+      "resolution_date": "2021-12-28",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001104659-21-144102",
+          "form": "SC 14D9",
+          "filing_date": "2021-11-29",
+          "filer_cik": 1490892,
+          "primary_document": "tm2133630-2_sc14d9.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1490892/000110465921144102/tm2133630-2_sc14d9.htm"
+        },
+        {
+          "accession": "0001558370-21-000757",
+          "form": "10-K",
+          "filing_date": "2021-02-05",
+          "filer_cik": 1490892,
+          "primary_document": "cor-20201231x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1490892/000155837021000757/cor-20201231x10k.htm"
+        },
+        {
+          "accession": "0001558370-21-013788",
+          "form": "10-Q",
+          "filing_date": "2021-10-29",
+          "filer_cik": 1490892,
+          "primary_document": "cor-20210930x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1490892/000155837021013788/cor-20210930x10q.htm"
+        },
+        {
+          "accession": "0001558370-21-009655",
+          "form": "10-Q",
+          "filing_date": "2021-07-30",
+          "filer_cik": 1490892,
+          "primary_document": "cor-20210630x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1490892/000155837021009655/cor-20210630x10q.htm"
+        },
+        {
+          "accession": "0001558370-21-005326",
+          "form": "10-Q",
+          "filing_date": "2021-04-30",
+          "filer_cik": 1490892,
+          "primary_document": "cor-20210331x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1490892/000155837021005326/cor-20210331x10q.htm"
+        },
+        {
+          "accession": "0001104659-21-042435",
+          "form": "DEFA14A",
+          "filing_date": "2021-03-26",
+          "filer_cik": 1490892,
+          "primary_document": "tm212309d2_defa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1490892/000110465921042435/tm212309d2_defa14a.htm"
+        },
+        {
+          "accession": "0001104659-21-138523",
+          "form": "8-K",
+          "filing_date": "2021-11-15",
+          "filer_cik": 1490892,
+          "primary_document": "tm2132912d2_8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1490892/000110465921138523/tm2132912d2_8k.htm"
+        },
+        {
+          "accession": "0001558370-21-013677",
+          "form": "8-K",
+          "filing_date": "2021-10-28",
+          "filer_cik": 1490892,
+          "primary_document": "cor-20211028x8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1490892/000155837021013677/cor-20211028x8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-CPRI-TPR-2023",
+      "target": "Capri Holdings Limited",
+      "target_cik": 1530721,
+      "ticker": "CPRI",
+      "announcement_date": "2023-08-10",
+      "resolution_date": "2024-11-13",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001140361-23-044618",
+          "form": "DEFM14A",
+          "filing_date": "2023-09-20",
+          "filer_cik": 1530721,
+          "primary_document": "ny20010074x2_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1530721/000114036123044618/ny20010074x2_defm14a.htm"
+        },
+        {
+          "accession": "0001140361-23-043385",
+          "form": "PREM14A",
+          "filing_date": "2023-09-08",
+          "filer_cik": 1530721,
+          "primary_document": "ny20010074x1_prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1530721/000114036123043385/ny20010074x1_prem14a.htm"
+        },
+        {
+          "accession": "0001530721-23-000087",
+          "form": "10-K",
+          "filing_date": "2023-05-31",
+          "filer_cik": 1530721,
+          "primary_document": "cpri-20230401.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1530721/000153072123000087/cpri-20230401.htm"
+        },
+        {
+          "accession": "0001530721-24-000041",
+          "form": "10-K",
+          "filing_date": "2024-05-29",
+          "filer_cik": 1530721,
+          "primary_document": "cpri-20240330.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1530721/000153072124000041/cpri-20240330.htm"
+        },
+        {
+          "accession": "0001530721-23-000174",
+          "form": "10-Q",
+          "filing_date": "2023-08-10",
+          "filer_cik": 1530721,
+          "primary_document": "cpri-20230701.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1530721/000153072123000174/cpri-20230701.htm"
+        },
+        {
+          "accession": "0001530721-23-000194",
+          "form": "10-Q",
+          "filing_date": "2023-11-09",
+          "filer_cik": 1530721,
+          "primary_document": "cpri-20230930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1530721/000153072123000194/cpri-20230930.htm"
+        },
+        {
+          "accession": "0001530721-24-000018",
+          "form": "10-Q",
+          "filing_date": "2024-02-08",
+          "filer_cik": 1530721,
+          "primary_document": "cpri-20231230.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1530721/000153072124000018/cpri-20231230.htm"
+        },
+        {
+          "accession": "0001530721-23-000033",
+          "form": "10-Q",
+          "filing_date": "2023-02-08",
+          "filer_cik": 1530721,
+          "primary_document": "cpri-20221231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1530721/000153072123000033/cpri-20221231.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-CRNX-VRTX-2026",
+      "target": "Crinetics Pharmaceuticals, Inc.",
+      "target_cik": 1658247,
+      "ticker": "CRNX",
+      "announcement_date": "2026-07-06",
+      "resolution_date": "2026-09-01",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001140361-26-030500",
+          "form": "DEFM14A",
+          "filing_date": "2026-07-31",
+          "filer_cik": 1658247,
+          "primary_document": "ny20077458x2_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1658247/000114036126030500/ny20077458x2_defm14a.htm"
+        },
+        {
+          "accession": "0001140361-26-029134",
+          "form": "PREM14A",
+          "filing_date": "2026-07-21",
+          "filer_cik": 1658247,
+          "primary_document": "ny20077458x1_prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1658247/000114036126029134/ny20077458x1_prem14a.htm"
+        },
+        {
+          "accession": "0001658247-26-000012",
+          "form": "10-K",
+          "filing_date": "2026-02-26",
+          "filer_cik": 1658247,
+          "primary_document": "crnx-20251231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1658247/000165824726000012/crnx-20251231.htm"
+        },
+        {
+          "accession": "0001658247-26-000053",
+          "form": "10-Q",
+          "filing_date": "2026-08-03",
+          "filer_cik": 1658247,
+          "primary_document": "crnx-20260630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1658247/000165824726000053/crnx-20260630.htm"
+        },
+        {
+          "accession": "0001658247-26-000040",
+          "form": "10-Q",
+          "filing_date": "2026-05-07",
+          "filer_cik": 1658247,
+          "primary_document": "crnx-20260331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1658247/000165824726000040/crnx-20260331.htm"
+        },
+        {
+          "accession": "0001658247-25-000019",
+          "form": "10-Q",
+          "filing_date": "2025-11-06",
+          "filer_cik": 1658247,
+          "primary_document": "crnx-20250930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1658247/000165824725000019/crnx-20250930.htm"
+        },
+        {
+          "accession": "0001193125-25-175498",
+          "form": "10-Q",
+          "filing_date": "2025-08-07",
+          "filer_cik": 1658247,
+          "primary_document": "crnx-20250630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1658247/000119312525175498/crnx-20250630.htm"
+        },
+        {
+          "accession": "0001140361-26-027643",
+          "form": "DEFA14A",
+          "filing_date": "2026-07-06",
+          "filer_cik": 1658247,
+          "primary_document": "ef20077399_defa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1658247/000114036126027643/ef20077399_defa14a.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-CTXS-PE-2022",
+      "target": "Citrix Systems, Inc.",
+      "target_cik": 877890,
+      "ticker": "CTXS",
+      "announcement_date": "2022-01-31",
+      "resolution_date": "2022-09-30",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-22-077283",
+          "form": "DEFM14A",
+          "filing_date": "2022-03-16",
+          "filer_cik": 877890,
+          "primary_document": "d219122ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/877890/000119312522077283/d219122ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-22-064471",
+          "form": "PREM14A",
+          "filing_date": "2022-03-03",
+          "filer_cik": 877890,
+          "primary_document": "d219122dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/877890/000119312522064471/d219122dprem14a.htm"
+        },
+        {
+          "accession": "0000877890-22-000019",
+          "form": "10-K",
+          "filing_date": "2022-02-16",
+          "filer_cik": 877890,
+          "primary_document": "ctxs-20211231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/877890/000087789022000019/ctxs-20211231.htm"
+        },
+        {
+          "accession": "0000877890-21-000051",
+          "form": "10-K",
+          "filing_date": "2021-02-08",
+          "filer_cik": 877890,
+          "primary_document": "ctxs-20201231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/877890/000087789021000051/ctxs-20201231.htm"
+        },
+        {
+          "accession": "0000877890-21-000351",
+          "form": "10-Q",
+          "filing_date": "2021-11-08",
+          "filer_cik": 877890,
+          "primary_document": "ctxs-20210930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/877890/000087789021000351/ctxs-20210930.htm"
+        },
+        {
+          "accession": "0000877890-22-000060",
+          "form": "10-Q",
+          "filing_date": "2022-05-05",
+          "filer_cik": 877890,
+          "primary_document": "ctxs-20220331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/877890/000087789022000060/ctxs-20220331.htm"
+        },
+        {
+          "accession": "0000877890-22-000079",
+          "form": "10-Q",
+          "filing_date": "2022-07-26",
+          "filer_cik": 877890,
+          "primary_document": "ctxs-20220630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/877890/000087789022000079/ctxs-20220630.htm"
+        },
+        {
+          "accession": "0000877890-21-000271",
+          "form": "10-Q",
+          "filing_date": "2021-07-30",
+          "filer_cik": 877890,
+          "primary_document": "ctxs-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/877890/000087789021000271/ctxs-20210630.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-CXO-COP-2020",
+      "target": "Concho Resources Inc.",
+      "target_cik": 1358071,
+      "ticker": "CXO",
+      "announcement_date": "2020-10-18",
+      "resolution_date": "2021-01-15",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001047469-20-005692",
+          "form": "DEFM14A",
+          "filing_date": "2020-12-11",
+          "filer_cik": 1358071,
+          "primary_document": "a2242726zdefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1358071/000104746920005692/a2242726zdefm14a.htm"
+        },
+        {
+          "accession": "0001358071-20-000011",
+          "form": "10-K",
+          "filing_date": "2020-02-19",
+          "filer_cik": 1358071,
+          "primary_document": "cxo-1231201910k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1358071/000135807120000011/cxo-1231201910k.htm"
+        },
+        {
+          "accession": "0001358071-20-000059",
+          "form": "10-Q",
+          "filing_date": "2020-10-27",
+          "filer_cik": 1358071,
+          "primary_document": "cxo-20200930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1358071/000135807120000059/cxo-20200930.htm"
+        },
+        {
+          "accession": "0001358071-20-000045",
+          "form": "10-Q",
+          "filing_date": "2020-07-31",
+          "filer_cik": 1358071,
+          "primary_document": "cxo-20200630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1358071/000135807120000045/cxo-20200630.htm"
+        },
+        {
+          "accession": "0001358071-20-000032",
+          "form": "10-Q",
+          "filing_date": "2020-05-01",
+          "filer_cik": 1358071,
+          "primary_document": "cxo-20200331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1358071/000135807120000032/cxo-20200331.htm"
+        },
+        {
+          "accession": "0001358071-19-000023",
+          "form": "10-Q",
+          "filing_date": "2019-10-30",
+          "filer_cik": 1358071,
+          "primary_document": "cxo-0930201910q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1358071/000135807119000023/cxo-0930201910q.htm"
+        },
+        {
+          "accession": "0001193125-20-075017",
+          "form": "DEFA14A",
+          "filing_date": "2020-03-16",
+          "filer_cik": 1358071,
+          "primary_document": "d871699ddefa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1358071/000119312520075017/d871699ddefa14a.htm"
+        },
+        {
+          "accession": "0001193125-20-271642",
+          "form": "8-K",
+          "filing_date": "2020-10-19",
+          "filer_cik": 1358071,
+          "primary_document": "d32162d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1358071/000119312520271642/d32162d8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-DFC-LONE-2014",
+      "target": "DFC GLOBAL CORP.",
+      "target_cik": 1271625,
+      "ticker": "DFC",
+      "announcement_date": "2014-04-02",
+      "resolution_date": "2014-06-24",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-14-174880",
+          "form": "DEFM14A",
+          "filing_date": "2014-05-01",
+          "filer_cik": 1271625,
+          "primary_document": "d715813ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1271625/000119312514174880/d715813ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-14-149223",
+          "form": "PREM14A",
+          "filing_date": "2014-04-18",
+          "filer_cik": 1271625,
+          "primary_document": "d715813dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1271625/000119312514149223/d715813dprem14a.htm"
+        },
+        {
+          "accession": "0001193125-13-352311",
+          "form": "10-K",
+          "filing_date": "2013-08-29",
+          "filer_cik": 1271625,
+          "primary_document": "d590562d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1271625/000119312513352311/d590562d10k.htm"
+        },
+        {
+          "accession": "0001193125-14-195203",
+          "form": "10-Q",
+          "filing_date": "2014-05-12",
+          "filer_cik": 1271625,
+          "primary_document": "d724100d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1271625/000119312514195203/d724100d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-043422",
+          "form": "10-Q",
+          "filing_date": "2014-02-10",
+          "filer_cik": 1271625,
+          "primary_document": "d673547d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1271625/000119312514043422/d673547d10q.htm"
+        },
+        {
+          "accession": "0001193125-13-438313",
+          "form": "10-Q",
+          "filing_date": "2013-11-12",
+          "filer_cik": 1271625,
+          "primary_document": "d625627d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1271625/000119312513438313/d625627d10q.htm"
+        },
+        {
+          "accession": "0001193125-13-213700",
+          "form": "10-Q",
+          "filing_date": "2013-05-10",
+          "filer_cik": 1271625,
+          "primary_document": "d535530d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1271625/000119312513213700/d535530d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-127093",
+          "form": "DEFA14A",
+          "filing_date": "2014-04-02",
+          "filer_cik": 1271625,
+          "primary_document": "d704340d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1271625/000119312514127093/d704340d8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-DRE-PLD-2022",
+      "target": "Duke Realty Corporation",
+      "target_cik": 783280,
+      "ticker": "DRE",
+      "announcement_date": "2022-06-13",
+      "resolution_date": "2022-10-03",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001104659-22-085227",
+          "form": "DEFM14A",
+          "filing_date": "2022-08-02",
+          "filer_cik": 783280,
+          "primary_document": "tm2222342-1_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/783280/000110465922085227/tm2222342-1_defm14a.htm"
+        },
+        {
+          "accession": "0000783280-22-000010",
+          "form": "10-K",
+          "filing_date": "2022-02-18",
+          "filer_cik": 783280,
+          "primary_document": "dre-20211231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/783280/000078328022000010/dre-20211231.htm"
+        },
+        {
+          "accession": "0000783280-22-000033",
+          "form": "10-Q",
+          "filing_date": "2022-04-29",
+          "filer_cik": 783280,
+          "primary_document": "dre-20220331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/783280/000078328022000033/dre-20220331.htm"
+        },
+        {
+          "accession": "0000783280-22-000054",
+          "form": "10-Q",
+          "filing_date": "2022-08-08",
+          "filer_cik": 783280,
+          "primary_document": "dre-20220630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/783280/000078328022000054/dre-20220630.htm"
+        },
+        {
+          "accession": "0000783280-21-000059",
+          "form": "10-Q",
+          "filing_date": "2021-10-29",
+          "filer_cik": 783280,
+          "primary_document": "dre-20210930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/783280/000078328021000059/dre-20210930.htm"
+        },
+        {
+          "accession": "0000783280-21-000052",
+          "form": "10-Q",
+          "filing_date": "2021-07-30",
+          "filer_cik": 783280,
+          "primary_document": "dre-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/783280/000078328021000052/dre-20210630.htm"
+        },
+        {
+          "accession": "0000783280-22-000018",
+          "form": "DEFA14A",
+          "filing_date": "2022-03-02",
+          "filer_cik": 783280,
+          "primary_document": "a2022defa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/783280/000078328022000018/a2022defa14a.htm"
+        },
+        {
+          "accession": "0001193125-22-172478",
+          "form": "8-K",
+          "filing_date": "2022-06-13",
+          "filer_cik": 783280,
+          "primary_document": "d286771d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/783280/000119312522172478/d286771d8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-EA-PIFSLAFF-2025",
+      "target": "Electronic Arts Inc.",
+      "target_cik": 712515,
+      "ticker": "EA",
+      "announcement_date": "2025-09-28",
+      "resolution_date": "2026-08-04",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001140361-25-042872",
+          "form": "DEFM14A",
+          "filing_date": "2025-11-20",
+          "filer_cik": 712515,
+          "primary_document": "ny20056157x2_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000114036125042872/ny20056157x2_defm14a.htm"
+        },
+        {
+          "accession": "0001140361-25-041416",
+          "form": "PREM14A",
+          "filing_date": "2025-11-10",
+          "filer_cik": 712515,
+          "primary_document": "ny20056157x1_prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000114036125041416/ny20056157x1_prem14a.htm"
+        },
+        {
+          "accession": "0000712515-25-000022",
+          "form": "10-K",
+          "filing_date": "2025-05-13",
+          "filer_cik": 712515,
+          "primary_document": "ea-20250331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000022/ea-20250331.htm"
+        },
+        {
+          "accession": "0001628280-26-033617",
+          "form": "10-K",
+          "filing_date": "2026-05-11",
+          "filer_cik": 712515,
+          "primary_document": "ea-20260331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000162828026033617/ea-20260331.htm"
+        },
+        {
+          "accession": "0001628280-25-047811",
+          "form": "10-Q",
+          "filing_date": "2025-10-31",
+          "filer_cik": 712515,
+          "primary_document": "ea-20250930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000162828025047811/ea-20250930.htm"
+        },
+        {
+          "accession": "0000712515-25-000030",
+          "form": "10-Q",
+          "filing_date": "2025-08-01",
+          "filer_cik": 712515,
+          "primary_document": "ea-20250630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000030/ea-20250630.htm"
+        },
+        {
+          "accession": "0001628280-26-005101",
+          "form": "10-Q",
+          "filing_date": "2026-02-03",
+          "filer_cik": 712515,
+          "primary_document": "ea-20251231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000162828026005101/ea-20251231.htm"
+        },
+        {
+          "accession": "0000712515-25-000015",
+          "form": "10-Q",
+          "filing_date": "2025-02-05",
+          "filer_cik": 712515,
+          "primary_document": "ea-20241231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000015/ea-20241231.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-ESI-SOLS-2026",
+      "target": "Element Solutions Inc",
+      "target_cik": 1590714,
+      "ticker": "ESI",
+      "announcement_date": "2026-07-06",
+      "resolution_date": "2026-08-27",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001590714-26-000018",
+          "form": "10-K",
+          "filing_date": "2026-02-18",
+          "filer_cik": 1590714,
+          "primary_document": "esi-20251231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1590714/000159071426000018/esi-20251231.htm"
+        },
+        {
+          "accession": "0001590714-26-000065",
+          "form": "10-Q",
+          "filing_date": "2026-07-28",
+          "filer_cik": 1590714,
+          "primary_document": "esi-20260630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1590714/000159071426000065/esi-20260630.htm"
+        },
+        {
+          "accession": "0001590714-26-000041",
+          "form": "10-Q",
+          "filing_date": "2026-04-29",
+          "filer_cik": 1590714,
+          "primary_document": "esi-20260331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1590714/000159071426000041/esi-20260331.htm"
+        },
+        {
+          "accession": "0001590714-25-000087",
+          "form": "10-Q",
+          "filing_date": "2025-10-29",
+          "filer_cik": 1590714,
+          "primary_document": "esi-20250930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1590714/000159071425000087/esi-20250930.htm"
+        },
+        {
+          "accession": "0001590714-25-000077",
+          "form": "10-Q",
+          "filing_date": "2025-07-31",
+          "filer_cik": 1590714,
+          "primary_document": "esi-20250630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1590714/000159071425000077/esi-20250630.htm"
+        },
+        {
+          "accession": "0001590714-26-000035",
+          "form": "DEFA14A",
+          "filing_date": "2026-03-23",
+          "filer_cik": 1590714,
+          "primary_document": "esi2026additionaldefinitiv.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1590714/000159071426000035/esi2026additionaldefinitiv.htm"
+        },
+        {
+          "accession": "0001104659-26-080612",
+          "form": "8-K",
+          "filing_date": "2026-07-06",
+          "filer_cik": 1590714,
+          "primary_document": "tm2619788d4_8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1590714/000110465926080612/tm2619788d4_8k.htm"
+        },
+        {
+          "accession": "0001104659-26-080825",
+          "form": "8-K",
+          "filing_date": "2026-07-06",
+          "filer_cik": 1590714,
+          "primary_document": "tm2619788d2_8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1590714/000110465926080825/tm2619788d2_8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-FIVN-ZM-2021",
+      "target": "Five9, Inc.",
+      "target_cik": 1288847,
+      "ticker": "FIVN",
+      "announcement_date": "2021-07-16",
+      "resolution_date": "2021-09-30",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-21-257727",
+          "form": "DEFM14A",
+          "filing_date": "2021-08-26",
+          "filer_cik": 1288847,
+          "primary_document": "d139962ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1288847/000119312521257727/d139962ddefm14a.htm"
+        },
+        {
+          "accession": "0001288847-21-000029",
+          "form": "10-K",
+          "filing_date": "2021-03-01",
+          "filer_cik": 1288847,
+          "primary_document": "fivn-20201231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1288847/000128884721000029/fivn-20201231.htm"
+        },
+        {
+          "accession": "0001288847-21-000110",
+          "form": "10-Q",
+          "filing_date": "2021-07-27",
+          "filer_cik": 1288847,
+          "primary_document": "fivn-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1288847/000128884721000110/fivn-20210630.htm"
+        },
+        {
+          "accession": "0001288847-21-000069",
+          "form": "10-Q",
+          "filing_date": "2021-04-29",
+          "filer_cik": 1288847,
+          "primary_document": "fivn-20210331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1288847/000128884721000069/fivn-20210331.htm"
+        },
+        {
+          "accession": "0001288847-20-000155",
+          "form": "10-Q",
+          "filing_date": "2020-10-29",
+          "filer_cik": 1288847,
+          "primary_document": "fivn-20200930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1288847/000128884720000155/fivn-20200930.htm"
+        },
+        {
+          "accession": "0001288847-20-000125",
+          "form": "10-Q",
+          "filing_date": "2020-08-03",
+          "filer_cik": 1288847,
+          "primary_document": "fivn-20200630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1288847/000128884720000125/fivn-20200630.htm"
+        },
+        {
+          "accession": "0001288847-21-000060",
+          "form": "DEFA14A",
+          "filing_date": "2021-04-28",
+          "filer_cik": 1288847,
+          "primary_document": "a2021proxystatementdefa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1288847/000128884721000060/a2021proxystatementdefa14a.htm"
+        },
+        {
+          "accession": "0001288847-21-000052",
+          "form": "DEFA14A",
+          "filing_date": "2021-03-29",
+          "filer_cik": 1288847,
+          "primary_document": "defa14a2021.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1288847/000128884721000052/defa14a2021.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-GNW-OCEANWIDE-2016",
+      "target": "Genworth Financial, Inc.",
+      "target_cik": 1276520,
+      "ticker": "GNW",
+      "announcement_date": "2016-10-21",
+      "resolution_date": "2021-04-06",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-17-017271",
+          "form": "DEFM14A",
+          "filing_date": "2017-01-25",
+          "filer_cik": 1276520,
+          "primary_document": "d267031ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1276520/000119312517017271/d267031ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-16-799639",
+          "form": "PREM14A",
+          "filing_date": "2016-12-21",
+          "filer_cik": 1276520,
+          "primary_document": "d267031dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1276520/000119312516799639/d267031dprem14a.htm"
+        },
+        {
+          "accession": "0001193125-17-059195",
+          "form": "10-K",
+          "filing_date": "2017-02-27",
+          "filer_cik": 1276520,
+          "primary_document": "d277185d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1276520/000119312517059195/d277185d10k.htm"
+        },
+        {
+          "accession": "0001193125-16-482185",
+          "form": "10-K",
+          "filing_date": "2016-02-26",
+          "filer_cik": 1276520,
+          "primary_document": "d52855d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1276520/000119312516482185/d52855d10k.htm"
+        },
+        {
+          "accession": "0001193125-18-064038",
+          "form": "10-K",
+          "filing_date": "2018-02-28",
+          "filer_cik": 1276520,
+          "primary_document": "d492876d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1276520/000119312518064038/d492876d10k.htm"
+        },
+        {
+          "accession": "0001193125-19-052835",
+          "form": "10-K",
+          "filing_date": "2019-02-27",
+          "filer_cik": 1276520,
+          "primary_document": "d680173d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1276520/000119312519052835/d680173d10k.htm"
+        },
+        {
+          "accession": "0001193125-20-051019",
+          "form": "10-K",
+          "filing_date": "2020-02-27",
+          "filer_cik": 1276520,
+          "primary_document": "d849640d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1276520/000119312520051019/d849640d10k.htm"
+        },
+        {
+          "accession": "0001193125-21-058267",
+          "form": "10-K",
+          "filing_date": "2021-02-26",
+          "filer_cik": 1276520,
+          "primary_document": "d105560d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1276520/000119312521058267/d105560d10k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-HCP-IBM-2024",
+      "target": "HashiCorp, Inc.",
+      "target_cik": 1720671,
+      "ticker": "HCP",
+      "announcement_date": "2024-04-24",
+      "resolution_date": "2025-02-27",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001140361-24-029939",
+          "form": "DEFM14A",
+          "filing_date": "2024-06-13",
+          "filer_cik": 1720671,
+          "primary_document": "ny20028706x3_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1720671/000114036124029939/ny20028706x3_defm14a.htm"
+        },
+        {
+          "accession": "0001140361-24-028436",
+          "form": "PREM14A",
+          "filing_date": "2024-06-03",
+          "filer_cik": 1720671,
+          "primary_document": "ny20028706x1_prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1720671/000114036124028436/ny20028706x1_prem14a.htm"
+        },
+        {
+          "accession": "0001628280-24-012350",
+          "form": "10-K",
+          "filing_date": "2024-03-21",
+          "filer_cik": 1720671,
+          "primary_document": "hcp-20240131.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1720671/000162828024012350/hcp-20240131.htm"
+        },
+        {
+          "accession": "0001628280-24-025771",
+          "form": "10-Q",
+          "filing_date": "2024-05-30",
+          "filer_cik": 1720671,
+          "primary_document": "hcp-20240430.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1720671/000162828024025771/hcp-20240430.htm"
+        },
+        {
+          "accession": "0001720671-24-000017",
+          "form": "10-Q",
+          "filing_date": "2024-08-29",
+          "filer_cik": 1720671,
+          "primary_document": "hcp-20240731.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1720671/000172067124000017/hcp-20240731.htm"
+        },
+        {
+          "accession": "0001628280-23-041061",
+          "form": "10-Q",
+          "filing_date": "2023-12-07",
+          "filer_cik": 1720671,
+          "primary_document": "hcp-20231031.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1720671/000162828023041061/hcp-20231031.htm"
+        },
+        {
+          "accession": "0001720671-24-000023",
+          "form": "10-Q",
+          "filing_date": "2024-12-05",
+          "filer_cik": 1720671,
+          "primary_document": "hcp-20241031.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1720671/000172067124000023/hcp-20241031.htm"
+        },
+        {
+          "accession": "0001628280-23-031141",
+          "form": "10-Q",
+          "filing_date": "2023-08-31",
+          "filer_cik": 1720671,
+          "primary_document": "hcp-20230731.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1720671/000162828023031141/hcp-20230731.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-HUM-AET-2015",
+      "target": "Humana Inc.",
+      "target_cik": 49071,
+      "ticker": "HUM",
+      "announcement_date": "2015-07-02",
+      "resolution_date": "2017-02-14",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-306280",
+          "form": "DEFM14A",
+          "filing_date": "2015-08-28",
+          "filer_cik": 49071,
+          "primary_document": "d67897ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/49071/000119312515306280/d67897ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-15-285879",
+          "form": "PREM14A",
+          "filing_date": "2015-08-11",
+          "filer_cik": 49071,
+          "primary_document": "d67897dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/49071/000119312515285879/d67897dprem14a.htm"
+        },
+        {
+          "accession": "0000049071-15-000019",
+          "form": "10-K",
+          "filing_date": "2015-02-18",
+          "filer_cik": 49071,
+          "primary_document": "hum-20141231x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/49071/000004907115000019/hum-20141231x10k.htm"
+        },
+        {
+          "accession": "0000049071-16-000117",
+          "form": "10-K",
+          "filing_date": "2016-02-18",
+          "filer_cik": 49071,
+          "primary_document": "hum-20151231x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/49071/000004907116000117/hum-20151231x10k.htm"
+        },
+        {
+          "accession": "0000049071-15-000075",
+          "form": "10-Q",
+          "filing_date": "2015-07-29",
+          "filer_cik": 49071,
+          "primary_document": "hum-20150630x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/49071/000004907115000075/hum-20150630x10q.htm"
+        },
+        {
+          "accession": "0000049071-15-000061",
+          "form": "10-Q",
+          "filing_date": "2015-04-29",
+          "filer_cik": 49071,
+          "primary_document": "hum-20150331x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/49071/000004907115000061/hum-20150331x10q.htm"
+        },
+        {
+          "accession": "0000049071-15-000098",
+          "form": "10-Q",
+          "filing_date": "2015-11-06",
+          "filer_cik": 49071,
+          "primary_document": "hum-20150930x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/49071/000004907115000098/hum-20150930x10q.htm"
+        },
+        {
+          "accession": "0000049071-14-000128",
+          "form": "10-Q",
+          "filing_date": "2014-11-07",
+          "filer_cik": 49071,
+          "primary_document": "hum-20140930x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/49071/000004907114000128/hum-20140930x10q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-IRBT-AMZN-2022",
+      "target": "iRobot Corporation",
+      "target_cik": 1159167,
+      "ticker": "IRBT",
+      "announcement_date": "2022-08-04",
+      "resolution_date": "2024-01-28",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-22-240062",
+          "form": "DEFM14A",
+          "filing_date": "2022-09-07",
+          "filer_cik": 1159167,
+          "primary_document": "d290900ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159167/000119312522240062/d290900ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-23-220091",
+          "form": "DEFM14A",
+          "filing_date": "2023-08-24",
+          "filer_cik": 1159167,
+          "primary_document": "d496206ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159167/000119312523220091/d496206ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-22-230185",
+          "form": "PREM14A",
+          "filing_date": "2022-08-25",
+          "filer_cik": 1159167,
+          "primary_document": "d290900dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159167/000119312522230185/d290900dprem14a.htm"
+        },
+        {
+          "accession": "0001193125-23-212334",
+          "form": "PREM14A",
+          "filing_date": "2023-08-14",
+          "filer_cik": 1159167,
+          "primary_document": "d496206dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159167/000119312523212334/d496206dprem14a.htm"
+        },
+        {
+          "accession": "0001159167-22-000009",
+          "form": "10-K",
+          "filing_date": "2022-02-15",
+          "filer_cik": 1159167,
+          "primary_document": "irbt-20220101.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159167/000115916722000009/irbt-20220101.htm"
+        },
+        {
+          "accession": "0001159167-23-000011",
+          "form": "10-K",
+          "filing_date": "2023-02-14",
+          "filer_cik": 1159167,
+          "primary_document": "irbt-20221231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159167/000115916723000011/irbt-20221231.htm"
+        },
+        {
+          "accession": "0001159167-22-000055",
+          "form": "10-Q",
+          "filing_date": "2022-08-10",
+          "filer_cik": 1159167,
+          "primary_document": "irbt-20220702.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159167/000115916722000055/irbt-20220702.htm"
+        },
+        {
+          "accession": "0001159167-22-000030",
+          "form": "10-Q",
+          "filing_date": "2022-05-05",
+          "filer_cik": 1159167,
+          "primary_document": "irbt-20220402.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159167/000115916722000030/irbt-20220402.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-JNPR-HPE-2024",
+      "target": "Juniper Networks, Inc.",
+      "target_cik": 1043604,
+      "ticker": "JNPR",
+      "announcement_date": "2024-01-09",
+      "resolution_date": "2025-07-02",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-24-046175",
+          "form": "DEFM14A",
+          "filing_date": "2024-02-26",
+          "filer_cik": 1043604,
+          "primary_document": "d84254ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1043604/000119312524046175/d84254ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-24-026799",
+          "form": "PREM14A",
+          "filing_date": "2024-02-07",
+          "filer_cik": 1043604,
+          "primary_document": "d84254dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1043604/000119312524026799/d84254dprem14a.htm"
+        },
+        {
+          "accession": "0001043604-24-000014",
+          "form": "10-K",
+          "filing_date": "2024-02-07",
+          "filer_cik": 1043604,
+          "primary_document": "jnpr-20231231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1043604/000104360424000014/jnpr-20231231.htm"
+        },
+        {
+          "accession": "0001043604-23-000016",
+          "form": "10-K",
+          "filing_date": "2023-02-10",
+          "filer_cik": 1043604,
+          "primary_document": "jnpr-20221231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1043604/000104360423000016/jnpr-20221231.htm"
+        },
+        {
+          "accession": "0001043604-25-000025",
+          "form": "10-K",
+          "filing_date": "2025-02-21",
+          "filer_cik": 1043604,
+          "primary_document": "jnpr-20241231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1043604/000104360425000025/jnpr-20241231.htm"
+        },
+        {
+          "accession": "0001043604-23-000156",
+          "form": "10-Q",
+          "filing_date": "2023-10-27",
+          "filer_cik": 1043604,
+          "primary_document": "jnpr-20230930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1043604/000104360423000156/jnpr-20230930.htm"
+        },
+        {
+          "accession": "0001043604-24-000066",
+          "form": "10-Q",
+          "filing_date": "2024-04-26",
+          "filer_cik": 1043604,
+          "primary_document": "jnpr-20240331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1043604/000104360424000066/jnpr-20240331.htm"
+        },
+        {
+          "accession": "0001043604-23-000133",
+          "form": "10-Q",
+          "filing_date": "2023-07-28",
+          "filer_cik": 1043604,
+          "primary_document": "jnpr-20230630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1043604/000104360423000133/jnpr-20230630.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-LSCC-CANYONBRIDGE-2016",
+      "target": "Lattice Semiconductor Corporation",
+      "target_cik": 855658,
+      "ticker": "LSCC",
+      "announcement_date": "2016-11-03",
+      "resolution_date": "2017-09-13",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-17-020387",
+          "form": "DEFM14A",
+          "filing_date": "2017-01-27",
+          "filer_cik": 855658,
+          "primary_document": "d268370ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/855658/000119312517020387/d268370ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-16-781068",
+          "form": "PREM14A",
+          "filing_date": "2016-11-30",
+          "filer_cik": 855658,
+          "primary_document": "d268370dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/855658/000119312516781068/d268370dprem14a.htm"
+        },
+        {
+          "accession": "0000855658-17-000012",
+          "form": "10-K",
+          "filing_date": "2017-03-01",
+          "filer_cik": 855658,
+          "primary_document": "lscc201610-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/855658/000085565817000012/lscc201610-k.htm"
+        },
+        {
+          "accession": "0000855658-16-000180",
+          "form": "10-K",
+          "filing_date": "2016-03-02",
+          "filer_cik": 855658,
+          "primary_document": "a201510-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/855658/000085565816000180/a201510-k.htm"
+        },
+        {
+          "accession": "0000855658-16-000309",
+          "form": "10-Q",
+          "filing_date": "2016-11-10",
+          "filer_cik": 855658,
+          "primary_document": "lscc2016q310q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/855658/000085565816000309/lscc2016q310q.htm"
+        },
+        {
+          "accession": "0000855658-16-000282",
+          "form": "10-Q",
+          "filing_date": "2016-08-11",
+          "filer_cik": 855658,
+          "primary_document": "lscc2016q210q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/855658/000085565816000282/lscc2016q210q.htm"
+        },
+        {
+          "accession": "0000855658-16-000231",
+          "form": "10-Q",
+          "filing_date": "2016-05-12",
+          "filer_cik": 855658,
+          "primary_document": "a2016q110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/855658/000085565816000231/a2016q110q.htm"
+        },
+        {
+          "accession": "0000855658-17-000030",
+          "form": "10-Q",
+          "filing_date": "2017-05-11",
+          "filer_cik": 855658,
+          "primary_document": "lscc2017q110-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/855658/000085565817000030/lscc2017q110-q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-MKTG-AEGIS-2014",
+      "target": "'mktg, inc.'",
+      "target_cik": 886475,
+      "ticker": "MKTG",
+      "announcement_date": "2014-05-27",
+      "resolution_date": "2014-08-27",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001019056-14-000922",
+          "form": "DEFM14A",
+          "filing_date": "2014-07-16",
+          "filer_cik": 886475,
+          "primary_document": "mktg_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905614000922/mktg_defm14a.htm"
+        },
+        {
+          "accession": "0001019056-14-000882",
+          "form": "PREM14A",
+          "filing_date": "2014-06-27",
+          "filer_cik": 886475,
+          "primary_document": "mktg_prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905614000882/mktg_prem14a.htm"
+        },
+        {
+          "accession": "0001019056-14-000881",
+          "form": "10-K",
+          "filing_date": "2014-06-27",
+          "filer_cik": 886475,
+          "primary_document": "mktg_10k14.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905614000881/mktg_10k14.htm"
+        },
+        {
+          "accession": "0001019056-13-000804",
+          "form": "10-K",
+          "filing_date": "2013-06-24",
+          "filer_cik": 886475,
+          "primary_document": "mktg_10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905613000804/mktg_10k.htm"
+        },
+        {
+          "accession": "0001019056-14-001019",
+          "form": "10-Q",
+          "filing_date": "2014-08-07",
+          "filer_cik": 886475,
+          "primary_document": "mktg_1q15.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905614001019/mktg_1q15.htm"
+        },
+        {
+          "accession": "0001019056-14-000207",
+          "form": "10-Q",
+          "filing_date": "2014-02-14",
+          "filer_cik": 886475,
+          "primary_document": "mktg_3q14.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905614000207/mktg_3q14.htm"
+        },
+        {
+          "accession": "0001019056-13-001271",
+          "form": "10-Q",
+          "filing_date": "2013-11-13",
+          "filer_cik": 886475,
+          "primary_document": "mktg_2q14.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905613001271/mktg_2q14.htm"
+        },
+        {
+          "accession": "0001019056-13-000918",
+          "form": "10-Q",
+          "filing_date": "2013-08-01",
+          "filer_cik": 886475,
+          "primary_document": "mktg_1q14.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905613000918/mktg_1q14.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-MON-BAYER-2016",
+      "target": "Monsanto Company",
+      "target_cik": 1110783,
+      "ticker": "MON",
+      "announcement_date": "2016-09-14",
+      "resolution_date": "2018-06-07",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-16-765991",
+          "form": "DEFM14A",
+          "filing_date": "2016-11-10",
+          "filer_cik": 1110783,
+          "primary_document": "d252304ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1110783/000119312516765991/d252304ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-16-741843",
+          "form": "PREM14A",
+          "filing_date": "2016-10-19",
+          "filer_cik": 1110783,
+          "primary_document": "d252304dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1110783/000119312516741843/d252304dprem14a.htm"
+        },
+        {
+          "accession": "0001110783-16-000434",
+          "form": "SC 14D9",
+          "filing_date": "2016-05-24",
+          "filer_cik": 1110783,
+          "primary_document": "sched14d-9.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1110783/000111078316000434/sched14d-9.htm"
+        },
+        {
+          "accession": "0001110783-16-000532",
+          "form": "10-K",
+          "filing_date": "2016-10-19",
+          "filer_cik": 1110783,
+          "primary_document": "mon-20160831x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1110783/000111078316000532/mon-20160831x10k.htm"
+        },
+        {
+          "accession": "0001110783-15-000230",
+          "form": "10-K",
+          "filing_date": "2015-10-29",
+          "filer_cik": 1110783,
+          "primary_document": "mon-20150831x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1110783/000111078315000230/mon-20150831x10k.htm"
+        },
+        {
+          "accession": "0001110783-17-000187",
+          "form": "10-K",
+          "filing_date": "2017-10-27",
+          "filer_cik": 1110783,
+          "primary_document": "mon-20170831x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1110783/000111078317000187/mon-20170831x10k.htm"
+        },
+        {
+          "accession": "0001110783-16-000444",
+          "form": "10-Q",
+          "filing_date": "2016-06-30",
+          "filer_cik": 1110783,
+          "primary_document": "mon-20160531xq3.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1110783/000111078316000444/mon-20160531xq3.htm"
+        },
+        {
+          "accession": "0001110783-17-000008",
+          "form": "10-Q",
+          "filing_date": "2017-01-06",
+          "filer_cik": 1110783,
+          "primary_document": "mon-20171130xq1.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1110783/000111078317000008/mon-20171130xq1.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-MRO-COP-2024",
+      "target": "Marathon Oil Corporation",
+      "target_cik": 101778,
+      "ticker": "MRO",
+      "announcement_date": "2024-05-28",
+      "resolution_date": "2024-11-22",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001104659-24-083181",
+          "form": "DEFM14A",
+          "filing_date": "2024-07-29",
+          "filer_cik": 101778,
+          "primary_document": "tm2419062-1_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/101778/000110465924083181/tm2419062-1_defm14a.htm"
+        },
+        {
+          "accession": "0000101778-24-000023",
+          "form": "10-K",
+          "filing_date": "2024-02-22",
+          "filer_cik": 101778,
+          "primary_document": "mro-20231231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/101778/000010177824000023/mro-20231231.htm"
+        },
+        {
+          "accession": "0000101778-24-000099",
+          "form": "10-Q",
+          "filing_date": "2024-05-02",
+          "filer_cik": 101778,
+          "primary_document": "mro-20240331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/101778/000010177824000099/mro-20240331.htm"
+        },
+        {
+          "accession": "0000101778-24-000115",
+          "form": "10-Q",
+          "filing_date": "2024-08-08",
+          "filer_cik": 101778,
+          "primary_document": "mro-20240630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/101778/000010177824000115/mro-20240630.htm"
+        },
+        {
+          "accession": "0000101778-24-000136",
+          "form": "10-Q",
+          "filing_date": "2024-11-06",
+          "filer_cik": 101778,
+          "primary_document": "mro-20240930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/101778/000010177824000136/mro-20240930.htm"
+        },
+        {
+          "accession": "0000101778-23-000146",
+          "form": "10-Q",
+          "filing_date": "2023-11-02",
+          "filer_cik": 101778,
+          "primary_document": "mro-20230930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/101778/000010177823000146/mro-20230930.htm"
+        },
+        {
+          "accession": "0000101778-23-000107",
+          "form": "10-Q",
+          "filing_date": "2023-08-03",
+          "filer_cik": 101778,
+          "primary_document": "mro-20230630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/101778/000010177823000107/mro-20230630.htm"
+        },
+        {
+          "accession": "0000101778-24-000083",
+          "form": "DEFA14A",
+          "filing_date": "2024-04-10",
+          "filer_cik": 101778,
+          "primary_document": "mro-defa14ax2024.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/101778/000010177824000083/mro-defa14ax2024.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-ODP-SPLS-2015",
+      "target": "Office Depot, Inc.",
+      "target_cik": 800240,
+      "ticker": "ODP",
+      "announcement_date": "2015-02-04",
+      "resolution_date": "2016-05-16",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-190524",
+          "form": "DEFM14A",
+          "filing_date": "2015-05-18",
+          "filer_cik": 800240,
+          "primary_document": "d892614ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312515190524/d892614ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-15-100382",
+          "form": "PREM14A",
+          "filing_date": "2015-03-20",
+          "filer_cik": 800240,
+          "primary_document": "d892614dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312515100382/d892614dprem14a.htm"
+        },
+        {
+          "accession": "0001193125-15-059042",
+          "form": "10-K",
+          "filing_date": "2015-02-24",
+          "filer_cik": 800240,
+          "primary_document": "d841032d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312515059042/d841032d10k.htm"
+        },
+        {
+          "accession": "0001193125-14-065991",
+          "form": "10-K",
+          "filing_date": "2014-02-25",
+          "filer_cik": 800240,
+          "primary_document": "d654584d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312514065991/d654584d10k.htm"
+        },
+        {
+          "accession": "0001193125-16-472490",
+          "form": "10-K",
+          "filing_date": "2016-02-23",
+          "filer_cik": 800240,
+          "primary_document": "d82066d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312516472490/d82066d10k.htm"
+        },
+        {
+          "accession": "0001193125-15-170095",
+          "form": "10-Q",
+          "filing_date": "2015-05-05",
+          "filer_cik": 800240,
+          "primary_document": "d900608d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312515170095/d900608d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-395039",
+          "form": "10-Q",
+          "filing_date": "2014-11-04",
+          "filer_cik": 800240,
+          "primary_document": "d791986d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312514395039/d791986d10q.htm"
+        },
+        {
+          "accession": "0001193125-15-275644",
+          "form": "10-Q",
+          "filing_date": "2015-08-04",
+          "filer_cik": 800240,
+          "primary_document": "d945838d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312515275644/d945838d10q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-OM-APOLLO-2015",
+      "target": "OM GROUP INC",
+      "target_cik": 899723,
+      "ticker": "OM",
+      "announcement_date": "2015-06-01",
+      "resolution_date": "2015-11-09",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-250362",
+          "form": "DEFM14A",
+          "filing_date": "2015-07-10",
+          "filer_cik": 899723,
+          "primary_document": "d949251ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/899723/000119312515250362/d949251ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-15-237444",
+          "form": "PREM14A",
+          "filing_date": "2015-06-26",
+          "filer_cik": 899723,
+          "primary_document": "d949251dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/899723/000119312515237444/d949251dprem14a.htm"
+        },
+        {
+          "accession": "0000899723-15-000012",
+          "form": "10-K",
+          "filing_date": "2015-03-02",
+          "filer_cik": 899723,
+          "primary_document": "omg1231201410k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/899723/000089972315000012/omg1231201410k.htm"
+        },
+        {
+          "accession": "0000899723-15-000019",
+          "form": "10-Q",
+          "filing_date": "2015-04-30",
+          "filer_cik": 899723,
+          "primary_document": "omg3311510q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/899723/000089972315000019/omg3311510q.htm"
+        },
+        {
+          "accession": "0000899723-15-000026",
+          "form": "10-Q",
+          "filing_date": "2015-08-05",
+          "filer_cik": 899723,
+          "primary_document": "omg6301510q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/899723/000089972315000026/omg6301510q.htm"
+        },
+        {
+          "accession": "0000899723-14-000049",
+          "form": "10-Q",
+          "filing_date": "2014-10-29",
+          "filer_cik": 899723,
+          "primary_document": "omg9301410q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/899723/000089972314000049/omg9301410q.htm"
+        },
+        {
+          "accession": "0000899723-14-000033",
+          "form": "10-Q",
+          "filing_date": "2014-08-01",
+          "filer_cik": 899723,
+          "primary_document": "omg6301410q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/899723/000089972314000033/omg6301410q.htm"
+        },
+        {
+          "accession": "0001193125-15-209311",
+          "form": "DEFA14A",
+          "filing_date": "2015-06-01",
+          "filer_cik": 899723,
+          "primary_document": "d935838ddefa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/899723/000119312515209311/d935838ddefa14a.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-PACB-ILMN-2018",
+      "target": "Pacific Biosciences of California, Inc.",
+      "target_cik": 1299130,
+      "ticker": "PACB",
+      "announcement_date": "2018-11-01",
+      "resolution_date": "2020-01-02",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-18-351266",
+          "form": "DEFM14A",
+          "filing_date": "2018-12-18",
+          "filer_cik": 1299130,
+          "primary_document": "d646626ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1299130/000119312518351266/d646626ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-18-342511",
+          "form": "PREM14A",
+          "filing_date": "2018-12-05",
+          "filer_cik": 1299130,
+          "primary_document": "d646626dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1299130/000119312518342511/d646626dprem14a.htm"
+        },
+        {
+          "accession": "0001299130-19-000014",
+          "form": "10-K",
+          "filing_date": "2019-02-26",
+          "filer_cik": 1299130,
+          "primary_document": "pacb-20181231x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1299130/000129913019000014/pacb-20181231x10k.htm"
+        },
+        {
+          "accession": "0001299130-18-000018",
+          "form": "10-K",
+          "filing_date": "2018-02-26",
+          "filer_cik": 1299130,
+          "primary_document": "pacb-20171231x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1299130/000129913018000018/pacb-20171231x10k.htm"
+        },
+        {
+          "accession": "0001299130-18-000069",
+          "form": "10-Q",
+          "filing_date": "2018-11-05",
+          "filer_cik": 1299130,
+          "primary_document": "pacb-20180930x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1299130/000129913018000069/pacb-20180930x10q.htm"
+        },
+        {
+          "accession": "0001299130-18-000057",
+          "form": "10-Q",
+          "filing_date": "2018-08-03",
+          "filer_cik": 1299130,
+          "primary_document": "pacb-20180630x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1299130/000129913018000057/pacb-20180630x10q.htm"
+        },
+        {
+          "accession": "0001299130-18-000031",
+          "form": "10-Q",
+          "filing_date": "2018-05-02",
+          "filer_cik": 1299130,
+          "primary_document": "pacb-20180331x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1299130/000129913018000031/pacb-20180331x10q.htm"
+        },
+        {
+          "accession": "0001299130-19-000029",
+          "form": "10-Q",
+          "filing_date": "2019-05-03",
+          "filer_cik": 1299130,
+          "primary_document": "pacb-20190331x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1299130/000129913019000029/pacb-20190331x10q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-RAD-WBA-2015",
+      "target": "Rite Aid Corporation",
+      "target_cik": 84129,
+      "ticker": "RAD",
+      "announcement_date": "2015-10-27",
+      "resolution_date": "2017-06-29",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001047469-15-009328",
+          "form": "DEFM14A",
+          "filing_date": "2015-12-21",
+          "filer_cik": 84129,
+          "primary_document": "a2226919zdefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/84129/000104746915009328/a2226919zdefm14a.htm"
+        },
+        {
+          "accession": "0001047469-15-008928",
+          "form": "PREM14A",
+          "filing_date": "2015-11-24",
+          "filer_cik": 84129,
+          "primary_document": "a2226565zprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/84129/000104746915008928/a2226565zprem14a.htm"
+        },
+        {
+          "accession": "0001047469-17-001206",
+          "form": "PREM14A",
+          "filing_date": "2017-03-03",
+          "filer_cik": 84129,
+          "primary_document": "a2230856zprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/84129/000104746917001206/a2230856zprem14a.htm"
+        },
+        {
+          "accession": "0001047469-16-012513",
+          "form": "10-K",
+          "filing_date": "2016-04-25",
+          "filer_cik": 84129,
+          "primary_document": "a2228303z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/84129/000104746916012513/a2228303z10-k.htm"
+        },
+        {
+          "accession": "0001047469-15-003838",
+          "form": "10-K",
+          "filing_date": "2015-04-23",
+          "filer_cik": 84129,
+          "primary_document": "a2224297z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/84129/000104746915003838/a2224297z10-k.htm"
+        },
+        {
+          "accession": "0001047469-17-003159",
+          "form": "10-K",
+          "filing_date": "2017-05-03",
+          "filer_cik": 84129,
+          "primary_document": "a2231929z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/84129/000104746917003159/a2231929z10-k.htm"
+        },
+        {
+          "accession": "0001104659-15-069389",
+          "form": "10-Q",
+          "filing_date": "2015-10-06",
+          "filer_cik": 84129,
+          "primary_document": "a15-18848_110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/84129/000110465915069389/a15-18848_110q.htm"
+        },
+        {
+          "accession": "0001104659-16-088371",
+          "form": "10-Q",
+          "filing_date": "2016-01-06",
+          "filer_cik": 84129,
+          "primary_document": "a15-24100_110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/84129/000110465916088371/a15-24100_110q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-RCII-VINTAGE-2018",
+      "target": "Rent-A-Center, Inc.",
+      "target_cik": 933036,
+      "ticker": "UPBD",
+      "announcement_date": "2018-06-17",
+      "resolution_date": "2018-12-18",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-18-249885",
+          "form": "DEFM14A",
+          "filing_date": "2018-08-15",
+          "filer_cik": 933036,
+          "primary_document": "d501515ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518249885/d501515ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-18-218825",
+          "form": "PREM14A",
+          "filing_date": "2018-07-16",
+          "filer_cik": 933036,
+          "primary_document": "d501515dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000119312518218825/d501515dprem14a.htm"
+        },
+        {
+          "accession": "0000933036-18-000010",
+          "form": "10-K",
+          "filing_date": "2018-03-01",
+          "filer_cik": 933036,
+          "primary_document": "rac2017-form10xk.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000093303618000010/rac2017-form10xk.htm"
+        },
+        {
+          "accession": "0000933036-18-000015",
+          "form": "10-Q",
+          "filing_date": "2018-05-03",
+          "filer_cik": 933036,
+          "primary_document": "rac10-q_q12018.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000093303618000015/rac10-q_q12018.htm"
+        },
+        {
+          "accession": "0000933036-18-000026",
+          "form": "10-Q",
+          "filing_date": "2018-08-02",
+          "filer_cik": 933036,
+          "primary_document": "rac10-q_q22018.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000093303618000026/rac10-q_q22018.htm"
+        },
+        {
+          "accession": "0000933036-18-000030",
+          "form": "10-Q",
+          "filing_date": "2018-11-07",
+          "filer_cik": 933036,
+          "primary_document": "rac10-q_q32018.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000093303618000030/rac10-q_q32018.htm"
+        },
+        {
+          "accession": "0000933036-17-000068",
+          "form": "10-Q",
+          "filing_date": "2017-11-01",
+          "filer_cik": 933036,
+          "primary_document": "rac10-q_q32017.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000093303617000068/rac10-q_q32017.htm"
+        },
+        {
+          "accession": "0000933036-17-000056",
+          "form": "10-Q",
+          "filing_date": "2017-07-28",
+          "filer_cik": 933036,
+          "primary_document": "rac10-q_q22017.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/933036/000093303617000056/rac10-q_q22017.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-RESI-AMHERST-2020",
+      "target": "Front Yard Residential Corporation",
+      "target_cik": 1555039,
+      "ticker": "RESI",
+      "announcement_date": "2020-02-17",
+      "resolution_date": "2020-05-04",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-20-082635",
+          "form": "DEFM14A",
+          "filing_date": "2020-03-23",
+          "filer_cik": 1555039,
+          "primary_document": "d877475ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555039/000119312520082635/d877475ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-20-070320",
+          "form": "PREM14A",
+          "filing_date": "2020-03-11",
+          "filer_cik": 1555039,
+          "primary_document": "d877475dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555039/000119312520070320/d877475dprem14a.htm"
+        },
+        {
+          "accession": "0001555039-20-000009",
+          "form": "10-K",
+          "filing_date": "2020-02-28",
+          "filer_cik": 1555039,
+          "primary_document": "resi10-k12312019.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555039/000155503920000009/resi10-k12312019.htm"
+        },
+        {
+          "accession": "0001555039-19-000006",
+          "form": "10-K",
+          "filing_date": "2019-02-27",
+          "filer_cik": 1555039,
+          "primary_document": "resi10k_12312018.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555039/000155503919000006/resi10k_12312018.htm"
+        },
+        {
+          "accession": "0001555039-19-000069",
+          "form": "10-Q",
+          "filing_date": "2019-11-06",
+          "filer_cik": 1555039,
+          "primary_document": "resi10q9302019.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555039/000155503919000069/resi10q9302019.htm"
+        },
+        {
+          "accession": "0001555039-19-000061",
+          "form": "10-Q",
+          "filing_date": "2019-08-07",
+          "filer_cik": 1555039,
+          "primary_document": "resi10q6302019.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555039/000155503919000061/resi10q6302019.htm"
+        },
+        {
+          "accession": "0001555039-19-000034",
+          "form": "10-Q",
+          "filing_date": "2019-05-08",
+          "filer_cik": 1555039,
+          "primary_document": "resi10q3312019.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555039/000155503919000034/resi10q3312019.htm"
+        },
+        {
+          "accession": "0001193125-20-039674",
+          "form": "DEFA14A",
+          "filing_date": "2020-02-18",
+          "filer_cik": 1555039,
+          "primary_document": "d877707d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555039/000119312520039674/d877707d8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-RHT-IBM-2018",
+      "target": "Red Hat, Inc.",
+      "target_cik": 1087423,
+      "ticker": "RHT",
+      "announcement_date": "2018-10-28",
+      "resolution_date": "2019-07-09",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-18-347874",
+          "form": "DEFM14A",
+          "filing_date": "2018-12-12",
+          "filer_cik": 1087423,
+          "primary_document": "d654192ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1087423/000119312518347874/d654192ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-18-339886",
+          "form": "PREM14A",
+          "filing_date": "2018-11-30",
+          "filer_cik": 1087423,
+          "primary_document": "d654192dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1087423/000119312518339886/d654192dprem14a.htm"
+        },
+        {
+          "accession": "0001087423-19-000012",
+          "form": "10-K",
+          "filing_date": "2019-04-24",
+          "filer_cik": 1087423,
+          "primary_document": "rht-10kq4fy19.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1087423/000108742319000012/rht-10kq4fy19.htm"
+        },
+        {
+          "accession": "0001087423-18-000010",
+          "form": "10-K",
+          "filing_date": "2018-04-26",
+          "filer_cik": 1087423,
+          "primary_document": "rht-10kq4fy18.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1087423/000108742318000010/rht-10kq4fy18.htm"
+        },
+        {
+          "accession": "0001087423-18-000020",
+          "form": "10-Q",
+          "filing_date": "2018-10-09",
+          "filer_cik": 1087423,
+          "primary_document": "rht-10qq2fy19.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1087423/000108742318000020/rht-10qq2fy19.htm"
+        },
+        {
+          "accession": "0001087423-19-000006",
+          "form": "10-Q",
+          "filing_date": "2019-01-04",
+          "filer_cik": 1087423,
+          "primary_document": "rht-10qq3fy19.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1087423/000108742319000006/rht-10qq3fy19.htm"
+        },
+        {
+          "accession": "0001087423-18-000014",
+          "form": "10-Q",
+          "filing_date": "2018-07-09",
+          "filer_cik": 1087423,
+          "primary_document": "rht-10qq1fy19.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1087423/000108742318000014/rht-10qq1fy19.htm"
+        },
+        {
+          "accession": "0001087423-19-000017",
+          "form": "10-Q",
+          "filing_date": "2019-06-28",
+          "filer_cik": 1087423,
+          "primary_document": "rht-10qq1fy20.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1087423/000108742319000017/rht-10qq1fy20.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-SABA-VECTOR-2015",
+      "target": "SABA SOFTWARE INC",
+      "target_cik": 1070380,
+      "ticker": "SABA",
+      "announcement_date": "2015-02-11",
+      "resolution_date": "2015-02-25",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-043836",
+          "form": "8-K",
+          "filing_date": "2015-02-11",
+          "filer_cik": 1070380,
+          "primary_document": "d870425d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1070380/000119312515043836/d870425d8k.htm"
+        },
+        {
+          "accession": "0001193125-15-050202",
+          "form": "8-K",
+          "filing_date": "2015-02-13",
+          "filer_cik": 1070380,
+          "primary_document": "d874709d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1070380/000119312515050202/d874709d8k.htm"
+        },
+        {
+          "accession": "0001258897-15-001202",
+          "form": "8-K",
+          "filing_date": "2015-02-17",
+          "filer_cik": 1070380,
+          "primary_document": "d876791d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1070380/000125889715001202/d876791d8k.htm"
+        },
+        {
+          "accession": "0001193125-14-453127",
+          "form": "8-K",
+          "filing_date": "2014-12-24",
+          "filer_cik": 1070380,
+          "primary_document": "d842543d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1070380/000119312514453127/d842543d8k.htm"
+        },
+        {
+          "accession": "0001193125-14-442649",
+          "form": "8-K",
+          "filing_date": "2014-12-15",
+          "filer_cik": 1070380,
+          "primary_document": "d838435d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1070380/000119312514442649/d838435d8k.htm"
+        },
+        {
+          "accession": "0001193125-14-385136",
+          "form": "8-K",
+          "filing_date": "2014-10-28",
+          "filer_cik": 1070380,
+          "primary_document": "d810528d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1070380/000119312514385136/d810528d8k.htm"
+        },
+        {
+          "accession": "0001193125-14-358958",
+          "form": "8-K",
+          "filing_date": "2014-09-30",
+          "filer_cik": 1070380,
+          "primary_document": "d795864d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1070380/000119312514358958/d795864d8k.htm"
+        },
+        {
+          "accession": "0001193125-14-351328",
+          "form": "8-K",
+          "filing_date": "2014-09-24",
+          "filer_cik": 1070380,
+          "primary_document": "d794238d8k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1070380/000119312514351328/d794238d8k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-SAIL-TB-2022",
+      "target": "SailPoint Technologies Holdings, Inc.",
+      "target_cik": 1627857,
+      "ticker": "SAIL",
+      "announcement_date": "2022-04-10",
+      "resolution_date": "2022-08-16",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-22-164080",
+          "form": "DEFM14A",
+          "filing_date": "2022-05-31",
+          "filer_cik": 1627857,
+          "primary_document": "d331334ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627857/000119312522164080/d331334ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-22-156273",
+          "form": "PREM14A",
+          "filing_date": "2022-05-20",
+          "filer_cik": 1627857,
+          "primary_document": "d331334dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627857/000119312522156273/d331334dprem14a.htm"
+        },
+        {
+          "accession": "0001627857-22-000030",
+          "form": "10-K",
+          "filing_date": "2022-02-28",
+          "filer_cik": 1627857,
+          "primary_document": "sail-20211231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627857/000162785722000030/sail-20211231.htm"
+        },
+        {
+          "accession": "0001627857-22-000073",
+          "form": "10-Q",
+          "filing_date": "2022-05-05",
+          "filer_cik": 1627857,
+          "primary_document": "sail-20220331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627857/000162785722000073/sail-20220331.htm"
+        },
+        {
+          "accession": "0001627857-22-000082",
+          "form": "10-Q",
+          "filing_date": "2022-08-09",
+          "filer_cik": 1627857,
+          "primary_document": "sail-20220630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627857/000162785722000082/sail-20220630.htm"
+        },
+        {
+          "accession": "0001627857-21-000102",
+          "form": "10-Q",
+          "filing_date": "2021-11-09",
+          "filer_cik": 1627857,
+          "primary_document": "sail-20210930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627857/000162785721000102/sail-20210930.htm"
+        },
+        {
+          "accession": "0001627857-21-000048",
+          "form": "10-Q",
+          "filing_date": "2021-08-09",
+          "filer_cik": 1627857,
+          "primary_document": "sail-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627857/000162785721000048/sail-20210630.htm"
+        },
+        {
+          "accession": "0001628280-21-009712",
+          "form": "10-Q",
+          "filing_date": "2021-05-10",
+          "filer_cik": 1627857,
+          "primary_document": "sail-20210331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627857/000162828021009712/sail-20210331.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-SALIX-VALEAN-2015",
+      "target": "SALIX PHARMACEUTICALS LTD",
+      "target_cik": 1009356,
+      "ticker": "SALIX",
+      "announcement_date": "2015-02-23",
+      "resolution_date": "2015-04-13",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-15-079935",
+          "form": "SC 14D9",
+          "filing_date": "2015-03-06",
+          "filer_cik": 1009356,
+          "primary_document": "d884202dsc14d9.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009356/000119312515079935/d884202dsc14d9.htm"
+        },
+        {
+          "accession": "0001564590-15-001199",
+          "form": "10-K",
+          "filing_date": "2015-03-02",
+          "filer_cik": 1009356,
+          "primary_document": "slxp-10k_20141231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009356/000156459015001199/slxp-10k_20141231.htm"
+        },
+        {
+          "accession": "0001193125-14-076204",
+          "form": "10-K",
+          "filing_date": "2014-02-28",
+          "filer_cik": 1009356,
+          "primary_document": "d638628d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009356/000119312514076204/d638628d10k.htm"
+        },
+        {
+          "accession": "0001193125-14-402053",
+          "form": "10-Q",
+          "filing_date": "2014-11-07",
+          "filer_cik": 1009356,
+          "primary_document": "d796453d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009356/000119312514402053/d796453d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-303209",
+          "form": "10-Q",
+          "filing_date": "2014-08-08",
+          "filer_cik": 1009356,
+          "primary_document": "d728321d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009356/000119312514303209/d728321d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-191340",
+          "form": "10-Q",
+          "filing_date": "2014-05-09",
+          "filer_cik": 1009356,
+          "primary_document": "d708076d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009356/000119312514191340/d708076d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-229029",
+          "form": "DEFA14A",
+          "filing_date": "2014-06-09",
+          "filer_cik": 1009356,
+          "primary_document": "d738740ddefa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009356/000119312514229029/d738740ddefa14a.htm"
+        },
+        {
+          "accession": "0001193125-14-173044",
+          "form": "DEFA14A",
+          "filing_date": "2014-05-01",
+          "filer_cik": 1009356,
+          "primary_document": "d710745ddefa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009356/000119312514173044/d710745ddefa14a.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-SAVE-ULCC-2022",
+      "target": "Spirit Airlines, Inc.",
+      "target_cik": 1498710,
+      "ticker": "SAVE",
+      "announcement_date": "2022-02-05",
+      "resolution_date": "2022-07-27",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-22-147242",
+          "form": "DEFM14A",
+          "filing_date": "2022-05-11",
+          "filer_cik": 1498710,
+          "primary_document": "d301774ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000119312522147242/d301774ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-22-154456",
+          "form": "SC 14D9",
+          "filing_date": "2022-05-19",
+          "filer_cik": 1498710,
+          "primary_document": "d289407dsc14d9.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000119312522154456/d289407dsc14d9.htm"
+        },
+        {
+          "accession": "0001498710-22-000088",
+          "form": "10-K",
+          "filing_date": "2022-02-08",
+          "filer_cik": 1498710,
+          "primary_document": "save-20211231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871022000088/save-20211231.htm"
+        },
+        {
+          "accession": "0001498710-21-000020",
+          "form": "10-K",
+          "filing_date": "2021-02-10",
+          "filer_cik": 1498710,
+          "primary_document": "save-20201231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000020/save-20201231.htm"
+        },
+        {
+          "accession": "0001498710-22-000156",
+          "form": "10-Q",
+          "filing_date": "2022-05-04",
+          "filer_cik": 1498710,
+          "primary_document": "save-20220331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871022000156/save-20220331.htm"
+        },
+        {
+          "accession": "0001498710-21-000126",
+          "form": "10-Q",
+          "filing_date": "2021-10-27",
+          "filer_cik": 1498710,
+          "primary_document": "save-20210930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000126/save-20210930.htm"
+        },
+        {
+          "accession": "0001498710-21-000105",
+          "form": "10-Q",
+          "filing_date": "2021-07-28",
+          "filer_cik": 1498710,
+          "primary_document": "save-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000105/save-20210630.htm"
+        },
+        {
+          "accession": "0001498710-21-000082",
+          "form": "10-Q",
+          "filing_date": "2021-04-21",
+          "filer_cik": 1498710,
+          "primary_document": "save-20210331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000082/save-20210331.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-SGEN-PFE-2023",
+      "target": "Seagen Inc.",
+      "target_cik": 1060736,
+      "ticker": "SGEN",
+      "announcement_date": "2023-03-12",
+      "resolution_date": "2023-12-14",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-23-112984",
+          "form": "DEFM14A",
+          "filing_date": "2023-04-24",
+          "filer_cik": 1060736,
+          "primary_document": "d484035ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1060736/000119312523112984/d484035ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-23-102294",
+          "form": "PREM14A",
+          "filing_date": "2023-04-14",
+          "filer_cik": 1060736,
+          "primary_document": "d484035dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1060736/000119312523102294/d484035dprem14a.htm"
+        },
+        {
+          "accession": "0001060736-23-000009",
+          "form": "10-K",
+          "filing_date": "2023-02-15",
+          "filer_cik": 1060736,
+          "primary_document": "sgen-20221231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1060736/000106073623000009/sgen-20221231.htm"
+        },
+        {
+          "accession": "0001060736-23-000032",
+          "form": "10-Q",
+          "filing_date": "2023-04-27",
+          "filer_cik": 1060736,
+          "primary_document": "sgen-20230331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1060736/000106073623000032/sgen-20230331.htm"
+        },
+        {
+          "accession": "0001060736-22-000068",
+          "form": "10-Q",
+          "filing_date": "2022-10-27",
+          "filer_cik": 1060736,
+          "primary_document": "sgen-20220930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1060736/000106073622000068/sgen-20220930.htm"
+        },
+        {
+          "accession": "0001060736-23-000040",
+          "form": "10-Q",
+          "filing_date": "2023-08-02",
+          "filer_cik": 1060736,
+          "primary_document": "sgen-20230630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1060736/000106073623000040/sgen-20230630.htm"
+        },
+        {
+          "accession": "0001060736-22-000052",
+          "form": "10-Q",
+          "filing_date": "2022-07-28",
+          "filer_cik": 1060736,
+          "primary_document": "sgen-20220630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1060736/000106073622000052/sgen-20220630.htm"
+        },
+        {
+          "accession": "0001060736-23-000047",
+          "form": "10-Q",
+          "filing_date": "2023-11-01",
+          "filer_cik": 1060736,
+          "primary_document": "sgen-20230930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1060736/000106073623000047/sgen-20230930.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-SIGMA-MERCK-2014",
+      "target": "SIGMA ALDRICH CORP",
+      "target_cik": 90185,
+      "ticker": "SIGMA",
+      "announcement_date": "2014-09-22",
+      "resolution_date": "2015-11-30",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-14-392852",
+          "form": "DEFM14A",
+          "filing_date": "2014-11-03",
+          "filer_cik": 90185,
+          "primary_document": "d804765ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/90185/000119312514392852/d804765ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-14-378746",
+          "form": "PREM14A",
+          "filing_date": "2014-10-22",
+          "filer_cik": 90185,
+          "primary_document": "d804765dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/90185/000119312514378746/d804765dprem14a.htm"
+        },
+        {
+          "accession": "0000090185-15-000027",
+          "form": "10-K",
+          "filing_date": "2015-02-12",
+          "filer_cik": 90185,
+          "primary_document": "sial-20141231x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/90185/000009018515000027/sial-20141231x10k.htm"
+        },
+        {
+          "accession": "0000090185-14-000028",
+          "form": "10-K",
+          "filing_date": "2014-02-06",
+          "filer_cik": 90185,
+          "primary_document": "sial-20131231x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/90185/000009018514000028/sial-20131231x10k.htm"
+        },
+        {
+          "accession": "0000090185-14-000131",
+          "form": "10-Q",
+          "filing_date": "2014-10-23",
+          "filer_cik": 90185,
+          "primary_document": "sial-20140930xq310q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/90185/000009018514000131/sial-20140930xq310q.htm"
+        },
+        {
+          "accession": "0000090185-14-000116",
+          "form": "10-Q",
+          "filing_date": "2014-07-24",
+          "filer_cik": 90185,
+          "primary_document": "sial-20140630xq210q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/90185/000009018514000116/sial-20140630xq210q.htm"
+        },
+        {
+          "accession": "0000090185-14-000079",
+          "form": "10-Q",
+          "filing_date": "2014-04-24",
+          "filer_cik": 90185,
+          "primary_document": "sial-20140331xq110q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/90185/000009018514000079/sial-20140331xq110q.htm"
+        },
+        {
+          "accession": "0000090185-15-000070",
+          "form": "10-Q",
+          "filing_date": "2015-05-07",
+          "filer_cik": 90185,
+          "primary_document": "sial-20150331x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/90185/000009018515000070/sial-20150331x10q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-SPLK-CSCO-2023",
+      "target": "Splunk Inc.",
+      "target_cik": 1353283,
+      "ticker": "SPLK",
+      "announcement_date": "2023-09-20",
+      "resolution_date": "2024-03-18",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001140361-23-050211",
+          "form": "DEFM14A",
+          "filing_date": "2023-10-30",
+          "filer_cik": 1353283,
+          "primary_document": "ny20011269x2_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1353283/000114036123050211/ny20011269x2_defm14a.htm"
+        },
+        {
+          "accession": "0001140361-23-048563",
+          "form": "PREM14A",
+          "filing_date": "2023-10-18",
+          "filer_cik": 1353283,
+          "primary_document": "ny20011269x1_prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1353283/000114036123048563/ny20011269x1_prem14a.htm"
+        },
+        {
+          "accession": "0001353283-23-000011",
+          "form": "10-K",
+          "filing_date": "2023-03-23",
+          "filer_cik": 1353283,
+          "primary_document": "splk-20230131.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1353283/000135328323000011/splk-20230131.htm"
+        },
+        {
+          "accession": "0001353283-23-000034",
+          "form": "10-Q",
+          "filing_date": "2023-08-24",
+          "filer_cik": 1353283,
+          "primary_document": "splk-20230731.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1353283/000135328323000034/splk-20230731.htm"
+        },
+        {
+          "accession": "0001353283-23-000043",
+          "form": "10-Q",
+          "filing_date": "2023-11-28",
+          "filer_cik": 1353283,
+          "primary_document": "splk-20231031.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1353283/000135328323000043/splk-20231031.htm"
+        },
+        {
+          "accession": "0001353283-23-000025",
+          "form": "10-Q",
+          "filing_date": "2023-05-25",
+          "filer_cik": 1353283,
+          "primary_document": "splk-20230430.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1353283/000135328323000025/splk-20230430.htm"
+        },
+        {
+          "accession": "0001353283-22-000040",
+          "form": "10-Q",
+          "filing_date": "2022-12-01",
+          "filer_cik": 1353283,
+          "primary_document": "splk-20221031.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1353283/000135328322000040/splk-20221031.htm"
+        },
+        {
+          "accession": "0001104659-23-102950",
+          "form": "DEFA14A",
+          "filing_date": "2023-09-22",
+          "filer_cik": 1353283,
+          "primary_document": "tm2326347d6_defa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1353283/000110465923102950/tm2326347d6_defa14a.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-SSTK-GETY-2025",
+      "target": "Shutterstock, Inc.",
+      "target_cik": 1549346,
+      "ticker": "SSTK",
+      "announcement_date": "2025-01-06",
+      "resolution_date": "2026-07-07",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001213900-25-037645",
+          "form": "DEFM14A",
+          "filing_date": "2025-04-30",
+          "filer_cik": 1549346,
+          "primary_document": "ea0239849-01.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1549346/000121390025037645/ea0239849-01.htm"
+        },
+        {
+          "accession": "0001549346-25-000011",
+          "form": "10-K",
+          "filing_date": "2025-02-25",
+          "filer_cik": 1549346,
+          "primary_document": "sstk-20241231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1549346/000154934625000011/sstk-20241231.htm"
+        },
+        {
+          "accession": "0001549346-24-000007",
+          "form": "10-K",
+          "filing_date": "2024-02-26",
+          "filer_cik": 1549346,
+          "primary_document": "sstk-20231231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1549346/000154934624000007/sstk-20231231.htm"
+        },
+        {
+          "accession": "0001549346-26-000008",
+          "form": "10-K",
+          "filing_date": "2026-02-17",
+          "filer_cik": 1549346,
+          "primary_document": "sstk-20251231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1549346/000154934626000008/sstk-20251231.htm"
+        },
+        {
+          "accession": "0001549346-24-000045",
+          "form": "10-Q",
+          "filing_date": "2024-10-29",
+          "filer_cik": 1549346,
+          "primary_document": "sstk-20240930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1549346/000154934624000045/sstk-20240930.htm"
+        },
+        {
+          "accession": "0001549346-25-000028",
+          "form": "10-Q",
+          "filing_date": "2025-05-02",
+          "filer_cik": 1549346,
+          "primary_document": "sstk-20250331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1549346/000154934625000028/sstk-20250331.htm"
+        },
+        {
+          "accession": "0001549346-24-000034",
+          "form": "10-Q",
+          "filing_date": "2024-08-06",
+          "filer_cik": 1549346,
+          "primary_document": "sstk-20240630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1549346/000154934624000034/sstk-20240630.htm"
+        },
+        {
+          "accession": "0001549346-25-000035",
+          "form": "10-Q",
+          "filing_date": "2025-07-29",
+          "filer_cik": 1549346,
+          "primary_document": "sstk-20250630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1549346/000154934625000035/sstk-20250630.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-STOR-GIC-2022",
+      "target": "STORE Capital Corporation",
+      "target_cik": 1538990,
+      "ticker": "STOR",
+      "announcement_date": "2022-09-15",
+      "resolution_date": "2023-02-03",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-22-277144",
+          "form": "DEFM14A",
+          "filing_date": "2022-11-04",
+          "filer_cik": 1538990,
+          "primary_document": "d480995ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1538990/000119312522277144/d480995ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-22-267682",
+          "form": "PREM14A",
+          "filing_date": "2022-10-24",
+          "filer_cik": 1538990,
+          "primary_document": "d480995dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1538990/000119312522267682/d480995dprem14a.htm"
+        },
+        {
+          "accession": "0001558370-22-002011",
+          "form": "10-K",
+          "filing_date": "2022-02-25",
+          "filer_cik": 1538990,
+          "primary_document": "stor-20211231x10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1538990/000155837022002011/stor-20211231x10k.htm"
+        },
+        {
+          "accession": "0001558370-22-012296",
+          "form": "10-Q",
+          "filing_date": "2022-08-05",
+          "filer_cik": 1538990,
+          "primary_document": "stor-20220630x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1538990/000155837022012296/stor-20220630x10q.htm"
+        },
+        {
+          "accession": "0001558370-22-016332",
+          "form": "10-Q",
+          "filing_date": "2022-11-04",
+          "filer_cik": 1538990,
+          "primary_document": "stor-20220930x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1538990/000155837022016332/stor-20220930x10q.htm"
+        },
+        {
+          "accession": "0001558370-22-007477",
+          "form": "10-Q",
+          "filing_date": "2022-05-06",
+          "filer_cik": 1538990,
+          "primary_document": "stor-20220331x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1538990/000155837022007477/stor-20220331x10q.htm"
+        },
+        {
+          "accession": "0001558370-21-014840",
+          "form": "10-Q",
+          "filing_date": "2021-11-05",
+          "filer_cik": 1538990,
+          "primary_document": "stor-20210930x10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1538990/000155837021014840/stor-20210930x10q.htm"
+        },
+        {
+          "accession": "0001193125-22-245212",
+          "form": "DEFA14A",
+          "filing_date": "2022-09-15",
+          "filer_cik": 1538990,
+          "primary_document": "d260495ddefa14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1538990/000119312522245212/d260495ddefa14a.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-SWCH-DIGITALBRIDGE-2022",
+      "target": "Switch, Inc.",
+      "target_cik": 1710583,
+      "ticker": "SWCH",
+      "announcement_date": "2022-05-11",
+      "resolution_date": "2022-12-06",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-22-182816",
+          "form": "DEFM14A",
+          "filing_date": "2022-06-27",
+          "filer_cik": 1710583,
+          "primary_document": "d347765ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1710583/000119312522182816/d347765ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-22-175485",
+          "form": "PREM14A",
+          "filing_date": "2022-06-16",
+          "filer_cik": 1710583,
+          "primary_document": "d347765dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1710583/000119312522175485/d347765dprem14a.htm"
+        },
+        {
+          "accession": "0001710583-22-000009",
+          "form": "10-K",
+          "filing_date": "2022-03-01",
+          "filer_cik": 1710583,
+          "primary_document": "swch-20211231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1710583/000171058322000009/swch-20211231.htm"
+        },
+        {
+          "accession": "0001710583-22-000021",
+          "form": "10-Q",
+          "filing_date": "2022-05-10",
+          "filer_cik": 1710583,
+          "primary_document": "swch-20220331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1710583/000171058322000021/swch-20220331.htm"
+        },
+        {
+          "accession": "0001710583-22-000037",
+          "form": "10-Q",
+          "filing_date": "2022-08-09",
+          "filer_cik": 1710583,
+          "primary_document": "swch-20220630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1710583/000171058322000037/swch-20220630.htm"
+        },
+        {
+          "accession": "0001710583-22-000046",
+          "form": "10-Q",
+          "filing_date": "2022-11-09",
+          "filer_cik": 1710583,
+          "primary_document": "swch-20220930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1710583/000171058322000046/swch-20220930.htm"
+        },
+        {
+          "accession": "0001710583-21-000052",
+          "form": "10-Q",
+          "filing_date": "2021-11-09",
+          "filer_cik": 1710583,
+          "primary_document": "swch-20210930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1710583/000171058321000052/swch-20210930.htm"
+        },
+        {
+          "accession": "0001710583-21-000039",
+          "form": "10-Q",
+          "filing_date": "2021-08-09",
+          "filer_cik": 1710583,
+          "primary_document": "swch-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1710583/000171058321000039/swch-20210630.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-TRW-ZFFRIE-2014",
+      "target": "TRW AUTOMOTIVE HOLDINGS CORP",
+      "target_cik": 1267097,
+      "ticker": "TRW",
+      "announcement_date": "2014-09-15",
+      "resolution_date": "2015-05-26",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001047469-14-008388",
+          "form": "DEFM14A",
+          "filing_date": "2014-10-20",
+          "filer_cik": 1267097,
+          "primary_document": "a2221828zdefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1267097/000104746914008388/a2221828zdefm14a.htm"
+        },
+        {
+          "accession": "0001047469-14-008123",
+          "form": "PREM14A",
+          "filing_date": "2014-10-06",
+          "filer_cik": 1267097,
+          "primary_document": "a2221663zprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1267097/000104746914008123/a2221663zprem14a.htm"
+        },
+        {
+          "accession": "0001047469-15-000812",
+          "form": "10-K",
+          "filing_date": "2015-02-13",
+          "filer_cik": 1267097,
+          "primary_document": "a2222951z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1267097/000104746915000812/a2222951z10-k.htm"
+        },
+        {
+          "accession": "0001047469-14-000925",
+          "form": "10-K",
+          "filing_date": "2014-02-14",
+          "filer_cik": 1267097,
+          "primary_document": "a2218183z10-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1267097/000104746914000925/a2218183z10-k.htm"
+        },
+        {
+          "accession": "0001047469-14-008619",
+          "form": "10-Q",
+          "filing_date": "2014-10-28",
+          "filer_cik": 1267097,
+          "primary_document": "a2221878z10-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1267097/000104746914008619/a2221878z10-q.htm"
+        },
+        {
+          "accession": "0001047469-14-006479",
+          "form": "10-Q",
+          "filing_date": "2014-07-29",
+          "filer_cik": 1267097,
+          "primary_document": "a2220868z10-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1267097/000104746914006479/a2220868z10-q.htm"
+        },
+        {
+          "accession": "0001047469-14-004347",
+          "form": "10-Q",
+          "filing_date": "2014-04-29",
+          "filer_cik": 1267097,
+          "primary_document": "a2219855z10-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1267097/000104746914004347/a2219855z10-q.htm"
+        },
+        {
+          "accession": "0001047469-15-004384",
+          "form": "10-Q",
+          "filing_date": "2015-05-05",
+          "filer_cik": 1267097,
+          "primary_document": "a2224557z10-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1267097/000104746915004384/a2224557z10-q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-TWC-CMCSA-2014",
+      "target": "Time Warner Cable Inc.",
+      "target_cik": 1377013,
+      "ticker": "TWC",
+      "announcement_date": "2014-02-12",
+      "resolution_date": "2015-04-24",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-14-333541",
+          "form": "DEFM14A",
+          "filing_date": "2014-09-05",
+          "filer_cik": 1377013,
+          "primary_document": "d784081ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1377013/000119312514333541/d784081ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-14-056642",
+          "form": "10-K",
+          "filing_date": "2014-02-18",
+          "filer_cik": 1377013,
+          "primary_document": "d640670d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1377013/000119312514056642/d640670d10k.htm"
+        },
+        {
+          "accession": "0001193125-13-062081",
+          "form": "10-K",
+          "filing_date": "2013-02-15",
+          "filer_cik": 1377013,
+          "primary_document": "d483194d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1377013/000119312513062081/d483194d10k.htm"
+        },
+        {
+          "accession": "0001193125-15-048927",
+          "form": "10-K",
+          "filing_date": "2015-02-13",
+          "filer_cik": 1377013,
+          "primary_document": "d868984d10k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1377013/000119312515048927/d868984d10k.htm"
+        },
+        {
+          "accession": "0001193125-14-155814",
+          "form": "10-Q",
+          "filing_date": "2014-04-24",
+          "filer_cik": 1377013,
+          "primary_document": "d714931d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1377013/000119312514155814/d714931d10q.htm"
+        },
+        {
+          "accession": "0001193125-13-419621",
+          "form": "10-Q",
+          "filing_date": "2013-10-31",
+          "filer_cik": 1377013,
+          "primary_document": "d617473d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1377013/000119312513419621/d617473d10q.htm"
+        },
+        {
+          "accession": "0001193125-14-288241",
+          "form": "10-Q",
+          "filing_date": "2014-07-31",
+          "filer_cik": 1377013,
+          "primary_document": "d762137d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1377013/000119312514288241/d762137d10q.htm"
+        },
+        {
+          "accession": "0001193125-13-313864",
+          "form": "10-Q",
+          "filing_date": "2013-08-01",
+          "filer_cik": 1377013,
+          "primary_document": "d553646d10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1377013/000119312513313864/d553646d10q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-TWTR-XHOLDINGS-2022",
+      "target": "Twitter, Inc.",
+      "target_cik": 1418091,
+      "ticker": "TWTR",
+      "announcement_date": "2022-04-25",
+      "resolution_date": "2022-10-27",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-22-202163",
+          "form": "DEFM14A",
+          "filing_date": "2022-07-26",
+          "filer_cik": 1418091,
+          "primary_document": "d283119ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1418091/000119312522202163/d283119ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-22-152250",
+          "form": "PREM14A",
+          "filing_date": "2022-05-17",
+          "filer_cik": 1418091,
+          "primary_document": "d283119dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1418091/000119312522152250/d283119dprem14a.htm"
+        },
+        {
+          "accession": "0001418091-22-000029",
+          "form": "10-K",
+          "filing_date": "2022-02-16",
+          "filer_cik": 1418091,
+          "primary_document": "twtr-20211231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1418091/000141809122000029/twtr-20211231.htm"
+        },
+        {
+          "accession": "0001418091-22-000075",
+          "form": "10-Q",
+          "filing_date": "2022-05-02",
+          "filer_cik": 1418091,
+          "primary_document": "twtr-20220331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1418091/000141809122000075/twtr-20220331.htm"
+        },
+        {
+          "accession": "0001418091-22-000147",
+          "form": "10-Q",
+          "filing_date": "2022-07-26",
+          "filer_cik": 1418091,
+          "primary_document": "twtr-20220630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1418091/000141809122000147/twtr-20220630.htm"
+        },
+        {
+          "accession": "0001418091-21-000209",
+          "form": "10-Q",
+          "filing_date": "2021-10-27",
+          "filer_cik": 1418091,
+          "primary_document": "twtr-20210930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1418091/000141809121000209/twtr-20210930.htm"
+        },
+        {
+          "accession": "0001418091-21-000155",
+          "form": "10-Q",
+          "filing_date": "2021-07-27",
+          "filer_cik": 1418091,
+          "primary_document": "twtr-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1418091/000141809121000155/twtr-20210630.htm"
+        },
+        {
+          "accession": "0001418091-21-000085",
+          "form": "10-Q",
+          "filing_date": "2021-04-30",
+          "filer_cik": 1418091,
+          "primary_document": "twtr-20210331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1418091/000141809121000085/twtr-20210331.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-WFM-AMZN-2017",
+      "target": "Whole Foods Market, Inc.",
+      "target_cik": 865436,
+      "ticker": "WFM",
+      "announcement_date": "2017-06-15",
+      "resolution_date": "2017-08-28",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001571049-17-006849",
+          "form": "DEFM14A",
+          "filing_date": "2017-07-21",
+          "filer_cik": 865436,
+          "primary_document": "t1702075-defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/865436/000157104917006849/t1702075-defm14a.htm"
+        },
+        {
+          "accession": "0001571049-17-006539",
+          "form": "PREM14A",
+          "filing_date": "2017-07-07",
+          "filer_cik": 865436,
+          "primary_document": "t1702003-prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/865436/000157104917006539/t1702003-prem14a.htm"
+        },
+        {
+          "accession": "0000865436-16-000366",
+          "form": "10-K",
+          "filing_date": "2016-11-18",
+          "filer_cik": 865436,
+          "primary_document": "wfm10k2016.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/865436/000086543616000366/wfm10k2016.htm"
+        },
+        {
+          "accession": "0000865436-17-000100",
+          "form": "10-Q",
+          "filing_date": "2017-05-19",
+          "filer_cik": 865436,
+          "primary_document": "wfm10qq22017.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/865436/000086543617000100/wfm10qq22017.htm"
+        },
+        {
+          "accession": "0000865436-17-000171",
+          "form": "10-Q",
+          "filing_date": "2017-08-04",
+          "filer_cik": 865436,
+          "primary_document": "wfm10qq32017.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/865436/000086543617000171/wfm10qq32017.htm"
+        },
+        {
+          "accession": "0000865436-17-000049",
+          "form": "10-Q",
+          "filing_date": "2017-02-16",
+          "filer_cik": 865436,
+          "primary_document": "wfm10qq12017.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/865436/000086543617000049/wfm10qq12017.htm"
+        },
+        {
+          "accession": "0000865436-16-000351",
+          "form": "10-Q",
+          "filing_date": "2016-08-05",
+          "filer_cik": 865436,
+          "primary_document": "wfm10qq32016.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/865436/000086543616000351/wfm10qq32016.htm"
+        },
+        {
+          "accession": "0001047469-17-004059",
+          "form": "DEFA14A",
+          "filing_date": "2017-06-16",
+          "filer_cik": 865436,
+          "primary_document": "a2232461z8-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/865436/000104746917004059/a2232461z8-k.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-WLTW-AON-2020",
+      "target": "Willis Towers Watson Public Limited Company",
+      "target_cik": 1140536,
+      "ticker": "WTW",
+      "announcement_date": "2020-03-09",
+      "resolution_date": "2021-07-26",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-20-189783",
+          "form": "DEFM14A",
+          "filing_date": "2020-07-08",
+          "filer_cik": 1140536,
+          "primary_document": "d927044ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140536/000119312520189783/d927044ddefm14a.htm"
+        },
+        {
+          "accession": "0001193125-20-138160",
+          "form": "PREM14A",
+          "filing_date": "2020-05-11",
+          "filer_cik": 1140536,
+          "primary_document": "d927044dprem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140536/000119312520138160/d927044dprem14a.htm"
+        },
+        {
+          "accession": "0001564590-20-006736",
+          "form": "10-K",
+          "filing_date": "2020-02-26",
+          "filer_cik": 1140536,
+          "primary_document": "wltw-10k_20191231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140536/000156459020006736/wltw-10k_20191231.htm"
+        },
+        {
+          "accession": "0001564590-21-007578",
+          "form": "10-K",
+          "filing_date": "2021-02-23",
+          "filer_cik": 1140536,
+          "primary_document": "wltw-10k_20201231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140536/000156459021007578/wltw-10k_20201231.htm"
+        },
+        {
+          "accession": "0001564590-20-020090",
+          "form": "10-Q",
+          "filing_date": "2020-04-30",
+          "filer_cik": 1140536,
+          "primary_document": "wltw-10q_20200331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140536/000156459020020090/wltw-10q_20200331.htm"
+        },
+        {
+          "accession": "0001564590-19-039341",
+          "form": "10-Q",
+          "filing_date": "2019-11-01",
+          "filer_cik": 1140536,
+          "primary_document": "wltw-10q_20190930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140536/000156459019039341/wltw-10q_20190930.htm"
+        },
+        {
+          "accession": "0001564590-20-034751",
+          "form": "10-Q",
+          "filing_date": "2020-07-30",
+          "filer_cik": 1140536,
+          "primary_document": "wltw-10q_20200630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140536/000156459020034751/wltw-10q_20200630.htm"
+        },
+        {
+          "accession": "0001564590-19-028038",
+          "form": "10-Q",
+          "filing_date": "2019-08-01",
+          "filer_cik": 1140536,
+          "primary_document": "wltw-10q_20190630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140536/000156459019028038/wltw-10q_20190630.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-WORK-CRM-2020",
+      "target": "Slack Technologies, Inc.",
+      "target_cik": 1764925,
+      "ticker": "WORK",
+      "announcement_date": "2020-12-01",
+      "resolution_date": "2021-07-21",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001193125-21-022117",
+          "form": "DEFM14A",
+          "filing_date": "2021-01-29",
+          "filer_cik": 1764925,
+          "primary_document": "d13689ddefm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1764925/000119312521022117/d13689ddefm14a.htm"
+        },
+        {
+          "accession": "0001764925-21-000050",
+          "form": "10-K",
+          "filing_date": "2021-03-19",
+          "filer_cik": 1764925,
+          "primary_document": "work-20210131.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1764925/000176492521000050/work-20210131.htm"
+        },
+        {
+          "accession": "0001764925-20-000251",
+          "form": "10-K",
+          "filing_date": "2020-03-12",
+          "filer_cik": 1764925,
+          "primary_document": "a1312010-k.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1764925/000176492520000251/a1312010-k.htm"
+        },
+        {
+          "accession": "0001764925-20-000652",
+          "form": "10-Q",
+          "filing_date": "2020-12-03",
+          "filer_cik": 1764925,
+          "primary_document": "work-20201031.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1764925/000176492520000652/work-20201031.htm"
+        },
+        {
+          "accession": "0001764925-20-000570",
+          "form": "10-Q",
+          "filing_date": "2020-09-08",
+          "filer_cik": 1764925,
+          "primary_document": "work-20200731.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1764925/000176492520000570/work-20200731.htm"
+        },
+        {
+          "accession": "0001764925-20-000400",
+          "form": "10-Q",
+          "filing_date": "2020-06-04",
+          "filer_cik": 1764925,
+          "primary_document": "work-20200430.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1764925/000176492520000400/work-20200430.htm"
+        },
+        {
+          "accession": "0001764925-21-000096",
+          "form": "10-Q",
+          "filing_date": "2021-06-03",
+          "filer_cik": 1764925,
+          "primary_document": "work-20210430.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1764925/000176492521000096/work-20210430.htm"
+        },
+        {
+          "accession": "0001764925-19-000482",
+          "form": "10-Q",
+          "filing_date": "2019-12-04",
+          "filer_cik": 1764925,
+          "primary_document": "a10311910-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1764925/000176492519000482/a10311910-q.htm"
+        }
+      ]
+    },
+    {
+      "deal_id": "DEAL-ZEN-ZORO-2022",
+      "target": "Zendesk, Inc.",
+      "target_cik": 1463172,
+      "ticker": "ZEN",
+      "announcement_date": "2022-06-24",
+      "resolution_date": "2022-11-22",
+      "status": "PLANNED",
+      "candidate_filings": [
+        {
+          "accession": "0001140361-22-028748",
+          "form": "DEFM14A",
+          "filing_date": "2022-08-08",
+          "filer_cik": 1463172,
+          "primary_document": "ny20004637x3_defm14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463172/000114036122028748/ny20004637x3_defm14a.htm"
+        },
+        {
+          "accession": "0001140361-22-026849",
+          "form": "PREM14A",
+          "filing_date": "2022-07-25",
+          "filer_cik": 1463172,
+          "primary_document": "ny20004637x1_prem14a.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463172/000114036122026849/ny20004637x1_prem14a.htm"
+        },
+        {
+          "accession": "0001463172-22-000027",
+          "form": "10-K",
+          "filing_date": "2022-02-15",
+          "filer_cik": 1463172,
+          "primary_document": "zen-20211231.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463172/000146317222000027/zen-20211231.htm"
+        },
+        {
+          "accession": "0001463172-22-000236",
+          "form": "10-Q",
+          "filing_date": "2022-07-29",
+          "filer_cik": 1463172,
+          "primary_document": "zen-20220630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463172/000146317222000236/zen-20220630.htm"
+        },
+        {
+          "accession": "0001463172-22-000120",
+          "form": "10-Q",
+          "filing_date": "2022-04-29",
+          "filer_cik": 1463172,
+          "primary_document": "zen-20220331.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463172/000146317222000120/zen-20220331.htm"
+        },
+        {
+          "accession": "0001463172-22-000326",
+          "form": "10-Q",
+          "filing_date": "2022-10-28",
+          "filer_cik": 1463172,
+          "primary_document": "zen-20220930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463172/000146317222000326/zen-20220930.htm"
+        },
+        {
+          "accession": "0001628280-21-021018",
+          "form": "10-Q",
+          "filing_date": "2021-11-01",
+          "filer_cik": 1463172,
+          "primary_document": "zen-20210930.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463172/000162828021021018/zen-20210930.htm"
+        },
+        {
+          "accession": "0001463172-21-000323",
+          "form": "10-Q",
+          "filing_date": "2021-07-30",
+          "filer_cik": 1463172,
+          "primary_document": "zen-20210630.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463172/000146317221000323/zen-20210630.htm"
+        }
+      ]
+    }
+  ]
+}

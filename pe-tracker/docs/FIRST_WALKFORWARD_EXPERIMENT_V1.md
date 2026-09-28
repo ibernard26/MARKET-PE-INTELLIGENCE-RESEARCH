@@ -1,20 +1,20 @@
-# First chronological walk-forward — preparation freeze (`first_walkforward_v1`)
+# First chronological walk-forward — `first_walkforward_v1`
 
-**Status: `PREPARED_NOT_EXECUTED`**
+**Status:** see `data/experiments/first_walkforward_v1/protocol.json`
+(`AUTHORIZED_PENDING_EXECUTE` → `EXECUTED` after
+`python -m src.model.experiment_execute`).
 
-This phase freezes the dataset identity and the expanding-window protocol for
-the first real chronological walk-forward. It does **not** authorize fitting.
+This experiment freezes the dataset identity and expanding-window protocol,
+then (when authorized) fits `break_logit_v1` / `fs_v1` with **calibration =
+none**, registers each window artifact by `model_run_id`, and reports
+out-of-time metrics. It does **not** calibrate, tune hyperparameters, alter
+`EVENT_RULES` / `fs_v1`, or claim population probabilities / alpha / P&L.
 
-Required later command (not issued here):
+Authorization command (already issued for this run):
 
 ```text
 AUTHORIZE FIRST REAL WALKFORWARD
 ```
-
-Until that authorization flips `protocol.json → execution_authorized` and an
-execution path is intentionally implemented, agents must not call
-`BreakModel.fit`, `walk_forward`, `chronological_split`, or `fit_and_score` on
-the real cohort.
 
 ## Frozen artifacts
 
@@ -23,7 +23,10 @@ the real cohort.
 | `data/experiments/first_walkforward_v1/cohort.json` | Exact `ModelCohort` membership (N=62) |
 | `data/experiments/first_walkforward_v1/protocol.json` | Locked model contract + cutoff grid + auth gate |
 | `data/experiments/first_walkforward_v1/plan.json` | No-fit prep output: per-window counts + fingerprints |
+| `data/experiments/first_walkforward_v1/results.json` | Post-execute: OOS metrics + `model_run_id` per window |
+| `data/experiments/first_walkforward_v1/RESULTS.md` | Human-readable OOS metrics report |
 | `src/model/experiment_prep.py` | Prep machinery (`python -m src.model.experiment_prep`) |
+| `src/model/experiment_execute.py` | Authorized execute (`python -m src.model.experiment_execute`) |
 
 ## Dataset freeze
 
@@ -53,9 +56,9 @@ L2, C=1.0, lbfgs, max_iter=1000, class_weight=None, standardize=True,
 train-median + missingness indicators, **calibration = none**,  
 MIN_SAMPLE_N=20, MIN_CLASS_N=2, COST_FN:FP = 15:1.
 
-No hyperparameter tuning. No EVENT_RULES / fs_v1 change in this phase.
+No hyperparameter tuning. No EVENT_RULES / fs_v1 change in this experiment.
 
-## Walk-forward grid (prepared)
+## Walk-forward grid
 
 Expanding chronological windows:
 
@@ -65,30 +68,36 @@ Expanding chronological windows:
 | 1 | 2023-06-30 | 2025-06-30 |
 | 2 | 2025-06-30 | 2026-09-26 (horizon) |
 
-Rationale: 2021-06-30 is the earliest month-end at which the reconstructed
-training set reaches `MIN_SAMPLE_N` with both classes present. Later cutoffs
-expand by ~24 months to keep windows coarse enough for an honest first run.
+Per-window `dataset_fingerprint` values in `plan.json` are authoritative.
+Execute re-computes them and **fails closed** on any drift. Thin out-of-sample
+test counts are reported as-is (not padded, not fabricated);
+`sufficient_oos_sample` is false when `n_test < MIN_SAMPLE_N`.
 
-Per-window `dataset_fingerprint` values are computed in `plan.json` from
-point-in-time training rows only. Thin out-of-sample test counts are reported
-as-is (not padded, not fabricated).
+## How to regenerate the plan (no fit)
 
-## How to regenerate the plan (still no fit)
+Prep refuses to rewrite the plan once `execution_authorized` is true:
 
 ```bash
 cd pe-tracker
+# only valid while execution_authorized is false
 python -m src.model.experiment_prep
-# writes data/experiments/first_walkforward_v1/plan.json
 ```
 
-`--execute` is refused while `execution_authorized` is false.
+## How to execute (authorized)
 
-## After human authorization (future)
+```bash
+cd pe-tracker
+python -m src.model.experiment_execute
+# writes results.json + RESULTS.md; sets protocol.status=EXECUTED
+```
 
-Only then:
+Execute sequence per window:
 
-1. Independently re-run readiness / prep checks
-2. Fit each window under `break_logit_v1` with frozen t* chronology
-3. Register each artifact with `model_run_id` + cohort + fingerprint + code commit
-4. Report ROC AUC, AP beside sample π, Brier, log loss, reliability diagnostics
-5. Still no calibration, no tuning, no population-probability claim, no alpha/P&L claim
+1. Reconstruct PIT training ⊆ cohort; assert fingerprint vs `plan.json`
+2. Fit `BreakModel` (`break_logit_v1`)
+3. Select cost-optimal `t*` on **training** predictions only; freeze
+4. Grade untouched test window (ROC AUC, AP beside sample π, Brier, log loss,
+   calibration bins as diagnostic only)
+5. `register_model` → `model_run_id` + cohort + fingerprint + code commit
+
+Still no calibration, no tuning, no population-probability claim, no alpha/P&L claim.

@@ -7,7 +7,8 @@ Layers, kept separate on purpose:
               + pre-test threshold selection + frozen-threshold evaluation
   validation  chronological split + walk-forward, baselines
   registry    model metadata + immutable predictions (SQLite, append-only)
-  experiment_prep  freeze cohort/fingerprints for a walk-forward (no fit)
+  experiment_prep     freeze cohort/fingerprints for a walk-forward (no fit)
+  experiment_execute  authorized first_walkforward_v1 fit + register + OOS report
   decision    EV = (1-p)·U − p·D, separate from the probability model
   spread_stress  challenger (spread_stress_v1 / fs_spread_stress_v1); gated
                  real-data walk-forward/backtest — does not mutate fs_v1 /

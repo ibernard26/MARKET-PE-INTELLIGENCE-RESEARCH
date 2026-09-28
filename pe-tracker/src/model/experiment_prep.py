@@ -239,8 +239,14 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     protocol = load_json(args.exp_dir / "protocol.json")
     if args.execute:
-        refuse_execution(protocol)
-        raise ExperimentPrepError("execute path is not implemented in prep phase")
+        # Delegate to the authorized execute module (fail-closed if not authorized).
+        from .experiment_execute import main as execute_main
+        return execute_main(["--exp-dir", str(args.exp_dir)])
+
+    if protocol.get("execution_authorized"):
+        raise ExperimentPrepError(
+            "protocol.execution_authorized is true; refuse prep regeneration "
+            "(frozen plan.json must not be rewritten under an authorized protocol)")
 
     from ..config import ROOT as PKG_ROOT
     from ..db import _migrate_model_run_identity, _upgrade_model_registry_columns

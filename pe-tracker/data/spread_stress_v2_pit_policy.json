@@ -1,0 +1,85 @@
+{
+  "spec_id": "spread_stress_v2",
+  "feature_schema_version": "fs_spread_stress_v2",
+  "status": "FROZEN",
+  "frozen_before_any_v2_execution": true,
+  "frozen_at": "2026-09-28T10:11:36+00:00",
+  "spec_sha256": "6ae40d4845cef39838d69059c7a89bb49b0e81e8a670b266831568b9e5acc6c8",
+  "calendar": "NYSE rule-based 2010-2030 + special closures (src/model/spread_stress_v2/calendar.py)",
+  "announcement_policy": {
+    "DATE_ONLY": "S0 = first NYSE session strictly after the announcement calendar date",
+    "INTRADAY": "S0 = announcement session iff announcement instant < 16:00 America/New_York close, else next session"
+  },
+  "snapshot_grid": {
+    "type": "fixed_session_offsets_from_S0",
+    "first_offset": 10,
+    "step": 10,
+    "max_snapshots": 12
+  },
+  "resolution_policy": {
+    "DATE_ONLY": "eligible iff snapshot session < resolution calendar date",
+    "INTRADAY": "eligible iff 16:00 ET snapshot close < resolution instant",
+    "unresolved": "all snapshots active; label censored",
+    "use": "exclusion only; never selects a snapshot"
+  },
+  "features": {
+    "names": [
+      "pct_spread",
+      "delta_spread",
+      "spread_vol",
+      "n_delta_obs"
+    ],
+    "close_field": "close",
+    "vol_window": 10,
+    "min_valid_deltas_for_vol": 3,
+    "required_complete": [
+      "pct_spread",
+      "delta_spread",
+      "spread_vol"
+    ],
+    "fill": "none",
+    "interpolation": "none",
+    "carry_forward": "none"
+  },
+  "eligibility": {
+    "canonical_status": "CANONICALLY_ADMITTED",
+    "consideration_types": [
+      "cash"
+    ],
+    "require_offer_price": true
+  },
+  "labels": {
+    "positive": [
+      "terminated",
+      "withdrawn"
+    ],
+    "negative": [
+      "closed"
+    ],
+    "other": "censored"
+  },
+  "weighting": "deal_equal_1_over_n_eligible_snapshots",
+  "split": {
+    "type": "deal_grouped_expanding_walk_forward",
+    "cutoffs": "January 1 annually",
+    "train": "label known, resolution < cutoff",
+    "test": "announcement in [cutoff, next cutoff)"
+  },
+  "gates": {
+    "level": "deal",
+    "MIN_SAMPLE_N": 20,
+    "MIN_CLASS_N": 2
+  },
+  "model": {
+    "id": "spread_stress_logit_v2",
+    "type": "logistic_regression",
+    "l2_C": 1.0,
+    "standardize": "train_fold_weighted_mean_std",
+    "class_weight": null,
+    "hyperparameter_search": false,
+    "executed": false
+  },
+  "sensitivity": [
+    "first grid snapshot per deal (P1 view)"
+  ]
+}

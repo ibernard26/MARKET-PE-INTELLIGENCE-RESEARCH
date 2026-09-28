@@ -174,6 +174,10 @@ def write_bias(doc: dict) -> None:
         "",
         *dt_lines,
         "",
+        "## Sponsor and regulatory flags",
+        "",
+        "Sponsor status and regulatory flags are not fields on the canonical SEC manifest, so those slices are not computed.",
+        "",
         "## Major observed coverage skews",
         "",
     ]

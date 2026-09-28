@@ -13,6 +13,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from collections import Counter
 from pathlib import Path
 from typing import Optional
@@ -63,6 +64,27 @@ DEFERRED_PRICE_CONFLICT = "DEFERRED_PRICE_CONFLICT"
 NO_PRICE_HISTORY = "NO_PRICE_HISTORY"
 INSUFFICIENT_CANONICAL_PRINTS = "INSUFFICIENT_CANONICAL_PRINTS"
 DEFER_IDENTITY_UNCONFIRMED = "DEFER_IDENTITY_UNCONFIRMED"
+
+# Tiingo Starter is 50 requests/hour. One deal is metadata + EOD (2 calls).
+# Stay under the cap and do not retry a 429 in a tight loop — that burns the
+# next window. Identity admission rules are unchanged.
+HOURLY_TIINGO_DEALS = 18
+HOURLY_RESET_BUFFER_S = 120
+
+
+def tiingo_hourly_limited(res: dict) -> bool:
+    """True when Tiingo returned the hourly-allocation 429, not a price outcome."""
+    if res.get("status") != "TRANSIENT_FAILURE":
+        return False
+    traces = res.get("provider_trace") or []
+    if not traces:
+        return True
+    return any("429" in str(t.get("error") or "") for t in traces)
+
+
+def seconds_until_hourly_reset(now: float, buffer_s: int = HOURLY_RESET_BUFFER_S) -> float:
+    nxt = (int(now // 3600) + 1) * 3600 + buffer_s
+    return max(0.0, nxt - now)
 
 
 def identity_proofs(row: dict) -> list[str]:
@@ -166,23 +188,73 @@ def main() -> int:
         providers=[tiingo], resolver=ticker_resolver, pad_days=PAD_DAYS)
     orch_yahoo = PriceProviderOrchestrator(
         providers=[yahoo], resolver=ticker_resolver, pad_days=PAD_DAYS)
-    orch_combined = PriceProviderOrchestrator(
-        providers=default_providers(), resolver=ticker_resolver, pad_days=PAD_DAYS)
+
+    prior_rows = {}
+    reconcile_baseline = Counter()
+    conflict_samples = []
+    if OUT_MATRIX.exists():
+        old_doc = json.loads(OUT_MATRIX.read_text())
+        prior_rows = {r["deal_id"]: r for r in old_doc.get("deals") or []}
+        old_meta = old_doc.get("meta") or {}
+        reconcile_baseline = Counter(
+            old_meta.get("reconcile_pre_retry") or old_meta.get("reconcile") or {})
+        conflict_samples = list(old_doc.get("conflict_samples") or [])
 
     rows = []
     all_obs = []
-    recon_stats = Counter()
-    conflict_samples = []
+    recon_extra = Counter()
+    for cached in prior_rows.values():
+        if "exact_matches" not in cached:
+            continue
+        recon_extra["overlap_sessions"] += cached.get("overlap_sessions") or 0
+        recon_extra["exact"] += cached.get("exact_matches") or 0
+        recon_extra["tolerable"] += cached.get("tolerable_matches") or 0
+        recon_extra["conflict"] += cached.get("material_conflicts") or 0
+    deals_this_hour = 0
+    hour_started = time.time()
+    fetched_now = set()
 
     for d in deals:
+        cached = prior_rows.get(d["deal_id"])
+        if cached and cached.get("tiingo_status") != "TRANSIENT_FAILURE":
+            rows.append(cached)
+            continue
+
+        if time.time() - hour_started >= 3600:
+            deals_this_hour = 0
+            hour_started = time.time()
+        if deals_this_hour >= HOURLY_TIINGO_DEALS:
+            wait = seconds_until_hourly_reset(time.time())
+            print(f"TIINGO_HOURLY_BUDGET sleep {wait:.0f}s", file=sys.stderr, flush=True)
+            time.sleep(wait)
+            deals_this_hour = 0
+            hour_started = time.time()
+
         ident, defer = ticker_resolver.resolve(d)
+        fetched_now.add(d["deal_id"])
         figi_id = figi.resolve_deal(
             d, ticker=ident.ticker, exchange=ident.exchange)
-        # Do not fetch prices when identity ambiguous at FIGI layer with multiple
-        # FIGIs — still allow ticker-based Tiingo/Yahoo but flag ambiguity.
-        t_res = orch_tiingo.fetch_deal(d)
+        # One Tiingo fetch per deal (metadata + EOD). A second combined fetch
+        # would double the hourly allocation without changing admission.
+        while True:
+            t_res = orch_tiingo.fetch_deal(d)
+            if not tiingo_hourly_limited(t_res):
+                break
+            wait = seconds_until_hourly_reset(time.time())
+            print(f"TIINGO_HTTP_429 {d['deal_id']} sleep {wait:.0f}s",
+                  file=sys.stderr, flush=True)
+            time.sleep(wait)
+            deals_this_hour = 0
+            hour_started = time.time()
+        deals_this_hour += 1
         y_res = orch_yahoo.fetch_deal(d)
-        c_res = orch_combined.fetch_deal(d)
+        if t_res.get("status") == "ok":
+            c_res = t_res
+        elif t_res.get("status") == "IDENTITY_AMBIGUOUS":
+            # Same veto as the orchestrator: do not fall through to Yahoo.
+            c_res = {"provider": None, "observations": [], "n_prints": 0}
+        else:
+            c_res = y_res
 
         t_obs = t_res.get("observations") or []
         y_obs = y_res.get("observations") or []
@@ -191,10 +263,10 @@ def main() -> int:
             "material_conflict": 0, "tiingo_only": 0, "yahoo_only": 0,
             "conflicts": [], "status": "N/A",
         }
-        recon_stats["overlap_sessions"] += recon.get("n_overlap", 0)
-        recon_stats["exact"] += recon.get("exact_match", 0)
-        recon_stats["tolerable"] += recon.get("tolerable_match", 0)
-        recon_stats["conflict"] += recon.get("material_conflict", 0)
+        recon_extra["overlap_sessions"] += recon.get("n_overlap", 0)
+        recon_extra["exact"] += recon.get("exact_match", 0)
+        recon_extra["tolerable"] += recon.get("tolerable_match", 0)
+        recon_extra["conflict"] += recon.get("material_conflict", 0)
         if recon.get("material_conflict", 0):
             for c in recon.get("conflicts", [])[:3]:
                 conflict_samples.append({"deal_id": d["deal_id"], **c})
@@ -220,6 +292,8 @@ def main() -> int:
             "yahoo_status": y_res.get("status"),
             "yahoo_n": len(y_obs),
             "overlap_sessions": recon.get("n_overlap", 0),
+            "exact_matches": recon.get("exact_match", 0),
+            "tolerable_matches": recon.get("tolerable_match", 0),
             "material_conflicts": recon.get("material_conflict", 0),
             "reconcile_rule": THESIS_RECONCILE_RULE,
             "combined_provider": c_res.get("provider"),
@@ -235,12 +309,37 @@ def main() -> int:
         # only for deals that pass the identity + reconciliation admission rule.
         if row["prints_admitted"]:
             all_obs.extend(c_res.get("observations") or [])
+        print(json.dumps({
+            "deal_id": d["deal_id"],
+            "tiingo_status": row["tiingo_status"],
+            "tiingo_n": row["tiingo_n"],
+            "yahoo_status": row["yahoo_status"],
+            "yahoo_n": row["yahoo_n"],
+            "canonical_status": row["canonical_status"],
+        }), flush=True)
 
-    by_deal_prints = Counter(o.deal_id for o in all_obs)
-    n_3plus = sum(1 for _, n in by_deal_prints.items() if n >= 3)
+    # Prior Tiingo 429 rows contributed no overlapping sessions. Keep that
+    # baseline and add only the paced retries.
+    recon_stats = reconcile_baseline + recon_extra
+
+    refetched_ids = fetched_now
+    kept_prints = []
+    if DEFAULT_MANIFEST.exists():
+        old_manifest = json.loads(DEFAULT_MANIFEST.read_text())
+        kept_prints = [
+            p for p in (old_manifest.get("prints") or [])
+            if p.get("deal_id") not in refetched_ids
+        ]
+
+    meta_stub = {"reconcile_pre_retry": dict(reconcile_baseline)}
+    write_normalized_manifest(all_obs, DEFAULT_MANIFEST, meta=meta_stub)
+    manifest = json.loads(DEFAULT_MANIFEST.read_text())
+    manifest["prints"] = kept_prints + manifest.get("prints", [])
+    by_deal_prints = Counter(p["deal_id"] for p in manifest["prints"])
+    n_3plus = sum(1 for n in by_deal_prints.values() if n >= MIN_PRINTS)
     meta = {
         "canonical_n": len(deals),
-        "total_real_price_prints": len(all_obs),
+        "total_real_price_prints": len(manifest["prints"]),
         "deals_with_3plus_prints": n_3plus,
         "tiingo_deals_covered": sum(1 for r in rows if r["tiingo_n"] >= 3),
         "yahoo_deals_covered": sum(1 for r in rows if r["yahoo_n"] >= 3),
@@ -270,8 +369,15 @@ def main() -> int:
         "openfigi_matched": sum(1 for r in rows if r["openfigi_status"] == "MATCHED"),
         "openfigi_ambiguous": sum(1 for r in rows if r["openfigi_status"] == "AMBIGUOUS"),
         "openfigi_no_match": sum(1 for r in rows if r["openfigi_status"] == "NO_MATCH"),
+        "openfigi_name_mismatch": sum(
+            1 for r in rows if r["openfigi_status"] == "NAME_MISMATCH"),
+        "tiingo_identity_verified": sum(
+            1 for r in rows if r.get("tiingo_identity_verified")),
         "gap_class_counts": dict(Counter(r["final_coverage_status"] for r in rows)),
+        "reconcile_pre_retry": dict(reconcile_baseline),
         "reconcile": dict(recon_stats),
+        "tiingo_hourly_limited_remaining": sum(
+            1 for r in rows if r.get("tiingo_status") == "TRANSIENT_FAILURE"),
     }
     doc = {
         "schema_version": 1,
@@ -281,11 +387,12 @@ def main() -> int:
         "conflict_samples": conflict_samples[:50],
     }
     OUT_MATRIX.write_text(json.dumps(doc, indent=2) + "\n")
-    write_normalized_manifest(all_obs, DEFAULT_MANIFEST, meta=meta)
+    manifest["meta"] = meta
+    DEFAULT_MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n")
     OUT_AUDIT.write_text(json.dumps({"meta": meta, "deals": rows}, indent=2) + "\n")
     print(json.dumps(meta, indent=2))
     print(f"wrote {OUT_MATRIX}")
-    print(f"wrote {DEFAULT_MANIFEST} ({len(all_obs)} prints)")
+    print(f"wrote {DEFAULT_MANIFEST} ({len(manifest['prints'])} prints)")
 
     # Offline audit docs (no credentials required once matrix exists)
     from scripts.audit_free_price_coverage import main as audit_main

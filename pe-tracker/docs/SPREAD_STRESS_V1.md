@@ -3,6 +3,15 @@
 **Status:** architecture + gated real-data authorization. Replaces any prior
 draft that stopped at “No real fitting yet.”
 
+The canonical historical-price coverage gate passed with 21 admitted deals.
+The existing spread_stress_v1 panel was not executable because its feature-time
+construction collides with date-only resolution timestamps, and the admitted
+cohort also contains only one break-like outcome. No model fit or backtest was
+performed. See `docs/SPREAD_STRESS_V1_POSTMORTEM.md`. That result is not a
+finding of insufficient historical price data. `PRICE_COVERAGE_READY = YES`.
+`SPREAD_STRESS_V1_PANEL_VALID = NO`. Block reason:
+`FEATURE_TIME_RESOLUTION_TIMESTAMP_COLLISION`.
+
 The full copy-paste prompt (sections 1–29) lives at
 `outputs/spread_stress_strategy_prompt.md`.
 

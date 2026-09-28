@@ -103,3 +103,86 @@ def reconcile_series(
         "conflicts": conflicts,
         "status": ("DEFER_PRICE_CONFLICT" if conflict else "AGREE"),
     }
+
+
+# Session-evidence labels. classify_close_pair keeps EXACT_MATCH / TOLERABLE_MATCH
+# so existing callers do not change; the persisted artifact uses these names.
+EVIDENCE_CLASSIFICATION = {
+    "EXACT_MATCH": "EXACT",
+    "TOLERABLE_MATCH": "TOLERABLE",
+    "MATERIAL_CONFLICT": "MATERIAL_CONFLICT",
+}
+
+
+def session_differences(a: float, b: float) -> tuple[float, float]:
+    """Absolute and relative raw-close gaps used by classify_close_pair."""
+    diff = abs(a - b)
+    scale = max(abs(a), abs(b), 1e-12)
+    return diff, diff / scale
+
+
+def reconcile_session_evidence(
+        primary: Iterable[NormalizedEquityObservation],
+        secondary: Iterable[NormalizedEquityObservation],
+        *,
+        deal_id: str,
+        rule: str = THESIS_RECONCILE_RULE,
+) -> list[dict]:
+    """One record per overlapping session. Raw close vs raw close; no average."""
+    primary, secondary = list(primary), list(secondary)
+    _require_raw_close(primary, "tiingo")
+    _require_raw_close(secondary, "yahoo")
+    pmap = {o.session_date: o for o in primary}
+    smap = {o.session_date: o for o in secondary}
+    records = []
+    for sd in sorted(set(pmap) & set(smap)):
+        a, b = pmap[sd].close, smap[sd].close
+        cls = classify_close_pair(a, b, rule)
+        abs_diff, rel_diff = session_differences(a, b)
+        records.append({
+            "deal_id": deal_id,
+            "session_date": sd,
+            "tiingo_raw_close": a,
+            "yahoo_raw_close": b,
+            "absolute_difference": abs_diff,
+            "relative_difference": rel_diff,
+            "classification": EVIDENCE_CLASSIFICATION[cls],
+            "rule_version": rule,
+        })
+    return records
+
+
+def summarize_session_evidence(sessions: Iterable[dict]) -> tuple[list[dict], dict]:
+    """Per-deal counts and grand totals derived only from session rows."""
+    by: dict[str, dict] = {}
+    for row in sessions:
+        slot = by.setdefault(row["deal_id"], {
+            "deal_id": row["deal_id"],
+            "overlap_sessions": 0,
+            "exact_matches": 0,
+            "tolerable_matches": 0,
+            "material_conflicts": 0,
+            "rule_version": row["rule_version"],
+        })
+        slot["overlap_sessions"] += 1
+        label = row["classification"]
+        if label == "EXACT":
+            slot["exact_matches"] += 1
+        elif label == "TOLERABLE":
+            slot["tolerable_matches"] += 1
+        elif label == "MATERIAL_CONFLICT":
+            slot["material_conflicts"] += 1
+        else:
+            raise ReconciliationError(f"unknown classification {label!r}")
+        if slot["rule_version"] != row["rule_version"]:
+            raise ReconciliationError("mixed reconcile rule versions in one artifact")
+    per_deal = [by[k] for k in sorted(by)]
+    totals = {
+        "overlap_sessions": sum(r["overlap_sessions"] for r in per_deal),
+        "exact": sum(r["exact_matches"] for r in per_deal),
+        "tolerable": sum(r["tolerable_matches"] for r in per_deal),
+        "conflict": sum(r["material_conflicts"] for r in per_deal),
+    }
+    if totals["overlap_sessions"] != totals["exact"] + totals["tolerable"] + totals["conflict"]:
+        raise ReconciliationError("session evidence does not partition the overlap")
+    return per_deal, totals

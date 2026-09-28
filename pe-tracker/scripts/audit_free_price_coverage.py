@@ -40,6 +40,40 @@ def write_recon(doc: dict) -> None:
     conflicts = doc.get("conflict_samples") or []
     deals = doc.get("deals") or []
     overlapping_deals = sum(1 for r in deals if int(r.get("overlap_sessions") or 0) > 0)
+    per_overlap = per_exact = per_tolerable = per_conflict = 0
+    per_deal_complete = True
+    for row in deals:
+        if "exact_matches" not in row or "tolerable_matches" not in row:
+            per_deal_complete = False
+            continue
+        per_overlap += int(row.get("overlap_sessions") or 0)
+        per_exact += int(row.get("exact_matches") or 0)
+        per_tolerable += int(row.get("tolerable_matches") or 0)
+        per_conflict += int(row.get("material_conflicts") or 0)
+    headline = (
+        int(recon.get("overlap_sessions") or 0),
+        int(recon.get("exact") or 0),
+        int(recon.get("tolerable") or 0),
+        int(recon.get("conflict") or 0),
+    )
+    sums_match = per_deal_complete and headline == (
+        per_overlap, per_exact, per_tolerable, per_conflict)
+    if sums_match:
+        partition_note = (
+            "Per-deal `exact_matches` + `tolerable_matches` + `material_conflicts` "
+            "equal `meta.reconcile`. `historical_debug` is not added to those totals."
+        )
+    elif meta.get("reconcile_pre_retry") and not meta.get("historical_debug"):
+        partition_note = (
+            "Per-deal classification fields do not equal `meta.reconcile`. "
+            "The gap is `meta.reconcile_pre_retry`, a side ledger that is not "
+            "session-level evidence. It must not be treated as an audited partition."
+        )
+    else:
+        partition_note = (
+            "Per-deal classification fields do not equal `meta.reconcile`. "
+            "Headline totals are not an audited partition."
+        )
     lines = [
         "# Tiingo ↔ Yahoo price reconciliation",
         "",
@@ -56,6 +90,21 @@ def write_recon(doc: dict) -> None:
         f"| MATERIAL_CONFLICT_COUNT | {recon.get('conflict', 0)} |",
         f"| TIINGO_ONLY_COUNT | {sum(1 for r in deals if r.get('tiingo_n', 0) > 0 and r.get('yahoo_n', 0) == 0)} |",
         f"| YAHOO_ONLY_COUNT | {sum(1 for r in deals if r.get('yahoo_n', 0) > 0 and r.get('tiingo_n', 0) == 0)} |",
+        "",
+        "## Overlap versus canonical admission",
+        "",
+        "Overlapping Tiingo/Yahoo sessions are not the admitted cohort. "
+        "A zero material-conflict count is computed only on deals that have "
+        "both series. It does not independently validate admitted Tiingo "
+        "series that have no Yahoo overlap.",
+        "",
+        partition_note,
+        "",
+        "| Metric | Value |",
+        "|---|---|",
+        f"| OVERLAP_DEALS_CANONICALLY_ADMITTED | {sum(1 for r in deals if int(r.get('overlap_sessions') or 0) > 0 and r.get('canonical_status') == 'CANONICALLY_ADMITTED')} |",
+        f"| OVERLAP_DEALS_IDENTITY_DEFERRED | {sum(1 for r in deals if int(r.get('overlap_sessions') or 0) > 0 and r.get('canonical_status') == 'DEFERRED_IDENTITY')} |",
+        f"| ADMITTED_DEALS_WITH_SECONDARY_OVERLAP | {sum(1 for r in deals if r.get('canonical_status') == 'CANONICALLY_ADMITTED' and int(r.get('overlap_sessions') or 0) > 0)} |",
         "",
         "## Raw vs canonical coverage (readiness uses CANONICALLY_ADMITTED only)",
         "",
@@ -173,6 +222,10 @@ def write_bias(doc: dict) -> None:
         "## Coverage by deal type",
         "",
         *dt_lines,
+        "",
+        "## Sponsor and regulatory flags",
+        "",
+        "Sponsor status and regulatory flags are not fields on the canonical SEC manifest, so those slices are not computed.",
         "",
         "## Major observed coverage skews",
         "",

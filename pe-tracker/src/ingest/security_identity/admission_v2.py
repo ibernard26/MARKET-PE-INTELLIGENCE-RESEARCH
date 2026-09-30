@@ -47,10 +47,24 @@ def openfigi_status_v2(rows: list[dict], target_name: Optional[str]) -> dict:
     if not agreeing:
         return {"status": NAME_MISMATCH, "composite_figis": [],
                 "candidate_names": sorted({str(r.get("name")) for r in pool})}
-    comps = sorted({r.get("compositeFIGI") or r.get("figi") for r in agreeing} - {None})
+    comps = sorted({
+        _usable_identifier(r.get("compositeFIGI")) or _usable_identifier(r.get("figi"))
+        for r in agreeing
+    } - {None})
+    if not comps:
+        return {"status": NO_MATCH, "composite_figis": [],
+                "reason": "NO_USABLE_IDENTIFIER_AFTER_NAME_FILTER"}
     if len(comps) > 1:
         return {"status": AMBIGUOUS, "composite_figis": comps}
     return {"status": MATCHED, "composite_figis": comps}
+
+
+def _usable_identifier(value) -> Optional[str]:
+    """A composite or security identifier that can actually name one instrument."""
+    if not isinstance(value, str):
+        return None
+    text = value.strip()
+    return text or None
 
 
 def canonical_status_v2(row: dict, proof_c_status: Optional[str],

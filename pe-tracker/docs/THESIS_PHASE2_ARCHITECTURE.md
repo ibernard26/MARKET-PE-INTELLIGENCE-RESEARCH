@@ -124,8 +124,9 @@ was known when the rule was written, and the spec discloses this (§8).
   - Count distinct `compositeFIGI` among name-agreeing equity rows.
   - It can be recomputed from the cached raw OpenFIGI responses without new API
     calls (`--openfigi-v2-from-cache`).
-- **Why it's outcome-blind:** it's a symbology fix applied uniformly. No labels
-  are read.
+- **Why it's label-blind/outcome-type-blind:** it's a symbology fix applied
+  uniformly. Resolution dates stay available for the filing window. Resolution
+  type and outcome labels are not read. It is not outcome-blind.
 - **Why it isn't active:** it changes an identity rule after #44's coverage was
   observed, so it needs audit approval first (`RULE_STATUS =
   PROPOSED_PENDING_AUDIT`).
@@ -151,8 +152,10 @@ The override has limits:
 
 - **Review queue:**
   - 56 `DEFERRED_IDENTITY` deals, ordered by **deal_id ascending**.
-  - The queue exposes only deal_id, target, CIK, ticker and announcement and
-    resolution dates. Labels are never loaded; a test enforces this.
+  - The queue exposes deal_id, target, CIK, ticker, announcement date and
+    resolution date. It is label-blind/outcome-type-blind: resolution type and
+    outcome labels are never loaded. Resolution date remains available. A test
+    enforces this.
 - **Plan (run here):**
   - Built from `data.sec.gov` submission metadata, which is reachable from the
     Claude environment.

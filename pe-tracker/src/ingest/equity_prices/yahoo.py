@@ -32,7 +32,7 @@ def session_close_iso(d: date) -> str:
     return aware.replace(tzinfo=None).isoformat()
 
 
-def yahoo_issuer_name(meta: dict | None) -> str | None:
+def yahoo_issuer_name(meta: Optional[dict]) -> Optional[str]:
     """Chart-meta issuer name. Never inferred from the close path."""
     meta = meta or {}
     for key in ("longName", "shortName", "longname", "shortname"):
@@ -42,7 +42,7 @@ def yahoo_issuer_name(meta: dict | None) -> str | None:
     return None
 
 
-def yahoo_identity_problems(meta: dict | None, identity: SecurityIdentity,
+def yahoo_identity_problems(meta: Optional[dict], identity: SecurityIdentity,
                             window_start: date) -> list[str]:
     """Reconstructable Yahoo issuer check (name + first-trade vs announcement).
 

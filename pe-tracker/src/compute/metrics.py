@@ -12,6 +12,7 @@ Why both AUCs:
   It is only readable NEXT TO π.
 """
 from dataclasses import dataclass
+from typing import Optional
 
 from ..config import COST_FN, COST_FP, COST_RATIO_GRID
 from ..db import connect
@@ -69,7 +70,7 @@ def confusion_at(pairs, t: float) -> Confusion:
 
 
 # ------------------------------------------------------------------- AUCs
-def roc_auc_rank(pairs) -> float | None:
+def roc_auc_rank(pairs) -> Optional[float]:
     """Mann–Whitney form with AVERAGED tied ranks — expressible in SQL.
 
     AUC = (Σ rank(positives) − n_pos(n_pos+1)/2) / (n_pos · n_neg)

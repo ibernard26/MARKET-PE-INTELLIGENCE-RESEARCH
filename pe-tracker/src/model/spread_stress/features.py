@@ -134,7 +134,7 @@ def build_spread_stress_row(deal_id: str, feature_as_of: str, cutoff: str,
 
 
 def build_spread_stress_panel(cutoff: str, conn: sqlite3.Connection,
-                              feature_dates: dict | None = None,
+                              feature_dates: Optional[dict] = None,
                               vol_window: int = VOL_WINDOW_DEFAULT,
                               min_prints: int = 3) -> dict:
     """Labeled panel at `cutoff` for deals with enough target prints.

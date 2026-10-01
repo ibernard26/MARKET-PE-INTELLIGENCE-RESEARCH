@@ -8,6 +8,7 @@ not a feature-time policy.
 from __future__ import annotations
 
 from collections import Counter
+from typing import Optional
 
 DATE_ONLY = "DATE_ONLY"
 INTRADAY = "INTRADAY"
@@ -15,7 +16,7 @@ ANNOUNCEMENT_DAY_ORDERING_AMBIGUOUS = "ANNOUNCEMENT_DAY_ORDERING_AMBIGUOUS"
 RESOLUTION_DAY_ORDERING_AMBIGUOUS = "RESOLUTION_DAY_ORDERING_AMBIGUOUS"
 
 
-def time_precision(ts: str | None) -> str:
+def time_precision(ts: Optional[str]) -> str:
     """DATE_ONLY for a bare YYYY-MM-DD; INTRADAY when a clock time is present."""
     text = (ts or "").strip()
     if not text:
@@ -23,8 +24,8 @@ def time_precision(ts: str | None) -> str:
     return DATE_ONLY if len(text) == 10 else INTRADAY
 
 
-def pit_flags_for_print(print_row: dict, announcement_ts: str | None,
-                        resolution_ts: str | None) -> dict:
+def pit_flags_for_print(print_row: dict, announcement_ts: Optional[str],
+                        resolution_ts: Optional[str]) -> dict:
     """Flags for one raw print. Does not alter the close."""
     ann_p = time_precision(announcement_ts)
     res_p = time_precision(resolution_ts)

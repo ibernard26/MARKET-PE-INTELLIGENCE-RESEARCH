@@ -113,10 +113,58 @@ def test_real_db_has_no_derived_or_fabricated_prices():
         assert n_phantom == 0
 
 
-def test_generated_workbook_passes_python_formula_gate():
+def test_generated_workbook_empty_database_case(tmp_path, monkeypatch):
+    """Case A: in an empty-database checkout, build() emits 0 sessions and 0 formulas."""
     import generate_workbook as gw
-    out = Path(gw.OUT)
-    if not out.exists():
-        pytest.skip("workbook not generated in this checkout")
-    gate = gw.verify_formulas(out)
-    assert gate["failures"] == 0 and gate["formulas_checked"] > 0
+    from src.db import init_db, migrate_schema
+
+    empty_db = tmp_path / "empty_pe_tracker.db"
+    monkeypatch.setattr("src.config.DB_PATH", empty_db)
+    init_db()
+    migrate_schema()
+
+    out_file = tmp_path / "empty_workbook.xlsx"
+    path, dates = gw.build(out_file)
+    assert len(dates) == 0
+    gate = gw.verify_formulas(path)
+    assert gate["failures"] == 0
+    assert gate["formulas_checked"] == 0
+
+
+def test_generated_workbook_passes_python_formula_gate(tmp_path, monkeypatch):
+    """Case B: a populated workbook proves formula validation actually runs with checked > 0 and 0 failures."""
+    import generate_workbook as gw
+    from src.db import init_db, migrate_schema, upsert_prices
+    from src.ingest.market_calendar import build_calendar
+
+    test_db = tmp_path / "test_pe_tracker.db"
+    monkeypatch.setattr("src.config.DB_PATH", test_db)
+    init_db()
+    migrate_schema()
+    build_calendar("2026-05-01", "2026-05-15")
+
+    # Seed sample prices for the 4 workbook series across several sessions
+    prices = [
+        ("SP500", "2026-05-01", 5000.0, "test"),
+        ("SP500", "2026-05-04", 5050.0, "test"),
+        ("SP500", "2026-05-05", 5020.0, "test"),
+        ("NASDAQCOM", "2026-05-01", 16000.0, "test"),
+        ("NASDAQCOM", "2026-05-04", 16100.0, "test"),
+        ("NASDAQCOM", "2026-05-05", 16050.0, "test"),
+        ("DCOILWTICO", "2026-05-01", 75.0, "test"),
+        ("DCOILWTICO", "2026-05-04", 76.0, "test"),
+        ("DCOILWTICO", "2026-05-05", 74.5, "test"),
+        ("DCOILBRENTEU", "2026-05-01", 80.0, "test"),
+        ("DCOILBRENTEU", "2026-05-04", 81.0, "test"),
+        ("DCOILBRENTEU", "2026-05-05", 79.5, "test"),
+    ]
+    upsert_prices(prices)
+
+    out_file = tmp_path / "populated_workbook.xlsx"
+    path, dates = gw.build(out_file)
+    assert len(dates) > 0
+
+    gate = gw.verify_formulas(path)
+    assert gate["formulas_checked"] > 0
+    assert gate["failures"] == 0
+

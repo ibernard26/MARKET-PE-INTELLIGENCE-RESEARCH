@@ -17,6 +17,8 @@ secrets.*
 *.secret
 .pgpass
 **/.pgpass
+*.egg-info/
+
 
 # Licensed market-data extracts (CRSP/WRDS raw) — redistribution restricted
 pe-tracker/data/licensed/

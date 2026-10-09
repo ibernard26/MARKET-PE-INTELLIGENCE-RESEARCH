@@ -384,3 +384,61 @@ def test_committed_packet_is_blinded():
         t = p.read_text()
         assert "exposure_status" not in t and not re.search(r"\b(producer|consumer|hedged)\s*[:=]\s*"
                                                             r"(yes|unknown|no_disclosed)\b", t)
+
+
+# ------------------------------------------------------------- extraction mechanics (live-run fixes)
+def test_extract_spaced_quotes_and_short_defined_names():
+    t = ("On October 26, 2020, Xilinx, Inc., a Delaware corporation (“ Xilinx ”), entered into an "
+         "Agreement and Plan of Merger (the “ Merger Agreement ”), by and among Advanced Micro "
+         "Devices, Inc., a Delaware corporation (“ AMD ”), Thrones Merger Sub, Inc., a Delaware "
+         "corporation and wholly owned subsidiary of AMD (“ Merger Sub ”), and Xilinx.")
+    ex = entities.extract_acquirer(t, "Xilinx, Inc.")
+    assert entities.norm_name(ex["parent"]) == "advanced micro devices"
+    t2 = ("the Company entered into a Merger Agreement with MRGB Hold Co. (“ Parent ”) and MRVK Hold "
+          "Co. Parent and Merger Sub are currently wholly-owned subsidiaries of Mill Road Capital II, "
+          "L.P. (“ Mill Road ”).")
+    ex2 = entities.extract_acquirer(t2, "R. G. Barry Corporation")
+    assert entities.norm_name(ex2["parent"]) == "mrgb hold" and ex2["pe_signal"]
+
+
+def test_defined_term_never_used_as_entity():
+    assert entities.name_variants("Parent") == []
+    assert entities.name_variants("Splunk, Cisco Systems, Inc")[-1] == "Cisco Systems, Inc"
+    assert entities.name_variants("Company, Microsoft Corporation")[-1] == "Microsoft Corporation"
+
+
+def test_header_filer_of_bidder_filed_425_resolves():
+    class Ed(_FakeEd):
+        def full_submission(self, cik, acc):
+            return ("<SEC-HEADER>\nCONFORMED SUBMISSION TYPE:\t425\nFILED AS OF DATE:\t20201201\n"
+                    "<ACCEPTANCE-DATETIME>20201201161000\nSUBJECT COMPANY:\n\tCOMPANY DATA:\n"
+                    "\t\tCOMPANY CONFORMED NAME:\t\t\tSlack Technologies, Inc.\n"
+                    "\t\tCENTRAL INDEX KEY:\t\t\t0000000001\nFILED BY:\n\tCOMPANY DATA:\n"
+                    "\t\tCOMPANY CONFORMED NAME:\t\t\tsalesforce.com, inc.\n"
+                    "\t\tCENTRAL INDEX KEY:\t\t\t0001108524\n</SEC-HEADER>\n"
+                    "salesforce.com, inc. (the “Company”) entered into a merger agreement.")
+    sub = _sub(1108524, "SALESFORCE.COM, INC.")
+    sub["filings"] = [_f("10-K", "2020-03-05", "2020-03-05T21:00:00.000Z", "k1")]
+    ed = Ed("", {1108524: sub})
+    d = {**_deal("Salesforce"), "announcement_timestamp": "2020-12-01"}
+    rec = entities.resolve_acquirer(ed, d, {}, [])
+    assert rec["status"] == "resolved" and rec["cik"] == 1108524
+    assert "sec_header_filer" in rec["extraction_method"]
+
+
+def test_target_never_its_own_acquirer_and_small_caps():
+    t = ("This AGREEMENT AND PLAN OF MERGER is by and among T APESTRY , I NC . , a Maryland "
+         "corporation (“Parent”), S UNRISE M ERGER S UB , I NC . , a British Virgin Islands company "
+         "(“Merger Sub”), and Capri Holdings Limited (the “Company”).")
+    assert entities.norm_name(entities.extract_acquirer(t, "Capri Holdings Limited")["parent"]) == "tapestry"
+    lookup = {"microsoft": {1}}                       # resolves to the target's own CIK
+    ed = _FakeEd(MERGER, {1: _sub(1, "MICROSOFT CORP")})
+    rec = entities.resolve_acquirer(ed, _deal("Microsoft"), lookup, [])
+    assert rec["status"] == "unknown" and rec["cik"] == ""
+
+
+def test_pe_signal_requires_sponsor_language_about_buyer():
+    assert not entities.R_PE.search("units owned by the Minority Limited Partners immediately prior")
+    assert not entities.R_PE.search("Aegis entered into Voting Agreements with affiliates of Union "
+                                    "Capital Corporation")
+    assert entities.R_PE.search("Parent and Sub are affiliates of Webster Capital")

@@ -21,7 +21,7 @@ MAX_CANDIDATES = 8
 
 SUFFIXES = {"inc", "incorporated", "corp", "corporation", "co", "company", "ltd", "limited",
             "plc", "sa", "ag", "aktiengesellschaft", "nv", "se", "llc", "lp", "the", "l p",
-            "n v", "s a", "a g", "bv", "b v", "gmbh", "spa", "s p a", "holdings inc"}
+            "n v", "s a", "a g", "bv", "b v", "gmbh", "spa", "s p a"}
 ENTITY_TYPES = (r"(?:corporation|company|limited liability company|limited partnership|"
                 r"public limited company|exempted company|exempted limited partnership|"
                 r"société anonyme|societe anonyme|stock corporation|business trust|statutory trust|"
@@ -29,16 +29,31 @@ ENTITY_TYPES = (r"(?:corporation|company|limited liability company|limited partn
                 r"Aktiengesellschaft|corporation organized[^()]{0,40})")
 NAME = r"([A-Z][A-Za-z0-9.,&'’\-/ ]{1,110}?)"
 DEF_ROLE = r"(Parent|Acquiror|Acquirer|Buyer|Purchaser Parent|Topco|Holdco)"
-R_DEF = re.compile(NAME + r",?\s+an?\s+(?:[A-Z][A-Za-z.]*\s+){0,4}" + ENTITY_TYPES +
-                   r"[^()]{0,60}?\(\s*(?:together with [^()]{0,60})?(?:the\s+)?[\"“”']*" + DEF_ROLE +
-                   r"[\"“”']*\s*\)")
+R_DEF = re.compile(NAME + r"(?:,?\s+an?\s+(?:[A-Z][A-Za-z.]*\s+){0,4}" + ENTITY_TYPES +
+                   r"[^()]{0,140}?)?\s*\(\s*(?:together with [^()]{0,60})?(?:the\s+)?[\"“”']*\s*" +
+                   DEF_ROLE + r"\s*[\"“”']*\s*\)")
+R_PARTY = re.compile(NAME + r",?\s+an?\s+(?:[A-Z][A-Za-z.]*\s+){0,4}" + ENTITY_TYPES +
+                     r"([^()]{0,80}?)\s*\(\s*(?:the\s+)?[\"“”']*\s*([A-Z][A-Za-z0-9 .&\-]{0,40}?)"
+                     r"\s*[\"“”']*\s*\)")
+R_AGREEMENT = re.compile(r"(Agreement and Plan of (Merger|Reorganization)|Merger Agreement|"
+                         r"Arrangement Agreement|Transaction Agreement|Business Combination Agreement)")
+NON_ACQ_TERMS = re.compile(r"^(the\s+)?(company|merger\s*sub\w*.*|sub|purchaser|offeror|"
+                           r"merger\s+subsidiary|acquisition\s+sub\w*|.*merger sub.*|"
+                           r"agreement|merger agreement|merger)$", re.I)
+DEFINED_TERMS = {"parent", "buyer", "purchaser", "company", "merger sub", "acquiror", "acquirer",
+                 "holdco", "topco", "sub", "inc", "corp", "llc", "lp", "l p", "ltd", "plc", ""}
 R_WHOLLY = re.compile(r"(?:direct\s+or\s+indirect\s+|indirect\s+|direct\s+)?wholly[- ]owned\s+"
-                      r"(?:direct\s+|indirect\s+)?subsidiary\s+of\s+" + NAME +
+                      r"(?:direct\s+|indirect\s+)?subsidiar(?:y|ies)\s+of\s+" + NAME +
                       r"(?=\s*\(|,|\.|;|\s+and\s|\s+that\s|\s+which\s)")
 R_PE = re.compile(r"\b(funds?\s+(managed|advised|sponsored|affiliated)|investment\s+funds?|"
-                  r"private\s+equity|equity\s+sponsors?|[\"“]Sponsors?[\"”]|Fund\s+[IVXL]+\b|"
+                  r"private\s+equity|equity\s+sponsors?|[\"“]\s*Sponsors?\s*[\"”]|Fund\s+[IVXL]+\b|"
                   r"Partners\s+[IVXL]+\b|consortium|investor\s+group|"
-                  r"equity\s+commitment\s+letters?)", re.I)
+                  r"equity\s+commitment\s+letters?|"
+                  r"(Capital|Partners|Equity|Investors?)\s+([IVXL]+\s*,?\s+)?L\.\s?P\.|"
+                  r"\b(?-i:Parent|Buyer|Purchaser|Newco|Holdco)\b[^.]{0,60}?\b(affiliates?\s+of|"
+                  r"controlled\s+by|owned\s+by|subsidiar\w+\s+of)\s+(funds\s+)?(?-i:[A-Z])"
+                  r"[\w&.\- ]{0,40}?\b(?-i:Capital|Partners|Equity|Fund|Funds|Management)\b)", re.I)
+PE_SCAN_CHARS = 100_000
 
 
 def norm_name(s: str) -> str:
@@ -64,6 +79,20 @@ def clean_entity(name: str) -> str:
     # keep the last clause after "among"/"between"/"with" (party lists)
     name = re.split(r"\b(?:by and among|by and between|among|between|with)\s+", name)[-1]
     return name.strip(" ,.;:-’'\"“”")
+
+
+def name_variants(name: str) -> list[str]:
+    """Candidate entity strings, longest first: every trailing run of comma/'and'-separated
+    chunks, with defined terms and bare suffixes removed. Used only for SEC name matching."""
+    name = re.sub(r"^.*?\bsubsidiar(?:y|ies)\s+of\s+", "", name, flags=re.I)
+    name = re.sub(r"^.*?\b(?:that|understand that)\s+", "", name, flags=re.I)
+    chunks = [c.strip() for c in re.split(r",\s+|\s+and\s+(?=[A-Z])", name) if c.strip()]
+    out = []
+    for i in range(len(chunks)):
+        v = clean_entity(", ".join(chunks[i:]))
+        if norm_name(v) not in DEFINED_TERMS and v not in out and re.match(r"[A-Z0-9]", v):
+            out.append(v)
+    return out
 
 
 def build_lookup(raw: str) -> dict:
@@ -95,30 +124,58 @@ def parse_header(full: str) -> dict:
             "filing_date": f"{fd[:4]}-{fd[4:6]}-{fd[6:]}" if fd else "", "roles": roles}
 
 
-def extract_acquirer(text: str) -> dict:
-    """Returns parent/ultimate names with quotes, and PE signals, from merger-filing text."""
+def _norm_quotes(text: str) -> str:
+    """Identity-extraction normalization only: tighten spaced quotes, small-caps splits
+    ("T APESTRY , I NC .") and spaces before punctuation."""
+    text = re.sub(r"([“\"])\s+", r"\1", text)
+    text = re.sub(r"\s+([”\"])", r"\1", text)
+    text = re.sub(r"\b([A-Z]) ([A-Z]{2,})\b", r"\1\2", text)
+    return re.sub(r"\s+([,.](?:\s|$))", r"\1", text)
+
+
+def extract_acquirer(text: str, target_name: str = "") -> dict:
+    """Acquirer legal entity from merger-filing text: a defined "Parent"/"Buyer"-type party,
+    else the first merger-agreement party that is neither the target nor a merger sub."""
+    text = _norm_quotes(text)
     out = {"parent": "", "parent_quote": "", "ultimate": "", "ultimate_quote": "",
-           "pe_signal": False, "pe_quote": ""}
-    m = R_DEF.search(text)
-    if not m:
+           "pe_signal": False, "pe_quote": "", "method": ""}
+    best = None
+    for m in R_DEF.finditer(text):
+        if [v for v in name_variants(m.group(1))]:
+            best, out["method"] = m, "defined_parent_term"
+            break
+    if best is None:
+        tgt = norm_name(target_name).split()[:1]
+        for ag in R_AGREEMENT.finditer(text):
+            seg_end = ag.end() + 900
+            for pm in R_PARTY.finditer(text, ag.end(), seg_end):
+                term, between = pm.group(3).strip(), pm.group(2)
+                if NON_ACQ_TERMS.match(term) or re.search(r"subsidiar", between, re.I):
+                    continue
+                vs = name_variants(pm.group(1))
+                if not vs or (tgt and norm_name(vs[-1]).split()[:1] == tgt):
+                    continue
+                best, out["method"] = pm, "merger_agreement_party_clause"
+                break
+            if best is not None:
+                break
+    if best is None:
         return out
-    parent = clean_entity(m.group(1))
-    out["parent"] = parent
-    s0 = max(0, m.start() - 150)
-    out["parent_quote"] = text[s0:m.end() + 50].strip()[:400]
-    window = text[m.start(): m.end() + 1500]
-    w = R_WHOLLY.search(text, m.end(), m.end() + 400)
-    if w:
-        ult = clean_entity(w.group(1))
-        if norm_name(ult) and norm_name(ult) != norm_name(parent):
-            out["ultimate"] = ult
+    m = best
+    vs = name_variants(m.group(1))
+    out["parent"] = vs[-1] if len(vs[-1]) >= 3 else vs[0]
+    out["parent_quote"] = text[max(0, m.start() - 150): m.end() + 50].strip()[:400]
+    for w in R_WHOLLY.finditer(text, m.end(), m.end() + 3000):
+        uv = name_variants(w.group(1))
+        if uv and norm_name(uv[-1]) not in (norm_name(out["parent"]), norm_name(target_name)):
+            out["ultimate"] = uv[-1]
             out["ultimate_quote"] = text[max(0, w.start() - 120): w.end() + 40].strip()[:400]
-    pe = R_PE.search(window) or R_PE.search(text[max(0, m.start() - 600): m.start()])
+            break
+    pe = (R_PE.search(text, max(0, m.start() - 600), m.end() + 1500)
+          or R_PE.search(text, 0, PE_SCAN_CHARS))
     if pe:
         out["pe_signal"] = True
-        src = text[max(0, m.start() - 600): m.end() + 1500]
-        k = src.find(pe.group(0))
-        out["pe_quote"] = src[max(0, k - 200): k + 200].strip()
+        out["pe_quote"] = text[max(0, pe.start() - 200): pe.end() + 200].strip()[:400]
     return out
 
 
@@ -143,16 +200,31 @@ def manifest_consistent(manifest_name: str, *names: str) -> bool:
     return False
 
 
+HEADER_ACQ_FORMS = {"425", "SC TO-T", "SC TO-C", "SC 14D1", "SC TO-T/A"}
+
+
+def _eligible(ed, cik, ann, rec, target_cik=None):
+    if target_cik is not None and int(cik) == int(target_cik):
+        return None                                   # the target is never its own acquirer
+    try:
+        sub = ed.submissions(cik)
+    except Exception as exc:
+        rec["error"] = f"submissions {cik}: {exc}"
+        return None
+    return sub if select_filings(sub["filings"], ann) else None
+
+
 def resolve_acquirer(ed, deal: dict, lookup: dict, target_filings: list[dict]) -> dict:
     ann = deal["announcement_timestamp"][:10]
     tcik = int(deal["target_cik"])
     rec = {"deal_id": deal["deal_id"], "announce_date": ann, "manifest_acquirer": deal["acquirer"],
            "deal_type": deal.get("deal_type", ""), "source_accession": "", "source_form": "",
            "source_filing_date": "", "source_acceptance_et": "", "source_basis": "",
-           "parent_entity": "", "parent_quote": "", "ultimate_parent": "", "ultimate_quote": "",
-           "pe_signal": False, "pe_quote": "", "matched_name": "", "candidate_ciks": "",
-           "cik": "", "sec_name": "", "sic": "", "sic_description": "",
-           "manifest_name_consistent": "", "status": "", "unknown_reason": "", "error": ""}
+           "extraction_method": "", "parent_entity": "", "parent_quote": "", "ultimate_parent": "",
+           "ultimate_quote": "", "header_filer": "", "pe_signal": False, "pe_quote": "",
+           "matched_name": "", "candidate_ciks": "", "cik": "", "sec_name": "", "sic": "",
+           "sic_description": "", "manifest_name_consistent": "", "status": "",
+           "unknown_reason": "", "identity_note": "", "error": ""}
     found = None
     for cand in merger_filing_candidates(deal, target_filings):
         try:
@@ -161,39 +233,50 @@ def resolve_acquirer(ed, deal: dict, lookup: dict, target_filings: list[dict]) -
             rec["error"] = f"{cand['accession']}: {exc}"
             continue
         hdr = parse_header(full)
-        ex = extract_acquirer(to_text(full[:MAX_TEXT]))
-        if ex["parent"]:
-            found = (cand, hdr, ex)
+        hfil = [r for r in hdr["roles"] if r["role"] in ("FILER", "FILED BY") and r["cik"] != tcik]
+        ex = extract_acquirer(to_text(full[:MAX_TEXT]), deal.get("target", ""))
+        item = (cand, hdr, ex, hfil if hdr["form"] in HEADER_ACQ_FORMS else [])
+        if ex["parent"] or item[3]:
+            found = item
             break
         if found is None:
-            found = (cand, hdr, ex)
+            found = item
     if found is None:
         rec.update(status="unknown", unknown_reason="fetch_error")
         return rec
-    cand, hdr, ex = found
+    cand, hdr, ex, hfil = found
     rec.update(source_accession=cand["accession"], source_basis=cand["basis"], source_form=hdr["form"],
                source_filing_date=hdr["filing_date"], source_acceptance_et=hdr["acceptance_et"],
-               parent_entity=ex["parent"], parent_quote=ex["parent_quote"],
-               ultimate_parent=ex["ultimate"], ultimate_quote=ex["ultimate_quote"],
-               pe_signal=ex["pe_signal"], pe_quote=ex["pe_quote"], error="")
+               extraction_method=ex["method"], parent_entity=ex["parent"],
+               parent_quote=ex["parent_quote"], ultimate_parent=ex["ultimate"],
+               ultimate_quote=ex["ultimate_quote"], pe_signal=ex["pe_signal"],
+               pe_quote=ex["pe_quote"], error="",
+               header_filer=";".join(f"{r['role']}:{r['name']}:{r['cik']}" for r in hfil))
+    # (a) SEC header of a bidder-filed merger filing (425 / tender offer): registrant CIK directly
+    if len({r["cik"] for r in hfil}) == 1:
+        s = _eligible(ed, hfil[0]["cik"], ann, rec, tcik)
+        if s and not manifest_consistent(deal["acquirer"], s["name"], hfil[0]["name"]):
+            rec["identity_note"] = (f"header filer {s['name']} conflicts with manifest acquirer; "
+                                    "not used")
+            s = None
+        if s:
+            rec.update(extraction_method=(rec["extraction_method"] + "+" if rec["extraction_method"]
+                                          else "") + "sec_header_filer",
+                       matched_name=hfil[0]["name"], candidate_ciks=str(hfil[0]["cik"]),
+                       cik=s["cik"], sec_name=s["name"], sic=s["sic"],
+                       sic_description=s["sic_description"], status="resolved",
+                       manifest_name_consistent=manifest_consistent(deal["acquirer"], s["name"]))
+            return rec
     if not ex["parent"]:
         rec.update(status="unknown", unknown_reason="acquirer_not_identified_in_merger_filing")
         return rec
     rec["manifest_name_consistent"] = manifest_consistent(deal["acquirer"], ex["parent"], ex["ultimate"])
-    names = [n for n in (ex["ultimate"], ex["parent"]) if n]
-    for nm in names:
+    # (b) exact normalized-name match of the extracted legal entity (ultimate parent first)
+    for nm in [v for n in (ex["ultimate"], ex["parent"]) if n for v in name_variants(n)]:
         cands = sorted(lookup.get(norm_name(nm), set()))
         if not cands or len(cands) > MAX_CANDIDATES:
             continue
-        ok = []
-        for c in cands:
-            try:
-                sub = ed.submissions(c)
-            except Exception as exc:
-                rec["error"] = f"submissions {c}: {exc}"
-                continue
-            if select_filings(sub["filings"], ann):
-                ok.append(sub)
+        ok = [s for s in (_eligible(ed, c, ann, rec, tcik) for c in cands) if s]
         rec["candidate_ciks"] = ";".join(map(str, cands))
         if len(ok) == 1:
             s = ok[0]

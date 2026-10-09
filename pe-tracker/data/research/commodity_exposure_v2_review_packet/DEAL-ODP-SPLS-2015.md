@@ -1,0 +1,182 @@
+# DEAL-ODP-SPLS-2015
+Announcement date: 2015-02-04. Only filings accepted before this date are evidence.
+
+## TARGET: Office Depot, Inc.
+- identity.basis: reviewed_manifest_cik
+- identity.sec_name: ODP Corp
+- identity.sic_context_only: 5940
+- identity.sic_description_context_only: Retail-Miscellaneous Shopping Goods Stores
+
+### 10-K 0001193125-14-065991
+- filed 2014-02-25; SEC acceptance (ET) 2014-02-25T06:14:00-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/800240/000119312514065991/d654584d10k.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1 [7773:13252], Item 1A [41210:77984], Item 7 [94671:148992], Item 7A [186015:186175]
+- excerpts: 50 of 50 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001193125-14-065991@25954] These offices consolidate our purchasing power with Asian factories and, in turn, help us to increase the scope of our own branded offerings.
+  - [0001193125-14-065991@30192] Some of our competitors are larger than us and have greater financial resources, which affords them greater purchasing power, increased financial flexibility and more capital resources for expansion and improvement, which may enable them to compete more effectively.
+  - [0001193125-14-065991@31951] As both a significant user and seller of paper products, we have developed environmental practices that are values-based and market-driven.
+  - [0001193125-14-065991@32319] We offer thousands of different products containing recycled content, including from 35% to 100% post-consumer waste content paper, and technology recycling services in our retail stores.
+  - [0001193125-14-065991@32507] Office Depot continues to implement environmental programs in line with our stated environmental vision to “increasingly buy green, be green and sell green” – including environmental sensitivity in our packaging, operations and sales offerings.
+  - [0001193125-14-065991@32752] Our ‘Green’ retail store prototype design is based on our Austin, Texas store, which received a Leadership in Energy and Environmental Design (“LEED”) Gold Certification from the United States Green Building Council in December 2008.
+  - [0001193125-14-065991@33417] As a result of the Merger, we are subject to a variety of environmental laws and regulations related to historical operations of paper and forest products businesses and timberland assets.
+  - [0001193125-14-065991@49569] Increases in fuel and other commodity prices could have an adverse impact on our earnings.
+  - [0001193125-14-065991@49756] As such, we purchase significant amounts of fuel needed to transport products to our stores and customers as well as shipping costs to import products from overseas.
+  - [0001193125-14-065991@49922] While we may hedge our anticipated fuel purchases, the underlying commodity costs associated with this transport activity have been volatile in recent years and disruptions in availability of fuel could cause our operating costs to rise significantly to the extent not covered by our hedges.
+  - [0001193125-14-065991@50214] Additionally, other commodity prices, such as paper, may increase and we may not be able to pass along such costs to our customers.
+  - [0001193125-14-065991@50346] Fluctuations in the availability or cost of our energy and other commodity prices could have a material adverse effect on our profitability.
+  - [0001193125-14-065991@51558] We use and resell many manufacturers’ branded items and services and are therefore dependent on the availability and pricing of key products and services including ink, toner, paper and technology products.
+  - [0001193125-14-065991@55767] A downgrade in our credit ratings or a general disruption in the credit markets could make it more difficult for us to access funds, refinance indebtedness, obtain new funding or issue securities.
+  - [0001193125-14-065991@56621] If we need to refinance all or a portion of that indebtedness, there is no assurance that we will be able to secure such refinancing at the same or more favorable terms than the terms of our existing indebtedness .
+  - [0001193125-14-065991@106026] As the Company refines its real estate strategy and the integration of Office Depot and OfficeMax stores progresses, comparable store sales may be impacted as customers migrate from closed to nearby stores which remain open.
+  - [0001193125-14-065991@130945] Additionally, tender fees and a proportionate amount of deferred debt issue costs and a deferred cash flow hedge gain were included in the measurement of the $12.1 million extinguishment costs reported in our Consolidated Statement of Operations for 2012.
+  - [0001193125-14-065991@151908] Some lease agreements provide us with the option to renew the lease or purchase the leased property.
+  - [0001193125-14-065991@152009] Our future operating lease obligations would change if we exercised these renewal options and if we entered into additional operating lease agreements.
+  - [0001193125-14-065991@172112] Environmental and asbestos reserves — Environmental and asbestos liabilities that relate to the operation of the paper and forest products businesses and timberland assets prior to the sale of the paper, forest products and timberland assets are liabilities of the Company as a result of the Merger.
+  - [0001193125-14-065991@177995] We have market risk exposure related to interest rates, foreign currency exchange rates, and commodities.
+  - [0001193125-14-065991@178633] Our risk management policies allow the use of specified financial instruments for hedging purposes only; speculation on interest rates, foreign currency rates, or commodities is not permitted.
+  - [0001193125-14-065991@184261] As such, we purchase significant amounts of fuel needed to transport products to our stores and customers as well as pay shipping costs to import products from overseas.
+  - [0001193125-14-065991@184431] We are exposed to potential changes in the underlying commodity costs associated with this transport activity.
+  - [0001193125-14-065991@184542] As of December 28, 2013, a 10% change in domestic commodity costs would result in an increase or decrease in our operating profit of approximately $8 million.
+  - [0001193125-14-065991@240055] Some of the Company’s leases contain escalation clauses and renewal options.
+  - [0001193125-14-065991@240407] The expected term of a lease is calculated from the date the Company first takes possession of the facility, including any periods of free rent and any option or renewal periods management believes are probable of exercise.
+  - [0001193125-14-065991@241320] Derivative Instruments and Hedging Activities: The Company records all derivative instruments on the balance sheet at fair value.
+  - [0001193125-14-065991@242224] The Company has no material outstanding derivative instruments at December 28, 2013 and did not have any material hedge transactions in 2013, 2012 or 2011.
+  - [0001193125-14-065991@265979] The Company directly owns approximately 20% of the voting equity securities (“Common Units”) of Boise Cascade Holdings, L.L.C., a building products company that originated in connection with the OfficeMax sale of its paper, forest products and timberland assets in 2004.
+  - [0001193125-14-065991@274379] At the Company’s option, borrowings made pursuant to the Facility bear interest at either, (i) the alternate base rate (defined as the higher of the Prime Rate (as announced by the Agent), the Federal Funds Rate plus 1/2 of 1% and the one month Adjusted LIBO Rate (defined below) and 1%) or (ii) the Adjusted LIBO Rate (defined as the LIBO Rate as adjusted for statutory revenues) plus, in either case, a certain margin based on the aggregate average availability under the Facility.
+  - [0001193125-14-065991@280534] Thereafter, the Senior Secured Notes carry optional redemption features whereby the Company has the redemption option prior to maturity at par plus a premium beginning at 104.875% at March 15, 2016 and declining ratably to par at March 15, 2018 and thereafter, plus accrued and unpaid interest.
+  - [0001193125-14-065991@283229] As a result of the Merger, the Company assumed the liability for the amounts in the table above related to the (i) 7.35% debentures, due 2016, (ii) Revenue bonds, due in varying amounts periodically through 2029, and (iii) American & Foreign Power Company, Inc. 5% debentures, due 2030.
+  - [0001193125-14-065991@312696] The Company’s stock option exercise price for each grant of a stock option shall not be less than 100% of the fair market value of a share of common stock on the date the option is granted.
+  - [0001193125-14-065991@312886] Options granted under the Plan and the 2003 Plan have vesting periods ranging from one to five years and from one to three years after the date of grant, respectively, provided that the individual is continuously employed with the Company.
+  - [0001193125-14-065991@316053] Of the 5.8 million unvested options, the Company estimates that 4.7 million options will vest.
+  - [0001193125-14-065991@320820] The Company explicitly reserves the right to amend or terminate its retiree medical and life insurance plans at any time, subject only to constraints, if any, imposed by the terms of collective bargaining agreements.
+  - [0001193125-14-065991@327984] Occasionally, the Company may utilize futures or other financial instruments to alter the pension trust’s exposure to various asset classes in a lower-cost manner than trading securities in the underlying portfolios.
+  - [0001193125-14-065991@346539] As a global supplier of office products and services the Company is exposed to risks associated with changes in foreign currency exchange rates, fuel and other commodity prices and interest rates.
+  - [0001193125-14-065991@346736] Depending on the exposure, settlement timeframe and other factors, the Company may enter into derivative transactions to mitigate those risks.
+  - [0001193125-14-065991@346879] The Company may designate and account for such qualifying arrangements as hedges.
+  - [0001193125-14-065991@346961] Historically, the Company has not entered into transactions to hedge its net investment in foreign operations but may in future periods.
+  - [0001193125-14-065991@347098] Financial instruments authorized under the Company’s established risk management policy include spot trades, swaps, options, caps, collars, forwards and futures.
+  - [0001193125-14-065991@347809] The fair values of the Company’s foreign currency contracts and fuel contracts are the amounts receivable or payable to terminate the agreements at the reporting date, taking into account current interest rates, exchange rates and commodity prices.
+  - [0001193125-14-065991@360425] On June 25, 2011, OfficeMax, with which the Company merged in November 2013, entered into a paper supply contract with Boise White Paper, L.L.C.
+  - [0001193125-14-065991@360890] The Company assumed the commitment under a paper supply contract to buy OfficeMax’s North American requirements for office paper, subject to certain conditions.
+  - [0001193125-14-065991@361051] The paper supply contract provides the Company some flexibility to purchase paper from paper producers other than Boise Paper.
+  - [0001193125-14-065991@361178] The paper supply contract’s term will expire on December 31, 2017, followed by a gradual reduction of the Company’s purchase requirements over a two year period thereafter.
+  - [0001193125-14-065991@394325] Hare (Incorporated by reference from Office Depot, Inc.’s Current Report on Form 8-K, filed with the SEC on December 5, 2013.)* . 10.39 2013 Non-Qualified Stock Option Award Agreement between the Company and Stephen E.
+  - [0001193125-14-065991@395159] Smith (Incorporated by reference from Office Depot, Inc.’s Current Report on Form 8-K, filed with the SEC on November 18, 2013.)* . 10.43 2013 Non-Qualified Stock Option Award Agreement between the Company and Roland C.
+
+### 10-Q 0001193125-14-395039
+- filed 2014-11-04; SEC acceptance (ET) 2014-11-04T06:54:02-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/800240/000119312514395039/d791986d10q.htm
+- full-section spans (character offsets in whitespace-normalized text): none detected
+- excerpts: 8 of 8 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001193125-14-395039@44000] As a global supplier of office products and services the Company is exposed to risks associated with changes in foreign currency exchange rates, fuel and other commodity prices and interest rates.
+  - [0001193125-14-395039@44197] Depending on the exposure, settlement timeframe and other factors, the Company may enter into derivative transactions to mitigate those risks.
+  - [0001193125-14-395039@44340] The Company may designate and account for such qualifying arrangements as hedges.
+  - [0001193125-14-395039@44422] Historically, the Company has not entered into transactions to hedge its net investment in foreign operations but may do so in future periods.
+  - [0001193125-14-395039@44565] Financial instruments authorized under the Company’s established risk management policy include spot trades, swaps, options, caps, collars, forwards and futures.
+  - [0001193125-14-395039@44727] Use of derivative financial instruments for speculative purposes is expressly prohibited by the Company’s policies.
+  - [0001193125-14-395039@45623] Generally, these fair value measures are model-based valuation techniques such as discounted cash flows or option pricing models using the Company’s own estimates and assumptions or those expected to be used by market participants.
+  - [0001193125-14-395039@79904] As the Company refines its real estate strategy and the integration of Office Depot and OfficeMax stores progresses, comparable store sales may be impacted as customers migrate from closed to nearby stores which remain open.
+
+## ACQUIRER: Staples, Inc.
+- identity.source_accession: 0001193125-15-033873
+- identity.source_form: 8-K
+- identity.source_filing_date: 2015-02-04
+- identity.source_acceptance_et: 2015-02-04T17:32:34
+- identity.source_basis: manifest_announcement_accession
+- identity.parent_entity: Staples, Inc
+- identity.parent_quote: MENT AND PLAN OF MERGER (this “Agreement”), dated as of February 4, 2015, is by and among Office Depot, Inc., a Delaware corporation (the “Company”), Staples, Inc., a Delaware corporation (“Parent”), and Staples AMS, Inc., a Delaware corporation an
+- identity.matched_name: Staples, Inc
+- identity.sec_name: STAPLES INC
+- identity.manifest_name_consistent: True
+- identity.status: resolved
+- identity.sic_context_only: 5940
+- identity.sic_description_context_only: Retail-Miscellaneous Shopping Goods Stores
+
+### 10-K 0000791519-14-000007
+- filed 2014-03-06; SEC acceptance (ET) 2014-03-06T06:15:44-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/791519/000079151914000007/spls10-k020114.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1 [4171:34971], Item 1A [36865:64528], Item 7 [73501:73670], Item 7A [73670:73895]
+- excerpts: 61 of 61 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0000791519-14-000007@7840] Our goals are to continue to be a destination for core office supply categories like ink, toner and paper and to become an authority for products and services beyond office supplies, such as technology products and services, copy and print services, facilities and breakroom supplies, as well as a full assortment of industry vertical focused solutions to serve businesses like restaurants, medical offices, and retail stores.
+  - [0000791519-14-000007@10279] These new concepts will more seamlessly offer options to shop our products and services, regardless of whether customers physically visit our retail stores or our websites.
+  - [0000791519-14-000007@15793] These positive results have reinforced our strategy and we continue to broaden our offering, focusing on categories including technology products, medical supplies, safety supplies, packaging and shipping supplies, and office decor.
+  - [0000791519-14-000007@24699] We are working to achieve this vision through a continued focus on sourcing and selling more sustainable products, improving our offering of recycling and other green services, maximizing our energy efficiency and renewable energy use and eliminating waste.
+  - [0000791519-14-000007@28744] We also own copyrights for works such as packaging, training materials, promotional materials, computer software, in-store graphics, website content and multi-media.
+  - [0000791519-14-000007@50786] Although we attempt to mitigate such risks by sometimes entering into foreign exchange hedges or utilizing risk management strategies, such hedges and strategies themselves present some risk and thus may not be entirely successful in mitigating the risk.
+  - [0000791519-14-000007@53459] As of February 1, 2014 , our consolidated outstanding debt was $1.10 billion and we also had $1.06 billion of additional borrowing capacity under our commercial paper program, revolving credit facility and other lines of credit.
+  - [0000791519-14-000007@61989] We estimate exposure and establish reserves for our estimated significant liabilities, however, litigation is inherently unpredictable and the outcome of legal proceedings and other contingencies could be unexpected.
+  - [0000791519-14-000007@67966] In most instances, we have renewal options at increased rents.
+  - [0000791519-14-000007@112361] Our interest rate swap agreements reduced interest expense by $12.1 million in 2013 and by $21.0 million for 2012 .
+  - [0000791519-14-000007@119941] Our interest rate swap agreements reduced interest expense by $21.0 million for 2012 compared to $26.3 million for 2011 .
+  - [0000791519-14-000007@153754] To cover seasonal fluctuations in cash flows and to support our various initiatives, we utilize cash generated from operations and borrowings available under various credit facilities and a commercial paper program.
+  - [0000791519-14-000007@155999] We have a commercial paper program ("Commercial Paper Program") that allows us to issue up to $1.0 billion of unsecured commercial paper notes ("Notes") from time to time.
+  - [0000791519-14-000007@156345] In 2013, we did not borrow under our Commercial Paper Program.
+  - [0000791519-14-000007@156408] In 2012, we borrowed under our Commercial Paper Program to support our seasonal working capital requirements.
+  - [0000791519-14-000007@163689] Upon repayment, we took the actions required under the applicable guarantee fall-away provisions to cause Staples the Office Superstore, LLC, Staples the Office Superstore, East Inc., Staples Contract & Commercial, Inc. and Staples the Office Superstore Limited Partnership (collectively, the “Guarantor Subsidiaries”) to be legally released from their guarantees of debt related to the January 2014 Notes, the November 2014 Revolving Credit Facility (as defined below) and the Commercial Paper Program (as defined below).
+  - [0000791519-14-000007@164282] See the Sources of Liquidity section for information related to our May 2018 Revolving Credit Facility and various other lines of credit, as well as our Commercial Paper Program.
+  - [0000791519-14-000007@169075] In certain instances we may use interest rate swap agreements to modify fixed rate obligations to variable rate obligations, thereby adjusting the interest rates to current market rates and ensuring that the debt instruments are always reflected at fair value.
+  - [0000791519-14-000007@169336] We had no interest rate swap agreements outstanding as of February 1, 2014 .
+  - [0000791519-14-000007@172164] In accordance with our risk management policies, we use derivative instruments on a limited basis to hedge our foreign currency exposures (see Note H - Derivative Instruments and Hedging Activities to the Notes to the Consolidated Financial Statements).
+  - [0000791519-14-000007@172418] Any increase or decrease in the fair value of our currency exchange rate sensitive derivative instruments would be .
+  - [0000791519-14-000007@172774] As of February 1, 2014 , we have no outstanding foreign currency derivative agreements designated as hedges.
+  - [0000791519-14-000007@195764] The Company reserves for obsolete, overstocked and inactive inventory based on the difference between the weighted-average cost of the inventory and the estimated market value using assumptions of future demand and market conditions.
+  - [0000791519-14-000007@208289] Derivative Instruments and Hedging Activities: The Company recognizes all derivative financial instruments in the consolidated financial statements at fair value.
+  - [0000791519-14-000007@235387] Upon repayment, the Company took the actions required under the applicable guarantee fall-away provisions to cause its subsidiaries Staples the Office Superstore, LLC, Staples the Office Superstore, East Inc., Staples Contract & Commercial, Inc. and Staples the Office Superstore Limited Partnership (collectively, the “Guarantor Subsidiaries”) to be legally released from their guarantees of debt related to the January 2014 Notes, the Prior Agreement (as defined below) and the Commercial Paper Program (as defined below).
+  - [0000791519-14-000007@236130] Revolving Credit Facility: To cover seasonal fluctuations in cash flows and to support our various initiatives, the Company utilizes cash generated from operations and borrowings available under various credit facilities and a commercial paper program.
+  - [0000791519-14-000007@238245] Commercial Paper Program: The Company has a commercial paper program ("Commercial Paper Program") which allows it to issue up to $1.0 billion of unsecured commercial paper notes ("Commercial Paper Notes") from time to time.
+  - [0000791519-14-000007@238659] In 2012, the Company borrowed under the Commercial Paper Program to support the Company's seasonal working capital requirements, with a weighted-average amount outstanding of $7.3 million and a weighted-average interest rate of 0.4% .
+  - [0000791519-14-000007@239054] The Company did not borrow under the Commercial Paper Program during 2013 .
+  - [0000791519-14-000007@242953] The fair values of the Company’s derivative liabilities are based on quotes received from third-party banks and represent the estimated amount the Company would receive or pay to terminate the agreements taking into consideration current interest and forward exchange rates as well as the creditworthiness of the counterparty.
+  - [0000791519-14-000007@245944] If a derivative or a nonderivative financial instrument is designated as a hedge of the Company's net investment in a foreign subsidiary, then changes in the fair value of the financial instrument are recognized as a component of accumulated other comprehensive income (loss) to offset a portion of the change in the translated value of the net investment being hedged, until the investment is sold or liquidated.
+  - [0000791519-14-000007@246358] The Company formally documents all hedging relationships for all derivatives, nonderivative hedges and the underlying hedged items, as well as its risk management objectives and strategies for undertaking the hedge transactions.
+  - [0000791519-14-000007@246661] The Company classifies the fair value of all derivative contracts and the fair value of its hedged firm commitments as either current or long-term depending on whether the maturity date of the derivative contract is within or beyond one year from the balance sheet date.
+  - [0000791519-14-000007@246932] The cash flows from derivatives are classified in the Company's consolidated statement of cash flows in the same category as the item being hedged.
+  - [0000791519-14-000007@247080] The table below presents the fair value of the Company's derivative financial instruments that qualify for hedge accounting as well as their classification on the consolidated balance sheet as of February 1, 2014 and February 2, 2013 (in thousands): .
+  - [0000791519-14-000007@248771] These swaps were designated as cash flow hedges of interest rate risk, and were used to hedge the Company's exposure to the variability in future cash flows associated with the forecasted issuances of the January 2018 Notes and the January 2023 Notes (see Note F - Debt and Credit Agreements ).
+  - [0000791519-14-000007@249066] Upon issuance of these notes in January 2013, the Company terminated these swaps, realizing a gain of $1.3 million .
+  - [0000791519-14-000007@249778] In September 2011, the Company terminated the $750 million interest rate swaps, realizing a gain of $30.3 million which was recorded as an adjustment to the carrying value of the debt and was amortized to interest expense over the remaining term of the hedged portion of the January 2014 Notes.
+  - [0000791519-14-000007@250073] In connection with Staples’ acquisition of Corporate Express, the Company assumed interest rate swaps designed to convert Corporate Express’ variable rate credit facilities into fixed rate obligations.
+  - [0000791519-14-000007@250275] On May 5, 2011, the Company repaid the outstanding balance on these variable rate credit facilities and terminated the related interest rate swap agreements.
+  - [0000791519-14-000007@250433] As a result of the termination of these interest rate swap agreements, the Company recognized a loss of $0.3 million in Other income (expense), net in the consolidated statement of income in 2011.
+  - [0000791519-14-000007@250669] In August 2007, the Company entered into a series of foreign currency swaps with an aggregate notional amount of $300 million that had been designated as a foreign currency hedge on Staples’ net investment in Canadian dollar denominated subsidiaries.
+  - [0000791519-14-000007@250920] In 2012, the Company terminated these swaps, recognizing a loss of $14.9 million which was recorded as a foreign currency translation loss within other comprehensive income.
+  - [0000791519-14-000007@251230] In May 2011, the Company entered into a foreign currency swap designed to convert a 75 million intercompany loan denominated in Australian dollars into a fixed Euro amount.
+  - [0000791519-14-000007@251778] In August 2011, the Company entered into a foreign currency swap designed to convert a 75 million intercompany loan denominated in Australian dollars into a fixed Euro amount.
+  - [0000791519-14-000007@252413] In October 2011, the Company entered into a foreign currency swap designed to convert a 118.3 million intercompany loan denominated in Canadian dollars into a fixed U.S. dollar amount.
+  - [0000791519-14-000007@252959] Also in October 2011, the Company entered into a foreign currency swap designed to convert a 79.5 million intercompany loan denominated in Canadian dollars into a fixed Euro amount.
+  - [0000791519-14-000007@254994] In 2012, the Company entered into a series of short-term foreign currency forwards with notional amounts of 150 million Canadian dollars that were designated as foreign currency hedges on Staples’ net investment in Euro-denominated subsidiaries.
+  - [0000791519-14-000007@258367] The company estimates exposures and establishes reserves for amounts that are probable and can be reasonably estimated.
+  - [0000791519-14-000007@258487] However, litigation is inherently unpredictable and the outcome of legal proceedings and other contingencies could be unexpected or differ from the Company’s reserves.
+  - [0000791519-14-000007@268177] Under the Amended and Restated 2004 Stock Incentive Plan, the Company grants restricted stock and restricted stock units (collectively, “Restricted Shares”) and nonqualified stock options to associates.
+  - [0000791519-14-000007@269422] The Company changed its executive compensation program for fiscal year 2013 by replacing annual grants of time-based stock options and restricted stock awards with stock-based awards now consisting exclusively of performance shares.
+  - [0000791519-14-000007@273285] The expected stock volatility factor was calculated using an average of historical and implied volatility measures to reflect the different periods in the Company's history that would impact the value of the stock options granted to employees.
+  - [0000791519-14-000007@273701] Notes to Consolidated Financial Statements (continued) . midpoint of the vesting date (if unvested) or the valuation date (if vested) and the full contractual term, which the Company believes to yield a reasonable approximation of the expected term of the options.
+  - [0000791519-14-000007@299076] Amounts included in accumulated other comprehensive loss related to the Company's cash flow hedges and minimum pension and other post-retirement liabilities are recorded net of the related income tax effects.
+  - [0000791519-14-000007@319266] Amended and Restated Commercial Paper Dealer Agreement, dated as of August 6, 2008, among the Company, and Banc of America Securities LLC.
+  - [0000791519-14-000007@319500] Amended and Restated Commercial Paper Dealer Agreement, dated as of August 6, 2008, among the Company and Lehman Brothers Inc.
+  - [0000791519-14-000007@319722] Letter, dated as of September 29, 2008, assigning Lehman Brothers Inc. interests to Barclays Capital Inc., for the Amended and Restated Commercial Paper Dealer Agreement, dated as of August 6, 2008, among the Company and Lehman Brothers Inc.
+  - [0000791519-14-000007@320061] Commercial Paper Dealer Agreement, dated as of September 19, 2008, among the Company, JP Morgan Securities Inc.
+  - [0000791519-14-000007@321237] Filed as Exhibit 10.1 to the Company's Form 10-Q for the quarter ended July 31, 2010. 10.12*^ . 1997 United Kingdom Company Share Option Scheme.
+  - [0000791519-14-000007@321382] Filed as Exhibit 10.3 to the Company's Form 10-K for the fiscal year ended January 31, 1998. 10.13*^ . 1997 UK Savings Related Share Option Scheme.
+
+### 10-Q 0000791519-14-000095
+- filed 2014-11-19; SEC acceptance (ET) 2014-11-19T06:04:14-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/791519/000079151914000095/spls10-q110114.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1A [112896:141784]
+- excerpts: 16 of 16 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0000791519-14-000095@39273] The fair values of the Company’s derivative assets and liabilities are based on quotes received from third-party banks and represent the estimated amount the Company would receive or pay to terminate the agreements taking into consideration current interest and forward exchange rates as well as the creditworthiness of the counterparty.
+  - [0000791519-14-000095@41263] The Company has a commercial paper program ("Commercial Paper Program") that allows it to issue up to $1.0 billion of unsecured commercial paper notes ("Commercial Paper Notes") from time to time.
+  - [0000791519-14-000095@41552] The Company typically uses proceeds from the Commercial Paper Notes for general purposes, including working capital, capital expenditures, acquisitions and share repurchases.
+  - [0000791519-14-000095@41826] During year-to-date 2014 , the Company borrowed under the Commercial Paper Program to support its seasonal working capital requirements.
+  - [0000791519-14-000095@44409] If a derivative or a non-derivative financial instrument is designated as a hedge of the Company’s net investment in a foreign subsidiary, then changes in the fair value of the financial instrument are recognized as a component of accumulated other comprehensive income (loss) to offset a portion of the change in the translated value of the net investment being hedged, until the investment is sold or liquidated.
+  - [0000791519-14-000095@44824] The Company formally documents all hedging relationships for all derivatives, non-derivative hedges and the underlying hedged items, as well as its risk management objectives and strategies for undertaking the hedge transactions.
+  - [0000791519-14-000095@45128] The Company classifies the fair value of all derivative contracts and the fair value of its hedged firm commitments as either current or long-term depending on whether the maturity date of the derivative contract is within or beyond one year from the balance sheet date.
+  - [0000791519-14-000095@45399] The cash flows from derivatives are classified in the Company's condensed consolidated statement of cash flows in the same category as the item being hedged. 13 .
+  - [0000791519-14-000095@47020] Under the 2014 Stock Incentive Plan, the Company may grant restricted stock and restricted stock units (collectively, “Restricted Shares”) and non-qualified stock options to associates.
+  - [0000791519-14-000095@47206] Prior to June 2014, Restricted Shares and non-qualified stock options were granted under the Company's Amended and Restated 2004 Stock Incentive Plan.
+  - [0000791519-14-000095@102853] To cover seasonal fluctuations in cash flows and to support our various initiatives, we use cash generated from operations and borrowings available under various credit facilities and a commercial paper program.
+  - [0000791519-14-000095@104558] We also have a commercial paper program ("Commercial Paper Program") that allows us to issue up to $1.0 billion of unsecured commercial paper notes from time to time.
+  - [0000791519-14-000095@105705] If we were to experience a credit rating downgrade in future periods, we may incur higher interest costs on future financings and it may limit our ability to participate in the commercial paper market.
+  - [0000791519-14-000095@127763] Although we attempt to mitigate such risks by sometimes entering into foreign exchange hedges or utilizing risk management strategies, such hedges and strategies themselves present some risk and thus may not be entirely successful in mitigating the risk.
+  - [0000791519-14-000095@130455] As of November 1, 2014 , our consolidated outstanding debt was $1.1 billion and we also had $1.1 billion of additional borrowing capacity under our commercial paper program, revolving credit facility and other lines of credit.
+  - [0000791519-14-000095@139200] We estimate exposure and establish reserves for our estimated significant liabilities, however, litigation is inherently unpredictable and the outcome of legal proceedings and other contingencies could be unexpected.

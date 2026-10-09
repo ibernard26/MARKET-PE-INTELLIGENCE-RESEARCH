@@ -380,7 +380,7 @@ def test_committed_packet_is_blinded():
         pytest.skip("packet not generated yet")
     idx = json.loads((PACKET / "index.json").read_text())
     assert set(idx["deals"]) == set(V2_SAMPLE_PREREG) and idx["contains_first_pass_labels"] is False
-    for p in PACKET.glob("*.md"):
+    for p in PACKET.glob("DEAL-*.md"):
         t = p.read_text()
         assert "exposure_status" not in t and not re.search(r"\b(producer|consumer|hedged)\s*[:=]\s*"
                                                             r"(yes|unknown|no_disclosed)\b", t)

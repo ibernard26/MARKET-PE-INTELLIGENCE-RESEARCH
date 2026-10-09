@@ -1,0 +1,183 @@
+# DEAL-NUAN-MSFT-2021
+Announcement date: 2021-04-11. Only filings accepted before this date are evidence.
+
+## TARGET: Nuance Communications, Inc.
+- identity.basis: reviewed_manifest_cik
+- identity.sec_name: Nuance Communications, Inc.
+- identity.sic_context_only: 7372
+- identity.sic_description_context_only: Services-Prepackaged Software
+
+### 10-K 0001002517-20-000058
+- filed 2020-11-19; SEC acceptance (ET) 2020-11-19T16:47:49-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/1002517/000100251720000058/nuan0930202010-k.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1 [39873:71628], Item 1A [71628:124697], Item 7 [133500:175067], Item 7A [227435:231607]
+- excerpts: 37 of 37 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001002517-20-000058@41470] We have approximately 1,600 language scientists, developers, and engineers dedicated to continually refining our technologies and advancing our portfolio to better meet our customers’ diverse and changing needs.
+  - [0001002517-20-000058@46287] Enterprises have a choice of deployment whether they leverage our world-class professional services team or leverage Nuance Mix, an open enterprise-grade, SaaS tooling suite for creating advanced conversational experiences that power virtual assistants and IVR using Nuance’s industry-leading and cloud-agnostic conversational AI.
+  - [0001002517-20-000058@55754] Helping organizations simplify the documentation process by offering users an automated and flexible workflow with options designed to meet a facility’s specific needs, our solutions and services offer fast, accurate, and usable documentation with more seamless and fully automated processes that can identify discrete information and securely upload data directly into the EHR.
+  - [0001002517-20-000058@59687] Conversational AI : In 2020 we launched Nuance Mix™, an open enterprise-grade, SaaS tooling suite for creating advanced conversational experiences that power virtual assistants and IVR systems, using our industry-leading and cloud-agnostic conversational AI.
+  - [0001002517-20-000058@120378] If we are not able to generate sufficient cash flow to service our debt obligations, we may need to refinance or restructure our debt, including the convertible debentures, sell assets, reduce or delay capital investments, or seek to raise additional capital.
+  - [0001002517-20-000058@158376] R&D expense for the year ended September 30, 2020 increase d by $33.6 million , or 17.4% , primarily due to higher compensation costs as we continued to invest in our core technologies to power new products and solutions.
+  - [0001002517-20-000058@187899] As a result, our 1.25% 2025 Debentures and 1.5% 2035 Debentures are convertible any time between October 1, 2020 and December 31, 2020 at the option of the holders.
+  - [0001002517-20-000058@203312] We have a program that primarily utilizes foreign currency forward contracts to offset the risks associated with the effect of certain foreign currency exposures.
+  - [0001002517-20-000058@203475] Our program is designed so that increases or decreases in our foreign currency exposures are offset by gains or losses on the foreign currency forward contracts in order to mitigate the risks and volatility associated with our foreign currency transactions.
+  - [0001002517-20-000058@205513] On an ongoing basis, we evaluate our estimates, assumptions and judgments, including those related to revenue recognition; allowance for doubtful accounts and sales returns; accounting for deferred costs; accounting for internally developed software; the valuation of goodwill and intangible assets; accounting for business combinations, including contingent consideration; accounting for stock-based compensation; accounting for derivative instruments; accounting for income taxes and related valuation allowances; and loss contingencies.
+  - [0001002517-20-000058@227690] We manage our exposure to these market risks through our regular operating and financing activities and, when appropriate, through the use of derivative financial instruments.
+  - [0001002517-20-000058@228947] Periodically, we enter into forward exchange contracts to hedge against foreign exchange rate fluctuations.
+  - [0001002517-20-000058@229055] As of September 30, 2020 , we had not designated any contracts as fair value or cash flow hedges.
+  - [0001002517-20-000058@268044] While we use our best estimates and assumptions as part of the purchase price allocation process to accurately value assets acquired and liabilities assumed at the business combination date, our estimates and assumptions are inherently uncertain and subject to refinement.
+  - [0001002517-20-000058@285145] In order for instruments to be designated as hedges, specific criteria must be met, including (i) formal documentation must exist for both the hedging relationship and our risk management objectives and strategies for undertaking the hedging activities, (ii) at the inception and on an ongoing basis, the hedging relationship is expected to be highly effective in offsetting changes in fair value attributed to the hedged risk during the period that the hedge is designated, and (iii) an assessment of effectiveness is required whenever financial statements or earnings are reported.
+  - [0001002517-20-000058@286304] We report cash flows arising from derivative financial instruments designated as fair value or cash flow hedges consistent with the classification of the cash flows from the underlying hedged items that these derivatives are hedging.
+  - [0001002517-20-000058@288287] Potentially dilutive securities consist of stock options, restricted stock units, contingently issuable shares under earn-out agreements, and potential issuance of stock upon conversion of our convertible debentures, as more fully described in Note 10 .
+  - [0001002517-20-000058@341869] Each holder shall have the right, at such holder’s option, to require us to repurchase all or any portion of the 1.0% 2035 Debentures held by such holder on December 15, 2022, December 15, 2027, or December 15, 2032 at par plus accrued and unpaid interest.
+  - [0001002517-20-000058@342126] If we undergo a fundamental change or non-stock change of control (as described in the indenture for the 1.0% 2035 Debentures) prior to maturity, holders will have the option to require us to repurchase all or any portion of their debentures for cash at a price equal to 100% of the principal amount of the 1.0% 2035 Debentures to be purchased plus any accrued and unpaid interest.
+  - [0001002517-20-000058@349093] If we undergo a fundamental change or non-stock change of control (as described in the indenture for the 1.25 % 2025 Debentures) prior to maturity, holders will have the option to require us to repurchase all or any portion of their debentures for cash at a price equal to 100% of the principal amount of the 1.25 % 2025 Debentures to be purchased plus any accrued and unpaid interest.
+  - [0001002517-20-000058@355027] Each holder shall have the right, at such holder’s option, to require us to repurchase all or any portion of the 1.5% 2035 Debentures held by such holder on November 1, 2021, November 1, 2026, or November 1, 2031 at par plus accrued and unpaid interest.
+  - [0001002517-20-000058@355281] If we undergo a fundamental change (as described in the indenture for the 1.5% 2035 Debentures) prior to maturity, holders will have the option to require us to repurchase all or any portion of their debentures for cash at a price equal to 100% of the principal amount of the 1.5% 2035 Debentures to be purchased plus any accrued and unpaid interest.
+  - [0001002517-20-000058@359392] We utilize foreign currency forward contracts to mitigate the risks associated with changes in foreign currency exchange rates so that our exposure to foreign currencies will be mitigated or offset by the gains or losses on the foreign currency forward contracts.
+  - [0001002517-20-000058@359911] We did not designate any forward contracts as hedging instruments for fiscal years 2020 , 2019 and 2018 .
+  - [0001002517-20-000058@360017] Therefore, changes in fair value of foreign currency forward contracts were recognized within other expense, net in our consolidated statements of operations.
+  - [0001002517-20-000058@360176] The cash flows related to the settlement of forward contracts not designated as hedging instruments are included in cash flows from investing activities within our consolidated statement of cash flows.
+  - [0001002517-20-000058@360378] A summary of our derivative instruments is as follows (dollars in thousands): .
+  - [0001002517-20-000058@365124] (c) The fair values of our contingent consideration arrangements were determined using either the option pricing model with Monte Carlo simulation or the probability-weighted discounted cash flow method.
+  - [0001002517-20-000058@367570] Other charges include litigation contingency reserves, costs related to the transition agreement of our former CEO, asset impairment charges, expenses associated with the 2017 Malware Incident and gains or losses on the sale or disposition of certain non-strategic assets or product lines.
+  - [0001002517-20-000058@383169] We have share-based award plans under which employees, officers and directors may be granted stock options to purchase our common stock, generally at the fair market value of the grant date.
+  - [0001002517-20-000058@383360] Our plans do not allow for options to be granted at below fair market value, nor can they be re-priced at any time.
+  - [0001002517-20-000058@383476] Options granted under our plans generally become exercisable over a period of two to four years and have a maximum term of ten years.
+  - [0001002517-20-000058@383610] We have also assumed options and option plans in connection with certain of our acquisitions.
+  - [0001002517-20-000058@383704] These stock options are governed by the plans and agreements that they were originally issued under but are now exercisable for shares of our common stock. 81 .
+  - [0001002517-20-000058@384926] The aggregate intrinsic value represents any excess of the closing price of our common stock as of September 30, 2020 ( $ 33.19 ) over the exercise price of the underlying options.
+  - [0001002517-20-000058@397033] Our lease terms include periods under options to extend or terminate the lease when it is reasonably certain that we will exercise that option.
+  - [0001002517-20-000058@413461] We believe that our income tax reserves are adequate; however, amounts asserted by taxing authorities could be greater or less than amounts accrued and reflected in our consolidated balance sheets.
+
+### 10-Q 0001002517-21-000018
+- filed 2021-02-09; SEC acceptance (ET) 2021-02-09T16:05:48-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/1002517/000100251721000018/nuan-20201231.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1A [20483:20512]
+- excerpts: 16 of 16 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001002517-21-000018@62049] We utilize foreign currency forward contracts to mitigate the risks associated with changes in foreign currency exchange rates so that our exposure to foreign currencies will be mitigated or offset by the gains or losses on the foreign currency forward contracts.
+  - [0001002517-21-000018@62578] We did not designate any forward contracts as hedging instruments for the three months ended December 31, 2020 or 2019.
+  - [0001002517-21-000018@62698] Therefore, changes in fair value of foreign currency forward contracts were recognized within Other income (expense), net in our condensed consolidated statements of operations.
+  - [0001002517-21-000018@62876] The cash flows related to the settlement of forward contracts not designated as hedging instruments are included in cash flows from investing activities within our condensed consolidated statement of cash flows.
+  - [0001002517-21-000018@67573] (c) The fair values of our contingent consideration arrangements were determined using either the option pricing model with Monte Carlo simulation or the probability-weighted discounted cash flow method.
+  - [0001002517-21-000018@82718] Each holder shall have the right, at such holder’s option, to require us to repurchase all or . 18 .
+  - [0001002517-21-000018@83079] If we undergo a fundamental change or non-stock change of control (as described in the indenture for the 1.0% 2035 Debentures) prior to maturity, holders will have the option to require us to repurchase all or any portion of their debentures for cash at a price equal to 100% of the principal amount of the 1.0% 2035 Debentures to be purchased plus any accrued and unpaid interest.
+  - [0001002517-21-000018@87325] If we undergo a fundamental change or non-stock change of control (as described in the indenture for the 1.25% 2025 Debentures) prior to maturity, holders will have the option to require us to repurchase all or any portion of their debentures for cash at a price equal to 100% of the principal amount of the 1.25% 2025 Debentures to be purchased plus any accrued and unpaid interest.
+  - [0001002517-21-000018@93198] Each holder shall have the right, at such holder’s option, to require us to repurchase all or any portion of the 1.5% 2035 Debentures held by such holder on November 1, 2021, November 1, 2026, or November 1, 2031 at par plus accrued and unpaid interest.
+  - [0001002517-21-000018@93452] If we undergo a fundamental change (as described in the indenture for the 1.5% 2035 Debentures) prior to maturity, holders will have the option to require us to repurchase all or any portion of their debentures for cash at a price equal to 100 % of the principal amount of the 1.5% 2035 Debentures to be purchased plus any accrued and unpaid interest.
+  - [0001002517-21-000018@102009] (a) The aggregate intrinsic value in this table represents any excess of the closing market price of our common stock as of December 31, 2020 ($44.09) over the exercise price of the underlying options.
+  - [0001002517-21-000018@113097] Our lease terms include periods under options to extend or terminate the lease when it is reasonably certain that we will exercise that option.
+  - [0001002517-21-000018@137128] R&D expense increased by $1.9 million, or 3.4%, primarily due to a higher employee headcount as we continued to invest in our core technologies to power new products and solutions.
+  - [0001002517-21-000018@164245] We manage our exposure to these market risks through our regular operating and financing activities and, when appropriate, through the use of derivative financial instruments.
+  - [0001002517-21-000018@165518] Periodically, we enter into forward exchange contracts to hedge against foreign exchange rate fluctuations.
+  - [0001002517-21-000018@165626] As of December 31, 2020, we had not designated any contracts as fair value or cash flow hedges.
+
+## ACQUIRER: Microsoft Corporation
+- identity.source_accession: 0001193125-21-113796
+- identity.source_form: 8-K
+- identity.source_filing_date: 2021-04-13
+- identity.source_acceptance_et: 2021-04-13T06:05:03
+- identity.source_basis: manifest_announcement_accession
+- identity.parent_entity: Microsoft Corporation
+- identity.parent_quote: er. On April 11, 2021, Nuance Communications, Inc. (the “Company” or “we”) entered into an Agreement and Plan of Merger (the “Merger Agreement”) with Microsoft Corporation (“Parent”), a corporation organized under the laws of Washin
+- identity.matched_name: Microsoft Corporation
+- identity.sec_name: MICROSOFT CORP
+- identity.manifest_name_consistent: True
+- identity.status: resolved
+- identity.sic_context_only: 7372
+- identity.sic_description_context_only: Services-Prepackaged Software
+
+### 10-K 0001564590-20-034944
+- filed 2020-07-30; SEC acceptance (ET) 2020-07-30T20:44:46-04:00
+- full document: https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/msft-10k_20200630.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1 [44713:47488], Item 1A [105345:109723], Item 7 [177325:177823], Item 7A [41993:42067]
+- excerpts: 46 of 46 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001564590-20-034944@51624] The opportunity to merge the physical and digital worlds, when combined with the power of Azure cloud services, unlocks the potential for entirely new workloads which we believe will shape the next era of computing. 4.
+  - [0001564590-20-034944@55620] Using Windows to fuel our cloud business and Microsoft 365 strategy, and to develop new categories of devices – both our own and third-party – on the intelligent edge.
+  - [0001564590-20-034944@59788] Our cloud and AI services help businesses cut energy consumption, reduce physical footprints, and design sustainable products.
+  - [0001564590-20-034944@60697] These efforts include increasing our representation and culture of inclusion by doubling the number of Black and African American people managers, senior individual contributors, and senior leaders in the United States by 2025; engaging our ecosystem by using our balance sheet and engagement with suppliers and partners to extend the vision for societal change; and strengthening our communities by using the power of data, technology, and partnership to help improve the lives of Black and African American citizens across the United States. 6.
+  - [0001564590-20-034944@70082] Our Intelligent Cloud segment consists of our public, private, and hybrid server products and cloud services that can power modern business and developers.
+  - [0001564590-20-034944@81043] Growth of our Gaming business is determined by the overall active user base through Xbox enabled content, availability of games, providing exclusive game content that gamers seek, the computational power and reliability of the devices used to access our content and services, and the ability to create new experiences through first-party content creators.
+  - [0001564590-20-034944@94746] We offer options for organizations that want to purchase our cloud services, on-premises software, and Software Assurance.
+  - [0001564590-20-034944@113110] Maintaining the utility, compatibility, and performance of our cloud-based services on the growing array of computing devices, including PCs, smartphones, tablets, gaming consoles, and other devices, as well as sensors and other endpoints.
+  - [0001564590-20-034944@126780] Government authorities can sometimes require us to produce customer or user data in response to valid legal orders.
+  - [0001564590-20-034944@130320] To support the growth of the intelligent cloud and the intelligent edge, we are developing products, services, and technologies to power the IoT, a network of distributed and interconnected devices employing sensors, data, and computing capabilities including AI.
+  - [0001564590-20-034944@132289] These deficiencies could undermine the decisions, predictions, or analysis AI applications produce, subjecting us to competitive harm, legal liability, and brand or reputational harm.
+  - [0001564590-20-034944@132850] Our increasing user traffic, growth in services, and the complexity of our products and services demand more computing power.
+  - [0001564590-20-034944@159414] Although we hedge a portion of our international currency exposure, significant fluctuations in foreign exchange rates between the U.S. dollar and foreign currencies may adversely affect our results of operations .
+  - [0001564590-20-034944@162970] A catastrophic event that results in the destruction or disruption of any of our critical business or IT systems, or the infrastructure or systems they rely on, such as power grids, could harm our ability to conduct normal business operations.
+  - [0001564590-20-034944@167632] Environmental regulations or changes in the supply, demand or available sources of energy or other resources may affect the availability or cost of goods and services, including natural resources, necessary to run our business.
+  - [0001564590-20-034944@208841] We use derivative instruments to: manage risks related to foreign currencies, equity prices, interest rates, and credit; enhance investment returns; and facilitate portfolio diversification.
+  - [0001564590-20-034944@218964] This pricing methodology applies to our Level 2 investments, such as commercial paper, certificates of deposit, U.S. agency securities, foreign government bonds, mortgage- and asset-backed securities, corporate notes and bonds, and municipal securities.
+  - [0001564590-20-034944@240235] We regularly review inventory quantities on hand, future purchase commitments with our suppliers, and the estimated utility of our inventory.
+  - [0001564590-20-034944@240550] If our review indicates a reduction in utility below carrying value, we reduce our inventory to a new cost basis through a charge to cost of revenue.
+  - [0001564590-20-034944@243510] We use derivatives instruments to manage these risks, however, they may still impact our consolidated financial statements.
+  - [0001564590-20-034944@243750] We monitor our foreign currency exposures daily to maximize the economic effectiveness of our foreign currency positions, including hedges.
+  - [0001564590-20-034944@265713] We record financing receivables when we offer certain of our customers the option to acquire our software products and services offerings through a financing program in a limited number of countries.
+  - [0001564590-20-034944@269288] Such costs related to software development are included in research and development expense until the point that technological feasibility is reached, which for our software products, is generally shortly before the products are released to production.
+  - [0001564590-20-034944@275909] Our Level 1 derivative assets and liabilities include those actively traded on exchanges.
+  - [0001564590-20-034944@276677] Our Level 2 investments include commercial paper, certificates of deposit, U.S. agency securities, foreign government bonds, mortgage- and asset-backed securities, corporate notes and bonds, and municipal securities.
+  - [0001564590-20-034944@276894] Our Level 2 derivative assets and liabilities primarily include certain over-the-counter option and swap contracts. 65.
+  - [0001564590-20-034944@280360] Our lease terms may include options to extend or terminate the lease when it is reasonably certain that we will exercise that option.
+  - [0001564590-20-034944@282281] As we did not hold derivative instruments requiring an adjustment upon adoption, there was no impact in our consolidated financial statements.
+  - [0001564590-20-034944@282424] Adoption of the standard enhanced the presentation of the effects of our hedging instruments and the hedged items in our consolidated financial statements to increase the understandability of the results of our hedging strategies.
+  - [0001564590-20-034944@290628] Refer to Note 5 – Derivatives for further information on the fair value of our derivative instruments.
+  - [0001564590-20-034944@293370] We use derivative instruments to manage risks related to foreign currencies, interest rates, equity prices, and credit; to enhance investment returns; and to facilitate portfolio diversification.
+  - [0001564590-20-034944@293566] Our objectives for holding derivatives include reducing, eliminating, and efficiently managing the economic impact of these exposures as effectively as possible.
+  - [0001564590-20-034944@293728] Our derivative programs include strategies that both qualify and do not qualify for hedge accounting treatment.
+  - [0001564590-20-034944@293956] We monitor our foreign currency exposures daily to maximize the economic effectiveness of our foreign currency hedge positions.
+  - [0001564590-20-034944@295312] We manage the average maturity of our fixed-income portfolio to achieve economic returns that correlate to certain broad-based fixed-income indices using exchange-traded option and futures contracts and over-the-counter swap and option contracts.
+  - [0001564590-20-034944@295771] At times, we may hold options, futures, and swap contracts.
+  - [0001564590-20-034944@296054] We use credit default swap contracts to manage credit exposures relative to broad-based indices and to facilitate portfolio diversification.
+  - [0001564590-20-034944@296354] Certain of our counterparty agreements for derivative instruments contain provisions that require our issued and outstanding long-term unsecured debt to maintain an investment grade credit rating and require us to maintain minimum liquidity of $ 1.0 billion.
+  - [0001564590-20-034944@296613] To the extent we fail to meet these requirements, we will be required to post collateral, similar to the standard convention related to over-the-counter derivatives.
+  - [0001564590-20-034944@296954] The following table presents the notional amounts of our outstanding derivative instruments measured in U.S. dollar equivalents:.
+  - [0001564590-20-034944@297601] The following table presents our derivative instruments: .
+  - [0001564590-20-034944@298687] Gross derivative assets and liabilities subject to legally enforceable master netting agreements for which we have elected to offset were $ 399 million and $ 399 million, respectively, as of June 30, 2020, and $ 247 million and $ 272 million, respectively, as of June 30, 2019.
+  - [0001564590-20-034944@298965] The following table presents the fair value of our derivatives instruments on a gross basis:.
+  - [0001564590-20-034944@299361] Gains (losses) on derivative instruments recognized in our consolidated income statements were as follows:.
+  - [0001564590-20-034944@300579] Gains (losses), net of tax, on derivative instruments recognized in our consolidated comprehensive income statements were as follows:.
+  - [0001564590-20-034944@322461] Our leases have remaining lease terms of 1 year to 20 years, some of which include options to extend the leases for up to 5 years , and some of which include options to terminate the leases within 1 year.
+
+### 10-Q 0001564590-21-002316
+- filed 2021-01-26; SEC acceptance (ET) 2021-01-26T16:09:34-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/789019/000156459021002316/msft-10q_20201231.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1A [168572:172122]
+- excerpts: 37 of 37 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001564590-21-002316@53423] Our Level 1 derivative assets and liabilities include those actively traded on exchanges.
+  - [0001564590-21-002316@54191] Our Level 2 investments include commercial paper, certificates of deposit, U.S. agency securities, foreign government bonds, mortgage- and asset-backed securities, corporate notes and bonds, and municipal securities.
+  - [0001564590-21-002316@54408] Our Level 2 derivative assets and liabilities primarily include certain over-the-counter option and swap contracts. 9.
+  - [0001564590-21-002316@56109] We record financing receivables when we offer certain of our customers the option to acquire our software products and services offerings through a financing program in a limited number of countries.
+  - [0001564590-21-002316@64788] Refer to Note 5 – Derivatives for further information on the fair value of our derivative instruments.
+  - [0001564590-21-002316@67565] We use derivative instruments to manage risks related to foreign currencies, interest rates, equity prices, and credit; to enhance investment returns; and to facilitate portfolio diversification.
+  - [0001564590-21-002316@67761] Our objectives for holding derivatives include reducing, eliminating, and efficiently managing the economic impact of these exposures as effectively as possible.
+  - [0001564590-21-002316@67923] Our derivative programs include strategies that both qualify and do not qualify for hedge accounting treatment.
+  - [0001564590-21-002316@68151] We monitor our foreign currency exposures daily to maximize the economic effectiveness of our foreign currency hedge positions.
+  - [0001564590-21-002316@69506] We manage the average maturity of our fixed-income portfolio to achieve economic returns that correlate to certain broad-based fixed-income indices using exchange-traded option and futures contracts and over-the-counter swap and option contracts .
+  - [0001564590-21-002316@69968] At times, we may hold options, futures, and swap contracts.
+  - [0001564590-21-002316@70251] We use credit default swap contracts to manage credit exposures relative to broad-based indices and to facilitate portfolio diversification.
+  - [0001564590-21-002316@70551] Certain of our counterparty agreements for derivative instruments contain provisions that require our issued and outstanding long-term unsecured debt to maintain an investment grade credit rating and require us to maintain minimum liquidity of $ 1.0 billion.
+  - [0001564590-21-002316@70810] To the extent we fail to meet these requirements, we will be required to post collateral, similar to the standard convention related to over-the-counter derivatives.
+  - [0001564590-21-002316@71155] The following table presents the notional amounts of our outstanding derivative instruments measured in U.S. dollar equivalents:.
+  - [0001564590-21-002316@71811] The following table presents our derivative instruments: .
+  - [0001564590-21-002316@72906] Gross derivative assets and liabilities subject to legally enforceable master netting agreements for which we have elected to offset were $ 540 million and $ 544 million, respectively, as of December 31, 2020, and $ 399 million and $ 399 million, respectively, as of June 30, 2020.
+  - [0001564590-21-002316@73188] The following table presents the fair value of our derivatives instruments on a gross basis:.
+  - [0001564590-21-002316@73584] Gains (losses) on derivative instruments recognized in our consolidated income statements were as follows:.
+  - [0001564590-21-002316@74807] Gains (losses), net of tax, on derivative instruments recognized in our consolidated comprehensive income statements were as follows:.
+  - [0001564590-21-002316@85063] Our leases have remaining lease terms of 1 year to 20 years, some of which include options to extend the leases for up to 5 years , and some of which include options to terminate the leases within 1 year.
+  - [0001564590-21-002316@99113] Our Intelligent Cloud segment consists of our public, private, and hybrid server products and cloud services that can power modern business and developers.
+  - [0001564590-21-002316@141225] We use derivative instruments to: manage risks related to foreign currencies, equity prices, interest rates, and credit; enhance investment returns; and facilitate portfolio diversification.
+  - [0001564590-21-002316@147056] This pricing methodology applies to our Level 2 investments, such as commercial paper, certificates of deposit, U.S. agency securities, foreign government bonds, mortgage- and asset-backed securities, corporate notes and bonds, and municipal securities.
+  - [0001564590-21-002316@165114] We regularly review inventory quantities on hand, future purchase commitments with our suppliers, and the estimated utility of our inventory.
+  - [0001564590-21-002316@165429] If our review indicates a reduction in utility below carrying value, we reduce our inventory to a new cost basis through a charge to cost of revenue. 46.
+  - [0001564590-21-002316@165788] We use derivatives instruments to manage these risks, however, they may still impact our consolidated financial statements.
+  - [0001564590-21-002316@166027] We monitor our foreign currency exposures daily to maximize the economic effectiveness of our foreign currency positions, including hedges.
+  - [0001564590-21-002316@176367] Maintaining the utility, compatibility, and performance of our cloud-based services on the growing array of computing devices, including PCs, smartphones, tablets, gaming consoles, and other devices, as well as sensors and other IoT endpoints.
+  - [0001564590-21-002316@187981] The Solorigate or similar cyberattacks may adversely impact our customers even if our production services are not directly compromised.
+  - [0001564590-21-002316@191311] Government authorities can sometimes require us to produce customer or user data in response to valid legal orders.
+  - [0001564590-21-002316@194851] To support the growth of the intelligent cloud and the intelligent edge, we are developing products, services, and technologies to power the IoT, a network of distributed and interconnected devices employing sensors, data, and computing capabilities including AI.
+  - [0001564590-21-002316@196819] These deficiencies could undermine the decisions, predictions, or analysis AI applications produce, subjecting us to competitive harm, legal liability, and brand or reputational harm.
+  - [0001564590-21-002316@197423] Our increasing user traffic, growth in services, and the complexity of our products and services demand more computing power.
+  - [0001564590-21-002316@226322] A catastrophic event that results in the destruction or disruption of any of our critical business or IT systems, or the infrastructure or systems they rely on, such as power grids, could harm our ability to conduct normal business operations.
+  - [0001564590-21-002316@231028] Environmental regulations or changes in the supply, demand or available sources of energy or other resources may affect the availability or cost of goods and services, including natural resources, necessary to run our business.
+  - [0001564590-21-002316@232697] Although we hedge a portion of our international currency exposure, significant fluctuations in foreign exchange rates between the U.S. dollar and foreign currencies may adversely affect our results of operations.

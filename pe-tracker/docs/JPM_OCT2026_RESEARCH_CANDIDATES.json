@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "status": "research_candidates_only",
+  "review_date": "2026-10-09",
+  "source_access": "indexed_excerpts_only_full_pages_403",
+  "model_fit_executed": false,
+  "backtest_executed": false,
+  "canonical_ingestion_authorized": false,
+  "sources": [
+    {
+      "id": "alphabet",
+      "url": "https://www.jpmorgan.com/insights/banking/investment-banking/alphabet-equity-raise",
+      "indexed_page_date": "2026-10-05",
+      "historical_known_at": null,
+      "observed_on": "2026-10-09",
+      "blockers": [
+        "full_article_unread",
+        "90bn_vs_85bn_scope_reconciliation",
+        "issuer_filings_required"
+      ],
+      "merger_training_row": false
+    },
+    {
+      "id": "smid",
+      "url": "https://www.jpmorgan.com/insights/global-research/markets/smid-cap-outlook",
+      "indexed_page_date": "2026-10-05",
+      "historical_known_at": null,
+      "observed_on": "2026-10-09",
+      "blockers": [
+        "full_article_unread",
+        "index_universe_and_measurement_dates_unverified"
+      ]
+    },
+    {
+      "id": "iran",
+      "url": "https://www.jpmorgan.com/insights/global-research/commodities/iran-us-tensions-market-effect",
+      "indexed_page_date": "2026-10-02",
+      "historical_known_at": null,
+      "observed_on": "2026-10-09",
+      "blockers": [
+        "full_article_unread",
+        "mixed_indexed_vintages",
+        "dated_snapshot_required"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "financing_commitment_state",
+      "source_id": "alphabet",
+      "type": "deal_fact_candidate",
+      "definition": "Categorical commitment status and financing conditions documented in acquisition filings.",
+      "value": null,
+      "implemented": false
+    },
+    {
+      "id": "target_market_cap_preannouncement",
+      "source_id": "smid",
+      "type": "feature_candidate",
+      "definition": "Sourced price times effective shares at a predefined pre-announcement timestamp.",
+      "unit": "USD",
+      "value": null,
+      "implemented": false
+    },
+    {
+      "id": "smid_relative_return_20_sessions",
+      "source_id": "smid",
+      "type": "feature_candidate",
+      "definition": "Trailing 20-session SMID total return minus same-region large-cap total return; point-in-time universe and currency fixed before testing.",
+      "unit": "decimal_return_difference",
+      "value": null,
+      "implemented": false
+    },
+    {
+      "id": "floating_debt_share",
+      "source_id": "smid",
+      "type": "feature_candidate",
+      "definition": "Floating-rate debt divided by total debt from available filings; hedge coverage recorded separately; missing or zero denominator remains unknown.",
+      "unit": "fraction",
+      "value": null,
+      "implemented": false
+    },
+    {
+      "id": "commodity_supply_disruption",
+      "source_id": "iran",
+      "type": "portfolio_scenario_candidate",
+      "definition": "Exposure-aware physical supply stress; distinguish producers, consumers, shipping dependence and hedges.",
+      "shock_magnitude": null,
+      "p_break_uplift": null,
+      "correlation": null,
+      "exposure_unknown_policy": "report_unknown_separately_do_not_assume_zero",
+      "implemented": false
+    }
+  ],
+  "promotion_gates": [
+    "verify_full_source_versions",
+    "verify_primary_deal_facts",
+    "bitemporal_eligibility",
+    "coverage_and_missingness_review",
+    "preregister_candidate",
+    "grouped_chronological_validation",
+    "version_schema_and_model",
+    "leakage_and_scenario_tests"
+  ],
+  "baseline_mutations": []
+}

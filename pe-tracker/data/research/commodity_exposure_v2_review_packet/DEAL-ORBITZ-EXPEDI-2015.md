@@ -1,0 +1,179 @@
+# DEAL-ORBITZ-EXPEDI-2015
+Announcement date: 2015-02-13. Only filings accepted before this date are evidence.
+
+## TARGET: Orbitz Worldwide, Inc.
+- identity.basis: reviewed_manifest_cik
+- identity.sec_name: Orbitz Worldwide, Inc.
+- identity.sic_context_only: 4700
+- identity.sic_description_context_only: Transportation Services
+
+### 10-K 0001394159-14-000085
+- filed 2014-03-06; SEC acceptance (ET) 2014-03-06T16:14:04-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/1394159/000139415914000085/oww1231201310k.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1 [8422:32949], Item 1A [52369:97043], Item 7 [142260:183001], Item 7A [212203:216538]
+- excerpts: 52 of 52 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001394159-14-000085@17522] We generate advertising revenue by providing our partners access to our customer base through a combination of display advertising, performance-based advertising, video production and other marketing programs.
+  - [0001394159-14-000085@27511] Our easy-to-use Orbitz Matrix Display allows customers to simultaneously view these various travel options so that they can select the price and supplier that best meet their travel needs.
+  - [0001394159-14-000085@27700] In addition, our vacation packaging technology enables travelers to view multiple combinations of airlines, hotels and other travel products and allows them to assemble a customized vacation package that is generally less expensive than booking each travel product separately.
+  - [0001394159-14-000085@28527] Our customer support platform includes customer self-service, chat, email and call center services to provide our customers with multiple options to enhance the travel experience.
+  - [0001394159-14-000085@33363] • . portions of our private label vacation packaging technology; and .
+  - [0001394159-14-000085@55527] Our contractual obligations to Travelport for GDS services limit our ability to use alternative GDS options before December 31, 2014 and as a result, if Travelport became unwilling or was unable to provide these services to us, we may not be able to transition to alternative providers and our business could be materially and adversely affected.
+  - [0001394159-14-000085@55874] After December 31, 2014, we are subject to certain minimum segment volume thresholds, but have significantly more flexibility to use alternate connectivity options.
+  - [0001394159-14-000085@68449] • . changes to payment terms or other requirements imposed by vendors, suppliers, payment processors, consumer protection organizations, taxing authorities or regulatory agencies, such as requiring us to provide letters of credit, cash reserves, deposits or other forms of financial security or increases in such requirements; and .
+  - [0001394159-14-000085@146906] We expect that our shift in mix towards hotels and dynamic packaging will positively impact our overall transaction economics over time. 34 .
+  - [0001394159-14-000085@164552] Our selling, general and administrative expense is composed of wages and benefits, contract labor costs, network communications, systems maintenance and equipment costs and other costs, which include professional fees, foreign currency transaction and hedging and other administrative costs.
+  - [0001394159-14-000085@172113] The increase in net interest expense was due primarily to higher interest rates as a result of the refinancing of our debt that was completed in March 2013 and again in May 2013.
+  - [0001394159-14-000085@173565] Due to a favorable interest rate environment and the Company’s performance in the first quarter of 2013, on May 24, 2013 we refinanced the term loan portion of our debt at substantially lower rates than those in the agreement signed on March 25, 2013.
+  - [0001394159-14-000085@180863] The increased deficit for the year ended December 31, 2013 , as compared with December 31, 2012 , was due largely to a net increase in restricted cash, and corresponding use of cash, of $44.3 million (excluding $50.0 million placed in restricted cash from Term Loans), an increase in accrued expenses of $27.5 million (See Note 5 - Accrued expenses), the payment of $27.5 million related to payment of certain disputed hotel taxes and a decrease of $11.2 million in current term loans payable, due to our debt refinancing in 2013.
+  - [0001394159-14-000085@187479] Specifically, in the current period, we had a net cash outflow of $19.1 million for net principal reductions in connection with the refinancing of the term loan borrowings under our 2007 Credit Agreement, excess cash flow payment and and scheduled maturity payments of the senior secured credit agreement, while in the same period last year we had a $32.2 million excess cash flow payment on our term loan.
+  - [0001394159-14-000085@187886] In addition, we had a $3.0 million increase in net proceeds related to the exercise of employee stock options and employee tax withholdings for equity based awards in the year ended December 31, 2013 as compared with the prior year.
+  - [0001394159-14-000085@189776] The Term Loans and the Revolver bear interest at a variable rate, at our option, of the Eurocurrency Rate or the Base Rate, plus a margin.
+  - [0001394159-14-000085@210121] Specifically, the Company had expected that interest rates and interest expense on a debt refinancing would be significantly higher than the rates actually achieved.
+  - [0001394159-14-000085@212907] We primarily hedge our foreign currency exposure to the Pound sterling, Euro, Swiss franc and Australian dollar.
+  - [0001394159-14-000085@213020] We do not engage in trading, market making or speculative activities in the derivatives markets.
+  - [0001394159-14-000085@213117] The foreign currency contracts utilized by us do not qualify for hedge accounting treatment and, as a result, any fluctuations in the value of these foreign currency contracts are recognized in selling, general and administrative expense in our consolidated statements of operations as incurred.
+  - [0001394159-14-000085@214452] We limit interest rate risk associated with the Term Loan using interest rate swaps with a combined notional amount of $200.0 million at December 31, 2013 to hedge fluctuations in LIBOR (see Note 12 - Derivative Financial Instruments of the Notes to Consolidated Financial Statements).
+  - [0001394159-14-000085@214738] We do not engage in trading, market making or speculative activities in the derivatives markets. 49 .
+  - [0001394159-14-000085@244583] We measure derivatives at fair value and recognize them in our consolidated balance sheets as assets or liabilities, depending on our rights or obligations under the applicable derivative contract.
+  - [0001394159-14-000085@244781] For our derivatives designated as fair value hedges, if any, the changes in the fair value of both the derivative instrument and the hedged item are recorded in earnings.
+  - [0001394159-14-000085@244952] For our derivatives designated as cash flow hedges, the effective portions of changes in fair value of the derivative are reported in other comprehensive income and are subsequently reclassified into earnings when the hedged item affects earnings.
+  - [0001394159-14-000085@245373] We manage interest rate exposure by utilizing interest rate swaps to achieve a desired mix of fixed and variable rate debt.
+  - [0001394159-14-000085@245497] As of December 31, 2013 we had two interest rate swaps outstanding that will substantially convert $ 200.0 million of the term loan facility from a variable to a fixed interest rate once they become effective (see Note 12 - Derivative Financial Instruments).
+  - [0001394159-14-000085@246328] We do not enter into derivative instruments for speculative or trading purposes.
+  - [0001394159-14-000085@246409] We require that the hedges or derivative financial instruments be effective in managing the interest rate risk or foreign currency risk exposure that they are designated to hedge.
+  - [0001394159-14-000085@247172] Net interest differentials to be paid or received under our interest rate swaps are included in interest expense as incurred or earned.
+  - [0001394159-14-000085@247655] Additionally, we employ forward foreign exchange contracts to hedge our exposure to foreign currency fluctuations.
+  - [0001394159-14-000085@272117] The Tranche B Term Loan bears interest at a variable rate, at our option, of the Eurocurrency Rate plus a margin of . 67 .
+  - [0001394159-14-000085@272378] The Tranche C Term Loan bears interest at a variable rate, at our option, of the Eurocurrency Rate plus 4.75% per annum or the Base Rate plus 3.75% per annum.
+  - [0001394159-14-000085@275961] The Revolver bears interest at a variable rate, at our option, of the Eurocurrency Rate plus a margin of 5.50% per annum or the Base Rate plus a margin of 4.50% per annum.
+  - [0001394159-14-000085@305660] NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (Continued) . in proceeds from our recent refinancing held as restricted cash and designated to be used to cash collateralize letters of credit or similar instruments, our $65.0 million revolving credit facility through which our revolving lenders have agreed to issue up to $55.0 million in letters of credit, our $25.0 million multi-currency letter of credit facility and cash from our balance sheet which can be used to support letters of credit and similar instruments.
+  - [0001394159-14-000085@318651] The Plan provides for the grant of equity-based awards, including restricted stock, restricted stock units, stock options, stock appreciation rights and other equity-based awards to our directors, officers and other employees, advisors and consultants who are selected by the Compensation Committee of the Board of Directors for participation in the Plan.
+  - [0001394159-14-000085@327867] At December 31, 2013 , we had the following interest rate swaps outstanding that will substantially convert $ 200.0 million of term loans from a variable to a fixed interest rate once they become effective.
+  - [0001394159-14-000085@328210] The Company does not use derivatives for speculative or trading purposes.
+  - [0001394159-14-000085@328284] The Company entered into interest rate derivative contracts to protect against volatility of future cash flows of the variable interest payments on the Credit Agreement.
+  - [0001394159-14-000085@329209] During March 2013, we terminated our then outstanding $100.0 million swap in conjunction with the termination of our 2007 Credit Agreement.
+  - [0001394159-14-000085@329349] Our interest rate swaps related to the 2007 Credit Agreement were the only derivative financial instruments that we had designated as hedging instruments.
+  - [0001394159-14-000085@330261] The following table summarizes the location and fair value of our interest rate derivative instruments on the Company's Consolidated Balance Sheets.
+  - [0001394159-14-000085@330738] The interest rate swaps were reflected in our Condensed Consolidated Balance Sheets at market value.
+  - [0001394159-14-000085@330839] The corresponding market adjustment related to the hedging instruments was recorded to accumulated other comprehensive income (“AOCI”) and the adjustment related to the instruments not designated as hedging was recorded as Interest expense in the Company's Consolidated Statements of Operations.
+  - [0001394159-14-000085@331907] We primarily hedge our foreign currency exposure to the Pound sterling and the Australian dollar.
+  - [0001394159-14-000085@332174] The foreign currency contracts do not qualify for hedge accounting treatment; accordingly, changes in the fair value of the foreign currency contracts are reflected in net income as a component of selling, general and administrative expense in our Consolidated Statements of Operations.
+  - [0001394159-14-000085@332461] The following table shows the fair value of our foreign currency hedges: .
+  - [0001394159-14-000085@333571] The net impact of these transaction gains and losses, together with the gains/(losses) incurred on our foreign currency hedges, were losses of $ 5.4 million , $ 4.7 million and $ 5.4 million for the years ended December 31, 2013 , 2012 and 2011 , respectively.
+  - [0001394159-14-000085@333996] The gross asset amount of the derivative listed below in the maximum loss the Company would incur if the counterparties failed to meet their obligation.
+  - [0001394159-14-000085@348599] We value our foreign currency hedges based on the difference between the foreign currency contract rate and widely available foreign currency rates as of the measurement date.
+  - [0001394159-14-000085@348775] Our foreign currency hedges are short-term in nature, generally maturing within 30 days .
+  - [0001394159-14-000085@348865] We value our interest rate swaps using valuations that are calibrated to the initial trade prices.
+
+### 10-Q 0001394159-14-000224
+- filed 2014-11-06; SEC acceptance (ET) 2014-11-06T12:36:02-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/1394159/000139415914000224/oww0930201410q.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1A [123604:123753]
+- excerpts: 26 of 26 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001394159-14-000224@22962] On April 15, 2014, we entered into an amendment (the “Second Amendment”) to the $515.0 million senior secured credit agreement entered into on March 25, 2013, as refinanced and amended on May 24, 2013 (the “Credit Agreement”), composed of a seven year, $450.0 million term loan maturing April 15, 2021 (the “Term Loan”) and a five year $80.0 million revolving credit facility maturing April 15, 2019 (the “Revolver”).
+  - [0001394159-14-000224@23984] The Term Loan bears interest at a variable rate, at our option, of the Eurocurrency Rate plus a margin of 3.50% per annum, or the Base Rate plus 2.50% per annum.
+  - [0001394159-14-000224@27629] The Revolver bears interest at a variable rate, at our option, of the Eurocurrency Rate plus a margin of 3.00% per annum or the Base Rate plus a margin of 2.00% per annum.
+  - [0001394159-14-000224@49914] The Plan provides for the grant of equity-based awards, including restricted stock, restricted stock units, stock options, stock appreciation rights and other equity-based awards to our directors, officers and other employees, advisors and consultants who are selected by the Compensation Committee of the Board of Directors for participation in the Plan.
+  - [0001394159-14-000224@53386] At September 30, 2014 , we had the following interest rate swaps outstanding that effectively converts $ 200.0 million of term loans from a variable interest rate to a fixed interest rate.
+  - [0001394159-14-000224@53716] We do not use derivatives for speculative or trading purposes.
+  - [0001394159-14-000224@54053] We entered into interest rate derivative contracts to protect against volatility of future cash flows of the variable interest payments related to our term loans.
+  - [0001394159-14-000224@54688] The following table summarizes the location and fair value of derivative instruments on the Company’s Condensed Consolidated Balance Sheets.
+  - [0001394159-14-000224@55060] The interest rate swaps designated as hedging instruments were terminated in conjunction with the termination of our credit agreement in March 2013.
+  - [0001394159-14-000224@55209] Interest rate swaps designated as hedging instruments were reflected in our Condensed Consolidated Balance Sheets at market value.
+  - [0001394159-14-000224@55445] NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS — (Continued) . recorded to accumulated other comprehensive income (“AOCI”) and the adjustment related to the instruments not designated as hedging was recorded as Net interest expense in the Company’s Condensed Consolidated Statements of Operations.
+  - [0001394159-14-000224@56473] We primarily hedge our foreign currency exposure to the Australian dollar and several currencies in Europe.
+  - [0001394159-14-000224@56743] The foreign currency contracts do not qualify for hedge accounting treatment; accordingly, changes in the fair value of the foreign currency contracts are reflected in net income as a component of Selling, general and administrative expense in our Condensed Consolidated Statements of Operations.
+  - [0001394159-14-000224@57040] The following table shows the fair value of our foreign currency hedges: .
+  - [0001394159-14-000224@58384] The net impact of these transaction gains and losses, together with the gains and losses incurred on our foreign currency hedges, were losses of $1.2 million and $1.7 million for the three months ended September 30, 2014 and 2013 , respectively, and $4.4 million and $4.2 million for the nine months ended September 30, 2014 and 2013 , respectively.
+  - [0001394159-14-000224@58919] The gross asset amount of the derivative listed below is the maximum loss the Company would incur if the counterparties failed to meet their obligation. 18 .
+  - [0001394159-14-000224@67373] We value our foreign currency hedges based on the difference between the foreign currency contract rate and widely available foreign currency rates as of the measurement date.
+  - [0001394159-14-000224@67549] Our foreign currency hedges are short-term in nature, generally maturing within 30 days .
+  - [0001394159-14-000224@67639] We value our interest rate swaps using valuations that are calibrated to the initial trade prices.
+  - [0001394159-14-000224@77746] We expect that our shift in mix towards hotels and dynamic packaging will positively impact our overall transaction economics over time. 23 .
+  - [0001394159-14-000224@92794] Our selling, general and administrative expense is composed of wages and benefits, contract labor costs, network communications, systems maintenance and equipment costs and other costs, which include professional fees, foreign currency transaction and hedging expense and other administrative costs.
+  - [0001394159-14-000224@94777] In addition, other selling, general and administrative expenses include a $1.1 million decrease in professional fees, primarily litigation related expenses and lower net losses related to our foreign currency hedging activities of $0.6 million.
+  - [0001394159-14-000224@110637] Specifically, in the prior year, we had a cash outflow of $15.7 million in connection with the refinancing of the term loan borrowings under our 2007 Credit Agreement and scheduled maturity payment of the senior secured credit agreement.
+  - [0001394159-14-000224@110875] In addition, we had a $7.5 million increase in net payments related to employee tax withholdings for vesting of equity based awards due to lower proceeds from the exercise of stock options in the nine months ended September 30, 2014 as compared with the same period last year.
+  - [0001394159-14-000224@112194] The Term Loan and the Revolver bear interest at a variable rate, at our option, of the Eurocurrency Rate or the Base Rate, plus a margin.
+  - [0001394159-14-000224@115544] Our contractual obligations as of September 30, 2014 did not materially change from the amounts set forth in our 2013 Annual Report on Form 10-K, except for the refinancing of our Term Loan and Revolving Credit Facility in April 2014.
+
+## ACQUIRER: Expedia, Inc
+- identity.source_accession: 0001193125-15-048176
+- identity.source_form: 8-K
+- identity.source_filing_date: 2015-02-13
+- identity.source_acceptance_et: 2015-02-13T07:17:34
+- identity.source_basis: manifest_announcement_accession
+- identity.parent_entity: EXPEDIA, INC
+- identity.parent_quote: oration. iii. AGREEMENT AND PLAN OF MERGER. This AGREEMENT AND PLAN OF MERGER, dated as of February 12, 2015 (this “Agreement”), is made by and among EXPEDIA, INC., a Delaware corporation (the “Parent”), XETA, INC., a Delaware corporation and an indire
+- identity.matched_name: EXPEDIA, INC
+- identity.sec_name: Expedia Group, Inc.
+- identity.manifest_name_consistent: True
+- identity.status: resolved
+- identity.sic_context_only: 4700
+- identity.sic_description_context_only: Transportation Services
+
+### 10-K 0001193125-15-035706
+- filed 2015-02-06; SEC acceptance (ET) 2015-02-05T23:01:23-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/1324424/000119312515035706/d838066d10k.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1 [5127:40730], Item 1A [51330:93572], Item 7 [202712:203716], Item 7A [287805:294621]
+- excerpts: 60 of 60 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001193125-15-035706@13962] We are focused on revolutionizing travel through the power of technology.
+  - [0001193125-15-035706@15724] Brand Expedia spans the widest swath of potential customers with travel options across a broad value spectrum, while our Hotels.com brand focuses specifically on a hotel only product offering.
+  - [0001193125-15-035706@40555] For some critical systems, we have both production and disaster-recovery facilities.
+  - [0001193125-15-035706@107210] Depending on the size of the exposures and the relative movements of exchange rates, if we choose not to hedge or fail to hedge effectively our exposure, we could experience a material adverse effect on our financial statements and financial condition.
+  - [0001193125-15-035706@107653] In addition, the current environment and the increasingly global nature of our business have made hedging these exposures more complex.
+  - [0001193125-15-035706@107915] We make a number of estimates in conducting hedging activities including in some cases cancellations and payments in foreign currencies.
+  - [0001193125-15-035706@108224] In the event our estimates differ significantly from actual results or if we fail to adopt effective hedging processes, we could experience greater volatility as a result of our hedging activities.
+  - [0001193125-15-035706@110712] We are accumulating a greater portion of our cash flows in foreign jurisdictions than previously and any repatriation of such funds for use in the United States, including for corporate purposes such as acquisitions, stock repurchases, dividends or debt refinancings, would likely result in additional U.S. income tax expense.
+  - [0001193125-15-035706@112108] In light of periodic uncertainty in the capital and credit markets, we can provide no assurance that sufficient financing will be available on desirable or even any terms to fund investments, acquisitions, stock repurchases, dividends, debt refinancing or extraordinary actions or that our counterparties in any such financings would honor their contractual commitments.
+  - [0001193125-15-035706@123264] Diller’s permanent departure from Expedia, the irrevocable proxy would terminate and depending on the capitalization of Expedia at such time, Liberty could effectively control the voting power of our capital stock.
+  - [0001193125-15-035706@129207] As it relates to foreign exchange, as of December 31, 2014, we were party to forward contracts with a notional value of approximately $633 million, the fair value of which was approximately $9 million.
+  - [0001193125-15-035706@129670] We employ forward contracts to hedge a portion of our exposure to foreign currency exchange rate fluctuations.
+  - [0001193125-15-035706@129806] Table of Contents . deposit term or upon the maturity of the forward contracts, the counterparties are obligated, or potentially obligated in the case of forward contracts, to return our funds or pay us net settlement values.
+  - [0001193125-15-035706@237990] We will continue to monitor the issue closely and provide additional disclosure, as well as adjust the level of reserves, as developments warrant.
+  - [0001193125-15-035706@238419] Our primary form of employee stock-based compensation is stock option awards.
+  - [0001193125-15-035706@238497] We measure the value of stock option awards on the date of grant at fair value using the Black-Scholes option valuation model.
+  - [0001193125-15-035706@263895] Legal reserves, occupancy tax and other consists of increases in our reserves for court decisions and the potential and final settlement of issues related to hotel occupancy taxes, expenses recognized related to monies paid in advance of occupancy and other tax proceedings (“pay-to-play”) as well as certain other legal reserves.
+  - [0001193125-15-035706@284236] There can be no assurance, however, that the cost of availability of future borrowings, including refinancing, if any, will be available on terms acceptable to us.
+  - [0001193125-15-035706@288016] Our exposure to market risk includes our long-term debt, our revolving credit facility, derivative instruments and cash and cash equivalents, accounts receivable, intercompany receivables, investments, merchant accounts payable and deferred merchant bookings denominated in foreign currencies.
+  - [0001193125-15-035706@289550] Because our interest rate is tied to a market rate, we will be susceptible to fluctuations in interest rates if, consistent with our practice to date, we do not hedge the interest rate exposure arising from any borrowings under our revolving credit facility.
+  - [0001193125-15-035706@291167] To the extent practicable, we minimize our foreign currency exposures by maintaining natural hedges between our current assets and current liabilities in similarly denominated foreign currencies.
+  - [0001193125-15-035706@291363] Additionally, we use foreign currency forward contracts to economically hedge certain merchant revenue exposures and in lieu of holding certain foreign currency cash for the purpose of economically hedging our foreign currency-denominated operating liabilities.
+  - [0001193125-15-035706@291890] We may enter into additional foreign exchange derivative contracts or other economic hedges in the future.
+  - [0001193125-15-035706@292204] We make a number of estimates in conducting hedging activities including in some cases the level of future bookings, cancellations, refunds, customer stay patterns and payments in foreign currencies.
+  - [0001193125-15-035706@292404] In the event those estimates differ significantly from actual results, we could experience greater volatility as a result of our hedges.
+  - [0001193125-15-035706@292541] Future net transaction gains and losses are inherently difficult to predict as they are reliant on how the multiple currencies in which we transact fluctuate in relation to the U.S. dollar, the relative composition and denomination of current assets and liabilities each period, and our effectiveness at forecasting and managing, through balance sheet netting or the use of derivative contracts, such exposures.
+  - [0001193125-15-035706@292953] As an example, if the foreign currencies in which we hold net asset balances were to all weaken 10% against the U.S. dollar and foreign currencies in which we hold net liability balances were to all strengthen 10% against the U.S. dollar, we would recognize foreign exchange losses of approximately $1 million based on our foreign currency forward positions (excluding the impact of forward positions economically hedging our merchant revenue exposures) and the net asset or liability balances of our foreign denominated cash and cash equivalents, accounts receivable, deferred merchant bookings and 
+  - [0001193125-15-035706@293803] During 2014, 2013 and 2012, we recorded net foreign exchange rate gains of approximately $6 million ($14 million loss excluding the contracts economically hedging our forecasted merchant revenue), $1 million ($13 million excluding the contracts economically hedging our forecasted merchant revenue), and $16 million ($7 million excluding the contracts economically hedging our forecasted merchant revenue).
+  - [0001193125-15-035706@336201] The significant estimates underlying our consolidated financial statements include revenue recognition; recoverability of current and long-lived assets, intangible assets and goodwill; income and transactional taxes, such as potential settlements related to occupancy and excise taxes; loss contingencies; loyalty program liabilities; redeemable noncontrolling interests; stock-based compensation and accounting for derivative instruments.
+  - [0001193125-15-035706@341955] Packages assembled by travelers through the packaging model on our websites generally include a merchant hotel component and some combination of an air, car or destination services component.
+  - [0001193125-15-035706@344411] We were not the primary beneficiary as we did not have power to direct the activities that most significantly impact Travelocity’s economic performance, promoting its brand and marketing travel services.
+  - [0001193125-15-035706@359043] Derivative instruments are carried at fair value on our consolidated balance sheets.
+  - [0001193125-15-035706@359128] The fair values of the derivative financial instruments generally represent the estimated amounts we would expect to receive or pay upon termination of the contracts as of the reporting date.
+  - [0001193125-15-035706@359320] At December 31, 2014 and 2013, our derivative instruments primarily consisted of foreign currency forward contracts.
+  - [0001193125-15-035706@359437] We use foreign currency forward contracts to economically hedge certain merchant revenue exposures and in lieu of holding certain foreign currency cash for the purpose of economically hedging our foreign currency-denominated operating liabilities.
+  - [0001193125-15-035706@359894] Our foreign currency forward contracts are typically short-term and, as they do not qualify for hedge accounting treatment, we classify the changes in their fair value in other, net.
+  - [0001193125-15-035706@360995] To the extent practicable, we attempt to minimize this exposure by maintaining natural hedges between our current assets and current liabilities of similarly denominated foreign currencies.
+  - [0001193125-15-035706@361185] Additionally, as discussed above, we use foreign currency forward contracts to economically hedge certain merchant revenue exposures and in lieu of holding certain foreign currency cash for the purpose of economically hedging our foreign currency-denominated operating liabilities.
+  - [0001193125-15-035706@361489] We defer costs we incur to issue debt and amortize these costs to interest expense over the term of the debt or, when the debt can be redeemed at the option of the holders, over the term of the redemption option.
+  - [0001193125-15-035706@364365] We expense the production costs associated with advertisements in the period in which the advertisement first takes place.
+  - [0001193125-15-035706@364930] We measure and amortize the fair value of stock options and restricted stock units (“RSUs”) as follows: .
+  - [0001193125-15-035706@365051] We measure the value of stock options issued or modified, including unvested options assumed in acquisitions, on the grant date (or modification or acquisition dates, if applicable) at fair value, using the Black-Scholes option valuation model.
+  - [0001193125-15-035706@365791] The majority of our stock options vest over four years.
+  - [0001193125-15-035706@383490] Table of Contents . interest is redeemable at the option of the minority holders, we classified the balance as redeemable noncontrolling interest with future changes in the fair value above the initial basis recorded as charges or credits to retained earnings (or additional paid-in capital in absence of retained earnings).
+  - [0001193125-15-035706@390133] As of December 31, 2014, we were party to outstanding forward contracts hedging our liability exposures with a total net notional value of $633 million.
+  - [0001193125-15-035706@390430] We recorded $10 million, $47 million, and $(21) million in net gains (losses) from foreign currency forward contracts in 2014, 2013 and 2012.
+  - [0001193125-15-035706@396144] We may redeem the 4.5% Notes at our option at any time in whole or from time to time in part.
+  - [0001193125-15-035706@399263] Participating employees have the option to invest in our common stock, but there is no requirement for participating employees to invest their contribution or our matching contribution in our common stock.
+  - [0001193125-15-035706@399751] Pursuant to the Amended and Restated Expedia, Inc. 2005 Stock and Annual Incentive Plan, we may grant restricted stock, restricted stock awards, RSUs, stock options and other stock-based awards to directors, officers, employees and consultants.
+  - [0001193125-15-035706@400237] The following table presents a summary of our stock option activity: .
+  - [0001193125-15-035706@401077] The aggregate intrinsic value of outstanding options shown in the stock option activity table above represents the total pretax intrinsic value at December 31, 2014, based on our closing stock price of $85.36 as of the last trading date in 2014.
+  - [0001193125-15-035706@401478] During the three years ended December 31, 2014, 2013 and 2012, we awarded stock options as our primary form of stock-based compensation.
+  - [0001193125-15-035706@403838] Our employees that held IAC vested stock options prior to the IAC/InterActiveCorp (“IAC”) spin-off in August 2005 received vested stock options in both Expedia and IAC.
+  - [0001193125-15-035706@404007] In addition, our employees that held vested Expedia options prior to the TripAdvisor spin-off on December 20, 2011 received vested stock options in both Expedia and TripAdvisor.
+  - [0001193125-15-035706@404185] As these IAC and TripAdvisor stock options are exercised, we receive a tax deduction.
+  - [0001193125-15-035706@420798] For the years ended December 31, 2014, 2013 and 2012, we computed diluted earnings per share using (i) the number of shares of common stock and Class B common stock used in the basic earnings per share calculation as indicated above (ii) if dilutive, the incremental common stock that we would issue upon the assumed exercise of stock options and stock warrants and the vesting of RSUs using the treasury stock method, and (iii) other stock-based commitments.
+  - [0001193125-15-035706@442388] Diller, our Chairman of the Board of Directors and Senior Executive, through shares he owns beneficially as well as those subject to an irrevocable proxy granted by Liberty Interactive Corporation (“Liberty”), controlled approximately 59% of the combined voting power of the outstanding Expedia capital stock as of December 31, 2014.
+  - [0001193125-15-035706@449670] Adjusted EBITDA for our Leisure and Egencia segments includes allocations of certain expenses, primarily cost of revenue and facilities, and our Leisure segment includes the total costs of our global supply organizations as well as the realized foreign currency gains or losses related to the forward contracts hedging a component of our net merchant hotel revenue.
+  - [0001193125-15-035706@450438] In addition, we record amortization of intangible assets and any related impairment, as well as stock-based compensation expense, restructuring and related reorganization charges, legal reserves, occupancy tax and other, and other items excluded from segment operating performance in Corporate.
+  - [0001193125-15-035706@454939] Other reserves primarily include our accrual of the cost associated with purchases made on our website related to the use of fraudulent credit cards “charged-back” due to payment disputes and cancellation fees.

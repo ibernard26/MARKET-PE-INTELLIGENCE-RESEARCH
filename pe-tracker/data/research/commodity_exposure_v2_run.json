@@ -1,0 +1,121 @@
+{
+  "protocol": "docs/PREREG_COMMODITY_EXPOSURE_COVERAGE_v2.md",
+  "research_only": true,
+  "model_fit_executed": false,
+  "backtest_executed": false,
+  "canonical_store_written": false,
+  "feature_integration": false,
+  "validated": false,
+  "validation_status": "pending separate AI-assisted blinded review (prereg \u00a76-\u00a77)",
+  "rules_sha256": "21812309b8442ef8b9ad821f341d282395bfb5bd2d0ed56f30f8539558cb6373",
+  "generated_utc": "2026-10-09T17:19:32+00:00",
+  "n_deals": 129,
+  "n_party_rows": 258,
+  "not_yet_reviewed": 0,
+  "coverage": {
+    "target": {
+      "n": 129,
+      "exposure_status": {
+        "unknown": 86,
+        "labeled": 43
+      },
+      "unknown_share": 0.6666666666666666,
+      "unknown_reason": {
+        "no_qualifying_disclosure_in_reviewed_filings": 85,
+        "no_preannouncement_annual_report_in_window": 1
+      },
+      "producer": {
+        "unknown": 121,
+        "yes": 8
+      },
+      "consumer": {
+        "unknown": 91,
+        "yes": 38
+      },
+      "hedged": {
+        "unknown": 109,
+        "yes": 17,
+        "no_disclosed": 3
+      },
+      "flag_unknown_rate": {
+        "producer": 0.937984496124031,
+        "consumer": 0.7054263565891473,
+        "hedged": 0.8449612403100775
+      }
+    },
+    "acquirer": {
+      "n": 129,
+      "exposure_status": {
+        "unknown": 105,
+        "labeled": 24
+      },
+      "unknown_share": 0.813953488372093,
+      "unknown_reason": {
+        "acquirer_no_unique_sec_registrant": 27,
+        "acquirer_pe_buyer_unresolved": 44,
+        "no_qualifying_disclosure_in_reviewed_filings": 30,
+        "acquirer_not_identified_in_merger_filing": 4
+      },
+      "producer": {
+        "unknown": 123,
+        "yes": 6
+      },
+      "consumer": {
+        "unknown": 109,
+        "yes": 20
+      },
+      "hedged": {
+        "unknown": 120,
+        "yes": 9
+      },
+      "flag_unknown_rate": {
+        "producer": 0.9534883720930233,
+        "consumer": 0.8449612403100775,
+        "hedged": 0.9302325581395349
+      }
+    }
+  },
+  "deals_with_any_labeled_party": 53,
+  "entity_resolution": {
+    "status": {
+      "unknown": 75,
+      "resolved": 54
+    },
+    "unknown_reason": {
+      "acquirer_no_unique_sec_registrant": 27,
+      "acquirer_pe_buyer_unresolved": 44,
+      "acquirer_not_identified_in_merger_filing": 4
+    },
+    "source_basis": {
+      "manifest_announcement_accession": 127,
+      "fallback_PREM14A": 2
+    },
+    "manifest_name_consistent_among_resolved": {
+      "True": 53,
+      "False": 1
+    }
+  },
+  "sic_note": "SIC is current-vintage SEC submissions metadata, context only; never used as exposure evidence.",
+  "validation_sample": [
+    "DEAL-ANN-ASCENA-2015",
+    "DEAL-APC-OXY-2019",
+    "DEAL-BARRY-MRGB-2014",
+    "DEAL-BLYTH-CARLYL-2015",
+    "DEAL-CEC-APOLLO-2014",
+    "DEAL-CERN-ORCL-2021",
+    "DEAL-CPRI-TPR-2023",
+    "DEAL-EA-PIFSLAFF-2025",
+    "DEAL-EINSTE-JAB-2014",
+    "DEAL-ENTROP-MAXLIN-2015",
+    "DEAL-IMPRIV-THOMA-2016",
+    "DEAL-INFORM-ITALIC-2015",
+    "DEAL-LNKD-MSFT-2016",
+    "DEAL-MKTG-AEGIS-2014",
+    "DEAL-MXIM-ADI-2020",
+    "DEAL-NUAN-MSFT-2021",
+    "DEAL-ODP-SPLS-2015",
+    "DEAL-ORBITZ-EXPEDI-2015",
+    "DEAL-REYNOL-IMPERI-2014",
+    "DEAL-STEINE-CATTER-2015"
+  ]
+}

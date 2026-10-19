@@ -1,0 +1,31 @@
+{
+  "status": "DESIGN_ONLY_NOT_ACTIVE",
+  "applies_to": "proposed fs_v2 (break_hazard_v1 risk-set rows) — neither is implemented",
+  "not_part_of": ["fs_v1", "break_logit_v1", "first_walkforward_v1", "src/model/dataset.py FEATURES"],
+  "model_status": "NON-EXECUTABLE FOR LIVE TRADING AND UNVALIDATED FOR EMPIRICAL PREDICTION",
+  "admission_rule": "event status_as_of(T) in {VERIFIED_PRIMARY, CORROBORATED_SECONDARY}; claim_type=occurred; valid_time <= T AND known_at <= T (src/geo_intel/pit.py)",
+  "missing_policy": "no admissible event => indicator 0 is NOT assumed; a deal-interval with no reviewed exposure mapping is NULL (unknown), distinct from reviewed-no-exposure = 0",
+  "candidates": [
+    {"name": "geo_confirmed_sanctions_link_open", "type": "binary",
+     "definition": "a CONFIRMED_DEAL_SPECIFIC sanctions_exposure link exists for the deal with event known_at <= T",
+     "channel": "sanctions_exposure"},
+    {"name": "geo_confirmed_regulatory_link_open", "type": "binary",
+     "definition": "a CONFIRMED_DEAL_SPECIFIC regulatory_approval_risk link (geopolitically motivated review, e.g. national-security screening) known by T",
+     "channel": "regulatory_approval_risk"},
+    {"name": "geo_days_since_last_confirmed_event", "type": "numeric",
+     "definition": "days from the latest admissible CONFIRMED_DEAL_SPECIFIC event valid_time to T; NULL if none",
+     "channel": "any"},
+    {"name": "geo_sector_hypothesis_event_count_90d", "type": "numeric",
+     "definition": "count of admissible events in the trailing 90 days with a reviewed SECTOR_HYPOTHESIS link to the deal",
+     "channel": "any",
+     "caveat": "hypothesis-level; must be evaluated separately from confirmed links"},
+    {"name": "geo_hormuz_or_energy_disruption_active", "type": "binary",
+     "definition": "an admissible strait_of_hormuz_maritime / energy_supply_interruption / russia_ukraine_energy_infrastructure event within 30 days before T AND a reviewed energy_transport_costs link",
+     "channel": "energy_transport_costs"}
+  ],
+  "explicitly_excluded": [
+    "any field derived from UNCONFIRMED, ATTRIBUTED_CLAIM, DISPUTED or RETRACTED clusters",
+    "Grok/X brief sentiment or counts",
+    "continuous price/rate series (already in the FRED market_observations store; would need their own fs version)"
+  ]
+}

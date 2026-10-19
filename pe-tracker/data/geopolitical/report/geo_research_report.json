@@ -1,0 +1,223 @@
+{
+  "charts": {
+    "deal_coverage_missingness": {
+      "missing": {
+        "announcement_accession": 0,
+        "announcement_timestamp": 0,
+        "consideration_type": 0,
+        "deal_type": 0,
+        "exchange_ratio": 108,
+        "offer_price": 10,
+        "resolution_accession": 0,
+        "resolution_timestamp": 0,
+        "resolution_type": 0,
+        "target_cik": 0,
+        "terms_accession": 0
+      },
+      "n": 129,
+      "note": "exchange_ratio is structurally absent for cash deals; offer_price for pure-stock deals. Missing is reported, never filled.",
+      "present": {
+        "announcement_accession": 129,
+        "announcement_timestamp": 129,
+        "consideration_type": 129,
+        "deal_type": 129,
+        "exchange_ratio": 21,
+        "offer_price": 119,
+        "resolution_accession": 129,
+        "resolution_timestamp": 129,
+        "resolution_type": 129,
+        "target_cik": 129,
+        "terms_accession": 129
+      },
+      "source": "pe-tracker/data/sec_deal_manifest.json",
+      "title": "Deal field coverage (reviewed SEC manifest)"
+    },
+    "geo_exposure_by_sector": {
+      "corpus_sector_coverage": {
+        "manifest_deals": 129,
+        "manifest_deals_with_research_sector_label": 4,
+        "manifest_deals_without_sector": 125,
+        "note": "Sector exists only as free text in the research-only 2026Q3 register; it is not mapped to the controlled SECTORS vocabulary automatically."
+      },
+      "empty_state": "No validated event→deal exposure links.",
+      "invalid_links": [],
+      "links_by_channel": {},
+      "links_by_sector_and_type": {},
+      "source": [
+        "pe-tracker/data/geopolitical/exposure_links.jsonl",
+        "pe-tracker/data/research/canonical_deals_2026Q3.csv"
+      ],
+      "title": "Geopolitical exposure by sector"
+    },
+    "historical_sample_composition": {
+      "cohort_source": "pe-tracker/data/experiments/first_walkforward_v1/cohort.json",
+      "consideration_type": {
+        "cash": 108,
+        "mixed": 11,
+        "stock": 10
+      },
+      "deal_type": {
+        "strategic": 107,
+        "take_private": 22
+      },
+      "first_walkforward_v1_cohort": {
+        "in_frozen_cohort_N62": 62,
+        "outside_cohort": 67
+      },
+      "n": 129,
+      "source": "pe-tracker/data/sec_deal_manifest.json",
+      "title": "Historical sample composition"
+    },
+    "resolved_deal_outcomes": {
+      "by_announcement_year": {
+        "2014": {
+          "closed": 36,
+          "terminated": 2,
+          "withdrawn": 1
+        },
+        "2015": {
+          "closed": 29,
+          "terminated": 4
+        },
+        "2016": {
+          "closed": 5,
+          "terminated": 2
+        },
+        "2017": {
+          "closed": 1
+        },
+        "2018": {
+          "closed": 1,
+          "terminated": 2
+        },
+        "2019": {
+          "closed": 1
+        },
+        "2020": {
+          "closed": 5,
+          "terminated": 2
+        },
+        "2021": {
+          "closed": 10,
+          "terminated": 2
+        },
+        "2022": {
+          "closed": 12,
+          "terminated": 2
+        },
+        "2023": {
+          "closed": 4,
+          "terminated": 1
+        },
+        "2024": {
+          "closed": 3
+        },
+        "2025": {
+          "closed": 1,
+          "terminated": 1
+        },
+        "2026": {
+          "closed": 1,
+          "terminated": 1
+        }
+      },
+      "by_resolution_type": {
+        "closed": 109,
+        "terminated": 19,
+        "withdrawn": 1
+      },
+      "caveat": "Reviewer-curated corpus; sample prevalence is not a population break rate (docs/SAMPLING_FRAME.md).",
+      "n": 129,
+      "source": "pe-tracker/data/sec_deal_manifest.json",
+      "title": "Resolved deal outcomes (reviewed SEC manifest)"
+    },
+    "source_verification_coverage": {
+      "as_of": null,
+      "clusters_by_status": {
+        "ATTRIBUTED_CLAIM": 0,
+        "CORROBORATED_SECONDARY": 0,
+        "DISPUTED": 0,
+        "RETRACTED": 0,
+        "UNCONFIRMED": 0,
+        "VERIFIED_PRIMARY": 0
+      },
+      "empty_state": "Evidence ledger is empty.",
+      "n_event_clusters": 0,
+      "n_evidence_records": 0,
+      "records_by_category": {},
+      "records_by_source_type": {},
+      "records_missing_publication_timestamp": 0,
+      "records_missing_valid_timestamp": 0,
+      "source": "pe-tracker/data/geopolitical/evidence_ledger.jsonl",
+      "title": "Source verification & coverage",
+      "untrusted_only_clusters": 0
+    },
+    "verified_geo_event_timeline": {
+      "as_of": null,
+      "empty_state": "No VERIFIED_PRIMARY or CORROBORATED_SECONDARY events in the ledger.",
+      "events": [],
+      "source": "pe-tracker/data/geopolitical/evidence_ledger.jsonl",
+      "title": "Verified geopolitical event timeline"
+    }
+  },
+  "model_status": "NON-EXECUTABLE FOR LIVE TRADING AND UNVALIDATED FOR EMPIRICAL PREDICTION",
+  "module_status": "RESEARCH_STAGING_NOT_A_MODEL_FEATURE",
+  "report": "geopolitical_research_report_v1",
+  "reserved_charts": {
+    "v1_calibration": {
+      "model": "break_logit_v1",
+      "reason": "first_walkforward_v1 execution_authorized=false",
+      "status": "NOT AVAILABLE — MODEL NOT EXECUTED",
+      "title": "Probability calibration"
+    },
+    "v1_ev_sensitivity": {
+      "model": "break_logit_v1",
+      "reason": "first_walkforward_v1 execution_authorized=false",
+      "status": "NOT AVAILABLE — MODEL NOT EXECUTED",
+      "title": "Expected-value sensitivity"
+    },
+    "v1_ranked_break_probabilities": {
+      "model": "break_logit_v1",
+      "reason": "first_walkforward_v1 execution_authorized=false",
+      "status": "NOT AVAILABLE — MODEL NOT EXECUTED",
+      "title": "Ranked deal-break probabilities"
+    },
+    "v1_roc_pr_curves": {
+      "model": "break_logit_v1",
+      "reason": "first_walkforward_v1 execution_authorized=false",
+      "status": "NOT AVAILABLE — MODEL NOT EXECUTED",
+      "title": "ROC and precision–recall curves"
+    },
+    "v1_walkforward_vs_baselines": {
+      "model": "break_logit_v1",
+      "reason": "first_walkforward_v1 execution_authorized=false",
+      "status": "NOT AVAILABLE — MODEL NOT EXECUTED",
+      "title": "Walk-forward performance against baselines"
+    },
+    "v2_competing_risk_cif": {
+      "model": "break_hazard_v1",
+      "reason": "design-only (docs/MODEL_ARCHITECTURE_V2.md)",
+      "status": "NOT AVAILABLE — MODEL NOT EXECUTED",
+      "title": "Competing-risk cumulative incidence"
+    },
+    "v2_event_driven_risk_changes": {
+      "model": "break_hazard_v1",
+      "reason": "design-only (docs/MODEL_ARCHITECTURE_V2.md)",
+      "status": "NOT AVAILABLE — MODEL NOT EXECUTED",
+      "title": "Event-driven changes in estimated break risk"
+    },
+    "v2_risk_by_horizon": {
+      "model": "break_hazard_v1",
+      "reason": "design-only (docs/MODEL_ARCHITECTURE_V2.md)",
+      "status": "NOT AVAILABLE — MODEL NOT EXECUTED",
+      "title": "Risk by forecast horizon"
+    },
+    "v2_time_varying_state_probs": {
+      "model": "break_hazard_v1",
+      "reason": "design-only (docs/MODEL_ARCHITECTURE_V2.md)",
+      "status": "NOT AVAILABLE — MODEL NOT EXECUTED",
+      "title": "Time-varying close/break/continue probabilities"
+    }
+  },
+  "synthetic_values": false
+}

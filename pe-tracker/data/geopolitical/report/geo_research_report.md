@@ -48,14 +48,12 @@ first_walkforward_v1 cohort: {'in_frozen_cohort_N62': 62, 'outside_cohort': 67}
 
 ## Source verification & coverage
 
-**Evidence ledger is empty.**
-
 | Status | Clusters |
 |---|---:|
 | VERIFIED_PRIMARY | 0 |
 | CORROBORATED_SECONDARY | 0 |
 | ATTRIBUTED_CLAIM | 0 |
-| UNCONFIRMED | 0 |
+| UNCONFIRMED | 12 |
 | DISPUTED | 0 |
 | RETRACTED | 0 |
 

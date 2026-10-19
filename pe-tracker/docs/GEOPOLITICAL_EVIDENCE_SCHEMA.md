@@ -53,3 +53,39 @@ Status is recomputed from evidence knowable at T, so an upgrade is dated by when
 
 Exact duplicate, or same (event, canonical URL, stance, revision) ⇒ rejected.
 Same (URL, statement) under two events ⇒ `ClusterConflictError`.
+
+## Upstream-provenance fields (relayed feeds)
+
+`relayed_by`, `upstream_source_kind`, `upstream_claim_type`, `upstream_geography`,
+`upstream_sectors`, `lead_urls` (primary-source LEADS — never evidence), `provenance`
+(`file#Lline sha256=<raw line>`). Records with `ingested_via` in {`grok_brief`,
+`todd_feed`} must be untrusted (`ai_brief`/`social_post`/`other`) and
+`retrieved_by_reviewer = false` — enforced by the schema.
+
+## Todd feed mapping (`src/geo_intel/todd_adapter.py`)
+
+| Todd `source_kind` | `source_type` | | Todd `claim_type` | `claim_type` |
+|---|---|---|---|---|
+| `primary_official` | `other` (a relayed official link is a lead) | | `reported_fact` | `occurred` |
+| `news_outlet` | `other` | | `official_document` | `occurred` |
+| `law_firm_analysis` | `other` | | `attributed_claim` | `attributed_statement` |
+| `x_post` | `social_post` | | `unconfirmed_report` | `rumor` |
+| `x_trend_summary` | `ai_brief` | | `market_data` | rejected (series belong in FRED) |
+
+| Todd field | Ledger field |
+|---|---|
+| `category` | `category` (`russia_ukraine_energy`→`russia_ukraine_energy_infrastructure`, `hormuz_maritime`→`strait_of_hormuz_maritime`, `energy_supply`→`energy_supply_interruption`, `rates_financing`→`rates_and_acquisition_financing`, `procurement_regulatory`→`government_procurement_regulatory`, `sector_exposure`→`sector_geopolitical_exposure`) |
+| `statement`, `reporting_entity`, `publisher`, `source_url` | same |
+| `published_at` / `event_time` | `publication_timestamp` / `event_valid_timestamp` (null stays null; zone-less rejects the item) |
+| `first_observed_at` | `first_observed_timestamp` (Todd's retrieval/brief-run time) |
+| `geography` | ISO codes for exact country names; raw list kept in `upstream_geography` |
+| `sectors` | not mapped (`sectors = ()`); raw kept in `upstream_sectors` |
+| `companies` | `affected_company_ids` (absent → empty; never inferred) |
+| `primary_source_leads` | `lead_urls` (absent → empty) |
+| `brief_date` | `relayed_by = "Todd news brief <date>"` |
+| `notes` | `notes` + detected flags (truncated, syndicated copy, standfirst, paywalled, lower confidence, blocked) |
+
+Cluster key per item = category + canonical URL + first 60 normalized characters of the
+statement (no automatic cross-source clustering). Same key + URL with different text ⇒
+appended as an `update` revision; identical ⇒ duplicate (idempotent re-ingest).
+Known limit: a correction that changes the first 60 characters opens a new cluster.

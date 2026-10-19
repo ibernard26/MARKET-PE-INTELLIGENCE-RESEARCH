@@ -10,3 +10,7 @@
 Nothing here enters the canonical SQLite store, fs_v1 or any training/decision
 path. Grok/X briefs are staged as untrusted `ai_brief` records and can never
 verify an event. See `docs/GEOPOLITICAL_INTELLIGENCE_PLAN.md`.
+
+Pilots / dry runs of relayed feeds (e.g. Todd's `events-YYYY-MM-DD.jsonl`) must use a
+staging ledger OUTSIDE this directory, e.g.
+`python -m src.geo_intel.todd_adapter FEED --ledger /workspace/geo_staging/<date>/ledger.jsonl`.

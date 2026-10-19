@@ -43,7 +43,21 @@ LOCKED_SHA256 = {
         "4cf61925adff5fb57e55dc9e6ddfe6886b35fca57691b85dce2da359f5c483cd",
     "tests/test_strategy_contract.py":
         "ced9cc4798e7bb5648fdca95346ea8e517e90a26e37c5ad27ece776996571b69",
+    # added in PR #53 remediation so the pins equal the 17 files hashed in the
+    # original before/after verification (previously only 13 were pinned here)
+    "src/research/events.py": "a4ca576b2647bcff78efc50d4e0ea52ee0415f4a88b5ffb2c928de27d34cd247",
+    "docs/BREAK_PROBABILITY_MODEL_V1.md":
+        "f592d55de37146133d184786ed0b92dc340e8ff515f8c9260112746de00e42cb",
+    "docs/MODEL_ARCHITECTURE_V2.md":
+        "6cde9083b742ff83ec5a73936fe3bea9a2c6c666900a543ac49b5bf64a6abfec",
+    "data/research/canonical_deal_outcomes_2026Q3.csv":
+        "c430f26651e29cbe6f672dddbfa07a36a4e193ed64df96f03ab6977c60197c5d",
 }
+assert len(LOCKED_SHA256) == 17
+
+
+def test_exactly_17_locked_files_are_pinned():
+    assert len(LOCKED_SHA256) == 17
 
 FS_V1 = ["pct_spread", "annualized_spread", "days_to_expected_close",
          "premium_to_unaffected", "log_deal_value", "is_sponsor", "is_all_cash",

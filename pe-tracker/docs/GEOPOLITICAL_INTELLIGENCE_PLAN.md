@@ -45,6 +45,43 @@ None is material (no constraint had to be bent). Minor conflicts, resolved in fa
 | `exposure.py` | Event → deal links (`CONFIRMED_DEAL_SPECIFIC` vs `SECTOR_HYPOTHESIS`), 7 channels, read-only manifest view, `effect_on_break_probability = NOT_ESTIMATED`. |
 | `reporting.py` | Read-only report (JSON + Markdown, optional PNG); reserved V1/V2 charts read **NOT AVAILABLE — MODEL NOT EXECUTED**. |
 | `ingest.py` | CLI to stage Grok briefs or reviewer records. |
+| `todd_adapter.py` | Todd's `events-YYYY-MM-DD.jsonl` feed → untrusted ledger records (mapping in `GEOPOLITICAL_EVIDENCE_SCHEMA.md`). |
+
+## 3a. Locked-file pins (exact list — 17 files)
+
+`tests/test_geo_intel_isolation.py::LOCKED_SHA256` pins these 17 files byte-for-byte
+(SHA-256 recorded at base `724da08` before any geo_intel code). The first PR #53 head
+pinned only the first 13 in the test while the PR text cited 17 hashed files; the
+remediation commit adds the remaining 4 so tests, PR text and this doc agree.
+
+| # | File (under `pe-tracker/`) | Why it is locked |
+|---:|---|---|
+| 1 | `data/experiments/first_walkforward_v1/protocol.json` | authorization flag + locked model contract |
+| 2 | `data/experiments/first_walkforward_v1/cohort.json` | frozen N=62 cohort |
+| 3 | `data/experiments/first_walkforward_v1/plan.json` | frozen per-window fingerprints |
+| 4 | `src/config.py` | event_driven_v1 constants (15:1 cost, MIN_SAMPLE_N) |
+| 5 | `STRATEGY.md` | strategy contract |
+| 6 | `src/model/dataset.py` | fs_v1 14-feature contract |
+| 7 | `src/model/logistic.py` | frozen L2 logistic spec |
+| 8 | `src/model/experiment_prep.py` | execution refusal gate |
+| 9 | `src/research/features.py` | fs_v1 feature builder |
+| 10 | `src/research/bitemporal.py` | time rule |
+| 11 | `schema.sql` | canonical store schema |
+| 12 | `data/sec_deal_manifest.json` | canonical deal intake / labels |
+| 13 | `tests/test_strategy_contract.py` | contract test |
+| 14 | `src/research/events.py` | deal lifecycle vocabulary / ordering |
+| 15 | `docs/BREAK_PROBABILITY_MODEL_V1.md` | V1 spec document |
+| 16 | `docs/MODEL_ARCHITECTURE_V2.md` | V2 design-only status |
+| 17 | `data/research/canonical_deal_outcomes_2026Q3.csv` | research outcome labels |
+
+## 3b. Multi-writer safety
+
+Bots (Todd's feed, Grok briefs, reviewers) may write the same ledger. Every write holds
+an exclusive POSIX `flock` on `<ledger>.lock`, re-reads lines other writers appended,
+validates/dedups against the full current ledger, then writes the whole file to a
+temp file in the same directory, `fsync`s it and `os.replace`s it over the ledger.
+Existing lines must be byte-identical on every re-read (`LedgerIntegrityError`
+otherwise). Tested with 12 concurrent processes; a no-lock negative control loses records.
 
 ## 4. Status mapping to the existing reconciliation vocabulary
 

@@ -17,7 +17,12 @@ Dedup rules
 """
 from __future__ import annotations
 
+import contextlib
+import fcntl
 import json
+import os
+import tempfile
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable, Iterable, Optional
@@ -42,6 +47,60 @@ class LedgerIntegrityError(RuntimeError):
     pass
 
 
+class LedgerLockTimeout(RuntimeError):
+    pass
+
+
+@contextlib.contextmanager
+def ledger_lock(path: Path, timeout_s: float = 30.0):
+    """Exclusive single-writer lock on ``<ledger>.lock`` (POSIX flock).
+
+    Every writer (any bot, any process) must hold it for the whole
+    read-validate-write cycle, so two writers can never interleave or both
+    accept the same record."""
+    lock_path = Path(str(path) + ".lock")
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    fd = os.open(lock_path, os.O_RDWR | os.O_CREAT, 0o644)
+    deadline = time.monotonic() + timeout_s
+    try:
+        while True:
+            try:
+                fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                if time.monotonic() > deadline:
+                    raise LedgerLockTimeout(f"could not lock {lock_path} in {timeout_s}s")
+                time.sleep(0.01)
+        yield
+    finally:
+        with contextlib.suppress(OSError):
+            fcntl.flock(fd, fcntl.LOCK_UN)
+        os.close(fd)
+
+
+def _atomic_write_lines(path: Path, lines: list) -> None:
+    """Write-temp-then-rename in the same directory (fsync'd): readers see the
+    old file or the new file, never a partial one."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(prefix="." + path.name + ".", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            for l in lines:
+                f.write(l + "\n")
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+        dfd = os.open(path.parent, os.O_RDONLY)
+        try:
+            os.fsync(dfd)
+        finally:
+            os.close(dfd)
+    except BaseException:
+        with contextlib.suppress(FileNotFoundError):
+            os.unlink(tmp)
+        raise
+
+
 def canonical_url(url: str) -> str:
     p = urlparse(url.strip())
     q = [(k, v) for k, v in parse_qsl(p.query, keep_blank_values=True)
@@ -56,49 +115,117 @@ def _utc_now() -> str:
 
 
 class EvidenceLedger:
+    """Append-only ledger. With a ``path``, every write takes the exclusive
+    file lock, re-reads records other writers appended, validates and dedups
+    against the full current ledger, then atomically replaces the file with
+    old-lines + new-lines. Existing lines are never rewritten (checked)."""
+
     def __init__(self, path: Optional[Path] = None, clock: Callable[[], str] = _utc_now,
-                 primary_registry: Optional[dict] = None):
+                 primary_registry: Optional[dict] = None, lock_timeout_s: float = 30.0):
         self.path = Path(path) if path else None
         self.clock = clock
         self.primary_registry = primary_registry
+        self.lock_timeout_s = lock_timeout_s
         self._records: list[EvidenceRecord] = []
         self._ids: dict[str, EvidenceRecord] = {}
         self._dedup: dict[tuple, str] = {}
         self._stmt: dict[tuple, str] = {}
+        self._lines: list[str] = []
         if self.path and self.path.exists():
-            self._load()
+            self._refresh()
 
     # ------------------------------------------------------------ io
-    def _load(self) -> None:
-        for n, line in enumerate(self.path.read_text(encoding="utf-8").splitlines(), 1):
-            if not line.strip():
-                continue
+    def _refresh(self) -> None:
+        """Index lines appended by other writers since our last read."""
+        if not (self.path and self.path.exists()):
+            return
+        lines = [l for l in self.path.read_text(encoding="utf-8").splitlines() if l.strip()]
+        n = len(self._lines)
+        if lines[:n] != self._lines:
+            raise LedgerIntegrityError(f"{self.path}: existing lines were modified or removed")
+        for i, line in enumerate(lines[n:], n + 1):
             raw = json.loads(line)
             rec = EvidenceRecord.from_dict(raw)
             chk = rec.validate(self.primary_registry)
             if chk.evidence_id != raw.get("evidence_id") or chk.event_id != raw.get("event_id"):
                 raise LedgerIntegrityError(
-                    f"{self.path}:{n}: stored ids do not match content (edited in place?)")
+                    f"{self.path}:{i}: stored ids do not match content (edited in place?)")
             self._index(chk, check=True)
+            self._lines.append(line)
 
-    # ------------------------------------------------------------ write
-    def append(self, record: EvidenceRecord) -> EvidenceRecord:
+    def _prepare(self, record: EvidenceRecord) -> EvidenceRecord:
         if not record.first_observed_timestamp:
             # The moment THIS system first saw the source is a real, observed
             # time — never back-dated.
             d = json.loads(record.to_json())
             d["first_observed_timestamp"] = self.clock()
             record = EvidenceRecord.from_dict(d)
-        rec = record.validate(self.primary_registry)
-        self._index(rec, check=True)
-        if self.path:
-            self.path.parent.mkdir(parents=True, exist_ok=True)
-            with self.path.open("a", encoding="utf-8") as f:
-                f.write(rec.to_json() + "\n")
-        return rec
+        return record.validate(self.primary_registry)
+
+    # ------------------------------------------------------------ write
+    def append(self, record: EvidenceRecord) -> EvidenceRecord:
+        return self.extend([record])[0]
 
     def extend(self, records: Iterable[EvidenceRecord]) -> list:
-        return [self.append(r) for r in records]
+        """All-or-nothing batch append under the single-writer lock; any
+        duplicate or invalid record aborts the whole batch."""
+        def strict(_ledger, rec):
+            return "append", rec
+        return [p for _, p in self.apply(records, strict, atomic_batch=True)]
+
+    def apply(self, records: Iterable[EvidenceRecord], resolver,
+              atomic_batch: bool = False) -> list:
+        """Run ``resolver(ledger, validated_record) -> (action, payload)`` for
+        each record while holding the lock, after re-reading the file.
+
+        action 'append' / 'revision' -> payload (a record) is indexed + written;
+        any other action (e.g. 'duplicate') -> payload is a reason, nothing written.
+        With ``atomic_batch`` a SchemaError aborts everything; otherwise it is
+        reported per record as ('rejected', reason)."""
+        records = list(records)
+        lock = (ledger_lock(self.path, self.lock_timeout_s) if self.path
+                else contextlib.nullcontext())
+        with lock:
+            self._refresh()
+            snapshot = (list(self._records), dict(self._ids), dict(self._dedup),
+                        dict(self._stmt))
+            outcomes, new = [], []
+            try:
+                for r in records:
+                    try:
+                        rec = self._prepare(r)
+                        action, payload = resolver(self, rec)
+                        if action in ("append", "revision"):
+                            self._index(payload, check=True)
+                            new.append(payload)
+                    except SchemaError as exc:
+                        if atomic_batch:
+                            raise
+                        action, payload = "rejected", f"{type(exc).__name__}: {exc}"
+                    outcomes.append((action, payload))
+                if self.path and new:
+                    new_lines = [r.to_json() for r in new]
+                    _atomic_write_lines(self.path, self._lines + new_lines)
+                    self._lines.extend(new_lines)
+            except BaseException:
+                self._records, self._ids, self._dedup, self._stmt = snapshot
+                raise
+            return outcomes
+
+    def dedup_match(self, rec: EvidenceRecord) -> Optional[str]:
+        """evidence_id of an already-staged record with the same
+        (event, canonical URL, stance, revision target), else None."""
+        return self._dedup.get((rec.event_id, canonical_url(rec.source_url), rec.stance,
+                                rec.revises_evidence_id))
+
+    def latest_revision(self, evidence_id: str) -> EvidenceRecord:
+        cur = self._ids[evidence_id]
+        while True:
+            nxt = next((r for r in self._records if r.revises_evidence_id == cur.evidence_id),
+                       None)
+            if nxt is None:
+                return cur
+            cur = nxt
 
     def _index(self, rec: EvidenceRecord, check: bool) -> None:
         if rec.evidence_id in self._ids:

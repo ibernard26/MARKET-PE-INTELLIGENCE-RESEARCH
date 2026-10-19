@@ -68,6 +68,8 @@ SOURCE_TYPES = (
     "other",
 )
 UNTRUSTED_SOURCE_TYPES = ("ai_brief", "social_post", "other")
+# Ingestion channels whose records are ALWAYS untrusted, whatever they claim.
+UNTRUSTED_CHANNELS = ("grok_brief", "todd_feed")
 
 # What the statement asserts. Only "occurred" can describe a completed event.
 CLAIM_TYPES = (
@@ -120,6 +122,10 @@ SECTORS = (
 
 ISO_COUNTRY = re.compile(r"^[A-Z]{2}$")
 REGION_CODES = ("EU", "GCC", "GLOBAL", "MENA", "EMEA", "APAC", "LATAM")
+
+
+TUPLE_FIELDS = ("geographies", "sectors", "affected_deal_ids", "affected_company_ids",
+                "upstream_geography", "upstream_sectors", "lead_urls")
 
 
 class SchemaError(ValueError):
@@ -235,8 +241,16 @@ class EvidenceRecord:
     revises_evidence_id: Optional[str] = None
     revision_type: Optional[str] = None
     claimed_status_by_source: Optional[str] = None  # what the input asserted; NEVER trusted
-    ingested_via: str = "manual"                    # "manual" | "grok_brief" | "fixture"
+    ingested_via: str = "manual"                    # "manual" | "grok_brief" | "todd_feed" | "fixture"
     notes: str = ""
+    # upstream provenance (relayed feeds such as Todd's brief) — audit only
+    relayed_by: Optional[str] = None
+    upstream_source_kind: Optional[str] = None
+    upstream_claim_type: Optional[str] = None
+    upstream_geography: tuple = ()
+    upstream_sectors: tuple = ()
+    lead_urls: tuple = ()                           # primary-source LEADS; never evidence
+    provenance: Optional[str] = None                # e.g. "file#line sha256=..." of the raw input
 
     # derived (filled by validate())
     event_id: str = ""
@@ -282,10 +296,16 @@ class EvidenceRecord:
             url_host(self.source_url)
         except SchemaError as exc:
             errs.append(str(exc))
-        if self.ingested_via == "grok_brief" and self.source_type not in UNTRUSTED_SOURCE_TYPES:
-            errs.append("a Grok/X brief must be staged as ai_brief/social_post, never as "
-                        "primary or reputable secondary — cite the underlying source as "
-                        "its own record once it has been retrieved")
+        if self.ingested_via in UNTRUSTED_CHANNELS and (
+                self.source_type not in UNTRUSTED_SOURCE_TYPES or self.retrieved_by_reviewer):
+            errs.append("a Grok/X/Todd relayed item must be staged as an untrusted, "
+                        "unretrieved record (ai_brief/social_post/other) — cite the "
+                        "underlying source as its own record once a reviewer retrieved it")
+        for u in self.lead_urls:
+            try:
+                url_host(u)
+            except SchemaError as exc:
+                errs.append(f"lead_urls: {exc}")
         if self.source_type == "primary_official" and not errs:
             if primary_authority(self.source_url, primary_registry) is None:
                 errs.append(f"primary_official URL host {url_host(self.source_url)!r} is not "
@@ -320,10 +340,9 @@ class EvidenceRecord:
                             self.publication_timestamp, self.revises_evidence_id,
                             self.stance)[:16].upper()
         d = asdict(self)
-        d.update(event_id=eid, evidence_id=vid, known_at_basis=basis,
-                 geographies=tuple(self.geographies), sectors=tuple(self.sectors),
-                 affected_deal_ids=tuple(self.affected_deal_ids),
-                 affected_company_ids=tuple(self.affected_company_ids))
+        d.update(event_id=eid, evidence_id=vid, known_at_basis=basis)
+        for k in TUPLE_FIELDS:
+            d[k] = tuple(d[k])
         return EvidenceRecord(**d)
 
     # -------------------------------------------------------------- derived times
@@ -344,14 +363,14 @@ class EvidenceRecord:
 
     def to_json(self) -> str:
         d = asdict(self)
-        for k in ("geographies", "sectors", "affected_deal_ids", "affected_company_ids"):
+        for k in TUPLE_FIELDS:
             d[k] = list(d[k])
         return json.dumps(d, sort_keys=True, ensure_ascii=False)
 
     @staticmethod
     def from_dict(d: dict) -> "EvidenceRecord":
         d = dict(d)
-        for k in ("geographies", "sectors", "affected_deal_ids", "affected_company_ids"):
+        for k in TUPLE_FIELDS:
             d[k] = tuple(d.get(k) or ())
         allowed = set(EvidenceRecord.__dataclass_fields__)
         unknown = set(d) - allowed

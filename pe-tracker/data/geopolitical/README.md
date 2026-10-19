@@ -19,7 +19,13 @@ and `docs/V1_READINESS_REPORT.md`.
 - Athena primary-source pass on Todd `events-2026-10-19.leads.jsonl`:
   - **1 VERIFIED_PRIMARY** (White House Graham Act waiver — reviewer-retrieved `primary_official` update revision)
   - **3 ATTRIBUTED_CLAIM** (MVS energy attack partial; UKMTO SoH attack counts partial; Tasnim/IRGC mine attributions)
-  - **8 UNCONFIRMED** (4 no leads; 2 leads unreachable/403; 1 leads do not support claim; 1 IRNA body unreachable)
+  - **8 UNCONFIRMED** (then)
+- Athena v2 pass on Todd `events-2026-10-19.leads.v2.jsonl` (alternate official copies):
+  - **Graham Act** — GovInfo PLAW-119publ111 PDF+HTML added as corroborating provenance; status unchanged **VERIFIED_PRIMARY**
+  - **S.5653 BAAJA** — GovInfo bill text confirms introduction; Nov 9 cloture not in bill; CRS IN12746 not official → **ATTRIBUTED_CLAIM**
+  - **Araghchi Hormuz** — en.mfa.ir confirms seven-day/seven-point plan; not CBS sixth/seventh-day wording → **ATTRIBUTED_CLAIM**
+  - **NY legislators** — no new official alternate → stays **UNCONFIRMED**
+- Cluster totals after v2: **1 VERIFIED_PRIMARY**, **5 ATTRIBUTED_CLAIM**, **6 UNCONFIRMED**
 - Provenance on reviewer rows: URL + SHA-256 of fetched bytes + `retrieved_at` (fetched bodies not committed)
 - Still excluded from active features / fs_v1; `execution_authorized=false`
 

@@ -40,8 +40,6 @@ first_walkforward_v1 cohort: {'in_frozen_cohort_N62': 62, 'outside_cohort': 67}
 
 ## Verified geopolitical event timeline
 
-**No VERIFIED_PRIMARY or CORROBORATED_SECONDARY events in the ledger.**
-
 ## Geopolitical exposure by sector
 
 **No validated event→deal exposure links.**
@@ -50,10 +48,10 @@ first_walkforward_v1 cohort: {'in_frozen_cohort_N62': 62, 'outside_cohort': 67}
 
 | Status | Clusters |
 |---|---:|
-| VERIFIED_PRIMARY | 0 |
+| VERIFIED_PRIMARY | 1 |
 | CORROBORATED_SECONDARY | 0 |
-| ATTRIBUTED_CLAIM | 0 |
-| UNCONFIRMED | 12 |
+| ATTRIBUTED_CLAIM | 3 |
+| UNCONFIRMED | 8 |
 | DISPUTED | 0 |
 | RETRACTED | 0 |
 

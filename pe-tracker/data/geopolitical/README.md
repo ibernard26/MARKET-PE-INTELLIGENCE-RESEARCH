@@ -13,15 +13,16 @@ path. Grok/X briefs and Todd-relayed items are staged as untrusted
 can never verify an event by themselves. See `docs/GEOPOLITICAL_INTELLIGENCE_PLAN.md`
 and `docs/V1_READINESS_REPORT.md`.
 
-## Current ledger state (2026-10-19 ingest)
+## Current ledger state (2026-10-19)
 
-- Source: `/home/box/shared/todd-news-brief/events-2026-10-19.jsonl` (17 lines)
-- Accepted: 12 (all `UNCONFIRMED`, `ingested_via=todd_feed`)
-- Rejected: 5 (`claim_type=market_data` — series belong in the FRED store)
-- Re-ingest: idempotent (12 duplicates, 0 new lines)
-- Null `publication_timestamp`: 2 of 12; null `event_valid_timestamp`: 11 of 12
-- Provenance on each row: `events-2026-10-19.jsonl#L<n> sha256=<raw-line>` (filename only; no absolute path)
-- Primary-source verification: **not started** — waits on Todd's `primary_source_leads`
+- Source feed: Todd `events-2026-10-19.jsonl` (12 UNCONFIRMED accepted; 5 market_data rejected)
+- Athena primary-source pass on Todd `events-2026-10-19.leads.jsonl`:
+  - **1 VERIFIED_PRIMARY** (White House Graham Act waiver — reviewer-retrieved `primary_official` update revision)
+  - **3 ATTRIBUTED_CLAIM** (MVS energy attack partial; UKMTO SoH attack counts partial; Tasnim/IRGC mine attributions)
+  - **8 UNCONFIRMED** (4 no leads; 2 leads unreachable/403; 1 leads do not support claim; 1 IRNA body unreachable)
+- Provenance on reviewer rows: URL + SHA-256 of fetched bytes + `retrieved_at` (fetched bodies not committed)
+- Still excluded from active features / fs_v1; `execution_authorized=false`
+
 
 Pilots / dry runs of relayed feeds should still use a staging ledger OUTSIDE this
 directory when experimenting. Promoting a verified day's feed into this ledger is a

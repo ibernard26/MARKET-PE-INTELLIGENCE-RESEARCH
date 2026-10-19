@@ -51,6 +51,7 @@ become an alternate canonical writer.
 | Data readiness | `src/model/data_quality.py` | Dataset-quality report and `MODEL_DATA_STATUS` gate. |
 | Registry | `src/model/registry.py`, `docs/MODEL_RUN_REGISTRY.md` | Fitted artifacts keyed by `model_run_id` (SHA-256 of run identity). Version+cutoff may be shared by many runs. Predictions FK to `model_run_id`; immutable; DB rejects lookahead. |
 | Use | `decision.py`, `backtest.py`, `bridge.py` | Trade decisions are kept separate from the probability model. The backtester only uses a p_break that was available at entry. Break losses without a sourced exit price are labelled *modeled*, never *realized*. |
+| Geopolitical staging (research only) | `src/geo_intel/`, `data/geopolitical/` | Append-only evidence ledger outside the canonical store. Verification status (VERIFIED_PRIMARY … RETRACTED) is derived as of T; Grok/X briefs are untrusted. Nothing is an fs_v1 feature or reaches decisions. See `GEOPOLITICAL_INTELLIGENCE_PLAN.md`. |
 
 ## Where to start reading
 1. `schema.sql`: the data contract.

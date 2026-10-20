@@ -30,6 +30,19 @@ and `docs/V1_READINESS_REPORT.md`.
 - Still excluded from active features / fs_v1; `execution_authorized=false`
 
 
+## Ledger update (2026-10-20, branch `research/geo-ledger-2026-10-20`)
+
+- Source feed: Todd `events-2026-10-20.jsonl` (19 lines): **15 accepted as UNCONFIRMED**, **4 market_data rejected** at intake; re-ingest idempotent (15 duplicate, 4 rejected). The 23 prior rows are byte-identical (append-only).
+- Timestamps kept null where the source gave none (never inferred): 10 of 19 items lack `published_at`, 17 lack `event_time`; flagged, not repaired.
+- No `primary_source_leads` in today's feed, so no reviewer verification pass yet. All 15 new clusters are untrusted-only.
+- Review flags (not auto-merged; cross-source clustering is a reviewed step):
+  - CNBC Oct 20 IRGC "two non-compliant tankers ablaze" may overlap existing cluster `GEO-8CEC392AD45F` (Oct 17-19 IRGC mine/tanker reports).
+  - PA House HB 1667 / HB 2674 items are relayed as `primary_official` but `pahouse.com` is a caucus press site, not a registered primary domain; as party statements they cap at ATTRIBUTED_CLAIM even once retrieved. The official record would be the PA General Assembly bill history.
+  - Pakistan army chief/Tehran item rests only on an X trend summary (`ai_brief`); stays UNCONFIRMED until a primary source corroborates it.
+  - TipRanks "GM/UAL/NFLX earnings today" is a schedule note, not a geopolitical event; kept but low relevance.
+- Cluster totals after Oct 20 load: **1 VERIFIED_PRIMARY**, **5 ATTRIBUTED_CLAIM**, **21 UNCONFIRMED** (27 clusters, 38 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.
+
 Pilots / dry runs of relayed feeds should still use a staging ledger OUTSIDE this
 directory when experimenting. Promoting a verified day's feed into this ledger is a
 reviewed step (this file documents the 2026-10-19 promotion).

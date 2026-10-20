@@ -1,0 +1,1971 @@
+{
+ "protocol": "docs/PREREG_COMMODITY_EXPOSURE_COVERAGE_v2.md",
+ "blinded": true,
+ "contains_first_pass_labels": false,
+ "reviewer": "AI-assisted, run separately by Isaiah Bernard; not independent human review",
+ "deals": {
+  "DEAL-ANN-ASCENA-2015": {
+   "announce_date": "2015-05-18",
+   "parties": [
+    {
+     "party": "target",
+     "name": "ANN INC.",
+     "cik": 874214,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "ANN INC.",
+      "sic_context_only": "5621",
+      "sic_description_context_only": "Retail-Women's Clothing Stores"
+     },
+     "filings": [
+      {
+       "accession": "0000874214-15-000001",
+       "form": "10-K",
+       "filing_date": "2015-03-13",
+       "acceptance_et": "2015-03-13T14:42:01-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/874214/000087421415000001/ann_10kx2014.htm",
+       "sections": {
+        "1": [
+         5908,
+         38746
+        ],
+        "1A": [
+         38746,
+         39405
+        ],
+        "7": [
+         89663,
+         147594
+        ],
+        "7A": [
+         147594,
+         148827
+        ]
+       },
+       "excerpts_shown": 34,
+       "excerpts_total": 34
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "ASCENA RETAIL GROUP",
+     "cik": 1498301,
+     "identity": {
+      "source_accession": "0001193125-15-191007",
+      "source_form": "8-K",
+      "source_filing_date": "2015-05-18",
+      "source_acceptance_et": "2015-05-18T08:32:38",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "Ascena Retail Group, Inc",
+      "parent_quote": "tment Letter. iii. AGREEMENT AND PLAN OF MERGER. This AGREEMENT AND PLAN OF MERGER, dated as of May 17, 2015 (this \u201cAgreement\u201d), is made by and among Ascena Retail Group, Inc., a Delaware corporation (\u201cParent\u201d), Avian Acquisition Corp., a Delaware corporation",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "Ascena Retail Group, Inc",
+      "sec_name": "Mahwah Bergen Retail Group, Inc.",
+      "manifest_name_consistent": true,
+      "status": "resolved",
+      "unknown_reason": "",
+      "sic_context_only": "5600",
+      "sic_description_context_only": "Retail-Apparel & Accessory Stores"
+     },
+     "filings": [
+      {
+       "accession": "0001498301-14-000039",
+       "form": "10-K",
+       "filing_date": "2014-09-23",
+       "acceptance_et": "2014-09-22T17:37:51-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1498301/000149830114000039/asna10-k7262014.htm",
+       "sections": {
+        "1": [
+         8480,
+         24272
+        ],
+        "1A": [
+         32666,
+         79849
+        ],
+        "7": [
+         90857,
+         101948
+        ],
+        "7A": [
+         216378,
+         216552
+        ]
+       },
+       "excerpts_shown": 38,
+       "excerpts_total": 38
+      },
+      {
+       "accession": "0001498301-15-000010",
+       "form": "10-Q",
+       "filing_date": "2015-03-03",
+       "acceptance_et": "2015-03-03T16:30:41-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1498301/000149830115000010/asna10q-q2fy15.htm",
+       "sections": {
+        "1A": [
+         119145,
+         119526
+        ]
+       },
+       "excerpts_shown": 5,
+       "excerpts_total": 5
+      }
+     ]
+    }
+   ]
+  },
+  "DEAL-APC-OXY-2019": {
+   "announce_date": "2019-05-09",
+   "parties": [
+    {
+     "party": "target",
+     "name": "Anadarko Petroleum Corporation",
+     "cik": 773910,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "ANADARKO PETROLEUM CORP",
+      "sic_context_only": "1311",
+      "sic_description_context_only": "Crude Petroleum & Natural Gas"
+     },
+     "filings": [
+      {
+       "accession": "0000773910-19-000009",
+       "form": "10-K",
+       "filing_date": "2019-02-14",
+       "acceptance_et": "2019-02-14T17:23:13-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/773910/000077391019000009/apc201810k-10k.htm",
+       "sections": {
+        "1A": [
+         98309,
+         112466
+        ],
+        "7": [
+         177415,
+         177696
+        ],
+        "7A": [
+         265693,
+         266775
+        ]
+       },
+       "excerpts_shown": 80,
+       "excerpts_total": 271
+      },
+      {
+       "accession": "0000773910-19-000034",
+       "form": "10-Q",
+       "filing_date": "2019-05-08",
+       "acceptance_et": "2019-05-08T14:01:49-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/773910/000077391019000034/apc20191q-10q.htm",
+       "sections": {
+        "1A": [
+         136305,
+         136461
+        ]
+       },
+       "excerpts_shown": 57,
+       "excerpts_total": 57
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Occidental Petroleum Corporation",
+     "cik": null,
+     "identity": {
+      "source_accession": "0000950142-19-001038",
+      "source_form": "425",
+      "source_filing_date": "2019-05-09",
+      "source_acceptance_et": "2019-05-09T16:21:06",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "",
+      "parent_quote": "",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": "",
+      "status": "unknown",
+      "unknown_reason": "acquirer_not_identified_in_merger_filing",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-BARRY-MRGB-2014": {
+   "announce_date": "2014-05-02",
+   "parties": [
+    {
+     "party": "target",
+     "name": "BARRY R G CORP /OH/",
+     "cik": 749872,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "BARRY R G CORP /OH/",
+      "sic_context_only": "3140",
+      "sic_description_context_only": "Footwear, (No Rubber)"
+     },
+     "filings": [
+      {
+       "accession": "0001193125-13-363944",
+       "form": "10-K",
+       "filing_date": "2013-09-11",
+       "acceptance_et": "2013-09-11T14:49:22-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/749872/000119312513363944/d544497d10k.htm",
+       "sections": {
+        "1": [
+         10560,
+         14655
+        ],
+        "1A": [
+         75572,
+         103979
+        ],
+        "7": [
+         67828,
+         70089
+        ],
+        "7A": [
+         126698,
+         128257
+        ]
+       },
+       "excerpts_shown": 33,
+       "excerpts_total": 33
+      },
+      {
+       "accession": "0000749872-14-000006",
+       "form": "10-Q",
+       "filing_date": "2014-02-05",
+       "acceptance_et": "2014-02-05T17:25:32-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/749872/000074987214000006/dfz_20131228x10q.htm",
+       "sections": {
+        "1A": [
+         6130,
+         7618
+        ],
+        "7": [
+         81860,
+         83428
+        ]
+       },
+       "excerpts_shown": 11,
+       "excerpts_total": 11
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "MRGB HOLD CO",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001193125-14-178569",
+      "source_form": "8-K",
+      "source_filing_date": "2014-05-02",
+      "source_acceptance_et": "2014-05-02T08:06:44",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "MRGB Hold Co",
+      "parent_quote": "nitive Agreement. On May 1, 2014, R. G. Barry Corporation (the \u201cCompany\u201d) entered into an Agreement and Plan of Merger (the \u201cMerger Agreement\u201d), with MRGB Hold Co. (\u201cParent\u201d) and MRVK Hold Co., a wholly-owned direct subsidia",
+      "ultimate_parent": "Mill Road Capital II",
+      "ultimate_quote": "ent\u201d) and MRVK Hold Co., a wholly-owned direct subsidiary of Parent (\u201cMerger Sub\u201d). Parent and Merger Sub are currently wholly-owned subsidiaries of Mill Road Capital II, L.P. (\u201cMill Road\u201d). The Merger Agreeme",
+      "pe_signal": true,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": true,
+      "status": "unknown",
+      "unknown_reason": "acquirer_pe_buyer_unresolved",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-BLYTH-CARLYL-2015": {
+   "announce_date": "2015-08-31",
+   "parties": [
+    {
+     "party": "target",
+     "name": "BLYTH INC",
+     "cik": 921503,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "BLYTH INC",
+      "sic_context_only": "3990",
+      "sic_description_context_only": "Miscellaneous Manufacturing Industries"
+     },
+     "filings": [
+      {
+       "accession": "0000921503-15-000013",
+       "form": "10-K",
+       "filing_date": "2015-03-16",
+       "acceptance_et": "2015-03-16T16:19:24-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/921503/000092150315000013/bth-12312014x10k.htm",
+       "sections": {
+        "1": [
+         11379,
+         27874
+        ],
+        "1A": [
+         27874,
+         28612
+        ],
+        "7": [
+         28612,
+         92539
+        ],
+        "7A": [
+         160180,
+         164240
+        ]
+       },
+       "excerpts_shown": 45,
+       "excerpts_total": 45
+      },
+      {
+       "accession": "0000921503-15-000050",
+       "form": "10-Q",
+       "filing_date": "2015-08-06",
+       "acceptance_et": "2015-08-06T17:18:43-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/921503/000092150315000050/bth-6302015x10q.htm",
+       "sections": {
+        "1A": [
+         118426,
+         119164
+        ]
+       },
+       "excerpts_shown": 36,
+       "excerpts_total": 36
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "The Carlyle Group",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001193125-15-307511",
+      "source_form": "8-K",
+      "source_filing_date": "2015-08-31",
+      "source_acceptance_et": "2015-08-31T08:11:06",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "CB Shine Holdings, LLC",
+      "parent_quote": ". Annex I. Offer Conditions. (iii). AGREEMENT AND PLAN OF MERGER. This AGREEMENT AND PLAN OF MERGER (this \u201cAgreement\u201d) is made and entered into as of August 30, 2015 by and among CB Shine Holdings, LLC, a Delaware limited liability company (\u201cParent\u201d), CB Shine Merger Sub, Inc., a Delaware corporatio",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": false,
+      "status": "unknown",
+      "unknown_reason": "acquirer_no_unique_sec_registrant",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-CEC-APOLLO-2014": {
+   "announce_date": "2014-01-16",
+   "parties": [
+    {
+     "party": "target",
+     "name": "CEC ENTERTAINMENT INC",
+     "cik": 813920,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "CEC ENTERTAINMENT INC",
+      "sic_context_only": "5812",
+      "sic_description_context_only": "Retail-Eating  Places"
+     },
+     "filings": [
+      {
+       "accession": "0001193125-13-069499",
+       "form": "10-K",
+       "filing_date": "2013-02-21",
+       "acceptance_et": "2013-02-21T17:01:32-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/813920/000119312513069499/d446272d10k.htm",
+       "sections": {
+        "1": [
+         8528,
+         13393
+        ],
+        "1A": [
+         28535,
+         63081
+        ],
+        "7": [
+         77686,
+         78265
+        ],
+        "7A": [
+         154876,
+         157798
+        ]
+       },
+       "excerpts_shown": 41,
+       "excerpts_total": 41
+      },
+      {
+       "accession": "0000813920-13-000042",
+       "form": "10-Q",
+       "filing_date": "2013-10-31",
+       "acceptance_et": "2013-10-31T16:11:08-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/813920/000081392013000042/cecfy201310-qq3.htm",
+       "sections": {
+        "1A": [
+         100246,
+         100367
+        ]
+       },
+       "excerpts_shown": 9,
+       "excerpts_total": 9
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Apollo Global Management",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001193125-14-013338",
+      "source_form": "8-K",
+      "source_filing_date": "2014-01-16",
+      "source_acceptance_et": "2014-01-16T17:21:54",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "Queso Holdings Inc",
+      "parent_quote": "01. Entry into a Material Definitive Agreement. Merger Agreement. On January 15, 2014, CEC Entertainment, Inc., a Kansas corporation (the \u201cCompany\u201d), Queso Holdings Inc. (\u201cParent\u201d), a Delaware corporation, and Q Merger Sub Inc. (\u201c",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": false,
+      "status": "unknown",
+      "unknown_reason": "acquirer_no_unique_sec_registrant",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-CERN-ORCL-2021": {
+   "announce_date": "2021-12-20",
+   "parties": [
+    {
+     "party": "target",
+     "name": "Cerner Corporation",
+     "cik": 804753,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "CERNER Corp",
+      "sic_context_only": "7373",
+      "sic_description_context_only": "Services-Computer Integrated Systems Design"
+     },
+     "filings": [
+      {
+       "accession": "0000804753-21-000009",
+       "form": "10-K",
+       "filing_date": "2021-02-19",
+       "acceptance_et": "2021-02-19T16:06:55-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/804753/000080475321000009/cern-20201231.htm",
+       "sections": {
+        "1": [
+         37556,
+         81469
+        ],
+        "1A": [
+         81469,
+         154861
+        ],
+        "7": [
+         160778,
+         168647
+        ],
+        "7A": [
+         209822,
+         211453
+        ]
+       },
+       "excerpts_shown": 34,
+       "excerpts_total": 34
+      },
+      {
+       "accession": "0000804753-21-000052",
+       "form": "10-Q",
+       "filing_date": "2021-10-29",
+       "acceptance_et": "2021-10-29T16:02:19-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/804753/000080475321000052/cern-20210930.htm",
+       "sections": {},
+       "excerpts_shown": 11,
+       "excerpts_total": 11
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Oracle Corporation",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001193125-21-363898",
+      "source_form": "8-K",
+      "source_filing_date": "2021-12-22",
+      "source_acceptance_et": "2021-12-21T20:06:33",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "OC Acquisition LLC",
+      "parent_quote": "ment. On December 20, 2021, Cerner Corporation (\u201cCerner\u201d or the \u201cCompany\u201d) entered into an Agreement and Plan of Merger (the \u201cMerger Agreement\u201d) with OC Acquisition LLC (\u201cParent\u201d), Cedar Acquisition Corporation (\u201cMerger Subsidiar",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": false,
+      "status": "unknown",
+      "unknown_reason": "acquirer_no_unique_sec_registrant",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-CPRI-TPR-2023": {
+   "announce_date": "2023-08-10",
+   "parties": [
+    {
+     "party": "target",
+     "name": "Capri Holdings Limited",
+     "cik": 1530721,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "Capri Holdings Ltd",
+      "sic_context_only": "3100",
+      "sic_description_context_only": "Leather & Leather Products"
+     },
+     "filings": [
+      {
+       "accession": "0001530721-23-000087",
+       "form": "10-K",
+       "filing_date": "2023-05-31",
+       "acceptance_et": "2023-05-31T09:21:35-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1530721/000153072123000087/cpri-20230401.htm",
+       "sections": {
+        "1": [
+         67270,
+         97368
+        ],
+        "1A": [
+         124998,
+         156020
+        ],
+        "7": [
+         156020,
+         206962
+        ],
+        "7A": [
+         288299,
+         296479
+        ]
+       },
+       "excerpts_shown": 80,
+       "excerpts_total": 131
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Tapestry, Inc.",
+     "cik": 1116132,
+     "identity": {
+      "source_accession": "0001193125-23-208278",
+      "source_form": "8-K",
+      "source_filing_date": "2023-08-10",
+      "source_acceptance_et": "2023-08-10T09:20:28",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "TAPESTRY, INC",
+      "parent_quote": "B Articles of Merger. Annex C Plan of Merger. -iii-. AGREEMENT AND PLAN OF MERGER. This AGREEMENT AND PLAN OF MERGER (this \u201cAgreement\u201d), dated as of August 10, 2023, is by and among TAPESTRY, INC. , a Maryland corporation (\u201cParent\u201d), SUNRISE MERGER SUB, INC. , a British Virgin Isla",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "TAPESTRY, INC",
+      "sec_name": "TAPESTRY, INC.",
+      "manifest_name_consistent": true,
+      "status": "resolved",
+      "unknown_reason": "",
+      "sic_context_only": "3100",
+      "sic_description_context_only": "Leather & Leather Products"
+     },
+     "filings": [
+      {
+       "accession": "0001116132-22-000018",
+       "form": "10-K",
+       "filing_date": "2022-08-18",
+       "acceptance_et": "2022-08-18T16:12:31-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1116132/000111613222000018/tpr-20220702.htm",
+       "sections": {
+        "1": [
+         51409,
+         77896
+        ],
+        "1A": [
+         105587,
+         133578
+        ],
+        "7": [
+         192143,
+         200899
+        ],
+        "7A": [
+         267860,
+         276831
+        ]
+       },
+       "excerpts_shown": 80,
+       "excerpts_total": 89
+      },
+      {
+       "accession": "0001116132-23-000013",
+       "form": "10-Q",
+       "filing_date": "2023-05-11",
+       "acceptance_et": "2023-05-11T16:05:44-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1116132/000111613223000013/tpr-20230401.htm",
+       "sections": {
+        "1A": [
+         188280,
+         188388
+        ]
+       },
+       "excerpts_shown": 44,
+       "excerpts_total": 44
+      }
+     ]
+    }
+   ]
+  },
+  "DEAL-EA-PIFSLAFF-2025": {
+   "announce_date": "2025-09-28",
+   "parties": [
+    {
+     "party": "target",
+     "name": "Electronic Arts Inc.",
+     "cik": 712515,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "ELECTRONIC ARTS INC.",
+      "sic_context_only": "7372",
+      "sic_description_context_only": "Services-Prepackaged Software"
+     },
+     "filings": [
+      {
+       "accession": "0000712515-25-000022",
+       "form": "10-K",
+       "filing_date": "2025-05-13",
+       "acceptance_et": "2025-05-13T16:05:21-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000022/ea-20250331.htm",
+       "sections": {
+        "1": [
+         45453,
+         54050
+        ],
+        "1A": [
+         63835,
+         113785
+        ],
+        "7": [
+         122489,
+         150435
+        ],
+        "7A": [
+         169189,
+         173722
+        ]
+       },
+       "excerpts_shown": 57,
+       "excerpts_total": 57
+      },
+      {
+       "accession": "0000712515-25-000030",
+       "form": "10-Q",
+       "filing_date": "2025-08-01",
+       "acceptance_et": "2025-08-01T16:08:06-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000030/ea-20250630.htm",
+       "sections": {
+        "1A": [
+         150640,
+         200666
+        ]
+       },
+       "excerpts_shown": 45,
+       "excerpts_total": 45
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Oak-Eagle AcquireCo, Inc.",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001140361-25-036415",
+      "source_form": "8-K",
+      "source_filing_date": "2025-09-29",
+      "source_acceptance_et": "2025-09-29T08:05:41",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "Oak-Eagle AcquireCo, Inc",
+      "parent_quote": "025, Electronic Arts Inc. (\u201cElectronic Arts\u201d or the \u201cCompany\u201d) entered into an Agreement and Plan of Merger (the \u201cMerger Agreement\u201d) by and among the Company, Oak-Eagle AcquireCo, Inc., a Delaware corporation (\u201cParent\u201d), and Oak-Eagle MergerCo, Inc., a Delaware corpora",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": true,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": true,
+      "status": "unknown",
+      "unknown_reason": "acquirer_pe_buyer_unresolved",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-EINSTE-JAB-2014": {
+   "announce_date": "2014-09-29",
+   "parties": [
+    {
+     "party": "target",
+     "name": "EINSTEIN NOAH RESTAURANT GROUP INC",
+     "cik": 949373,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "EINSTEIN NOAH RESTAURANT GROUP INC",
+      "sic_context_only": "5812",
+      "sic_description_context_only": "Retail-Eating  Places"
+     },
+     "filings": [
+      {
+       "accession": "0001193125-14-073832",
+       "form": "10-K",
+       "filing_date": "2014-02-28",
+       "acceptance_et": "2014-02-27T20:04:32-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/949373/000119312514073832/d629623d10k.htm",
+       "sections": {
+        "1": [
+         7644,
+         10070
+        ],
+        "1A": [
+         35675,
+         75112
+        ],
+        "7": [
+         88015,
+         88453
+        ],
+        "7A": [
+         163970,
+         167273
+        ]
+       },
+       "excerpts_shown": 80,
+       "excerpts_total": 98
+      },
+      {
+       "accession": "0001193125-14-290058",
+       "form": "10-Q",
+       "filing_date": "2014-08-01",
+       "acceptance_et": "2014-07-31T17:59:49-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/949373/000119312514290058/d736242d10q.htm",
+       "sections": {},
+       "excerpts_shown": 9,
+       "excerpts_total": 9
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "JAB Holding Company",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001193125-14-355998",
+      "source_form": "8-K",
+      "source_filing_date": "2014-09-29",
+      "source_acceptance_et": "2014-09-29T09:19:59",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "JAB Beech Inc",
+      "parent_quote": "n September 29, 2014, Einstein Noah Restaurant Group, Inc. (the \u201cCompany\u201d) entered into an Agreement and Plan of Merger (the \u201cMerger Agreement\u201d) with JAB Beech Inc. (\u201cParent\u201d) and Spruce Merger Sub Inc., an indirect wholly ow",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": true,
+      "status": "unknown",
+      "unknown_reason": "acquirer_no_unique_sec_registrant",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-ENTROP-MAXLIN-2015": {
+   "announce_date": "2015-02-03",
+   "parties": [
+    {
+     "party": "target",
+     "name": "ENTROPIC COMMUNICATIONS INC",
+     "cik": 1227930,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "ENTROPIC COMMUNICATIONS INC",
+      "sic_context_only": "3674",
+      "sic_description_context_only": "Semiconductors & Related Devices"
+     },
+     "filings": [
+      {
+       "accession": "0001227930-14-000008",
+       "form": "10-K",
+       "filing_date": "2014-02-24",
+       "acceptance_et": "2014-02-21T18:17:59-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1227930/000122793014000008/entr2013123110-k.htm",
+       "sections": {
+        "1": [
+         10147,
+         80216
+        ],
+        "1A": [
+         80216,
+         204532
+        ],
+        "7": [
+         216006,
+         216259
+        ],
+        "7A": [
+         275841,
+         280429
+        ]
+       },
+       "excerpts_shown": 80,
+       "excerpts_total": 83
+      },
+      {
+       "accession": "0001227930-14-000039",
+       "form": "10-Q",
+       "filing_date": "2014-11-10",
+       "acceptance_et": "2014-11-10T07:04:37-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1227930/000122793014000039/entr2014093010-q.htm",
+       "sections": {
+        "1A": [
+         133238,
+         265366
+        ]
+       },
+       "excerpts_shown": 62,
+       "excerpts_total": 62
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "MaxLinear",
+     "cik": 1288469,
+     "identity": {
+      "source_accession": "0001227930-15-000003",
+      "source_form": "8-K",
+      "source_filing_date": "2015-02-03",
+      "source_acceptance_et": "2015-02-03T16:29:24",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "MaxLinear, Inc",
+      "parent_quote": "ications, Inc., a Delaware corporation (the \u201cCompany\u201d), entered into an Agreement and Plan of Merger and Reorganization (the \u201cMerger Agreement\u201d) with MaxLinear, Inc., a Delaware corporation (\u201cMaxLinear\u201d), in a combined stock and cash transaction valued",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "MaxLinear, Inc",
+      "sec_name": "MAXLINEAR, INC",
+      "manifest_name_consistent": true,
+      "status": "resolved",
+      "unknown_reason": "",
+      "sic_context_only": "3674",
+      "sic_description_context_only": "Semiconductors & Related Devices"
+     },
+     "filings": [
+      {
+       "accession": "0001288469-14-000003",
+       "form": "10-K",
+       "filing_date": "2014-02-07",
+       "acceptance_et": "2014-02-06T18:14:43-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1288469/000128846914000003/mxl-20131231x10k.htm",
+       "sections": {
+        "1": [
+         7213,
+         53775
+        ],
+        "1A": [
+         55886,
+         56828
+        ],
+        "7": [
+         159690,
+         205050
+        ],
+        "7A": [
+         205050,
+         207103
+        ]
+       },
+       "excerpts_shown": 55,
+       "excerpts_total": 55
+      },
+      {
+       "accession": "0001288469-14-000032",
+       "form": "10-Q",
+       "filing_date": "2014-10-30",
+       "acceptance_et": "2014-10-30T17:05:22-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1288469/000128846914000032/mxl-2014930x10q.htm",
+       "sections": {
+        "1A": [
+         84449,
+         85521
+        ]
+       },
+       "excerpts_shown": 29,
+       "excerpts_total": 29
+      }
+     ]
+    }
+   ]
+  },
+  "DEAL-IMPRIV-THOMA-2016": {
+   "announce_date": "2016-07-13",
+   "parties": [
+    {
+     "party": "target",
+     "name": "Imprivata Inc",
+     "cik": 1328015,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "Imprivata Inc",
+      "sic_context_only": "7372",
+      "sic_description_context_only": "Services-Prepackaged Software"
+     },
+     "filings": [
+      {
+       "accession": "0001564590-16-013831",
+       "form": "10-K",
+       "filing_date": "2016-03-02",
+       "acceptance_et": "2016-03-01T20:05:06-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1328015/000156459016013831/impr-10k_20151231.htm",
+       "sections": {
+        "1": [
+         7513,
+         48490
+        ],
+        "1A": [
+         48490,
+         129063
+        ],
+        "7": [
+         156709,
+         157334
+        ],
+        "7A": [
+         232010,
+         234887
+        ]
+       },
+       "excerpts_shown": 35,
+       "excerpts_total": 35
+      },
+      {
+       "accession": "0001564590-16-018180",
+       "form": "10-Q",
+       "filing_date": "2016-05-06",
+       "acceptance_et": "2016-05-06T11:12:54-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1328015/000156459016018180/impr-10q_20160331.htm",
+       "sections": {
+        "1A": [
+         109173,
+         190934
+        ]
+       },
+       "excerpts_shown": 26,
+       "excerpts_total": 26
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Thoma Bravo",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001193125-16-646873",
+      "source_form": "8-K",
+      "source_filing_date": "2016-07-13",
+      "source_acceptance_et": "2016-07-13T08:08:33",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "Project Brady Holdings, LLC",
+      "parent_quote": "ement. Merger Agreement. On July 13, 2016, Imprivata, Inc. (the \u201cCompany\u201d) entered into an Agreement and Plan of Merger (the \u201cMerger Agreement\u201d) with Project Brady Holdings, LLC (\u201cParent\u201d) and Project Brady Merger Sub, Inc., a wholly-owne",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": true,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": false,
+      "status": "unknown",
+      "unknown_reason": "acquirer_pe_buyer_unresolved",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-INFORM-ITALIC-2015": {
+   "announce_date": "2015-04-07",
+   "parties": [
+    {
+     "party": "target",
+     "name": "INFORMATICA CORP",
+     "cik": 1080099,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "INFORMATICA LLC",
+      "sic_context_only": "7372",
+      "sic_description_context_only": "Services-Prepackaged Software"
+     },
+     "filings": [
+      {
+       "accession": "0001080099-15-000006",
+       "form": "10-K",
+       "filing_date": "2015-02-26",
+       "acceptance_et": "2015-02-26T17:12:01-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1080099/000108009915000006/infa-20141231x10k.htm",
+       "sections": {
+        "1": [
+         5106,
+         7138
+        ],
+        "1A": [
+         30063,
+         125457
+        ],
+        "7": [
+         140109,
+         141845
+        ],
+        "7A": [
+         236131,
+         241735
+        ]
+       },
+       "excerpts_shown": 66,
+       "excerpts_total": 66
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Italics Inc",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001047469-15-004279",
+      "source_form": "PREM14A",
+      "source_filing_date": "2015-05-01",
+      "source_acceptance_et": "2015-05-01T16:36:12",
+      "source_basis": "fallback_PREM14A",
+      "parent_entity": "Italics Inc",
+      "parent_quote": "Informatica Corporation. 100 Cardinal Way. Redwood City, CA 94063. Members of the Board:. We understand that Informatica Corporation (the\"Company\"), Italics Inc. (\"Parent\"), and Italics Merger Sub Inc., a wholly owned subs",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": true,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": true,
+      "status": "unknown",
+      "unknown_reason": "acquirer_pe_buyer_unresolved",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-LNKD-MSFT-2016": {
+   "announce_date": "2016-06-11",
+   "parties": [
+    {
+     "party": "target",
+     "name": "LinkedIn Corporation",
+     "cik": 1271024,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "LINKEDIN CORP",
+      "sic_context_only": "7370",
+      "sic_description_context_only": "Services-Computer Programming, Data Processing, Etc."
+     },
+     "filings": [
+      {
+       "accession": "0001271024-16-000035",
+       "form": "10-K",
+       "filing_date": "2016-02-12",
+       "acceptance_et": "2016-02-11T21:08:06-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1271024/000127102416000035/a20151231-10xkdocument.htm",
+       "sections": {
+        "1": [
+         8345,
+         58684
+        ],
+        "1A": [
+         61316,
+         168823
+        ],
+        "7": [
+         184336,
+         185218
+        ],
+        "7A": [
+         278784,
+         284040
+        ]
+       },
+       "excerpts_shown": 80,
+       "excerpts_total": 97
+      },
+      {
+       "accession": "0001271024-16-000043",
+       "form": "10-Q",
+       "filing_date": "2016-04-29",
+       "acceptance_et": "2016-04-28T18:13:46-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1271024/000127102416000043/a20160331-10qdocument.htm",
+       "sections": {
+        "1A": [
+         122808,
+         230856
+        ]
+       },
+       "excerpts_shown": 71,
+       "excerpts_total": 71
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Microsoft Corporation",
+     "cik": 789019,
+     "identity": {
+      "source_accession": "0001104659-16-126712",
+      "source_form": "8-K",
+      "source_filing_date": "2016-06-13",
+      "source_acceptance_et": "2016-06-13T08:39:06",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "Microsoft Corporation",
+      "parent_quote": "finitive Agreement. On June 11, 2016, LinkedIn Corporation (the \u201cCompany\u201d) entered into an Agreement and Plan of Merger (the \u201cMerger Agreement\u201d) with Microsoft Corporation (\u201cParent\u201d) and Liberty Merger Sub Inc., a wholly owned subsi",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "Microsoft Corporation",
+      "sec_name": "MICROSOFT CORP",
+      "manifest_name_consistent": true,
+      "status": "resolved",
+      "unknown_reason": "",
+      "sic_context_only": "7372",
+      "sic_description_context_only": "Services-Prepackaged Software"
+     },
+     "filings": [
+      {
+       "accession": "0001193125-15-272806",
+       "form": "10-K",
+       "filing_date": "2015-07-31",
+       "acceptance_et": "2015-07-31T15:07:52-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312515272806/d918813d10k.htm",
+       "sections": {
+        "1": [
+         6388,
+         8740
+        ],
+        "1A": [
+         64135,
+         68553
+        ],
+        "7": [
+         112782,
+         115593
+        ],
+        "7A": [
+         187999,
+         190902
+        ]
+       },
+       "excerpts_shown": 48,
+       "excerpts_total": 48
+      },
+      {
+       "accession": "0001193125-16-550254",
+       "form": "10-Q",
+       "filing_date": "2016-04-21",
+       "acceptance_et": "2016-04-21T16:10:33-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312516550254/d256147d10q.htm",
+       "sections": {
+        "1A": [
+         157948,
+         159082
+        ]
+       },
+       "excerpts_shown": 41,
+       "excerpts_total": 41
+      }
+     ]
+    }
+   ]
+  },
+  "DEAL-MKTG-AEGIS-2014": {
+   "announce_date": "2014-05-27",
+   "parties": [
+    {
+     "party": "target",
+     "name": "'mktg, inc.'",
+     "cik": 886475,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "'mktg, inc.'",
+      "sic_context_only": "7310",
+      "sic_description_context_only": "Services-Advertising"
+     },
+     "filings": [
+      {
+       "accession": "0001019056-13-000804",
+       "form": "10-K",
+       "filing_date": "2013-06-24",
+       "acceptance_et": "2013-06-24T17:31:08-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905613000804/mktg_10k.htm",
+       "sections": {
+        "1": [
+         5946,
+         10294
+        ],
+        "1A": [
+         10294,
+         18673
+        ],
+        "7": [
+         23014,
+         23253
+        ],
+        "7A": [
+         52965,
+         53055
+        ]
+       },
+       "excerpts_shown": 34,
+       "excerpts_total": 34
+      },
+      {
+       "accession": "0001019056-14-000207",
+       "form": "10-Q",
+       "filing_date": "2014-02-14",
+       "acceptance_et": "2014-02-14T14:24:48-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/886475/000101905614000207/mktg_3q14.htm",
+       "sections": {},
+       "excerpts_shown": 28,
+       "excerpts_total": 28
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Aegis Lifestyle",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001019056-14-000764",
+      "source_form": "8-K",
+      "source_filing_date": "2014-05-27",
+      "source_acceptance_et": "2014-05-27T16:07:35",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "Aegis Lifestyle, Inc",
+      "parent_quote": "e Time. iii. AGREEMENT AND PLAN OF MERGER. This Agreement and Plan of Merger (\u201cAgreement\u201d) is made and entered into as of May 27, 2014, by and among: Aegis Lifestyle, Inc ., a Delaware corporation (\u201cParent\u201d); Morgan Acquisition, Inc ., a Delaware corporatio",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": true,
+      "status": "unknown",
+      "unknown_reason": "acquirer_no_unique_sec_registrant",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-MXIM-ADI-2020": {
+   "announce_date": "2020-07-12",
+   "parties": [
+    {
+     "party": "target",
+     "name": "Maxim Integrated Products, Inc.",
+     "cik": 743316,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "MAXIM INTEGRATED PRODUCTS INC",
+      "sic_context_only": "3674",
+      "sic_description_context_only": "Semiconductors & Related Devices"
+     },
+     "filings": [
+      {
+       "accession": "0000743316-19-000024",
+       "form": "10-K",
+       "filing_date": "2019-08-21",
+       "acceptance_et": "2019-08-21T17:25:03-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/743316/000074331619000024/maxim10-kfy2019.htm",
+       "sections": {
+        "1": [
+         7785,
+         18974
+        ],
+        "1A": [
+         24319,
+         76775
+        ],
+        "7": [
+         5838,
+         7180
+        ],
+        "7A": [
+         122035,
+         126994
+        ]
+       },
+       "excerpts_shown": 46,
+       "excerpts_total": 46
+      },
+      {
+       "accession": "0000743316-20-000015",
+       "form": "10-Q",
+       "filing_date": "2020-04-29",
+       "acceptance_et": "2020-04-29T17:23:41-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/743316/000074331620000015/maximq32010-q.htm",
+       "sections": {
+        "1A": [
+         112832,
+         115921
+        ]
+       },
+       "excerpts_shown": 13,
+       "excerpts_total": 13
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Analog Devices, Inc.",
+     "cik": 6281,
+     "identity": {
+      "source_accession": "0001193125-20-191444",
+      "source_form": "425",
+      "source_filing_date": "2020-07-13",
+      "source_acceptance_et": "2020-07-13T06:24:06",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "",
+      "parent_quote": "",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "ANALOG DEVICES INC",
+      "sec_name": "ANALOG DEVICES INC",
+      "manifest_name_consistent": true,
+      "status": "resolved",
+      "unknown_reason": "",
+      "sic_context_only": "3674",
+      "sic_description_context_only": "Semiconductors & Related Devices"
+     },
+     "filings": [
+      {
+       "accession": "0000006281-19-000144",
+       "form": "10-K",
+       "filing_date": "2019-11-26",
+       "acceptance_et": "2019-11-26T21:26:04-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628119000144/adi-20191102.htm",
+       "sections": {
+        "1": [
+         39645,
+         60456
+        ],
+        "1A": [
+         77821,
+         129967
+        ],
+        "7": [
+         173174,
+         175169
+        ],
+        "7A": [
+         214199,
+         218380
+        ]
+       },
+       "excerpts_shown": 80,
+       "excerpts_total": 103
+      },
+      {
+       "accession": "0000006281-20-000087",
+       "form": "10-Q",
+       "filing_date": "2020-05-20",
+       "acceptance_et": "2020-05-20T15:20:35-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628120000087/adi-20200502.htm",
+       "sections": {
+        "1A": [
+         119030,
+         119694
+        ]
+       },
+       "excerpts_shown": 46,
+       "excerpts_total": 46
+      }
+     ]
+    }
+   ]
+  },
+  "DEAL-NUAN-MSFT-2021": {
+   "announce_date": "2021-04-11",
+   "parties": [
+    {
+     "party": "target",
+     "name": "Nuance Communications, Inc.",
+     "cik": 1002517,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "Nuance Communications, Inc.",
+      "sic_context_only": "7372",
+      "sic_description_context_only": "Services-Prepackaged Software"
+     },
+     "filings": [
+      {
+       "accession": "0001002517-20-000058",
+       "form": "10-K",
+       "filing_date": "2020-11-19",
+       "acceptance_et": "2020-11-19T16:47:49-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1002517/000100251720000058/nuan0930202010-k.htm",
+       "sections": {
+        "1": [
+         39873,
+         71628
+        ],
+        "1A": [
+         71628,
+         124697
+        ],
+        "7": [
+         133500,
+         175067
+        ],
+        "7A": [
+         227435,
+         231607
+        ]
+       },
+       "excerpts_shown": 37,
+       "excerpts_total": 37
+      },
+      {
+       "accession": "0001002517-21-000018",
+       "form": "10-Q",
+       "filing_date": "2021-02-09",
+       "acceptance_et": "2021-02-09T16:05:48-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1002517/000100251721000018/nuan-20201231.htm",
+       "sections": {
+        "1A": [
+         20483,
+         20512
+        ]
+       },
+       "excerpts_shown": 16,
+       "excerpts_total": 16
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Microsoft Corporation",
+     "cik": 789019,
+     "identity": {
+      "source_accession": "0001193125-21-113796",
+      "source_form": "8-K",
+      "source_filing_date": "2021-04-13",
+      "source_acceptance_et": "2021-04-13T06:05:03",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "Microsoft Corporation",
+      "parent_quote": "er. On April 11, 2021, Nuance Communications, Inc. (the \u201cCompany\u201d or \u201cwe\u201d) entered into an Agreement and Plan of Merger (the \u201cMerger Agreement\u201d) with Microsoft Corporation (\u201cParent\u201d), a corporation organized under the laws of Washin",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "Microsoft Corporation",
+      "sec_name": "MICROSOFT CORP",
+      "manifest_name_consistent": true,
+      "status": "resolved",
+      "unknown_reason": "",
+      "sic_context_only": "7372",
+      "sic_description_context_only": "Services-Prepackaged Software"
+     },
+     "filings": [
+      {
+       "accession": "0001564590-20-034944",
+       "form": "10-K",
+       "filing_date": "2020-07-30",
+       "acceptance_et": "2020-07-30T20:44:46-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/msft-10k_20200630.htm",
+       "sections": {
+        "1": [
+         44713,
+         47488
+        ],
+        "1A": [
+         105345,
+         109723
+        ],
+        "7": [
+         177325,
+         177823
+        ],
+        "7A": [
+         41993,
+         42067
+        ]
+       },
+       "excerpts_shown": 46,
+       "excerpts_total": 46
+      },
+      {
+       "accession": "0001564590-21-002316",
+       "form": "10-Q",
+       "filing_date": "2021-01-26",
+       "acceptance_et": "2021-01-26T16:09:34-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/789019/000156459021002316/msft-10q_20201231.htm",
+       "sections": {
+        "1A": [
+         168572,
+         172122
+        ]
+       },
+       "excerpts_shown": 37,
+       "excerpts_total": 37
+      }
+     ]
+    }
+   ]
+  },
+  "DEAL-ODP-SPLS-2015": {
+   "announce_date": "2015-02-04",
+   "parties": [
+    {
+     "party": "target",
+     "name": "Office Depot, Inc.",
+     "cik": 800240,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "ODP Corp",
+      "sic_context_only": "5940",
+      "sic_description_context_only": "Retail-Miscellaneous Shopping Goods Stores"
+     },
+     "filings": [
+      {
+       "accession": "0001193125-14-065991",
+       "form": "10-K",
+       "filing_date": "2014-02-25",
+       "acceptance_et": "2014-02-25T06:14:00-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312514065991/d654584d10k.htm",
+       "sections": {
+        "1": [
+         7773,
+         13252
+        ],
+        "1A": [
+         41210,
+         77984
+        ],
+        "7": [
+         94671,
+         148992
+        ],
+        "7A": [
+         186015,
+         186175
+        ]
+       },
+       "excerpts_shown": 50,
+       "excerpts_total": 50
+      },
+      {
+       "accession": "0001193125-14-395039",
+       "form": "10-Q",
+       "filing_date": "2014-11-04",
+       "acceptance_et": "2014-11-04T06:54:02-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312514395039/d791986d10q.htm",
+       "sections": {},
+       "excerpts_shown": 8,
+       "excerpts_total": 8
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Staples, Inc.",
+     "cik": 791519,
+     "identity": {
+      "source_accession": "0001193125-15-033873",
+      "source_form": "8-K",
+      "source_filing_date": "2015-02-04",
+      "source_acceptance_et": "2015-02-04T17:32:34",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "Staples, Inc",
+      "parent_quote": "MENT AND PLAN OF MERGER (this \u201cAgreement\u201d), dated as of February 4, 2015, is by and among Office Depot, Inc., a Delaware corporation (the \u201cCompany\u201d), Staples, Inc., a Delaware corporation (\u201cParent\u201d), and Staples AMS, Inc., a Delaware corporation an",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "Staples, Inc",
+      "sec_name": "STAPLES INC",
+      "manifest_name_consistent": true,
+      "status": "resolved",
+      "unknown_reason": "",
+      "sic_context_only": "5940",
+      "sic_description_context_only": "Retail-Miscellaneous Shopping Goods Stores"
+     },
+     "filings": [
+      {
+       "accession": "0000791519-14-000007",
+       "form": "10-K",
+       "filing_date": "2014-03-06",
+       "acceptance_et": "2014-03-06T06:15:44-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/791519/000079151914000007/spls10-k020114.htm",
+       "sections": {
+        "1": [
+         4171,
+         34971
+        ],
+        "1A": [
+         36865,
+         64528
+        ],
+        "7": [
+         73501,
+         73670
+        ],
+        "7A": [
+         73670,
+         73895
+        ]
+       },
+       "excerpts_shown": 61,
+       "excerpts_total": 61
+      },
+      {
+       "accession": "0000791519-14-000095",
+       "form": "10-Q",
+       "filing_date": "2014-11-19",
+       "acceptance_et": "2014-11-19T06:04:14-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/791519/000079151914000095/spls10-q110114.htm",
+       "sections": {
+        "1A": [
+         112896,
+         141784
+        ]
+       },
+       "excerpts_shown": 16,
+       "excerpts_total": 16
+      }
+     ]
+    }
+   ]
+  },
+  "DEAL-ORBITZ-EXPEDI-2015": {
+   "announce_date": "2015-02-13",
+   "parties": [
+    {
+     "party": "target",
+     "name": "Orbitz Worldwide, Inc.",
+     "cik": 1394159,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "Orbitz Worldwide, Inc.",
+      "sic_context_only": "4700",
+      "sic_description_context_only": "Transportation Services"
+     },
+     "filings": [
+      {
+       "accession": "0001394159-14-000085",
+       "form": "10-K",
+       "filing_date": "2014-03-06",
+       "acceptance_et": "2014-03-06T16:14:04-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1394159/000139415914000085/oww1231201310k.htm",
+       "sections": {
+        "1": [
+         8422,
+         32949
+        ],
+        "1A": [
+         52369,
+         97043
+        ],
+        "7": [
+         142260,
+         183001
+        ],
+        "7A": [
+         212203,
+         216538
+        ]
+       },
+       "excerpts_shown": 52,
+       "excerpts_total": 52
+      },
+      {
+       "accession": "0001394159-14-000224",
+       "form": "10-Q",
+       "filing_date": "2014-11-06",
+       "acceptance_et": "2014-11-06T12:36:02-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1394159/000139415914000224/oww0930201410q.htm",
+       "sections": {
+        "1A": [
+         123604,
+         123753
+        ]
+       },
+       "excerpts_shown": 26,
+       "excerpts_total": 26
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Expedia, Inc",
+     "cik": 1324424,
+     "identity": {
+      "source_accession": "0001193125-15-048176",
+      "source_form": "8-K",
+      "source_filing_date": "2015-02-13",
+      "source_acceptance_et": "2015-02-13T07:17:34",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "EXPEDIA, INC",
+      "parent_quote": "oration. iii. AGREEMENT AND PLAN OF MERGER. This AGREEMENT AND PLAN OF MERGER, dated as of February 12, 2015 (this \u201cAgreement\u201d), is made by and among EXPEDIA, INC., a Delaware corporation (the \u201cParent\u201d), XETA, INC., a Delaware corporation and an indire",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": false,
+      "matched_name": "EXPEDIA, INC",
+      "sec_name": "Expedia Group, Inc.",
+      "manifest_name_consistent": true,
+      "status": "resolved",
+      "unknown_reason": "",
+      "sic_context_only": "4700",
+      "sic_description_context_only": "Transportation Services"
+     },
+     "filings": [
+      {
+       "accession": "0001193125-15-035706",
+       "form": "10-K",
+       "filing_date": "2015-02-06",
+       "acceptance_et": "2015-02-05T23:01:23-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1324424/000119312515035706/d838066d10k.htm",
+       "sections": {
+        "1": [
+         5127,
+         40730
+        ],
+        "1A": [
+         51330,
+         93572
+        ],
+        "7": [
+         202712,
+         203716
+        ],
+        "7A": [
+         287805,
+         294621
+        ]
+       },
+       "excerpts_shown": 60,
+       "excerpts_total": 60
+      }
+     ]
+    }
+   ]
+  },
+  "DEAL-REYNOL-IMPERI-2014": {
+   "announce_date": "2014-07-16",
+   "parties": [
+    {
+     "party": "target",
+     "name": "REYNOLDS AMERICAN INC",
+     "cik": 1275283,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "REYNOLDS AMERICAN INC",
+      "sic_context_only": "2111",
+      "sic_description_context_only": "Cigarettes"
+     },
+     "filings": [
+      {
+       "accession": "0001193125-14-044598",
+       "form": "10-K",
+       "filing_date": "2014-02-11",
+       "acceptance_et": "2014-02-11T09:56:42-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1275283/000119312514044598/d627677d10k.htm",
+       "sections": {
+        "1": [
+         5301,
+         8901
+        ],
+        "1A": [
+         56989,
+         61773
+        ],
+        "7": [
+         126651,
+         127621
+        ],
+        "7A": [
+         249268,
+         252487
+        ]
+       },
+       "excerpts_shown": 0,
+       "excerpts_total": 0
+      },
+      {
+       "accession": "0001193125-14-153912",
+       "form": "10-Q",
+       "filing_date": "2014-04-23",
+       "acceptance_et": "2014-04-23T10:00:11-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1275283/000119312514153912/d687718d10q.htm",
+       "sections": {},
+       "excerpts_shown": 0,
+       "excerpts_total": 0
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "Imperial",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001193125-14-269467",
+      "source_form": "8-K",
+      "source_filing_date": "2014-07-16",
+      "source_acceptance_et": "2014-07-15T20:05:05",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "REYNOLDS AMERICAN INC",
+      "parent_quote": "MENT AND PLAN OF MERGER (this \u201cAgreement\u201d), dated as of July 15, 2014, is entered into among LORILLARD, INC., a Delaware corporation (the \u201cCompany\u201d), REYNOLDS AMERICAN INC., a North Carolina corporation (\u201cParent\u201d), and LANTERN ACQUISITION CO., a Delaware corporat",
+      "ultimate_parent": "Imperial",
+      "ultimate_quote": "ated Agreements, the \u201cTransaction Agreements\u201d) in each case with LIGNUM-2 L.L.C., a Texas limited liability company and wholly owned subsidiary of Imperial (\u201cLignum-2\u201d), and, for certain provisio",
+      "pe_signal": false,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": true,
+      "status": "unknown",
+      "unknown_reason": "acquirer_no_unique_sec_registrant",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  },
+  "DEAL-STEINE-CATTER-2015": {
+   "announce_date": "2015-08-21",
+   "parties": [
+    {
+     "party": "target",
+     "name": "STEINER LEISURE Ltd",
+     "cik": 1018946,
+     "identity": {
+      "basis": "reviewed_manifest_cik",
+      "sec_name": "STEINER LEISURE Ltd",
+      "sic_context_only": "7200",
+      "sic_description_context_only": "Services-Personal Services"
+     },
+     "filings": [
+      {
+       "accession": "0001437749-15-003807",
+       "form": "10-K",
+       "filing_date": "2015-03-02",
+       "acceptance_et": "2015-03-02T15:53:35-05:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1018946/000143774915003807/stnr20141231_10k.htm",
+       "sections": {
+        "1": [
+         5464,
+         140359
+        ],
+        "1A": [
+         140359,
+         272441
+        ],
+        "7": [
+         288877,
+         363909
+        ],
+        "7A": [
+         364610,
+         366432
+        ]
+       },
+       "excerpts_shown": 43,
+       "excerpts_total": 43
+      },
+      {
+       "accession": "0001437749-15-015186",
+       "form": "10-Q",
+       "filing_date": "2015-08-07",
+       "acceptance_et": "2015-08-07T13:32:43-04:00",
+       "url": "https://www.sec.gov/Archives/edgar/data/1018946/000143774915015186/stnr20150630_10q.htm",
+       "sections": {
+        "1A": [
+         74009,
+         77464
+        ],
+        "7A": [
+         72698,
+         72795
+        ]
+       },
+       "excerpts_shown": 6,
+       "excerpts_total": 6
+      }
+     ]
+    },
+    {
+     "party": "acquirer",
+     "name": "CATTERTON",
+     "cik": null,
+     "identity": {
+      "source_accession": "0001193125-15-299147",
+      "source_form": "8-K",
+      "source_filing_date": "2015-08-21",
+      "source_acceptance_et": "2015-08-21T17:16:34",
+      "source_basis": "manifest_announcement_accession",
+      "parent_entity": "Inc., an international business company incorporated under the laws of the Commonwealth of The Bahamas",
+      "parent_quote": "ed under the laws of the Commonwealth of The Bahamas (the \u201cCompany\u201d), entered into an Agreement and Plan of Merger (the \u201cMerger Agreement\u201d) with Nemo Parent, Inc., an international business company incorporated under the laws of the Commonwealth of The Bahamas (\u201cParent\u201d), and Nemo Merger Sub, Inc., an international busi",
+      "ultimate_parent": "",
+      "ultimate_quote": "",
+      "pe_signal": true,
+      "matched_name": "",
+      "sec_name": "",
+      "manifest_name_consistent": false,
+      "status": "unknown",
+      "unknown_reason": "acquirer_pe_buyer_unresolved",
+      "sic_context_only": "",
+      "sic_description_context_only": ""
+     },
+     "filings": []
+    }
+   ]
+  }
+ }
+}

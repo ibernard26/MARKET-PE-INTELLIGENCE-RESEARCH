@@ -1,0 +1,167 @@
+# DEAL-APC-OXY-2019
+Announcement date: 2019-05-09. Only filings accepted before this date are evidence.
+
+## TARGET: Anadarko Petroleum Corporation
+- identity.basis: reviewed_manifest_cik
+- identity.sec_name: ANADARKO PETROLEUM CORP
+- identity.sic_context_only: 1311
+- identity.sic_description_context_only: Crude Petroleum & Natural Gas
+
+### 10-K 0000773910-19-000009
+- filed 2019-02-14; SEC acceptance (ET) 2019-02-14T17:23:13-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/773910/000077391019000009/apc201810k-10k.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1A [98309:112466], Item 7 [177415:177696], Item 7A [265693:266775]
+- excerpts: 80 of 271 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0000773910-19-000009@6016] Unless the context otherwise requires, the terms “Anadarko,” “we”, “our”, and “Company” refer to Anadarko Petroleum Corporation and its consolidated subsidiaries.
+  - [0000773910-19-000009@20929] The Company’s Exploration and Production segment actively manages Anadarko’s worldwide oil, natural-gas, and NGL sales of its production, as well as the Company’s anticipated LNG sales.
+  - [0000773910-19-000009@21115] In marketing its production, the Company attempts to minimize market-related shut-ins, maximize realized prices, and manage credit-risk exposure.
+  - [0000773910-19-000009@21261] The Company’s sales of oil, natural gas, and NGLs are generally made at market prices at the time of sale.
+  - [0000773910-19-000009@21537] The Company also engages in limited trading activities for the purpose of generating profits from exposure to changes in market prices of oil, natural gas, and NGLs.
+  - [0000773910-19-000009@21703] The Company does not engage in market-making practices and limits its marketing activities to oil, natural-gas, NGL, and LNG commodity contracts.
+  - [0000773910-19-000009@21849] The Company’s marketing-risk position is typically a net short position (reflecting agreements to sell oil, natural gas, and NGLs in the future for specific prices) that is offset by the Company’s natural long position as a producer (reflecting ownership of underlying oil and natural-gas reserves).
+  - [0000773910-19-000009@22612] The Company’s U.S. oil and NGL production is generally sold under contracts with prices based on relevant market indices, adjusted for location, quality, and transportation.
+  - [0000773910-19-000009@22786] The Company’s Algerian and Ghanaian oil is sold into international markets receiving a Brent-linked price.
+  - [0000773910-19-000009@22893] The Company controls firm transportation and fractionation capacity that ensures access to downstream markets, which enables the Company to maximize the value of its oil and NGL production.
+  - [0000773910-19-000009@23300] The Company controls firm-transportation capacity that ensures access to downstream markets, which enables the Company to maximize the value of its natural-gas production.
+  - [0000773910-19-000009@23472] From time to time, the Company stores natural gas in contracted storage facilities to minimize operational disruptions to its ongoing operations and to take advantage of seasonal price differentials.
+  - [0000773910-19-000009@23672] Normally, the Company will have forward contracts in place (physical delivery or financial derivative instruments) against stored natural gas. 8 | APC 2018 FORM 10-K .
+  - [0000773910-19-000009@25112] In 2019, the Company expects to continue its horizontal drilling programs in the Delaware and DJ basins, while commencing appraisal activity within the Powder River basin.
+  - [0000773910-19-000009@25441] Management considers the Land Grant a significant competitive advantage for Anadarko as it enhances the Company’s economic returns from production, offers drilling opportunities for the Company without expiration, and allows the Company to earn royalty revenue from third-party activity on Land Grant acreage.
+  - [0000773910-19-000009@25889] The Company’s 2018 drilling activity primarily targeted the Wolfcamp shale play, while also testing the liquids-rich Bone Spring tight sands.
+  - [0000773910-19-000009@26267] In 2018, the Company focused on securing sufficient oil takeaway capacity, ending the year with approximately 46% of its Delaware basin operated oil volume being sold at Gulf Coast markets via the Enterprise pipeline.
+  - [0000773910-19-000009@27870] Horizontal drilling results in the field continue to be strong, with enhanced economics realized through the Company’s ownership of the Land Grant and operational efficiencies in drilling and completions.
+  - [0000773910-19-000009@28153] In 2018, the Company increased its horizontal lateral length by approximately 16% and improved its footage drilled per rig-day by approximately 30% from 2017.
+  - [0000773910-19-000009@28312] The Company ended 2018 with four operated drilling rigs and two completion crews.
+  - [0000773910-19-000009@28946] In 2018, the Company invested $181 million on lease acquisitions, accumulating a 300,000 gross-acre position in the southern Powder River basin area, with significant stacked-oil potential.
+  - [0000773910-19-000009@30156] The Company plans to operate up to two floating drillships and two platform rigs in 2019.
+  - [0000773910-19-000009@30375] At Horn Mountain, the Company is successfully executing on its tie-back strategy as oil production continues to exceed expectations.
+  - [0000773910-19-000009@31488] The Company drilled a second tie-back development well in the Dorado field in the first quarter of 2018.
+  - [0000773910-19-000009@31828] Additionally, the Company leveraged its infrastructure position to generate revenue with production-handling and cost-sharing agreements on third-party volume.
+  - [0000773910-19-000009@32185] At Holstein, the Company certified the permanently installed platform drilling rig and initiated a four-well drilling program in the fourth quarter of 2017.
+  - [0000773910-19-000009@32603] Based on the success of this program, the Company plans to drill additional wells in 2019.
+  - [0000773910-19-000009@33053] At Constellation, the Company successfully drilled and completed the first development well in the second quarter of 2017.
+  - [0000773910-19-000009@33314] At Lucius, the Company successfully drilled the ninth development well in the third quarter of 2018 and encountered 230 net feet of oil pay in two Pliocene sands.
+  - [0000773910-19-000009@34223] At the K2 Complex, the Company successfully drilled and completed the twelfth development well in the second quarter of 2018.
+  - [0000773910-19-000009@35023] Anadarko’s international operations include oil, natural-gas, and NGL production and development in Algeria and Ghana, along with activities in Mozambique, where the Company continues to make progress toward an FID on an LNG development.
+  - [0000773910-19-000009@35364] In 2019, the Company expects to focus its international drilling activity in Ghana and position itself to make a final investment decision on the future LNG development in Mozambique. 2018 INTERNATIONAL OPERATIONS .
+  - [0000773910-19-000009@35808] Under this PSA, the Company is responsible for 24.5% of the development and production costs.
+  - [0000773910-19-000009@35902] The Company produces oil and NGLs through the El Merk central processing facility (CPF) in Block 208 and oil through the Hassi Berkine South and Ourhoud CPFs in Block 404A.
+  - [0000773910-19-000009@36256] The Company drilled seven development wells in 2018 and plans to continue drilling operations throughout 2019.
+  - [0000773910-19-000009@42552] For 2018 , the International geographic area consisted of proved reserves located in Algeria and Ghana, which by country and in total represented less than 15% of the Company’s total proved reserves.
+  - [0000773910-19-000009@43614] The Company’s proved-reserves product mix was 63% liquids in 2018 , 63% in 2017 and 57% in 2016 .
+  - [0000773910-19-000009@43712] The Company’s year-end 2018 proved reserves product mix was 45% oil, 37% natural gas, and 18% NGLs. 18 | APC 2018 FORM 10-K .
+  - [0000773910-19-000009@43970] Changes to the Company’s proved reserves during 2018 are summarized in the table below: .
+  - [0000773910-19-000009@44860] Combined and reported as revisions of prior estimates in the Company’s Supplemental Information on Oil and Gas Exploration and Production Activities (Supplemental Information) under Item 8 of this Form 10-K.
+  - [0000773910-19-000009@45417] The Company’s estimates of proved developed reserves, PUDs, and total proved reserves at December 31, 2018 , 2017 , and 2016 , and changes in proved reserves during the last three years are presented in the Supplemental Information under Item 8 of this Form 10-K.
+  - [0000773910-19-000009@45681] Also presented in the Supplemental Information are the Company’s estimates of future net cash flows and discounted future net cash flows from proved reserves.
+  - [0000773910-19-000009@45840] See Critical Accounting Estimates under Item 7 of this Form 10-K for additional information on the Company’s proved reserves.
+  - [0000773910-19-000009@45966] The Company has not yet filed information with a federal authority or agency with respect to its estimated total proved reserves at December 31, 2018 .
+  - [0000773910-19-000009@48051] Infill-drilling activities The Company added 158 MMBOE of PUDs associated with infill-drilling activities, with 151 MMBOE in the DJ basin, 5 MMBOE in the Lucius area in the Gulf of Mexico, and the remaining in the Ghana TEN field. – .
+  - [0000773910-19-000009@50558] Technologies Used in Proved Reserves Estimation The Company’s proved reserves additions are based on estimates generated through the integration of relevant geological, engineering, and production data, and may include the use of reliable technologies that have been demonstrated in the field to yield reasonably certain results with consistency and repeatability in the formation being evaluated or in an analogous formation as defined in the SEC regulations.
+  - [0000773910-19-000009@51775] Internal Controls over Reserves Estimation Anadarko’s estimates of proved reserves and associated future net cash flows were made solely by the Company’s engineers and are the responsibility of management.
+  - [0000773910-19-000009@51981] The Company requires that reserves estimates be made by qualified reserves estimators (QREs) as defined by the Society of Petroleum Engineers’ standards.
+  - [0000773910-19-000009@52456] All QREs receive ongoing education on the fundamentals of SEC definitions and reserves reporting through the Company’s reserves manual and internal training programs administered by the Corporate Reserves Group (CRG).
+  - [0000773910-19-000009@52674] The CRG ensures confidence in the Company’s reserves estimates by maintaining internal policies for estimating and recording reserves in compliance with applicable SEC definitions and guidance.
+  - [0000773910-19-000009@52961] The CRG is managed through the Company’s finance department, which is separate from its operating regions, and is responsible for overseeing internal reserves reviews and approving the Company’s reserves estimates.
+  - [0000773910-19-000009@53450] The Governance and Risk Committee of the Company’s Board meets with management, members of the CRG, and the Company’s independent petroleum consultants, Miller and Lents, Ltd.
+  - [0000773910-19-000009@53768] The Company’s principal engineer, who is primarily responsible for overseeing the preparation of proved reserves estimates, has over 32 years of experience in the oil and gas industry, including over 18 years as either a reserves estimator or manager.
+  - [0000773910-19-000009@54645] Third-Party Procedures and Methods Reviews M&L reviewed the procedures and methods used by Anadarko’s staff in preparing the Company’s estimates of proved reserves and future net cash flows at December 31, 2018 .
+  - [0000773910-19-000009@55344] The reviews covered 11 fields that included major assets in the United States and Africa and encompassed approximately 93% of the Company’s estimates of proved reserves and associated future net cash flows at December 31, 2018 .
+  - [0000773910-19-000009@55958] Management’s intent in retaining M&L to review its procedures and methods is to provide objective third-party input on the Company’s procedures and methods and to gather industry information applicable to reserves estimation and reporting processes. 22 | APC 2018 FORM 10-K .
+  - [0000773910-19-000009@56411] The following provides the Company’s annual sales volume, average sales prices, and average production costs per BOE for each of the last three years: .
+  - [0000773910-19-000009@58455] The Company sells oil and natural gas under a variety of contractual agreements, some of which specify the delivery of fixed and determinable quantities.
+  - [0000773910-19-000009@58609] The Company expects to fulfill these delivery commitments with existing proved developed and proved undeveloped reserves, which the Company regularly monitors to ensure sufficient availability to meet its commitments.
+  - [0000773910-19-000009@58827] If production is not sufficient to meet contractual delivery commitments, the Company may purchase commodities in the market to satisfy its delivery commitments.
+  - [0000773910-19-000009@58989] In areas where Anadarko no longer has production due to asset divestitures, the Company has entered into long-term purchase commitments to satisfy its existing delivery commitments.
+  - [0000773910-19-000009@60350] At December 31, 2018 , the Company had approximately 20.2 million net undeveloped lease acres scheduled to expire by December 31, 2019 , if the Company does not establish production or take any other action to extend the terms.
+  - [0000773910-19-000009@61183] The Company’s 2018 drilling program focused on proven and emerging liquids-rich basins in the United States (onshore and deepwater Gulf of Mexico) and various international locations.
+  - [0000773910-19-000009@63356] The Company expects to convert 113 MMBOE of these PUDs reserves to developed status within five years of their initial disclosure.
+  - [0000773910-19-000009@64412] Anadarko invests in and operates midstream (gathering, processing, treating, transportation, and produced-water disposal) assets to complement its operations in regions where the Company has oil and natural-gas production.
+  - [0000773910-19-000009@64635] Through ownership and operation of these assets, the Company improves its ability to manage costs, controls the timing of bringing on new production, and enhances the value received for the Company’s production.
+  - [0000773910-19-000009@73550] Delaware Basin In 2018, the Company expanded its midstream infrastructure to further support Anadarko-operated production in the Delaware basin.
+  - [0000773910-19-000009@75356] The Company’s competitors include national oil companies, major integrated oil and gas companies, independent oil and gas companies, individual producers, gas marketers, and major pipeline companies as well as participants in other industries supplying energy and fuel to consumers.
+  - [0000773910-19-000009@81234] Moreover, both in the United States and in foreign countries, environmental and occupational health and safety laws and regulations, including new or amended legal requirements that may arise in the future to address potential environmental concerns such as air and water impacts or to address perceived health or safety-related concerns such as oil and natural-gas development in close proximity to specific occupied structures and/or certain environmentally-sensitive or recreational areas, are expected to continue to have a considerable impact on the Company’s operations.
+  - [0000773910-19-000009@83656] Developments in GHG initiatives may affect us and other similarly situated companies operating in the oil and natural-gas industry.
+  - [0000773910-19-000009@86744] Domestically, the Company is subject to compliance with the federal BSEE regulations, which, among other standards, require every owner or operator of a U.S. offshore lease to prepare and submit for approval an oil spill-response plan prior to conducting any offshore operations.
+  - [0000773910-19-000009@87660] Anadarko has in place and maintains Oil Spill-Response Plans (Plans) for the Company’s Gulf of Mexico operations.
+  - [0000773910-19-000009@87908] As part of the Company’s oil spill-response preparedness, and as set forth in the Plans, Anadarko maintains membership in Clean Gulf Associates (CGA).
+  - [0000773910-19-000009@89109] Each plan is intended to satisfy the requirements of relevant local or national authorities, describes the actions the Company is expected to take in the event of an incident, includes drills conducted by the Company at least annually, and includes reference to external resources that may become necessary in the event of an incident.
+  - [0000773910-19-000009@89445] Included in these external resources is the Company’s contract with Oil Spill Response Limited (OSRL), a global emergency and oil spill-response organization headquartered in London.
+  - [0000773910-19-000009@89650] As is customary in the oil and gas industry, a preliminary title review is conducted at the time properties believed to be suitable for drilling operations are acquired by the Company.
+  - [0000773910-19-000009@90089] Anadarko believes the title to its leasehold properties is good, defensible, and customary with practices in the oil and gas industry, subject to such exceptions that, in the opinion of legal counsel for the Company, do not materially detract from the use of such properties.
+  - [0000773910-19-000009@94733] He has held positions of increasing responsibility with Anadarko and Kerr-McGee Corporation, where he began his career, including General Manager of the Maverick basin and the Company’s Freestone/Chalk area, Business Advisor for Planning and Reserves Administration in the Gulf of Mexico, and in engineering positions in both the U.S. onshore and the Gulf of Mexico.
+  - [0000773910-19-000009@99520] Oil, natural-gas, and NGL price volatility, including a substantial or extended decline in the price of these commodities, could adversely affect our financial condition and results of operations.
+  - [0000773910-19-000009@99777] Our revenues, operating results, cash flows from operations, capital budget, and future growth rates are highly dependent on the prices we receive for our oil, natural gas, and NGLs.
+
+### 10-Q 0000773910-19-000034
+- filed 2019-05-08; SEC acceptance (ET) 2019-05-08T14:01:49-04:00
+- full document: https://www.sec.gov/Archives/edgar/data/773910/000077391019000034/apc20191q-10q.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1A [136305:136461]
+- excerpts: 57 of 57 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0000773910-19-000034@26049] In addition, the Company engages in gathering, compressing, treating, processing, and transporting of natural gas; gathering, stabilizing, and transporting of oil and NGLs; and gathering and disposing of produced water.
+  - [0000773910-19-000034@29887] As a result, the Company will no longer report an Other Midstream segment and will now have two reporting segments: Exploration and Production and WES Midstream.
+  - [0000773910-19-000034@41250] (24 . ) . 2018 During the three months ended March 31, 2018, the Company divested of its Alaska nonoperated assets, included in the Exploration and Production reporting segment, for net proceeds of $383 million and net losses of $30 million in 2018 and $154 million in the fourth quarter of 2017. 5.
+  - [0000773910-19-000034@43384] Objective and Strategy The Company uses derivative instruments to manage its exposure to cash-flow variability from commodity-price and interest-rate risks.
+  - [0000773910-19-000034@43541] Futures, swaps, and options are used to manage exposure to commodity-price risk inherent in the Company’s oil and natural-gas production and natural-gas processing operations (Oil and Natural-Gas Production/Processing Derivative Activities).
+  - [0000773910-19-000034@44329] Derivative instruments are also used to manage commodity-price risk inherent in customer price requirements and to fix margins on the future sale of natural gas and NGLs from the Company’s leased storage facilities.
+  - [0000773910-19-000034@44765] The fair value of the Company’s current interest-rate swap portfolio is subject to changes in interest rates.
+  - [0000773910-19-000034@44875] The Company does not apply hedge accounting to any of its currently outstanding derivative instruments.
+  - [0000773910-19-000034@45529] The Company had no natural-gas production/processing derivatives at March 31, 2019 .
+  - [0000773910-19-000034@45614] The following is a summary of the Company’s oil derivative instruments at March 31, 2019 : . 2019 Settlement .
+  - [0000773910-19-000034@46012] The sold call establishes the maximum price that the Company will receive for the contracted commodity volume.
+  - [0000773910-19-000034@46123] The purchased put establishes the minimum price that the Company will receive for the contracted volume unless the market price for the commodity falls below the sold put strike price, at which point the minimum price equals the reference price (e.g., NYMEX) plus the excess of the purchased put strike price over the sold put strike price.
+  - [0000773910-19-000034@46885] At March 31, 2019 , the Company had outstanding interest-rate swaps with a notional amount of $1.6 billion due prior to or in September 2023 that manage interest-rate risk associated with potential future debt issuances.
+  - [0000773910-19-000034@47106] Depending on market conditions, liability-management actions, or other factors, the Company may enter into offsetting interest-rate swap positions or settle or amend certain or all of the currently outstanding interest-rate swaps.
+  - [0000773910-19-000034@47337] The Company had the following outstanding interest-rate swaps at March 31, 2019 : . millions except percentages .
+  - [0000773910-19-000034@49856] Effect of Derivative Instruments — Balance Sheet The following summarizes the fair value of the Company’s derivative instruments: .
+  - [0000773910-19-000034@51881] Over-the-counter traded swaps, options, and futures contracts expose the Company to counterparty credit risk.
+  - [0000773910-19-000034@52338] The Company has netting agreements with financial institutions that permit net settlement of gross commodity derivative assets against gross commodity derivative liabilities and routinely exercises its contractual right to offset gains and losses when settling with derivative counterparties.
+  - [0000773910-19-000034@52631] In addition, the Company has setoff agreements with certain financial institutions that may be exercised in the event of default and provide for contract termination and net settlement across derivative types.
+  - [0000773910-19-000034@52841] The Company’s derivative instruments are subject to individually negotiated credit provisions that may require collateral of cash or letters of credit depending on the derivative’s portfolio valuation versus negotiated credit thresholds.
+  - [0000773910-19-000034@53544] The Company may be required to post additional collateral with respect to its derivative instruments if its credit ratings decline below current levels or if the liability associated with any such derivative instrument increases above the credit threshold.
+  - [0000773910-19-000034@55096] The following summarizes the fair value of the Company’s derivative assets and liabilities by input level within the fair-value hierarchy: . millions .
+  - [0000773910-19-000034@56561] Represents the impact of netting commodity derivative assets and liabilities with counterparties where the Company has the contractual right and intends to net settle.
+  - [0000773910-19-000034@60303] Anadarko’s Zero Coupons were classified as long-term debt on the Company’s Consolidated Balance Sheet at March 31, 2019, as the Company has the ability and intent to refinance these obligations using long-term debt, should a put be exercised.
+  - [0000773910-19-000034@63392] Additionally, the Company has $193 million of operating lease liabilities for real estate, primarily related to the Company’s Denver corporate office lease expiring in 2033, with options to terminate the lease early.
+  - [0000773910-19-000034@68168] The Company’s quarterly estimate of its annual current and deferred effective tax rates can vary significantly based on various forecasted items, including future commodity prices, capital expenditures, expenses for which tax benefits are not recognized, and the geographic mix of pre-tax income and losses.
+  - [0000773910-19-000034@72782] The service cost component of net periodic benefit cost is included in G&A; oil and gas operating expense; gathering, processing, and marketing expense; and exploration expense, and all other components of net periodic benefit cost are included in other (income) expense on the Company’s Consolidated Statements of Income.
+  - [0000773910-19-000034@73738] Diluted EPS includes the effect of the Company’s outstanding stock options, restricted stock awards, restricted stock units, and TEUs, if the inclusion of these items is dilutive.
+  - [0000773910-19-000034@77481] Consolidated VIEs The Company determined that the partners in WES with equity at risk lack the power, through voting rights or similar rights, to direct the activities that most significantly impact WES’s economic performance; therefore, WES is considered a VIE.
+  - [0000773910-19-000034@83618] Due to this contribution and sale, the Company will no longer report an Other Midstream segment and will now have two reporting segments: Exploration and Production and WES Midstream, which include their respective marketing results.
+  - [0000773910-19-000034@84594] DD&A; exploration expense; gains (losses) on divestitures, net; impairments; total (gains) losses on derivatives, net, less net cash from settlement of commodity derivatives; certain items not related to the Company’s normal operations; and less net income (loss) attributable to noncontrolling interests.
+  - [0000773910-19-000034@91946] The Company’s revenues, operating results, cash flows from operations, capital spending, and future growth rates are highly dependent on commodity prices, which affect the value the Company receives from its sales of oil, natural gas, and NGLs.
+  - [0000773910-19-000034@95359] The Company remains committed to investing within cash flow in a $50 oil-price environment.
+  - [0000773910-19-000034@96403] In the Gulf of Mexico, the Company is conducting operations that are focused toward high-return oil development opportunities near the Company’s expansive infrastructure.
+  - [0000773910-19-000034@97461] The Company’s oil sales volume averaged 412 MBbls/d in the first quarter of 2019 , representing an 11% increase from the first quarter of 2018 , primarily due to increased sales volume from the Delaware basin and the Gulf of Mexico. – .
+  - [0000773910-19-000034@97698] The Company’s overall sales-volume product mix in the first quarter of 2019 is 58% oil and 73% liquids.
+  - [0000773910-19-000034@101368] The primary factors that affect the Company’s results of operations include commodity prices for oil, natural gas, and NGLs; sales volume; the cost of finding and developing such reserves; and operating costs.
+  - [0000773910-19-000034@102650] The Company has derivative instruments in place to reduce the price risk associated with future production.
+  - [0000773910-19-000034@103904] Oil Sales Volume . 2019 vs. 2018 The Company’s oil sales volume increased by 41 MBbls/d for the three months ended March 31, 2019 , primarily due to the following: .
+  - [0000773910-19-000034@105730] Natural-Gas Sales Volume . 2019 vs. 2018 The Company’s natural-gas sales volume increased by 100 MMcf/d for the three months ended March 31, 2019 , primarily due to continued drilling and completion activities in the Delaware and DJ basins in 2019.
+  - [0000773910-19-000034@106793] NGL Sales Volume . 2019 vs. 2018 The Company’s NGL sales volume increased by 14 MBbls/d for the three months ended March 31, 2019 , primarily due to continued drilling and completion activities and midstream infrastructure additions in the Delaware basin in 2019. 43 | APC 2019 FORM 10-Q .
+  - [0000773910-19-000034@114545] (Gains) losses on derivatives, net represents the changes in fair value of the Company’s derivative instruments as a result of changes in commodity prices and interest rates, contract modifications, and settlements.
+  - [0000773910-19-000034@119043] One of the primary sources of variability in the Company’s cash flows from operating activities is the fluctuation in commodity prices, the impact of which Anadarko partially mitigates by periodically entering into commodity derivatives.
+  - [0000773910-19-000034@128307] The Company’s primary market risks are attributable to fluctuations in energy prices and interest rates.
+  - [0000773910-19-000034@128412] These risks can affect revenues and cash flows, and the Company’s risk-management policies provide for the use of derivative instruments to manage these risks.
+  - [0000773910-19-000034@128572] The types of commodity derivative instruments used by the Company include futures, swaps, options, and fixed-price physical-delivery contracts.
+  - [0000773910-19-000034@128716] The volume of commodity derivatives entered into by the Company is governed by risk-management policies and may vary from year to year.
+  - [0000773910-19-000034@128852] Both exchange and over-the-counter traded derivative instruments may be subject to margin-deposit requirements, and the Company may be required from time to time to deposit cash or provide letters of credit with exchange brokers or counterparties to satisfy these margin requirements.
+  - [0000773910-19-000034@129137] For additional information relating to the Company’s derivative and financial instruments, see Note 7—Derivative Instruments in the Notes to Consolidated Financial Statements under Part I, Item 1 of this Form 10-Q.
+  - [0000773910-19-000034@129375] The Company’s most significant market risk relates to prices for oil, natural gas, and NGLs.
+  - [0000773910-19-000034@129646] In addition, a non-cash write-down of the Company’s oil and gas properties or goodwill may be required if commodity prices experience a significant decline.
+  - [0000773910-19-000034@129803] Derivative Instruments Held for Non-Trading Purposes The Company had derivative instruments in place to reduce the price risk associated with future production of 24 MMBbls of oil at March 31, 2019 , with a net derivative asset position of $16 million .
+  - [0000773910-19-000034@131251] At March 31, 2019 , the Company had a net derivative liability position of $1.3 billion related to interest-rate swaps.
+  - [0000773910-19-000034@131715] For a summary of the Company’s outstanding interest-rate derivative positions, see Note 7—Derivative Instruments in the Notes to Consolidated Financial Statements under Part I, Item 1 of this Form 10-Q. 53 | APC 2019 FORM 10-Q .
+  - [0000773910-19-000034@133588] The Company is a defendant in a number of lawsuits and is involved in governmental proceedings and regulatory controls arising in the ordinary course of business, including personal injury and death claims; title disputes; tax disputes; royalty claims; contract claims; contamination claims relating to oil and gas exploration, development, production, transportation, and processing; and environmental claims, including claims involving assets owned by acquired companies and claims involving assets previously sold to third parties and no longer a part of the Company’s current operations.
+  - [0000773910-19-000034@135114] Kerr-McGee Oil and Gas Onshore, LP, a subsidiary of the Company, is currently in negotiations with the State of Colorado’s Department of Public Health and Environment with respect to alleged noncompliance with the Colorado Air Quality Control Commission’s Regulations.
+  - [0000773910-19-000034@143078] The respective market values of Chevron common stock and our common stock have fluctuated and may continue to fluctuate during this period as a result of a variety of factors, including general market and economic conditions, changes in each company’s business, operations and prospects, commodity prices, regulatory considerations, and the market’s assessment of Chevron’s business and the Chevron Merger.
+
+## ACQUIRER: Occidental Petroleum Corporation
+- identity.source_accession: 0000950142-19-001038
+- identity.source_form: 425
+- identity.source_filing_date: 2019-05-09
+- identity.source_acceptance_et: 2019-05-09T16:21:06
+- identity.source_basis: manifest_announcement_accession
+- identity.status: unknown
+- identity.unknown_reason: acquirer_not_identified_in_merger_filing
+- No pre-announcement evidence filings available for this party (see identity record).

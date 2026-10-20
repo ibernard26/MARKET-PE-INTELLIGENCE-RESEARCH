@@ -1,0 +1,122 @@
+# DEAL-EINSTE-JAB-2014
+Announcement date: 2014-09-29. Only filings accepted before this date are evidence.
+
+## TARGET: EINSTEIN NOAH RESTAURANT GROUP INC
+- identity.basis: reviewed_manifest_cik
+- identity.sec_name: EINSTEIN NOAH RESTAURANT GROUP INC
+- identity.sic_context_only: 5812
+- identity.sic_description_context_only: Retail-Eating  Places
+
+### 10-K 0001193125-14-073832
+- filed 2014-02-28; SEC acceptance (ET) 2014-02-27T20:04:32-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/949373/000119312514073832/d629623d10k.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1 [7644:10070], Item 1A [35675:75112], Item 7 [88015:88453], Item 7A [163970:167273]
+- excerpts: 80 of 98 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001193125-14-073832@7926] We commenced operations as an operator and franchisor of coffee cafes in 1993.
+  - [0001193125-14-073832@9445] • The “manufacturing” segment produces and distributes bagel dough and other products to our company-owned restaurants, licensees and franchisees and other third parties.
+  - [0001193125-14-073832@11307] Our manufacturing and independent distribution network delivers high-quality ingredients that are delivered fresh to our restaurants.
+  - [0001193125-14-073832@15028] • Status of Products/Services: Our premium coffee program, which was launched in 2011, continues to be successful with coffee sales now representing over 9% of our menu mix.
+  - [0001193125-14-073832@15965] • Product Supply: Our purchasing programs provide our restaurants with high quality ingredients at competitive prices from reliable sources.
+  - [0001193125-14-073832@16329] Because we utilize fresh ingredients for most of our menu offerings, we are able to maintain our inventory at modest levels.
+  - [0001193125-14-073832@19861] • Manufacturing: We currently operate a bagel dough manufacturing facility in Whittier, California and have contracts with two suppliers to produce bagel dough and sweets to our specifications.
+  - [0001193125-14-073832@20197] We use excess capacity to produce bagels for sale to third party resellers.
+  - [0001193125-14-073832@20654] • Product supply: We have proprietary recipes and production processes for our bagel dough, cream cheese and coffee.
+  - [0001193125-14-073832@21188] We believe that our significant know-how and technical expertise for forming, manufacturing and freezing substantial quantities of raw dough produces a high-quality product more commonly associated with smaller bakeries.
+  - [0001193125-14-073832@21409] We negotiate price agreements and contracts based on the supply and demand for our products and commodity trends.
+  - [0001193125-14-073832@21593] Most of our commodity based food costs decreased in fiscal 2013 as a result of our locking in prices.
+  - [0001193125-14-073832@21695] Wheat, at approximately 10% of our cost of sales, represents the most significant raw ingredient we purchase.
+  - [0001193125-14-073832@21805] In an effort to mitigate the risk of increasing market prices, we utilize a third party advisor to manage our wheat purchases.
+  - [0001193125-14-073832@21932] We expect to continue to work with our third party advisor to strategically source our wheat purchases in the future.
+  - [0001193125-14-073832@22050] As of December 31, 2013, we have secured price protection on all of our wheat futures for fiscal 2014.
+  - [0001193125-14-073832@22365] We have developed proprietary coffee blends for sale at our company-owned, franchised and licensed restaurants.
+  - [0001193125-14-073832@22477] As of December 31, 2013, our supplier has secured pricing on our behalf for 92% of our coffee needs for fiscal 2014.
+  - [0001193125-14-073832@22680] As of December 31, 2013, our supplier has secured pricing on our behalf for 84% of our fiscal 2014 butter needs and all of our fiscal 2014 Class III milk needs, which are the primary ingredients of our cream cheese and sliced cheese products.
+  - [0001193125-14-073832@22923] We purchase other ingredients used in our restaurants, such as meat, salmon, lettuce, tomatoes and condiments, from a select group of third party suppliers.
+  - [0001193125-14-073832@23080] Our chicken products come from chickens that are cared for in strict accordance with established animal care guidelines and without the use of growth accelerators such as steroids or hormones.
+  - [0001193125-14-073832@23273] Where available, we buy high quality fresh fruits, vegetables and specialty produce from a nationally recognized group of third party suppliers and distributors.
+  - [0001193125-14-073832@39136] In addition, given our geographic concentration, negative publicity regarding any of our restaurants in these states could have a material adverse effect on our business and operations, as could other regional occurrences such as local labor strikes, energy shortages or increases in energy prices, droughts, earthquakes, fires, or other natural disasters.
+  - [0001193125-14-073832@40309] Our sub-initiatives may include: the promotion and offering of value to our customers through print or digital marketing, discounts, coupons, new menu offerings and the addition of targeted media to build awareness in certain markets, along with the continued broadening of our offerings across multiple dayparts; the improvement of our ordering and production systems; the expansion of our catering program; and the upgrade of our restaurants.
+  - [0001193125-14-073832@43945] In addition, franchisees and licensees are subject to business risks similar to those we face such as competition; consumer acceptance; fluctuations in the cost, availability and quality of raw ingredients; increasing labor costs; and difficultly obtaining proper financing as a result of the downturn in the credit markets.
+  - [0001193125-14-073832@44920] We believe that several of our competitors are focusing more on breakfast offerings and expanding their premium coffee and specialty beverage offerings.
+  - [0001193125-14-073832@45589] Our success depends in large part on our continued ability to convince customers that food made with higher-quality ingredients, including our fresh-baked bagels, premium coffee, specialty beverages and made-to-order sandwiches, is worth the prices at our restaurants relative to lower prices offered by some of our competitors.
+  - [0001193125-14-073832@46905] We currently purchase our raw materials from various suppliers; and in some cases, we have selected a single supplier for a key product to take advantage of economies of scale.
+  - [0001193125-14-073832@47082] We have elected to purchase all of our cream cheese, sliced cheese and coffee products from single suppliers.
+  - [0001193125-14-073832@47351] Although to date we have not experienced significant difficulties with our suppliers, our choice to purchase most of our key ingredients from these suppliers subjects us to a number of risks, including possible delays or interruption in supplies, diminished control over quality and a potential lack of adequate raw material capacity.
+  - [0001193125-14-073832@49048] Increased costs and distribution issues related to fuel and utilities could also materially impact our business and results of operations. 12 .
+  - [0001193125-14-073832@51279] Increases in commodity prices would adversely affect our results of operations.
+  - [0001193125-14-073832@51359] Global demand for commodities such as wheat, coffee and dairy products has resulted, and could in the future result, in higher prices which would increase our costs.
+  - [0001193125-14-073832@51525] The prices of our main ingredients are directly associated with the changing weather conditions as well as economic factors such as supply and demand of certain commodities within the United States and other countries.
+  - [0001193125-14-073832@51744] Our ability to forecast and manage our commodities could significantly affect our gross margins.
+  - [0001193125-14-073832@51841] Any increase in the prices of the ingredients most critical to our products could adversely affect our operating results.
+  - [0001193125-14-073832@54097] In addition, the occurrence of food-borne illnesses or food safety issues could also adversely affect the price and availability of affected ingredients, which could result in disruptions in our supply chain and/or lower margins for us and our franchisees and licensees.
+  - [0001193125-14-073832@55749] Many of our current leases are non-cancelable and typically have terms ranging from five to ten years with two three- to five-year renewal options.
+  - [0001193125-14-073832@55897] We believe leases that we enter into in the future will also likely be long-term and non-cancelable and have similar renewal options.
+  - [0001193125-14-073832@56031] Most of our leases provide that the landlord may increase the rent over the term of the lease, and require us to pay our proportionate share of the cost of insurance, taxes, maintenance and utilities.
+  - [0001193125-14-073832@57551] Our business is subject to seasonal fluctuations, as well as adverse weather conditions and natural disasters that may at times affect regions in which our company-owned, franchised and licensed restaurants are located, regions that produce raw ingredients for our restaurants, or locations of our distribution network.
+  - [0001193125-14-073832@58902] The effects of hurricanes, fires, snowstorms, freezes and other adverse weather conditions are likely to affect the supply of and costs for raw ingredients and natural resources, near-term construction costs for our new restaurants and in our restaurants going forward.
+  - [0001193125-14-073832@59172] If we do not anticipate or react to changing costs of food and other raw materials by adjusting our purchasing practices or menu prices, our operating margins would likely deteriorate.
+  - [0001193125-14-073832@59895] Our ability to effectively manage our business and coordinate the production, distribution and sale of products depends on the reliability and capacity of these systems.
+  - [0001193125-14-073832@60065] Despite our implementation of security measures, all of our technology systems are vulnerable to damage, disability or failures due to physical theft, fire, power loss, telecommunications failure or other catastrophic events, as well as from internal and external security breaches, denial of service attacks, viruses, worms and other disruptive problems caused by hackers.
+  - [0001193125-14-073832@66962] A regional or global pandemic might also adversely impact our business by disrupting or delaying production and delivery of products and materials in our supply chain and causing staff shortages in our restaurants.
+  - [0001193125-14-073832@73555] If we are unable to generate sufficient cash flow to make payments on our debt, we will have to pursue one or more alternatives, such as reducing or delaying capital expenditures, refinancing our debt on terms that are not favorable to us, selling assets or issuing additional equity securities.
+  - [0001193125-14-073832@89053] Our manufacturing operations and network of independent distributors deliver high-quality ingredients to our restaurants.
+  - [0001193125-14-073832@90699] Coffee and blended beverage sales also represent approximately 9% of our menu mix and continue to grow.
+  - [0001193125-14-073832@93450] We have also entered into two cash flow hedges in an effort to mitigate our variable interest rate risk.
+  - [0001193125-14-073832@93555] For a complete description of the terms for the Senior Credit Facility and our cash flow hedges, see Note 8 and Note 9, respectively, to our consolidated financial statements set forth in Item 8 of this Form 10-K.
+  - [0001193125-14-073832@94549] • Enhance our healthy options .
+  - [0001193125-14-073832@95261] Our plan is to improve corporate margins by focusing on strategic contract renegotiations, distribution optimization, improving packaging quality and costs, and improving marketing and construction materials purchases.
+  - [0001193125-14-073832@111136] As of December 31, 2013, we have secured price protection on the following commodity needs for fiscal 2014: .
+  - [0001193125-14-073832@126977] Coffee sales represent approximately 10% of our comparable company-owned restaurant sales.
+  - [0001193125-14-073832@127696] This 180 basis point decrease includes savings from our initiatives (-140 basis points) and the leveraged impact of price increases (-80 basis points), partially offset by a shift in product mix (-20 basis points) and deflation in our commodity costs (-20 basis points).
+  - [0001193125-14-073832@127967] Most of our commodity-based food costs decreased in fiscal 2012 as we were able to lock in several of our prices.
+  - [0001193125-14-073832@138476] (c) Purchase obligations consist of non-cancelable minimum purchases of certain raw ingredients that are used in our products.
+  - [0001193125-14-073832@149308] We received $3.9 million in proceeds from stock options exercised during fiscal 2013.
+  - [0001193125-14-073832@150103] We received $1.8 million in proceeds from stock options exercised during fiscal 2012.
+  - [0001193125-14-073832@152272] Wheat, coffee, butter and cheese are our primary agricultural commodities.
+  - [0001193125-14-073832@152347] Chicken and turkey are other major agricultural commodities which are included in our cost of goods sold.
+  - [0001193125-14-073832@152453] We have utilized a third party advisor to manage our wheat purchases.
+  - [0001193125-14-073832@152523] In addition to wheat, we have established contracts and entered into commitments with our vendors for Class III milk, butter, cheese and coffee.
+  - [0001193125-14-073832@158987] The effects of rent holidays and escalations are reflected in rent costs on a straight-line basis over the expected lease term, which includes cancelable option periods when it is deemed to be reasonably assured that we will exercise such option periods.
+  - [0001193125-14-073832@161691] We use the Black-Scholes model to estimate the fair value of our option awards.
+  - [0001193125-14-073832@161912] Our stock options generally vest over a period of 6 months to 3 years and have contractual terms to exercise of 5 to 10 years.
+  - [0001193125-14-073832@163220] Certain share-based payments, such as employee stock options, may expire worthless or otherwise result in zero intrinsic value as compared to the fair values originally estimated on the grant date and reported in our financial statements.
+  - [0001193125-14-073832@163652] Although the fair value of our share-based awards is determined in accordance with GAAP and the SEC’s Staff Accounting Bulletin No. 107 using an option-pricing model, the value calculated may not be indicative of the fair value observed in a willing buyer / willing seller market transaction. 50 .
+  - [0001193125-14-073832@164483] We do not use derivative financial instruments to limit our foreign currency risk exposure since virtually all of our business is conducted in the United States.
+  - [0001193125-14-073832@165446] On March 4, 2013, we entered into an interest rate swap agreement to fix the interest rate on $50.0 million of our debt at 0.395% plus an applicable margin.
+  - [0001193125-14-073832@165700] On December 10, 2013, we entered into a second interest rate swap agreement to fix the interest rate on $88.1 million of our debt at 1.535% plus an applicable margin.
+  - [0001193125-14-073832@165867] The interest rate swap agreement will become effective on March 9, 2015 and will remain effective until June 6, 2018, the maturity date of our Senior Credit Facility.
+  - [0001193125-14-073832@166970] We do not use financial instruments to hedge commodity prices.
+  - [0001193125-14-073832@184536] The manufacturing segment produces and distributes bagel dough and other products to the Company’s restaurants and other third parties.
+  - [0001193125-14-073832@188901] In circumstances where failure to exercise a renewal option would result in the Company incurring an economic penalty, those option periods are included when determining the depreciation period.
+  - [0001193125-14-073832@190052] However, as the Company approves restaurants to be upgraded, it simultaneously reviews the lease, and typically only upgrades those locations that have a lease with a renewal option and reasonable assurance such lease will be renewed.
+  - [0001193125-14-073832@198963] The Company produces bagels for sale to third party resellers, including sales to a wholesaler and a distributor who take possession in the United States and sell outside of the United States.
+  - [0001193125-14-073832@202285] The Company expenses advertising costs as incurred except for expenses related to the development and production of a major commercial or media campaign which are expensed during the period in which the advertisement is first presented by the media.
+  - [0001193125-14-073832@205771] The Company maintains several equity incentive plans under which it may grant non-qualified stock options, incentive stock options, stock appreciation rights (“SARs”), restricted stock units (“RSUs”) or restricted stock to employees, non-employee directors and consultants.
+
+### 10-Q 0001193125-14-290058
+- filed 2014-08-01; SEC acceptance (ET) 2014-07-31T17:59:49-04:00
+- full document: https://www.sec.gov/Archives/edgar/data/949373/000119312514290058/d736242d10q.htm
+- full-section spans (character offsets in whitespace-normalized text): none detected
+- excerpts: 9 of 9 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001193125-14-290058@18983] As of July 1, 2014, the Company had approximately $0.4 million of total unrecognized compensation cost related to stock option and SARs awards granted under its plans, which will be recognized over a weighted average period of 1.35 years.
+  - [0001193125-14-290058@37278] Our manufacturing operations and network of independent distributors deliver high-quality ingredients to our restaurants.
+  - [0001193125-14-290058@38052] • Catering/Coffee – Catering sales, which continue to be a strong revenue driver, comprised approximately 10.0% of our company-owned restaurant sales for the second quarter of 2014, with total catering sales increasing by 17.3% from the second quarter of 2013.
+  - [0001193125-14-290058@38313] Coffee sales also remain strong and total hot beverage sales represent approximately 9% of our comparable company-owned stores sales on a year to date basis. 14 .
+  - [0001193125-14-290058@40927] We plan to improve corporate margins by focusing on strategic contract renegotiations, distribution optimization, improving packaging quality and costs, and improving marketing and construction material purchases.
+  - [0001193125-14-290058@49830] We continue to focus on driving transactions at both breakfast and lunch by using higher quality, better tasting ingredients, as well as offering innovative premium sandwiches.
+  - [0001193125-14-290058@51414] Coffee and hot beverage sales remain strong and represent approximately 9% of our comparable company-owned restaurant sales on a year to date basis.
+  - [0001193125-14-290058@52808] As of July 1, 2014, we have secured protection on all of our wheat, coffee and butter needs for the remainder of 2014.
+  - [0001193125-14-290058@52927] For fiscal 2015, we have secured protection on 25% of our wheat needs, 13% of our coffee needs and 12.5% of our butter needs.
+
+## ACQUIRER: JAB Holding Company
+- identity.source_accession: 0001193125-14-355998
+- identity.source_form: 8-K
+- identity.source_filing_date: 2014-09-29
+- identity.source_acceptance_et: 2014-09-29T09:19:59
+- identity.source_basis: manifest_announcement_accession
+- identity.parent_entity: JAB Beech Inc
+- identity.parent_quote: n September 29, 2014, Einstein Noah Restaurant Group, Inc. (the “Company”) entered into an Agreement and Plan of Merger (the “Merger Agreement”) with JAB Beech Inc. (“Parent”) and Spruce Merger Sub Inc., an indirect wholly ow
+- identity.manifest_name_consistent: True
+- identity.status: unknown
+- identity.unknown_reason: acquirer_no_unique_sec_registrant
+- No pre-announcement evidence filings available for this party (see identity record).

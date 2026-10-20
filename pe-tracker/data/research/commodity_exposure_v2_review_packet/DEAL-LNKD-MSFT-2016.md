@@ -1,0 +1,287 @@
+# DEAL-LNKD-MSFT-2016
+Announcement date: 2016-06-11. Only filings accepted before this date are evidence.
+
+## TARGET: LinkedIn Corporation
+- identity.basis: reviewed_manifest_cik
+- identity.sec_name: LINKEDIN CORP
+- identity.sic_context_only: 7370
+- identity.sic_description_context_only: Services-Computer Programming, Data Processing, Etc.
+
+### 10-K 0001271024-16-000035
+- filed 2016-02-12; SEC acceptance (ET) 2016-02-11T21:08:06-05:00
+- full document: https://www.sec.gov/Archives/edgar/data/1271024/000127102416000035/a20151231-10xkdocument.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1 [8345:58684], Item 1A [61316:168823], Item 7 [184336:185218], Item 7A [278784:284040]
+- excerpts: 80 of 97 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001271024-16-000035@11933] We believe delivering members a relevant and highly engaging feed experience is critical in creating value.
+  - [0001271024-16-000035@43673] We have developed a testing platform that allows us to evaluate different options for rendering an experience to our members.
+  - [0001271024-16-000035@51892] In addition, rising concern about the use of social networking technologies for illegal conduct, such as the unauthorized dissemination of national security information, money laundering or supporting terrorist activities, may in the future produce legislation or other governmental action that could require changes to our products or services, restrict or impose additional costs upon the conduct of our business or cause users to abandon material aspects of our service.
+  - [0001271024-16-000035@60872] We have used, and intend to continue to use, our investor relations website, as well as our website ( www.linkedin.com ), the LinkedIn page ( https://www.linkedin.com/company/linkedin ), our Twitter feed ( https://twitter.com/linkedin ) and our corporate blog ( www.blog.linkedin.com ), as a means of disclosing material non-public information and for complying with our disclosure obligations under Regulation FD. - 15 - .
+  - [0001271024-16-000035@65506] We have implemented a disaster recovery program, which allows us to move production traffic to a backup data center in the event of a catastrophe.
+  - [0001271024-16-000035@66322] Our systems are also vulnerable to damage or interruption from catastrophic occurrences such as earthquakes, floods, fires, power loss, telecommunication failures, terrorist attacks and similar events.
+  - [0001271024-16-000035@137711] Currently, this access is provided by companies that have significant market power in the broadband and Internet access marketplace, including incumbent telephone companies, cable companies, mobile communications companies, and government-owned service providers, any of whom could take actions that degrade, disrupt, or increase the cost of user access to our products or solutions, which would, in turn, negatively impact our business.
+  - [0001271024-16-000035@141786] Although we hedge a portion of our foreign currency exposure, significant fluctuations in exchange rates between the US dollar and foreign currencies may adversely affect our net income (loss).
+  - [0001271024-16-000035@141980] Additionally, hedging programs rely on our ability to forecast accurately and could expose us to additional risks that could adversely affect our financial condition and results of operations.
+  - [0001271024-16-000035@151864] Stockholders who hold shares of our Class B common stock, including our founders, and our executive officers, employees and directors and their affiliates, together held approximately 57.2% of the voting power of our outstanding capital stock as of December 31, 2015 .
+  - [0001271024-16-000035@152133] Our co-founder and Chair, Reid Hoffman, held approximately 11.0% of the outstanding shares of our Class A and Class B common stock, representing approximately 53.2% of the voting power of our outstanding capital stock as of December 31, 2015 .
+  - [0001271024-16-000035@152999] Because of the 10-to-1 voting ratio between our Class B and Class A common stock, the holders of our Class B common stock collectively will continue to control a majority of the combined voting power of our common stock even when the shares of Class B common stock represent as little as 10% of the combined voting power of all outstanding shares of our Class A and Class B common stock.
+  - [0001271024-16-000035@153622] Hoffman continues to retain a significant portion of his holdings of Class B common stock for an extended period of time, he could continue to control a majority of the combined voting power of our Class A and Class B common stock.
+  - [0001271024-16-000035@159358] Our dual class structure concentrates the voting power of our stock in a small group of stockholders who would have the ability to control the outcome of a stockholder vote.
+  - [0001271024-16-000035@163499] At the time we are required to make repurchases of the Notes being surrendered or converted at their maturity, we may not have enough available cash or be able to obtain financing to refinance the Notes on commercially reasonable terms or at all.
+  - [0001271024-16-000035@165664] Note hedge and warrant transactions we have entered into may affect the value of the Notes and our common stock.
+  - [0001271024-16-000035@165777] Concurrently with the issuance of the Notes, we entered into note hedge transactions with certain financial institutions, which we refer to as the “option counterparties.” The note hedge transactions are expected to reduce the potential dilution upon any conversion of the Notes and/or offset any cash payments we are required to make in excess of the principal amount of converted Notes, as the case may be.
+  - [0001271024-16-000035@166186] We also entered into warrant transactions with the option counterparties.
+  - [0001271024-16-000035@166418] In connection with establishing their initial hedge of the note hedge and warrant transactions, the option counterparties or their respective affiliates have purchased shares of our common stock and/or entered into various derivative transactions with respect to our common stock following the pricing of the Notes.
+  - [0001271024-16-000035@166734] In addition, the option counterparties or their respective affiliates may modify their hedge positions by entering into or unwinding various derivatives contracts with respect to our common stock and/or purchasing or selling our common stock or other securities of ours in secondary market transactions prior to the maturity of the Notes (and are likely to do so during any observation period related to a conversion of Notes or following any repurchase of Notes by us on any fundamental change repurchase date or otherwise).
+  - [0001271024-16-000035@167375] In addition, if any such convertible note hedge and warrant transactions fail to become effective, the option counterparties or their respective affiliates may unwind their hedge positions with respect to our common stock, which could adversely affect the value of our common stock and the value of the Notes.
+  - [0001271024-16-000035@167685] We are subject to counterparty risk with respect to the note hedge transactions.
+  - [0001271024-16-000035@167766] The option counterparties are financial institutions or affiliates of financial institutions, and we will be subject to the risk that these option counterparties may default under the note hedge transactions.
+  - [0001271024-16-000035@167975] Our exposure to the credit risk of the option counterparties will not be secured by any collateral.
+  - [0001271024-16-000035@168075] If one or more of the option counterparties to one or more of our note hedge transactions becomes subject to insolvency proceedings, we will become an unsecured creditor in those proceedings with a claim equal to our exposure at the time under those transactions.
+  - [0001271024-16-000035@168563] In addition, upon a default by one of the option counterparties, we may suffer adverse tax consequences and dilution with respect to our common stock.
+  - [0001271024-16-000035@168714] We can provide no assurances as to the financial stability or viability of any of the option counterparties.
+  - [0001271024-16-000035@220432] Our cost of revenue primarily consists of salaries, benefits, and stock-based compensation for our production operations, customer support, infrastructure and advertising operations teams, and web hosting costs related to operating our website.
+  - [0001271024-16-000035@220882] For cost of revenue, in 2016, we expect higher production related costs, including author royalty expenses, in connection with the operation of Lynda.com, which we acquired in the second quarter of 2015.
+  - [0001271024-16-000035@229901] Other income (expense), net consists primarily of the interest expense from our convertible senior notes, income earned on our investments , fair value adjustments on our other derivative, and foreign exchange gains and losses.
+  - [0001271024-16-000035@230129] Hedging strategies that we have implemented or may implement to mitigate foreign exchange risk may not eliminate our exposure to foreign exchange fluctuations . - 54 - .
+  - [0001271024-16-000035@231066] We also experienced increased foreign exchange losses as a result of changes in time value of foreign currency option contracts and the strengthening of the US dollar.
+  - [0001271024-16-000035@231234] And, as a result of our adoption of authoritative accounting guidance on hedging and derivatives, we have $8.8 million in fair value adjustments on other derivative related to the conversion features in the preferred stock of our joint venture.
+  - [0001271024-16-000035@249614] Our cash equivalents and marketable securities are comprised primarily of US treasury securities, US agency securities, corporate debt securities, commercial paper and money market funds.
+  - [0001271024-16-000035@257626] In 2015 , our financing activities consisted primarily of net proceeds from the issuance of common stock from employee stock option exercises and stock purchase plan, as well as the excess tax benefit from stock-based compensation.
+  - [0001271024-16-000035@258217] Concurrently with the issuance of the Notes, we used approximately $248.0 million of the net proceeds of the offering of the Notes to pay the cost of convertible note hedge transactions, which was partially offset by $167.3 million in proceeds from warrants we sold.
+  - [0001271024-16-000035@258772] With the exception of the Notes issuance and the follow-on offering, our financing activities consist primarily of the excess tax benefit from stock-based compensation and the proceeds from the issuance of common stock from employee stock option exercises and our employee stock purchase plan.
+  - [0001271024-16-000035@267595] We have a derivative related to the embedded features on the preferred stock of our joint venture, which is measured at fair value each reporting period.
+  - [0001271024-16-000035@272205] We estimate this rate by considering the effective yield on our existing convertible debt, interest swap rates comparable to the expected term of the lease payments and our credit spread.
+  - [0001271024-16-000035@278075] We use the Black-Scholes option-pricing model to determine the fair value of stock options and our employee stock purchase plan ("ESPP") awards.
+  - [0001271024-16-000035@278220] The determination of the grant date fair value using an option-pricing model is affected by the market value of our common stock as well as assumptions regarding a number of other complex and subjective variables.
+  - [0001271024-16-000035@281034] We enter into foreign currency derivative contracts to reduce the risk that our cash flows and earnings will be adversely affected by foreign currency exchange rate fluctuations.
+  - [0001271024-16-000035@281232] We use foreign currency derivative contracts designated as cash flow hedges to hedge forecasted revenue transactions denominated in currencies other than the US dollar.
+  - [0001271024-16-000035@281401] Our cash flow hedges are carried at fair value with gains or losses initially recorded as a component of accumulated other comprehensive income (loss) in stockholders’ equity and subsequently reclassified into revenue when the underlying hedged revenue is recognized.
+  - [0001271024-16-000035@281692] We use other foreign currency derivative contracts not designated as hedging instruments ("balance sheet hedges") to reduce exchange rate risk associated with our foreign currency denominated monetary assets and liabilities.
+  - [0001271024-16-000035@281917] These balance sheet hedges are carried at fair value with changes in the fair value recorded to other income (expense), net in our consolidated statements of operations.
+  - [0001271024-16-000035@282087] These contracts do not subject us to material financial statement risk due to exchange rate movements because gains and losses on these derivatives are intended to offset gains and losses on the hedged foreign currency denominated assets and liabilities. - 68 - .
+  - [0001271024-16-000035@282371] As of December 31, 2015 , we had outstanding foreign currency derivative contracts with a total notional amount of $561.5 million .
+  - [0001271024-16-000035@282503] If overall foreign currency exchange rates appreciated (depreciated) uniformly by 5% against the US dollar, our foreign currency derivative contracts outstanding as of December 31, 2015 would experience a loss (gain) of approximately $17.7 million .
+  - [0001271024-16-000035@283254] Concurrent with the issuance of the Notes, we purchased options (“Note Hedges”) and sold warrants, in order to reduce the potential economic dilution upon conversion of the Notes.
+  - [0001271024-16-000035@284131] The embedded features on the preferred stock of our joint venture are accounted for as a derivative instrument, which is measured at fair value each reporting period.
+  - [0001271024-16-000035@284438] The financial impact to future periods will depend on changes in fair value of the derivative instruments, which is correlated with the performance and value of the Company's joint venture, and will be recorded in Other income (expense), net.
+  - [0001271024-16-000035@304617] Financial instruments, which potentially subject the Company to concentrations of credit risk, consist primarily of cash and cash equivalents, marketable securities, derivatives, and accounts receivable.
+  - [0001271024-16-000035@307505] Cash equivalents consist of highly liquid marketable securities with original maturities of three months or less at the time of purchase and consist primarily of money market funds, commercial paper, US treasury securities and US agency securities.
+  - [0001271024-16-000035@307821] Marketable securities consist of commercial paper, certificates of deposit, US treasury securities, US agency securities, corporate debt securities, and municipal securities, and are classified as available-for-sale securities.
+  - [0001271024-16-000035@312711] The Company enters into foreign currency derivative contracts with financial institutions to reduce the risk that its cash flows and earnings will be adversely affected by foreign currency exchange rate fluctuations.
+  - [0001271024-16-000035@331049] The impact to future periods will depend on changes in fair value of the derivative instruments, which is correlated with the performance and value of the Company's joint venture, and will be recorded in Other income (expense), net.
+  - [0001271024-16-000035@339832] The fair value of the Company's Level 2 foreign currency derivative contracts is obtained from pricing models that use observable market inputs.
+  - [0001271024-16-000035@339977] The Company's Level 3 other derivative is related to the embedded features in the preferred stock of the Company's joint venture, which is expected to be settled in cash.
+  - [0001271024-16-000035@340148] The recognition of this other derivative is a result of the Company's modified retrospective adoption of new authoritative accounting guidance on derivatives and hedges.
+  - [0001271024-16-000035@341618] The following is a reconciliation of the Company's Level 3 other derivative financial instrument for the periods presented (in thousands): .
+  - [0001271024-16-000035@360726] As a result, the Company and the Partners own approximately 65% and 25% of the fully diluted equity interests in the JV, respectively, with the remaining 10% related to authorized stock options of the JV.
+  - [0001271024-16-000035@361150] These embedded features are accounted for as a derivative liability as a result of the Company's adoption of the new authoritative guidance on derivatives and hedging in the fourth quarter of 2015.
+  - [0001271024-16-000035@361482] The Company has determined it is the primary beneficiary of the JV due to the percentage ownership as well as the power to direct the activities that most significantly impact the JV's economic performance.
+  - [0001271024-16-000035@366307] These derivative instruments expose the Company to credit risk to the extent that the counterparties may be unable to meet the terms of the arrangement.
+  - [0001271024-16-000035@366759] The Company is not required to pledge, and is not entitled to receive, cash collateral related to these derivative instruments.
+  - [0001271024-16-000035@366906] Beginning in the first quarter of 2015 , the Company uses foreign currency derivative contracts designated as cash flow hedges to hedge forecasted revenue transactions denominated in currencies other than the US dollar.
+  - [0001271024-16-000035@367126] The Company's cash flow hedges consist of forward and option contracts with maturities of 12 months or less.
+  - [0001271024-16-000035@367235] The Company evaluates the effectiveness of its cash flow hedges on a quarterly basis.
+  - [0001271024-16-000035@367453] The Company records the gains or losses, net of tax, related to the effective portion of its cash flow hedges as a component of Accumulated other comprehensive income (loss) ("AOCI") in stockholders' equity and subsequently reclassifies the gains or losses into revenue when the underlying hedged revenue is recognized.
+  - [0001271024-16-000035@367773] The Company records the gains or losses related to the ineffective portion of the cash flow hedges, if any, immediately in Other income (expense), net.
+  - [0001271024-16-000035@367925] The change in time value related to the Company's cash flow hedges is excluded from the assessment of hedge effectiveness and is recorded immediately in Other income (expense), net.
+  - [0001271024-16-000035@368287] Cash flows related to the Company's cash flow hedging program are recognized as cash flows from operating activities in its statements of cash flows.
+  - [0001271024-16-000035@368437] As of December 31, 2015 , the Company had outstanding cash flow hedges with a total notional amount of $321.5 million .
+  - [0001271024-16-000035@368580] The Company uses foreign currency derivative contracts not designated as hedging instruments (“balance sheet hedges”) to reduce the exchange rate risk associated with its foreign currency denominated monetary assets and liabilities.
+  - [0001271024-16-000035@368977] As of December 31, 2015 and December 31, 2014 , the Company had outstanding balance sheet hedges with a total notional amount of $239.9 million and $190.1 million , respectively.
+  - [0001271024-16-000035@369175] The Company's other derivative is related to the accounting for the embedded features on the preferred stock of the Company's joint venture, which is expected to be settled in cash at a value equal to the fair value of the preferred stock, subject to a floor and a cap.
+  - [0001271024-16-000035@369445] This accounting is a result of the Company's modified retrospective adoption of new authoritative accounting guidance on derivatives and hedges.
+  - [0001271024-16-000035@369964] The following table presents the fair value of the Company’s derivative contracts as of the periods presented (in thousands): . - 94 - .
+  - [0001271024-16-000035@370547] See Note 2, Fair Value Measurements , for additional information related to the fair value of the Company’s foreign currency derivative contracts and other derivative financial instrument.
+
+### 10-Q 0001271024-16-000043
+- filed 2016-04-29; SEC acceptance (ET) 2016-04-28T18:13:46-04:00
+- full document: https://www.sec.gov/Archives/edgar/data/1271024/000127102416000043/a20160331-10qdocument.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1A [122808:230856]
+- excerpts: 71 of 71 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001271024-16-000043@21587] The fair value of the Company's Level 2 foreign currency derivative contracts is obtained from pricing models that use observable market inputs.
+  - [0001271024-16-000043@21732] The Company's Level 3 other derivative is related to the embedded features in the preferred stock of the Company's joint venture, which is expected to be settled in cash.
+  - [0001271024-16-000043@22961] The following is a reconciliation of the Company's Level 3 other derivative for the periods presented (in thousands): .
+  - [0001271024-16-000043@29328] The Company enters into foreign currency derivative contracts with financial institutions to reduce the risk that its cash flows and earnings will be adversely affected by foreign currency exchange rate fluctuations.
+  - [0001271024-16-000043@29622] These derivative instruments expose the Company to credit risk to the extent that the counterparties may be unable to meet the terms of the arrangement.
+  - [0001271024-16-000043@30074] The Company is not required to pledge, and is not entitled to receive, cash collateral related to these derivative instruments.
+  - [0001271024-16-000043@30221] The Company uses foreign currency derivative contracts designated as cash flow hedges to hedge forecasted revenue transactions denominated in currencies other than the US dollar.
+  - [0001271024-16-000043@30400] The Company's cash flow hedges consist of forward and option contracts with maturities of 12 months or less.
+  - [0001271024-16-000043@30509] The Company evaluates the effectiveness of its cash flow hedges on a quarterly basis.
+  - [0001271024-16-000043@30727] The Company records the gains or losses, net of tax, related to the effective portion of its cash flow hedges as a component of Accumulated other comprehensive income (loss) ("AOCI") in stockholders' equity and subsequently . reclassifies the gains or losses into revenue when the underlying hedged revenue is recognized.
+  - [0001271024-16-000043@31049] The Company records the gains or losses related to the ineffective portion of the cash flow hedges, if any, immediately in Other income (expense), net.
+  - [0001271024-16-000043@31201] The change in time value related to the Company's cash flow hedges is excluded from the assessment of hedge effectiveness and is recorded immediately in Other income (expense), net.
+  - [0001271024-16-000043@31563] Cash flows related to the Company's cash flow hedging program are recognized as cash flows from operating activities in its statements of cash flows.
+  - [0001271024-16-000043@31713] As of March 31, 2016 and December 31, 2015 , the Company had outstanding cash flow hedges with a total notional amount of $361.8 million and $321.5 million , respectively.
+  - [0001271024-16-000043@31908] The Company uses foreign currency derivative contracts not designated as hedging instruments (“balance sheet hedges”) to reduce the exchange rate risk associated with its foreign currency denominated monetary assets and liabilities.
+  - [0001271024-16-000043@32305] As of March 31, 2016 and December 31, 2015 , the Company had outstanding balance sheet hedges with a total notional amount of $329.9 million and $239.9 million , respectively.
+  - [0001271024-16-000043@32500] The Company's other derivative is related to the accounting for the embedded features on the preferred stock of the Company's joint venture, which is expected to be settled in cash at a value equal to the fair value of the preferred stock, subject to a floor and a cap.
+  - [0001271024-16-000043@33018] The following table presents the fair value of the Company’s derivative contracts as of the periods presented (in thousands): .
+  - [0001271024-16-000043@33591] See Note 2, Fair Value Measurements , for additional information related to the fair value of the Company’s foreign currency and other derivative contracts.
+  - [0001271024-16-000043@33801] The following table presents the activity of the Company’s cash flow hedges in AOCI in stockholders' equity for the periods presented (in thousands): .
+  - [0001271024-16-000043@34534] The amount recognized in earnings related to the ineffective portion of the Company's cash flow hedges was insignificant for the quarter.
+  - [0001271024-16-000043@34672] As of March 31, 2016 , the Company estimates approximately $5.9 million of net derivative gains related to our cash flow hedges will be reclassified from AOCI into earnings within the next 12 months.
+  - [0001271024-16-000043@34872] The following table presents the impact of the Company’s derivative contracts on the condensed consolidated statement of operations for the periods presented (in thousands): .
+  - [0001271024-16-000043@35438] Balances relate to changes in fair value that are excluded from the Company's assessment of hedge effectiveness. 6.
+  - [0001271024-16-000043@42006] Concurrently with the issuance of the Notes, the Company purchased options (“Note Hedges”) with respect to its Class A common stock for $248.0 million with certain bank counterparties.
+  - [0001271024-16-000043@42191] The Note Hedges cover up to 4,490,020 shares of the Company's Class A common stock at a strike price of $294.54 per share, which corresponds to the initial conversion price of the Notes, and are exercisable by the Company upon conversion of the Notes.
+  - [0001271024-16-000043@45305] The Company’s potential common shares consist of shares issuable upon the release of restricted stock units ("RSUs"), and to a lesser extent, the incremental common shares issuable upon the exercise of stock options and purchases related to the 2011 Employee Stock Purchase Plan.
+  - [0001271024-16-000043@54791] Aggregate intrinsic value represents the difference between the Company's closing stock price of its Class A common stock and the exercise price of outstanding, in-the-money options.
+  - [0001271024-16-000043@56540] The Company capitalized $6.6 million and $4.4 million for the three months ended March 31, 2016 and 2015, respectively, of stock-based compensation as website development and production costs. 14.
+  - [0001271024-16-000043@91678] Our cost of revenue primarily consists of salaries, benefits and stock-based compensation for our production operations, customer support, infrastructure and advertising operations teams and web hosting costs related to operating our website.
+  - [0001271024-16-000043@92126] For cost of revenue, in 2016, we expect higher production related costs, including author royalty expenses, in connection with the operation of Lynda.com, which we acquired in the second quarter of 2015.
+  - [0001271024-16-000043@98614] Other expense, net consists primarily of the interest expense from our convertible senior notes, income earned on our investments, fair value adjustments on our other derivative, and foreign exchange gains and losses.
+  - [0001271024-16-000043@98832] Hedging strategies that we have implemented or may implement to mitigate foreign exchange risk may not eliminate our exposure to foreign exchange fluctuations. 36 .
+  - [0001271024-16-000043@99502] Other expense, net decreased in the three months ended March 31, 2016 compared to the same period last year primarily due to higher interest income and lower foreign exchange losses, partially offset by fair value adjustments related to our other derivative.
+  - [0001271024-16-000043@99761] See Note 2, Fair Value Measurements , of the Notes to Condensed Consolidated Financial Statements under Item 1 for additional information on our other derivative.
+  - [0001271024-16-000043@102064] Our cash equivalents and marketable securities are comprised primarily of corporate debt securities, US treasury securities, US agency securities, money market funds and commercial paper.
+  - [0001271024-16-000043@108847] In the three months ended March 31, 2016 , and 2015 , our financing activities consisted primarily of net proceeds from the issuance of common stock from employee stock option exercises, as well as the excess tax benefit from stock-based compensation.
+  - [0001271024-16-000043@115678] We enter into foreign currency derivative contracts to reduce the risk that our cash flows and earnings will be adversely affected by foreign currency exchange rate fluctuations.
+  - [0001271024-16-000043@115876] We use foreign currency derivative contracts designated as cash flow hedges to hedge forecasted revenue transactions denominated in currencies other than the US dollar.
+  - [0001271024-16-000043@116045] Our cash flow hedges are carried at fair value with gains or losses initially recorded as a component of Accumulated other comprehensive loss in stockholders’ equity and subsequently reclassified into revenue when the underlying hedged revenue is recognized.
+  - [0001271024-16-000043@116327] We use other foreign currency derivative contracts not designated as hedging instruments (“balance sheet hedges”) to reduce exchange rate risk associated with our foreign currency denominated monetary assets and liabilities.
+  - [0001271024-16-000043@116552] These balance sheet hedges are carried at fair value with changes in the fair value recorded to other income (expense), net in our condensed consolidated statements of operations.
+  - [0001271024-16-000043@116732] These contracts do not subject us to material financial statement risk due to exchange rate movements because gains and losses on these derivatives are intended to offset gains and losses on the hedged foreign currency denominated assets and liabilities.
+  - [0001271024-16-000043@116987] As of March 31, 2016 , we had total outstanding foreign currency derivative contracts with a total notional amount of $691.7 million .
+  - [0001271024-16-000043@117122] If overall foreign currency exchange rates appreciated uniformly by 5% against the US Dollar, our foreign currency derivative contracts outstanding as of March 31, 2016 would experience a loss of approximately $16.5 million.
+  - [0001271024-16-000043@117848] Concurrent with the issuance of the Notes, we purchased options (“Note Hedges”) and sold warrants, in order to reduce the potential economic dilution upon conversion of the Notes. 41 .
+  - [0001271024-16-000043@118814] The embedded features on the preferred stock of our joint venture are accounted for as a derivative instrument, which is measured at fair value each reporting period.
+  - [0001271024-16-000043@119121] The financial impact to future periods will depend on changes in fair value of the derivative instruments, which is correlated with the performance and value of the Company's joint venture, and will be recorded in Other income (expense), net.
+  - [0001271024-16-000043@127127] We have implemented a disaster recovery program, which allows us to move production traffic to a backup data center in the event of a catastrophe.
+  - [0001271024-16-000043@127943] Our systems are also vulnerable to damage or interruption from catastrophic occurrences such as earthquakes, floods, fires, power loss, telecommunication failures, terrorist attacks and similar events.
+  - [0001271024-16-000043@199845] Currently, this access is provided by companies that have significant market power in the broadband and Internet access marketplace, including incumbent telephone companies, cable companies, mobile communications companies, and government-owned service providers, any of whom could take actions that degrade, disrupt, or increase the cost of user access to our products or solutions, which would, in turn, negatively impact our business.
+  - [0001271024-16-000043@203889] Although we hedge a portion of our foreign currency exposure, significant fluctuations in exchange rates between the US dollar and foreign currencies may adversely affect our net income (loss).
+  - [0001271024-16-000043@204083] Additionally, hedging programs rely on our ability to forecast accurately and could expose us to additional risks that could adversely affect our financial condition and results of operations.
+  - [0001271024-16-000043@213836] Stockholders who hold shares of our Class B common stock, including our founders, and our executive officers, employees and directors and their affiliates, together held approximately 56.9% of the voting power of our outstanding capital stock as of March 31, 2016 .
+  - [0001271024-16-000043@214102] Our co-founder and Chair, Reid Hoffman, held approximately 10.9% of the outstanding shares of our Class A and Class B common stock, representing approximately 53.0% of the voting power of our outstanding capital stock as of March 31, 2016 .
+  - [0001271024-16-000043@214992] Because of the 10-to-1 voting ratio between our Class B and Class A common stock, the holders of our Class B common stock collectively will continue to control a majority of the combined voting power of our common stock even when the shares of Class B common stock represent as little as 10% of the combined voting power of all outstanding shares of our Class A and Class B common stock.
+  - [0001271024-16-000043@215615] Hoffman continues to retain a significant portion of his holdings of Class B common stock for an extended period of time, he could continue to control a majority of the combined voting power of our Class A and Class B common stock.
+  - [0001271024-16-000043@221402] Our dual class structure concentrates the voting power of our stock in a small group of stockholders who would have the ability to control the outcome of a stockholder vote.
+  - [0001271024-16-000043@225537] At the time we are required to make repurchases of the Notes being surrendered or converted at their maturity, we may not have enough available cash or be able to obtain financing to refinance the Notes on commercially reasonable terms or at all.
+  - [0001271024-16-000043@227673] Note hedge and warrant transactions we have entered into may affect the value of the Notes and our common stock.
+  - [0001271024-16-000043@227786] Concurrently with the issuance of the Notes, we entered into note hedge transactions with certain financial institutions, which we refer to as the “option counterparties.” The note hedge transactions are expected to reduce the potential dilution upon any conversion of the Notes and/or offset any cash payments we are required to make in excess of the principal amount of converted Notes, as the case may be.
+  - [0001271024-16-000043@228195] We also entered into warrant transactions with the option counterparties.
+  - [0001271024-16-000043@228426] In connection with establishing their initial hedge of the note hedge and warrant transactions, the option counterparties or their respective affiliates have purchased shares of our common stock and/or entered into various derivative transactions with respect to our common stock following the pricing of the Notes.
+  - [0001271024-16-000043@228742] In addition, the option counterparties or their respective affiliates may modify their hedge positions by entering into or unwinding various derivatives contracts with respect to our common stock and/or purchasing or selling our common stock or other securities of ours in secondary market transactions prior to the maturity of the Notes (and are likely to do so during any observation period related to a conversion of Notes or following any repurchase of Notes by us on any fundamental change repurchase date or otherwise).
+  - [0001271024-16-000043@229383] In addition, if any such convertible note hedge and warrant transactions fail to become effective, the option counterparties or their respective affiliates may unwind their hedge positions with respect to our common stock, which could adversely affect the value of our common stock and the value of the Notes.
+  - [0001271024-16-000043@229693] We are subject to counterparty risk with respect to the note hedge transactions.
+  - [0001271024-16-000043@229774] The option counterparties are financial institutions or affiliates of financial institutions, and we will be subject to the risk that these option counterparties may default under the note hedge transactions.
+  - [0001271024-16-000043@229983] Our exposure to the credit risk of the option counterparties will not be secured by any collateral.
+  - [0001271024-16-000043@230083] If one or more of the option counterparties to one or more of our note hedge transactions becomes subject to insolvency proceedings, we will become an unsecured creditor in those proceedings with a claim equal to our exposure at the time under those transactions. 63 .
+  - [0001271024-16-000043@230596] In addition, upon a default by one of the option counterparties, we may suffer adverse tax consequences and dilution with respect to our common stock.
+  - [0001271024-16-000043@230747] We can provide no assurances as to the financial stability or viability of any of the option counterparties.
+
+## ACQUIRER: Microsoft Corporation
+- identity.source_accession: 0001104659-16-126712
+- identity.source_form: 8-K
+- identity.source_filing_date: 2016-06-13
+- identity.source_acceptance_et: 2016-06-13T08:39:06
+- identity.source_basis: manifest_announcement_accession
+- identity.parent_entity: Microsoft Corporation
+- identity.parent_quote: finitive Agreement. On June 11, 2016, LinkedIn Corporation (the “Company”) entered into an Agreement and Plan of Merger (the “Merger Agreement”) with Microsoft Corporation (“Parent”) and Liberty Merger Sub Inc., a wholly owned subsi
+- identity.matched_name: Microsoft Corporation
+- identity.sec_name: MICROSOFT CORP
+- identity.manifest_name_consistent: True
+- identity.status: resolved
+- identity.sic_context_only: 7372
+- identity.sic_description_context_only: Services-Prepackaged Software
+
+### 10-K 0001193125-15-272806
+- filed 2015-07-31; SEC acceptance (ET) 2015-07-31T15:07:52-04:00
+- full document: https://www.sec.gov/Archives/edgar/data/789019/000119312515272806/d918813d10k.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1 [6388:8740], Item 1A [64135:68553], Item 7 [112782:115593], Item 7A [187999:190902]
+- excerpts: 48 of 48 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001193125-15-272806@11887] We believe the combination of Azure and Windows Server makes us the only company with a public, private, and hybrid cloud platform that can power modern business.
+  - [0001193125-15-272806@13559] We see the launch of Windows 10 in July 2015 as a critical, transformative moment for the Company because we will move from an operating system that runs on a PC to a service that can power the full spectrum of devices in our customers’ lives.
+  - [0001193125-15-272806@15784] We are developing new input/output methods like speech, pen, gesture, and augmented reality holograms to power more personal computing experiences with Windows 10.
+  - [0001193125-15-272806@24756] We believe the success of gaming and entertainment consoles is determined by the availability of games for the console, providing exclusive game content that gamers seek, the computational power and reliability of the console, and the ability to create new experiences via online services, downloadable content, and peripherals.
+  - [0001193125-15-272806@40455] We operate manufacturing facilities for the production and customization of phones, predominantly in Vietnam.
+  - [0001193125-15-272806@49370] EDAs typically are also authorized as LSPs and operate as resellers for our other licensing programs, such as the Select Plus and Open licensing programs discussed under “Licensing Options” below.
+  - [0001193125-15-272806@71673] • Maintaining the utility, compatibility, and performance of our cloud-based services on the growing array of computing devices, including PCs, smartphones, tablets, gaming consoles, and other television-related devices.
+  - [0001193125-15-272806@87778] Government authorities can sometimes require us to produce customer data in response to valid legal orders.
+  - [0001193125-15-272806@88725] Our increasing user traffic, growth in services, and the complexity of our products and services demand more computing power.
+  - [0001193125-15-272806@102194] Although we hedge a portion of our international currency exposure, significant fluctuations in foreign exchange rates between the U.S. dollar and foreign currencies may adversely affect our revenue.
+  - [0001193125-15-272806@104208] Environmental regulations or changes in the supply, demand or available sources of energy or other natural resources may affect the availability or cost of goods and services, including natural resources, necessary to run our business.
+  - [0001193125-15-272806@151988] We use derivative instruments to: manage risks related to foreign currencies, equity prices, interest rates, and credit; enhance investment returns; and facilitate portfolio diversification.
+  - [0001193125-15-272806@185349] We regularly review inventory quantities on hand, future purchase commitments with our suppliers, and the estimated utility of our inventory.
+  - [0001193125-15-272806@185664] If our review indicates a reduction in utility below carrying value, we reduce our inventory to a new cost basis through a charge to cost of revenue.
+  - [0001193125-15-272806@188077] We are exposed to economic risk from foreign exchange rates, interest rates, credit risk, equity prices, and commodity prices.
+  - [0001193125-15-272806@188204] A portion of these risks is hedged, but they may impact our consolidated financial statements.
+  - [0001193125-15-272806@188413] We monitor our foreign currency exposures daily and use hedges where practicable to offset the risks and maximize the economic effectiveness of our foreign currency positions.
+  - [0001193125-15-272806@189466] We use broad-based commodity exposures to enhance portfolio returns and facilitate portfolio diversification.
+  - [0001193125-15-272806@189576] Our investment portfolio has exposure to a variety of commodities, including precious metals, energy, and grain.
+  - [0001193125-15-272806@189689] We manage these exposures relative to global commodity indices and expect their economic risk and return to correlate with these indices.
+  - [0001193125-15-272806@212635] Our Level 1 non-derivative investments primarily include U.S. government securities, domestic and international equities, and actively traded mutual funds.
+  - [0001193125-15-272806@212791] Our Level 1 derivative assets and liabilities include those actively traded on exchanges.
+  - [0001193125-15-272806@213573] Our Level 2 non-derivative investments consist primarily of corporate notes and bonds, common and preferred stock, mortgage- and asset-backed securities, U.S. government and agency securities, and foreign government bonds.
+  - [0001193125-15-272806@213796] Our Level 2 derivative assets and liabilities primarily include certain over-the-counter option and swap contracts.
+  - [0001193125-15-272806@214224] Our Level 3 non-derivative assets primarily comprise investments in common and preferred stock and goodwill when it is recorded at fair value due to an impairment charge.
+  - [0001193125-15-272806@214500] Our Level 3 derivative assets and liabilities primarily include equity derivatives.
+  - [0001193125-15-272806@232059] We use derivative instruments to manage risks related to foreign currencies, equity prices, interest rates, and credit; to enhance investment returns; and to facilitate portfolio diversification.
+  - [0001193125-15-272806@232255] Our objectives for holding derivatives include reducing, eliminating, and efficiently managing the economic impact of these exposures as effectively as possible.
+  - [0001193125-15-272806@232417] Our derivative programs include strategies that both qualify and do not qualify for hedge accounting treatment.
+  - [0001193125-15-272806@232765] We monitor our foreign currency exposures daily to maximize the economic effectiveness of our foreign currency hedge positions.
+  - [0001193125-15-272806@234531] From time to time, to hedge our price risk, we may use and designate equity derivatives as hedging instruments, including puts, calls, swaps, and forwards.
+  - [0001193125-15-272806@235345] We manage the average maturity of our fixed-income portfolio to achieve economic returns that correlate to certain broad-based fixed-income indices using exchange-traded option and futures contracts and over-the-counter swap and option contracts, none of which are designated as hedging instruments.
+  - [0001193125-15-272806@236503] We use credit default swap contracts, not designated as hedging instruments, to manage credit exposures relative to broad-based indices and to facilitate portfolio diversification.
+  - [0001193125-15-272806@236684] We use credit default swaps as they are a low-cost method of managing exposure to individual credit risks or groups of credit risks.
+  - [0001193125-15-272806@237147] We use broad-based commodity exposures to enhance portfolio returns and to facilitate portfolio diversification.
+  - [0001193125-15-272806@237260] We use swaps, futures, and option contracts, not designated as hedging instruments, to generate and manage exposures to broad-based commodity indices.
+  - [0001193125-15-272806@237411] We use derivatives on commodities as they can be low-cost alternatives to the purchase and storage of a variety of commodities, including, but not limited to, precious metals, energy, and grain.
+  - [0001193125-15-272806@237928] Certain of our counterparty agreements for derivative instruments contain provisions that require our issued and outstanding long-term unsecured debt to maintain an investment grade credit rating and require us to maintain minimum liquidity of $1.0 billion.
+  - [0001193125-15-272806@238186] To the extent we fail to meet these requirements, we will be required to post collateral, similar to the standard convention related to over-the-counter derivatives.
+  - [0001193125-15-272806@238827] The fair values exclude the impact of netting derivative assets and liabilities when a legally enforceable master netting agreement exists and fair value adjustments related to our own credit risk and counterparty credit risk: .
+  - [0001193125-15-272806@240684] We recognized in other income (expense), net the following gains (losses) on contracts designated as fair value hedges and their related hedged items: .
+  - [0001193125-15-272806@241290] We recognized the following gains (losses) on foreign exchange contracts designated as cash flow hedges (our only cash flow hedges during the periods presented): .
+  - [0001193125-15-272806@241831] We estimate that $492 million of net derivative gains included in AOCI at June 30, 2015 will be reclassified into earnings within the following 12 months.
+  - [0001193125-15-272806@245020] (a) These amounts represent the impact of netting derivative assets and derivative liabilities when a legally enforceable master netting agreement exists and fair value adjustments related to our own credit risk and counterparty credit risk.
+  - [0001193125-15-272806@261507] As of June 30, 2015, we had $5.0 billion of commercial paper issued and outstanding, with a weighted-average interest rate of 0.11% and maturities ranging from 8 days to 63 days.
+  - [0001193125-15-272806@261686] As of June 30, 2014, we had $2.0 billion of commercial paper issued and outstanding, with a weighted-average interest rate of 0.12% and maturities ranging from 86 to 91 days.
+  - [0001193125-15-272806@262056] These credit facilities serve as a back-up for our commercial paper program.
+  - [0001193125-15-272806@302360] Investment options in the U.S. plan include Microsoft common stock, but neither participant nor our matching contributions are required to be invested in Microsoft common stock.
+
+### 10-Q 0001193125-16-550254
+- filed 2016-04-21; SEC acceptance (ET) 2016-04-21T16:10:33-04:00
+- full document: https://www.sec.gov/Archives/edgar/data/789019/000119312516550254/d256147d10q.htm
+- full-section spans (character offsets in whitespace-normalized text): Item 1A [157948:159082]
+- excerpts: 41 of 41 first-person sentences matching the broad review vocabulary (document order; cap 80). Excerpts are NOT a complete evidence set; consult the full sections.
+  - [0001193125-16-550254@28709] We use derivative instruments to manage risks related to foreign currencies, equity prices, interest rates, and credit; to enhance investment returns; and to facilitate portfolio diversification.
+  - [0001193125-16-550254@28905] Our objectives for holding derivatives include reducing, eliminating, and efficiently managing the economic impact of these exposures as effectively as possible.
+  - [0001193125-16-550254@29067] Our derivative programs include strategies that both qualify and do not qualify for hedge accounting treatment.
+  - [0001193125-16-550254@29371] We monitor our foreign currency exposures daily to maximize the economic effectiveness of our foreign currency hedge positions.
+  - [0001193125-16-550254@31169] From time to time, to hedge our price risk, we may use and designate equity derivatives as hedging instruments, including puts, calls, swaps, and forwards.
+  - [0001193125-16-550254@31984] We manage the average maturity of our fixed-income portfolio to achieve economic returns that correlate to certain broad-based fixed-income indices using exchange-traded option and futures contracts, and over-the-counter swap and option contracts, none of which are designated as hedging instruments.
+  - [0001193125-16-550254@33154] We use credit default swap contracts, not designated as hedging instruments, to manage credit exposures relative to broad-based indices and to facilitate portfolio diversification.
+  - [0001193125-16-550254@33335] We use credit default swaps as they are a low-cost method of managing exposure to individual credit risks or groups of credit risks.
+  - [0001193125-16-550254@33755] We use broad-based commodity exposures to enhance portfolio returns and to facilitate portfolio diversification.
+  - [0001193125-16-550254@33868] We use swaps, futures, and option contracts, not designated as hedging instruments, to generate and manage exposures to broad-based commodity indices.
+  - [0001193125-16-550254@34019] We use derivatives on commodities as they can be low-cost alternatives to the purchase and storage of a variety of commodities, including, but not limited to, precious metals, energy, and grain.
+  - [0001193125-16-550254@34537] Certain of our counterparty agreements for derivative instruments contain provisions that require our issued and outstanding long-term unsecured debt to maintain an investment grade credit rating and require us to maintain minimum liquidity of $1.0 billion.
+  - [0001193125-16-550254@34795] To the extent we fail to meet these requirements, we will be required to post collateral, similar to the standard convention related to over-the-counter derivatives.
+  - [0001193125-16-550254@37321] The fair values exclude the impact of netting derivative assets and liabilities when a legally enforceable master netting agreement exists and fair value adjustments related to our own credit risk and counterparty credit risk: .
+  - [0001193125-16-550254@39193] We recognized in other income (expense), net the following gains (losses) on contracts designated as fair-value hedges and their related hedged items: .
+  - [0001193125-16-550254@39889] We recognized the following gains (losses) on foreign exchange contracts designated as cash-flow hedges: .
+  - [0001193125-16-550254@40447] We estimate that $290 million of net derivative gains included in AOCI at March 31, 2016 will be reclassified into earnings within the following 12 months.
+  - [0001193125-16-550254@42506] Our Level 1 non-derivative investments primarily include U.S. government securities, domestic and international equities, and actively traded mutual funds.
+  - [0001193125-16-550254@42662] Our Level 1 derivative assets and liabilities include those actively traded on exchanges.
+  - [0001193125-16-550254@43443] Our Level 2 non-derivative investments consist primarily of corporate notes and bonds, common and preferred stock, mortgage- and asset-backed securities, U.S. government and agency securities, and foreign government bonds.
+  - [0001193125-16-550254@43666] Our Level 2 derivative assets and liabilities primarily include certain over-the-counter option and swap contracts.
+  - [0001193125-16-550254@44093] Our Level 3 non-derivative assets primarily comprise investments in common and preferred stock, and goodwill and intangible assets, when they are recorded at fair value due to an impairment charge.
+  - [0001193125-16-550254@46874] (a) These amounts represent the impact of netting derivative assets and derivative liabilities when a legally enforceable master netting agreement exists and fair value adjustments related to our own credit risk and counterparty credit risk.
+  - [0001193125-16-550254@53730] As of March 31, 2016, we had $5.5 billion of commercial paper issued and outstanding, with a weighted-average interest rate of 0.36% and maturities ranging from 26 days to 91 days.
+  - [0001193125-16-550254@53911] As of June 30, 2015, we had $5.0 billion of commercial paper issued and outstanding, with a weighted-average interest rate of 0.11% and maturities ranging from 8 days to 63 days.
+  - [0001193125-16-550254@54295] These credit facilities serve as a back-up for our commercial paper program.
+  - [0001193125-16-550254@77792] Our Intelligent Cloud segment consists of our public, private, and hybrid server products and cloud services that can power modern business.
+  - [0001193125-16-550254@124409] We use derivative instruments to: manage risks related to foreign currencies, equity prices, interest rates, and credit; enhance investment returns; and facilitate portfolio diversification.
+  - [0001193125-16-550254@152620] Item 2 . quantities on hand, future purchase commitments with our suppliers, and the estimated utility of our inventory.
+  - [0001193125-16-550254@152914] If our review indicates a reduction in utility below carrying value, we reduce our inventory to a new cost basis through a charge to cost of revenue.
+  - [0001193125-16-550254@153328] We are exposed to economic risk from foreign exchange rates, interest rates, credit risk, equity prices, and commodity prices.
+  - [0001193125-16-550254@153455] A portion of these risks is hedged, but they may impact our consolidated financial statements.
+  - [0001193125-16-550254@153664] We monitor our foreign currency exposures daily and use hedges where practicable to offset the risks and maximize the economic effectiveness of our foreign currency positions.
+  - [0001193125-16-550254@154717] We use broad-based commodity exposures to enhance portfolio returns and facilitate portfolio diversification.
+  - [0001193125-16-550254@154827] Our investment portfolio has exposure to a variety of commodities, including precious metals, energy, and grain.
+  - [0001193125-16-550254@154940] We manage these exposures relative to global commodity indices and expect their economic risk and return to correlate with these indices.
+  - [0001193125-16-550254@165532] • Maintaining the utility, compatibility, and performance of our cloud-based services on the growing array of computing devices, including PCs, smartphones, tablets, gaming consoles, and other television-related devices.
+  - [0001193125-16-550254@181444] Government authorities can sometimes require us to produce customer data in response to valid legal orders.
+  - [0001193125-16-550254@182413] Our increasing user traffic, growth in services, and the complexity of our products and services demand more computing power.
+  - [0001193125-16-550254@198043] Although we hedge a portion of our international currency exposure, significant fluctuations in foreign exchange rates between the U.S. dollar and foreign currencies may adversely affect our revenue.
+  - [0001193125-16-550254@200004] Environmental regulations or changes in the supply, demand or available sources of energy or other natural resources may affect the availability or cost of goods and services, including natural resources, necessary to run our business.

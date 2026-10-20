@@ -43,6 +43,17 @@ and `docs/V1_READINESS_REPORT.md`.
 - Cluster totals after Oct 20 load: **1 VERIFIED_PRIMARY**, **5 ATTRIBUTED_CLAIM**, **21 UNCONFIRMED** (27 clusters, 38 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.
 
+### Reviewer leads pass (2026-10-20, Todd `leads-2026-10-20.jsonl`)
+
+- Leads file: 34 lines = 20 `found` (18 in scope; 2 RTX lines have no matching feed event and are out of scope), 4 `not_found`, 10 `not_searched`.
+- Each in-scope lead URL was retrieved independently (curl; WebFetch where the box got HTTP 403). 17 of 18 retrieved and quotes confirmed; GM 8-K on sec.gov returned 403 with the repo's noreply contact UA (the Gmail contact was not used; that decision is open), so it is not recorded.
+- 15 reviewer-retrieved records appended via `python -m src.geo_intel.ingest --records` (append-only; prior 38 rows byte-identical). All are `reputable_secondary`: no lead host is in the 21-domain registry (registry unchanged). Party, state-affiliated, company and legislature sources are staged as `attributed_statement` (Oslo items as `scheduled`), so none can reach above ATTRIBUTED_CLAIM.
+- Not appended (retrieved, but the source does not contain the feed row's key claim): Zelenskyy's president.gov.ua readout (no "Pentagon is delaying"), and RIA's Tambov item (governor says "one of the enterprises", not an oil pumping station).
+- JMIC Update 106 (Oct 18) is staged with `stance=contradicts` on the Oct 17 IRGC two-tanker claim cluster `GEO-8CEC392AD45F` ("there is no substantiation to these claims") -> DISPUTED. Today's IRGC claim (Tasnim, Sepah) is staged only under `GEO-D6ECAD6B43C8`; no cross-cluster link or sameness is asserted.
+- Feed rows not repaired: the HB 1667 "House passed" row (Oct 19 vote was a concurrence vote), the Tambov "oil pumping station" row and the Guardian "Pentagon is delaying" row stay as ingested. The only revision mechanism (`revises_evidence_id`) requires the original publisher, so no supersession was applied.
+- Cluster totals after this pass: **1 VERIFIED_PRIMARY**, **13 ATTRIBUTED_CLAIM**, **1 DISPUTED**, **12 UNCONFIRMED** (27 clusters, 53 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.
+
 Pilots / dry runs of relayed feeds should still use a staging ledger OUTSIDE this
 directory when experimenting. Promoting a verified day's feed into this ledger is a
 reviewed step (this file documents the 2026-10-19 promotion).

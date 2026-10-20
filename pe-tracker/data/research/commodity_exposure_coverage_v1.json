@@ -1,0 +1,436 @@
+{
+  "protocol": "docs/PREREG_COMMODITY_EXPOSURE_COVERAGE_v1.md",
+  "research_only": true,
+  "model_fit_executed": false,
+  "backtest_executed": false,
+  "canonical_store_written": false,
+  "n_deals": 129,
+  "n_party_rows": 258,
+  "coverage": {
+    "by_party": {
+      "target": {
+        "n": 129,
+        "exposure_status": {
+          "labeled": 84,
+          "unknown": 45
+        },
+        "unknown_reason": {
+          "no_qualifying_disclosure_in_reviewed_filings": 44,
+          "no_preannouncement_annual_report_in_window": 1
+        },
+        "producer": {
+          "unknown": 111,
+          "yes": 18
+        },
+        "consumer": {
+          "yes": 71,
+          "unknown": 58
+        },
+        "shipping_dependent": {
+          "yes": 45,
+          "unknown": 84
+        },
+        "hedged": {
+          "unknown": 102,
+          "yes": 26,
+          "no_disclosed": 1
+        }
+      },
+      "acquirer": {
+        "n": 129,
+        "exposure_status": {
+          "unknown": 79,
+          "labeled": 50
+        },
+        "unknown_reason": {
+          "acquirer_identity_unresolved": 72,
+          "no_qualifying_disclosure_in_reviewed_filings": 7
+        },
+        "producer": {
+          "unknown": 116,
+          "yes": 13
+        },
+        "consumer": {
+          "unknown": 83,
+          "yes": 46
+        },
+        "shipping_dependent": {
+          "unknown": 105,
+          "yes": 24
+        },
+        "hedged": {
+          "unknown": 109,
+          "yes": 20
+        }
+      }
+    },
+    "deals": {
+      "at_least_one_party_labeled": 96,
+      "no_party_labeled": 33
+    },
+    "by_year": {
+      "acquirer:2014": {
+        "labeled": 13,
+        "unknown": 26
+      },
+      "acquirer:2015": {
+        "labeled": 13,
+        "unknown": 20
+      },
+      "acquirer:2016": {
+        "labeled": 2,
+        "unknown": 5
+      },
+      "acquirer:2017": {
+        "labeled": 1
+      },
+      "acquirer:2018": {
+        "labeled": 2,
+        "unknown": 1
+      },
+      "acquirer:2019": {
+        "unknown": 1
+      },
+      "acquirer:2020": {
+        "labeled": 4,
+        "unknown": 3
+      },
+      "acquirer:2021": {
+        "unknown": 8,
+        "labeled": 4
+      },
+      "acquirer:2022": {
+        "labeled": 3,
+        "unknown": 11
+      },
+      "acquirer:2023": {
+        "labeled": 5
+      },
+      "acquirer:2024": {
+        "labeled": 2,
+        "unknown": 1
+      },
+      "acquirer:2025": {
+        "unknown": 2
+      },
+      "acquirer:2026": {
+        "unknown": 1,
+        "labeled": 1
+      },
+      "target:2014": {
+        "labeled": 26,
+        "unknown": 13
+      },
+      "target:2015": {
+        "labeled": 22,
+        "unknown": 11
+      },
+      "target:2016": {
+        "labeled": 5,
+        "unknown": 2
+      },
+      "target:2017": {
+        "labeled": 1
+      },
+      "target:2018": {
+        "unknown": 2,
+        "labeled": 1
+      },
+      "target:2019": {
+        "labeled": 1
+      },
+      "target:2020": {
+        "unknown": 2,
+        "labeled": 5
+      },
+      "target:2021": {
+        "unknown": 4,
+        "labeled": 8
+      },
+      "target:2022": {
+        "labeled": 8,
+        "unknown": 6
+      },
+      "target:2023": {
+        "labeled": 3,
+        "unknown": 2
+      },
+      "target:2024": {
+        "labeled": 2,
+        "unknown": 1
+      },
+      "target:2025": {
+        "unknown": 2
+      },
+      "target:2026": {
+        "labeled": 2
+      }
+    },
+    "by_outcome": {
+      "acquirer:break": {
+        "labeled": 10,
+        "unknown": 10
+      },
+      "acquirer:close": {
+        "unknown": 69,
+        "labeled": 40
+      },
+      "target:break": {
+        "labeled": 12,
+        "unknown": 8
+      },
+      "target:close": {
+        "labeled": 72,
+        "unknown": 37
+      }
+    },
+    "sector": "unknown for all 129 deals in the store (ledger sector missing)"
+  },
+  "agreement": {
+    "sample": [
+      "DEAL-ATHLON-ENCANA-2014",
+      "DEAL-CHNG-UNH-2021",
+      "DEAL-CLDR-KKRCDR-2021",
+      "DEAL-CXO-COP-2020",
+      "DEAL-FRISCH-NRD-2015",
+      "DEAL-GNW-OCEANWIDE-2016",
+      "DEAL-HILLSH-TYSON-2014",
+      "DEAL-IRBT-AMZN-2022",
+      "DEAL-MDLA-TB-2021",
+      "DEAL-MNTV-ZEN-2021",
+      "DEAL-OM-APOLLO-2015",
+      "DEAL-PROCER-FRANCI-2015",
+      "DEAL-QUALIT-FUNDS-2015",
+      "DEAL-SAPIEN-PUBLIC-2014",
+      "DEAL-SIGMA-MERCK-2014",
+      "DEAL-STRATE-BLACKS-2015",
+      "DEAL-TECUMS-MUELLE-2015",
+      "DEAL-TWC-CMCSA-2014",
+      "DEAL-TWTR-XHOLDINGS-2022",
+      "DEAL-VITACO-KROGER-2014"
+    ],
+    "reviewer": "same AI assistant, blind to pass A, judgment-based",
+    "primary_deal_exact": 0.35,
+    "deals_agreeing": 7,
+    "party_exact": 0.575,
+    "per_flag": {
+      "producer": {
+        "agreement": 0.925,
+        "cohen_kappa": 0.724770642201835
+      },
+      "consumer": {
+        "agreement": 0.675,
+        "cohen_kappa": 0.39534883720930236
+      },
+      "shipping_dependent": {
+        "agreement": 0.875,
+        "cohen_kappa": 0.6551724137931035
+      },
+      "hedged": {
+        "agreement": 0.925,
+        "cohen_kappa": 0.8003327787021631
+      }
+    },
+    "disagreements": [
+      {
+        "deal_id": "DEAL-ATHLON-ENCANA-2014",
+        "party": "target",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "E&P with proved reserves; 10-Q cites higher transportation fees to move gas production; derivatives mentioned but packet does not state commodity purpose"
+      },
+      {
+        "deal_id": "DEAL-ATHLON-ENCANA-2014",
+        "party": "target",
+        "flag": "hedged",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "E&P with proved reserves; 10-Q cites higher transportation fees to move gas production; derivatives mentioned but packet does not state commodity purpose"
+      },
+      {
+        "deal_id": "DEAL-ATHLON-ENCANA-2014",
+        "party": "acquirer",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "E&P; uses derivatives to mitigate natural gas and liquids price declines"
+      },
+      {
+        "deal_id": "DEAL-CHNG-UNH-2021",
+        "party": "target",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Healthcare technology; only interest-rate derivatives; no commodity/freight disclosure in packet"
+      },
+      {
+        "deal_id": "DEAL-CHNG-UNH-2021",
+        "party": "acquirer",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Health insurer; interest-rate swaps only"
+      },
+      {
+        "deal_id": "DEAL-CXO-COP-2020",
+        "party": "target",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "E&P with proved reserves; commodity derivatives"
+      },
+      {
+        "deal_id": "DEAL-CXO-COP-2020",
+        "party": "target",
+        "flag": "shipping_dependent",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "E&P with proved reserves; commodity derivatives"
+      },
+      {
+        "deal_id": "DEAL-CXO-COP-2020",
+        "party": "acquirer",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Explores for and produces crude/gas; Libya export terminal blockade interrupted crude liftings; holds commodity derivatives (futures/forwards/swaps)"
+      },
+      {
+        "deal_id": "DEAL-GNW-OCEANWIDE-2016",
+        "party": "target",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Insurer; interest-rate/equity/FX derivatives only"
+      },
+      {
+        "deal_id": "DEAL-HILLSH-TYSON-2014",
+        "party": "target",
+        "flag": "producer",
+        "pass_a": "unknown",
+        "pass_b": "yes",
+        "pass_b_note": "Raises turkeys, commodity pork/turkey businesses; commodity input costs; commodity prices affect cost to ship products; commodity futures/options hedging"
+      },
+      {
+        "deal_id": "DEAL-HILLSH-TYSON-2014",
+        "party": "target",
+        "flag": "shipping_dependent",
+        "pass_a": "unknown",
+        "pass_b": "yes",
+        "pass_b_note": "Raises turkeys, commodity pork/turkey businesses; commodity input costs; commodity prices affect cost to ship products; commodity futures/options hedging"
+      },
+      {
+        "deal_id": "DEAL-IRBT-AMZN-2022",
+        "party": "acquirer",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Retail; rising shipping costs and reliance on limited shipping companies; no commodity input or commodity hedge disclosure in packet"
+      },
+      {
+        "deal_id": "DEAL-MDLA-TB-2021",
+        "party": "target",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Software; FX hedges only"
+      },
+      {
+        "deal_id": "DEAL-MNTV-ZEN-2021",
+        "party": "target",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Survey software; no material derivatives"
+      },
+      {
+        "deal_id": "DEAL-PROCER-FRANCI-2015",
+        "party": "target",
+        "flag": "shipping_dependent",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Network software/hardware; freight only as an accounting classification; no FX or commodity hedging"
+      },
+      {
+        "deal_id": "DEAL-QUALIT-FUNDS-2015",
+        "party": "target",
+        "flag": "producer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Bulk tank-truck carrier and crude/water hauler; demand tied to oil prices (customer-side), but packet shows no first-person fuel/commodity input-cost or hedge statement; transporter rather than shipping-dependent"
+      },
+      {
+        "deal_id": "DEAL-QUALIT-FUNDS-2015",
+        "party": "target",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Bulk tank-truck carrier and crude/water hauler; demand tied to oil prices (customer-side), but packet shows no first-person fuel/commodity input-cost or hedge statement; transporter rather than shipping-dependent"
+      },
+      {
+        "deal_id": "DEAL-QUALIT-FUNDS-2015",
+        "party": "target",
+        "flag": "shipping_dependent",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Bulk tank-truck carrier and crude/water hauler; demand tied to oil prices (customer-side), but packet shows no first-person fuel/commodity input-cost or hedge statement; transporter rather than shipping-dependent"
+      },
+      {
+        "deal_id": "DEAL-STRATE-BLACKS-2015",
+        "party": "target",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Hotel REIT; interest-rate derivatives only in packet"
+      },
+      {
+        "deal_id": "DEAL-STRATE-BLACKS-2015",
+        "party": "acquirer",
+        "flag": "consumer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Alternative asset manager; energy funds are investments, not operating exposure; no commodity hedge"
+      },
+      {
+        "deal_id": "DEAL-STRATE-BLACKS-2015",
+        "party": "acquirer",
+        "flag": "hedged",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Alternative asset manager; energy funds are investments, not operating exposure; no commodity hedge"
+      },
+      {
+        "deal_id": "DEAL-TECUMS-MUELLE-2015",
+        "party": "target",
+        "flag": "producer",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Compressor maker; steel/copper/aluminum price volatility; commodity derivative hedges of forecasted purchases"
+      },
+      {
+        "deal_id": "DEAL-VITACO-KROGER-2014",
+        "party": "acquirer",
+        "flag": "shipping_dependent",
+        "pass_a": "unknown",
+        "pass_b": "yes",
+        "pass_b_note": "Supermarkets with fuel centers (retail, not treated as producer); fuel prices affect costs of producing/procuring products; weather could interrupt delivery of products to stores; no commodity hedge in packet"
+      },
+      {
+        "deal_id": "DEAL-VITACO-KROGER-2014",
+        "party": "acquirer",
+        "flag": "hedged",
+        "pass_a": "yes",
+        "pass_b": "unknown",
+        "pass_b_note": "Supermarkets with fuel centers (retail, not treated as producer); fuel prices affect costs of producing/procuring products; weather could interrupt delivery of products to stores; no commodity hedge in packet"
+      }
+    ]
+  },
+  "success_criteria": {
+    "coverage_100pct_labeled_or_explicit_unknown": true,
+    "chronology_all_cited_filings_pre_announcement": true,
+    "agreement_primary_ge_0_90": false
+  },
+  "all_success_criteria_met": false,
+  "status": "v1 FAILED preregistered success criteria; labels are not fit for research use beyond diagnosing the rules"
+}

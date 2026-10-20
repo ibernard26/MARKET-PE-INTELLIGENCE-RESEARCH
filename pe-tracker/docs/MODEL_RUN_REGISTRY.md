@@ -54,20 +54,20 @@ When `register_model` is called:
 - Version-only query: allowed only when a single run has admissible
   predictions for that deal; otherwise ambiguous
 
-## Walk-forward (prepared, not executed)
+## Walk-forward (`first_walkforward_v1`)
 
 `docs/FIRST_WALKFORWARD_EXPERIMENT_V1.md` and
 `data/experiments/first_walkforward_v1/` freeze the cohort, cutoff grid, and
-per-window dataset fingerprints for the first real chronological walk-forward.
-Preparation is `PREPARED_NOT_EXECUTED` until
-`AUTHORIZE FIRST REAL WALKFORWARD`.
+per-window dataset fingerprints. After `AUTHORIZE FIRST REAL WALKFORWARD`,
+`python -m src.model.experiment_execute` fits each window, registers each
+artifact by `model_run_id`, and writes `results.json` / `RESULTS.md`.
 
-Each chronological window should eventually record at least:
+Each chronological window records at least:
 
 `model_run_id`, train/test bounds, cohort id/version, dataset fingerprint,
 code commit, n_train/n_test, sample prevalences, frozen threshold, calibration
-method (`none` for v1). The registry identity designed here is the anchor for
-that reconstructible experiment chain.
+method (`none` for v1). The registry identity is the anchor for that
+reconstructible experiment chain.
 
 ## Sampling terminology
 

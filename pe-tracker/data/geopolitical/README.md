@@ -57,3 +57,16 @@ and `docs/V1_READINESS_REPORT.md`.
 Pilots / dry runs of relayed feeds should still use a staging ledger OUTSIDE this
 directory when experimenting. Promoting a verified day's feed into this ledger is a
 reviewed step (this file documents the 2026-10-19 promotion).
+
+## Ledger update (2026-10-21, branch `research/geo-ledger-2026-10-21`, stacked on 2026-10-20)
+
+- Source feed: Todd `events-2026-10-21.jsonl` (22 lines): **16 accepted as UNCONFIRMED**, **6 market_data rejected** at intake; re-ingest idempotent (16 duplicate, 6 rejected). The 53 prior rows are byte-identical (append-only).
+- Timestamps kept null where the source gave none (never inferred): 13 of 22 items lack `published_at`, all 22 lack `event_time`; flagged, not repaired. Line 1-2 `first_observed_at` is Todd's stated upper bound.
+- No source URL duplicates an existing ledger row. No `primary_source_leads` in today's feed; no reviewer verification pass yet, so all 16 new clusters are untrusted-only.
+- Review flags (not auto-merged; cross-source clustering is a reviewed step):
+  - Araghchi "Hormuz stays closed / seven-day plan" (The National, Gulf News) may overlap the Oct 19 Araghchi cluster (ATTRIBUTED_CLAIM via en.mfa.ir).
+  - IRGC "mines halted three tankers" (Malay Mail, Gulf News, RFE/RL) may overlap `GEO-8CEC392AD45F` (DISPUTED) / `GEO-D6ECAD6B43C8`.
+  - whitehouse.gov (H.R. 7831 signing) and gov.uk (Jackdaw) are registered primary domains but entered as Todd-relayed; they need an independent reviewer retrieval before any VERIFIED_PRIMARY. energy.senate.gov is a committee press release (party statement, caps at ATTRIBUTED_CLAIM).
+  - X post (@DeItaone, Starshield) is untrusted; stays UNCONFIRMED until a primary source corroborates it.
+- Cluster totals after Oct 21 load: **1 VERIFIED_PRIMARY**, **13 ATTRIBUTED_CLAIM**, **1 DISPUTED**, **28 UNCONFIRMED** (43 clusters, 69 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.

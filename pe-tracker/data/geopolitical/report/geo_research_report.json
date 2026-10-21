@@ -138,33 +138,33 @@
         "CORROBORATED_SECONDARY": 0,
         "DISPUTED": 1,
         "RETRACTED": 0,
-        "UNCONFIRMED": 12,
+        "UNCONFIRMED": 28,
         "VERIFIED_PRIMARY": 1
       },
       "empty_state": null,
-      "n_event_clusters": 27,
-      "n_evidence_records": 53,
+      "n_event_clusters": 43,
+      "n_evidence_records": 69,
       "records_by_category": {
-        "energy_supply_interruption": 3,
-        "government_procurement_regulatory": 14,
-        "iran_us_diplomacy": 6,
-        "russia_ukraine_energy_infrastructure": 13,
+        "energy_supply_interruption": 5,
+        "government_procurement_regulatory": 16,
+        "iran_us_diplomacy": 8,
+        "russia_ukraine_energy_infrastructure": 20,
         "sanctions": 4,
         "sector_geopolitical_exposure": 3,
-        "strait_of_hormuz_maritime": 10
+        "strait_of_hormuz_maritime": 13
       },
       "records_by_source_type": {
         "ai_brief": 2,
-        "other": 23,
+        "other": 38,
         "primary_official": 1,
         "reputable_secondary": 25,
-        "social_post": 2
+        "social_post": 3
       },
-      "records_missing_publication_timestamp": 12,
-      "records_missing_valid_timestamp": 51,
+      "records_missing_publication_timestamp": 23,
+      "records_missing_valid_timestamp": 67,
       "source": "pe-tracker/data/geopolitical/evidence_ledger.jsonl",
       "title": "Source verification & coverage",
-      "untrusted_only_clusters": 12
+      "untrusted_only_clusters": 28
     },
     "verified_geo_event_timeline": {
       "as_of": null,

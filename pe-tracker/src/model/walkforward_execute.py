@@ -352,23 +352,74 @@ def _locked_input_hashes(exp_dir: Path) -> dict:
     return {r: sha256_file(ROOT / r) for r in rels if (ROOT / r).exists()}
 
 
-def _open_store() -> sqlite3.Connection:
-    """Ephemeral in-memory projection of the reviewed manifest (same as prep)."""
+def frozen_manifest_projection(cohort: ModelCohort, protocol: dict,
+                               manifest: Optional[dict] = None,
+                               frozen: Optional[dict] = None) -> dict:
+    """Reviewed manifest restricted to the frozen cohort (protocol dataset_freeze).
+
+    The canonical manifest has grown past the Batch-8 freeze, and the frozen prep
+    code fails closed when the store holds deals outside the cohort. Per
+    protocol.dataset_freeze the run uses the manifest as of
+    ``manifest_freeze_commit``: the current reviewed manifest is restricted to
+    the cohort deal_ids and each entry must equal the entry at the freeze
+    commit (read with ``git show``). No entry is edited or added.
+    """
+    if manifest is None:
+        manifest = load_json(ROOT / "data" / "sec_deal_manifest.json")
+    if frozen is None:
+        freeze = protocol["dataset_freeze"]["manifest_freeze_commit"]
+        rel = protocol["dataset_freeze"]["manifest_path"]
+        frozen = json.loads(subprocess.check_output(
+            ["git", "show", f"{freeze}:{rel}"], cwd=REPO_ROOT, text=True))
+    ids = set(cohort.deal_ids)
+    cur = {d["deal_id"]: d for d in manifest.get("deals", []) if d["deal_id"] in ids}
+    old = {d["deal_id"]: d for d in frozen.get("deals", [])}
+    if set(cur) != ids:
+        raise WalkforwardExecuteError(
+            f"cohort deals missing from reviewed manifest: {sorted(ids - set(cur))}")
+    if set(old) != ids:
+        raise WalkforwardExecuteError("freeze-commit manifest deal set != frozen cohort")
+    changed = sorted(d for d in ids if cur[d] != old[d])
+    if changed:
+        raise WalkforwardExecuteError(f"manifest entries changed since freeze: {changed}")
+    proj = {k: v for k, v in manifest.items() if k != "deals"}
+    proj["deals"] = [cur[d] for d in sorted(ids)]
+    return proj
+
+
+def _open_store(cohort: ModelCohort, protocol: dict) -> tuple:
+    """Ephemeral in-memory store from the frozen-cohort manifest projection."""
+    import tempfile
+
     from ..config import ROOT as PKG_ROOT
     from ..db import _migrate_model_run_identity, _upgrade_model_registry_columns
     from ..ingest.historical import ingest
     from ..ingest.providers.sec_edgar import SECEdgarProvider
 
+    proj = frozen_manifest_projection(cohort, protocol)
+    blob = json.dumps(proj, indent=2) + "\n"
     conn = sqlite3.connect(":memory:")
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
     conn.executescript((PKG_ROOT / "schema.sql").read_text())
     _upgrade_model_registry_columns(conn)
     _migrate_model_run_identity(conn)
-    out = ingest(SECEdgarProvider(ROOT / "data" / "sec_deal_manifest.json"), conn)
+    with tempfile.TemporaryDirectory() as td:
+        mpath = Path(td) / "manifest_cohort_projection.json"
+        mpath.write_text(blob)
+        out = ingest(SECEdgarProvider(mpath), conn)
     if out.get("n_quarantined"):
         raise WalkforwardExecuteError(f"quarantined deals during ingest: {out}")
-    return conn
+    n = conn.execute("SELECT COUNT(*) FROM deals").fetchone()[0]
+    if n != len(cohort.deal_ids):
+        raise WalkforwardExecuteError(
+            f"incomplete ingest: {n} deals written, cohort has {len(cohort.deal_ids)}")
+    info = {"source": "sec_deal_manifest.json restricted to cohort; entries equal to "
+                      "manifest_freeze_commit",
+            "n_deals": len(proj["deals"]),
+            "projection_sha256": hashlib.sha256(blob.encode()).hexdigest(),
+            "ingest_summary": {k: v for k, v in out.items() if isinstance(v, (int, float))}}
+    return conn, info
 
 
 def main(argv: Optional[list[str]] = None) -> int:
@@ -390,8 +441,8 @@ def main(argv: Optional[list[str]] = None) -> int:
         raise WalkforwardExecuteError("tracked files modified; commit before executing")
     started = now_iso()
     inputs = _locked_input_hashes(exp_dir)
-    conn = _open_store()
     cohort = cohort_from_file(exp_dir / "cohort.json")
+    conn, manifest_info = _open_store(cohort, protocol)
     results = execute_walkforward(conn, cohort=cohort, protocol=protocol,
                                   frozen_plan=load_json(exp_dir / "plan.json"),
                                   phrase=args.authorize)
@@ -402,6 +453,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         command=["python", "-m", "src.model.walkforward_execute",
                  "--authorize", args.authorize, "--out-dir", str(args.out_dir)],
         started_at=started, finished_at=now_iso(), head=head, tree_clean=tree_clean)
+    manifest["data_snapshot"]["manifest_projection"] = manifest_info
     write_outputs(args.out_dir, results, manifest)
     print(json.dumps({"wrote": str(args.out_dir), "run_type": RUN_TYPE,
                       "windows": [{"window": w["window"], "n_train": w["n_train"],

@@ -84,7 +84,7 @@ def test_cli_refuses_before_any_network_when_unauthorized(monkeypatch):
     p = _syn_protocol(authorized=False)
     monkeypatch.setattr(wfx, "load_json", lambda path: p)
     monkeypatch.setattr(wfx, "_open_store",
-                        lambda: pytest.fail("store/network must not be touched"))
+                        lambda *a, **k: pytest.fail("store/network must not be touched"))
     with pytest.raises(ExperimentPrepError, match="NOT AUTHORIZED"):
         wfx.main(["--authorize", PHRASE])
 
@@ -234,3 +234,42 @@ def test_locked_input_hashes_cover_pinned_files():
     assert len(on_path) == 16 and on_path <= set(h)
     for rel in on_path:
         assert h[rel] == LOCKED_SHA256[rel]
+
+
+# ------------------------------------------------- frozen manifest projection
+def _syn_manifest(ids, tag="v"):
+    return {"schema_version": 1, "deals": [{"deal_id": d, "x": tag} for d in ids]}
+
+
+def test_manifest_projection_restricts_to_cohort_and_matches_freeze():
+    cohort = ModelCohort.from_ids("syn", "v1", "SYNTHETIC", "unit_test", False, False,
+                                  ["A", "B"], "deadbeef")
+    p = _syn_protocol()
+    cur = _syn_manifest(["A", "B", "C"])
+    proj = wfx.frozen_manifest_projection(cohort, p, manifest=cur,
+                                          frozen=_syn_manifest(["A", "B"]))
+    assert [d["deal_id"] for d in proj["deals"]] == ["A", "B"]
+    with pytest.raises(wfx.WalkforwardExecuteError, match="changed since freeze"):
+        wfx.frozen_manifest_projection(cohort, p, manifest=cur,
+                                       frozen=_syn_manifest(["A", "B"], tag="old"))
+    with pytest.raises(wfx.WalkforwardExecuteError, match="missing"):
+        wfx.frozen_manifest_projection(cohort, p, manifest=_syn_manifest(["A"]),
+                                       frozen=_syn_manifest(["A", "B"]))
+
+
+def test_real_cohort_projection_matches_freeze_commit_offline():
+    """Real manifest bytes only (no network, no fit): the 62 cohort entries in the
+    current reviewed manifest equal those at manifest_freeze_commit."""
+    import subprocess
+    p = _real_protocol()
+    try:
+        frozen = json.loads(subprocess.check_output(
+            ["git", "show", f"{p['dataset_freeze']['manifest_freeze_commit']}:"
+             f"{p['dataset_freeze']['manifest_path']}"], cwd=wfx.REPO_ROOT, text=True,
+            stderr=subprocess.DEVNULL))
+    except Exception:
+        pytest.skip("freeze commit not available in this checkout (shallow clone)")
+    from src.model.experiment_prep import cohort_from_file
+    cohort = cohort_from_file(EXP / "cohort.json")
+    proj = wfx.frozen_manifest_projection(cohort, p, frozen=frozen)
+    assert len(proj["deals"]) == 62

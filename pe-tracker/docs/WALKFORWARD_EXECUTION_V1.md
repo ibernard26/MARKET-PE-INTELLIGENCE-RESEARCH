@@ -39,6 +39,25 @@ Per window the sequence is delegated unchanged to `validation.fit_and_score`
 window, plus constant and spread-only baselines). `register_model` writes to the
 ephemeral in-memory store only.
 
+## Data source
+
+The reviewed manifest has grown past the Batch-8 freeze (62 → 129 deals) and the
+frozen prep code fails closed when the store holds deals outside the cohort.
+Per `protocol.dataset_freeze`, the runner ingests the current reviewed manifest
+**restricted to the 62 cohort deal_ids**, and requires each entry to equal the
+entry at `manifest_freeze_commit` (f5f634b). No entry is edited or added.
+
+## Known blocker (2026-10-21 no-fit check)
+
+With the approved SEC contact, live ingest succeeds (62 written, 0 quarantined)
+and window counts, membership and labels match `plan.json` exactly, but every
+EDGAR `acceptanceDateTime` now comes back 4 h (EDT dates) or 5 h (EST dates)
+later than in the frozen plan, consistent with SEC now emitting true UTC where
+it previously emitted Eastern time labelled `Z`. All train/test dataset
+fingerprints therefore differ from `plan.json`, and gate 7 refuses. Resolving
+this (timestamp-conversion rule, or re-freezing `plan.json`) is a locked
+data-contract decision for Isaiah; the runner does not patch timestamps.
+
 ## PROPOSED output layout (for Isaiah's review)
 
 ```

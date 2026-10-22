@@ -70,3 +70,17 @@ reviewed step (this file documents the 2026-10-19 promotion).
   - X post (@DeItaone, Starshield) is untrusted; stays UNCONFIRMED until a primary source corroborates it.
 - Cluster totals after Oct 21 load: **1 VERIFIED_PRIMARY**, **13 ATTRIBUTED_CLAIM**, **1 DISPUTED**, **28 UNCONFIRMED** (43 clusters, 69 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.
+
+## Ledger update (2026-10-22, branch `research/geo-ledger-2026-10-22`, stacked on 2026-10-21)
+
+- Source feed: Todd `events-2026-10-22.jsonl` (13 lines): **9 accepted as UNCONFIRMED**, **4 market_data rejected** at intake; re-ingest idempotent (9 duplicate, 4 rejected). The 69 prior rows are byte-identical (append-only).
+- Timestamps kept null where the source gave none (never inferred): 10 of 13 items lack `published_at`, 12 lack `event_time`; flagged, not repaired. Line 1 `first_observed_at` is Todd's stated upper bound.
+- No source URL duplicates an existing ledger row. Within the feed, lines 12 and 13 share one swissinfo URL with different statements (both kept); lines 10 and 11 share one CNBC URL (both rejected as market_data). No `primary_source_leads`; no reviewer verification pass yet, so all 9 new clusters are untrusted-only.
+- Review flags (not auto-merged; cross-source clustering is a reviewed step):
+  - IRGC/Iran navy "seven vessels hit" (Arab News via Reuters) may overlap `GEO-8CEC392AD45F` (DISPUTED) / `GEO-D6ECAD6B43C8` and the Oct 21 IRGC tanker clusters; IMO has not confirmed.
+  - kremlin.ru (Ushakov, trilateral talks ~Nov 10) is not a registered primary domain and is a party statement, so it caps at ATTRIBUTED_CLAIM even after reviewer retrieval.
+  - Ofgem (ofgem.gov.uk) press release is entered as Todd-relayed; needs an independent reviewer retrieval before any status upgrade.
+  - NYT-via-Bloomberg US-Israel Iran strike plans is a twice-relayed anonymous-source report; stays UNCONFIRMED.
+  - Line 13 (Tesla / Meta capex) is company guidance filed under `energy_supply`; category looks like a misfit and relevance is low. Kept as ingested, not repaired.
+- Cluster totals after Oct 22 load: **1 VERIFIED_PRIMARY**, **13 ATTRIBUTED_CLAIM**, **1 DISPUTED**, **37 UNCONFIRMED** (52 clusters, 78 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.

@@ -84,3 +84,17 @@ reviewed step (this file documents the 2026-10-19 promotion).
   - Line 13 (Tesla / Meta capex) is company guidance filed under `energy_supply`; category looks like a misfit and relevance is low. Kept as ingested, not repaired.
 - Cluster totals after Oct 22 load: **1 VERIFIED_PRIMARY**, **13 ATTRIBUTED_CLAIM**, **1 DISPUTED**, **37 UNCONFIRMED** (52 clusters, 78 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.
+
+## Ledger update (2026-10-23, branch `research/geo-ledger-2026-10-23`, stacked on 2026-10-22)
+
+- Source feed: Todd `events-2026-10-23.jsonl` (15 lines): **10 accepted as UNCONFIRMED**, **5 market_data rejected** at intake; re-ingest idempotent (10 duplicate, 5 rejected). The 78 prior rows are byte-identical (append-only).
+- Timestamps kept null where the source gave none (never inferred): 10 of 15 items lack `published_at`, 14 lack `event_time`; flagged, not repaired. `first_observed_at` on every line is Todd's stated upper bound (07:10 ET run).
+- No source URL duplicates an existing ledger row. Within the feed, lines 5 and 7 share one CBS live-updates URL with different statements (both kept); lines 10-12 share one TipRanks URL (all rejected as market_data). No `primary_source_leads`; no reviewer verification pass yet, so all 10 new clusters are untrusted-only.
+- Review flags (not auto-merged; cross-source clustering is a reviewed step):
+  - IRGC navy "seven tankers" (SBS via AP, quoting Iranian state TV) likely overlaps the Oct 22 "seven vessels hit" cluster and `GEO-8CEC392AD45F` (DISPUTED) / `GEO-D6ECAD6B43C8`; party claim, caps at ATTRIBUTED_CLAIM even after retrieval.
+  - Kremlin "Abu Dhabi trilateral talks early November" (X @financialjuice citing Interfax) likely overlaps the Oct 22 kremlin.ru/Ushakov trilateral-talks cluster; X text cannot verify.
+  - Fars "illicit Hormuz traffic stopped" (X @financialjuice) is a state-affiliated claim relayed via X; stays UNCONFIRMED.
+  - Trump data-center self-power post (WSJ) is a party statement with no order located; caps at ATTRIBUTED_CLAIM.
+  - Aramco East-West pipeline capacity (CBS) is a company statement; caps at ATTRIBUTED_CLAIM.
+- Cluster totals after Oct 23 load: **1 VERIFIED_PRIMARY**, **13 ATTRIBUTED_CLAIM**, **1 DISPUTED**, **47 UNCONFIRMED** (62 clusters, 88 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.

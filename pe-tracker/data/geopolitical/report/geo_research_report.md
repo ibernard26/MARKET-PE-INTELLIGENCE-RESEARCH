@@ -51,7 +51,7 @@ first_walkforward_v1 cohort: {'in_frozen_cohort_N62': 62, 'outside_cohort': 67}
 | VERIFIED_PRIMARY | 1 |
 | CORROBORATED_SECONDARY | 0 |
 | ATTRIBUTED_CLAIM | 13 |
-| UNCONFIRMED | 47 |
+| UNCONFIRMED | 81 |
 | DISPUTED | 1 |
 | RETRACTED | 0 |
 

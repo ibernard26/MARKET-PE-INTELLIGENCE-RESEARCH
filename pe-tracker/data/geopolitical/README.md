@@ -98,3 +98,13 @@ reviewed step (this file documents the 2026-10-19 promotion).
   - Aramco East-West pipeline capacity (CBS) is a company statement; caps at ATTRIBUTED_CLAIM.
 - Cluster totals after Oct 23 load: **1 VERIFIED_PRIMARY**, **13 ATTRIBUTED_CLAIM**, **1 DISPUTED**, **47 UNCONFIRMED** (62 clusters, 88 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.
+
+## Ledger update (2026-10-26, branch `research/geo-ledger-2026-10-26`, stacked on 2026-10-23)
+
+- Source feeds: Todd `events-2026-10-24.jsonl` (12 lines), `events-2026-10-25.jsonl` (14), `events-2026-10-26.jsonl` (18). The weekend feeds had no weekday intake run, so all three load here, in date order.
+- **34 accepted as UNCONFIRMED** (9 + 11 + 14), **10 market_data rejected** at intake (3 + 3 + 4). Re-ingest idempotent (34 duplicate, 10 rejected). The 88 prior rows are byte-identical (append-only).
+- Timestamps kept null where the source gave none (never inferred): `published_at` missing on 12/12, 12/14, 10/18 feed lines; `event_time` missing on 12/12, 11/14, 18/18. Flagged, not repaired.
+- No source URL duplicates an existing ledger row. Within the new rows, six URLs repeat across lines with different statements (AP Starlink, Indian Express Trump/Iran, KSL Houthi/Saudi, CFR link, Iran International, The National); all kept, clustering left for review.
+- No `primary_source_leads`; no reviewer verification pass, so all 34 new clusters are untrusted-only. Party statements (Kremlin, IRGC/Tasnim, Houthi/Saree, Trump/Truth Social, Aramco, Zelenskyy) cap at ATTRIBUTED_CLAIM even after retrieval; X-relayed items (@DeItaone etc.) stay UNCONFIRMED.
+- Cluster totals after Oct 26 load: **1 VERIFIED_PRIMARY**, **13 ATTRIBUTED_CLAIM**, **1 DISPUTED**, **81 UNCONFIRMED** (96 clusters, 122 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.

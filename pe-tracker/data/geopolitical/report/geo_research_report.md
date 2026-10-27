@@ -48,11 +48,11 @@ first_walkforward_v1 cohort: {'in_frozen_cohort_N62': 62, 'outside_cohort': 67}
 
 | Status | Clusters |
 |---|---:|
-| VERIFIED_PRIMARY | 1 |
+| VERIFIED_PRIMARY | 3 |
 | CORROBORATED_SECONDARY | 0 |
-| ATTRIBUTED_CLAIM | 13 |
-| UNCONFIRMED | 81 |
-| DISPUTED | 1 |
+| ATTRIBUTED_CLAIM | 15 |
+| UNCONFIRMED | 76 |
+| DISPUTED | 2 |
 | RETRACTED | 0 |
 
 Corpus sector coverage: {'manifest_deals': 129, 'manifest_deals_with_research_sector_label': 4, 'manifest_deals_without_sector': 125, 'note': 'Sector exists only as free text in the research-only 2026Q3 register; it is not mapped to the controlled SECTORS vocabulary automatically.'}

@@ -134,43 +134,55 @@
     "source_verification_coverage": {
       "as_of": null,
       "clusters_by_status": {
-        "ATTRIBUTED_CLAIM": 13,
+        "ATTRIBUTED_CLAIM": 15,
         "CORROBORATED_SECONDARY": 0,
-        "DISPUTED": 1,
+        "DISPUTED": 2,
         "RETRACTED": 0,
-        "UNCONFIRMED": 81,
-        "VERIFIED_PRIMARY": 1
+        "UNCONFIRMED": 76,
+        "VERIFIED_PRIMARY": 3
       },
       "empty_state": null,
       "n_event_clusters": 96,
-      "n_evidence_records": 122,
+      "n_evidence_records": 133,
       "records_by_category": {
-        "energy_supply_interruption": 15,
-        "government_procurement_regulatory": 22,
+        "energy_supply_interruption": 18,
+        "government_procurement_regulatory": 25,
         "iran_us_diplomacy": 20,
         "rates_and_acquisition_financing": 2,
-        "russia_ukraine_energy_infrastructure": 35,
+        "russia_ukraine_energy_infrastructure": 40,
         "sanctions": 4,
         "sector_geopolitical_exposure": 3,
         "strait_of_hormuz_maritime": 21
       },
       "records_by_source_type": {
         "ai_brief": 2,
-        "other": 86,
-        "primary_official": 1,
-        "reputable_secondary": 25,
+        "other": 88,
+        "primary_official": 7,
+        "reputable_secondary": 28,
         "social_post": 8
       },
-      "records_missing_publication_timestamp": 60,
-      "records_missing_valid_timestamp": 119,
+      "records_missing_publication_timestamp": 65,
+      "records_missing_valid_timestamp": 130,
       "source": "pe-tracker/data/geopolitical/evidence_ledger.jsonl",
       "title": "Source verification & coverage",
-      "untrusted_only_clusters": 81
+      "untrusted_only_clusters": 76
     },
     "verified_geo_event_timeline": {
       "as_of": null,
       "empty_state": null,
       "events": [
+        {
+          "category": "government_procurement_regulatory",
+          "event_id": "GEO-07EE68BEE004",
+          "status": "VERIFIED_PRIMARY",
+          "valid_time_utc": null
+        },
+        {
+          "category": "energy_supply_interruption",
+          "event_id": "GEO-6CDC7F2A8362",
+          "status": "VERIFIED_PRIMARY",
+          "valid_time_utc": null
+        },
         {
           "category": "sanctions",
           "event_id": "GEO-C7AFC6D88F47",

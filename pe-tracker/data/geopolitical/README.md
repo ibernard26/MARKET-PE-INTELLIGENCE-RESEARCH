@@ -122,3 +122,13 @@ reviewed step (this file documents the 2026-10-19 promotion).
 - Overlap candidates (IRGC tanker/vessel clusters; Kremlin Abu Dhabi vs Oct 22 trilateral; Araghchi Hormuz vs Oct 19) reviewed as recommendations only; no clusters merged (no linking mechanism, I-021).
 - 11 records appended via `python -m src.geo_intel.ingest --records` (append-only; prior 122 rows byte-identical; re-ingest rejected as duplicate). Cluster totals: **3 VERIFIED_PRIMARY**, **15 ATTRIBUTED_CLAIM**, **2 DISPUTED**, **76 UNCONFIRMED** (96 clusters, 133 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.
+
+## Ledger update (2026-10-27, branch `research/geo-ledger-2026-10-27`, stacked on `research/geo-review-2026-10-26`)
+
+- Source feed: Todd `events-2026-10-27.jsonl` (24 lines).
+- **20 accepted as UNCONFIRMED**, **4 market_data rejected** at intake. Re-ingest idempotent (20 duplicate, 4 rejected). The 133 prior rows are byte-identical (append-only).
+- Timestamps kept null where the source gave none (never inferred): `published_at` missing on 10/24 feed lines, `event_time` missing on 22/24. Flagged, not repaired.
+- No source URL duplicates an existing ledger row. Within the new rows, three URLs repeat across lines with different statements (CNBC Russia/Ukraine ceasefire, WorldPorts Hormuz tanker, Investing.com futures); all kept, clustering left for review.
+- No `primary_source_leads`; no reviewer verification pass on these rows, so all 20 new clusters are untrusted-only. Today's Oleshky items (CNBC: local ceasefire began 3am local) relate to the DISPUTED cluster `GEO-040F454DB3D3` but are not linked (I-021).
+- Cluster totals after Oct 27 load: **3 VERIFIED_PRIMARY**, **15 ATTRIBUTED_CLAIM**, **2 DISPUTED**, **96 UNCONFIRMED** (116 clusters, 153 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.

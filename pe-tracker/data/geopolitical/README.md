@@ -159,3 +159,38 @@ reviewed step (this file documents the 2026-10-19 promotion).
 - No `primary_source_leads`; no reviewer verification pass on these rows, so all 22 new clusters are untrusted-only (X posts stay UNCONFIRMED until corroborated by a primary source).
 - Cluster totals after Oct 28 load: **3 VERIFIED_PRIMARY**, **21 ATTRIBUTED_CLAIM**, **2 DISPUTED**, **112 UNCONFIRMED** (138 clusters, 184 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.
+
+### Reviewer leads pass (2026-10-28, branch `research/geo-review-2026-10-28`, stacked on `research/geo-ledger-2026-10-28`)
+
+- Scope: Todd `leads-2026-10-28.jsonl` (19 lines: 16 `found`, 3 `not_found`; SHA-256 `cde2ed11…b92a` verified against Todd's value) joined to `events-2026-10-28.jsonl`. These are AI pointers, not verification. All found pages were fetched by the reviewer on 2026-10-28 between about 8:37 and 8:40 AM ET. curl was used where it worked; WebFetch was used for mid.ru, kremlin.ru and regjeringen.no, and those reads keep no raw bytes or sha256. The X API was read-only. Fetched bodies are not committed.
+- Rules applied as in the Oct 27 pass. Only federalreserve.gov among today's hosts is on the 21-domain registry, and the registry was not extended. Party and state statements are `attributed_statement` and capped at ATTRIBUTED_CLAIM. A time with no zone, or a visible clock time with no zone, is never a publication time. Where a zone-bearing time comes from page metadata (Telegram `<time datetime>`, JSON-LD), the record says so.
+- Todd's new feed fields (`event_status: scheduled`, `source_class: news_outlet`) are not ingest-schema fields, and the schema is unchanged. "Scheduled" is expressed through `claim_type=scheduled`. Unnamed-source reporting is expressed through `claim_type=rumor`, which can never rise above UNCONFIRMED.
+- Status changes: 14 records appended; 10 clusters UNCONFIRMED -> ATTRIBUTED_CLAIM; 1 cluster UNCONFIRMED -> DISPUTED.
+  - Row 0 `GEO-E0F6942C633B` (Ukrainian Air Force, `t.me/kpszsu/90990`): night attack and 71 downed -> ATTRIBUTED_CLAIM.
+  - Row 1 `GEO-E33A74160F6E` (Ukrenergo, `t.me/Ukrenergo/5585`): outages in 4 oblasts -> ATTRIBUTED_CLAIM.
+  - Row 2 `GEO-8726DA379309` (regjeringen.no, date-only, not on registry): NOK 500m pledge -> ATTRIBUTED_CLAIM. This is a pledge, not proof of disbursement.
+  - Row 3 `GEO-D1D098EBF611` (Lubinets, `t.me/dmytro_lubinetzs/12942`): 30 hours without incident -> ATTRIBUTED_CLAIM. **Partial:** the "2 killed, 17 injured elsewhere" half of the row is unsupported. Kept separate from `GEO-040F454DB3D3`.
+  - Row 4 `GEO-99B44556D289` (Lavrov, mid.ru transcript): -> **DISPUTED**. The mid.ru record is staged `stance=contradicts` (reviewer reading, see the Lavrov note below).
+  - Row 6 `GEO-92D7BD9DCFE3` (TASS, Novak): -> ATTRIBUTED_CLAIM.
+  - Row 12 `GEO-ACCE634F1780` (Tasnim Arabic 3733805, Iranian Army Navy): -> ATTRIBUTED_CLAIM, **claim only**. The mine strike, tanker and fire are not verified. Nothing newer than UKMTO Warning 183-26 or JMIC Update 108 was found on Oct 28; the ukmto.org warning and JMIC pages render via JavaScript, and search shows none. Absence is not evidence either way.
+  - Row 16 `GEO-C04C8BC03C6C` (Kremlin 81096): -> ATTRIBUTED_CLAIM.
+  - Row 17 `GEO-4D84EAA027F8` (Kremlin 81096): -> ATTRIBUTED_CLAIM, **partial**. Putin says Russia is "exploring the possibility of collaboration with American partners"; he does not mention the US government, and no US statement was found.
+  - Row 19 `GEO-5E0502AA2A78` (dailypress.senate.gov; senate.gov is not on the registry): -> ATTRIBUTED_CLAIM as **scheduled** only. The Nov 9 (about 5:30 p.m., no zone) cloture vote on the motion to proceed to H.R.2347 has not happened. Roll Call's "politically dicey changes" description is unsupported.
+  - Row 27 `GEO-61D20FDF9655` (federalreserve.gov FOMC calendar, on registry, `primary_official`): -> ATTRIBUTED_CLAIM as **scheduled** only. The record verifies that the Oct 27-28 meeting is on the calendar. "Expected to hold" is market consensus (Yahoo Finance), not a Fed statement. The 2 p.m. ET release time is not on the page. Not VERIFIED_PRIMARY, because nothing has happened yet.
+- Appended but status unchanged (UNCONFIRMED, `claim_type=rumor`, unnamed sources):
+  - Row 8 `GEO-D81D4B913097`: Al-Monitor syndicated Reuters copy (`syndicated_from=Reuters`).
+  - Row 9 `GEO-4834549F7D28`: Iran International relay of Reuters; time 10:08 GMT+0 from the visible page.
+  - Row 10 `GEO-FBF2316169E8`: WSJ, paywalled; only the first two paragraphs were readable.
+  - Rows 8 and 9 contradict each other in separate clusters, with no linking. reuters.com was not retrieved.
+- Not appended:
+  - Row 5 (FT): 403 to curl and a timeout to WebFetch. Stays UNCONFIRMED.
+  - Row 13 (CENTCOM X post 2115070611550581236, read via the read-only X API; the API returned truncated text): X is an untrusted channel, so it was not staged as trusted. Stays UNCONFIRMED. Question for Isaiah: the repo treats official Telegram channels as `reputable_secondary` but X posts as untrusted.
+- **Lavrov (row 4), exact context from mid.ru 2157608** ("27.10.2026 18:00", no zone -> null): «Так что это информационная борьба, информационная война.» That is followed by the Bucha/BBC passage, then: «Эта война будет продолжаться, и она, я бы даже сказал, имеет тенденцию к обострению. Особенно сейчас, когда, например, администрация Президента США Д.Трампа … открыта к диалогу с нами…» The passage closes with: «Именно информационная война является тем оружием, которым они пытаются удержаться на поверхности.» Reviewer reading (AI): "this war" is the information war, so the headline "CONFLICT IN UKRAINE WILL CONTINUE AND IS LIKELY TO ESCALATE" misstates him.
+- **Oleshky start date (recommendation only, I-021):**
+  - The whitehouse.gov release still says "will begin on October 29, 2026" (re-read today; `article:modified_time` still 2026-10-23T13:20:12Z).
+  - The First Lady's X account (@FLOTUS 2115116737687330987, edited from 2115110237283758585, created 2026-10-27T15:55:52Z) says the ceasefire "took effect at 4:00am Moscow time on October 27, 2026. Timing was accelerated two days ahead of schedule". That reconciles the two dates, from the White House side.
+  - It is an X post, so under the repo rules it is untrusted and was not appended. `GEO-040F454DB3D3` stays **DISPUTED**. Whether to record a reconciliation is Isaiah's call. No whitehouse.gov update was found.
+  - Today's row 3 and the Oct 27 CNBC row `GEO-2FC3AB795D77` are possibly the same event as `GEO-040F454DB3D3` and `GEO-E6981502322B`. Nothing was merged.
+- 14 records appended via `python -m src.geo_intel.ingest --records`. The ledger is append-only: the prior 184 rows are byte-identical, and a re-ingest was rejected as duplicate.
+- Cluster totals: **3 VERIFIED_PRIMARY**, **31 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **101 UNCONFIRMED** (138 clusters, 198 records).
+- Still excluded from active features / fs_v1. `execution_authorized=false`. Protocol, plan.json, pinned files, specs and the ingest schema are untouched.

@@ -155,7 +155,7 @@ reviewed step (this file documents the 2026-10-19 promotion).
 - Source feed: Todd `events-2026-10-28.jsonl` (34 lines; 19 `x_post`, 15 `news_outlet`).
 - **22 accepted as UNCONFIRMED**, **1 revision** (Roll Call permitting-bill article, same URL as Oct 27 event `GEO-5E0502AA2A78`; appended as a second evidence row on that cluster, nothing overwritten), **11 market_data rejected** at intake. Re-ingest idempotent (23 duplicate, 11 rejected). The 161 prior rows are byte-identical (append-only).
 - Timestamps kept null where the source gave none (never inferred): `published_at` missing on 10/34 feed lines, `event_time` missing on 34/34. Flagged, not repaired.
-- Within the new rows, two URLs repeat across lines with different statements (Ukrinform Ukrenergo outages; Reuters X post); all kept, clustering left for review.
+- Within the new rows, three URLs repeat across lines with different statements (Ukrinform Ukrenergo outages; Reuters X post; Yahoo Finance Oct 28 live blog, whose third line was rejected as market_data); all kept, clustering left for review.
 - No `primary_source_leads`; no reviewer verification pass on these rows, so all 22 new clusters are untrusted-only (X posts stay UNCONFIRMED until corroborated by a primary source).
 - Cluster totals after Oct 28 load: **3 VERIFIED_PRIMARY**, **21 ATTRIBUTED_CLAIM**, **2 DISPUTED**, **112 UNCONFIRMED** (138 clusters, 184 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.

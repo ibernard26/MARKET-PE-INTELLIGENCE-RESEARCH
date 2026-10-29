@@ -204,3 +204,51 @@ reviewed step (this file documents the 2026-10-19 promotion).
 - One `primary_source_leads` entry (line 14, federalreserve.gov press releases index); no reviewer verification pass on these rows. The White House line (10) entered via Todd's feed, so it stays UNCONFIRMED until the document is retrieved and staged by a reviewer. X posts (including the @WSJ Lagarde item) stay UNCONFIRMED until corroborated by a primary source.
 - Cluster totals after Oct 29 load: **3 VERIFIED_PRIMARY**, **31 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **116 UNCONFIRMED** (153 clusters, 213 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.
+
+### Reviewer leads pass (2026-10-29, branch `research/geo-review-2026-10-29`, stacked on `research/geo-ledger-2026-10-29`)
+
+- Scope: Todd `leads-2026-10-29.jsonl` (24 lines: 17 `found`, 7 `not_found`; SHA-256 `84684efb…54ce` verified against Todd's value) joined to `events-2026-10-29.jsonl`. These are AI pointers, not verification. The reviewer fetched every found page on 2026-10-29 at about 7:58 AM ET. curl was used where it worked. Axios and congress.gov returned 403 to curl and were read via WebFetch, so those reads keep no raw bytes or sha256. The Araghchi X post was not appended. Fetched bodies are not committed. This is AI review, not human validation.
+- Registry check (not extended): federalreserve.gov is on the registry. **ecb.europa.eu is on the registry** as a subdomain of `europa.eu` ("European Union institutions"). **bea.gov is not** (commerce.gov is listed, but bea.gov is a separate host). whitehouse.gov is listed, but its issuer policy is still pending (I-032). t.me, okinawatimes.co.jp, axios.com and congress.gov are not listed.
+- Same rules as the Oct 27/28 passes. Party and official statements are `attributed_statement`, capped at ATTRIBUTED_CLAIM. A time with no zone is never a publication time. Zone-bearing page-metadata times (Telegram `<time datetime>`, JSON-LD) are labelled as METADATA in the record notes. Todd's `event_status`/`source_class` fields are not ingest-schema fields, and the schema is unchanged.
+- Status changes: 11 records appended. 7 clusters UNCONFIRMED -> ATTRIBUTED_CLAIM; 1 cluster UNCONFIRMED -> VERIFIED_PRIMARY.
+  - Row 0 `GEO-88199DC23855` (Ukrainian Air Force, `t.me/kpszsu/91189`): 112 drones, 97 downed or suppressed -> ATTRIBUTED_CLAIM.
+  - Row 1 `GEO-A20802015AD5` (Dnipro station), **split into 4 claims**, all party or official statements -> ATTRIBUTED_CLAIM:
+    1. Ukrzaliznytsia `t.me/UkrzalInfo/8601`: platform hit, train No. 866, no numbers.
+    2. Zelenskyy `t.me/V_Zelenskiy_official/21560`: 13 killed, 10 injured.
+    3. Regional administration `t.me/dnipropetrovskaODA/32911`: injured rose to 13.
+    4. Regional administration `t.me/dnipropetrovskaODA/32912`: killed rose to 14.
+    - The **14 killed / 13 injured toll is a later figure.** 32912 was posted at 11:43 UTC, after the row was collected. It is recorded as an update, not a contradiction, and the row is not repaired.
+  - Row 2 `GEO-221884128B65` (Sobyanin, `t.me/mos_sobyanin/22339`): 613 drones toward the Moscow *region*, 231 destroyed on approach to Moscow -> ATTRIBUTED_CLAIM.
+  - Row 8 `GEO-1C025C90BA2A` (Saree, `t.me/army21ye/3968`): -> ATTRIBUTED_CLAIM, **claim only and stale**. This is the same Oct 27 (10:54 UTC) Houthi claim. The strike is not verified, and no Saudi or UKMTO statement was found. **Duplicate check:** the Telegram URL was not already in the ledger. The Oct 27 cluster `GEO-43C7AD317089` holds the Saba copy of the claim, not this post, so nothing is duplicated. The two clusters are possibly the same event; this is a recommendation only, with no linking (I-021).
+  - Row 11 `GEO-0771518EAB4E` (Kyodo via Okinawa Times): Takaichi's electricity and gas subsidy for Dec-Feb (about ¥7,000 per household) and a smaller gasoline subsidy -> ATTRIBUTED_CLAIM. The visible "19:55" has no zone; the time comes from JSON-LD (+09:00). No Kantei primary source was found.
+  - Row 13 `GEO-9E1A7D2D98E8` (federalreserve.gov FOMC statement, `primary_official`, the issuer's own act) -> **VERIFIED_PRIMARY**. The live page shows the hold at 3-3/4 to 4 percent, a 10-2 vote, and Lisa D. Cook and Beth M. Hammack dissenting in favour of a 1/4-point hike. "For release at 2:00 p.m. EDT" appears on the VISIBLE page, so `publication_timestamp` is 2026-10-28T14:00:00-04:00. The dissenters' titles come from MarketWatch and are not on the page.
+  - Row 16 `GEO-D0E885CD3A69` (ECB press release, registered host, `primary_official`, the issuer's own announcement) -> ATTRIBUTED_CLAIM, **not** VERIFIED_PRIMARY.
+    - The page is date-only: "29 October 2026", and `article:published_time` is `2026-10-29` with no time. The RSS pubDate belongs to a different document. So `publication_timestamp` is null, the same rule as the Ofgem record.
+    - The record covers the announcement only. The departure itself, on 7 February 2027, is a future effective date.
+  - Row 22 `GEO-292799CF2B9B` (bea.gov schedule, not registered) -> ATTRIBUTED_CLAIM as **scheduled only**.
+    - GDP (Advance, Q3) and Personal Income and Outlays (Sept) are both listed for "October 29 8:30 AM". That time has no zone, so it is null.
+    - The page was retrieved before the release. The "could sway rate-hike forecasts" framing is Reuters', not BEA's.
+- Not appended / status unchanged:
+  - **Rows 5-6 (Axios, unnamed sources): UNCONFIRMED (rumor).**
+    - Re-read live via WebFetch. The page matches the rows: "three U.S., Israeli and regional sources say", and "U.S. and Israeli officials say". The visible time is relative ("18 hours ago"), so it is null.
+    - Todd's intake records `EVD-974679E27DED04F3` and `EVD-FB2B7097C03D5F27` already stage this URL as `claim_type=rumor` for both clusters. The ledger's dedupe rule (same event, URL and stance) rejected a second record, so none was added.
+    - Row 6 is a **contingent future operation**. It is not recorded as planned or as having happened.
+  - **Row 9 (White House CEA BAAJA estimate) `GEO-A745BB1A7809`: stays UNCONFIRMED.**
+    - The live page supports the row's figures as a CEA **model projection**. That is a party claim and would cap at ATTRIBUTED_CLAIM. The whitehouse.gov issuer policy (I-032) is still pending.
+    - The reviewer record was **rejected by the dedupe rule**. Todd's intake already staged this exact URL for this cluster as `EVD-AB1BC3C38C6A3341`, with `source_type=other` and `claim_type=occurred`. That record is untrusted, and "occurred" mislabels a projection.
+    - No revision record was written. Isaiah to decide whether a reviewer `correction` revision of a Todd intake record is the right path.
+    - The S.5653 link rests on the bill name only. The CEA page says "the BAAJA" with no bill number. congress.gov S.5653 is titled "Bipartisan American Affordability and Jobs Act of 2026", introduced 09/30/2026 and referred to Senate Energy and Natural Resources. It was read as context and not appended.
+  - **Row 4 (Araghchi X post 2115487357604413753): not appended. Pending** Isaiah's decision on official X accounts. X is untrusted. Stays UNCONFIRMED.
+  - Rows 3, 7 and 10, and the not-found leads for rows 8 and 11 (Saudi, UKMTO, Kantei): no page found, nothing appended.
+- **Oct 28 row 27 `GEO-61D20FDF9655` (Fed scheduled cluster): no resolving record appended.**
+  - The ledger has no "resolution" record type. The only way to append the hold would be an `occurred`/`primary_official` record on a cluster whose statement is a forecast ("expected to hold"). That would turn the forecast cluster into VERIFIED_PRIMARY and blur the line between expectation and outcome.
+  - The cluster stays ATTRIBUTED_CLAIM (scheduled). The outcome is VERIFIED_PRIMARY in row 13's cluster `GEO-9E1A7D2D98E8`.
+  - A reviewed resolution mechanism is a question for Isaiah.
+- **Overlap (recommendation only, no linking, I-021):** today's row 3 `GEO-2D530D2E0884` (Reuters via Al-Monitor, Qatar/Iran) is possibly the same story as Oct 28 rows 8/9, `GEO-D81D4B913097` and `GEO-4834549F7D28`. Nothing was merged.
+- Feed caveat: rows 11 and 13 lack Todd's usual X caveat. This is noted only.
+- **Forward-looking rows (doc note; ledger, intake, schema and registry unchanged):**
+  - Row 9 `GEO-A745BB1A7809` (White House CEA BAAJA estimate) is a **model projection, not an event**. Todd's intake record `EVD-AB1BC3C38C6A3341` labels it `claim_type=occurred`, which is wrong for a projection. A correction is **pending Isaiah**. Until then the cluster stays UNCONFIRMED, and it must not be read as something that happened.
+  - Row 22 `GEO-292799CF2B9B` (BEA GDP advance Q3 / Personal Income and Outlays incl. PCE, Sept) was **scheduled only at the time of collection** (and at reviewer retrieval, about 7:58 AM ET, before the 8:30 AM release, zone not shown). Its ATTRIBUTED_CLAIM rests on a `claim_type=scheduled` record. It does not show that the release occurred or what it contained.
+- 11 records appended via `python -m src.geo_intel.ingest --records`. The ledger is append-only: the prior 213 rows are byte-identical, and a re-ingest was rejected as duplicate.
+- Cluster totals: **4 VERIFIED_PRIMARY**, **38 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **108 UNCONFIRMED** (153 clusters, 224 records).
+- Still excluded from active features / fs_v1. `execution_authorized=false`. Protocol, plan.json, pinned files, specs, registry and the ingest schema are untouched.

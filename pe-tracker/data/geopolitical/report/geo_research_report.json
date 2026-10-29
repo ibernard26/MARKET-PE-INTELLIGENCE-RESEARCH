@@ -134,22 +134,22 @@
     "source_verification_coverage": {
       "as_of": null,
       "clusters_by_status": {
-        "ATTRIBUTED_CLAIM": 31,
+        "ATTRIBUTED_CLAIM": 38,
         "CORROBORATED_SECONDARY": 0,
         "DISPUTED": 3,
         "RETRACTED": 0,
-        "UNCONFIRMED": 116,
-        "VERIFIED_PRIMARY": 3
+        "UNCONFIRMED": 108,
+        "VERIFIED_PRIMARY": 4
       },
       "empty_state": null,
       "n_event_clusters": 153,
-      "n_evidence_records": 213,
+      "n_evidence_records": 224,
       "records_by_category": {
-        "energy_supply_interruption": 28,
-        "government_procurement_regulatory": 33,
+        "energy_supply_interruption": 29,
+        "government_procurement_regulatory": 34,
         "iran_us_diplomacy": 37,
-        "rates_and_acquisition_financing": 9,
-        "russia_ukraine_energy_infrastructure": 68,
+        "rates_and_acquisition_financing": 12,
+        "russia_ukraine_energy_infrastructure": 74,
         "sanctions": 5,
         "sector_geopolitical_exposure": 4,
         "strait_of_hormuz_maritime": 29
@@ -157,15 +157,15 @@
       "records_by_source_type": {
         "ai_brief": 2,
         "other": 123,
-        "primary_official": 8,
-        "reputable_secondary": 49,
+        "primary_official": 10,
+        "reputable_secondary": 58,
         "social_post": 31
       },
-      "records_missing_publication_timestamp": 102,
-      "records_missing_valid_timestamp": 207,
+      "records_missing_publication_timestamp": 104,
+      "records_missing_valid_timestamp": 218,
       "source": "pe-tracker/data/geopolitical/evidence_ledger.jsonl",
       "title": "Source verification & coverage",
-      "untrusted_only_clusters": 113
+      "untrusted_only_clusters": 105
     },
     "verified_geo_event_timeline": {
       "as_of": null,
@@ -180,6 +180,12 @@
         {
           "category": "energy_supply_interruption",
           "event_id": "GEO-6CDC7F2A8362",
+          "status": "VERIFIED_PRIMARY",
+          "valid_time_utc": null
+        },
+        {
+          "category": "rates_and_acquisition_financing",
+          "event_id": "GEO-9E1A7D2D98E8",
           "status": "VERIFIED_PRIMARY",
           "valid_time_utc": null
         },

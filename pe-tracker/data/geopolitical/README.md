@@ -194,3 +194,13 @@ reviewed step (this file documents the 2026-10-19 promotion).
 - 14 records appended via `python -m src.geo_intel.ingest --records`. The ledger is append-only: the prior 184 rows are byte-identical, and a re-ingest was rejected as duplicate.
 - Cluster totals: **3 VERIFIED_PRIMARY**, **31 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **101 UNCONFIRMED** (138 clusters, 198 records).
 - Still excluded from active features / fs_v1. `execution_authorized=false`. Protocol, plan.json, pinned files, specs and the ingest schema are untouched.
+
+## Ledger update (2026-10-29, branch `research/geo-ledger-2026-10-29`, stacked on `research/geo-review-2026-10-28`)
+
+- Source feed: Todd `events-2026-10-29.jsonl` (23 lines; 17 `news_outlet`, 5 `x_post`, 1 `primary_official`).
+- **15 accepted as UNCONFIRMED**, **8 market_data rejected** at intake. No revision rows; no source URL repeats a prior ledger row. Re-ingest idempotent (15 duplicate, 8 rejected). The 198 prior rows are byte-identical (append-only).
+- Timestamps kept null where the source gave none (never inferred): `published_at` missing on 14/23 feed lines, `event_time` missing on 23/23. Flagged, not repaired.
+- Within the feed, three URLs repeat across lines with different statements (Axios Iran mediators; MarketWatch Fed close; StreetInsider rate pricing); all accepted lines kept as separate clusters, clustering left for review.
+- One `primary_source_leads` entry (line 14, federalreserve.gov press releases index); no reviewer verification pass on these rows. The White House line (10) entered via Todd's feed, so it stays UNCONFIRMED until the document is retrieved and staged by a reviewer. X posts (including the @WSJ Lagarde item) stay UNCONFIRMED until corroborated by a primary source.
+- Cluster totals after Oct 29 load: **3 VERIFIED_PRIMARY**, **31 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **116 UNCONFIRMED** (153 clusters, 213 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.

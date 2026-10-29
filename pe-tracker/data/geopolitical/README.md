@@ -246,6 +246,9 @@ reviewed step (this file documents the 2026-10-19 promotion).
   - A reviewed resolution mechanism is a question for Isaiah.
 - **Overlap (recommendation only, no linking, I-021):** today's row 3 `GEO-2D530D2E0884` (Reuters via Al-Monitor, Qatar/Iran) is possibly the same story as Oct 28 rows 8/9, `GEO-D81D4B913097` and `GEO-4834549F7D28`. Nothing was merged.
 - Feed caveat: rows 11 and 13 lack Todd's usual X caveat. This is noted only.
+- **Forward-looking rows (doc note; ledger, intake, schema and registry unchanged):**
+  - Row 9 `GEO-A745BB1A7809` (White House CEA BAAJA estimate) is a **model projection, not an event**. Todd's intake record `EVD-AB1BC3C38C6A3341` labels it `claim_type=occurred`, which is wrong for a projection. A correction is **pending Isaiah**. Until then the cluster stays UNCONFIRMED, and it must not be read as something that happened.
+  - Row 22 `GEO-292799CF2B9B` (BEA GDP advance Q3 / Personal Income and Outlays incl. PCE, Sept) was **scheduled only at the time of collection** (and at reviewer retrieval, about 7:58 AM ET, before the 8:30 AM release, zone not shown). Its ATTRIBUTED_CLAIM rests on a `claim_type=scheduled` record. It does not show that the release occurred or what it contained.
 - 11 records appended via `python -m src.geo_intel.ingest --records`. The ledger is append-only: the prior 213 rows are byte-identical, and a re-ingest was rejected as duplicate.
 - Cluster totals: **4 VERIFIED_PRIMARY**, **38 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **108 UNCONFIRMED** (153 clusters, 224 records).
 - Still excluded from active features / fs_v1. `execution_authorized=false`. Protocol, plan.json, pinned files, specs, registry and the ingest schema are untouched.

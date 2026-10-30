@@ -262,3 +262,58 @@ reviewed step (this file documents the 2026-10-19 promotion).
 - The Treasury par yield curve line (17) entered via Todd's feed, so it stays UNCONFIRMED until a reviewer retrieves and stages the document; it is also a rate print and may belong in the market observations store rather than the event ledger (reviewer call). The @LiveSquawk IRGC tanker post (line 8) stays UNCONFIRMED until corroborated by a primary source.
 - Cluster totals after Oct 30 load: **4 VERIFIED_PRIMARY**, **38 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **122 UNCONFIRMED** (167 clusters, 238 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.
+
+### Reviewer leads pass (2026-10-30, branch `research/geo-review-2026-10-30`, stacked on `research/geo-ledger-2026-10-30`)
+
+- **Scope.** Todd `leads-2026-10-30.jsonl`: 23 lines covering 15 of the 24 event rows. The SHA-256 `66097f28…b447a` matched Todd's value. The file is joined to `events-2026-10-30.jsonl`.
+  - Leads are AI pointers, not verification.
+  - The reviewer fetched every found page with curl on 2026-10-30 at about 8:01 AM ET. Every fetch succeeded.
+  - Fetched bodies are not committed. This is AI review, not human validation.
+- **Registry (not extended).** Of today's hosts, only home.treasury.gov is on the 21-domain registry. The registry does **not** include bea.gov (I-034), govinfo.gov (I-002), senate.gov, t.me, tasnimnews.ir, rff.org or investor.exxonmobil.com, so none of them can produce VERIFIED_PRIMARY.
+- **Rules are unchanged from the Oct 27-29 passes.**
+  - Party and official statements are capped at ATTRIBUTED_CLAIM. Today that covers the Air Force tally, Koretskyi, the Dnipro administration, the Russian MoD, Lubinets and the IRGC via Tasnim.
+  - Zone-less times are null. Zoned metadata times are labelled METADATA.
+  - Scheduled items are recorded as `claim_type=scheduled`.
+  - X posts are not appended. No event linking (I-021).
+  - Todd's `source_class` values are reviewer-side labels only. That includes the new `research_organization` (lead line 18). The ingest schema is unchanged.
+- **Status changes.** 12 records appended; 9 clusters moved from UNCONFIRMED to ATTRIBUTED_CLAIM:
+  - **R0** `GEO-F16714E6F5C3` (Air Force, `t.me/kpszsu/91428`): ballistic missiles, 4 Kh-59/69 and 113 Shahed-type drones (83 jet-powered). The main targets were the Kyiv, Poltava and Dnipropetrovsk regions. Party tally.
+  - **R1** `GEO-AE73D7871BEC` (PM Koretskyi, `t.me/Koretskyi_official/989`): energy was the main target, with hits in the Kyiv region, in Dnipro and in Poltava.
+  - **R2** `GEO-A7274BCE3160` (Dnipro), **PARTIAL**. Two records from the regional administration:
+    - `32947`: more than 350,000 customers without power.
+    - `32950`: the station-strike toll rose to 15.
+    - The "repeat strike on the station", "total blackout" and "high-voltage transmission infrastructure" wording **rests on NV only**.
+    - **Weapon discrepancy:** the row says "missile attack". The Oct 29 Ukrzaliznytsia and Zelenskyy posts say drone (jet-powered drone in Ukrzaliznytsia's post). This is unresolved.
+    - Possibly the same strike as Oct 29 `GEO-A20802015AD5`. That is a note only.
+  - **R3** `GEO-37E8C819EB97`, **PARTIAL**. Two records:
+    - Russian MoD `t.me/mod_russia/68642` (party): claimed hits on the PS-330 Novokyivska (Khotiv) and PS-330 Svitle substations. This supports only the Russian-strike half of the row.
+    - Lubinets `t.me/dmytro_lubinetzs/12958` (party): "We are in Oleshky", with the silence regime at 80 hours. It does not itemise food or medical supplies. No ICRC or UN primary was found.
+    - `GEO-040F454DB3D3` was **not touched and stays DISPUTED** pending Isaiah's decision on the @FLOTUS reconciliation. Overlap with the other Oleshky clusters is a note only.
+  - **R7** `GEO-F1D1AFEA50EB` (IRGC Navy statement via Tasnim Arabic 3735894): two tankers, navigation off, radio warnings ignored, "involved in an incident" and stopped south of Hormuz. **Claim only.**
+    - No ships are named, and no UKMTO or JMIC advisory was found.
+    - The visible "14:24" has no zone. The time comes from JSON-LD `datePublished` (10:54:51Z, METADATA).
+  - **R9** `GEO-14F85ED96883` (BAAJA), two records:
+    - The `dailypress.senate.gov` Oct 29 floor log: **scheduled only**. Cloture on the motion to proceed to H.R.2347 is set for about 5:30 p.m. (no zone) on Nov 9. The vote has not happened, and the log does not name BAAJA or S.5653.
+    - GovInfo S.5653 introduced text (unregistered, I-002), **PARTIAL**. §2105 supports the right-of-first-refusal ban. **§2104 wording mismatch:** FERC remedies (cut return on equity, fines of up to $5,000,000 per facility) are tied to inefficient or imprudent local planning after a state referral, not to "slow grid upgrades". It is not confirmed that the H.R.2347 substitute matches S.5653.
+    - Overlaps with Oct 28 `GEO-5E0502AA2A78` and `GEO-A5CF2DCF1419` are notes only.
+  - **R10** `GEO-FA18230E8BBB` (RFF issue brief, Oct 29): **FORECAST.** It is a model projection: electricity-system costs down 3.5-7.0% and CO2 down about 1.8 Gt through 2041.
+    - It is recorded only as RFF's statement and is never an event that occurred.
+    - The page is date-only, so the time is null.
+  - **R14** `GEO-6EBA8E00DC60` (BEA Personal Income and Outlays, Sept): PCE +0.5% m/m and 3.6% y/y; core +0.3% and 3.1%. Supports the row in full.
+  - **R15** `GEO-B1DF3E173C02` (BEA GDP advance, Q3): 3.4% annualised, **PARTIAL**. "Faster than expected" is **not on the BEA page**.
+  - Both BEA records use the VISIBLE "8:30 a.m. EDT, Thursday, October 29, 2026" (2026-10-29T08:30:00-04:00). bea.gov is unregistered, so they cap at ATTRIBUTED_CLAIM.
+- **Oct 29 scheduled cluster `GEO-292799CF2B9B` (BEA schedule): not upgraded, closed or linked.** Open question for Isaiah: both scheduled releases were observed on bea.gov with a visible release time of 8:30 a.m. EDT on Oct 29. Resolving scheduled clusters is a pending decision, together with Oct 28 row 27 `GEO-61D20FDF9655`. The cluster stays ATTRIBUTED_CLAIM (scheduled).
+- **Not appended / unchanged:**
+  - **R16** `GEO-F533BF255874` (Treasury par yield curve): **no ledger change.**
+    - The page was read live. The 10/29 2Y 4.61, 10Y 4.98 and 30Y 5.32 values and the 10/28 2Y 4.67, 10Y 5.05 and 30Y 5.37 values match the row.
+    - home.treasury.gov is registered, but a rate print is not an event. It is flagged as a **market-observation candidate** for Isaiah, alongside the correction-records question. It stays UNCONFIRMED.
+  - **R20** ExxonMobil Q3 release: market_data, rejected at intake, so there is no cluster.
+    - The page was read live. The release time is **"October 30, 2026 5:30 AM CDT"** (visible); the zone-less `<time>` attribute is not used.
+    - The page shows the $1.07 Q4 dividend and $4.23 adjusted EPS. **"From $1.03" is not on the page**; it rests on @LiveSquawk.
+  - **R4, R5, R6 and R8:** no primary found, nothing appended, all stay UNCONFIRMED.
+    - **R5 overlap**, a note only (I-021): the same Reuters reporting as Oct 28 rows 8-9 (`GEO-D81D4B913097`, `GEO-4834549F7D28`) and Oct 29 row 3 (`GEO-2D530D2E0884`).
+    - **R6 date mismatch:** the event says Trump spoke "On Thursday". Reuters' Oct 29 copy and RFE/RL put it on Wednesday Oct 28. No White House primary was found: the gaggle video has no transcript. The day is left unresolved.
+- **Duplicate-check blocks:** none today. No record was blocked because Todd's intake already held its URL.
+- **Ledger.** 12 records were appended via `python -m src.geo_intel.ingest --records`. The ledger is append-only: the prior 238 rows are byte-identical, and a re-ingest was rejected as duplicate.
+- **Cluster totals:** **4 VERIFIED_PRIMARY**, **47 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **113 UNCONFIRMED** (167 clusters, 250 records).
+- Still excluded from active features and fs_v1. `execution_authorized=false`. The protocol, plan.json, pinned files, specs, registry and ingest schema are untouched.

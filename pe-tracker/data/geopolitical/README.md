@@ -252,3 +252,13 @@ reviewed step (this file documents the 2026-10-19 promotion).
 - 11 records appended via `python -m src.geo_intel.ingest --records`. The ledger is append-only: the prior 213 rows are byte-identical, and a re-ingest was rejected as duplicate.
 - Cluster totals: **4 VERIFIED_PRIMARY**, **38 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **108 UNCONFIRMED** (153 clusters, 224 records).
 - Still excluded from active features / fs_v1. `execution_authorized=false`. Protocol, plan.json, pinned files, specs, registry and the ingest schema are untouched.
+
+## Ledger update (2026-10-30, branch `research/geo-ledger-2026-10-30`, stacked on `research/geo-review-2026-10-29`)
+
+- Source feed: Todd `events-2026-10-30.jsonl` (24 lines; 19 `news_outlet`, 4 `x_post`, 1 `primary_official`). No Oct 30 brief `.md` was present at intake.
+- **14 accepted as UNCONFIRMED**, **10 market_data rejected** at intake. No revision rows; no source URL repeats a prior ledger row. Re-ingest idempotent (14 duplicate, 10 rejected). The 224 prior rows are byte-identical (append-only).
+- Timestamps kept null where the source gave none (never inferred): `published_at` missing on 14/24 feed lines, `event_time` missing on 23/24. Flagged, not repaired.
+- Within the feed, one URL repeats across two lines with different statements (CNBC Sept PCE / Q3 GDP); both kept as separate clusters, clustering left for review.
+- The Treasury par yield curve line (17) entered via Todd's feed, so it stays UNCONFIRMED until a reviewer retrieves and stages the document; it is also a rate print and may belong in the market observations store rather than the event ledger (reviewer call). The @LiveSquawk IRGC tanker post (line 8) stays UNCONFIRMED until corroborated by a primary source.
+- Cluster totals after Oct 30 load: **4 VERIFIED_PRIMARY**, **38 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **122 UNCONFIRMED** (167 clusters, 238 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.

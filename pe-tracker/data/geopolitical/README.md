@@ -317,3 +317,13 @@ reviewed step (this file documents the 2026-10-19 promotion).
 - **Ledger.** 12 records were appended via `python -m src.geo_intel.ingest --records`. The ledger is append-only: the prior 238 rows are byte-identical, and a re-ingest was rejected as duplicate.
 - **Cluster totals:** **4 VERIFIED_PRIMARY**, **47 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **113 UNCONFIRMED** (167 clusters, 250 records).
 - Still excluded from active features and fs_v1. `execution_authorized=false`. The protocol, plan.json, pinned files, specs, registry and ingest schema are untouched.
+
+## Ledger update (2026-11-02, branch `research/geo-ledger-2026-11-02`, stacked on `research/geo-review-2026-10-30`)
+
+- Source feeds: Todd `events-2026-10-31.jsonl` (22 lines; 21 `news_outlet`, 1 `primary_official`), `events-2026-11-01.jsonl` (28 lines; all `news_outlet`) and `events-2026-11-02.jsonl` (25 lines; 24 `news_outlet`, 1 `law_firm_analysis`). The weekend feeds had no weekday intake run, so all three load here. No brief `.md` for Oct 31, Nov 1 or Nov 2 was present at intake.
+- **56 accepted as UNCONFIRMED** (15 + 21 + 20), **19 market_data rejected** at intake (7 + 7 + 5). No revision rows. Re-ingest idempotent (all 56 duplicate, 19 rejected). The 250 prior rows are byte-identical (append-only).
+- Timestamps kept null where the source gave none (never inferred): `published_at` missing on 66/75 feed lines, `event_time` missing on 75/75. Flagged, not repaired.
+- One source URL repeats a prior ledger row (Al-Monitor, Qatari mediators return to Tehran); it entered as its own cluster because the statement differs. Eleven URLs repeat across lines within these feeds (several Oct 30-dated articles relayed again on later days) with different statements; all kept as separate clusters, clustering left for review.
+- The Oct 31 `primary_official` line entered via Todd's feed, so it stays UNCONFIRMED until a reviewer retrieves and stages the document.
+- Cluster totals after this load: **4 VERIFIED_PRIMARY**, **47 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **169 UNCONFIRMED** (223 clusters, 306 records).
+- Still excluded from active features / fs_v1; `execution_authorized=false`.

@@ -327,3 +327,99 @@ reviewed step (this file documents the 2026-10-19 promotion).
 - The Oct 31 `primary_official` line entered via Todd's feed, so it stays UNCONFIRMED until a reviewer retrieves and stages the document.
 - Cluster totals after this load: **4 VERIFIED_PRIMARY**, **47 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **169 UNCONFIRMED** (223 clusters, 306 records).
 - Still excluded from active features / fs_v1; `execution_authorized=false`.
+
+### Reviewer leads pass (2026-10-31, 2026-11-01, 2026-11-02 combined; branch `research/geo-review-2026-11-02`, stacked on `research/geo-ledger-2026-11-02`)
+
+**Scope.** Todd's leads files for Oct 31 (22 lines), Nov 1 (28) and Nov 2 (25). All three SHA-256 hashes were verified against Todd's values. Each file is joined to its matching `events-*.jsonl`.
+- Leads are AI pointers only. The reviewer fetched every found lead page on 2026-11-02 at about 8:12 AM ET. curl was used where possible. Five pages were read via WebFetch after curl failed, so they have no raw bytes and no sha256: centcom.mil (403), government.ru (500/timeout), stlouisfed.org (HTTP/2 error), bls.gov (403) and ec.europa.eu (403).
+- Fetched bodies are not committed. This is AI review, not human validation.
+
+**Registry (not extended).**
+- On the registry: state.gov, home.treasury.gov, and defence-industry-space.ec.europa.eu (under europa.eu).
+- Not on the registry: centcom.mil (only defense.gov is listed), ukmto.org, bls.gov, stlouisfed.org, opec.org, government.ru, senate.gov, t.me, and all media sites.
+
+**Rules.** Same as the Oct 30 pass, plus one change: **Telegram markup `<time>` values are no longer used**, so every Telegram record has a null `publication_timestamp`.
+- Zoned page metadata on non-Telegram pages (JSON-LD, `article:published_time`) is used and labelled METADATA.
+- Party statements are capped at ATTRIBUTED_CLAIM. That includes state.gov (Rubio).
+- Scheduled items are scheduled-only; forecasts and plans are recorded as forecast- or plan-only.
+- X posts are not appended. No event linking (I-021).
+
+**Status changes.** 23 records appended. 23 clusters moved UNCONFIRMED -> ATTRIBUTED_CLAIM; none reached VERIFIED_PRIMARY.
+
+- **Oct 31**
+  - R0 `GEO-9ED5442FD5C3`: Air Force tally. 134 drones; 105 downed as of 08:30, no zone given.
+  - R1 `GEO-96954A50039E`: Zelenskyy. CHPs in Kyiv and Shostka hit; four substations in Dnipro region; about 200k + 80k without power. The post says "families" where the row says "households".
+  - R2 `GEO-3E085188629C`: Dnipro regional administration. 1 killed, 2 injured, more than 20 attacks on 5 districts.
+  - R4 `GEO-4F5AFA99F5FF`: Khamenei's English channel, post 826. Calls for a "geographically unrestricted" response.
+  - R7 `GEO-FEB4AD7CE85A`: Tasnim EN, IRGC statement. **PARTIAL.**
+    - Confirms **three** tankers hit mines, said **Thursday Oct 29**. The row says four tankers and "said Friday".
+    - The separate Army statement about a fourth tanker was not opened.
+    - "2 million barrels" is not on the page.
+    - Time from JSON-LD: 11:27:29Z.
+  - R8 `GEO-3D74D19A2D4A`: CENTCOM release. **PARTIAL, content dated Oct 25 only.** "Primary transit routes … free and clear of Iranian sea mines". The later statement the row calls "reiterated" was not retrieved.
+  - R9 `GEO-A64E6CDBD4AF`: UKMTO Warning 187-26 Update 001 (PDF). Tanker hit by explosive devices attached by a small boat; attacker not named.
+    - Incident time **29 Oct 2212 UTC** is set as `event_valid_timestamp`, taken from the visible page.
+    - The row says "Friday"; 2212 UTC Thursday is already Friday in Gulf local time.
+- **Nov 1**
+  - R0 `GEO-882815E3367C`: Air Force tally. 433 drones, 371 downed. The row's "Kyiv time" is the outlet's addition.
+  - R2 `GEO-D9692DBEF66D`: Zelenskyy. "Hundreds of thousands of families" without power.
+  - R3 `GEO-C9A75A0605C3`: DTEK, emergency outages in Kyiv. The post says "constant shelling", not "overnight".
+  - R4 `GEO-8B52639A0199`: Zelenskyy. Kamensky combine, Pantsir-S2 and S-400 vehicle hit; about $70M. No Russian confirmation.
+  - R7 `GEO-E5ABC6FB0893`: Zelenskyy's remarks in Türkiye, republished on vin.gov.ua. Trilateral format "in the first half of November". **PLAN only.** Remarks made Oct 31; the page was republished Nov 2.
+  - R9 `GEO-396EC63EC90E`: state.gov transcript, `primary_official`, capped as a party statement. **PARTIAL.** Rubio says the decision is "up to the President" and the President prefers a diplomatic solution. He does not say "has not decided".
+  - R13 `GEO-318D8A304C68`: Mehr, Rezaei. **Reported speech only.** The headline reads "No serious decision" and the row's direct quote is not on the page.
+  - R14 `GEO-AEFB7E8EF1DF`: IRIB, Hormozgan deputy governor. Two fishing boats attacked off Masan, Qeshm. **Claim only.** No CENTCOM comment found.
+  - R15 `GEO-4A0AE750DA81`: government.ru Resolution No. 1436. **PARTIAL; supersedes the row.**
+    - The decree was **signed Oct 31**. It extends the diesel, marine fuel and gas oil export ban for direct producers **through Jan 31, 2027**.
+    - The "exceptions for global markets" are not on the page.
+  - R25 `GEO-8F12A8604A32`: St. Louis Fed remarks. **Musalem is supported**: inflation "too high", "elevated and broad-based", firming needed "soon". **Barkin is not**: his remarks are not on this page and no Richmond Fed transcript was found.
+  - R27 `GEO-8E8A23DD1408`: BLS schedule. **Scheduled only, PARTIAL.** JOLTS Tue Nov 3, 10:00 AM; jobs report Fri Nov 6, 8:30 AM ("Eastern Time"; times kept null). The earnings, factory orders and ADP items are not on this page.
+- **Nov 2**
+  - R0 `GEO-C7175D35B533`: Air Force tally. 193 drones, 154 downed.
+  - R1 `GEO-C7413F3500E9`: Syniehubov. **PARTIAL.** The Izium guided-bomb strike killed 1 and hit 4- and 5-storey buildings. **There is no mention of high-voltage lines or a citywide blackout.**
+  - R11 `GEO-E8703099B9B2`: Xinhua, MFA spokesperson Mao Ning. Zhai Jun to visit Iran, Oman and Saudi Arabia "early-to-mid November". **Scheduled only.** The row's "press all sides to halt the fighting" is Euronews' framing.
+  - R13 `GEO-9A6E10B86A9A`: OPEC release. The seven countries keep December required production at September levels. The next meeting on Nov 29 is **scheduled**. The 2027 production framework is **not on the page**; it is The National's expectation (**forecast**). opec.org is not on the registry.
+  - R22 `GEO-2204C3EE54F0`: BLS schedule. **Scheduled only.** Payrolls on Fri Nov 6, 8:30 AM. ISM was not checked.
+
+**Duplicate-check blocks (no workaround; listed under the pending correction-records question).**
+- **Oct 31 R14 `GEO-0230A860B3B7` (EC refining dialogue):** `DuplicateEvidenceError`. Todd's intake `EVD-A486FA6CA592A568` already holds this exact URL.
+  - The page was read via WebFetch. It supports the headline, and the host is on the registry (europa.eu).
+  - The page is date-only, so a reviewer record would have capped at ATTRIBUTED_CLAIM anyway.
+  - The cluster stays UNCONFIRMED.
+- **Senate Daily Press, Oct 29 log, for Oct 31 R12 `GEO-DD4BB8581339`, Nov 1 R16 `GEO-8973E0E856C0` and Nov 2 R15 `GEO-93092744B302`:** `ClusterConflictError`. The same source statement is already staged under Oct 30 R9 `GEO-14F85ED96883`, and one statement cannot describe two events.
+  - The live log (modified 2026-10-30T14:56Z) still shows cloture on the motion to proceed to H.R.2347 at about 5:30 p.m. on Mon Nov 9. The vote has **not happened**.
+  - All three clusters stay UNCONFIRMED. These are overlapping stories about the Nov 9 vote; nothing was merged.
+- **Nov 1 R10 `GEO-77334D587A43` (Khamenei quote):** `ClusterConflictError`. It is the same post 826 that is now staged under Oct 31 R4 `GEO-4F5AFA99F5FF`. The cluster stays UNCONFIRMED. This is a cross-day duplicate story, noted only.
+- The BLS schedule appears in two clusters, Nov 1 R27 and Nov 2 R22. Each record quotes a different table row (JOLTS plus payrolls, versus payrolls only), so the statement guard did not trigger. Flagged for Isaiah in case this should also count as a single statement.
+
+**Not appended / unchanged.**
+- **Market prints (no ledger change; market-observation candidates for Isaiah):**
+  - Oct 31 R10, R11, R16, R17, R18, R20 and R21.
+  - Nov 1 R18-R24. For R19, the Treasury par curve read live shows 10/30 at 10Y 4.94, 2Y 4.56 and 30Y 5.31. That matches the direction only; the row's 4.931% / 4.59% / 5.3093% are market quotes and do not match exactly.
+  - Nov 2 R16, R17, R19, R20 and R23. For R23, the Alstom release (02 Nov 2026) was read live: the guidance cut is on the page; the 25% share fall and "sweeping overhaul" are not.
+- **No primary found:**
+  - Oct 31: R3, R5, R6, R13, R15 and R19.
+    - R3: no Bryansk governor post was found. Outlets name the governor Kovalchuk.
+    - R6 is a report of options under consideration.
+  - Nov 1: R1, R5, R6, R8, R11, R12, R17 and R26.
+    - **R17:** outlets **conflict on duration**. TBS says 3 days from Nov 4; UNB and the Observer say 4 days, Nov 4-7. Scheduled maintenance.
+    - **R26:** the payrolls consensus is a **forecast**.
+  - Nov 2: R2-R10, R12, R14, R18, R21 and R24.
+    - **R6:** outlets give Zelensky's conditions with **"or"**, not "and".
+    - **R21:** market pricing of central-bank moves is a **forecast**.
+- **Unchanged clusters:**
+  - `GEO-040F454DB3D3` (Oleshky) **stays DISPUTED**.
+  - The scheduled clusters `GEO-292799CF2B9B` and `GEO-61D20FDF9655` are **not resolved**.
+
+**Overlaps (notes only, no merging, I-021).**
+- Kstovo: Nov 1 R5 and Nov 2 R4/R5. Ufa: Nov 1 R6 and Nov 2 R4.
+- Qatari mediators: Oct 31 R5 repeats the Oct 30 R4 URL and story.
+- The Nov 9 vote appears in five clusters across Oct 28 to Nov 2.
+- Hormuz conditions: Nov 1 R11 and Nov 2 R9/R10.
+- Tanker incidents: Oct 31 R7/R9 and Oct 30 R7.
+
+**Ledger integrity.** 23 records appended via `ingest --records`. The prior 306 rows are byte-identical, and a re-ingest was rejected as duplicate.
+
+**Cluster totals:** **4 VERIFIED_PRIMARY**, **70 ATTRIBUTED_CLAIM**, **3 DISPUTED**, **146 UNCONFIRMED** (223 clusters, 329 records).
+
+Still excluded from active features and fs_v1. `execution_authorized=false`. Protocol, plan.json, pinned files, specs, registry and ingest schema are untouched.
